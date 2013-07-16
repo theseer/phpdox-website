@@ -6,11 +6,13 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="css/prettify.css" type="text/css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/prettify.js"></script>
   <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
 
   <title>phpdox &#x2013; The PHP Documentation Generator</title>
  </head>
- <body>
+ <body onload="prettyPrint()">
   <div class="container">
    <div class="masthead">
     <h3 class="muted">phpdox &#x2013; The PHP Documentation Generator</h3>
@@ -31,13 +33,112 @@
    <div class="row-fluid">
     <div class="span12">
      <h1>Getting Started</h1>
-     <p>...</p>
-     <h2>Installing phpdox</h2>
-     <p>...</p>
-     <h2>Configuring phpdox for your project</h2>
-     <p>...</p>
-     <h2>Running phpdox</h2>
-     <p>...</p>
+     <p>In this tutorial you will learn how to download, configure, and run phpdox.</p>
+     <h2>Download</h2>
+     <p>We distribute a <a href="http://php.net/phar">PHP Archive (PHAR)</a> that contains everything you need in order to use phpdox. Simply download it from <a href="releases/phpdox.phar">here</a> and put it into your <code>$PATH</code>, for instance:</p>
+     <pre><strong>➜ wget http://phpdox.de/releases/phpdox.phar
+
+➜ chmod +x phpdox.phar
+
+➜ mv phpdox.phar /usr/local/bin
+
+➜ phpdox --version</strong>
+phpDox 0.5.0 - Copyright (C) 2010 - 2013 by Arne Blankerts</pre>
+     <p>You can also immediately use the PHAR after you have downloaded it, of course:</p>
+     <pre><strong>➜ wget http://phpdox.de/releases/phpdox.phar
+
+➜ php phpdox.phar --version</strong>
+phpDox 0.5.0 - Copyright (C) 2010 - 2013 by Arne Blankerts</pre>
+     <p>Alternatively, you may use Composer or the PEAR Installer to download and install phpdox as well as its dependencies. Please refer to the <a href="documentation.html">documentation</a> for details on how to do this.</p>
+     <h2>Configure</h2>
+     <p>You need to write an XML configuration file (commonly named <code>phpdox.xml</code>) for your project in order to use phpdox. The <code>phpdox --skel</code> command helps with this task by generating a skeleton configuration file.</p>
+     <p>For the purpose of this tutorial we use the following minimal example:</p>
+     <pre class="prettyprint">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;phpdox xmlns="http://phpdox.de/config"&gt;
+  &lt;project name="Example" source="${basedir}/src" workdir="${basedir}/build/api/xml"&gt;
+    &lt;collector backend="parser" /&gt;
+    &lt;generator output="${basedir}/build/api"&gt;
+      &lt;build engine="html" output="html"/&gt;
+    &lt;/generator&gt;
+  &lt;/project&gt;
+&lt;/phpdox&gt;</pre>
+     <p>In the configuration file shown above we configure the following:</p>
+     <ul>
+      <li>This is the phpdox configuration for project "Example"</li>
+      <li>The sources are in the <code>${basedir}/src</code> directory</li>
+      <li>The <code>workdir</code> (where the XML representation of the sourcecode is cached) is <code>${basedir}/build/api/xml</code></li>
+      <li>We want to use the <code>parser</code> (for PHP-Parser) backend as our <code>collector</code></li>
+      <li>We want to render output using the <code>html</code> generator and have the result put into the <code>${basedir}/build/api/html</code> directory</li>
+     </ul>
+     <p>The <code>${basedir}</code> variable is resolved to the directory that contains the configuration file.</p>
+     <h2>Run</h2>
+     <p>When you invoke phpdox in a directory that has a file named <code>phpdox.xml</code> it will automatically be used:</p>
+     <pre><strong>➜ phpdox</strong>
+phpDox 0.5.0 - Copyright (C) 2010 - 2013 by Arne Blankerts
+
+[16.07.2013 - 10:35:07] Using config file '/usr/local/src/example/phpdox.xml.dist'
+[16.07.2013 - 10:35:07] Registered collector backend 'parser'
+[16.07.2013 - 10:35:07] Registered output engine 'html'
+[16.07.2013 - 10:35:07] Registered output engine 'graph'
+[16.07.2013 - 10:35:07] Registered output engine 'todo'
+[16.07.2013 - 10:35:07] Starting to process project 'Example'
+[16.07.2013 - 10:35:07] Starting collector
+[16.07.2013 - 10:35:07] Scanning directory '/usr/local/src/example/src' for files to process
+
+....                                              	[4]
+
+
+[16.07.2013 - 10:35:07] Saving results to directory '/usr/local/src/example/build/api/xml'
+[16.07.2013 - 10:35:07] Resolving inheritance
+
+...                                               	[3]
+
+
+[16.07.2013 - 10:35:07] Collector process completed
+[16.07.2013 - 10:35:07] Starting generator
+
+..................................................	[50]
+.......................                           	[73]
+
+
+[16.07.2013 - 10:35:07] Triggering raw engines
+
+[16.07.2013 - 10:35:07] Generator process completed
+[16.07.2013 - 10:35:07] Processing project 'Example' completed.
+
+
+Time: 0 seconds, Memory: 8.50Mb</pre>
+     <p>Notice how the output changes on subsequent thanks to the cached information:</p>
+     <pre><strong>➜ phpdox</strong>
+phpDox 0.5.0 - Copyright (C) 2010 - 2013 by Arne Blankerts
+
+[16.07.2013 - 10:37:38] Using config file '/usr/local/src/money/phpdox.xml.dist'
+[16.07.2013 - 10:37:38] Registered collector backend 'parser'
+[16.07.2013 - 10:37:38] Registered output engine 'html'
+[16.07.2013 - 10:37:38] Registered output engine 'graph'
+[16.07.2013 - 10:37:38] Registered output engine 'todo'
+[16.07.2013 - 10:37:38] Starting to process project 'Example'
+[16.07.2013 - 10:37:38] Starting collector
+[16.07.2013 - 10:37:38] Scanning directory '/usr/local/src/money/src' for files to process
+
+cccc                                              	[4]
+
+
+[16.07.2013 - 10:37:38] Saving results to directory '/usr/local/src/money/build/api/xml'
+[16.07.2013 - 10:37:38] Collector process completed
+[16.07.2013 - 10:37:38] Starting generator
+
+..................................................	[50]
+.......................                           	[73]
+
+
+[16.07.2013 - 10:37:38] Triggering raw engines
+
+[16.07.2013 - 10:37:38] Generator process completed
+[16.07.2013 - 10:37:38] Processing project 'Example' completed.
+
+
+Time: 0 seconds, Memory: 2.75Mb</pre>
     </div>
    </div>
    <hr>
