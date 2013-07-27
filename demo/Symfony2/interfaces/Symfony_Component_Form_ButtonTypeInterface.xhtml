@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Form\ButtonTypeInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#buildForm">buildForm</a>
+          </li>
+          <li>
+            <a href="#buildView">buildView</a>
+          </li>
+          <li>
+            <a href="#finishView">finishView</a>
+          </li>
+          <li>
+            <a href="#getName">getName</a>
+          </li>
+          <li>
+            <a href="#getParent">getParent</a>
+          </li>
+          <li>
+            <a href="#setDefaultOptions">setDefaultOptions</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Form\</span>ButtonTypeInterface</h2>
+        <div class="file-notice">
+          <p>A type that should be converted into a {@link Button} instance.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="buildForm"/>
+            <h4><span class="label public">public</span>buildForm<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Form_FormBuilderInterface.xhtml">Symfony\Component\Form\FormBuilderInterface</a></span><strong> $builder</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Builds the form.<pre>This method is called for each type in the hierarchy starting form the
+top most type. Type extensions can further modify the form.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$builder</code> - The form builder</li>
+                <li><code>$options</code> - The options</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="buildView"/>
+            <h4><span class="label public">public</span>buildView<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Form_FormInterface.xhtml">Symfony\Component\Form\FormInterface</a></span><strong> $form</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Builds the form view.<pre>This method is called for each type in the hierarchy starting form the
+top most type. Type extensions can further modify the view.
+A view of a form is built before the views of the child forms are built.
+This means that you cannot access child views in this method. If you need
+to do so, move your logic to  instead.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view</li>
+                <li><code>$form</code> - The form</li>
+                <li><code>$options</code> - The options</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="finishView"/>
+            <h4><span class="label public">public</span>finishView<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Form_FormInterface.xhtml">Symfony\Component\Form\FormInterface</a></span><strong> $form</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Finishes the form view.<pre>This method gets called for each type in the hierarchy starting form the
+top most type. Type extensions can further modify the view.
+When this method is called, views of the form's children have already
+been built and finished and can be accessed. You should only implement
+such logic in this method that actually accesses child views. For everything
+else you are recommended to implement  instead.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view</li>
+                <li><code>$form</code> - The form</li>
+                <li><code>$options</code> - The options</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getName"/>
+            <h4><span class="label public">public</span>getName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the name of this type.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The name of this type</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getParent"/>
+            <h4><span class="label public">public</span>getParent<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the name of the parent type.<pre>You can also return a type instance from this method, although doing so
+is discouraged because it leads to a performance penalty. The support
+for returning type instances may be dropped from future releases.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The name of the parent type if any, null otherwise.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDefaultOptions"/>
+            <h4><span class="label public">public</span>setDefaultOptions<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_OptionsResolver_OptionsResolverInterface.xhtml">Symfony\Component\OptionsResolver\OptionsResolverInterface</a></span><strong> $resolver</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the default options for this type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$resolver</code> - The resolver for the options.</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

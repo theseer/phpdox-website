@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\XmlRpc\Server - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#encoding">$encoding</a>
+          </li>
+          <li>
+            <a href="#request">$request</a>
+          </li>
+          <li>
+            <a href="#responseClass">$responseClass</a>
+          </li>
+          <li>
+            <a href="#table">$table</a>
+          </li>
+          <li>
+            <a href="#typeMap">$typeMap</a>
+          </li>
+          <li>
+            <a href="#sendArgumentsToAllMethods">$sendArgumentsToAllMethods</a>
+          </li>
+          <li>
+            <a href="#returnResponse">$returnResponse</a>
+          </li>
+          <li>
+            <a href="#response">$response</a>
+          </li>
+          <li>
+            <a href="#overwriteExistingMethods">$overwriteExistingMethods</a>
+          </li>
+          <li>
+            <a href="#table">$table</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__call">__call</a>
+          </li>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_buildCallback">_buildCallback</a>
+          </li>
+          <li>
+            <a href="#_buildSignature">_buildSignature</a>
+          </li>
+          <li>
+            <a href="#_dispatch">_dispatch</a>
+          </li>
+          <li>
+            <a href="#_fixType">_fixType</a>
+          </li>
+          <li>
+            <a href="#_fixType">_fixType</a>
+          </li>
+          <li>
+            <a href="#addFunction">addFunction</a>
+          </li>
+          <li>
+            <a href="#fault">fault</a>
+          </li>
+          <li>
+            <a href="#getDispatchTable">getDispatchTable</a>
+          </li>
+          <li>
+            <a href="#getEncoding">getEncoding</a>
+          </li>
+          <li>
+            <a href="#getFunctions">getFunctions</a>
+          </li>
+          <li>
+            <a href="#getFunctions">getFunctions</a>
+          </li>
+          <li>
+            <a href="#getRequest">getRequest</a>
+          </li>
+          <li>
+            <a href="#getResponse">getResponse</a>
+          </li>
+          <li>
+            <a href="#getResponseClass">getResponseClass</a>
+          </li>
+          <li>
+            <a href="#getReturnResponse">getReturnResponse</a>
+          </li>
+          <li>
+            <a href="#getSystem">getSystem</a>
+          </li>
+          <li>
+            <a href="#handle">handle</a>
+          </li>
+          <li>
+            <a href="#handleRequest">handleRequest</a>
+          </li>
+          <li>
+            <a href="#isSubclassOf">isSubclassOf</a>
+          </li>
+          <li>
+            <a href="#loadFunctions">loadFunctions</a>
+          </li>
+          <li>
+            <a href="#registerSystemMethods">registerSystemMethods</a>
+          </li>
+          <li>
+            <a href="#sendArgumentsToAllMethods">sendArgumentsToAllMethods</a>
+          </li>
+          <li>
+            <a href="#setClass">setClass</a>
+          </li>
+          <li>
+            <a href="#setEncoding">setEncoding</a>
+          </li>
+          <li>
+            <a href="#setPersistence">setPersistence</a>
+          </li>
+          <li>
+            <a href="#setRequest">setRequest</a>
+          </li>
+          <li>
+            <a href="#setResponseClass">setResponseClass</a>
+          </li>
+          <li>
+            <a href="#setReturnResponse">setReturnResponse</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\XmlRpc\</span>Server</h2>
+        <div class="file-notice">
+          <p>An XML-RPC server implementation</p>
+          <p>
+            <pre>Example:
+&lt;code&gt;
+use Zend\XmlRpc;
+
+// Instantiate server
+$server = new XmlRpc\Server();
+
+// Allow some exceptions to report as fault responses:
+XmlRpc\Server\Fault::attachFaultException('My\\Exception');
+XmlRpc\Server\Fault::attachObserver('My\\Fault\\Observer');
+
+// Get or build dispatch table:
+if (!XmlRpc\Server\Cache::get($filename, $server)) {
+
+    // Attach Some_Service_Class in 'some' namespace
+    $server-&gt;setClass('Some\\Service\\Class', 'some');
+
+    // Attach Another_Service_Class in 'another' namespace
+    $server-&gt;setClass('Another\\Service\\Class', 'another');
+
+    // Create dispatch table cache file
+    XmlRpc\Server\Cache::save($filename, $server);
+}
+
+$response = $server-&gt;handle();
+echo $response;
+&lt;/code&gt;</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="encoding"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $encoding</h4>
+            <ul class="varlist">
+              <li>Character encoding</li>
+            </ul>
+          </li>
+          <li>
+            <a name="request"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $request</h4>
+            <ul class="varlist">
+              <li>Request processed</li>
+            </ul>
+          </li>
+          <li>
+            <a name="responseClass"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $responseClass</h4>
+            <ul class="varlist">
+              <li>Class to use for responses; defaults to {@link Response\Http}</li>
+            </ul>
+          </li>
+          <li>
+            <a name="table"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $table</h4>
+            <ul class="varlist">
+              <li>Dispatch table of name =&gt; method pairs</li>
+            </ul>
+          </li>
+          <li>
+            <a name="typeMap"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $typeMap</h4>
+            <ul class="varlist">
+              <li>PHP types =&gt; XML-RPC types</li>
+            </ul>
+          </li>
+          <li>
+            <a name="sendArgumentsToAllMethods"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $sendArgumentsToAllMethods</h4>
+            <ul class="varlist">
+              <li>Send arguments to all methods or just constructor?</li>
+            </ul>
+          </li>
+          <li>
+            <a name="returnResponse"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $returnResponse</h4>
+            <ul class="varlist">
+              <li>Flag: whether or not {@link handle()} should return a response instead of automatically emitting it.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="response"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $response</h4>
+            <ul class="varlist">
+              <li>Last response results.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor<pre>Creates system.* methods.</pre></li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__call"/>
+            <h4><span class="label public">public</span>__call<span style="font-size:90%;">( <span class="param-type">string</span><strong> $method</strong>, <span class="param-type">array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Proxy calls to system object</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - </li>
+                <li><code>$params</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Server\Exception\BadMethodCallException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addFunction"/>
+            <h4><span class="label public">public</span>addFunction<span style="font-size:90%;">( <span class="param-type"><span title="string|array|callable">string|array|callable</span></span><strong> $function</strong>, <span class="param-type">string</span><strong> $namespace</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach a callback as an XMLRPC method<pre>Attaches a callback as an XMLRPC method, prefixing the XMLRPC method name
+with $namespace, if provided. Reflection is done on the callback's
+docblock to create the methodHelp for the XMLRPC method.
+
+Additional arguments to pass to the function at dispatch may be passed;
+any arguments following the namespace will be aggregated and passed at
+dispatch time.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$function</code> - Valid callback</li>
+                <li><code>$namespace</code> - Optional namespace prefix</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\XmlRpc\Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fault"/>
+            <h4><span class="label public">public</span>fault<span style="font-size:90%;">( <span class="param-type"><span title="string|\Exception">Exception</span></span><strong> $fault</strong>, <span class="param-type">integer</span><strong> $code</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Raise an xmlrpc server fault</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fault</code> - </li>
+                <li><code>$code</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDispatchTable"/>
+            <h4><span class="label public">public</span>getDispatchTable<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve dispatch table</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEncoding"/>
+            <h4><span class="label public">public</span>getEncoding<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve current encoding</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFunctions"/>
+            <h4><span class="label public">public</span>getFunctions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a list of registered methods<pre>Returns an array of dispatchables (Zend\Server\Reflection\ReflectionFunction,
+ReflectionMethod, and ReflectionClass items).</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFunctions"/>
+            <h4><span class="label public">public</span>getFunctions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a list of registered methods<pre>Returns an array of method definitions.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRequest"/>
+            <h4><span class="label public">public</span>getRequest<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return currently registered request object</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getResponse"/>
+            <h4><span class="label public">public</span>getResponse<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Last response.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getResponseClass"/>
+            <h4><span class="label public">public</span>getResponseClass<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve current response class</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getReturnResponse"/>
+            <h4><span class="label public">public</span>getReturnResponse<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve return response flag</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSystem"/>
+            <h4><span class="label public">public</span>getSystem<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve system object</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="handle"/>
+            <h4><span class="label public">public</span>handle<span style="font-size:90%;">( <span class="param-type"><span title="Request">Request</span></span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Handle an xmlrpc call</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - Optional</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="loadFunctions"/>
+            <h4><span class="label public">public</span>loadFunctions<span style="font-size:90%;">( <span class="param-type"><span title="array|Definition">array|Definition</span></span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Load methods as returned from {@link getFunctions}<pre>Typically, you will not use this method; it will be called using the
+results pulled from .
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$definition</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Server\Exception\InvalidArgumentException on invalid input</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="sendArgumentsToAllMethods"/>
+            <h4><span class="label public">public</span>sendArgumentsToAllMethods<span style="font-size:90%;">( <span class="param-type"/><strong> $flag</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send arguments to all methods?<pre>If setClass() is used to add classes to the server, this flag defined
+how to handle arguments. If set to true, all methods including constructor
+will receive the arguments. If set to false, only constructor will receive the
+arguments</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="setClass"/>
+            <h4><span class="label public">public</span>setClass<span style="font-size:90%;">( <span class="param-type"><span title="string|object">string|object</span></span><strong> $class</strong>, <span class="param-type">string</span><strong> $namespace</strong>, <span class="param-type">mixed</span><strong> $argv</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach class methods as XMLRPC method handlers<pre>$class may be either a class name or an object. Reflection is done on the
+class or object to determine the available public methods, and each is
+attached to the server as an available method; if a $namespace has been
+provided, that namespace is used to prefix the XMLRPC method names.
+
+Any additional arguments beyond $namespace will be passed to a method at
+invocation.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+                <li><code>$namespace</code> - Optional</li>
+                <li><code>$argv</code> - Optional arguments to pass to methods</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Server\Exception\InvalidArgumentException on invalid input</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setEncoding"/>
+            <h4><span class="label public">public</span>setEncoding<span style="font-size:90%;">( <span class="param-type">string</span><strong> $encoding</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set encoding</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$encoding</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPersistence"/>
+            <h4><span class="label public">public</span>setPersistence<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $mode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Do nothing; persistence is handled via {@link Zend\XmlRpc\Server\Cache}</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$mode</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setRequest"/>
+            <h4><span class="label public">public</span>setRequest<span style="font-size:90%;">( <span class="param-type"><span title="string|Request">string|Request</span></span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the request object</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Server\Exception\InvalidArgumentException on invalid request class or object</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setResponseClass"/>
+            <h4><span class="label public">public</span>setResponseClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the class to use for the response</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>True if class was set, false if not</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Server\Exception\InvalidArgumentException if invalid response class</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setReturnResponse"/>
+            <h4><span class="label public">public</span>setReturnResponse<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $flag</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set return response flag<pre>If true,  will return the response instead of
+automatically sending it back to the requesting client.
+The response is always available via .
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$flag</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_buildCallback"/>
+            <h4><span class="label protected">protected</span>_buildCallback<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Server_Reflection_AbstractFunction.xhtml">Zend\Server\Reflection\AbstractFunction</a></span><strong> $reflection</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Build callback for method signature</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$reflection</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_buildSignature"/>
+            <h4><span class="label protected">protected</span>_buildSignature<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Server_Reflection_AbstractFunction.xhtml">Zend\Server\Reflection\AbstractFunction</a></span><strong> $reflection</strong>, <span class="param-type"><span title="null|string|object">null|string|object</span></span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Build a method signature</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$reflection</code> - </li>
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException on duplicate entry</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_dispatch"/>
+            <h4><span class="label protected">protected</span>_dispatch<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Server_Method_Definition.xhtml">Zend\Server\Method\Definition</a></span><strong> $invocable</strong>, <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Dispatch method</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$invocable</code> - </li>
+                <li><code>$params</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_fixType"/>
+            <h4><span class="label protected">protected</span>_fixType<span style="font-size:90%;">( <span class="param-type">string</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Map PHP type to XML-RPC type</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$type</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_fixType"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>_fixType<span style="font-size:90%;">( <span class="param-type">string</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Map PHP type to protocol type</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$type</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="handleRequest"/>
+            <h4><span class="label protected">protected</span>handleRequest<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_XmlRpc_Request.xhtml">Zend\XmlRpc\Request</a></span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Handle an xmlrpc call (actual work)</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Server\Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isSubclassOf"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>isSubclassOf<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if the object has this class as one of its parents</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$type</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerSystemMethods"/>
+            <h4><span class="label protected">protected</span>registerSystemMethods<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register system methods with the server</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Crypt\BlockCipher - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#KEY_DERIV_HMAC">KEY_DERIV_HMAC</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#cipher">$cipher</a>
+          </li>
+          <li>
+            <a href="#symmetricPlugins">$symmetricPlugins</a>
+          </li>
+          <li>
+            <a href="#hash">$hash</a>
+          </li>
+          <li>
+            <a href="#salt">$salt</a>
+          </li>
+          <li>
+            <a href="#binaryOutput">$binaryOutput</a>
+          </li>
+          <li>
+            <a href="#key">$key</a>
+          </li>
+          <li>
+            <a href="#keyIteration">$keyIteration</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#decrypt">decrypt</a>
+          </li>
+          <li>
+            <a href="#encrypt">encrypt</a>
+          </li>
+          <li>
+            <a href="#factory">factory</a>
+          </li>
+          <li>
+            <a href="#getBinaryOutput">getBinaryOutput</a>
+          </li>
+          <li>
+            <a href="#getCipher">getCipher</a>
+          </li>
+          <li>
+            <a href="#getCipherAlgorithm">getCipherAlgorithm</a>
+          </li>
+          <li>
+            <a href="#getCipherSupportedAlgorithms">getCipherSupportedAlgorithms</a>
+          </li>
+          <li>
+            <a href="#getHashAlgorithm">getHashAlgorithm</a>
+          </li>
+          <li>
+            <a href="#getKey">getKey</a>
+          </li>
+          <li>
+            <a href="#getKeyIteration">getKeyIteration</a>
+          </li>
+          <li>
+            <a href="#getSalt">getSalt</a>
+          </li>
+          <li>
+            <a href="#getSymmetricPluginManager">getSymmetricPluginManager</a>
+          </li>
+          <li>
+            <a href="#setBinaryOutput">setBinaryOutput</a>
+          </li>
+          <li>
+            <a href="#setCipher">setCipher</a>
+          </li>
+          <li>
+            <a href="#setCipherAlgorithm">setCipherAlgorithm</a>
+          </li>
+          <li>
+            <a href="#setHashAlgorithm">setHashAlgorithm</a>
+          </li>
+          <li>
+            <a href="#setKey">setKey</a>
+          </li>
+          <li>
+            <a href="#setKeyIteration">setKeyIteration</a>
+          </li>
+          <li>
+            <a href="#setSalt">setSalt</a>
+          </li>
+          <li>
+            <a href="#setSymmetricPluginManager">setSymmetricPluginManager</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Crypt\</span>BlockCipher</h2>
+        <div class="file-notice">
+          <p>Encrypt using a symmetric cipher then authenticate using HMAC (SHA-256)</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="KEY_DERIV_HMAC"/>KEY_DERIV_HMAC = 'sha256'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="cipher"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $cipher</h4>
+            <ul class="varlist">
+              <li>Symmetric cipher</li>
+            </ul>
+          </li>
+          <li>
+            <a name="symmetricPlugins"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $symmetricPlugins</h4>
+            <ul class="varlist">
+              <li>Symmetric cipher plugin manager</li>
+            </ul>
+          </li>
+          <li>
+            <a name="hash"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $hash</h4>
+            <ul class="varlist">
+              <li>Hash algorithm fot HMAC</li>
+            </ul>
+          </li>
+          <li>
+            <a name="salt"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $salt</h4>
+            <ul class="varlist">
+              <li>Salt (IV)</li>
+            </ul>
+          </li>
+          <li>
+            <a name="binaryOutput"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $binaryOutput</h4>
+            <ul class="varlist">
+              <li>The output is binary?</li>
+            </ul>
+          </li>
+          <li>
+            <a name="key"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $key</h4>
+            <ul class="varlist">
+              <li>User's key</li>
+            </ul>
+          </li>
+          <li>
+            <a name="keyIteration"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $keyIteration</h4>
+            <ul class="varlist">
+              <li>Number of iterations for Pbkdf2</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Crypt_Symmetric_SymmetricInterface.xhtml">Zend\Crypt\Symmetric\SymmetricInterface</a></span><strong> $cipher</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cipher</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="decrypt"/>
+            <h4><span class="label public">public</span>decrypt<span style="font-size:90%;">( <span class="param-type">string</span><strong> $data</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Decrypt</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$data</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="encrypt"/>
+            <h4><span class="label public">public</span>encrypt<span style="font-size:90%;">( <span class="param-type">string</span><strong> $data</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encrypt then authenticate using HMAC</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$data</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="factory"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>factory<span style="font-size:90%;">( <span class="param-type">string</span><strong> $adapter</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Factory.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$adapter</code> - </li>
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBinaryOutput"/>
+            <h4><span class="label public">public</span>getBinaryOutput<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the value of binary output</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCipher"/>
+            <h4><span class="label public">public</span>getCipher<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get symmetric cipher</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCipherAlgorithm"/>
+            <h4><span class="label public">public</span>getCipherAlgorithm<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the cipher algorithm</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCipherSupportedAlgorithms"/>
+            <h4><span class="label public">public</span>getCipherSupportedAlgorithms<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the supported algorithms of the symmetric cipher</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHashAlgorithm"/>
+            <h4><span class="label public">public</span>getHashAlgorithm<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the hash algorithm for HMAC authentication</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getKey"/>
+            <h4><span class="label public">public</span>getKey<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the key</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getKeyIteration"/>
+            <h4><span class="label public">public</span>getKeyIteration<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the number of iterations for Pbkdf2</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSalt"/>
+            <h4><span class="label public">public</span>getSalt<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the salt (IV)</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSymmetricPluginManager"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getSymmetricPluginManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the symmetric cipher plugin manager.  If it doesn't exist it's created.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setBinaryOutput"/>
+            <h4><span class="label public">public</span>setBinaryOutput<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Enable/disable the binary output</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCipher"/>
+            <h4><span class="label public">public</span>setCipher<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Crypt_Symmetric_SymmetricInterface.xhtml">Zend\Crypt\Symmetric\SymmetricInterface</a></span><strong> $cipher</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the symmetric cipher</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cipher</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCipherAlgorithm"/>
+            <h4><span class="label public">public</span>setCipherAlgorithm<span style="font-size:90%;">( <span class="param-type">string</span><strong> $algo</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set algorithm of the symmetric cipher</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$algo</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setHashAlgorithm"/>
+            <h4><span class="label public">public</span>setHashAlgorithm<span style="font-size:90%;">( <span class="param-type">string</span><strong> $hash</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the hash algorithm for HMAC authentication</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$hash</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setKey"/>
+            <h4><span class="label public">public</span>setKey<span style="font-size:90%;">( <span class="param-type">string</span><strong> $key</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the encryption/decryption key</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setKeyIteration"/>
+            <h4><span class="label public">public</span>setKeyIteration<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $num</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the number of iterations for Pbkdf2</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$num</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSalt"/>
+            <h4><span class="label public">public</span>setSalt<span style="font-size:90%;">( <span class="param-type">string</span><strong> $salt</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the salt (IV)</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$salt</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSymmetricPluginManager"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setSymmetricPluginManager<span style="font-size:90%;">( <span class="param-type"><span title="string|SymmetricPluginManager">string|SymmetricPluginManager</span></span><strong> $plugins</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the symmetric cipher plugin manager</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$plugins</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

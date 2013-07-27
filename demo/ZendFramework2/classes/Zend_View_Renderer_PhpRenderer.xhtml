@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\View\Renderer\PhpRenderer - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#__content">$__content</a>
+          </li>
+          <li>
+            <a href="#__renderTrees">$__renderTrees</a>
+          </li>
+          <li>
+            <a href="#__template">$__template</a>
+          </li>
+          <li>
+            <a href="#__templates">$__templates</a>
+          </li>
+          <li>
+            <a href="#__templateResolver">$__templateResolver</a>
+          </li>
+          <li>
+            <a href="#__file">$__file</a>
+          </li>
+          <li>
+            <a href="#__helpers">$__helpers</a>
+          </li>
+          <li>
+            <a href="#__filterChain">$__filterChain</a>
+          </li>
+          <li>
+            <a href="#__vars">$__vars</a>
+          </li>
+          <li>
+            <a href="#__varsCache">$__varsCache</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__call">__call</a>
+          </li>
+          <li>
+            <a href="#__clone">__clone</a>
+          </li>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__get">__get</a>
+          </li>
+          <li>
+            <a href="#__isset">__isset</a>
+          </li>
+          <li>
+            <a href="#__set">__set</a>
+          </li>
+          <li>
+            <a href="#__unset">__unset</a>
+          </li>
+          <li>
+            <a href="#addTemplate">addTemplate</a>
+          </li>
+          <li>
+            <a href="#canRenderTrees">canRenderTrees</a>
+          </li>
+          <li>
+            <a href="#get">get</a>
+          </li>
+          <li>
+            <a href="#getEngine">getEngine</a>
+          </li>
+          <li>
+            <a href="#getFilterChain">getFilterChain</a>
+          </li>
+          <li>
+            <a href="#getHelperPluginManager">getHelperPluginManager</a>
+          </li>
+          <li>
+            <a href="#init">init</a>
+          </li>
+          <li>
+            <a href="#plugin">plugin</a>
+          </li>
+          <li>
+            <a href="#render">render</a>
+          </li>
+          <li>
+            <a href="#resolver">resolver</a>
+          </li>
+          <li>
+            <a href="#setCanRenderTrees">setCanRenderTrees</a>
+          </li>
+          <li>
+            <a href="#setFilterChain">setFilterChain</a>
+          </li>
+          <li>
+            <a href="#setHelperPluginManager">setHelperPluginManager</a>
+          </li>
+          <li>
+            <a href="#setResolver">setResolver</a>
+          </li>
+          <li>
+            <a href="#setVars">setVars</a>
+          </li>
+          <li>
+            <a href="#vars">vars</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\View\Renderer\</span>PhpRenderer</h2>
+        <div class="file-notice">
+          <p>Abstract class for Zend_View to help enforce private constructs.</p>
+          <p>
+            <pre>Note: all private variables in this class are prefixed with "__". This is to
+mark them as part of the internal implementation, and thus prevent conflict
+with variables injected into the renderer.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_View_Renderer_RendererInterface.xhtml">Zend\View\Renderer\RendererInterface</a>
+          </li>
+          <li>
+            <a href="../interfaces/Zend_View_Renderer_TreeRendererInterface.xhtml">Zend\View\Renderer\TreeRendererInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__content"/>
+            <h4><span class="label private">private</span>string 
+                
+                $__content</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="__renderTrees"/>
+            <h4><span class="label private">private</span>object 
+                
+                $__renderTrees</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="__template"/>
+            <h4><span class="label private">private</span>object 
+                
+                $__template</h4>
+            <ul class="varlist">
+              <li>Template being rendered</li>
+            </ul>
+          </li>
+          <li>
+            <a name="__templates"/>
+            <h4><span class="label private">private</span>array 
+                
+                $__templates</h4>
+            <ul class="varlist">
+              <li>Queue of templates to render</li>
+            </ul>
+          </li>
+          <li>
+            <a name="__templateResolver"/>
+            <h4><span class="label private">private</span>object 
+                
+                $__templateResolver</h4>
+            <ul class="varlist">
+              <li>Template resolver</li>
+            </ul>
+          </li>
+          <li>
+            <a name="__file"/>
+            <h4><span class="label private">private</span>string 
+                
+                $__file</h4>
+            <ul class="varlist">
+              <li>Script file name to execute</li>
+            </ul>
+          </li>
+          <li>
+            <a name="__helpers"/>
+            <h4><span class="label private">private</span>object 
+                
+                $__helpers</h4>
+            <ul class="varlist">
+              <li>Helper plugin manager</li>
+            </ul>
+          </li>
+          <li>
+            <a name="__filterChain"/>
+            <h4><span class="label private">private</span>object 
+                
+                $__filterChain</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="__vars"/>
+            <h4><span class="label private">private</span>object 
+                
+                $__vars</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="__varsCache"/>
+            <h4><span class="label private">private</span>array 
+                
+                $__varsCache</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $config</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$config</code> - Configuration key-value pairs.</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__call"/>
+            <h4><span class="label public">public</span>__call<span style="font-size:90%;">( <span class="param-type">string</span><strong> $method</strong>, <span class="param-type">array</span><strong> $argv</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Overloading: proxy to helpers<pre>Proxies to the attached plugin manager to retrieve, return, and potentially
+execute helpers.
+
+* If the helper does not define __invoke, it will be returned
+* If the helper does define __invoke, it will be called as a functor</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - </li>
+                <li><code>$argv</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="__clone"/>
+            <h4><span class="label public">public</span>__clone<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Make sure View variables are cloned when the view is cloned.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="__get"/>
+            <h4><span class="label public">public</span>__get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Overloading: proxy to Variables container</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="__isset"/>
+            <h4><span class="label public">public</span>__isset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Overloading: proxy to Variables container</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="__set"/>
+            <h4><span class="label public">public</span>__set<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Overloading: proxy to Variables container</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="__unset"/>
+            <h4><span class="label public">public</span>__unset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Overloading: proxy to Variables container</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addTemplate"/>
+            <h4><span class="label public">public</span>addTemplate<span style="font-size:90%;">( <span class="param-type">string</span><strong> $template</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a template to the stack</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$template</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="canRenderTrees"/>
+            <h4><span class="label public">public</span>canRenderTrees<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Can we render trees, or are we configured to do so?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="get"/>
+            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $key</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get a single variable</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEngine"/>
+            <h4><span class="label public">public</span>getEngine<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the template engine object<pre>Returns the object instance, as it is its own template engine</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFilterChain"/>
+            <h4><span class="label public">public</span>getFilterChain<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve filter chain for post-filtering script content</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHelperPluginManager"/>
+            <h4><span class="label public">public</span>getHelperPluginManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get helper plugin manager instance</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="init"/>
+            <h4><span class="label public">public</span>init<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Allow custom object initialization when extending Zend_View_Abstract or Zend_View<pre>Triggered by  as its final action.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="plugin"/>
+            <h4><span class="label public">public</span>plugin<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get plugin instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - Name of plugin to return</li>
+                <li><code>$options</code> - Options to pass to plugin constructor (if not already instantiated)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="render"/>
+            <h4><span class="label public">public</span>render<span style="font-size:90%;">( <span class="param-type"><span title="string|Model">string|Model</span></span><strong> $nameOrModel</strong>, <span class="param-type"><span title="null|array|Traversable">null|array|Traversable</span></span><strong> $values</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Processes a view script and returns the output.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$nameOrModel</code> - Either the template to use, or a</li>
+                <li><code>$values</code> - Values to use when rendering. If none</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The script output.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\DomainException if a ViewModel is passed, but does not</code>
+                </li>
+                <li>
+                  <code>Exception\InvalidArgumentException if the values passed are not</code>
+                </li>
+                <li>
+                  <code>Exception\RuntimeException if the template cannot be rendered</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="resolver"/>
+            <h4><span class="label public">public</span>resolver<span style="font-size:90%;">( <span class="param-type"><span title="null|string">null|string</span></span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve template name or template resolver</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCanRenderTrees"/>
+            <h4><span class="label public">public</span>setCanRenderTrees<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $renderTrees</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set flag indicating whether or not we should render trees of view models<pre>If set to true, the View instance will not attempt to render children
+separately, but instead pass the root view model directly to the PhpRenderer.
+It is then up to the developer to render the children from within the
+view script.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$renderTrees</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFilterChain"/>
+            <h4><span class="label public">public</span>setFilterChain<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Filter_FilterChain.xhtml">Zend\Filter\FilterChain</a></span><strong> $filters</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set filter chain</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$filters</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setHelperPluginManager"/>
+            <h4><span class="label public">public</span>setHelperPluginManager<span style="font-size:90%;">( <span class="param-type"><span title="string|HelperPluginManager">string|HelperPluginManager</span></span><strong> $helpers</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set helper plugin manager instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$helpers</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setResolver"/>
+            <h4><span class="label public">public</span>setResolver<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_View_Resolver_ResolverInterface.xhtml">Zend\View\Resolver\ResolverInterface</a></span><strong> $resolver</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set script resolver</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$resolver</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setVars"/>
+            <h4><span class="label public">public</span>setVars<span style="font-size:90%;">( <span class="param-type"><span title="array|ArrayAccess">array|ArrayAccess</span></span><strong> $variables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set variable storage<pre>Expects either an array, or an object implementing ArrayAccess.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$variables</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="vars"/>
+            <h4><span class="label public">public</span>vars<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $key</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get a single variable, or all variables</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

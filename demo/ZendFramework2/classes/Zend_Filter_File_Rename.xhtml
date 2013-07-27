@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Filter\File\Rename - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#files">$files</a>
+          </li>
+          <li>
+            <a href="#options">$options</a>
+          </li>
+          <li>
+            <a href="#hasPcreUnicodeSupport">$hasPcreUnicodeSupport</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__invoke">__invoke</a>
+          </li>
+          <li>
+            <a href="#_convertOptions">_convertOptions</a>
+          </li>
+          <li>
+            <a href="#_getFileName">_getFileName</a>
+          </li>
+          <li>
+            <a href="#addFile">addFile</a>
+          </li>
+          <li>
+            <a href="#filter">filter</a>
+          </li>
+          <li>
+            <a href="#getFile">getFile</a>
+          </li>
+          <li>
+            <a href="#getNewName">getNewName</a>
+          </li>
+          <li>
+            <a href="#getOptions">getOptions</a>
+          </li>
+          <li>
+            <a href="#hasPcreUnicodeSupport">hasPcreUnicodeSupport</a>
+          </li>
+          <li>
+            <a href="#isOptions">isOptions</a>
+          </li>
+          <li>
+            <a href="#setFile">setFile</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Filter\File\</span>Rename</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="files"/>
+            <h4><span class="label protected">protected</span>
+                $files</h4>
+            <ul class="varlist">
+              <li>Internal array of array(source, target, overwrite)</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="string|array|Traversable">string|array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Class constructor<pre>Options argument may be either a string, a Zend_Config object, or an array.
+If an array or Zend_Config object, it accepts the following keys:
+'source'    =&gt; Source filename or directory which will be renamed
+'target'    =&gt; Target filename or directory, the new name of the source file
+'overwrite' =&gt; Shall existing files be overwritten ?</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - Target file or directory to be renamed</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__invoke"/>
+            <h4><span class="label public">public</span>__invoke<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Invoke filter as a command<pre>Proxies to </pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\ExceptionInterface If filtering $value is impossible</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addFile"/>
+            <h4><span class="label public">public</span>addFile<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a new file or directory as target to the existing ones<pre>Array accepts the following keys:
+'source'    =&gt; Source filename or directory which will be renamed
+'target'    =&gt; Target filename or directory, the new name of the sourcefile
+'overwrite' =&gt; Shall existing files be overwritten ?</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - Old file or directory to be rewritten</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="filter"/>
+            <h4><span class="label public">public</span>filter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Defined by Zend\Filter\Filter<pre>Renames the file $value to the new name set before
+Returns the file $value, removing all but digit characters</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - Full path of file to change</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The new filename which has been set, or false when there were errors</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFile"/>
+            <h4><span class="label public">public</span>getFile<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the files to rename and their new name and location</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNewName"/>
+            <h4><span class="label public">public</span>getNewName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong>, <span class="param-type">boolean</span><strong> $source</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns only the new filename without moving it But existing files will be erased when the overwrite option is true</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - Full path of file to change</li>
+                <li><code>$source</code> - Return internal informations</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The new filename which has been set</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException If the target file already exists.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getOptions"/>
+            <h4><span class="label public">public</span>getOptions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve options representing object state</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasPcreUnicodeSupport"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>hasPcreUnicodeSupport<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFile"/>
+            <h4><span class="label public">public</span>setFile<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a new file or directory as target, deleting existing ones<pre>Array accepts the following keys:
+'source'    =&gt; Source filename or directory which will be renamed
+'target'    =&gt; Target filename or directory, the new name of the sourcefile
+'overwrite' =&gt; Shall existing files be overwritten ?</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - Old file or directory to be rewritten</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_convertOptions"/>
+            <h4><span class="label protected">protected</span>_convertOptions<span style="font-size:90%;">( <span class="param-type">array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Internal method for creating the file array Supports single and nested arrays</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getFileName"/>
+            <h4><span class="label protected">protected</span>_getFileName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $file</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Internal method to resolve the requested source and return all other related parameters</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$file</code> - Filename to get the informations for</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isOptions"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>isOptions<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

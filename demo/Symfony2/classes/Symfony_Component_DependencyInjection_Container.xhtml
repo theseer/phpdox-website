@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\DependencyInjection\Container - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#parameterBag">$parameterBag</a>
+          </li>
+          <li>
+            <a href="#services">$services</a>
+          </li>
+          <li>
+            <a href="#methodMap">$methodMap</a>
+          </li>
+          <li>
+            <a href="#aliases">$aliases</a>
+          </li>
+          <li>
+            <a href="#scopes">$scopes</a>
+          </li>
+          <li>
+            <a href="#scopeChildren">$scopeChildren</a>
+          </li>
+          <li>
+            <a href="#scopedServices">$scopedServices</a>
+          </li>
+          <li>
+            <a href="#scopeStacks">$scopeStacks</a>
+          </li>
+          <li>
+            <a href="#loading">$loading</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addScope">addScope</a>
+          </li>
+          <li>
+            <a href="#camelize">camelize</a>
+          </li>
+          <li>
+            <a href="#compile">compile</a>
+          </li>
+          <li>
+            <a href="#enterScope">enterScope</a>
+          </li>
+          <li>
+            <a href="#get">get</a>
+          </li>
+          <li>
+            <a href="#getParameter">getParameter</a>
+          </li>
+          <li>
+            <a href="#getParameterBag">getParameterBag</a>
+          </li>
+          <li>
+            <a href="#getServiceIds">getServiceIds</a>
+          </li>
+          <li>
+            <a href="#has">has</a>
+          </li>
+          <li>
+            <a href="#hasParameter">hasParameter</a>
+          </li>
+          <li>
+            <a href="#hasScope">hasScope</a>
+          </li>
+          <li>
+            <a href="#initialized">initialized</a>
+          </li>
+          <li>
+            <a href="#isFrozen">isFrozen</a>
+          </li>
+          <li>
+            <a href="#isScopeActive">isScopeActive</a>
+          </li>
+          <li>
+            <a href="#leaveScope">leaveScope</a>
+          </li>
+          <li>
+            <a href="#set">set</a>
+          </li>
+          <li>
+            <a href="#setParameter">setParameter</a>
+          </li>
+          <li>
+            <a href="#underscore">underscore</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\DependencyInjection\</span>Container</h2>
+        <div class="file-notice">
+          <p>Container is a dependency injection container.</p>
+          <p>
+            <pre>It gives access to object instances (services).
+
+Services and parameters are simple key/pair stores.
+
+Parameter and service keys are case insensitive.
+
+A service id can contain lowercased letters, digits, underscores, and dots.
+Underscores are used to separate words, and dots to group services
+under namespaces:
+
+&lt;ul&gt;
+  &lt;li&gt;request&lt;/li&gt;
+  &lt;li&gt;mysql_session_storage&lt;/li&gt;
+  &lt;li&gt;symfony.mysql_session_storage&lt;/li&gt;
+&lt;/ul&gt;
+
+A service can also be defined by creating a method named
+getXXXService(), where XXX is the camelized version of the id:
+
+&lt;ul&gt;
+  &lt;li&gt;request -&gt; getRequestService()&lt;/li&gt;
+  &lt;li&gt;mysql_session_storage -&gt; getMysqlSessionStorageService()&lt;/li&gt;
+  &lt;li&gt;symfony.mysql_session_storage -&gt; getSymfony_MysqlSessionStorageService()&lt;/li&gt;
+&lt;/ul&gt;
+
+The container can have three possible behaviors when a service does not exist:
+
+ * EXCEPTION_ON_INVALID_REFERENCE: Throws an exception (the default)
+ * NULL_ON_INVALID_REFERENCE:      Returns null
+ * IGNORE_ON_INVALID_REFERENCE:    Ignores the wrapping command asking for the reference
+                                   (for instance, ignore a setter if the service does not exist)</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+          <li><b>Author: </b>Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Symfony_Component_DependencyInjection_IntrospectableContainerInterface.xhtml">Symfony\Component\DependencyInjection\IntrospectableContainerInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="parameterBag"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $parameterBag</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="services"/>
+            <h4><span class="label protected">protected</span>
+                $services</h4>
+          </li>
+          <li>
+            <a name="methodMap"/>
+            <h4><span class="label protected">protected</span>
+                $methodMap</h4>
+          </li>
+          <li>
+            <a name="aliases"/>
+            <h4><span class="label protected">protected</span>
+                $aliases</h4>
+          </li>
+          <li>
+            <a name="scopes"/>
+            <h4><span class="label protected">protected</span>
+                $scopes</h4>
+          </li>
+          <li>
+            <a name="scopeChildren"/>
+            <h4><span class="label protected">protected</span>
+                $scopeChildren</h4>
+          </li>
+          <li>
+            <a name="scopedServices"/>
+            <h4><span class="label protected">protected</span>
+                $scopedServices</h4>
+          </li>
+          <li>
+            <a name="scopeStacks"/>
+            <h4><span class="label protected">protected</span>
+                $scopeStacks</h4>
+          </li>
+          <li>
+            <a name="loading"/>
+            <h4><span class="label protected">protected</span>
+                $loading</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_DependencyInjection_ParameterBag_ParameterBagInterface.xhtml">Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface</a></span><strong> $parameterBag</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$parameterBag</code> - A ParameterBagInterface instance</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addScope"/>
+            <h4><span class="label public">public</span>addScope<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_DependencyInjection_ScopeInterface.xhtml">Symfony\Component\DependencyInjection\ScopeInterface</a></span><strong> $scope</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a scope to the container.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$scope</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="camelize"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>camelize<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Camelizes a string.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - A string to camelize</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The camelized string</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="compile"/>
+            <h4><span class="label public">public</span>compile<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Compiles the container.<pre>This method does two things:
+
+ * Parameter values are resolved;
+ * The parameter bag is frozen.</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="enterScope"/>
+            <h4><span class="label public">public</span>enterScope<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>This is called when you enter a scope</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>RuntimeException         When the parent scope is inactive</code>
+                </li>
+                <li>
+                  <code>InvalidArgumentException When the scope does not exist</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="get"/>
+            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type">integer</span><strong> $invalidBehavior</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a service.<pre>If a service is defined both through a set() method and
+with a get{$id}Service() method, the former has always precedence.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - The service identifier</li>
+                <li><code>$invalidBehavior</code> - The behavior when the service does not exist</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The associated service</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidArgumentException if the service is not defined</code>
+                </li>
+                <li>
+                  <code>ServiceCircularReferenceException When a circular reference is detected</code>
+                </li>
+                <li>
+                  <code>ServiceNotFoundException When the service is not defined</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getParameter"/>
+            <h4><span class="label public">public</span>getParameter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a parameter.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - The parameter name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The parameter value</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidArgumentException if the parameter is not defined</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getParameterBag"/>
+            <h4><span class="label public">public</span>getParameterBag<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the service container parameter bag.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A ParameterBagInterface instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getServiceIds"/>
+            <h4><span class="label public">public</span>getServiceIds<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets all service ids.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of all defined service ids</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="has"/>
+            <h4><span class="label public">public</span>has<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns true if the given service is defined.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - The service identifier</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if the service is defined, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasParameter"/>
+            <h4><span class="label public">public</span>hasParameter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if a parameter exists.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - The parameter name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The presence of parameter in container</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasScope"/>
+            <h4><span class="label public">public</span>hasScope<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether this container has a certain scope</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - The name of the scope</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="initialized"/>
+            <h4><span class="label public">public</span>initialized<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns true if the given service has actually been initialized</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - The service identifier</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if service has already been initialized, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isFrozen"/>
+            <h4><span class="label public">public</span>isFrozen<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns true if the container parameter bag are frozen.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if the container parameter bag are frozen, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isScopeActive"/>
+            <h4><span class="label public">public</span>isScopeActive<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether this scope is currently active<pre>This does not actually check if the passed scope actually exists.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="leaveScope"/>
+            <h4><span class="label public">public</span>leaveScope<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>This is called to leave the current scope, and move back to the parent scope.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - The name of the scope to leave</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidArgumentException if the scope is not active</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="set"/>
+            <h4><span class="label public">public</span>set<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type">invalid method call</span><strong> $service</strong>, <span class="param-type">string</span><strong> $scope</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a service.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - The service identifier</li>
+                <li><code>$service</code> - The service instance</li>
+                <li><code>$scope</code> - The scope of the service</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>RuntimeException When trying to set a service in an inactive scope</code>
+                </li>
+                <li>
+                  <code>InvalidArgumentException When trying to set a service in the prototype scope</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setParameter"/>
+            <h4><span class="label public">public</span>setParameter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a parameter.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - The parameter name</li>
+                <li><code>$value</code> - The parameter value</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="underscore"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>underscore<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>A string to underscore.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - The string to underscore</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The underscored string</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

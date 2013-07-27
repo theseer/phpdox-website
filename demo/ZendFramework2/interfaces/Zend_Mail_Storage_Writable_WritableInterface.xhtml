@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Mail\Storage\Writable\WritableInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#appendMessage">appendMessage</a>
+          </li>
+          <li>
+            <a href="#copyMessage">copyMessage</a>
+          </li>
+          <li>
+            <a href="#createFolder">createFolder</a>
+          </li>
+          <li>
+            <a href="#moveMessage">moveMessage</a>
+          </li>
+          <li>
+            <a href="#removeFolder">removeFolder</a>
+          </li>
+          <li>
+            <a href="#renameFolder">renameFolder</a>
+          </li>
+          <li>
+            <a href="#setFlags">setFlags</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Mail\Storage\Writable\</span>WritableInterface</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="appendMessage"/>
+            <h4><span class="label public">public</span>appendMessage<span style="font-size:90%;">( <span class="param-type"><span title="string|\Zend\Mail\Message|\Zend\Mime\Message">Message</span></span><strong> $message</strong>, <span class="param-type"><span title="null|string|\Zend\Mail\Storage\Folder">Folder</span></span><strong> $folder</strong>, <span class="param-type"><span title="null|array">null|array</span></span><strong> $flags</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>append a new message to mail storage</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - message as string or instance of message class</li>
+                <li><code>$folder</code> - folder for new message, else current folder is taken</li>
+                <li><code>$flags</code> - set flags for new message, else a default set is used</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Mail\Storage\Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="copyMessage"/>
+            <h4><span class="label public">public</span>copyMessage<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong>, <span class="param-type"><span title="string|\Zend\Mail\Storage\Folder">Folder</span></span><strong> $folder</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>copy an existing message</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - number of message</li>
+                <li><code>$folder</code> - name or instance of target folder</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Mail\Storage\Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createFolder"/>
+            <h4><span class="label public">public</span>createFolder<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type"><span title="string|\Zend\Mail\Storage\Folder">Folder</span></span><strong> $parentFolder</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>create a new folder<pre>This method also creates parent folders if necessary. Some mail storages may restrict, which folder
+may be used as parent or which chars may be used in the folder name</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - global name of folder, local name if $parentFolder is set</li>
+                <li><code>$parentFolder</code> - parent folder for new folder, else root folder is parent</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Mail\Storage\Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="moveMessage"/>
+            <h4><span class="label public">public</span>moveMessage<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong>, <span class="param-type"><span title="string|\Zend\Mail\Storage\Folder">Folder</span></span><strong> $folder</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>move an existing message</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - number of message</li>
+                <li><code>$folder</code> - name or instance of target folder</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Mail\Storage\Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeFolder"/>
+            <h4><span class="label public">public</span>removeFolder<span style="font-size:90%;">( <span class="param-type"><span title="string|\Zend\Mail\Storage\Folder">Folder</span></span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>remove a folder</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - name or instance of folder</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Mail\Storage\Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="renameFolder"/>
+            <h4><span class="label public">public</span>renameFolder<span style="font-size:90%;">( <span class="param-type"><span title="string|\Zend\Mail\Storage\Folder">Folder</span></span><strong> $oldName</strong>, <span class="param-type">string</span><strong> $newName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>rename and/or move folder<pre>The new name has the same restrictions as in createFolder()</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$oldName</code> - name or instance of folder</li>
+                <li><code>$newName</code> - new global name of folder</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Mail\Storage\Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFlags"/>
+            <h4><span class="label public">public</span>setFlags<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong>, <span class="param-type">array</span><strong> $flags</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>set flags for message<pre>NOTE: this method can't set the recent flag.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - number of message</li>
+                <li><code>$flags</code> - new flags for message</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Mail\Storage\Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Routing\Matcher\Dumper\PhpMatcherDumper - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#buildPrefixTree">buildPrefixTree</a>
+          </li>
+          <li>
+            <a href="#compilePrefixRoutes">compilePrefixRoutes</a>
+          </li>
+          <li>
+            <a href="#compileRoute">compileRoute</a>
+          </li>
+          <li>
+            <a href="#compileRoutes">compileRoutes</a>
+          </li>
+          <li>
+            <a href="#dump">dump</a>
+          </li>
+          <li>
+            <a href="#generateMatchMethod">generateMatchMethod</a>
+          </li>
+          <li>
+            <a href="#getRoutes">getRoutes</a>
+          </li>
+          <li>
+            <a href="#groupRoutesByHostRegex">groupRoutesByHostRegex</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Routing\Matcher\Dumper\</span>PhpMatcherDumper</h2>
+        <div class="file-notice">
+          <p>PhpMatcherDumper creates a PHP class able to match URLs for a given set of routes.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+          <li><b>Author: </b>Tobias Schultze &lt;http://tobion.de&gt;</li>
+          <li><b>Author: </b>Arnaud Le Blanc &lt;arnaud.lb@gmail.com&gt;</li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Routing_RouteCollection.xhtml">Symfony\Component\Routing\RouteCollection</a></span><strong> $routes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$routes</code> - The RouteCollection to dump</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="dump"/>
+            <h4><span class="label public">public</span>dump<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Dumps a set of routes to a PHP class.<pre>Available options:
+
+ * class:      The class name
+ * base_class: The base class name</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - An array of options</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A PHP class representing the matcher class</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRoutes"/>
+            <h4><span class="label public">public</span>getRoutes<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="buildPrefixTree"/>
+            <h4><span class="label private">private</span>buildPrefixTree<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Routing_Matcher_Dumper_DumperCollection.xhtml">Symfony\Component\Routing\Matcher\Dumper\DumperCollection</a></span><strong> $collection</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Organizes the routes into a prefix tree.<pre>Routes order is preserved such that traversing the tree will traverse the
+routes in the origin order.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$collection</code> - A collection of routes</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="compilePrefixRoutes"/>
+            <h4><span class="label private">private</span>compilePrefixRoutes<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Routing_Matcher_Dumper_DumperPrefixCollection.xhtml">Symfony\Component\Routing\Matcher\Dumper\DumperPrefixCollection</a></span><strong> $collection</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $supportsRedirections</strong>, <span class="param-type">string</span><strong> $parentPrefix</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates PHP code recursively to match a tree of routes</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$collection</code> - A DumperPrefixCollection instance</li>
+                <li><code>$supportsRedirections</code> - Whether redirections are supported by the base class</li>
+                <li><code>$parentPrefix</code> - Prefix of the parent collection</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>PHP code</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="compileRoute"/>
+            <h4><span class="label private">private</span>compileRoute<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Routing_Route.xhtml">Symfony\Component\Routing\Route</a></span><strong> $route</strong>, <span class="param-type">string</span><strong> $name</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $supportsRedirections</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $parentPrefix</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Compiles a single Route to PHP code used to match it against the path info.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$route</code> - A Route instance</li>
+                <li><code>$name</code> - The name of the Route</li>
+                <li><code>$supportsRedirections</code> - Whether redirections are supported by the base class</li>
+                <li><code>$parentPrefix</code> - The prefix of the parent collection used to optimize the code</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>PHP code</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\LogicException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="compileRoutes"/>
+            <h4><span class="label private">private</span>compileRoutes<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Routing_RouteCollection.xhtml">Symfony\Component\Routing\RouteCollection</a></span><strong> $routes</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $supportsRedirections</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates PHP code to match a RouteCollection with all its routes.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$routes</code> - A RouteCollection instance</li>
+                <li><code>$supportsRedirections</code> - Whether redirections are supported by the base class</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>PHP code</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="generateMatchMethod"/>
+            <h4><span class="label private">private</span>generateMatchMethod<span style="font-size:90%;">( <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $supportsRedirections</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates the code for the match method implementing UrlMatcherInterface.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$supportsRedirections</code> - Whether redirections are supported by the base class</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Match method as PHP code</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="groupRoutesByHostRegex"/>
+            <h4><span class="label private">private</span>groupRoutesByHostRegex<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Routing_RouteCollection.xhtml">Symfony\Component\Routing\RouteCollection</a></span><strong> $routes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Groups consecutive routes having the same host regex.<pre>The result is a collection of collections of routes having the same host regex.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$routes</code> - A flat RouteCollection</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A collection with routes grouped by host regex in sub-collections</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

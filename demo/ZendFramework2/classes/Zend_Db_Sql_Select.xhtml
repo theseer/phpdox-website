@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Db\Sql\Select - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#SELECT">SELECT</a>
+          </li>
+          <li>
+            <a href="#COLUMNS">COLUMNS</a>
+          </li>
+          <li>
+            <a href="#TABLE">TABLE</a>
+          </li>
+          <li>
+            <a href="#JOINS">JOINS</a>
+          </li>
+          <li>
+            <a href="#WHERE">WHERE</a>
+          </li>
+          <li>
+            <a href="#GROUP">GROUP</a>
+          </li>
+          <li>
+            <a href="#HAVING">HAVING</a>
+          </li>
+          <li>
+            <a href="#ORDER">ORDER</a>
+          </li>
+          <li>
+            <a href="#LIMIT">LIMIT</a>
+          </li>
+          <li>
+            <a href="#OFFSET">OFFSET</a>
+          </li>
+          <li>
+            <a href="#JOIN_INNER">JOIN_INNER</a>
+          </li>
+          <li>
+            <a href="#JOIN_OUTER">JOIN_OUTER</a>
+          </li>
+          <li>
+            <a href="#JOIN_LEFT">JOIN_LEFT</a>
+          </li>
+          <li>
+            <a href="#JOIN_RIGHT">JOIN_RIGHT</a>
+          </li>
+          <li>
+            <a href="#SQL_STAR">SQL_STAR</a>
+          </li>
+          <li>
+            <a href="#ORDER_ASCENDING">ORDER_ASCENDING</a>
+          </li>
+          <li>
+            <a href="#ORDER_DESCENDING">ORDER_DESCENDING</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#specifications">$specifications</a>
+          </li>
+          <li>
+            <a href="#tableReadOnly">$tableReadOnly</a>
+          </li>
+          <li>
+            <a href="#prefixColumnsWithTable">$prefixColumnsWithTable</a>
+          </li>
+          <li>
+            <a href="#table">$table</a>
+          </li>
+          <li>
+            <a href="#columns">$columns</a>
+          </li>
+          <li>
+            <a href="#joins">$joins</a>
+          </li>
+          <li>
+            <a href="#where">$where</a>
+          </li>
+          <li>
+            <a href="#order">$order</a>
+          </li>
+          <li>
+            <a href="#group">$group</a>
+          </li>
+          <li>
+            <a href="#having">$having</a>
+          </li>
+          <li>
+            <a href="#limit">$limit</a>
+          </li>
+          <li>
+            <a href="#offset">$offset</a>
+          </li>
+          <li>
+            <a href="#specifications">$specifications</a>
+          </li>
+          <li>
+            <a href="#processInfo">$processInfo</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__clone">__clone</a>
+          </li>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__get">__get</a>
+          </li>
+          <li>
+            <a href="#columns">columns</a>
+          </li>
+          <li>
+            <a href="#createSqlFromSpecificationAndParameters">createSqlFromSpecificationAndParameters</a>
+          </li>
+          <li>
+            <a href="#from">from</a>
+          </li>
+          <li>
+            <a href="#getRawState">getRawState</a>
+          </li>
+          <li>
+            <a href="#getSqlString">getSqlString</a>
+          </li>
+          <li>
+            <a href="#group">group</a>
+          </li>
+          <li>
+            <a href="#having">having</a>
+          </li>
+          <li>
+            <a href="#join">join</a>
+          </li>
+          <li>
+            <a href="#limit">limit</a>
+          </li>
+          <li>
+            <a href="#offset">offset</a>
+          </li>
+          <li>
+            <a href="#order">order</a>
+          </li>
+          <li>
+            <a href="#prepareStatement">prepareStatement</a>
+          </li>
+          <li>
+            <a href="#processExpression">processExpression</a>
+          </li>
+          <li>
+            <a href="#processGroup">processGroup</a>
+          </li>
+          <li>
+            <a href="#processHaving">processHaving</a>
+          </li>
+          <li>
+            <a href="#processJoins">processJoins</a>
+          </li>
+          <li>
+            <a href="#processLimit">processLimit</a>
+          </li>
+          <li>
+            <a href="#processOffset">processOffset</a>
+          </li>
+          <li>
+            <a href="#processOrder">processOrder</a>
+          </li>
+          <li>
+            <a href="#processSelect">processSelect</a>
+          </li>
+          <li>
+            <a href="#processSubSelect">processSubSelect</a>
+          </li>
+          <li>
+            <a href="#processWhere">processWhere</a>
+          </li>
+          <li>
+            <a href="#reset">reset</a>
+          </li>
+          <li>
+            <a href="#setSpecification">setSpecification</a>
+          </li>
+          <li>
+            <a href="#where">where</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Db\Sql\</span>Select</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_Db_Sql_SqlInterface.xhtml">Zend\Db\Sql\SqlInterface</a>
+          </li>
+          <li>
+            <a href="../interfaces/Zend_Db_Sql_PreparableSqlInterface.xhtml">Zend\Db\Sql\PreparableSqlInterface</a>
+          </li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="SELECT"/>SELECT = 'select'<hr/></li>
+          <li><a name="COLUMNS"/>COLUMNS = 'columns'<hr/></li>
+          <li><a name="TABLE"/>TABLE = 'table'<hr/></li>
+          <li><a name="JOINS"/>JOINS = 'joins'<hr/></li>
+          <li><a name="WHERE"/>WHERE = 'where'<hr/></li>
+          <li><a name="GROUP"/>GROUP = 'group'<hr/></li>
+          <li><a name="HAVING"/>HAVING = 'having'<hr/></li>
+          <li><a name="ORDER"/>ORDER = 'order'<hr/></li>
+          <li><a name="LIMIT"/>LIMIT = 'limit'<hr/></li>
+          <li><a name="OFFSET"/>OFFSET = 'offset'<hr/></li>
+          <li><a name="JOIN_INNER"/>JOIN_INNER = 'inner'<hr/></li>
+          <li><a name="JOIN_OUTER"/>JOIN_OUTER = 'outer'<hr/></li>
+          <li><a name="JOIN_LEFT"/>JOIN_LEFT = 'left'<hr/></li>
+          <li><a name="JOIN_RIGHT"/>JOIN_RIGHT = 'right'<hr/></li>
+          <li><a name="SQL_STAR"/>SQL_STAR = '*'<hr/></li>
+          <li><a name="ORDER_ASCENDING"/>ORDER_ASCENDING = 'ASC'<hr/></li>
+          <li><a name="ORDER_DESCENDING"/>ORDER_DESCENDING = 'DESC'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="specifications"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $specifications</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="tableReadOnly"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $tableReadOnly</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="prefixColumnsWithTable"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $prefixColumnsWithTable</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="table"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $table</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="columns"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $columns</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="joins"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $joins</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="where"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $where</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="order"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $order</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="group"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $group</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="having"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $having</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="limit"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $limit</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="offset"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $offset</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="null|string">null|string</span></span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$table</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__clone"/>
+            <h4><span class="label public">public</span>__clone<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>__clone<pre>Resets the where object each time the Select is cloned.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="__get"/>
+            <h4><span class="label public">public</span>__get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Variable overloading</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="columns"/>
+            <h4><span class="label public">public</span>columns<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $columns</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $prefixColumnsWithTable</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specify columns from which to select<pre>Possible valid states:
+
+  array(*)
+
+  array(value, ...)
+    value can be strings or Expression objects
+
+  array(string =&gt; value, ...)
+    key string will be use as alias,
+    value can be string or Expression objects</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columns</code> - </li>
+                <li><code>$prefixColumnsWithTable</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="from"/>
+            <h4><span class="label public">public</span>from<span style="font-size:90%;">( <span class="param-type"><span title="string|array|TableIdentifier">string|array|TableIdentifier</span></span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create from clause</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$table</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRawState"/>
+            <h4><span class="label public">public</span>getRawState<span style="font-size:90%;">( <span class="param-type"/><strong> $key</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getSqlString"/>
+            <h4><span class="label public">public</span>getSqlString<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Platform_PlatformInterface.xhtml">Zend\Db\Adapter\Platform\PlatformInterface</a></span><strong> $adapterPlatform</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get SQL string for statement</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$adapterPlatform</code> - If null, defaults to Sql92</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="group"/>
+            <h4><span class="label public">public</span>group<span style="font-size:90%;">( <span class="param-type"/><strong> $group</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="having"/>
+            <h4><span class="label public">public</span>having<span style="font-size:90%;">( <span class="param-type"><span title="Where|\Closure|string|array">Closure|string|array</span></span><strong> $predicate</strong>, <span class="param-type">string</span><strong> $combination</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create where clause</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$predicate</code> - </li>
+                <li><code>$combination</code> - One of the OP_* constants from Predicate\PredicateSet</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="join"/>
+            <h4><span class="label public">public</span>join<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $name</strong>, <span class="param-type">string</span><strong> $on</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $columns</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create join clause</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$on</code> - </li>
+                <li><code>$columns</code> - </li>
+                <li><code>$type</code> - one of the JOIN_* constants</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="limit"/>
+            <h4><span class="label public">public</span>limit<span style="font-size:90%;">( <span class="param-type">int</span><strong> $limit</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$limit</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offset"/>
+            <h4><span class="label public">public</span>offset<span style="font-size:90%;">( <span class="param-type">int</span><strong> $offset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$offset</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="order"/>
+            <h4><span class="label public">public</span>order<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $order</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$order</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepareStatement"/>
+            <h4><span class="label public">public</span>prepareStatement<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Db_Adapter_Adapter.xhtml">Zend\Db\Adapter\Adapter</a></span><strong> $adapter</strong>, <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_StatementContainerInterface.xhtml">Zend\Db\Adapter\StatementContainerInterface</a></span><strong> $statementContainer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepare statement</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$adapter</code> - </li>
+                <li><code>$statementContainer</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="reset"/>
+            <h4><span class="label public">public</span>reset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $part</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$part</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSpecification"/>
+            <h4><span class="label public">public</span>setSpecification<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"/><strong> $specification</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="where"/>
+            <h4><span class="label public">public</span>where<span style="font-size:90%;">( <span class="param-type"><span title="Where|\Closure|string|array">Closure|string|array</span></span><strong> $predicate</strong>, <span class="param-type">string</span><strong> $combination</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create where clause</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$predicate</code> - </li>
+                <li><code>$combination</code> - One of the OP_* constants from Predicate\PredicateSet</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createSqlFromSpecificationAndParameters"/>
+            <h4><span class="label protected">protected</span>createSqlFromSpecificationAndParameters<span style="font-size:90%;">( <span class="param-type"/><strong> $specification</strong>, <span class="param-type"/><strong> $parameters</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$specification</code> - </li>
+                <li><code>$parameters</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="processExpression"/>
+            <h4><span class="label protected">protected</span>processExpression<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Db_Sql_ExpressionInterface.xhtml">Zend\Db\Sql\ExpressionInterface</a></span><strong> $expression</strong>, <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Platform_PlatformInterface.xhtml">Zend\Db\Adapter\Platform\PlatformInterface</a></span><strong> $platform</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_Adapter.xhtml">Zend\Db\Adapter\Adapter</a></span><strong> $adapter</strong>, <span class="param-type"/><strong> $namedParameterPrefix</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="processGroup"/>
+            <h4><span class="label protected">protected</span>processGroup<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Platform_PlatformInterface.xhtml">Zend\Db\Adapter\Platform\PlatformInterface</a></span><strong> $platform</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_Adapter.xhtml">Zend\Db\Adapter\Adapter</a></span><strong> $adapter</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_ParameterContainer.xhtml">Zend\Db\Adapter\ParameterContainer</a></span><strong> $parameterContainer</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="processHaving"/>
+            <h4><span class="label protected">protected</span>processHaving<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Platform_PlatformInterface.xhtml">Zend\Db\Adapter\Platform\PlatformInterface</a></span><strong> $platform</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_Adapter.xhtml">Zend\Db\Adapter\Adapter</a></span><strong> $adapter</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_ParameterContainer.xhtml">Zend\Db\Adapter\ParameterContainer</a></span><strong> $parameterContainer</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="processJoins"/>
+            <h4><span class="label protected">protected</span>processJoins<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Platform_PlatformInterface.xhtml">Zend\Db\Adapter\Platform\PlatformInterface</a></span><strong> $platform</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_Adapter.xhtml">Zend\Db\Adapter\Adapter</a></span><strong> $adapter</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_ParameterContainer.xhtml">Zend\Db\Adapter\ParameterContainer</a></span><strong> $parameterContainer</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="processLimit"/>
+            <h4><span class="label protected">protected</span>processLimit<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Platform_PlatformInterface.xhtml">Zend\Db\Adapter\Platform\PlatformInterface</a></span><strong> $platform</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_Adapter.xhtml">Zend\Db\Adapter\Adapter</a></span><strong> $adapter</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_ParameterContainer.xhtml">Zend\Db\Adapter\ParameterContainer</a></span><strong> $parameterContainer</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="processOffset"/>
+            <h4><span class="label protected">protected</span>processOffset<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Platform_PlatformInterface.xhtml">Zend\Db\Adapter\Platform\PlatformInterface</a></span><strong> $platform</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_Adapter.xhtml">Zend\Db\Adapter\Adapter</a></span><strong> $adapter</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_ParameterContainer.xhtml">Zend\Db\Adapter\ParameterContainer</a></span><strong> $parameterContainer</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="processOrder"/>
+            <h4><span class="label protected">protected</span>processOrder<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Platform_PlatformInterface.xhtml">Zend\Db\Adapter\Platform\PlatformInterface</a></span><strong> $platform</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_Adapter.xhtml">Zend\Db\Adapter\Adapter</a></span><strong> $adapter</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_ParameterContainer.xhtml">Zend\Db\Adapter\ParameterContainer</a></span><strong> $parameterContainer</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="processSelect"/>
+            <h4><span class="label protected">protected</span>processSelect<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Platform_PlatformInterface.xhtml">Zend\Db\Adapter\Platform\PlatformInterface</a></span><strong> $platform</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_Adapter.xhtml">Zend\Db\Adapter\Adapter</a></span><strong> $adapter</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_ParameterContainer.xhtml">Zend\Db\Adapter\ParameterContainer</a></span><strong> $parameterContainer</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="processSubSelect"/>
+            <h4><span class="label protected">protected</span>processSubSelect<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Db_Sql_Select.xhtml">Zend\Db\Sql\Select</a></span><strong> $subselect</strong>, <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Platform_PlatformInterface.xhtml">Zend\Db\Adapter\Platform\PlatformInterface</a></span><strong> $platform</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_Adapter.xhtml">Zend\Db\Adapter\Adapter</a></span><strong> $adapter</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_ParameterContainer.xhtml">Zend\Db\Adapter\ParameterContainer</a></span><strong> $parameterContainer</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="processWhere"/>
+            <h4><span class="label protected">protected</span>processWhere<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Platform_PlatformInterface.xhtml">Zend\Db\Adapter\Platform\PlatformInterface</a></span><strong> $platform</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_Adapter.xhtml">Zend\Db\Adapter\Adapter</a></span><strong> $adapter</strong>, <span class="param-type"><a href="../classes/Zend_Db_Adapter_ParameterContainer.xhtml">Zend\Db\Adapter\ParameterContainer</a></span><strong> $parameterContainer</strong> )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

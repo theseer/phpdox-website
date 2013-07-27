@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Mail\Storage\AbstractStorage - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#has">$has</a>
+          </li>
+          <li>
+            <a href="#iterationPos">$iterationPos</a>
+          </li>
+          <li>
+            <a href="#iterationMax">$iterationMax</a>
+          </li>
+          <li>
+            <a href="#messageClass">$messageClass</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__destruct">__destruct</a>
+          </li>
+          <li>
+            <a href="#__get">__get</a>
+          </li>
+          <li>
+            <a href="#close">close</a>
+          </li>
+          <li>
+            <a href="#count">count</a>
+          </li>
+          <li>
+            <a href="#countMessages">countMessages</a>
+          </li>
+          <li>
+            <a href="#current">current</a>
+          </li>
+          <li>
+            <a href="#getCapabilities">getCapabilities</a>
+          </li>
+          <li>
+            <a href="#getMessage">getMessage</a>
+          </li>
+          <li>
+            <a href="#getNumberByUniqueId">getNumberByUniqueId</a>
+          </li>
+          <li>
+            <a href="#getRawContent">getRawContent</a>
+          </li>
+          <li>
+            <a href="#getRawHeader">getRawHeader</a>
+          </li>
+          <li>
+            <a href="#getSize">getSize</a>
+          </li>
+          <li>
+            <a href="#getUniqueId">getUniqueId</a>
+          </li>
+          <li>
+            <a href="#key">key</a>
+          </li>
+          <li>
+            <a href="#next">next</a>
+          </li>
+          <li>
+            <a href="#noop">noop</a>
+          </li>
+          <li>
+            <a href="#offsetExists">offsetExists</a>
+          </li>
+          <li>
+            <a href="#offsetGet">offsetGet</a>
+          </li>
+          <li>
+            <a href="#offsetSet">offsetSet</a>
+          </li>
+          <li>
+            <a href="#offsetUnset">offsetUnset</a>
+          </li>
+          <li>
+            <a href="#removeMessage">removeMessage</a>
+          </li>
+          <li>
+            <a href="#rewind">rewind</a>
+          </li>
+          <li>
+            <a href="#seek">seek</a>
+          </li>
+          <li>
+            <a href="#valid">valid</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Mail\Storage\</span>AbstractStorage</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <span title="ArrayAccess">ArrayAccess</span>
+          </li>
+          <li>
+            <a href="../interfaces/Countable.xhtml">Countable</a>
+          </li>
+          <li>
+            <span title="SeekableIterator">SeekableIterator</span>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="has"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $has</h4>
+            <ul class="varlist">
+              <li>class capabilities with default values</li>
+            </ul>
+          </li>
+          <li>
+            <a name="iterationPos"/>
+            <h4><span class="label protected">protected</span>int 
+                
+                $iterationPos</h4>
+            <ul class="varlist">
+              <li>current iteration position</li>
+            </ul>
+          </li>
+          <li>
+            <a name="iterationMax"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $iterationMax</h4>
+            <ul class="varlist">
+              <li>maximum iteration position (= message count)</li>
+            </ul>
+          </li>
+          <li>
+            <a name="messageClass"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $messageClass</h4>
+            <ul class="varlist">
+              <li>used message class, change it in an extended class to extend the returned message class</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create instance with parameters</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$params</code> - mail reader specific parameters</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Destructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__destruct"/>
+            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Destructor calls close() and therefore closes the resource.</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__get"/>
+            <h4><span class="label public">public</span>__get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $var</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Getter for has-properties. The standard has properties are: hasFolder, hasUniqueid, hasDelete, hasCreate, hasTop<pre>The valid values for the has-properties are:
+  - true if a feature is supported
+  - false if a feature is not supported
+  - null is it's not yet known or it can't be know if a feature is supported</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$var</code> - property name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>supported or not</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="close"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>close<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Close resource for mail lib. If you need to control, when the resource is closed. Otherwise the destructor would call this.</li>
+            </p>
+          </li>
+          <li>
+            <a name="count"/>
+            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Countable::count()</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="countMessages"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>countMessages<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Count messages messages in current box/folder</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>number of messages</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="current"/>
+            <h4><span class="label public">public</span>current<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Iterator::current()</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>current message</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCapabilities"/>
+            <h4><span class="label public">public</span>getCapabilities<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get a full list of features supported by the specific mail lib and the server</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>list of features as array(feature_name =&gt; true|false[|null])</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMessage"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getMessage<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get a message with headers and body</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - number of message</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNumberByUniqueId"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getNumberByUniqueId<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>get a message number from a unique id<pre>I.e. if you have a webmailer that supports deleting messages you should use unique ids
+as parameter and use this method to translate it to message number right before calling removeMessage()</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - unique id</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>message number</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRawContent"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getRawContent<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong>, <span class="param-type"><span title="null|array|string">null|array|string</span></span><strong> $part</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get raw content of message or part</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - number of message</li>
+                <li><code>$part</code> - path to part or null for message content</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>raw content</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRawHeader"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getRawHeader<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong>, <span class="param-type"><span title="null|array|string">null|array|string</span></span><strong> $part</strong>, <span class="param-type">integer</span><strong> $topLines</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get raw header of message or part</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - number of message</li>
+                <li><code>$part</code> - path to part or null for message header</li>
+                <li><code>$topLines</code> - include this many lines with header (after an empty line)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>raw header</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSize"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getSize<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get a list of messages with number and size</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - number of message</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>size of given message of list with all messages as array(num =&gt; size)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUniqueId"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getUniqueId<span style="font-size:90%;">( <span class="param-type"><span title="int|null">int|null</span></span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>get unique id for one or all messages<pre>if storage does not support unique ids it's the same as the message number</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - message number</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>message number for given message or all messages as array</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="key"/>
+            <h4><span class="label public">public</span>key<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Iterator::key()</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>id of current position</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="next"/>
+            <h4><span class="label public">public</span>next<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Iterator::next()</li>
+            </p>
+          </li>
+          <li>
+            <a name="noop"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>noop<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Keep the resource alive.</li>
+            </p>
+          </li>
+          <li>
+            <a name="offsetExists"/>
+            <h4><span class="label public">public</span>offsetExists<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>ArrayAccess::offsetExists()</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetGet"/>
+            <h4><span class="label public">public</span>offsetGet<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>ArrayAccess::offsetGet()</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>message object</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetSet"/>
+            <h4><span class="label public">public</span>offsetSet<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $id</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>ArrayAccess::offsetSet()</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetUnset"/>
+            <h4><span class="label public">public</span>offsetUnset<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>ArrayAccess::offsetUnset()</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>success</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeMessage"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>removeMessage<span style="font-size:90%;">( <span class="param-type"/><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>delete a message from current box/folder</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="rewind"/>
+            <h4><span class="label public">public</span>rewind<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Iterator::rewind()<pre>Rewind always gets the new count from the storage. Thus if you use
+the interfaces and your scripts take long you should use reset()
+from time to time.</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="seek"/>
+            <h4><span class="label public">public</span>seek<span style="font-size:90%;">( <span class="param-type">int</span><strong> $pos</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>SeekableIterator::seek()</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pos</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\OutOfBoundsException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="valid"/>
+            <h4><span class="label public">public</span>valid<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Iterator::valid()</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

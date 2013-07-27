@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Security\Acl\Dbal\MutableAclProvider - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#propertyChanges">$propertyChanges</a>
+          </li>
+          <li>
+            <a href="#cache">$cache</a>
+          </li>
+          <li>
+            <a href="#connection">$connection</a>
+          </li>
+          <li>
+            <a href="#loadedAces">$loadedAces</a>
+          </li>
+          <li>
+            <a href="#loadedAcls">$loadedAcls</a>
+          </li>
+          <li>
+            <a href="#options">$options</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#createAcl">createAcl</a>
+          </li>
+          <li>
+            <a href="#createObjectIdentity">createObjectIdentity</a>
+          </li>
+          <li>
+            <a href="#createOrRetrieveClassId">createOrRetrieveClassId</a>
+          </li>
+          <li>
+            <a href="#createOrRetrieveSecurityIdentityId">createOrRetrieveSecurityIdentityId</a>
+          </li>
+          <li>
+            <a href="#deleteAccessControlEntries">deleteAccessControlEntries</a>
+          </li>
+          <li>
+            <a href="#deleteAcl">deleteAcl</a>
+          </li>
+          <li>
+            <a href="#deleteObjectIdentity">deleteObjectIdentity</a>
+          </li>
+          <li>
+            <a href="#deleteObjectIdentityRelations">deleteObjectIdentityRelations</a>
+          </li>
+          <li>
+            <a href="#findAcl">findAcl</a>
+          </li>
+          <li>
+            <a href="#findAcls">findAcls</a>
+          </li>
+          <li>
+            <a href="#findAcls">findAcls</a>
+          </li>
+          <li>
+            <a href="#findChildren">findChildren</a>
+          </li>
+          <li>
+            <a href="#getAncestorLookupSql">getAncestorLookupSql</a>
+          </li>
+          <li>
+            <a href="#getDeleteAccessControlEntriesSql">getDeleteAccessControlEntriesSql</a>
+          </li>
+          <li>
+            <a href="#getDeleteAccessControlEntrySql">getDeleteAccessControlEntrySql</a>
+          </li>
+          <li>
+            <a href="#getDeleteObjectIdentityRelationsSql">getDeleteObjectIdentityRelationsSql</a>
+          </li>
+          <li>
+            <a href="#getDeleteObjectIdentitySql">getDeleteObjectIdentitySql</a>
+          </li>
+          <li>
+            <a href="#getFindChildrenSql">getFindChildrenSql</a>
+          </li>
+          <li>
+            <a href="#getInsertAccessControlEntrySql">getInsertAccessControlEntrySql</a>
+          </li>
+          <li>
+            <a href="#getInsertClassSql">getInsertClassSql</a>
+          </li>
+          <li>
+            <a href="#getInsertObjectIdentityRelationSql">getInsertObjectIdentityRelationSql</a>
+          </li>
+          <li>
+            <a href="#getInsertObjectIdentitySql">getInsertObjectIdentitySql</a>
+          </li>
+          <li>
+            <a href="#getInsertSecurityIdentitySql">getInsertSecurityIdentitySql</a>
+          </li>
+          <li>
+            <a href="#getLookupSql">getLookupSql</a>
+          </li>
+          <li>
+            <a href="#getSelectAccessControlEntryIdSql">getSelectAccessControlEntryIdSql</a>
+          </li>
+          <li>
+            <a href="#getSelectClassIdSql">getSelectClassIdSql</a>
+          </li>
+          <li>
+            <a href="#getSelectObjectIdentityIdSql">getSelectObjectIdentityIdSql</a>
+          </li>
+          <li>
+            <a href="#getSelectSecurityIdentityIdSql">getSelectSecurityIdentityIdSql</a>
+          </li>
+          <li>
+            <a href="#getUpdateAccessControlEntrySql">getUpdateAccessControlEntrySql</a>
+          </li>
+          <li>
+            <a href="#getUpdateObjectIdentitySql">getUpdateObjectIdentitySql</a>
+          </li>
+          <li>
+            <a href="#propertyChanged">propertyChanged</a>
+          </li>
+          <li>
+            <a href="#regenerateAncestorRelations">regenerateAncestorRelations</a>
+          </li>
+          <li>
+            <a href="#retrieveObjectIdentityPrimaryKey">retrieveObjectIdentityPrimaryKey</a>
+          </li>
+          <li>
+            <a href="#updateAceProperty">updateAceProperty</a>
+          </li>
+          <li>
+            <a href="#updateAces">updateAces</a>
+          </li>
+          <li>
+            <a href="#updateAcl">updateAcl</a>
+          </li>
+          <li>
+            <a href="#updateFieldAceProperty">updateFieldAceProperty</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Security\Acl\Dbal\</span>MutableAclProvider</h2>
+        <div class="file-notice">
+          <p>An implementation of the MutableAclProviderInterface using Doctrine DBAL.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Symfony_Component_Security_Acl_Model_MutableAclProviderInterface.xhtml">Symfony\Component\Security\Acl\Model\MutableAclProviderInterface</a>
+          </li>
+          <li>
+            <span title="Doctrine\Common\PropertyChangedListener">PropertyChangedListener</span>
+          </li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="propertyChanges"/>
+            <h4><span class="label private">private</span>
+                $propertyChanges</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="Doctrine\DBAL\Driver\Connection">Connection</span></span><strong> $connection</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_PermissionGrantingStrategyInterface.xhtml">Symfony\Component\Security\Acl\Model\PermissionGrantingStrategyInterface</a></span><strong> $permissionGrantingStrategy</strong>, <span class="param-type">Array</span><strong> $options</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_AclCacheInterface.xhtml">Symfony\Component\Security\Acl\Model\AclCacheInterface</a></span><strong> $cache</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="createAcl"/>
+            <h4><span class="label public">public</span>createAcl<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_ObjectIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\ObjectIdentityInterface</a></span><strong> $oid</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="deleteAcl"/>
+            <h4><span class="label public">public</span>deleteAcl<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_ObjectIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\ObjectIdentityInterface</a></span><strong> $oid</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="findAcl"/>
+            <h4><span class="label public">public</span>findAcl<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_ObjectIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\ObjectIdentityInterface</a></span><strong> $oid</strong>, <span class="param-type">Array</span><strong> $sids</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="findAcls"/>
+            <h4><span class="label public">public</span>findAcls<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $oids</strong>, <span class="param-type">Array</span><strong> $sids</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="findAcls"/>
+            <h4><span class="label public">public</span>findAcls<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $oids</strong>, <span class="param-type">Array</span><strong> $sids</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="findChildren"/>
+            <h4><span class="label public">public</span>findChildren<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_ObjectIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\ObjectIdentityInterface</a></span><strong> $parentOid</strong>, <span class="param-type"/><strong> $directChildrenOnly</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="propertyChanged"/>
+            <h4><span class="label public">public</span>propertyChanged<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $sender</strong>, <span class="param-type">string</span><strong> $propertyName</strong>, <span class="param-type">mixed</span><strong> $oldValue</strong>, <span class="param-type">mixed</span><strong> $newValue</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Implementation of PropertyChangedListener<pre>This allows us to keep track of which values have been changed, so we don't
+have to do a full introspection when -&gt;updateAcl() is called.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sender</code> - </li>
+                <li><code>$propertyName</code> - </li>
+                <li><code>$oldValue</code> - </li>
+                <li><code>$newValue</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="updateAcl"/>
+            <h4><span class="label public">public</span>updateAcl<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_MutableAclInterface.xhtml">Symfony\Component\Security\Acl\Model\MutableAclInterface</a></span><strong> $acl</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getAncestorLookupSql"/>
+            <h4><span class="label protected">protected</span>getAncestorLookupSql<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $batch</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getDeleteAccessControlEntriesSql"/>
+            <h4><span class="label protected">protected</span>getDeleteAccessControlEntriesSql<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $oidPK</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for deleting access control entries.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$oidPK</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDeleteAccessControlEntrySql"/>
+            <h4><span class="label protected">protected</span>getDeleteAccessControlEntrySql<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $acePK</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for deleting a specific ACE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$acePK</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDeleteObjectIdentityRelationsSql"/>
+            <h4><span class="label protected">protected</span>getDeleteObjectIdentityRelationsSql<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $pk</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for deleting relation entries.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pk</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDeleteObjectIdentitySql"/>
+            <h4><span class="label protected">protected</span>getDeleteObjectIdentitySql<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $pk</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for deleting an object identity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pk</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFindChildrenSql"/>
+            <h4><span class="label protected">protected</span>getFindChildrenSql<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_ObjectIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\ObjectIdentityInterface</a></span><strong> $oid</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $directChildrenOnly</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for retrieving child object identities for the given object identities.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$oid</code> - </li>
+                <li><code>$directChildrenOnly</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInsertAccessControlEntrySql"/>
+            <h4><span class="label protected">protected</span>getInsertAccessControlEntrySql<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $classId</strong>, <span class="param-type"><span title="integer|null">integer|null</span></span><strong> $objectIdentityId</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $field</strong>, <span class="param-type">integer</span><strong> $aceOrder</strong>, <span class="param-type">integer</span><strong> $securityIdentityId</strong>, <span class="param-type">string</span><strong> $strategy</strong>, <span class="param-type">integer</span><strong> $mask</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $granting</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $auditSuccess</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $auditFailure</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for inserting an ACE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classId</code> - </li>
+                <li><code>$objectIdentityId</code> - </li>
+                <li><code>$field</code> - </li>
+                <li><code>$aceOrder</code> - </li>
+                <li><code>$securityIdentityId</code> - </li>
+                <li><code>$strategy</code> - </li>
+                <li><code>$mask</code> - </li>
+                <li><code>$granting</code> - </li>
+                <li><code>$auditSuccess</code> - </li>
+                <li><code>$auditFailure</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInsertClassSql"/>
+            <h4><span class="label protected">protected</span>getInsertClassSql<span style="font-size:90%;">( <span class="param-type">string</span><strong> $classType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for inserting a new class type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classType</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInsertObjectIdentityRelationSql"/>
+            <h4><span class="label protected">protected</span>getInsertObjectIdentityRelationSql<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $objectIdentityId</strong>, <span class="param-type">integer</span><strong> $ancestorId</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for inserting a relation entry.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$objectIdentityId</code> - </li>
+                <li><code>$ancestorId</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInsertObjectIdentitySql"/>
+            <h4><span class="label protected">protected</span>getInsertObjectIdentitySql<span style="font-size:90%;">( <span class="param-type">string</span><strong> $identifier</strong>, <span class="param-type">integer</span><strong> $classId</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $entriesInheriting</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for inserting an object identity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identifier</code> - </li>
+                <li><code>$classId</code> - </li>
+                <li><code>$entriesInheriting</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInsertSecurityIdentitySql"/>
+            <h4><span class="label protected">protected</span>getInsertSecurityIdentitySql<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_SecurityIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\SecurityIdentityInterface</a></span><strong> $sid</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for inserting a security identity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sid</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLookupSql"/>
+            <h4><span class="label protected">protected</span>getLookupSql<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $ancestorIds</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the query used for looking up object identities and associated ACEs, and security identities.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$ancestorIds</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSelectAccessControlEntryIdSql"/>
+            <h4><span class="label protected">protected</span>getSelectAccessControlEntryIdSql<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $classId</strong>, <span class="param-type">integer</span><strong> $oid</strong>, <span class="param-type">string</span><strong> $field</strong>, <span class="param-type">integer</span><strong> $order</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for selecting an ACE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classId</code> - </li>
+                <li><code>$oid</code> - </li>
+                <li><code>$field</code> - </li>
+                <li><code>$order</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSelectClassIdSql"/>
+            <h4><span class="label protected">protected</span>getSelectClassIdSql<span style="font-size:90%;">( <span class="param-type">string</span><strong> $classType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for selecting the primary key associated with the passed class type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classType</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSelectObjectIdentityIdSql"/>
+            <h4><span class="label protected">protected</span>getSelectObjectIdentityIdSql<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_ObjectIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\ObjectIdentityInterface</a></span><strong> $oid</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for retrieving the primary key of the given object identity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$oid</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSelectSecurityIdentityIdSql"/>
+            <h4><span class="label protected">protected</span>getSelectSecurityIdentityIdSql<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_SecurityIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\SecurityIdentityInterface</a></span><strong> $sid</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for selecting the primary key of a security identity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sid</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUpdateAccessControlEntrySql"/>
+            <h4><span class="label protected">protected</span>getUpdateAccessControlEntrySql<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $pk</strong>, <span class="param-type">Array</span><strong> $sets</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for updating an ACE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pk</code> - </li>
+                <li><code>$sets</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUpdateObjectIdentitySql"/>
+            <h4><span class="label protected">protected</span>getUpdateObjectIdentitySql<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $pk</strong>, <span class="param-type">Array</span><strong> $changes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs the SQL for updating an object identity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pk</code> - </li>
+                <li><code>$changes</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="retrieveObjectIdentityPrimaryKey"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>retrieveObjectIdentityPrimaryKey<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_ObjectIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\ObjectIdentityInterface</a></span><strong> $oid</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the primary key of the passed object identity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$oid</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createObjectIdentity"/>
+            <h4><span class="label private">private</span>createObjectIdentity<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_ObjectIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\ObjectIdentityInterface</a></span><strong> $oid</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates the ACL for the passed object identity</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$oid</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createOrRetrieveClassId"/>
+            <h4><span class="label private">private</span>createOrRetrieveClassId<span style="font-size:90%;">( <span class="param-type">string</span><strong> $classType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the primary key for the passed class type.<pre>If the type does not yet exist in the database, it will be created.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classType</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createOrRetrieveSecurityIdentityId"/>
+            <h4><span class="label private">private</span>createOrRetrieveSecurityIdentityId<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_SecurityIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\SecurityIdentityInterface</a></span><strong> $sid</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the primary key for the passed security identity.<pre>If the security identity does not yet exist in the database, it will be
+created.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sid</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="deleteAccessControlEntries"/>
+            <h4><span class="label private">private</span>deleteAccessControlEntries<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $oidPK</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Deletes all ACEs for the given object identity primary key.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$oidPK</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="deleteObjectIdentity"/>
+            <h4><span class="label private">private</span>deleteObjectIdentity<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $pk</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Deletes the object identity from the database.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pk</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="deleteObjectIdentityRelations"/>
+            <h4><span class="label private">private</span>deleteObjectIdentityRelations<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $pk</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Deletes all entries from the relations table from the database.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pk</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="regenerateAncestorRelations"/>
+            <h4><span class="label private">private</span>regenerateAncestorRelations<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_AclInterface.xhtml">Symfony\Component\Security\Acl\Model\AclInterface</a></span><strong> $acl</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>This regenerates the ancestor table which is used for fast read access.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$acl</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="updateAceProperty"/>
+            <h4><span class="label private">private</span>updateAceProperty<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $changes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>This processes changes on an ACE related property (classAces, or objectAces).</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$changes</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="updateAces"/>
+            <h4><span class="label private">private</span>updateAces<span style="font-size:90%;">( <span class="param-type"><a href="../classes/SplObjectStorage.xhtml">SplObjectStorage</a></span><strong> $aces</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Persists the changes which were made to ACEs to the database.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$aces</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="updateFieldAceProperty"/>
+            <h4><span class="label private">private</span>updateFieldAceProperty<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $changes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>This processes changes on an ACE related property (classFieldAces, or objectFieldAces).</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$changes</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

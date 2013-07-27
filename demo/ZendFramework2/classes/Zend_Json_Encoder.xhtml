@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Json\Encoder - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#cycleCheck">$cycleCheck</a>
+          </li>
+          <li>
+            <a href="#options">$options</a>
+          </li>
+          <li>
+            <a href="#visited">$visited</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_encodeArray">_encodeArray</a>
+          </li>
+          <li>
+            <a href="#_encodeConstants">_encodeConstants</a>
+          </li>
+          <li>
+            <a href="#_encodeDatum">_encodeDatum</a>
+          </li>
+          <li>
+            <a href="#_encodeMethods">_encodeMethods</a>
+          </li>
+          <li>
+            <a href="#_encodeObject">_encodeObject</a>
+          </li>
+          <li>
+            <a href="#_encodeString">_encodeString</a>
+          </li>
+          <li>
+            <a href="#_encodeValue">_encodeValue</a>
+          </li>
+          <li>
+            <a href="#_encodeVariables">_encodeVariables</a>
+          </li>
+          <li>
+            <a href="#_utf82utf16">_utf82utf16</a>
+          </li>
+          <li>
+            <a href="#_wasVisited">_wasVisited</a>
+          </li>
+          <li>
+            <a href="#encode">encode</a>
+          </li>
+          <li>
+            <a href="#encodeClass">encodeClass</a>
+          </li>
+          <li>
+            <a href="#encodeClasses">encodeClasses</a>
+          </li>
+          <li>
+            <a href="#encodeUnicodeString">encodeUnicodeString</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Json\</span>Encoder</h2>
+        <div class="file-notice">
+          <p>Encode PHP constructs to JSON</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="cycleCheck"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $cycleCheck</h4>
+            <ul class="varlist">
+              <li>Whether or not to check for possible cycling</li>
+            </ul>
+          </li>
+          <li>
+            <a name="options"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $options</h4>
+            <ul class="varlist">
+              <li>Additional options used during encoding</li>
+            </ul>
+          </li>
+          <li>
+            <a name="visited"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $visited</h4>
+            <ul class="varlist">
+              <li>Array of visited objects; used to prevent cycling.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label protected">protected</span>__construct<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $cycleCheck</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cycleCheck</code> - Whether or not to check for recursion when encoding</li>
+                <li><code>$options</code> - Additional options used during encoding</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="encode"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>encode<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">boolean</span><strong> $cycleCheck</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Use the JSON encoding scheme for the value specified</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The value to be encoded</li>
+                <li><code>$cycleCheck</code> - Whether or not to check for possible object recursion when encoding</li>
+                <li><code>$options</code> - Additional options used during encoding</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The encoded value</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="encodeClass"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>encodeClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $package</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encodes the given $className into the class2 model of encoding PHP classes into JavaScript class2 classes.<pre>NOTE: Currently only public methods and variables are proxied onto
+the client machine</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - The name of the class, the class must be</li>
+                <li><code>$package</code> - Optional package name appended to JavaScript</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The class2 (JavaScript) encoding of the class</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="encodeClasses"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>encodeClasses<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $classNames</strong>, <span class="param-type">string</span><strong> $package</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encode several classes at once<pre>Returns JSON encoded classes, using .
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classNames</code> - </li>
+                <li><code>$package</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="encodeUnicodeString"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>encodeUnicodeString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encode Unicode Characters to \u0000 ASCII syntax.<pre>This algorithm was originally developed for the
+Solar Framework by Paul M. Jones</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_encodeArray"/>
+            <h4><span class="label protected">protected</span>_encodeArray<span style="font-size:90%;">( <span class="param-type">array</span><strong> &amp;$array</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>JSON encode an array value<pre>Recursively encodes each value of an array and returns a JSON encoded
+array string.
+
+Arrays are defined as integer-indexed arrays starting at index 0, where
+the last index is (count($array) -1); any deviation from that is
+considered an associative array, and will be encoded as such.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$array</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_encodeDatum"/>
+            <h4><span class="label protected">protected</span>_encodeDatum<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> &amp;$value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>JSON encode a basic data type (string, number, boolean, null)<pre>If value type is not a string, number, boolean, or null, the string
+'null' is returned.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_encodeObject"/>
+            <h4><span class="label protected">protected</span>_encodeObject<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> &amp;$value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encode an object to JSON by encoding each of the public properties<pre>A special property is added to the JSON object called '__className'
+that contains the name of the class of $value. This is used to decode
+the object on the client into a specific class.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>RecursionException If recursive checks are enabled and the</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_encodeString"/>
+            <h4><span class="label protected">protected</span>_encodeString<span style="font-size:90%;">( <span class="param-type">string</span><strong> &amp;$string</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>JSON encode a string value by escaping characters as necessary</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$string</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_encodeValue"/>
+            <h4><span class="label protected">protected</span>_encodeValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> &amp;$value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Recursive driver which determines the type of value to be encoded and then dispatches to the appropriate method. $values are either    - objects (returns from {@link _encodeObject()})    - arrays (returns from {@link _encodeArray()})    - basic datums (e.g. numbers or strings) (returns from {@link _encodeDatum()})</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The value to be encoded</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Encoded value</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_utf82utf16"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>_utf82utf16<span style="font-size:90%;">( <span class="param-type">string</span><strong> $utf8</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Convert a string from one UTF-8 char to one UTF-16 char.<pre>Normally should be handled by mb_convert_encoding, but
+provides a slower PHP-only method for installations
+that lack the multibyte string extension.
+
+This method is from the Solar Framework by Paul M. Jones</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$utf8</code> - UTF-8 character</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>UTF-16 character</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_wasVisited"/>
+            <h4><span class="label protected">protected</span>_wasVisited<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> &amp;$value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Determine if an object has been serialized already</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_encodeConstants"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>_encodeConstants<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $cls</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encode the constants associated with the ReflectionClass parameter. The encoding format is based on the class2 format</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cls</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Encoded constant block in class2 format</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_encodeMethods"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>_encodeMethods<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $cls</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encode the public methods of the ReflectionClass in the class2 format</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cls</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Encoded method fragment</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_encodeVariables"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>_encodeVariables<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $cls</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encode the public properties of the ReflectionClass in the class2 format.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cls</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Encode properties list</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

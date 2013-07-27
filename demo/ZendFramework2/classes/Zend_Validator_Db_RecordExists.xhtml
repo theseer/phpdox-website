@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Validator\Db\RecordExists - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__get">__get</a>
+          </li>
+          <li>
+            <a href="#__invoke">__invoke</a>
+          </li>
+          <li>
+            <a href="#createMessage">createMessage</a>
+          </li>
+          <li>
+            <a href="#error">error</a>
+          </li>
+          <li>
+            <a href="#getAdapter">getAdapter</a>
+          </li>
+          <li>
+            <a href="#getDefaultTranslator">getDefaultTranslator</a>
+          </li>
+          <li>
+            <a href="#getDefaultTranslatorTextDomain">getDefaultTranslatorTextDomain</a>
+          </li>
+          <li>
+            <a href="#getExclude">getExclude</a>
+          </li>
+          <li>
+            <a href="#getField">getField</a>
+          </li>
+          <li>
+            <a href="#getMessageLength">getMessageLength</a>
+          </li>
+          <li>
+            <a href="#getMessageTemplates">getMessageTemplates</a>
+          </li>
+          <li>
+            <a href="#getMessageVariables">getMessageVariables</a>
+          </li>
+          <li>
+            <a href="#getMessages">getMessages</a>
+          </li>
+          <li>
+            <a href="#getOption">getOption</a>
+          </li>
+          <li>
+            <a href="#getOptions">getOptions</a>
+          </li>
+          <li>
+            <a href="#getSchema">getSchema</a>
+          </li>
+          <li>
+            <a href="#getSelect">getSelect</a>
+          </li>
+          <li>
+            <a href="#getTable">getTable</a>
+          </li>
+          <li>
+            <a href="#getTranslator">getTranslator</a>
+          </li>
+          <li>
+            <a href="#getTranslatorTextDomain">getTranslatorTextDomain</a>
+          </li>
+          <li>
+            <a href="#getValue">getValue</a>
+          </li>
+          <li>
+            <a href="#hasDefaultTranslator">hasDefaultTranslator</a>
+          </li>
+          <li>
+            <a href="#hasTranslator">hasTranslator</a>
+          </li>
+          <li>
+            <a href="#isTranslatorEnabled">isTranslatorEnabled</a>
+          </li>
+          <li>
+            <a href="#isValid">isValid</a>
+          </li>
+          <li>
+            <a href="#isValueObscured">isValueObscured</a>
+          </li>
+          <li>
+            <a href="#query">query</a>
+          </li>
+          <li>
+            <a href="#setAdapter">setAdapter</a>
+          </li>
+          <li>
+            <a href="#setDefaultTranslator">setDefaultTranslator</a>
+          </li>
+          <li>
+            <a href="#setDefaultTranslatorTextDomain">setDefaultTranslatorTextDomain</a>
+          </li>
+          <li>
+            <a href="#setExclude">setExclude</a>
+          </li>
+          <li>
+            <a href="#setField">setField</a>
+          </li>
+          <li>
+            <a href="#setMessage">setMessage</a>
+          </li>
+          <li>
+            <a href="#setMessageLength">setMessageLength</a>
+          </li>
+          <li>
+            <a href="#setMessages">setMessages</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+          <li>
+            <a href="#setSchema">setSchema</a>
+          </li>
+          <li>
+            <a href="#setSelect">setSelect</a>
+          </li>
+          <li>
+            <a href="#setTable">setTable</a>
+          </li>
+          <li>
+            <a href="#setTranslator">setTranslator</a>
+          </li>
+          <li>
+            <a href="#setTranslatorEnabled">setTranslatorEnabled</a>
+          </li>
+          <li>
+            <a href="#setTranslatorTextDomain">setTranslatorTextDomain</a>
+          </li>
+          <li>
+            <a href="#setValue">setValue</a>
+          </li>
+          <li>
+            <a href="#setValueObscured">setValueObscured</a>
+          </li>
+          <li>
+            <a href="#translateMessage">translateMessage</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Validator\Db\</span>RecordExists</h2>
+        <div class="file-notice">
+          <p>Confirms a record exists in a table.</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist"/>
+        <h3>Members</h3>
+        <ul class="varlist"/>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable|DbSelect">array|Traversable|DbSelect</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Provides basic configuration for use with Zend\Validator\Db Validators Setting $exclude allows a single record to be excluded from matching.<pre>Exclude can either be a String containing a where clause, or an array with `field` and `value` keys
+to define the where clause added to the sql.
+A database adapter may optionally be supplied to avoid using the registered default adapter.
+
+The following option keys are supported:
+'table'   =&gt; The database table to validate against
+'schema'  =&gt; The schema keys
+'field'   =&gt; The field to check for a match
+'exclude' =&gt; An optional where clause or field/value pair to exclude from the query
+'adapter' =&gt; An optional database adapter to use</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - Options to use for this validator</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Validator\Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__get"/>
+            <h4><span class="label public">public</span>__get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $property</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Magic function returns the value of the requested property, if and only if it is the value or a message variable.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$property</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="__invoke"/>
+            <h4><span class="label public">public</span>__invoke<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Invoke as command</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAdapter"/>
+            <h4><span class="label public">public</span>getAdapter<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the set adapter</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Validator\Exception\RuntimeException When no database adapter is defined</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDefaultTranslator"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getDefaultTranslator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get default translation object for all validate objects</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDefaultTranslatorTextDomain"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getDefaultTranslatorTextDomain<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get default translation text domain for all validate objects</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getExclude"/>
+            <h4><span class="label public">public</span>getExclude<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the set exclude clause</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getField"/>
+            <h4><span class="label public">public</span>getField<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the set field</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMessageLength"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getMessageLength<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the maximum allowed message length</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMessageTemplates"/>
+            <h4><span class="label public">public</span>getMessageTemplates<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the message templates from the validator</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMessageVariables"/>
+            <h4><span class="label public">public</span>getMessageVariables<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns an array of the names of variables that are used in constructing validation failure messages</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMessages"/>
+            <h4><span class="label public">public</span>getMessages<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns array of validation failure messages</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getOption"/>
+            <h4><span class="label public">public</span>getOption<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns an option</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - Option to be returned</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Returned option</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getOptions"/>
+            <h4><span class="label public">public</span>getOptions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns all available options</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Array with all available options</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSchema"/>
+            <h4><span class="label public">public</span>getSchema<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the set schema</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSelect"/>
+            <h4><span class="label public">public</span>getSelect<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the select object to be used by the validator.<pre>If no select object was supplied to the constructor,
+then it will auto-generate one from the given table,
+schema, field, and adapter options.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The Select object which will be used</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTable"/>
+            <h4><span class="label public">public</span>getTable<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the set table</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTranslator"/>
+            <h4><span class="label public">public</span>getTranslator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return translation object</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTranslatorTextDomain"/>
+            <h4><span class="label public">public</span>getTranslatorTextDomain<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the translation text domain</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasDefaultTranslator"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>hasDefaultTranslator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is there a default translation object set?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasTranslator"/>
+            <h4><span class="label public">public</span>hasTranslator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Does this validator have its own specific translator?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isTranslatorEnabled"/>
+            <h4><span class="label public">public</span>isTranslatorEnabled<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is translation enabled?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isValid"/>
+            <h4><span class="label public">public</span>isValid<span style="font-size:90%;">( <span class="param-type"/><strong> $value</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="isValueObscured"/>
+            <h4><span class="label public">public</span>isValueObscured<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve flag indicating whether or not value should be obfuscated in messages</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setAdapter"/>
+            <h4><span class="label public">public</span>setAdapter<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Db_Adapter_Adapter.xhtml">Zend\Db\Adapter\Adapter</a></span><strong> $adapter</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a new database adapter</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$adapter</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDefaultTranslator"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setDefaultTranslator<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_I18n_Translator_Translator.xhtml">Zend\I18n\Translator\Translator</a></span><strong> $translator</strong>, <span class="param-type">string</span><strong> $textDomain</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set default translation object for all validate objects</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$translator</code> - </li>
+                <li><code>$textDomain</code> - (optional)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDefaultTranslatorTextDomain"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setDefaultTranslatorTextDomain<span style="font-size:90%;">( <span class="param-type">string</span><strong> $textDomain</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set default translation text domain for all validate objects</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$textDomain</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setExclude"/>
+            <h4><span class="label public">public</span>setExclude<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $exclude</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a new exclude clause</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$exclude</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setField"/>
+            <h4><span class="label public">public</span>setField<span style="font-size:90%;">( <span class="param-type">string</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a new field</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$field</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setMessage"/>
+            <h4><span class="label public">public</span>setMessage<span style="font-size:90%;">( <span class="param-type">string</span><strong> $messageString</strong>, <span class="param-type">string</span><strong> $messageKey</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the validation failure message template for a particular key</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$messageString</code> - </li>
+                <li><code>$messageKey</code> - OPTIONAL</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setMessageLength"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setMessageLength<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $length</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the maximum allowed message length</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$length</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setMessages"/>
+            <h4><span class="label public">public</span>setMessages<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $messages</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets validation failure message templates given as an array, where the array keys are the message keys, and the array values are the message template strings.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$messages</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets one or multiple options</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - Options to set</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides fluid interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException If $options is not an array or Traversable</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSchema"/>
+            <h4><span class="label public">public</span>setSchema<span style="font-size:90%;">( <span class="param-type">string</span><strong> $schema</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a new schema</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$schema</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSelect"/>
+            <h4><span class="label public">public</span>setSelect<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Db_Sql_Select.xhtml">Zend\Db\Sql\Select</a></span><strong> $select</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the select object to be used by the validator</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$select</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTable"/>
+            <h4><span class="label public">public</span>setTable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a new table</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$table</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTranslator"/>
+            <h4><span class="label public">public</span>setTranslator<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_I18n_Translator_Translator.xhtml">Zend\I18n\Translator\Translator</a></span><strong> $translator</strong>, <span class="param-type">string</span><strong> $textDomain</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set translation object</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$translator</code> - </li>
+                <li><code>$textDomain</code> - (optional)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTranslatorEnabled"/>
+            <h4><span class="label public">public</span>setTranslatorEnabled<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $flag</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Indicate whether or not translation should be enabled</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$flag</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTranslatorTextDomain"/>
+            <h4><span class="label public">public</span>setTranslatorTextDomain<span style="font-size:90%;">( <span class="param-type">string</span><strong> $textDomain</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set translation text domain</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$textDomain</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setValueObscured"/>
+            <h4><span class="label public">public</span>setValueObscured<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $flag</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set flag indicating whether or not value should be obfuscated in messages</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$flag</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createMessage"/>
+            <h4><span class="label protected">protected</span>createMessage<span style="font-size:90%;">( <span class="param-type">string</span><strong> $messageKey</strong>, <span class="param-type"><span title="string|array|object">string|array|object</span></span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs and returns a validation failure message with the given message key and value.<pre>Returns null if and only if $messageKey does not correspond to an existing template.
+
+If a translator is available and a translation exists for $messageKey,
+the translation will be used.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$messageKey</code> - </li>
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="error"/>
+            <h4><span class="label protected">protected</span>error<span style="font-size:90%;">( <span class="param-type">string</span><strong> $messageKey</strong>, <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$messageKey</code> - </li>
+                <li><code>$value</code> - OPTIONAL</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getValue"/>
+            <h4><span class="label protected">protected</span>getValue<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the validation value</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Value to be validated</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="query"/>
+            <h4><span class="label protected">protected</span>query<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Run query and returns matches, or null if no matches are found.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>when matches are found.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setValue"/>
+            <h4><span class="label protected">protected</span>setValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the value to be validated and clears the messages and errors arrays</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="translateMessage"/>
+            <h4><span class="label protected">protected</span>translateMessage<span style="font-size:90%;">( <span class="param-type">string</span><strong> $messageKey</strong>, <span class="param-type">string</span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Translate a validation message</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$messageKey</code> - </li>
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

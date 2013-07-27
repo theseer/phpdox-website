@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Feed\PubSubHubbub\Subscriber\Callback - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#feedUpdate">$feedUpdate</a>
+          </li>
+          <li>
+            <a href="#subscriptionKey">$subscriptionKey</a>
+          </li>
+          <li>
+            <a href="#currentSubscriptionData">$currentSubscriptionData</a>
+          </li>
+          <li>
+            <a href="#storage">$storage</a>
+          </li>
+          <li>
+            <a href="#httpResponse">$httpResponse</a>
+          </li>
+          <li>
+            <a href="#subscriberCount">$subscriberCount</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_detectCallbackUrl">_detectCallbackUrl</a>
+          </li>
+          <li>
+            <a href="#_detectVerifyTokenKey">_detectVerifyTokenKey</a>
+          </li>
+          <li>
+            <a href="#_getHeader">_getHeader</a>
+          </li>
+          <li>
+            <a href="#_getHttpHost">_getHttpHost</a>
+          </li>
+          <li>
+            <a href="#_getRawBody">_getRawBody</a>
+          </li>
+          <li>
+            <a href="#_hasValidVerifyToken">_hasValidVerifyToken</a>
+          </li>
+          <li>
+            <a href="#_parseQueryString">_parseQueryString</a>
+          </li>
+          <li>
+            <a href="#getFeedUpdate">getFeedUpdate</a>
+          </li>
+          <li>
+            <a href="#getHttpResponse">getHttpResponse</a>
+          </li>
+          <li>
+            <a href="#getStorage">getStorage</a>
+          </li>
+          <li>
+            <a href="#getSubscriberCount">getSubscriberCount</a>
+          </li>
+          <li>
+            <a href="#handle">handle</a>
+          </li>
+          <li>
+            <a href="#hasFeedUpdate">hasFeedUpdate</a>
+          </li>
+          <li>
+            <a href="#isValidHubVerification">isValidHubVerification</a>
+          </li>
+          <li>
+            <a href="#sendResponse">sendResponse</a>
+          </li>
+          <li>
+            <a href="#setFeedUpdate">setFeedUpdate</a>
+          </li>
+          <li>
+            <a href="#setHttpResponse">setHttpResponse</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+          <li>
+            <a href="#setStorage">setStorage</a>
+          </li>
+          <li>
+            <a href="#setSubscriberCount">setSubscriberCount</a>
+          </li>
+          <li>
+            <a href="#setSubscriptionKey">setSubscriptionKey</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Feed\PubSubHubbub\Subscriber\</span>Callback</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="feedUpdate"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $feedUpdate</h4>
+            <ul class="varlist">
+              <li>Contains the content of any feeds sent as updates to the Callback URL</li>
+            </ul>
+          </li>
+          <li>
+            <a name="subscriptionKey"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $subscriptionKey</h4>
+            <ul class="varlist">
+              <li>Holds a manually set subscription key (i.e. identifies a unique subscription) which is typical when it is not passed in the query string but is part of the Callback URL path, requiring manual retrieval e.g.<pre>using a route and the Zend_Controller_Action::_getParam() method.</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="currentSubscriptionData"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $currentSubscriptionData</h4>
+            <ul class="varlist">
+              <li>After verification, this is set to the verified subscription's data.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor; accepts an array or Traversable object to preset options for the Subscriber without calling all supported setter methods in turn.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - Options array or Traversable object</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getFeedUpdate"/>
+            <h4><span class="label public">public</span>getFeedUpdate<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a newly received feed (Atom/RSS) sent by a Hub as an update to a Topic we've subscribed to.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHttpResponse"/>
+            <h4><span class="label public">public</span>getHttpResponse<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>An instance of a class handling Http Responses. This is implemented in Zend\Feed\Pubsubhubbub\HttpResponse which shares an unenforced interface with (i.e. not inherited from) Zend\Controller\Response\Http.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getStorage"/>
+            <h4><span class="label public">public</span>getStorage<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets an instance of Zend\Feed\Pubsubhubbub\Model\SubscriptionPersistence used to background save any verification tokens associated with a subscription or other.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSubscriberCount"/>
+            <h4><span class="label public">public</span>getSubscriberCount<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the number of Subscribers for which any updates are on behalf of.<pre>In other words, is this class serving one or more subscribers? How many?</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="handle"/>
+            <h4><span class="label public">public</span>handle<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $httpGetData</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $sendResponseNow</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Handle any callback from a Hub Server responding to a subscription or unsubscription request. This should be the Hub Server confirming the the request prior to taking action on it.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$httpGetData</code> - GET data if available and not in $_GET</li>
+                <li><code>$sendResponseNow</code> - Whether to send response now or when asked</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasFeedUpdate"/>
+            <h4><span class="label public">public</span>hasFeedUpdate<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if any newly received feed (Atom/RSS) update was received</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isValidHubVerification"/>
+            <h4><span class="label public">public</span>isValidHubVerification<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $httpGetData</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks validity of the request simply by making a quick pass and confirming the presence of all REQUIRED parameters.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$httpGetData</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="sendResponse"/>
+            <h4><span class="label public">public</span>sendResponse<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send the response, including all headers.<pre>If you wish to handle this via Zend_Http, use the getter methods
+to retrieve any data needed to be set on your HTTP Response object, or
+simply give this object the HTTP Response instance to work with for you!</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFeedUpdate"/>
+            <h4><span class="label public">public</span>setFeedUpdate<span style="font-size:90%;">( <span class="param-type">string</span><strong> $feed</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a newly received feed (Atom/RSS) sent by a Hub as an update to a Topic we've subscribed to.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$feed</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setHttpResponse"/>
+            <h4><span class="label public">public</span>setHttpResponse<span style="font-size:90%;">( <span class="param-type"><span title="HttpResponse|PhpResponse">HttpResponse|PhpResponse</span></span><strong> $httpResponse</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>An instance of a class handling Http Responses. This is implemented in Zend\Feed\Pubsubhubbub\HttpResponse which shares an unenforced interface with (i.e. not inherited from) Zend\Controller\Response\Http.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$httpResponse</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Process any injected configuration options</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - Options array or Traversable object</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setStorage"/>
+            <h4><span class="label public">public</span>setStorage<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Feed_PubSubHubbub_Model_SubscriptionPersistenceInterface.xhtml">Zend\Feed\PubSubHubbub\Model\SubscriptionPersistenceInterface</a></span><strong> $storage</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets an instance of Zend\Feed\Pubsubhubbub\Model\SubscriptionPersistence used to background save any verification tokens associated with a subscription or other.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$storage</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSubscriberCount"/>
+            <h4><span class="label public">public</span>setSubscriberCount<span style="font-size:90%;">( <span class="param-type"><span title="string|int">string|int</span></span><strong> $count</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the number of Subscribers for which any updates are on behalf of.<pre>In other words, is this class serving one or more subscribers? How many?
+Defaults to 1 if left unchanged.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$count</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSubscriptionKey"/>
+            <h4><span class="label public">public</span>setSubscriptionKey<span style="font-size:90%;">( <span class="param-type">string</span><strong> $key</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set a subscription key to use for the current callback request manually.<pre>Required if usePathParameter is enabled for the Subscriber.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_detectCallbackUrl"/>
+            <h4><span class="label protected">protected</span>_detectCallbackUrl<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attempt to detect the callback URL (specifically the path forward)</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_detectVerifyTokenKey"/>
+            <h4><span class="label protected">protected</span>_detectVerifyTokenKey<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $httpGetData</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attempt to detect the verification token key. This would be passed in the Callback URL (which we are handling with this class!) as a URI path part (the last part by convention).</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$httpGetData</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getHeader"/>
+            <h4><span class="label protected">protected</span>_getHeader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $header</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve a Header value from either $_SERVER or Apache</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$header</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getHttpHost"/>
+            <h4><span class="label protected">protected</span>_getHttpHost<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the HTTP host</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getRawBody"/>
+            <h4><span class="label protected">protected</span>_getRawBody<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the raw body of the request</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Raw body, or false if not present</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_hasValidVerifyToken"/>
+            <h4><span class="label protected">protected</span>_hasValidVerifyToken<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $httpGetData</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $checkValue</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check for a valid verify_token. By default attempts to compare values with that sent from Hub, otherwise merely ascertains its existence.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$httpGetData</code> - </li>
+                <li><code>$checkValue</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_parseQueryString"/>
+            <h4><span class="label protected">protected</span>_parseQueryString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Build an array of Query String parameters.<pre>This bypasses $_GET which munges parameter names and cannot accept
+multiple parameters with the same key.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

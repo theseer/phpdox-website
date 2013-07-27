@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Feed\PubSubHubbub\Subscriber - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#hubUrls">$hubUrls</a>
+          </li>
+          <li>
+            <a href="#parameters">$parameters</a>
+          </li>
+          <li>
+            <a href="#topicUrl">$topicUrl</a>
+          </li>
+          <li>
+            <a href="#callbackUrl">$callbackUrl</a>
+          </li>
+          <li>
+            <a href="#leaseSeconds">$leaseSeconds</a>
+          </li>
+          <li>
+            <a href="#preferredVerificationMode">$preferredVerificationMode</a>
+          </li>
+          <li>
+            <a href="#errors">$errors</a>
+          </li>
+          <li>
+            <a href="#asyncHubs">$asyncHubs</a>
+          </li>
+          <li>
+            <a href="#storage">$storage</a>
+          </li>
+          <li>
+            <a href="#authentications">$authentications</a>
+          </li>
+          <li>
+            <a href="#usePathParameter">$usePathParameter</a>
+          </li>
+          <li>
+            <a href="#testStaticToken">$testStaticToken</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_doRequest">_doRequest</a>
+          </li>
+          <li>
+            <a href="#_generateSubscriptionKey">_generateSubscriptionKey</a>
+          </li>
+          <li>
+            <a href="#_generateVerifyToken">_generateVerifyToken</a>
+          </li>
+          <li>
+            <a href="#_getHttpClient">_getHttpClient</a>
+          </li>
+          <li>
+            <a href="#_getRequestParameters">_getRequestParameters</a>
+          </li>
+          <li>
+            <a href="#_toByteValueOrderedString">_toByteValueOrderedString</a>
+          </li>
+          <li>
+            <a href="#_urlEncode">_urlEncode</a>
+          </li>
+          <li>
+            <a href="#addAuthentication">addAuthentication</a>
+          </li>
+          <li>
+            <a href="#addAuthentications">addAuthentications</a>
+          </li>
+          <li>
+            <a href="#addHubUrl">addHubUrl</a>
+          </li>
+          <li>
+            <a href="#addHubUrls">addHubUrls</a>
+          </li>
+          <li>
+            <a href="#getAsyncHubs">getAsyncHubs</a>
+          </li>
+          <li>
+            <a href="#getAuthentications">getAuthentications</a>
+          </li>
+          <li>
+            <a href="#getCallbackUrl">getCallbackUrl</a>
+          </li>
+          <li>
+            <a href="#getErrors">getErrors</a>
+          </li>
+          <li>
+            <a href="#getHubUrls">getHubUrls</a>
+          </li>
+          <li>
+            <a href="#getLeaseSeconds">getLeaseSeconds</a>
+          </li>
+          <li>
+            <a href="#getParameters">getParameters</a>
+          </li>
+          <li>
+            <a href="#getPreferredVerificationMode">getPreferredVerificationMode</a>
+          </li>
+          <li>
+            <a href="#getStorage">getStorage</a>
+          </li>
+          <li>
+            <a href="#getTopicUrl">getTopicUrl</a>
+          </li>
+          <li>
+            <a href="#isSuccess">isSuccess</a>
+          </li>
+          <li>
+            <a href="#removeHubUrl">removeHubUrl</a>
+          </li>
+          <li>
+            <a href="#removeParameter">removeParameter</a>
+          </li>
+          <li>
+            <a href="#setCallbackUrl">setCallbackUrl</a>
+          </li>
+          <li>
+            <a href="#setLeaseSeconds">setLeaseSeconds</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+          <li>
+            <a href="#setParameter">setParameter</a>
+          </li>
+          <li>
+            <a href="#setParameters">setParameters</a>
+          </li>
+          <li>
+            <a href="#setPreferredVerificationMode">setPreferredVerificationMode</a>
+          </li>
+          <li>
+            <a href="#setStorage">setStorage</a>
+          </li>
+          <li>
+            <a href="#setTestStaticToken">setTestStaticToken</a>
+          </li>
+          <li>
+            <a href="#setTopicUrl">setTopicUrl</a>
+          </li>
+          <li>
+            <a href="#subscribeAll">subscribeAll</a>
+          </li>
+          <li>
+            <a href="#unsubscribeAll">unsubscribeAll</a>
+          </li>
+          <li>
+            <a href="#usePathParameter">usePathParameter</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Feed\PubSubHubbub\</span>Subscriber</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="hubUrls"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $hubUrls</h4>
+            <ul class="varlist">
+              <li>An array of URLs for all Hub Servers to subscribe/unsubscribe.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="parameters"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $parameters</h4>
+            <ul class="varlist">
+              <li>An array of optional parameters to be included in any (un)subscribe requests.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="topicUrl"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $topicUrl</h4>
+            <ul class="varlist">
+              <li>The URL of the topic (Rss or Atom feed) which is the subject of our current intent to subscribe to/unsubscribe from updates from the currently configured Hub Servers.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="callbackUrl"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $callbackUrl</h4>
+            <ul class="varlist">
+              <li>The URL Hub Servers must use when communicating with this Subscriber</li>
+            </ul>
+          </li>
+          <li>
+            <a name="leaseSeconds"/>
+            <h4><span class="label protected">protected</span>int 
+                
+                $leaseSeconds</h4>
+            <ul class="varlist">
+              <li>The number of seconds for which the subscriber would like to have the subscription active. Defaults to null, i.e. not sent, to setup a permanent subscription if possible.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="preferredVerificationMode"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $preferredVerificationMode</h4>
+            <ul class="varlist">
+              <li>The preferred verification mode (sync or async). By default, this Subscriber prefers synchronous verification, but is considered desirable to support asynchronous verification if possible.<pre>Zend\Feed\Pubsubhubbub\Subscriber will always send both modes, whose
+order of occurrence in the parameter list determines this preference.</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="errors"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $errors</h4>
+            <ul class="varlist">
+              <li>An array of any errors including keys for 'response', 'hubUrl'.<pre>The response is the actual Zend\Http\Response object.</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="asyncHubs"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $asyncHubs</h4>
+            <ul class="varlist">
+              <li>An array of Hub Server URLs for Hubs operating at this time in asynchronous verification mode.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="storage"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $storage</h4>
+            <ul class="varlist">
+              <li>An instance of Zend\Feed\Pubsubhubbub\Model\SubscriptionPersistence used to background save any verification tokens associated with a subscription or other.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="authentications"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $authentications</h4>
+            <ul class="varlist">
+              <li>An array of authentication credentials for HTTP Basic Authentication if required by specific Hubs. The array is indexed by Hub Endpoint URI and the value is a simple array of the username and password to apply.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="usePathParameter"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $usePathParameter</h4>
+            <ul class="varlist">
+              <li>Tells the Subscriber to append any subscription identifier to the path of the base Callback URL. E.g. an identifier "subkey1" would be added to the callback URL "http://www.example.com/callback" to create a subscription specific Callback URL of "http://www.example.com/callback/subkey1".<pre>This is required for all Hubs using the Pubsubhubbub 0.1 Specification.
+It should be manually intercepted and passed to the Callback class using
+Zend\Feed\Pubsubhubbub\Subscriber\Callback::setSubscriptionKey(). Will
+require a route in the form "callback/:subkey" to allow the parameter be
+retrieved from an action using the Zend\Controller\Action::\getParam()
+method.</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="testStaticToken"/>
+            <h4><span class="label protected">protected</span>
+                $testStaticToken</h4>
+            <ul class="varlist">
+              <li>This is STRICTLY for testing purposes only...</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor; accepts an array or Traversable instance to preset options for the Subscriber without calling all supported setter methods in turn.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addAuthentication"/>
+            <h4><span class="label public">public</span>addAuthentication<span style="font-size:90%;">( <span class="param-type">string</span><strong> $url</strong>, <span class="param-type">Array</span><strong> $authentication</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add authentication credentials for a given URL</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$url</code> - </li>
+                <li><code>$authentication</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addAuthentications"/>
+            <h4><span class="label public">public</span>addAuthentications<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $authentications</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add authentication credentials for hub URLs</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$authentications</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addHubUrl"/>
+            <h4><span class="label public">public</span>addHubUrl<span style="font-size:90%;">( <span class="param-type">string</span><strong> $url</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a Hub Server URL supported by Publisher</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$url</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addHubUrls"/>
+            <h4><span class="label public">public</span>addHubUrls<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $urls</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add an array of Hub Server URLs supported by Publisher</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$urls</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAsyncHubs"/>
+            <h4><span class="label public">public</span>getAsyncHubs<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return an array of Hub Server URLs who returned a response indicating operation in Asynchronous Verification Mode, i.e. they will not confirm any (un)subscription immediately but at a later time (Hubs may be doing this as a batch process when load balancing)</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAuthentications"/>
+            <h4><span class="label public">public</span>getAuthentications<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all hub URL authentication credentials</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCallbackUrl"/>
+            <h4><span class="label public">public</span>getCallbackUrl<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the callback URL to be used by Hub Servers when communicating with this Subscriber</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getErrors"/>
+            <h4><span class="label public">public</span>getErrors<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return an array of errors met from any failures, including keys: 'response' =&gt; the Zend\Http\Response object from the failure 'hubUrl' =&gt; the URL of the Hub Server whose notification failed</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHubUrls"/>
+            <h4><span class="label public">public</span>getHubUrls<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return an array of unique Hub Server URLs currently available</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLeaseSeconds"/>
+            <h4><span class="label public">public</span>getLeaseSeconds<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the number of lease seconds on subscriptions</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getParameters"/>
+            <h4><span class="label public">public</span>getParameters<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return an array of optional parameters for (un)subscribe requests</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPreferredVerificationMode"/>
+            <h4><span class="label public">public</span>getPreferredVerificationMode<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get preferred verification mode (sync or async).</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getStorage"/>
+            <h4><span class="label public">public</span>getStorage<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets an instance of Zend\Feed\Pubsubhubbub\Storage\StoragePersistence used to background save any verification tokens associated with a subscription or other.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTopicUrl"/>
+            <h4><span class="label public">public</span>getTopicUrl<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the topic URL (RSS or Atom feed) to which the intended (un)subscribe event will relate</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isSuccess"/>
+            <h4><span class="label public">public</span>isSuccess<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a boolean indicator of whether the notifications to Hub Servers were ALL successful. If even one failed, FALSE is returned.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeHubUrl"/>
+            <h4><span class="label public">public</span>removeHubUrl<span style="font-size:90%;">( <span class="param-type">string</span><strong> $url</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove a Hub Server URL</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$url</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeParameter"/>
+            <h4><span class="label public">public</span>removeParameter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove an optional parameter for the (un)subscribe requests</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCallbackUrl"/>
+            <h4><span class="label public">public</span>setCallbackUrl<span style="font-size:90%;">( <span class="param-type">string</span><strong> $url</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the callback URL to be used by Hub Servers when communicating with this Subscriber</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$url</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setLeaseSeconds"/>
+            <h4><span class="label public">public</span>setLeaseSeconds<span style="font-size:90%;">( <span class="param-type">int</span><strong> $seconds</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the number of seconds for which any subscription will remain valid</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$seconds</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Process any injected configuration options</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setParameter"/>
+            <h4><span class="label public">public</span>setParameter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add an optional parameter to the (un)subscribe requests</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setParameters"/>
+            <h4><span class="label public">public</span>setParameters<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $parameters</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add an optional parameter to the (un)subscribe requests</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$parameters</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPreferredVerificationMode"/>
+            <h4><span class="label public">public</span>setPreferredVerificationMode<span style="font-size:90%;">( <span class="param-type">string</span><strong> $mode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set preferred verification mode (sync or async). By default, this Subscriber prefers synchronous verification, but does support asynchronous if that's the Hub Server's utilised mode.<pre>Zend\Feed\Pubsubhubbub\Subscriber will always send both modes, whose
+order of occurrence in the parameter list determines this preference.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$mode</code> - Should be 'sync' or 'async'</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setStorage"/>
+            <h4><span class="label public">public</span>setStorage<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Feed_PubSubHubbub_Model_SubscriptionPersistenceInterface.xhtml">Zend\Feed\PubSubHubbub\Model\SubscriptionPersistenceInterface</a></span><strong> $storage</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets an instance of Zend\Feed\Pubsubhubbub\Model\SubscriptionPersistence used to background save any verification tokens associated with a subscription or other.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$storage</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTestStaticToken"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setTestStaticToken<span style="font-size:90%;">( <span class="param-type"/><strong> $token</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="setTopicUrl"/>
+            <h4><span class="label public">public</span>setTopicUrl<span style="font-size:90%;">( <span class="param-type">string</span><strong> $url</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the topic URL (RSS or Atom feed) to which the intended (un)subscribe event will relate</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$url</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="subscribeAll"/>
+            <h4><span class="label public">public</span>subscribeAll<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Subscribe to one or more Hub Servers using the stored Hub URLs for the given Topic URL (RSS or Atom feed)</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unsubscribeAll"/>
+            <h4><span class="label public">public</span>unsubscribeAll<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Unsubscribe from one or more Hub Servers using the stored Hub URLs for the given Topic URL (RSS or Atom feed)</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="usePathParameter"/>
+            <h4><span class="label public">public</span>usePathParameter<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $bool</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set flag indicating whether or not to use a path parameter</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bool</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_doRequest"/>
+            <h4><span class="label protected">protected</span>_doRequest<span style="font-size:90%;">( <span class="param-type">string</span><strong> $mode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes an (un)subscribe request</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$mode</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_generateSubscriptionKey"/>
+            <h4><span class="label protected">protected</span>_generateSubscriptionKey<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">string</span><strong> $hubUrl</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Simple helper to generate a verification token used in (un)subscribe requests to a Hub Server.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$params</code> - </li>
+                <li><code>$hubUrl</code> - The Hub Server URL for which this token will apply</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_generateVerifyToken"/>
+            <h4><span class="label protected">protected</span>_generateVerifyToken<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Simple helper to generate a verification token used in (un)subscribe requests to a Hub Server. Follows no particular method, which means it might be improved/changed in future.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getHttpClient"/>
+            <h4><span class="label protected">protected</span>_getHttpClient<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get a basic prepared HTTP client for use</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getRequestParameters"/>
+            <h4><span class="label protected">protected</span>_getRequestParameters<span style="font-size:90%;">( <span class="param-type">string</span><strong> $hubUrl</strong>, <span class="param-type">string</span><strong> $mode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return a list of standard protocol/optional parameters for addition to client's POST body that are specific to the current Hub Server URL</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$hubUrl</code> - </li>
+                <li><code>$mode</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_toByteValueOrderedString"/>
+            <h4><span class="label protected">protected</span>_toByteValueOrderedString<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Order outgoing parameters</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$params</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_urlEncode"/>
+            <h4><span class="label protected">protected</span>_urlEncode<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>URL Encode an array of parameters</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$params</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

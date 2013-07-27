@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\OptionsResolver\Options - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#options">$options</a>
+          </li>
+          <li>
+            <a href="#normalizers">$normalizers</a>
+          </li>
+          <li>
+            <a href="#lazy">$lazy</a>
+          </li>
+          <li>
+            <a href="#lock">$lock</a>
+          </li>
+          <li>
+            <a href="#reading">$reading</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#all">all</a>
+          </li>
+          <li>
+            <a href="#clear">clear</a>
+          </li>
+          <li>
+            <a href="#count">count</a>
+          </li>
+          <li>
+            <a href="#current">current</a>
+          </li>
+          <li>
+            <a href="#get">get</a>
+          </li>
+          <li>
+            <a href="#has">has</a>
+          </li>
+          <li>
+            <a href="#key">key</a>
+          </li>
+          <li>
+            <a href="#next">next</a>
+          </li>
+          <li>
+            <a href="#normalize">normalize</a>
+          </li>
+          <li>
+            <a href="#offsetExists">offsetExists</a>
+          </li>
+          <li>
+            <a href="#offsetGet">offsetGet</a>
+          </li>
+          <li>
+            <a href="#offsetSet">offsetSet</a>
+          </li>
+          <li>
+            <a href="#offsetUnset">offsetUnset</a>
+          </li>
+          <li>
+            <a href="#overload">overload</a>
+          </li>
+          <li>
+            <a href="#remove">remove</a>
+          </li>
+          <li>
+            <a href="#replace">replace</a>
+          </li>
+          <li>
+            <a href="#resolve">resolve</a>
+          </li>
+          <li>
+            <a href="#rewind">rewind</a>
+          </li>
+          <li>
+            <a href="#set">set</a>
+          </li>
+          <li>
+            <a href="#setNormalizer">setNormalizer</a>
+          </li>
+          <li>
+            <a href="#valid">valid</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\OptionsResolver\</span>Options</h2>
+        <div class="file-notice">
+          <p>Container for resolving inter-dependent options.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <span title="ArrayAccess">ArrayAccess</span>
+          </li>
+          <li>
+            <span>Iterator</span>
+          </li>
+          <li>
+            <span title="Countable">Countable</span>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="options"/>
+            <h4><span class="label private">private</span>array 
+                
+                $options</h4>
+            <ul class="varlist">
+              <li>A list of option values.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="normalizers"/>
+            <h4><span class="label private">private</span>array 
+                
+                $normalizers</h4>
+            <ul class="varlist">
+              <li>A list of normalizer closures.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="lazy"/>
+            <h4><span class="label private">private</span>array 
+                
+                $lazy</h4>
+            <ul class="varlist">
+              <li>A list of closures for evaluating lazy options.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="lock"/>
+            <h4><span class="label private">private</span>array 
+                
+                $lock</h4>
+            <ul class="varlist">
+              <li>A list containing the currently locked options.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="reading"/>
+            <h4><span class="label private">private</span>object 
+                
+                $reading</h4>
+            <ul class="varlist">
+              <li>Whether at least one option has already been read.<pre>Once read, the options cannot be changed anymore. This is
+necessary in order to avoid inconsistencies during the resolving
+process. If any option is changed after being read, all evaluated
+lazy options that depend on this option would become invalid.</pre></li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="all"/>
+            <h4><span class="label public">public</span>all<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the values of all options.<pre>Lazy options are evaluated at this point.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The option values.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="clear"/>
+            <h4><span class="label public">public</span>clear<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes all options.</li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>OptionDefinitionException If options have already been read.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="count"/>
+            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="current"/>
+            <h4><span class="label public">public</span>current<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="get"/>
+            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the value of the given option.<pre>If the option was a lazy option, it is evaluated now.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The option name.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The option value.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\OutOfBoundsException     If the option does not exist.</code>
+                </li>
+                <li>
+                  <code>OptionDefinitionException If a cyclic dependency is detected</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="has"/>
+            <h4><span class="label public">public</span>has<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether the given option exists.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The option name.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Whether the option exists.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="key"/>
+            <h4><span class="label public">public</span>key<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="next"/>
+            <h4><span class="label public">public</span>next<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="offsetExists"/>
+            <h4><span class="label public">public</span>offsetExists<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Equivalent to {@link has()}.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The option name.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Whether the option exists.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetGet"/>
+            <h4><span class="label public">public</span>offsetGet<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Equivalent to {@link get()}.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The option name.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The option value.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\OutOfBoundsException     If the option does not exist.</code>
+                </li>
+                <li>
+                  <code>OptionDefinitionException If a cyclic dependency is detected</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetSet"/>
+            <h4><span class="label public">public</span>offsetSet<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Equivalent to {@link set()}.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The name of the option.</li>
+                <li><code>$value</code> - The value of the option. May be a closure with a</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>OptionDefinitionException If options have already been read.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetUnset"/>
+            <h4><span class="label public">public</span>offsetUnset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Equivalent to {@link remove()}.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The option name.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>OptionDefinitionException If options have already been read.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="overload"/>
+            <h4><span class="label public">public</span>overload<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Overloads the value of a given option.<pre>Contrary to , this method keeps the previous default
+value of the option so that you can access it if you pass a closure.
+Passed closures should have the following signature:
+&lt;code&gt;
+function (Options $options, $value)
+&lt;/code&gt;
+The second parameter passed to the closure is the current default
+value of the option.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The option name.</li>
+                <li><code>$value</code> - The option value.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>OptionDefinitionException If options have already been read.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="remove"/>
+            <h4><span class="label public">public</span>remove<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes the option with the given name.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The option name.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>OptionDefinitionException If options have already been read.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="replace"/>
+            <h4><span class="label public">public</span>replace<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Replaces the contents of the container with the given options.<pre>This method is a shortcut for  with subsequent
+calls to .
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - The options to set.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>OptionDefinitionException If options have already been read.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="rewind"/>
+            <h4><span class="label public">public</span>rewind<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="set"/>
+            <h4><span class="label public">public</span>set<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the value of a given option.<pre>You can set lazy options by passing a closure with the following
+signature:
+&lt;code&gt;
+function (Options $options)
+&lt;/code&gt;
+This closure will be evaluated once the option is read using
+. The closure has access to the resolved values of
+other options through the passed  instance.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The name of the option.</li>
+                <li><code>$value</code> - The value of the option.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>OptionDefinitionException If options have already been read.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setNormalizer"/>
+            <h4><span class="label public">public</span>setNormalizer<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong>, <span class="param-type"><span title="Closure">Closure</span></span><strong> $normalizer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the normalizer for a given option.<pre>Normalizers should be closures with the following signature:
+&lt;code&gt;
+function (Options $options, $value)
+&lt;/code&gt;
+This closure will be evaluated once the option is read using
+. The closure has access to the resolved values of
+other options through the passed  instance.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The name of the option.</li>
+                <li><code>$normalizer</code> - The normalizer.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>OptionDefinitionException If options have already been read.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="valid"/>
+            <h4><span class="label public">public</span>valid<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="normalize"/>
+            <h4><span class="label private">private</span>normalize<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Normalizes the given  option.<pre>The evaluated value is written into the options array.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The option to normalizer.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>OptionDefinitionException If the option has a cyclic dependency</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="resolve"/>
+            <h4><span class="label private">private</span>resolve<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Evaluates the given lazy option.<pre>The evaluated value is written into the options array. The closure for
+evaluating the option is discarded afterwards.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The option to evaluate.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>OptionDefinitionException If the option has a cyclic dependency</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

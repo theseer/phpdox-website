@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Filesystem\Filesystem - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#chgrp">chgrp</a>
+          </li>
+          <li>
+            <a href="#chmod">chmod</a>
+          </li>
+          <li>
+            <a href="#chown">chown</a>
+          </li>
+          <li>
+            <a href="#copy">copy</a>
+          </li>
+          <li>
+            <a href="#dumpFile">dumpFile</a>
+          </li>
+          <li>
+            <a href="#exists">exists</a>
+          </li>
+          <li>
+            <a href="#isAbsolutePath">isAbsolutePath</a>
+          </li>
+          <li>
+            <a href="#makePathRelative">makePathRelative</a>
+          </li>
+          <li>
+            <a href="#mirror">mirror</a>
+          </li>
+          <li>
+            <a href="#mkdir">mkdir</a>
+          </li>
+          <li>
+            <a href="#remove">remove</a>
+          </li>
+          <li>
+            <a href="#rename">rename</a>
+          </li>
+          <li>
+            <a href="#symlink">symlink</a>
+          </li>
+          <li>
+            <a href="#toIterator">toIterator</a>
+          </li>
+          <li>
+            <a href="#touch">touch</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Filesystem\</span>Filesystem</h2>
+        <div class="file-notice">
+          <p>Provides basic utility to manipulate the file system.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="chgrp"/>
+            <h4><span class="label public">public</span>chgrp<span style="font-size:90%;">( <span class="param-type"><span title="string|array|\Traversable">Traversable</span></span><strong> $files</strong>, <span class="param-type">string</span><strong> $group</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $recursive</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Change the group of an array of files or directories</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$files</code> - A filename, an array of files, or a \Traversable instance to change group</li>
+                <li><code>$group</code> - The group name</li>
+                <li><code>$recursive</code> - Whether change the group recursively or not</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>IOException When the change fail</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="chmod"/>
+            <h4><span class="label public">public</span>chmod<span style="font-size:90%;">( <span class="param-type"><span title="string|array|\Traversable">Traversable</span></span><strong> $files</strong>, <span class="param-type">integer</span><strong> $mode</strong>, <span class="param-type">integer</span><strong> $umask</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $recursive</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Change mode for an array of files or directories.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$files</code> - A filename, an array of files, or a \Traversable instance to change mode</li>
+                <li><code>$mode</code> - The new mode (octal)</li>
+                <li><code>$umask</code> - The mode mask (octal)</li>
+                <li><code>$recursive</code> - Whether change the mod recursively or not</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>IOException When the change fail</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="chown"/>
+            <h4><span class="label public">public</span>chown<span style="font-size:90%;">( <span class="param-type"><span title="string|array|\Traversable">Traversable</span></span><strong> $files</strong>, <span class="param-type">string</span><strong> $user</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $recursive</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Change the owner of an array of files or directories</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$files</code> - A filename, an array of files, or a \Traversable instance to change owner</li>
+                <li><code>$user</code> - The new owner user name</li>
+                <li><code>$recursive</code> - Whether change the owner recursively or not</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>IOException When the change fail</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="copy"/>
+            <h4><span class="label public">public</span>copy<span style="font-size:90%;">( <span class="param-type">string</span><strong> $originFile</strong>, <span class="param-type">string</span><strong> $targetFile</strong>, <span class="param-type">boolean</span><strong> $override</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Copies a file.<pre>This method only copies the file if the origin file is newer than the target file.
+
+By default, if the target already exists, it is not overridden.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$originFile</code> - The original filename</li>
+                <li><code>$targetFile</code> - The target filename</li>
+                <li><code>$override</code> - Whether to override an existing file or not</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>IOException When copy fails</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="dumpFile"/>
+            <h4><span class="label public">public</span>dumpFile<span style="font-size:90%;">( <span class="param-type">string</span><strong> $filename</strong>, <span class="param-type">string</span><strong> $content</strong>, <span class="param-type">integer</span><strong> $mode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Atomically dumps content into a file.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$filename</code> - The file to be written to.</li>
+                <li><code>$content</code> - The data to write into the file.</li>
+                <li><code>$mode</code> - The file mode (octal).</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>IOException       If the file cannot be written to.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="exists"/>
+            <h4><span class="label public">public</span>exists<span style="font-size:90%;">( <span class="param-type"><span title="string|array|\Traversable">Traversable</span></span><strong> $files</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks the existence of files or directories.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$files</code> - A filename, an array of files, or a \Traversable instance to check</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if the file exists, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isAbsolutePath"/>
+            <h4><span class="label public">public</span>isAbsolutePath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $file</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether the file path is an absolute path.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$file</code> - A file path</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="makePathRelative"/>
+            <h4><span class="label public">public</span>makePathRelative<span style="font-size:90%;">( <span class="param-type">string</span><strong> $endPath</strong>, <span class="param-type">string</span><strong> $startPath</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Given an existing path, convert it to a path relative to a given starting path</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$endPath</code> - Absolute path of target</li>
+                <li><code>$startPath</code> - Absolute path where traversal begins</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Path of target relative to starting path</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="mirror"/>
+            <h4><span class="label public">public</span>mirror<span style="font-size:90%;">( <span class="param-type">string</span><strong> $originDir</strong>, <span class="param-type">string</span><strong> $targetDir</strong>, <span class="param-type"><a href="../interfaces/Traversable.xhtml">Traversable</a></span><strong> $iterator</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Mirrors a directory to another.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$originDir</code> - The origin directory</li>
+                <li><code>$targetDir</code> - The target directory</li>
+                <li><code>$iterator</code> - A Traversable instance</li>
+                <li><code>$options</code> - An array of boolean options</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>IOException When file type is unknown</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="mkdir"/>
+            <h4><span class="label public">public</span>mkdir<span style="font-size:90%;">( <span class="param-type"><span title="string|array|\Traversable">Traversable</span></span><strong> $dirs</strong>, <span class="param-type">integer</span><strong> $mode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a directory recursively.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dirs</code> - The directory path</li>
+                <li><code>$mode</code> - The directory mode</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>IOException On any directory creation failure</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="remove"/>
+            <h4><span class="label public">public</span>remove<span style="font-size:90%;">( <span class="param-type"><span title="string|array|\Traversable">Traversable</span></span><strong> $files</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes files or directories.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$files</code> - A filename, an array of files, or a \Traversable instance to remove</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>IOException When removal fails</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="rename"/>
+            <h4><span class="label public">public</span>rename<span style="font-size:90%;">( <span class="param-type">string</span><strong> $origin</strong>, <span class="param-type">string</span><strong> $target</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $overwrite</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renames a file or a directory.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$origin</code> - The origin filename or directory</li>
+                <li><code>$target</code> - The new filename or directory</li>
+                <li><code>$overwrite</code> - Whether to overwrite the target if it already exists</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>IOException When target file or directory already exists</code>
+                </li>
+                <li>
+                  <code>IOException When origin cannot be renamed</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="symlink"/>
+            <h4><span class="label public">public</span>symlink<span style="font-size:90%;">( <span class="param-type">string</span><strong> $originDir</strong>, <span class="param-type">string</span><strong> $targetDir</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $copyOnWindows</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a symbolic link or copy a directory.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$originDir</code> - The origin directory path</li>
+                <li><code>$targetDir</code> - The symbolic link name</li>
+                <li><code>$copyOnWindows</code> - Whether to copy files if on Windows</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>IOException When symlink fails</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="touch"/>
+            <h4><span class="label public">public</span>touch<span style="font-size:90%;">( <span class="param-type"><span title="string|array|\Traversable">Traversable</span></span><strong> $files</strong>, <span class="param-type">integer</span><strong> $time</strong>, <span class="param-type">integer</span><strong> $atime</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets access and modification time of file.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$files</code> - A filename, an array of files, or a \Traversable instance to create</li>
+                <li><code>$time</code> - The touch time as a unix timestamp</li>
+                <li><code>$atime</code> - The access time as a unix timestamp</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>IOException When touch fails</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toIterator"/>
+            <h4><span class="label private">private</span>toIterator<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $files</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$files</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

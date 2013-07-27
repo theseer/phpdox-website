@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Validator\ExecutionContext - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#globalContext">$globalContext</a>
+          </li>
+          <li>
+            <a href="#translator">$translator</a>
+          </li>
+          <li>
+            <a href="#translationDomain">$translationDomain</a>
+          </li>
+          <li>
+            <a href="#metadata">$metadata</a>
+          </li>
+          <li>
+            <a href="#value">$value</a>
+          </li>
+          <li>
+            <a href="#group">$group</a>
+          </li>
+          <li>
+            <a href="#propertyPath">$propertyPath</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addViolation">addViolation</a>
+          </li>
+          <li>
+            <a href="#addViolationAt">addViolationAt</a>
+          </li>
+          <li>
+            <a href="#executeConstraintValidators">executeConstraintValidators</a>
+          </li>
+          <li>
+            <a href="#getClassName">getClassName</a>
+          </li>
+          <li>
+            <a href="#getGroup">getGroup</a>
+          </li>
+          <li>
+            <a href="#getMetadata">getMetadata</a>
+          </li>
+          <li>
+            <a href="#getMetadataFactory">getMetadataFactory</a>
+          </li>
+          <li>
+            <a href="#getMetadataFor">getMetadataFor</a>
+          </li>
+          <li>
+            <a href="#getPropertyName">getPropertyName</a>
+          </li>
+          <li>
+            <a href="#getPropertyPath">getPropertyPath</a>
+          </li>
+          <li>
+            <a href="#getRoot">getRoot</a>
+          </li>
+          <li>
+            <a href="#getValue">getValue</a>
+          </li>
+          <li>
+            <a href="#getViolations">getViolations</a>
+          </li>
+          <li>
+            <a href="#resolveGroups">resolveGroups</a>
+          </li>
+          <li>
+            <a href="#validate">validate</a>
+          </li>
+          <li>
+            <a href="#validateValue">validateValue</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Validator\</span>ExecutionContext</h2>
+        <div class="file-notice">
+          <p>Default implementation of {@link ExecutionContextInterface}.</p>
+          <p>
+            <pre>This class is immutable by design.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface.xhtml">Symfony\Component\Validator\ExecutionContextInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="globalContext"/>
+            <h4><span class="label private">private</span>object 
+                
+                $globalContext</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="translator"/>
+            <h4><span class="label private">private</span>object 
+                
+                $translator</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="translationDomain"/>
+            <h4><span class="label private">private</span>object 
+                
+                $translationDomain</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="metadata"/>
+            <h4><span class="label private">private</span>object 
+                
+                $metadata</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="value"/>
+            <h4><span class="label private">private</span>mixed 
+                
+                $value</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="group"/>
+            <h4><span class="label private">private</span>string 
+                
+                $group</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="propertyPath"/>
+            <h4><span class="label private">private</span>string 
+                
+                $propertyPath</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Validator_GlobalExecutionContextInterface.xhtml">Symfony\Component\Validator\GlobalExecutionContextInterface</a></span><strong> $globalContext</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Translation_TranslatorInterface.xhtml">Symfony\Component\Translation\TranslatorInterface</a></span><strong> $translator</strong>, <span class="param-type"><span title="null|string">null|string</span></span><strong> $translationDomain</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Validator_MetadataInterface.xhtml">Symfony\Component\Validator\MetadataInterface</a></span><strong> $metadata</strong>, <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">string</span><strong> $group</strong>, <span class="param-type">string</span><strong> $propertyPath</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a new execution context.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$globalContext</code> - The global context storing node-independent state.</li>
+                <li><code>$translator</code> - The translator for translating violation messages.</li>
+                <li><code>$translationDomain</code> - The domain of the validation messages.</li>
+                <li><code>$metadata</code> - The metadata of the validated node.</li>
+                <li><code>$value</code> - The value of the validated node.</li>
+                <li><code>$group</code> - The current validation group.</li>
+                <li><code>$propertyPath</code> - The property path to the current node.</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addViolation"/>
+            <h4><span class="label public">public</span>addViolation<span style="font-size:90%;">( <span class="param-type"/><strong> $message</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type"/><strong> $invalidValue</strong>, <span class="param-type"/><strong> $pluralization</strong>, <span class="param-type"/><strong> $code</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="addViolationAt"/>
+            <h4><span class="label public">public</span>addViolationAt<span style="font-size:90%;">( <span class="param-type"/><strong> $subPath</strong>, <span class="param-type"/><strong> $message</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type"/><strong> $invalidValue</strong>, <span class="param-type"/><strong> $pluralization</strong>, <span class="param-type"/><strong> $code</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getClassName"/>
+            <h4><span class="label public">public</span>getClassName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getGroup"/>
+            <h4><span class="label public">public</span>getGroup<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getMetadata"/>
+            <h4><span class="label public">public</span>getMetadata<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getMetadataFactory"/>
+            <h4><span class="label public">public</span>getMetadataFactory<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getMetadataFor"/>
+            <h4><span class="label public">public</span>getMetadataFor<span style="font-size:90%;">( <span class="param-type"/><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getPropertyName"/>
+            <h4><span class="label public">public</span>getPropertyName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getPropertyPath"/>
+            <h4><span class="label public">public</span>getPropertyPath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $subPath</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getRoot"/>
+            <h4><span class="label public">public</span>getRoot<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getValue"/>
+            <h4><span class="label public">public</span>getValue<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getViolations"/>
+            <h4><span class="label public">public</span>getViolations<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="validate"/>
+            <h4><span class="label public">public</span>validate<span style="font-size:90%;">( <span class="param-type"/><strong> $value</strong>, <span class="param-type">string</span><strong> $subPath</strong>, <span class="param-type"/><strong> $groups</strong>, <span class="param-type"/><strong> $traverse</strong>, <span class="param-type"/><strong> $deep</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="validateValue"/>
+            <h4><span class="label public">public</span>validateValue<span style="font-size:90%;">( <span class="param-type"/><strong> $value</strong>, <span class="param-type"/><strong> $constraints</strong>, <span class="param-type">string</span><strong> $subPath</strong>, <span class="param-type"/><strong> $groups</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="executeConstraintValidators"/>
+            <h4><span class="label private">private</span>executeConstraintValidators<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">Array</span><strong> $constraints</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes the validators of the given constraints for the given value.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The value to validate.</li>
+                <li><code>$constraints</code> - The constraints to match against.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="resolveGroups"/>
+            <h4><span class="label private">private</span>resolveGroups<span style="font-size:90%;">( <span class="param-type">array</span><strong> $groups</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns an array of group names.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$groups</code> - The groups to resolve. If a single string is</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of validation groups.</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

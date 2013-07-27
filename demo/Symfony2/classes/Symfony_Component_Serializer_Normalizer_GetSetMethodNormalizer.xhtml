@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#callbacks">$callbacks</a>
+          </li>
+          <li>
+            <a href="#ignoredAttributes">$ignoredAttributes</a>
+          </li>
+          <li>
+            <a href="#camelizedAttributes">$camelizedAttributes</a>
+          </li>
+          <li>
+            <a href="#serializer">$serializer</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#denormalize">denormalize</a>
+          </li>
+          <li>
+            <a href="#formatAttribute">formatAttribute</a>
+          </li>
+          <li>
+            <a href="#isGetMethod">isGetMethod</a>
+          </li>
+          <li>
+            <a href="#normalize">normalize</a>
+          </li>
+          <li>
+            <a href="#setCallbacks">setCallbacks</a>
+          </li>
+          <li>
+            <a href="#setCamelizedAttributes">setCamelizedAttributes</a>
+          </li>
+          <li>
+            <a href="#setIgnoredAttributes">setIgnoredAttributes</a>
+          </li>
+          <li>
+            <a href="#setSerializer">setSerializer</a>
+          </li>
+          <li>
+            <a href="#supports">supports</a>
+          </li>
+          <li>
+            <a href="#supportsDenormalization">supportsDenormalization</a>
+          </li>
+          <li>
+            <a href="#supportsNormalization">supportsNormalization</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Serializer\Normalizer\</span>GetSetMethodNormalizer</h2>
+        <div class="file-notice">
+          <p>Converts between objects with getter and setter methods and arrays.</p>
+          <p>
+            <pre>The normalization process looks at all public methods and calls the ones
+which have a name starting with get and take no parameters. The result is a
+map from property names (method name stripped of the get prefix and converted
+to lower case) to property values. Property values are normalized through the
+serializer.
+
+The denormalization first looks at the constructor of the given class to see
+if any of the parameters have the same name as one of the properties. The
+constructor is then called with all parameters or an exception is thrown if
+any required parameters were not present as properties. Then the denormalizer
+walks through the given map of property names to property values to see if a
+setter method exists for any of the properties. If a setter exists it is
+called with the property value. No automatic denormalization of the value
+takes place.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Nils Adermann &lt;naderman@naderman.de&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Symfony_Component_Serializer_Normalizer_NormalizerInterface.xhtml">Symfony\Component\Serializer\Normalizer\NormalizerInterface</a>
+          </li>
+          <li>
+            <a href="../interfaces/Symfony_Component_Serializer_Normalizer_DenormalizerInterface.xhtml">Symfony\Component\Serializer\Normalizer\DenormalizerInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="callbacks"/>
+            <h4><span class="label protected">protected</span>
+                $callbacks</h4>
+          </li>
+          <li>
+            <a name="ignoredAttributes"/>
+            <h4><span class="label protected">protected</span>
+                $ignoredAttributes</h4>
+          </li>
+          <li>
+            <a name="camelizedAttributes"/>
+            <h4><span class="label protected">protected</span>
+                $camelizedAttributes</h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="denormalize"/>
+            <h4><span class="label public">public</span>denormalize<span style="font-size:90%;">( <span class="param-type"/><strong> $data</strong>, <span class="param-type"/><strong> $class</strong>, <span class="param-type"/><strong> $format</strong>, <span class="param-type">Array</span><strong> $context</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="normalize"/>
+            <h4><span class="label public">public</span>normalize<span style="font-size:90%;">( <span class="param-type"/><strong> $object</strong>, <span class="param-type"/><strong> $format</strong>, <span class="param-type">Array</span><strong> $context</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="setCallbacks"/>
+            <h4><span class="label public">public</span>setCallbacks<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $callbacks</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set normalization callbacks</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$callbacks</code> - help normalize the result</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidArgumentException if a non-callable callback is set</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCamelizedAttributes"/>
+            <h4><span class="label public">public</span>setCamelizedAttributes<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $camelizedAttributes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set attributes to be camelized on denormalize</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$camelizedAttributes</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setIgnoredAttributes"/>
+            <h4><span class="label public">public</span>setIgnoredAttributes<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $ignoredAttributes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set ignored attributes for normalization</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$ignoredAttributes</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSerializer"/>
+            <h4><span class="label public">public</span>setSerializer<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Serializer_SerializerInterface.xhtml">Symfony\Component\Serializer\SerializerInterface</a></span><strong> $serializer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="supportsDenormalization"/>
+            <h4><span class="label public">public</span>supportsDenormalization<span style="font-size:90%;">( <span class="param-type"/><strong> $data</strong>, <span class="param-type"/><strong> $type</strong>, <span class="param-type"/><strong> $format</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="supportsNormalization"/>
+            <h4><span class="label public">public</span>supportsNormalization<span style="font-size:90%;">( <span class="param-type"/><strong> $data</strong>, <span class="param-type"/><strong> $format</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="formatAttribute"/>
+            <h4><span class="label protected">protected</span>formatAttribute<span style="font-size:90%;">( <span class="param-type">string</span><strong> $attributeName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Format attribute name to access parameters or methods As option, if attribute name is found on camelizedAttributes array returns attribute name in camelcase format</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$attributeName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isGetMethod"/>
+            <h4><span class="label private">private</span>isGetMethod<span style="font-size:90%;">( <span class="param-type"><span title="ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if a method's name is get.* and can be called without parameters.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - the method to check</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>whether the method is a getter.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supports"/>
+            <h4><span class="label private">private</span>supports<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if the given class has any get{Property} method.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Ldap\Ldap - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#SEARCH_SCOPE_SUB">SEARCH_SCOPE_SUB</a>
+          </li>
+          <li>
+            <a href="#SEARCH_SCOPE_ONE">SEARCH_SCOPE_ONE</a>
+          </li>
+          <li>
+            <a href="#SEARCH_SCOPE_BASE">SEARCH_SCOPE_BASE</a>
+          </li>
+          <li>
+            <a href="#ACCTNAME_FORM_DN">ACCTNAME_FORM_DN</a>
+          </li>
+          <li>
+            <a href="#ACCTNAME_FORM_USERNAME">ACCTNAME_FORM_USERNAME</a>
+          </li>
+          <li>
+            <a href="#ACCTNAME_FORM_BACKSLASH">ACCTNAME_FORM_BACKSLASH</a>
+          </li>
+          <li>
+            <a href="#ACCTNAME_FORM_PRINCIPAL">ACCTNAME_FORM_PRINCIPAL</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#connectString">$connectString</a>
+          </li>
+          <li>
+            <a href="#options">$options</a>
+          </li>
+          <li>
+            <a href="#resource">$resource</a>
+          </li>
+          <li>
+            <a href="#boundUser">$boundUser</a>
+          </li>
+          <li>
+            <a href="#rootDse">$rootDse</a>
+          </li>
+          <li>
+            <a href="#schema">$schema</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__destruct">__destruct</a>
+          </li>
+          <li>
+            <a href="#add">add</a>
+          </li>
+          <li>
+            <a href="#bind">bind</a>
+          </li>
+          <li>
+            <a href="#connect">connect</a>
+          </li>
+          <li>
+            <a href="#copy">copy</a>
+          </li>
+          <li>
+            <a href="#copyToSubtree">copyToSubtree</a>
+          </li>
+          <li>
+            <a href="#count">count</a>
+          </li>
+          <li>
+            <a href="#countChildren">countChildren</a>
+          </li>
+          <li>
+            <a href="#createCollection">createCollection</a>
+          </li>
+          <li>
+            <a href="#delete">delete</a>
+          </li>
+          <li>
+            <a href="#disconnect">disconnect</a>
+          </li>
+          <li>
+            <a href="#exists">exists</a>
+          </li>
+          <li>
+            <a href="#getAccount">getAccount</a>
+          </li>
+          <li>
+            <a href="#getAccountCanonicalForm">getAccountCanonicalForm</a>
+          </li>
+          <li>
+            <a href="#getAccountDn">getAccountDn</a>
+          </li>
+          <li>
+            <a href="#getAccountDomainName">getAccountDomainName</a>
+          </li>
+          <li>
+            <a href="#getAccountDomainNameShort">getAccountDomainNameShort</a>
+          </li>
+          <li>
+            <a href="#getAccountFilter">getAccountFilter</a>
+          </li>
+          <li>
+            <a href="#getAccountFilterFormat">getAccountFilterFormat</a>
+          </li>
+          <li>
+            <a href="#getAllowEmptyPassword">getAllowEmptyPassword</a>
+          </li>
+          <li>
+            <a href="#getBaseDn">getBaseDn</a>
+          </li>
+          <li>
+            <a href="#getBaseNode">getBaseNode</a>
+          </li>
+          <li>
+            <a href="#getBindRequiresDn">getBindRequiresDn</a>
+          </li>
+          <li>
+            <a href="#getBoundUser">getBoundUser</a>
+          </li>
+          <li>
+            <a href="#getCanonicalAccountName">getCanonicalAccountName</a>
+          </li>
+          <li>
+            <a href="#getChildrenDns">getChildrenDns</a>
+          </li>
+          <li>
+            <a href="#getEntry">getEntry</a>
+          </li>
+          <li>
+            <a href="#getHost">getHost</a>
+          </li>
+          <li>
+            <a href="#getLastError">getLastError</a>
+          </li>
+          <li>
+            <a href="#getLastErrorCode">getLastErrorCode</a>
+          </li>
+          <li>
+            <a href="#getNetworkTimeout">getNetworkTimeout</a>
+          </li>
+          <li>
+            <a href="#getNode">getNode</a>
+          </li>
+          <li>
+            <a href="#getOptReferrals">getOptReferrals</a>
+          </li>
+          <li>
+            <a href="#getOptions">getOptions</a>
+          </li>
+          <li>
+            <a href="#getPassword">getPassword</a>
+          </li>
+          <li>
+            <a href="#getPort">getPort</a>
+          </li>
+          <li>
+            <a href="#getResource">getResource</a>
+          </li>
+          <li>
+            <a href="#getRootDse">getRootDse</a>
+          </li>
+          <li>
+            <a href="#getSchema">getSchema</a>
+          </li>
+          <li>
+            <a href="#getTryUsernameSplit">getTryUsernameSplit</a>
+          </li>
+          <li>
+            <a href="#getUseSsl">getUseSsl</a>
+          </li>
+          <li>
+            <a href="#getUseStartTls">getUseStartTls</a>
+          </li>
+          <li>
+            <a href="#getUsername">getUsername</a>
+          </li>
+          <li>
+            <a href="#isPossibleAuthority">isPossibleAuthority</a>
+          </li>
+          <li>
+            <a href="#move">move</a>
+          </li>
+          <li>
+            <a href="#moveToSubtree">moveToSubtree</a>
+          </li>
+          <li>
+            <a href="#prepareLdapEntryArray">prepareLdapEntryArray</a>
+          </li>
+          <li>
+            <a href="#rename">rename</a>
+          </li>
+          <li>
+            <a href="#save">save</a>
+          </li>
+          <li>
+            <a href="#search">search</a>
+          </li>
+          <li>
+            <a href="#searchEntries">searchEntries</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+          <li>
+            <a href="#splitName">splitName</a>
+          </li>
+          <li>
+            <a href="#update">update</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Ldap\</span>Ldap</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="SEARCH_SCOPE_SUB"/>SEARCH_SCOPE_SUB = 1<hr/></li>
+          <li><a name="SEARCH_SCOPE_ONE"/>SEARCH_SCOPE_ONE = 2<hr/></li>
+          <li><a name="SEARCH_SCOPE_BASE"/>SEARCH_SCOPE_BASE = 3<hr/></li>
+          <li><a name="ACCTNAME_FORM_DN"/>ACCTNAME_FORM_DN = 1<hr/></li>
+          <li><a name="ACCTNAME_FORM_USERNAME"/>ACCTNAME_FORM_USERNAME = 2<hr/></li>
+          <li><a name="ACCTNAME_FORM_BACKSLASH"/>ACCTNAME_FORM_BACKSLASH = 3<hr/></li>
+          <li><a name="ACCTNAME_FORM_PRINCIPAL"/>ACCTNAME_FORM_PRINCIPAL = 4<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="connectString"/>
+            <h4><span class="label private">private</span>string 
+                
+                $connectString</h4>
+            <ul class="varlist">
+              <li>String used with ldap_connect for error handling purposes.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="options"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $options</h4>
+            <ul class="varlist">
+              <li>The options used in connecting, binding, etc.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="resource"/>
+            <h4><span class="label protected">protected</span>resource 
+                
+                $resource</h4>
+            <ul class="varlist">
+              <li>The raw LDAP extension resource.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="boundUser"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $boundUser</h4>
+            <ul class="varlist">
+              <li>FALSE if no user is bound to the LDAP resource NULL if there has been an anonymous bind username of the currently bound user</li>
+            </ul>
+          </li>
+          <li>
+            <a name="rootDse"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $rootDse</h4>
+            <ul class="varlist">
+              <li>Caches the RootDse</li>
+            </ul>
+          </li>
+          <li>
+            <a name="schema"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $schema</h4>
+            <ul class="varlist">
+              <li>Caches the schema</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - Options used in connecting, binding, etc.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Destructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__destruct"/>
+            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Destructor.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="add"/>
+            <h4><span class="label public">public</span>add<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $dn</strong>, <span class="param-type">Array</span><strong> $entry</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add new information to the LDAP repository</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+                <li><code>$entry</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluid interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="bind"/>
+            <h4><span class="label public">public</span>bind<span style="font-size:90%;">( <span class="param-type">string</span><strong> $username</strong>, <span class="param-type">string</span><strong> $password</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$username</code> - The username for authenticating the bind</li>
+                <li><code>$password</code> - The password for authenticating the bind</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="connect"/>
+            <h4><span class="label public">public</span>connect<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong>, <span class="param-type">int</span><strong> $port</strong>, <span class="param-type">boolean</span><strong> $useSsl</strong>, <span class="param-type">boolean</span><strong> $useStartTls</strong>, <span class="param-type">int</span><strong> $networkTimeout</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>To connect using SSL it seems the client tries to verify the server certificate by default. One way to disable this behavior is to set 'TLS_REQCERT never' in OpenLDAP's ldap.conf and restarting Apache. Or, if you really care about the server's cert you can put a cert on the web server.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$host</code> - The hostname of the LDAP server to connect to</li>
+                <li><code>$port</code> - The port number of the LDAP server to connect to</li>
+                <li><code>$useSsl</code> - Use SSL</li>
+                <li><code>$useStartTls</code> - Use STARTTLS</li>
+                <li><code>$networkTimeout</code> - The value for network timeout when connect to the LDAP server.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="copy"/>
+            <h4><span class="label public">public</span>copy<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $from</strong>, <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $to</strong>, <span class="param-type">boolean</span><strong> $recursively</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Copies a LDAP entry from one DN to another DN.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$from</code> - </li>
+                <li><code>$to</code> - </li>
+                <li><code>$recursively</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluid interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="copyToSubtree"/>
+            <h4><span class="label public">public</span>copyToSubtree<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $from</strong>, <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $to</strong>, <span class="param-type">boolean</span><strong> $recursively</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Copies a LDAP entry from one DN to another subtree.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$from</code> - </li>
+                <li><code>$to</code> - </li>
+                <li><code>$recursively</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluid interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="count"/>
+            <h4><span class="label public">public</span>count<span style="font-size:90%;">( <span class="param-type"><span title="string|Filter\AbstractFilter">AbstractFilter</span></span><strong> $filter</strong>, <span class="param-type"><span title="string|Dn|null">string|Dn|null</span></span><strong> $basedn</strong>, <span class="param-type">integer</span><strong> $scope</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Count items found by given filter.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$filter</code> - </li>
+                <li><code>$basedn</code> - </li>
+                <li><code>$scope</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="countChildren"/>
+            <h4><span class="label public">public</span>countChildren<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $dn</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Count children for a given DN.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="delete"/>
+            <h4><span class="label public">public</span>delete<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $dn</strong>, <span class="param-type">boolean</span><strong> $recursively</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Delete an LDAP entry</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+                <li><code>$recursively</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluid interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="disconnect"/>
+            <h4><span class="label public">public</span>disconnect<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="exists"/>
+            <h4><span class="label public">public</span>exists<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $dn</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if a given DN exists.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBaseDn"/>
+            <h4><span class="label public">public</span>getBaseDn<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the base DN under which objects of interest are located</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBaseNode"/>
+            <h4><span class="label public">public</span>getBaseNode<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the base node as a Zend\Ldap\Node</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBoundUser"/>
+            <h4><span class="label public">public</span>getBoundUser<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the currently bound user<pre>FALSE if no user is bound to the LDAP resource
+NULL if there has been an anonymous bind
+username of the currently bound user</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCanonicalAccountName"/>
+            <h4><span class="label public">public</span>getCanonicalAccountName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $acctname</strong>, <span class="param-type">integer</span><strong> $form</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$acctname</code> - The name to canonicalize</li>
+                <li><code>$form</code> - The desired form of canonicalization</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The canonicalized name in the desired form</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEntry"/>
+            <h4><span class="label public">public</span>getEntry<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $dn</strong>, <span class="param-type">Array</span><strong> $attributes</strong>, <span class="param-type">boolean</span><strong> $throwOnNotFound</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get LDAP entry by DN</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+                <li><code>$attributes</code> - </li>
+                <li><code>$throwOnNotFound</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>null|Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLastError"/>
+            <h4><span class="label public">public</span>getLastError<span style="font-size:90%;">( <span class="param-type">int</span><strong> &amp;$errorCode</strong>, <span class="param-type">Array</span><strong> &amp;$errorMessages</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the LDAP error message of the last LDAP command</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$errorCode</code> - </li>
+                <li><code>$errorMessages</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLastErrorCode"/>
+            <h4><span class="label public">public</span>getLastErrorCode<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the LDAP error number of the last LDAP command</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNode"/>
+            <h4><span class="label public">public</span>getNode<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $dn</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the specified DN as a Zend\Ldap\Node</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getOptions"/>
+            <h4><span class="label public">public</span>getOptions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The current options.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getResource"/>
+            <h4><span class="label public">public</span>getResource<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The raw LDAP extension resource.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRootDse"/>
+            <h4><span class="label public">public</span>getRootDse<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the RootDse</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSchema"/>
+            <h4><span class="label public">public</span>getSchema<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the schema</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="move"/>
+            <h4><span class="label public">public</span>move<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $from</strong>, <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $to</strong>, <span class="param-type">boolean</span><strong> $recursively</strong>, <span class="param-type">boolean</span><strong> $alwaysEmulate</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Moves a LDAP entry from one DN to another DN.<pre>This is an alias for </pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$from</code> - </li>
+                <li><code>$to</code> - </li>
+                <li><code>$recursively</code> - </li>
+                <li><code>$alwaysEmulate</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluid interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="moveToSubtree"/>
+            <h4><span class="label public">public</span>moveToSubtree<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $from</strong>, <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $to</strong>, <span class="param-type">boolean</span><strong> $recursively</strong>, <span class="param-type">boolean</span><strong> $alwaysEmulate</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Moves a LDAP entry from one DN to another subtree.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$from</code> - </li>
+                <li><code>$to</code> - </li>
+                <li><code>$recursively</code> - </li>
+                <li><code>$alwaysEmulate</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluid interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepareLdapEntryArray"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>prepareLdapEntryArray<span style="font-size:90%;">( <span class="param-type">Array</span><strong> &amp;$entry</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepares an ldap data entry array for insert/update operation</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entry</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="rename"/>
+            <h4><span class="label public">public</span>rename<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $from</strong>, <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $to</strong>, <span class="param-type">boolean</span><strong> $recursively</strong>, <span class="param-type">boolean</span><strong> $alwaysEmulate</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renames a LDAP entry from one DN to another DN.<pre>This method implicitly moves the entry to another location within the tree.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$from</code> - </li>
+                <li><code>$to</code> - </li>
+                <li><code>$recursively</code> - </li>
+                <li><code>$alwaysEmulate</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluid interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="save"/>
+            <h4><span class="label public">public</span>save<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $dn</strong>, <span class="param-type">Array</span><strong> $entry</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Save entry to LDAP registry.<pre>Internally decides if entry will be updated to added by calling
+{@link exists()}.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+                <li><code>$entry</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluid interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="search"/>
+            <h4><span class="label public">public</span>search<span style="font-size:90%;">( <span class="param-type"><span title="string|Filter\AbstractFilter|array">AbstractFilter|array</span></span><strong> $filter</strong>, <span class="param-type"><span title="string|Dn|null">string|Dn|null</span></span><strong> $basedn</strong>, <span class="param-type">integer</span><strong> $scope</strong>, <span class="param-type">Array</span><strong> $attributes</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $sort</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $collectionClass</strong>, <span class="param-type">integer</span><strong> $sizelimit</strong>, <span class="param-type">integer</span><strong> $timelimit</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>A global LDAP search routine for finding information.<pre>Options can be either passed as single parameters according to the
+method signature or as an array with one or more of the following keys
+- filter
+- baseDn
+- scope
+- attributes
+- sort
+- collectionClass
+- sizelimit
+- timelimit</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$filter</code> - </li>
+                <li><code>$basedn</code> - </li>
+                <li><code>$scope</code> - </li>
+                <li><code>$attributes</code> - </li>
+                <li><code>$sort</code> - </li>
+                <li><code>$collectionClass</code> - </li>
+                <li><code>$sizelimit</code> - </li>
+                <li><code>$timelimit</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="searchEntries"/>
+            <h4><span class="label public">public</span>searchEntries<span style="font-size:90%;">( <span class="param-type"><span title="string|Filter\AbstractFilter|array">AbstractFilter|array</span></span><strong> $filter</strong>, <span class="param-type"><span title="string|Dn|null">string|Dn|null</span></span><strong> $basedn</strong>, <span class="param-type">integer</span><strong> $scope</strong>, <span class="param-type">Array</span><strong> $attributes</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $sort</strong>, <span class="param-type">boolean</span><strong> $reverseSort</strong>, <span class="param-type">integer</span><strong> $sizelimit</strong>, <span class="param-type">integer</span><strong> $timelimit</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Search LDAP registry for entries matching filter and optional attributes<pre>Options can be either passed as single parameters according to the
+method signature or as an array with one or more of the following keys
+- filter
+- baseDn
+- scope
+- attributes
+- sort
+- reverseSort
+- sizelimit
+- timelimit</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$filter</code> - </li>
+                <li><code>$basedn</code> - </li>
+                <li><code>$scope</code> - </li>
+                <li><code>$attributes</code> - </li>
+                <li><code>$sort</code> - </li>
+                <li><code>$reverseSort</code> - </li>
+                <li><code>$sizelimit</code> - </li>
+                <li><code>$timelimit</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the options used in connecting, binding, etc.<pre>Valid option keys:
+ host
+ port
+ useSsl
+ username
+ password
+ bindRequiresDn
+ baseDn
+ accountCanonicalForm
+ accountDomainName
+ accountDomainNameShort
+ accountFilterFormat
+ allowEmptyPassword
+ useStartTls
+ optReferrals
+ tryUsernameSplit
+ networkTimeout</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - Options used in connecting, binding, etc.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="update"/>
+            <h4><span class="label public">public</span>update<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $dn</strong>, <span class="param-type">Array</span><strong> $entry</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Update LDAP registry</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+                <li><code>$entry</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluid interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createCollection"/>
+            <h4><span class="label protected">protected</span>createCollection<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Ldap_Collection_DefaultIterator.xhtml">Zend\Ldap\Collection\DefaultIterator</a></span><strong> $iterator</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $collectionClass</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Extension point for collection creation</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$iterator</code> - </li>
+                <li><code>$collectionClass</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAccount"/>
+            <h4><span class="label protected">protected</span>getAccount<span style="font-size:90%;">( <span class="param-type">string</span><strong> $acctname</strong>, <span class="param-type">Array</span><strong> $attrs</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$acctname</code> - </li>
+                <li><code>$attrs</code> - An array of names of desired attributes</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of the attributes representing the account</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAccountCanonicalForm"/>
+            <h4><span class="label protected">protected</span>getAccountCanonicalForm<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Either ACCTNAME_FORM_BACKSLASH, ACCTNAME_FORM_PRINCIPAL or</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAccountDn"/>
+            <h4><span class="label protected">protected</span>getAccountDn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $acctname</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$acctname</code> - The name of the account</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The DN of the specified account</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAccountDomainName"/>
+            <h4><span class="label protected">protected</span>getAccountDomainName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The account domain name</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAccountDomainNameShort"/>
+            <h4><span class="label protected">protected</span>getAccountDomainNameShort<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The short account domain name</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAccountFilter"/>
+            <h4><span class="label protected">protected</span>getAccountFilter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $acctname</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$acctname</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The LDAP search filter for matching directory accounts</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAccountFilterFormat"/>
+            <h4><span class="label protected">protected</span>getAccountFilterFormat<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A format string for building an LDAP search filter to match</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAllowEmptyPassword"/>
+            <h4><span class="label protected">protected</span>getAllowEmptyPassword<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Allow empty passwords</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBindRequiresDn"/>
+            <h4><span class="label protected">protected</span>getBindRequiresDn<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Bind requires DN</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getChildrenDns"/>
+            <h4><span class="label protected">protected</span>getChildrenDns<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $parentDn</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the immediate children DNs of the given $parentDn<pre>This method is used in recursive methods like or </pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$parentDn</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>of DNs</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHost"/>
+            <h4><span class="label protected">protected</span>getHost<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The hostname of the LDAP server being used to</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNetworkTimeout"/>
+            <h4><span class="label protected">protected</span>getNetworkTimeout<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The value for network timeout when connect to the LDAP server.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getOptReferrals"/>
+            <h4><span class="label protected">protected</span>getOptReferrals<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Opt. Referrals</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPassword"/>
+            <h4><span class="label protected">protected</span>getPassword<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The default password for binding</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPort"/>
+            <h4><span class="label protected">protected</span>getPort<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The port of the LDAP server or 0 to indicate that no port</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTryUsernameSplit"/>
+            <h4><span class="label protected">protected</span>getTryUsernameSplit<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Try splitting the username into username and domain</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUseSsl"/>
+            <h4><span class="label protected">protected</span>getUseSsl<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The default SSL / TLS encrypted transport control</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUseStartTls"/>
+            <h4><span class="label protected">protected</span>getUseStartTls<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The default SSL / TLS encrypted transport control</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUsername"/>
+            <h4><span class="label protected">protected</span>getUsername<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The default acctname for binding</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isPossibleAuthority"/>
+            <h4><span class="label protected">protected</span>isPossibleAuthority<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dname</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dname</code> - The domain name to check</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="splitName"/>
+            <h4><span class="label protected">protected</span>splitName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">string</span><strong> &amp;$dname</strong>, <span class="param-type">string</span><strong> &amp;$aname</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - The name to split</li>
+                <li><code>$dname</code> - The resulting domain name (this is an out parameter)</li>
+                <li><code>$aname</code> - The resulting account name (this is an out parameter)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

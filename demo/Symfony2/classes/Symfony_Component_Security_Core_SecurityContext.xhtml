@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Security\Core\SecurityContext - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#token">$token</a>
+          </li>
+          <li>
+            <a href="#accessDecisionManager">$accessDecisionManager</a>
+          </li>
+          <li>
+            <a href="#authenticationManager">$authenticationManager</a>
+          </li>
+          <li>
+            <a href="#alwaysAuthenticate">$alwaysAuthenticate</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#getToken">getToken</a>
+          </li>
+          <li>
+            <a href="#isGranted">isGranted</a>
+          </li>
+          <li>
+            <a href="#setToken">setToken</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Security\Core\</span>SecurityContext</h2>
+        <div class="file-notice">
+          <p>SecurityContext is the main entry point of the Security component.</p>
+          <p>
+            <pre>It gives access to the token representing the current user authentication.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+          <li><b>Author: </b>Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Symfony_Component_Security_Core_SecurityContextInterface.xhtml">Symfony\Component\Security\Core\SecurityContextInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="token"/>
+            <h4><span class="label private">private</span>
+                $token</h4>
+          </li>
+          <li>
+            <a name="accessDecisionManager"/>
+            <h4><span class="label private">private</span>
+                $accessDecisionManager</h4>
+          </li>
+          <li>
+            <a name="authenticationManager"/>
+            <h4><span class="label private">private</span>
+                $authenticationManager</h4>
+          </li>
+          <li>
+            <a name="alwaysAuthenticate"/>
+            <h4><span class="label private">private</span>
+                $alwaysAuthenticate</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Core_Authentication_AuthenticationManagerInterface.xhtml">Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface</a></span><strong> $authenticationManager</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Core_Authorization_AccessDecisionManagerInterface.xhtml">Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface</a></span><strong> $accessDecisionManager</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $alwaysAuthenticate</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$authenticationManager</code> - An AuthenticationManager instance</li>
+                <li><code>$accessDecisionManager</code> - An AccessDecisionManager instance</li>
+                <li><code>$alwaysAuthenticate</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getToken"/>
+            <h4><span class="label public">public</span>getToken<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the currently authenticated token.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A TokenInterface instance or null if no authentication information is available</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isGranted"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>isGranted<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $attributes</strong>, <span class="param-type"><span title="mixed|null">mixed|null</span></span><strong> $object</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if the attributes are granted against the current token.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$attributes</code> - </li>
+                <li><code>$object</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AuthenticationCredentialsNotFoundException when the security context has no authentication token.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setToken"/>
+            <h4><span class="label public">public</span>setToken<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Core_Authentication_Token_TokenInterface.xhtml">Symfony\Component\Security\Core\Authentication\Token\TokenInterface</a></span><strong> $token</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the currently authenticated token.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$token</code> - A TokenInterface token, or null if no further authentication information should be stored</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

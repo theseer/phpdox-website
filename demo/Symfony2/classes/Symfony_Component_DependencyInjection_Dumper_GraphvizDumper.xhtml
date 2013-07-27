@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\DependencyInjection\Dumper\GraphvizDumper - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#nodes">$nodes</a>
+          </li>
+          <li>
+            <a href="#edges">$edges</a>
+          </li>
+          <li>
+            <a href="#options">$options</a>
+          </li>
+          <li>
+            <a href="#container">$container</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addAttributes">addAttributes</a>
+          </li>
+          <li>
+            <a href="#addEdges">addEdges</a>
+          </li>
+          <li>
+            <a href="#addNodes">addNodes</a>
+          </li>
+          <li>
+            <a href="#addOptions">addOptions</a>
+          </li>
+          <li>
+            <a href="#cloneContainer">cloneContainer</a>
+          </li>
+          <li>
+            <a href="#dotize">dotize</a>
+          </li>
+          <li>
+            <a href="#dump">dump</a>
+          </li>
+          <li>
+            <a href="#endDot">endDot</a>
+          </li>
+          <li>
+            <a href="#findEdges">findEdges</a>
+          </li>
+          <li>
+            <a href="#findNodes">findNodes</a>
+          </li>
+          <li>
+            <a href="#getAliases">getAliases</a>
+          </li>
+          <li>
+            <a href="#startDot">startDot</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\DependencyInjection\Dumper\</span>GraphvizDumper</h2>
+        <div class="file-notice">
+          <p>GraphvizDumper dumps a service container as a graphviz file.</p>
+          <p>
+            <pre>You can convert the generated dot file with the dot utility (http://www.graphviz.org/):
+
+  dot -Tpng container.dot &gt; foo.png</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="nodes"/>
+            <h4><span class="label private">private</span>
+                $nodes</h4>
+          </li>
+          <li>
+            <a name="edges"/>
+            <h4><span class="label private">private</span>
+                $edges</h4>
+          </li>
+          <li>
+            <a name="options"/>
+            <h4><span class="label private">private</span>
+                $options</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder.xhtml">Symfony\Component\DependencyInjection\ContainerBuilder</a></span><strong> $container</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$container</code> - The service container to dump</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="dump"/>
+            <h4><span class="label public">public</span>dump<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Dumps the service container as a graphviz graph.<pre>Available options:
+
+ * graph: The default options for the whole graph
+ * node: The default options for nodes
+ * edge: The default options for edges
+ * node.instance: The default options for services that are defined directly by object instances
+ * node.definition: The default options for services that are defined via service definition instances
+ * node.missing: The default options for missing services</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - An array of options</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The dot representation of the service container</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addAttributes"/>
+            <h4><span class="label private">private</span>addAttributes<span style="font-size:90%;">( <span class="param-type">array</span><strong> $attributes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds attributes</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$attributes</code> - An array of attributes</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A comma separated list of attributes</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addEdges"/>
+            <h4><span class="label private">private</span>addEdges<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns all edges.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A string representation of all edges</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addNodes"/>
+            <h4><span class="label private">private</span>addNodes<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns all nodes.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A string representation of all nodes</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addOptions"/>
+            <h4><span class="label private">private</span>addOptions<span style="font-size:90%;">( <span class="param-type">array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds options</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - An array of options</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A space separated list of options</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="cloneContainer"/>
+            <h4><span class="label private">private</span>cloneContainer<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="dotize"/>
+            <h4><span class="label private">private</span>dotize<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Dotizes an identifier.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - The identifier to dotize</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A dotized string</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="endDot"/>
+            <h4><span class="label private">private</span>endDot<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the end dot.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="findEdges"/>
+            <h4><span class="label private">private</span>findEdges<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type">array</span><strong> $arguments</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $required</strong>, <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Finds all edges belonging to a specific service id.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - The service id used to find edges</li>
+                <li><code>$arguments</code> - An array of arguments</li>
+                <li><code>$required</code> - </li>
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of edges</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="findNodes"/>
+            <h4><span class="label private">private</span>findNodes<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Finds all nodes.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of all nodes</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAliases"/>
+            <h4><span class="label private">private</span>getAliases<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Compiles an array of aliases for a specified service id.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - A service id</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of aliases</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="startDot"/>
+            <h4><span class="label private">private</span>startDot<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the start dot.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The string representation of a start dot</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

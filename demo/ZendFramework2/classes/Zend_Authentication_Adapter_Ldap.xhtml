@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Authentication\Adapter\Ldap - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#ldap">$ldap</a>
+          </li>
+          <li>
+            <a href="#options">$options</a>
+          </li>
+          <li>
+            <a href="#username">$username</a>
+          </li>
+          <li>
+            <a href="#password">$password</a>
+          </li>
+          <li>
+            <a href="#authenticatedDn">$authenticatedDn</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#authenticate">authenticate</a>
+          </li>
+          <li>
+            <a href="#checkGroupMembership">checkGroupMembership</a>
+          </li>
+          <li>
+            <a href="#getAccountObject">getAccountObject</a>
+          </li>
+          <li>
+            <a href="#getAuthorityName">getAuthorityName</a>
+          </li>
+          <li>
+            <a href="#getLdap">getLdap</a>
+          </li>
+          <li>
+            <a href="#getOptions">getOptions</a>
+          </li>
+          <li>
+            <a href="#getPassword">getPassword</a>
+          </li>
+          <li>
+            <a href="#getUsername">getUsername</a>
+          </li>
+          <li>
+            <a href="#optionsToString">optionsToString</a>
+          </li>
+          <li>
+            <a href="#prepareOptions">prepareOptions</a>
+          </li>
+          <li>
+            <a href="#setCredential">setCredential</a>
+          </li>
+          <li>
+            <a href="#setIdentity">setIdentity</a>
+          </li>
+          <li>
+            <a href="#setLdap">setLdap</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+          <li>
+            <a href="#setPassword">setPassword</a>
+          </li>
+          <li>
+            <a href="#setUsername">setUsername</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Authentication\Adapter\</span>Ldap</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_Authentication_Adapter_AdapterInterface.xhtml">Zend\Authentication\Adapter\AdapterInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="ldap"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $ldap</h4>
+            <ul class="varlist">
+              <li>The Zend\Ldap\Ldap context.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="options"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $options</h4>
+            <ul class="varlist">
+              <li>The array of arrays of Zend\Ldap\Ldap options passed to the constructor.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="username"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $username</h4>
+            <ul class="varlist">
+              <li>The username of the account being authenticated.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="password"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $password</h4>
+            <ul class="varlist">
+              <li>The password of the account being authenticated.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="authenticatedDn"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $authenticatedDn</h4>
+            <ul class="varlist">
+              <li>The DN of the authenticated account. Used to retrieve the account entry on request.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong>, <span class="param-type">string</span><strong> $username</strong>, <span class="param-type">string</span><strong> $password</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - An array of arrays of Zend\Ldap\Ldap options</li>
+                <li><code>$username</code> - The username of the account being authenticated</li>
+                <li><code>$password</code> - The password of the account being authenticated</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="authenticate"/>
+            <h4><span class="label public">public</span>authenticate<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Authenticate the user</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAccountObject"/>
+            <h4><span class="label public">public</span>getAccountObject<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $returnAttribs</strong>, <span class="param-type">Array</span><strong> $omitAttribs</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>getAccountObject() - Returns the result entry as a stdClass object<pre>This resembles the feature .
+Closes ZF-6813
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$returnAttribs</code> - </li>
+                <li><code>$omitAttribs</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLdap"/>
+            <h4><span class="label public">public</span>getLdap<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the LDAP Object</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The Zend\Ldap\Ldap object used to authenticate the credentials</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getOptions"/>
+            <h4><span class="label public">public</span>getOptions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the array of arrays of Zend\Ldap\Ldap options of this adapter.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPassword"/>
+            <h4><span class="label public">public</span>getPassword<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the password of the account being authenticated, or NULL if none is set.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUsername"/>
+            <h4><span class="label public">public</span>getUsername<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the username of the account being authenticated, or NULL if none is set.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCredential"/>
+            <h4><span class="label public">public</span>setCredential<span style="font-size:90%;">( <span class="param-type">string</span><strong> $credential</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>setCredential() - set the credential (password) value to be used<pre>Proxies to Closes ZF-6813
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$credential</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setIdentity"/>
+            <h4><span class="label public">public</span>setIdentity<span style="font-size:90%;">( <span class="param-type">string</span><strong> $identity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>setIdentity() - set the identity (username) to be used<pre>Proxies to Closes ZF-6813
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setLdap"/>
+            <h4><span class="label public">public</span>setLdap<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Authentication\Adapter\ZendLdap\Ldap">Ldap</span></span><strong> $ldap</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set an Ldap connection</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$ldap</code> - An existing Ldap object</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type">array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the array of arrays of Zend\Ldap\Ldap options to be used by this adapter.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - The array of arrays of Zend\Ldap\Ldap options</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPassword"/>
+            <h4><span class="label public">public</span>setPassword<span style="font-size:90%;">( <span class="param-type">string</span><strong> $password</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the password for the account</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$password</code> - The password of the account being authenticated</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setUsername"/>
+            <h4><span class="label public">public</span>setUsername<span style="font-size:90%;">( <span class="param-type">string</span><strong> $username</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the username for binding</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$username</code> - The username for binding</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="checkGroupMembership"/>
+            <h4><span class="label protected">protected</span>checkGroupMembership<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Authentication\Adapter\ZendLdap\Ldap">Ldap</span></span><strong> $ldap</strong>, <span class="param-type">string</span><strong> $canonicalName</strong>, <span class="param-type">string</span><strong> $dn</strong>, <span class="param-type">Array</span><strong> $adapterOptions</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks the group membership of the bound user</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$ldap</code> - </li>
+                <li><code>$canonicalName</code> - </li>
+                <li><code>$dn</code> - </li>
+                <li><code>$adapterOptions</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAuthorityName"/>
+            <h4><span class="label protected">protected</span>getAuthorityName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a domain name for the current LDAP options. This is used for skipping redundant operations (e.g. authentications).</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepareOptions"/>
+            <h4><span class="label protected">protected</span>prepareOptions<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Authentication\Adapter\ZendLdap\Ldap">Ldap</span></span><strong> $ldap</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the LDAP specific options on the Zend\Ldap\Ldap instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$ldap</code> - </li>
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>of auth-adapter specific options</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="optionsToString"/>
+            <h4><span class="label private">private</span>optionsToString<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Converts options to string</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

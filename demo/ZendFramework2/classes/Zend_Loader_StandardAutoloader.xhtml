@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Loader\StandardAutoloader - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#NS_SEPARATOR">NS_SEPARATOR</a>
+          </li>
+          <li>
+            <a href="#PREFIX_SEPARATOR">PREFIX_SEPARATOR</a>
+          </li>
+          <li>
+            <a href="#LOAD_NS">LOAD_NS</a>
+          </li>
+          <li>
+            <a href="#LOAD_PREFIX">LOAD_PREFIX</a>
+          </li>
+          <li>
+            <a href="#ACT_AS_FALLBACK">ACT_AS_FALLBACK</a>
+          </li>
+          <li>
+            <a href="#AUTOREGISTER_ZF">AUTOREGISTER_ZF</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#namespaces">$namespaces</a>
+          </li>
+          <li>
+            <a href="#prefixes">$prefixes</a>
+          </li>
+          <li>
+            <a href="#fallbackAutoloaderFlag">$fallbackAutoloaderFlag</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#autoload">autoload</a>
+          </li>
+          <li>
+            <a href="#isFallbackAutoloader">isFallbackAutoloader</a>
+          </li>
+          <li>
+            <a href="#loadClass">loadClass</a>
+          </li>
+          <li>
+            <a href="#normalizeDirectory">normalizeDirectory</a>
+          </li>
+          <li>
+            <a href="#register">register</a>
+          </li>
+          <li>
+            <a href="#registerNamespace">registerNamespace</a>
+          </li>
+          <li>
+            <a href="#registerNamespaces">registerNamespaces</a>
+          </li>
+          <li>
+            <a href="#registerPrefix">registerPrefix</a>
+          </li>
+          <li>
+            <a href="#registerPrefixes">registerPrefixes</a>
+          </li>
+          <li>
+            <a href="#setFallbackAutoloader">setFallbackAutoloader</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+          <li>
+            <a href="#transformClassNameToFilename">transformClassNameToFilename</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Loader\</span>StandardAutoloader</h2>
+        <div class="file-notice">
+          <p>PSR-0 compliant autoloader</p>
+          <p>
+            <pre>Allows autoloading both namespaced and vendor-prefixed classes. Class
+lookups are performed on the filesystem. If a class file for the referenced
+class is not found, a PHP warning will be raised by include().</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_Loader_SplAutoloader.xhtml">Zend\Loader\SplAutoloader</a>
+          </li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="NS_SEPARATOR"/>NS_SEPARATOR = '\\'<hr/></li>
+          <li><a name="PREFIX_SEPARATOR"/>PREFIX_SEPARATOR = '_'<hr/></li>
+          <li><a name="LOAD_NS"/>LOAD_NS = 'namespaces'<hr/></li>
+          <li><a name="LOAD_PREFIX"/>LOAD_PREFIX = 'prefixes'<hr/></li>
+          <li><a name="ACT_AS_FALLBACK"/>ACT_AS_FALLBACK = 'fallback_autoloader'<hr/></li>
+          <li><a name="AUTOREGISTER_ZF"/>AUTOREGISTER_ZF = 'autoregister_zf'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="namespaces"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $namespaces</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="prefixes"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $prefixes</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="fallbackAutoloaderFlag"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $fallbackAutoloaderFlag</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="null|array|\Traversable">Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="autoload"/>
+            <h4><span class="label public">public</span>autoload<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Defined by Autoloadable; autoload a class</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isFallbackAutoloader"/>
+            <h4><span class="label public">public</span>isFallbackAutoloader<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this autoloader acting as a fallback autoloader?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="register"/>
+            <h4><span class="label public">public</span>register<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register the autoloader with spl_autoload</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerNamespace"/>
+            <h4><span class="label public">public</span>registerNamespace<span style="font-size:90%;">( <span class="param-type">string</span><strong> $namespace</strong>, <span class="param-type">string</span><strong> $directory</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register a namespace/directory pair</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$namespace</code> - </li>
+                <li><code>$directory</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerNamespaces"/>
+            <h4><span class="label public">public</span>registerNamespaces<span style="font-size:90%;">( <span class="param-type">array</span><strong> $namespaces</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register many namespace/directory pairs at once</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$namespaces</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerPrefix"/>
+            <h4><span class="label public">public</span>registerPrefix<span style="font-size:90%;">( <span class="param-type">string</span><strong> $prefix</strong>, <span class="param-type">string</span><strong> $directory</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register a prefix/directory pair</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$prefix</code> - </li>
+                <li><code>$directory</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerPrefixes"/>
+            <h4><span class="label public">public</span>registerPrefixes<span style="font-size:90%;">( <span class="param-type">array</span><strong> $prefixes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register many namespace/directory pairs at once</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$prefixes</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFallbackAutoloader"/>
+            <h4><span class="label public">public</span>setFallbackAutoloader<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $flag</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set flag indicating fallback autoloader status</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$flag</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type"><span title="array|\Traversable">Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Configure autoloader<pre>Allows specifying both "namespace" and "prefix" pairs, using the
+following structure:
+&lt;code&gt;
+array(
+    'namespaces' =&gt; array(
+        'Zend'     =&gt; '/path/to/Zend/library',
+        'Doctrine' =&gt; '/path/to/Doctrine/library',
+    ),
+    'prefixes' =&gt; array(
+        'Phly_'     =&gt; '/path/to/Phly/library',
+    ),
+    'fallback_autoloader' =&gt; true,
+)
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="loadClass"/>
+            <h4><span class="label protected">protected</span>loadClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Load a class, based on its type (namespaced or prefixed)</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+                <li><code>$type</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="normalizeDirectory"/>
+            <h4><span class="label protected">protected</span>normalizeDirectory<span style="font-size:90%;">( <span class="param-type">string</span><strong> $directory</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Normalize the directory to include a trailing directory separator</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$directory</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="transformClassNameToFilename"/>
+            <h4><span class="label protected">protected</span>transformClassNameToFilename<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong>, <span class="param-type">string</span><strong> $directory</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Transform the class name to a filename</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+                <li><code>$directory</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

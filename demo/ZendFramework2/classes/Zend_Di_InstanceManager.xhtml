@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Di\InstanceManager - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#sharedInstances">$sharedInstances</a>
+          </li>
+          <li>
+            <a href="#sharedInstancesWithParams">$sharedInstancesWithParams</a>
+          </li>
+          <li>
+            <a href="#aliases">$aliases</a>
+          </li>
+          <li>
+            <a href="#configurationTemplate">$configurationTemplate</a>
+          </li>
+          <li>
+            <a href="#configurations">$configurations</a>
+          </li>
+          <li>
+            <a href="#typePreferences">$typePreferences</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#addAlias">addAlias</a>
+          </li>
+          <li>
+            <a href="#addSharedInstance">addSharedInstance</a>
+          </li>
+          <li>
+            <a href="#addSharedInstanceWithParameters">addSharedInstanceWithParameters</a>
+          </li>
+          <li>
+            <a href="#addTypePreference">addTypePreference</a>
+          </li>
+          <li>
+            <a href="#createHashForKeys">createHashForKeys</a>
+          </li>
+          <li>
+            <a href="#createHashForValues">createHashForValues</a>
+          </li>
+          <li>
+            <a href="#getAliases">getAliases</a>
+          </li>
+          <li>
+            <a href="#getBaseAlias">getBaseAlias</a>
+          </li>
+          <li>
+            <a href="#getClassFromAlias">getClassFromAlias</a>
+          </li>
+          <li>
+            <a href="#getClasses">getClasses</a>
+          </li>
+          <li>
+            <a href="#getConfig">getConfig</a>
+          </li>
+          <li>
+            <a href="#getSharedInstance">getSharedInstance</a>
+          </li>
+          <li>
+            <a href="#getSharedInstanceWithParameters">getSharedInstanceWithParameters</a>
+          </li>
+          <li>
+            <a href="#getTypePreferences">getTypePreferences</a>
+          </li>
+          <li>
+            <a href="#hasAlias">hasAlias</a>
+          </li>
+          <li>
+            <a href="#hasConfig">hasConfig</a>
+          </li>
+          <li>
+            <a href="#hasSharedInstance">hasSharedInstance</a>
+          </li>
+          <li>
+            <a href="#hasSharedInstanceWithParameters">hasSharedInstanceWithParameters</a>
+          </li>
+          <li>
+            <a href="#hasTypePreferences">hasTypePreferences</a>
+          </li>
+          <li>
+            <a href="#removeTypePreference">removeTypePreference</a>
+          </li>
+          <li>
+            <a href="#setConfig">setConfig</a>
+          </li>
+          <li>
+            <a href="#setInjections">setInjections</a>
+          </li>
+          <li>
+            <a href="#setParameters">setParameters</a>
+          </li>
+          <li>
+            <a href="#setShared">setShared</a>
+          </li>
+          <li>
+            <a href="#setTypePreference">setTypePreference</a>
+          </li>
+          <li>
+            <a href="#unsetTypePreferences">unsetTypePreferences</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Di\</span>InstanceManager</h2>
+        <div class="file-notice">
+          <p>Registry of instantiated objects, their names and the parameters used to build them</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="sharedInstances"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $sharedInstances</h4>
+            <ul class="varlist">
+              <li>Array of shared instances</li>
+            </ul>
+          </li>
+          <li>
+            <a name="sharedInstancesWithParams"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $sharedInstancesWithParams</h4>
+            <ul class="varlist">
+              <li>Array of shared instances with params</li>
+            </ul>
+          </li>
+          <li>
+            <a name="aliases"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $aliases</h4>
+            <ul class="varlist">
+              <li>Array of class aliases</li>
+            </ul>
+          </li>
+          <li>
+            <a name="configurationTemplate"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $configurationTemplate</h4>
+            <ul class="varlist">
+              <li>The template to use for housing configuration information</li>
+            </ul>
+          </li>
+          <li>
+            <a name="configurations"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $configurations</h4>
+            <ul class="varlist">
+              <li>An array of instance configuration data</li>
+            </ul>
+          </li>
+          <li>
+            <a name="typePreferences"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $typePreferences</h4>
+            <ul class="varlist">
+              <li>An array of globally preferred implementations for interfaces/abstracts</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addAlias"/>
+            <h4><span class="label public">public</span>addAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $class</strong>, <span class="param-type">Array</span><strong> $parameters</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add alias</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$alias</code> - </li>
+                <li><code>$class</code> - </li>
+                <li><code>$parameters</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addSharedInstance"/>
+            <h4><span class="label public">public</span>addSharedInstance<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $instance</strong>, <span class="param-type">string</span><strong> $classOrAlias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add shared instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$instance</code> - </li>
+                <li><code>$classOrAlias</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addSharedInstanceWithParameters"/>
+            <h4><span class="label public">public</span>addSharedInstanceWithParameters<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $instance</strong>, <span class="param-type">string</span><strong> $classOrAlias</strong>, <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>addSharedInstanceWithParameters()</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$instance</code> - </li>
+                <li><code>$classOrAlias</code> - </li>
+                <li><code>$params</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addTypePreference"/>
+            <h4><span class="label public">public</span>addTypePreference<span style="font-size:90%;">( <span class="param-type">string</span><strong> $interfaceOrAbstract</strong>, <span class="param-type">string</span><strong> $preferredImplementation</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a type preference. A type preference is a redirection to a preferred alias or type when an abstract type $interfaceOrAbstract is requested</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$interfaceOrAbstract</code> - </li>
+                <li><code>$preferredImplementation</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAliases"/>
+            <h4><span class="label public">public</span>getAliases<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get aliases</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getClassFromAlias"/>
+            <h4><span class="label public">public</span>getClassFromAlias<span style="font-size:90%;">( <span class="param-type"/><strong> $alias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>getClassFromAlias()</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getClasses"/>
+            <h4><span class="label public">public</span>getClasses<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get classes</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getConfig"/>
+            <h4><span class="label public">public</span>getConfig<span style="font-size:90%;">( <span class="param-type">string</span><strong> $aliasOrClass</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$aliasOrClass</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSharedInstance"/>
+            <h4><span class="label public">public</span>getSharedInstance<span style="font-size:90%;">( <span class="param-type"/><strong> $classOrAlias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>getSharedInstance()</li>
+            </p>
+          </li>
+          <li>
+            <a name="getSharedInstanceWithParameters"/>
+            <h4><span class="label public">public</span>getSharedInstanceWithParameters<span style="font-size:90%;">( <span class="param-type">string</span><strong> $classOrAlias</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type"><span title="bool|null">bool|null</span></span><strong> $fastHashFromHasLookup</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieves an instance by its name and the parameters stored at its instantiation</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classOrAlias</code> - </li>
+                <li><code>$params</code> - </li>
+                <li><code>$fastHashFromHasLookup</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>false if no instance was found</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTypePreferences"/>
+            <h4><span class="label public">public</span>getTypePreferences<span style="font-size:90%;">( <span class="param-type">string</span><strong> $interfaceOrAbstract</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get type preferences</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$interfaceOrAbstract</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasAlias"/>
+            <h4><span class="label public">public</span>hasAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check for an alias</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$alias</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasConfig"/>
+            <h4><span class="label public">public</span>hasConfig<span style="font-size:90%;">( <span class="param-type">string</span><strong> $aliasOrClass</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check for configuration</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$aliasOrClass</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasSharedInstance"/>
+            <h4><span class="label public">public</span>hasSharedInstance<span style="font-size:90%;">( <span class="param-type">string</span><strong> $classOrAlias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Does this instance manager have this shared instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classOrAlias</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasSharedInstanceWithParameters"/>
+            <h4><span class="label public">public</span>hasSharedInstanceWithParameters<span style="font-size:90%;">( <span class="param-type">string</span><strong> $classOrAlias</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $returnFastHashLookupKey</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>hasSharedInstanceWithParameters()</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classOrAlias</code> - </li>
+                <li><code>$params</code> - </li>
+                <li><code>$returnFastHashLookupKey</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasTypePreferences"/>
+            <h4><span class="label public">public</span>hasTypePreferences<span style="font-size:90%;">( <span class="param-type">string</span><strong> $interfaceOrAbstract</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check for type preferences</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$interfaceOrAbstract</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeTypePreference"/>
+            <h4><span class="label public">public</span>removeTypePreference<span style="font-size:90%;">( <span class="param-type">string</span><strong> $interfaceOrAbstract</strong>, <span class="param-type">string</span><strong> $preferredType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes a previously set type preference</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$interfaceOrAbstract</code> - </li>
+                <li><code>$preferredType</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setConfig"/>
+            <h4><span class="label public">public</span>setConfig<span style="font-size:90%;">( <span class="param-type">string</span><strong> $aliasOrClass</strong>, <span class="param-type">Array</span><strong> $configuration</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $append</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets configuration for a single alias/class</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$aliasOrClass</code> - </li>
+                <li><code>$configuration</code> - </li>
+                <li><code>$append</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setInjections"/>
+            <h4><span class="label public">public</span>setInjections<span style="font-size:90%;">( <span class="param-type">string</span><strong> $aliasOrClass</strong>, <span class="param-type">Array</span><strong> $injections</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>setInjections() is a convenience method for:    setConfig($type, array('injections' =&gt; array(...)), true);</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$aliasOrClass</code> - Alias or Class</li>
+                <li><code>$injections</code> - Multi-dim array of methods and their parameters</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setParameters"/>
+            <h4><span class="label public">public</span>setParameters<span style="font-size:90%;">( <span class="param-type">string</span><strong> $aliasOrClass</strong>, <span class="param-type">Array</span><strong> $parameters</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>setParameters() is a convenience method for:    setConfig($type, array('parameters' =&gt; array(...)), true);</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$aliasOrClass</code> - Alias or Class</li>
+                <li><code>$parameters</code> - Multi-dim array of parameters and their values</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setShared"/>
+            <h4><span class="label public">public</span>setShared<span style="font-size:90%;">( <span class="param-type">string</span><strong> $aliasOrClass</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $isShared</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set shared</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$aliasOrClass</code> - </li>
+                <li><code>$isShared</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTypePreference"/>
+            <h4><span class="label public">public</span>setTypePreference<span style="font-size:90%;">( <span class="param-type">string</span><strong> $interfaceOrAbstract</strong>, <span class="param-type">Array</span><strong> $preferredImplementations</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set type preference</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$interfaceOrAbstract</code> - </li>
+                <li><code>$preferredImplementations</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unsetTypePreferences"/>
+            <h4><span class="label public">public</span>unsetTypePreferences<span style="font-size:90%;">( <span class="param-type">string</span><strong> $interfaceOrAbstract</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Unset type preferences</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$interfaceOrAbstract</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createHashForKeys"/>
+            <h4><span class="label protected">protected</span>createHashForKeys<span style="font-size:90%;">( <span class="param-type">string</span><strong> $classOrAlias</strong>, <span class="param-type">array</span><strong> $paramKeys</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classOrAlias</code> - </li>
+                <li><code>$paramKeys</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createHashForValues"/>
+            <h4><span class="label protected">protected</span>createHashForValues<span style="font-size:90%;">( <span class="param-type">string</span><strong> $classOrAlias</strong>, <span class="param-type">array</span><strong> $paramValues</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classOrAlias</code> - </li>
+                <li><code>$paramValues</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBaseAlias"/>
+            <h4><span class="label protected">protected</span>getBaseAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$alias</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

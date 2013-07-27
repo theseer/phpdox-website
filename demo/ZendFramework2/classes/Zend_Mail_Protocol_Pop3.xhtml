@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Mail\Protocol\Pop3 - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#TIMEOUT_CONNECTION">TIMEOUT_CONNECTION</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#hasTop">$hasTop</a>
+          </li>
+          <li>
+            <a href="#socket">$socket</a>
+          </li>
+          <li>
+            <a href="#timestamp">$timestamp</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__destruct">__destruct</a>
+          </li>
+          <li>
+            <a href="#capa">capa</a>
+          </li>
+          <li>
+            <a href="#connect">connect</a>
+          </li>
+          <li>
+            <a href="#delete">delete</a>
+          </li>
+          <li>
+            <a href="#getList">getList</a>
+          </li>
+          <li>
+            <a href="#login">login</a>
+          </li>
+          <li>
+            <a href="#logout">logout</a>
+          </li>
+          <li>
+            <a href="#noop">noop</a>
+          </li>
+          <li>
+            <a href="#readResponse">readResponse</a>
+          </li>
+          <li>
+            <a href="#request">request</a>
+          </li>
+          <li>
+            <a href="#retrieve">retrieve</a>
+          </li>
+          <li>
+            <a href="#sendRequest">sendRequest</a>
+          </li>
+          <li>
+            <a href="#status">status</a>
+          </li>
+          <li>
+            <a href="#top">top</a>
+          </li>
+          <li>
+            <a href="#undelete">undelete</a>
+          </li>
+          <li>
+            <a href="#uniqueid">uniqueid</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Mail\Protocol\</span>Pop3</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="TIMEOUT_CONNECTION"/>TIMEOUT_CONNECTION = 30<em> </em><p><li>Default timeout in seconds for initiating session</li></p><hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="hasTop"/>
+            <h4><span class="label public">public</span>object 
+                
+                $hasTop</h4>
+            <ul class="varlist">
+              <li>saves if server supports top</li>
+            </ul>
+          </li>
+          <li>
+            <a name="socket"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $socket</h4>
+            <ul class="varlist">
+              <li>socket to pop3</li>
+            </ul>
+          </li>
+          <li>
+            <a name="timestamp"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $timestamp</h4>
+            <ul class="varlist">
+              <li>greeting timestamp for apop</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $port</strong>, <span class="param-type"><span title="bool|string">bool|string</span></span><strong> $ssl</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Public constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$host</code> - hostname or IP address of POP3 server, if given connect() is called</li>
+                <li><code>$port</code> - port of POP3 server, null for default (110 or 995 for ssl)</li>
+                <li><code>$ssl</code> - use ssl? 'SSL', 'TLS' or false</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Destructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__destruct"/>
+            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Public destructor</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="capa"/>
+            <h4><span class="label public">public</span>capa<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get capabilities from POP3 server</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>list of capabilities</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="connect"/>
+            <h4><span class="label public">public</span>connect<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $port</strong>, <span class="param-type"><span title="string|bool">string|bool</span></span><strong> $ssl</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Open connection to POP3 server</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$host</code> - hostname or IP address of POP3 server</li>
+                <li><code>$port</code> - of POP3 server, default is 110 (995 for ssl)</li>
+                <li><code>$ssl</code> - use 'SSL', 'TLS' or false</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>welcome message</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="delete"/>
+            <h4><span class="label public">public</span>delete<span style="font-size:90%;">( <span class="param-type"/><strong> $msgno</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Make a DELE count to remove a message</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$msgno</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getList"/>
+            <h4><span class="label public">public</span>getList<span style="font-size:90%;">( <span class="param-type"><span title="int|null">int|null</span></span><strong> $msgno</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Make LIST call for size of message(s)</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$msgno</code> - number of message, null for all</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>size of given message or list with array(num =&gt; size)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="login"/>
+            <h4><span class="label public">public</span>login<span style="font-size:90%;">( <span class="param-type">string</span><strong> $user</strong>, <span class="param-type">string</span><strong> $password</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $tryApop</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Login to POP3 server. Can use APOP</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$user</code> - username</li>
+                <li><code>$password</code> - password</li>
+                <li><code>$tryApop</code> - should APOP be tried?</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="logout"/>
+            <h4><span class="label public">public</span>logout<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>End communication with POP3 server (also closes socket)</li>
+            </p>
+          </li>
+          <li>
+            <a name="noop"/>
+            <h4><span class="label public">public</span>noop<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Make a NOOP call, maybe needed for keeping the server happy</li>
+            </p>
+          </li>
+          <li>
+            <a name="readResponse"/>
+            <h4><span class="label public">public</span>readResponse<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $multiline</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>read a response</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$multiline</code> - response has multiple lines and should be read until "&lt;nl&gt;.&lt;nl&gt;"</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>response</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="request"/>
+            <h4><span class="label public">public</span>request<span style="font-size:90%;">( <span class="param-type">string</span><strong> $request</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $multiline</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send request and get response</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - request</li>
+                <li><code>$multiline</code> - multiline response?</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>result from readResponse()</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="retrieve"/>
+            <h4><span class="label public">public</span>retrieve<span style="font-size:90%;">( <span class="param-type">int</span><strong> $msgno</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Make a RETR call for retrieving a full message with headers and body</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$msgno</code> - message number</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>message</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="sendRequest"/>
+            <h4><span class="label public">public</span>sendRequest<span style="font-size:90%;">( <span class="param-type">string</span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send a request</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - your request without newline</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="status"/>
+            <h4><span class="label public">public</span>status<span style="font-size:90%;">( <span class="param-type">int</span><strong> &amp;$messages</strong>, <span class="param-type">int</span><strong> &amp;$octets</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Make STAT call for message count and size sum</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$messages</code> - out parameter with count of messages</li>
+                <li><code>$octets</code> - out parameter with size in octets of messages</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="top"/>
+            <h4><span class="label public">public</span>top<span style="font-size:90%;">( <span class="param-type">int</span><strong> $msgno</strong>, <span class="param-type">integer</span><strong> $lines</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $fallback</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Make TOP call for getting headers and maybe some body lines This method also sets hasTop - before it it's not known if top is supported<pre>The fallback makes normal RETR call, which retrieves the whole message. Additional
+lines are not removed.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$msgno</code> - number of message</li>
+                <li><code>$lines</code> - number of wanted body lines (empty line is inserted after header lines)</li>
+                <li><code>$fallback</code> - fallback with full retrieve if top is not supported</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>message headers with wanted body lines</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+                <li>
+                  <code>Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="undelete"/>
+            <h4><span class="label public">public</span>undelete<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Make RSET call, which rollbacks delete requests</li>
+            </p>
+          </li>
+          <li>
+            <a name="uniqueid"/>
+            <h4><span class="label public">public</span>uniqueid<span style="font-size:90%;">( <span class="param-type"><span title="int|null">int|null</span></span><strong> $msgno</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Make UIDL call for getting a uniqueid</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$msgno</code> - number of message, null for all</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>uniqueid of message or list with array(num =&gt; uniqueid)</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

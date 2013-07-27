@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Routing\Generator\UrlGeneratorInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#ABSOLUTE_URL">ABSOLUTE_URL</a>
+          </li>
+          <li>
+            <a href="#ABSOLUTE_PATH">ABSOLUTE_PATH</a>
+          </li>
+          <li>
+            <a href="#RELATIVE_PATH">RELATIVE_PATH</a>
+          </li>
+          <li>
+            <a href="#NETWORK_PATH">NETWORK_PATH</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#generate">generate</a>
+          </li>
+          <li>
+            <a href="#getContext">getContext</a>
+          </li>
+          <li>
+            <a href="#setContext">setContext</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Routing\Generator\</span>UrlGeneratorInterface</h2>
+        <div class="file-notice">
+          <p>UrlGeneratorInterface is the interface that all URL generator classes must implement.</p>
+          <p>
+            <pre>The constants in this interface define the different types of resource references that
+are declared in RFC 3986: http://tools.ietf.org/html/rfc3986
+We are using the term "URL" instead of "URI" as this is more common in web applications
+and we do not need to distinguish them as the difference is mostly semantical and
+less technical. Generating URIs, i.e. representation-independent resource identifiers,
+is also possible.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+          <li><b>Author: </b>Tobias Schultze &lt;http://tobion.de&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="ABSOLUTE_URL"/>ABSOLUTE_URL = <em> </em><p><li>Generates an absolute URL, e.g. "http://example.com/dir/file".</li></p><hr/></li>
+          <li><a name="ABSOLUTE_PATH"/>ABSOLUTE_PATH = <em> </em><p><li>Generates an absolute path, e.g. "/dir/file".</li></p><hr/></li>
+          <li><a name="RELATIVE_PATH"/>RELATIVE_PATH = 'relative'<em> </em><p><li>Generates a relative path based on the current request path, e.g. "../parent-file".</li></p><hr/></li>
+          <li><a name="NETWORK_PATH"/>NETWORK_PATH = 'network'<em> </em><p><li>Generates a network path, e.g. "//example.com/dir/file".<pre>Such reference reuses the current scheme but specifies the host.</pre></li></p><hr/></li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="generate"/>
+            <h4><span class="label public">public</span>generate<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $parameters</strong>, <span class="param-type"><span title="Boolean|string">Boolean|string</span></span><strong> $referenceType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates a URL or path for a specific route based on the given parameters.<pre>Parameters that reference placeholders in the route pattern will substitute them in the
+path or host. Extra params are added as query string to the URL.
+
+When the passed reference type cannot be generated for the route because it requires a different
+host or scheme than the current one, the method will return a more comprehensive reference
+that includes the required params. For example, when you call this method with $referenceType = ABSOLUTE_PATH
+but the route requires the https scheme whereas the current scheme is http, it will instead return an
+ABSOLUTE_URL with the https scheme and the current host. This makes sure the generated URL matches
+the route in any case.
+
+If there is no route with the given name, the generator must throw the RouteNotFoundException.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - The name of the route</li>
+                <li><code>$parameters</code> - An array of parameters</li>
+                <li><code>$referenceType</code> - The type of reference to be generated (one of the constants)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The generated URL</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>RouteNotFoundException              If the named route doesn't exist</code>
+                </li>
+                <li>
+                  <code>MissingMandatoryParametersException When some parameters are missing that are mandatory for the route</code>
+                </li>
+                <li>
+                  <code>InvalidParameterException           When a parameter value for a placeholder is not correct because</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getContext"/>
+            <h4><span class="label public">public</span>getContext<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the request context.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The context</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setContext"/>
+            <h4><span class="label public">public</span>setContext<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Routing_RequestContext.xhtml">Symfony\Component\Routing\RequestContext</a></span><strong> $context</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the request context.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$context</code> - The context</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

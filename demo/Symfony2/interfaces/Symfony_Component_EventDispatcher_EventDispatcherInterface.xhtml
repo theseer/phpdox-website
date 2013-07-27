@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\EventDispatcher\EventDispatcherInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#addListener">addListener</a>
+          </li>
+          <li>
+            <a href="#addSubscriber">addSubscriber</a>
+          </li>
+          <li>
+            <a href="#dispatch">dispatch</a>
+          </li>
+          <li>
+            <a href="#getListeners">getListeners</a>
+          </li>
+          <li>
+            <a href="#hasListeners">hasListeners</a>
+          </li>
+          <li>
+            <a href="#removeListener">removeListener</a>
+          </li>
+          <li>
+            <a href="#removeSubscriber">removeSubscriber</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\EventDispatcher\</span>EventDispatcherInterface</h2>
+        <div class="file-notice">
+          <p>The EventDispatcherInterface is the central point of Symfony's event listener system.</p>
+          <p>
+            <pre>Listeners are registered on the manager and events are dispatched through the
+manager.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addListener"/>
+            <h4><span class="label public">public</span>addListener<span style="font-size:90%;">( <span class="param-type">string</span><strong> $eventName</strong>, <span class="param-type"><span title="callable">callable</span></span><strong> $listener</strong>, <span class="param-type">integer</span><strong> $priority</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds an event listener that listens on the specified events.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$eventName</code> - The event to listen on</li>
+                <li><code>$listener</code> - The listener</li>
+                <li><code>$priority</code> - The higher this value, the earlier an event</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addSubscriber"/>
+            <h4><span class="label public">public</span>addSubscriber<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_EventDispatcher_EventSubscriberInterface.xhtml">Symfony\Component\EventDispatcher\EventSubscriberInterface</a></span><strong> $subscriber</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds an event subscriber.<pre>The subscriber is asked for all the events he is
+interested in and added as a listener for these events.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$subscriber</code> - The subscriber.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="dispatch"/>
+            <h4><span class="label public">public</span>dispatch<span style="font-size:90%;">( <span class="param-type">string</span><strong> $eventName</strong>, <span class="param-type"><a href="../classes/Symfony_Component_EventDispatcher_Event.xhtml">Symfony\Component\EventDispatcher\Event</a></span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Dispatches an event to all registered listeners.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$eventName</code> - The name of the event to dispatch. The name of</li>
+                <li><code>$event</code> - The event to pass to the event handlers/listeners.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getListeners"/>
+            <h4><span class="label public">public</span>getListeners<span style="font-size:90%;">( <span class="param-type">string</span><strong> $eventName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the listeners of a specific event or all listeners.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$eventName</code> - The name of the event</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The event listeners for the specified event, or all event listeners by event name</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasListeners"/>
+            <h4><span class="label public">public</span>hasListeners<span style="font-size:90%;">( <span class="param-type">string</span><strong> $eventName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether an event has any registered listeners.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$eventName</code> - The name of the event</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if the specified event has any listeners, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeListener"/>
+            <h4><span class="label public">public</span>removeListener<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $eventName</strong>, <span class="param-type"><span title="callable">callable</span></span><strong> $listener</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes an event listener from the specified events.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$eventName</code> - The event(s) to remove a listener from</li>
+                <li><code>$listener</code> - The listener to remove</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeSubscriber"/>
+            <h4><span class="label public">public</span>removeSubscriber<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_EventDispatcher_EventSubscriberInterface.xhtml">Symfony\Component\EventDispatcher\EventSubscriberInterface</a></span><strong> $subscriber</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes an event subscriber.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$subscriber</code> - The subscriber</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Mvc\DispatchListener - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#listeners">$listeners</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#attach">attach</a>
+          </li>
+          <li>
+            <a href="#complete">complete</a>
+          </li>
+          <li>
+            <a href="#detach">detach</a>
+          </li>
+          <li>
+            <a href="#marshallBadControllerEvent">marshallBadControllerEvent</a>
+          </li>
+          <li>
+            <a href="#marshallControllerNotFoundEvent">marshallControllerNotFoundEvent</a>
+          </li>
+          <li>
+            <a href="#onDispatch">onDispatch</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Mvc\</span>DispatchListener</h2>
+        <div class="file-notice">
+          <p>Default dispatch listener</p>
+          <p>
+            <pre>Pulls controllers from the service manager's "ControllerLoader" service.
+If the controller cannot be found, or is not dispatchable, sets up a "404"
+result.
+
+If the controller subscribes to InjectApplicationEventInterface, it injects
+the current MvcEvent into the controller.
+
+It then calls the controller's "dispatch" method, passing it the request and
+response. If an exception occurs, it triggers the "dispatch.error" event,
+in an attempt to return a 500 status.
+
+The return value of dispatching the controller is placed into the result
+property of the MvcEvent, and returned.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_EventManager_ListenerAggregateInterface.xhtml">Zend\EventManager\ListenerAggregateInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="listeners"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $listeners</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="attach"/>
+            <h4><span class="label public">public</span>attach<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_EventManager_EventManagerInterface.xhtml">Zend\EventManager\EventManagerInterface</a></span><strong> $events</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach listeners to an event manager</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$events</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="detach"/>
+            <h4><span class="label public">public</span>detach<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_EventManager_EventManagerInterface.xhtml">Zend\EventManager\EventManagerInterface</a></span><strong> $events</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Detach listeners from an event manager</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$events</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="onDispatch"/>
+            <h4><span class="label public">public</span>onDispatch<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Mvc_MvcEvent.xhtml">Zend\Mvc\MvcEvent</a></span><strong> $e</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Listen to the "dispatch" event</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$e</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="complete"/>
+            <h4><span class="label protected">protected</span>complete<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $return</strong>, <span class="param-type"><a href="../classes/Zend_Mvc_MvcEvent.xhtml">Zend\Mvc\MvcEvent</a></span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Complete the dispatch</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$return</code> - </li>
+                <li><code>$event</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="marshallBadControllerEvent"/>
+            <h4><span class="label protected">protected</span>marshallBadControllerEvent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $controllerName</strong>, <span class="param-type"><a href="../classes/Exception.xhtml">Exception</a></span><strong> $exception</strong>, <span class="param-type"><a href="../classes/Zend_Mvc_MvcEvent.xhtml">Zend\Mvc\MvcEvent</a></span><strong> $event</strong>, <span class="param-type"><a href="../classes/Zend_Mvc_Application.xhtml">Zend\Mvc\Application</a></span><strong> $application</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Marshall a bad controller exception event</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$controllerName</code> - </li>
+                <li><code>$exception</code> - </li>
+                <li><code>$event</code> - </li>
+                <li><code>$application</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="marshallControllerNotFoundEvent"/>
+            <h4><span class="label protected">protected</span>marshallControllerNotFoundEvent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $type</strong>, <span class="param-type">string</span><strong> $controllerName</strong>, <span class="param-type"><a href="../classes/Exception.xhtml">Exception</a></span><strong> $exception</strong>, <span class="param-type"><a href="../classes/Zend_Mvc_MvcEvent.xhtml">Zend\Mvc\MvcEvent</a></span><strong> $event</strong>, <span class="param-type"><a href="../classes/Zend_Mvc_Application.xhtml">Zend\Mvc\Application</a></span><strong> $application</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Marshall a controller not found exception event</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$type</code> - </li>
+                <li><code>$controllerName</code> - </li>
+                <li><code>$exception</code> - </li>
+                <li><code>$event</code> - </li>
+                <li><code>$application</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

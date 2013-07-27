@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Server\Server - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#addFunction">addFunction</a>
+          </li>
+          <li>
+            <a href="#fault">fault</a>
+          </li>
+          <li>
+            <a href="#getFunctions">getFunctions</a>
+          </li>
+          <li>
+            <a href="#getResponse">getResponse</a>
+          </li>
+          <li>
+            <a href="#getReturnResponse">getReturnResponse</a>
+          </li>
+          <li>
+            <a href="#handle">handle</a>
+          </li>
+          <li>
+            <a href="#loadFunctions">loadFunctions</a>
+          </li>
+          <li>
+            <a href="#setClass">setClass</a>
+          </li>
+          <li>
+            <a href="#setPersistence">setPersistence</a>
+          </li>
+          <li>
+            <a href="#setReturnResponse">setReturnResponse</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Server\</span>Server</h2>
+        <div class="file-notice">
+          <p>Server Interface</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addFunction"/>
+            <h4><span class="label public">public</span>addFunction<span style="font-size:90%;">( <span class="param-type">string</span><strong> $function</strong>, <span class="param-type">string</span><strong> $namespace</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach a function as a server method<pre>Namespacing is primarily for xmlrpc, but may be used with other
+implementations to prevent naming collisions.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$function</code> - </li>
+                <li><code>$namespace</code> - </li>
+                <li><code>Optional</code> - array of arguments to pass to callback at</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fault"/>
+            <h4><span class="label public">public</span>fault<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $fault</strong>, <span class="param-type">integer</span><strong> $code</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate a server fault</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fault</code> - </li>
+                <li><code>$code</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFunctions"/>
+            <h4><span class="label public">public</span>getFunctions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return a server definition array<pre>Returns a server definition array as created using
+{@link Reflection}. Can be used for server introspection,
+documentation, or persistence.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getResponse"/>
+            <h4><span class="label public">public</span>getResponse<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns last produced response.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Content of last response, or response object that</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getReturnResponse"/>
+            <h4><span class="label public">public</span>getReturnResponse<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns auto-response flag of the server.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>$flag Current status.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="handle"/>
+            <h4><span class="label public">public</span>handle<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Handle a request<pre>Requests may be passed in, or the server may automagically determine the
+request based on defaults. Dispatches server request to appropriate
+method and returns a response</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="loadFunctions"/>
+            <h4><span class="label public">public</span>loadFunctions<span style="font-size:90%;">( <span class="param-type">array</span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Load server definition<pre>Used for persistence; loads a construct as returned by .
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$definition</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setClass"/>
+            <h4><span class="label public">public</span>setClass<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $class</strong>, <span class="param-type">string</span><strong> $namespace</strong>, <span class="param-type"/><strong> $argv</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach a class to a server<pre>The individual implementations should probably allow passing a variable
+number of arguments in, so that developers may define custom runtime
+arguments to pass to server methods.
+
+Namespacing is primarily for xmlrpc, but could be used for other
+implementations as well.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - Class name or object instance to examine and attach</li>
+                <li><code>$namespace</code> - Optional namespace with which to prepend method</li>
+                <li><code>Optional</code> - array of arguments to pass to callbacks at</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPersistence"/>
+            <h4><span class="label public">public</span>setPersistence<span style="font-size:90%;">( <span class="param-type">int</span><strong> $mode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set server persistence</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$mode</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setReturnResponse"/>
+            <h4><span class="label public">public</span>setReturnResponse<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $flag</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets auto-response flag for the server.<pre>To unify all servers, default behavior should be to auto-emit response.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$flag</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Self instance.</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

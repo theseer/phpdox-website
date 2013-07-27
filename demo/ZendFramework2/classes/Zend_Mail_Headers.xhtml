@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Mail\Headers - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#EOL">EOL</a>
+          </li>
+          <li>
+            <a href="#FOLDING">FOLDING</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#pluginClassLoader">$pluginClassLoader</a>
+          </li>
+          <li>
+            <a href="#headersKeys">$headersKeys</a>
+          </li>
+          <li>
+            <a href="#headers">$headers</a>
+          </li>
+          <li>
+            <a href="#encoding">$encoding</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#addHeader">addHeader</a>
+          </li>
+          <li>
+            <a href="#addHeaderLine">addHeaderLine</a>
+          </li>
+          <li>
+            <a href="#addHeaders">addHeaders</a>
+          </li>
+          <li>
+            <a href="#clearHeaders">clearHeaders</a>
+          </li>
+          <li>
+            <a href="#count">count</a>
+          </li>
+          <li>
+            <a href="#current">current</a>
+          </li>
+          <li>
+            <a href="#forceLoading">forceLoading</a>
+          </li>
+          <li>
+            <a href="#fromString">fromString</a>
+          </li>
+          <li>
+            <a href="#get">get</a>
+          </li>
+          <li>
+            <a href="#getEncoding">getEncoding</a>
+          </li>
+          <li>
+            <a href="#getPluginClassLoader">getPluginClassLoader</a>
+          </li>
+          <li>
+            <a href="#has">has</a>
+          </li>
+          <li>
+            <a href="#key">key</a>
+          </li>
+          <li>
+            <a href="#lazyLoadHeader">lazyLoadHeader</a>
+          </li>
+          <li>
+            <a href="#next">next</a>
+          </li>
+          <li>
+            <a href="#normalizeFieldName">normalizeFieldName</a>
+          </li>
+          <li>
+            <a href="#removeHeader">removeHeader</a>
+          </li>
+          <li>
+            <a href="#rewind">rewind</a>
+          </li>
+          <li>
+            <a href="#setEncoding">setEncoding</a>
+          </li>
+          <li>
+            <a href="#setPluginClassLoader">setPluginClassLoader</a>
+          </li>
+          <li>
+            <a href="#toArray">toArray</a>
+          </li>
+          <li>
+            <a href="#toString">toString</a>
+          </li>
+          <li>
+            <a href="#valid">valid</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Mail\</span>Headers</h2>
+        <div class="file-notice">
+          <p>Basic mail headers collection functionality</p>
+          <p>
+            <pre>Handles aggregation of headers</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Countable.xhtml">Countable</a>
+          </li>
+          <li>
+            <a href="../interfaces/Iterator.xhtml">Iterator</a>
+          </li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="EOL"/>EOL = "\r\n"<em> string</em><p/><hr/></li>
+          <li><a name="FOLDING"/>FOLDING = "\r\n "<em> string</em><p/><hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="pluginClassLoader"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $pluginClassLoader</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="headersKeys"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $headersKeys</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="headers"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $headers</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="encoding"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $encoding</h4>
+            <ul class="varlist">
+              <li>Header encoding; defaults to ASCII</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addHeader"/>
+            <h4><span class="label public">public</span>addHeader<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Mail_Header_HeaderInterface.xhtml">Zend\Mail\Header\HeaderInterface</a></span><strong> $header</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a Header\Interface to this container, for raw values see {@link addHeaderLine()} and {@link addHeaders()}</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$header</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addHeaderLine"/>
+            <h4><span class="label public">public</span>addHeaderLine<span style="font-size:90%;">( <span class="param-type">string</span><strong> $headerFieldNameOrLine</strong>, <span class="param-type">string</span><strong> $fieldValue</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a raw header line, either in name =&gt; value, or as a single string 'name: value'<pre>This method allows for lazy-loading in that the parsing and instantiation of HeaderInterface object
+will be delayed until they are retrieved by either get() or current()</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$headerFieldNameOrLine</code> - </li>
+                <li><code>$fieldValue</code> - optional</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addHeaders"/>
+            <h4><span class="label public">public</span>addHeaders<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $headers</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add many headers at once<pre>Expects an array (or Traversable object) of type/value pairs.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$headers</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="clearHeaders"/>
+            <h4><span class="label public">public</span>clearHeaders<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clear all headers<pre>Removes all headers from queue</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="count"/>
+            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the number of headers in this contain, if all headers have not been parsed, actual count could increase if MultipleHeader objects exist in the Request/Response.  If you need an exact count, iterate</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>count of currently known headers</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="current"/>
+            <h4><span class="label public">public</span>current<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the current value for this iterator, lazy loading it if need be</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="forceLoading"/>
+            <h4><span class="label public">public</span>forceLoading<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>By calling this, it will force parsing and loading of all headers, after this count() will be accurate</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fromString"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>fromString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $string</strong>, <span class="param-type">string</span><strong> $EOL</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Populates headers from string representation<pre>Parses a string for headers, and aggregates them, in order, in the
+current instance, primarily as strings until they are needed (they
+will be lazy loaded)</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$string</code> - </li>
+                <li><code>$EOL</code> - EOL string; defaults to {@link EOL}</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="get"/>
+            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all headers of a certain name/type</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Returns false if there is no headers with $name in this</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEncoding"/>
+            <h4><span class="label public">public</span>getEncoding<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the header encoding</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPluginClassLoader"/>
+            <h4><span class="label public">public</span>getPluginClassLoader<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return an instance of a PluginClassLocator, lazyload and inject map if necessary</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="has"/>
+            <h4><span class="label public">public</span>has<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Test for existence of a type of header</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="key"/>
+            <h4><span class="label public">public</span>key<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the current key for this object as an iterator</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="next"/>
+            <h4><span class="label public">public</span>next<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Advance the pointer for this object as an iterator</li>
+            </p>
+          </li>
+          <li>
+            <a name="removeHeader"/>
+            <h4><span class="label public">public</span>removeHeader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove a Header from the container</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fieldName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="rewind"/>
+            <h4><span class="label public">public</span>rewind<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Reset the internal pointer for this object as an iterator</li>
+            </p>
+          </li>
+          <li>
+            <a name="setEncoding"/>
+            <h4><span class="label public">public</span>setEncoding<span style="font-size:90%;">( <span class="param-type">string</span><strong> $encoding</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the header encoding</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$encoding</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPluginClassLoader"/>
+            <h4><span class="label public">public</span>setPluginClassLoader<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Loader_PluginClassLocator.xhtml">Zend\Loader\PluginClassLocator</a></span><strong> $pluginClassLoader</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set an alternate implementation for the PluginClassLoader</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pluginClassLoader</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toArray"/>
+            <h4><span class="label public">public</span>toArray<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the headers container as an array</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toString"/>
+            <h4><span class="label public">public</span>toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Render all headers at once<pre>This method handles the normal iteration of headers; it is up to the
+concrete classes to prepend with the appropriate status/request line.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="valid"/>
+            <h4><span class="label public">public</span>valid<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this iterator still valid?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="lazyLoadHeader"/>
+            <h4><span class="label protected">protected</span>lazyLoadHeader<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$index</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="normalizeFieldName"/>
+            <h4><span class="label protected">protected</span>normalizeFieldName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Normalize a field name</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fieldName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

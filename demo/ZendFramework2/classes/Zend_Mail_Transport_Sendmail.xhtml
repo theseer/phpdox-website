@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Mail\Transport\Sendmail - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#parameters">$parameters</a>
+          </li>
+          <li>
+            <a href="#callable">$callable</a>
+          </li>
+          <li>
+            <a href="#errstr">$errstr</a>
+          </li>
+          <li>
+            <a href="#operatingSystem">$operatingSystem</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#handleMailErrors">handleMailErrors</a>
+          </li>
+          <li>
+            <a href="#isWindowsOs">isWindowsOs</a>
+          </li>
+          <li>
+            <a href="#mailHandler">mailHandler</a>
+          </li>
+          <li>
+            <a href="#prepareBody">prepareBody</a>
+          </li>
+          <li>
+            <a href="#prepareHeaders">prepareHeaders</a>
+          </li>
+          <li>
+            <a href="#prepareParameters">prepareParameters</a>
+          </li>
+          <li>
+            <a href="#prepareRecipients">prepareRecipients</a>
+          </li>
+          <li>
+            <a href="#prepareSubject">prepareSubject</a>
+          </li>
+          <li>
+            <a href="#send">send</a>
+          </li>
+          <li>
+            <a href="#setCallable">setCallable</a>
+          </li>
+          <li>
+            <a href="#setParameters">setParameters</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Mail\Transport\</span>Sendmail</h2>
+        <div class="file-notice">
+          <p>Class for sending email via the PHP internal mail() function</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_Mail_Transport_TransportInterface.xhtml">Zend\Mail\Transport\TransportInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="parameters"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $parameters</h4>
+            <ul class="varlist">
+              <li>Config options for sendmail parameters</li>
+            </ul>
+          </li>
+          <li>
+            <a name="callable"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $callable</h4>
+            <ul class="varlist">
+              <li>Callback to use when sending mail; typically, {@link mailHandler()}</li>
+            </ul>
+          </li>
+          <li>
+            <a name="errstr"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $errstr</h4>
+            <ul class="varlist">
+              <li>error information</li>
+            </ul>
+          </li>
+          <li>
+            <a name="operatingSystem"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $operatingSystem</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="null|string|array|Traversable">null|string|array|Traversable</span></span><strong> $parameters</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$parameters</code> - OPTIONAL (Default: null)</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="handleMailErrors"/>
+            <h4><span class="label public">public</span>handleMailErrors<span style="font-size:90%;">( <span class="param-type">int</span><strong> $errno</strong>, <span class="param-type">string</span><strong> $errstr</strong>, <span class="param-type">string</span><strong> $errfile</strong>, <span class="param-type">string</span><strong> $errline</strong>, <span class="param-type">Array</span><strong> $errcontext</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Temporary error handler for PHP native mail().</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$errno</code> - </li>
+                <li><code>$errstr</code> - </li>
+                <li><code>$errfile</code> - </li>
+                <li><code>$errline</code> - </li>
+                <li><code>$errcontext</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>always true</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="mailHandler"/>
+            <h4><span class="label public">public</span>mailHandler<span style="font-size:90%;">( <span class="param-type">string</span><strong> $to</strong>, <span class="param-type">string</span><strong> $subject</strong>, <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">string</span><strong> $headers</strong>, <span class="param-type"/><strong> $parameters</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send mail using PHP native mail()</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$to</code> - </li>
+                <li><code>$subject</code> - </li>
+                <li><code>$message</code> - </li>
+                <li><code>$headers</code> - </li>
+                <li><code>$parameters</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Mail\Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="send"/>
+            <h4><span class="label public">public</span>send<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Mail\Transport\Mail\Message">Message</span></span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send a message</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCallable"/>
+            <h4><span class="label public">public</span>setCallable<span style="font-size:90%;">( <span class="param-type"><span title="callable">callable</span></span><strong> $callable</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set callback to use for mail<pre>Primarily for testing purposes, but could be used to curry arguments.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$callable</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Mail\Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setParameters"/>
+            <h4><span class="label public">public</span>setParameters<span style="font-size:90%;">( <span class="param-type"><span title="null|string|array|Traversable">null|string|array|Traversable</span></span><strong> $parameters</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set sendmail parameters<pre>Used to populate the additional_parameters argument to mail()</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$parameters</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Mail\Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isWindowsOs"/>
+            <h4><span class="label protected">protected</span>isWindowsOs<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this a windows OS?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepareBody"/>
+            <h4><span class="label protected">protected</span>prepareBody<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Mail\Transport\Mail\Message">Message</span></span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepare the body string</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepareHeaders"/>
+            <h4><span class="label protected">protected</span>prepareHeaders<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Mail\Transport\Mail\Message">Message</span></span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepare the textual representation of headers</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepareParameters"/>
+            <h4><span class="label protected">protected</span>prepareParameters<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Mail\Transport\Mail\Message">Message</span></span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepare additional_parameters argument<pre>Basically, overrides the MAIL FROM envelope with either the Sender or
+From address.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepareRecipients"/>
+            <h4><span class="label protected">protected</span>prepareRecipients<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Mail\Transport\Mail\Message">Message</span></span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepare recipients list</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\Mail\Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepareSubject"/>
+            <h4><span class="label protected">protected</span>prepareSubject<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Mail\Transport\Mail\Message">Message</span></span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepare the subject line string</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

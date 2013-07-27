@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Validator\ConstraintViolationInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#getCode">getCode</a>
+          </li>
+          <li>
+            <a href="#getInvalidValue">getInvalidValue</a>
+          </li>
+          <li>
+            <a href="#getMessage">getMessage</a>
+          </li>
+          <li>
+            <a href="#getMessageParameters">getMessageParameters</a>
+          </li>
+          <li>
+            <a href="#getMessagePluralization">getMessagePluralization</a>
+          </li>
+          <li>
+            <a href="#getMessageTemplate">getMessageTemplate</a>
+          </li>
+          <li>
+            <a href="#getPropertyPath">getPropertyPath</a>
+          </li>
+          <li>
+            <a href="#getRoot">getRoot</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Validator\</span>ConstraintViolationInterface</h2>
+        <div class="file-notice">
+          <p>A violation of a constraint that happened during validation.</p>
+          <p>
+            <pre>For each constraint that fails during validation one or more violations are
+created. The violations store the violation message, the path to the failing
+element in the validation graph and the root element that was originally
+passed to the validator. For example, take the following graph:
+
+&lt;pre&gt;
+(Person)---(firstName: string)
+     \
+  (address: Address)---(street: string)
+&lt;/pre&gt;
+
+If the &lt;tt&gt;Person&lt;/tt&gt; object is validated and validation fails for the
+"firstName" property, the generated violation has the &lt;tt&gt;Person&lt;/tt&gt;
+instance as root and the property path "firstName". If validation fails
+for the "street" property of the related &lt;tt&gt;Address&lt;/tt&gt; instance, the root
+element is still the person, but the property path is "address.street".</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getCode"/>
+            <h4><span class="label public">public</span>getCode<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a machine-digestible error code for the violation.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The error code.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInvalidValue"/>
+            <h4><span class="label public">public</span>getInvalidValue<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the value that caused the violation.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The invalid value that caused the validated constraint to</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMessage"/>
+            <h4><span class="label public">public</span>getMessage<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the violation message.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The violation message.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMessageParameters"/>
+            <h4><span class="label public">public</span>getMessageParameters<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the parameters to be inserted into the raw violation message.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A possibly empty list of parameters indexed by the names</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMessagePluralization"/>
+            <h4><span class="label public">public</span>getMessagePluralization<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a number for pluralizing the violation message.<pre>For example, the message template could have different translation based
+on a parameter "choices":
+
+&lt;ul&gt;
+&lt;li&gt;Please select exactly one entry. (choices=1)&lt;/li&gt;
+&lt;li&gt;Please select two entries. (choices=2)&lt;/li&gt;
+&lt;/ul&gt;
+
+This method returns the value of the parameter for choosing the right
+pluralization form (in this case "choices").</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The number to use to pluralize of the message.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMessageTemplate"/>
+            <h4><span class="label public">public</span>getMessageTemplate<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the raw violation message.<pre>The raw violation message contains placeholders for the parameters
+returned by . Typically you'll pass the
+message template and parameters to a translation engine.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The raw violation message.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPropertyPath"/>
+            <h4><span class="label public">public</span>getPropertyPath<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the property path from the root element to the violation.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The property path indicates how the validator reached</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRoot"/>
+            <h4><span class="label public">public</span>getRoot<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the root element of the validation.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The value that was passed originally to the validator when</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

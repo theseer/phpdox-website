@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Ldap\Dn - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#ATTR_CASEFOLD_NONE">ATTR_CASEFOLD_NONE</a>
+          </li>
+          <li>
+            <a href="#ATTR_CASEFOLD_UPPER">ATTR_CASEFOLD_UPPER</a>
+          </li>
+          <li>
+            <a href="#ATTR_CASEFOLD_LOWER">ATTR_CASEFOLD_LOWER</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#defaultCaseFold">$defaultCaseFold</a>
+          </li>
+          <li>
+            <a href="#caseFold">$caseFold</a>
+          </li>
+          <li>
+            <a href="#dn">$dn</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__toString">__toString</a>
+          </li>
+          <li>
+            <a href="#append">append</a>
+          </li>
+          <li>
+            <a href="#assertIndex">assertIndex</a>
+          </li>
+          <li>
+            <a href="#assertRdn">assertRdn</a>
+          </li>
+          <li>
+            <a href="#caseFoldDn">caseFoldDn</a>
+          </li>
+          <li>
+            <a href="#caseFoldRdn">caseFoldRdn</a>
+          </li>
+          <li>
+            <a href="#checkDn">checkDn</a>
+          </li>
+          <li>
+            <a href="#escapeValue">escapeValue</a>
+          </li>
+          <li>
+            <a href="#explodeDn">explodeDn</a>
+          </li>
+          <li>
+            <a href="#factory">factory</a>
+          </li>
+          <li>
+            <a href="#fromArray">fromArray</a>
+          </li>
+          <li>
+            <a href="#fromString">fromString</a>
+          </li>
+          <li>
+            <a href="#get">get</a>
+          </li>
+          <li>
+            <a href="#getParentDn">getParentDn</a>
+          </li>
+          <li>
+            <a href="#getRdn">getRdn</a>
+          </li>
+          <li>
+            <a href="#getRdnString">getRdnString</a>
+          </li>
+          <li>
+            <a href="#implodeDn">implodeDn</a>
+          </li>
+          <li>
+            <a href="#implodeRdn">implodeRdn</a>
+          </li>
+          <li>
+            <a href="#insert">insert</a>
+          </li>
+          <li>
+            <a href="#isChildOf">isChildOf</a>
+          </li>
+          <li>
+            <a href="#offsetExists">offsetExists</a>
+          </li>
+          <li>
+            <a href="#offsetGet">offsetGet</a>
+          </li>
+          <li>
+            <a href="#offsetSet">offsetSet</a>
+          </li>
+          <li>
+            <a href="#offsetUnset">offsetUnset</a>
+          </li>
+          <li>
+            <a href="#prepend">prepend</a>
+          </li>
+          <li>
+            <a href="#remove">remove</a>
+          </li>
+          <li>
+            <a href="#sanitizeCaseFold">sanitizeCaseFold</a>
+          </li>
+          <li>
+            <a href="#set">set</a>
+          </li>
+          <li>
+            <a href="#setCaseFold">setCaseFold</a>
+          </li>
+          <li>
+            <a href="#setDefaultCaseFold">setDefaultCaseFold</a>
+          </li>
+          <li>
+            <a href="#toArray">toArray</a>
+          </li>
+          <li>
+            <a href="#toString">toString</a>
+          </li>
+          <li>
+            <a href="#unescapeValue">unescapeValue</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Ldap\</span>Dn</h2>
+        <div class="file-notice">
+          <p>Zend\Ldap\Dn provides an API for DN manipulation</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <span title="ArrayAccess">ArrayAccess</span>
+          </li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="ATTR_CASEFOLD_NONE"/>ATTR_CASEFOLD_NONE = 'none'<hr/></li>
+          <li><a name="ATTR_CASEFOLD_UPPER"/>ATTR_CASEFOLD_UPPER = 'upper'<hr/></li>
+          <li><a name="ATTR_CASEFOLD_LOWER"/>ATTR_CASEFOLD_LOWER = 'lower'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="defaultCaseFold"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $defaultCaseFold</h4>
+            <ul class="varlist">
+              <li>The default case fold to use</li>
+            </ul>
+          </li>
+          <li>
+            <a name="caseFold"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $caseFold</h4>
+            <ul class="varlist">
+              <li>The case fold used for this instance</li>
+            </ul>
+          </li>
+          <li>
+            <a name="dn"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $dn</h4>
+            <ul class="varlist">
+              <li>The DN data</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label protected">protected</span>__construct<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $dn</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__toString"/>
+            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Cast to string representation {@see toString()}</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="append"/>
+            <h4><span class="label public">public</span>append<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Append a DN part</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="checkDn"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>checkDn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dn</strong>, <span class="param-type">Array</span><strong> &amp;$keys</strong>, <span class="param-type">Array</span><strong> &amp;$vals</strong>, <span class="param-type">string</span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - The DN to parse</li>
+                <li><code>$keys</code> - An optional array to receive DN keys (e.g. CN, OU, DC, ...)</li>
+                <li><code>$vals</code> - An optional array to receive DN values</li>
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>True if the DN was successfully parsed or false if the string is not a valid DN.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="escapeValue"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>escapeValue<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $values</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Escapes a DN value according to RFC 2253<pre>Escapes the given VALUES according to RFC 2253 so that they can be safely used in LDAP DNs.
+The characters ",", "+", """, "\", "&lt;", "&gt;", ";", "#", " = " with a special meaning in RFC 2252
+are preceeded by ba backslash. Control characters with an ASCII code &lt; 32 are represented as \hexpair.
+Finally all leading and trailing spaces are converted to sequences of \20.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$values</code> - An array containing the DN values that should be escaped</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The array $values, but escaped</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="explodeDn"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>explodeDn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dn</strong>, <span class="param-type">Array</span><strong> &amp;$keys</strong>, <span class="param-type">Array</span><strong> &amp;$vals</strong>, <span class="param-type">string</span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates an array containing all parts of the given DN.<pre>Array will be of type
+array(
+     array("cn" =&gt; "name1", "uid" =&gt; "user"),
+     array("cn" =&gt; "name2"),
+     array("dc" =&gt; "example"),
+     array("dc" =&gt; "org")
+)
+for a DN of cn=name1+uid=user,cn=name2,dc=example,dc=org.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+                <li><code>$keys</code> - An optional array to receive DN keys (e.g. CN, OU, DC, ...)</li>
+                <li><code>$vals</code> - An optional array to receive DN values</li>
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="factory"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>factory<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $dn</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a DN from an array or a string</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fromArray"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>fromArray<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $dn</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a DN from an array</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fromString"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>fromString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dn</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a DN from a string</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="get"/>
+            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type">int</span><strong> $index</strong>, <span class="param-type">integer</span><strong> $length</strong>, <span class="param-type">string</span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get a DN part</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$index</code> - </li>
+                <li><code>$length</code> - </li>
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException if index is illegal</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getParentDn"/>
+            <h4><span class="label public">public</span>getParentDn<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $levelUp</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the parent DN $levelUp levels up the tree</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$levelUp</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRdn"/>
+            <h4><span class="label public">public</span>getRdn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the RDN of the current DN</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException if DN has no RDN (empty array)</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRdnString"/>
+            <h4><span class="label public">public</span>getRdnString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the RDN of the current DN as a string</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException if DN has no RDN (empty array)</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="implodeDn"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>implodeDn<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $dnArray</strong>, <span class="param-type">string</span><strong> $caseFold</strong>, <span class="param-type">string</span><strong> $separator</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Implodes an array in the form delivered by {@link explodeDn()} to a DN string.<pre>$dnArray must be of type
+array(
+     array("cn" =&gt; "name1", "uid" =&gt; "user"),
+     array("cn" =&gt; "name2"),
+     array("dc" =&gt; "example"),
+     array("dc" =&gt; "org")
+)</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dnArray</code> - </li>
+                <li><code>$caseFold</code> - </li>
+                <li><code>$separator</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="implodeRdn"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>implodeRdn<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $part</strong>, <span class="param-type">string</span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a DN part in the form $attribute = $value<pre>This method supports the creation of multi-valued RDNs
+$part must contain an even number of elements.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$part</code> - </li>
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="insert"/>
+            <h4><span class="label public">public</span>insert<span style="font-size:90%;">( <span class="param-type">int</span><strong> $index</strong>, <span class="param-type">Array</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Insert a DN part</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$index</code> - </li>
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException if index is illegal</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isChildOf"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>isChildOf<span style="font-size:90%;">( <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $childDn</strong>, <span class="param-type"><span title="string|Dn">string|Dn</span></span><strong> $parentDn</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if given $childDn is beneath $parentDn subtree.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$childDn</code> - </li>
+                <li><code>$parentDn</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetExists"/>
+            <h4><span class="label public">public</span>offsetExists<span style="font-size:90%;">( <span class="param-type">int</span><strong> $offset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Required by the ArrayAccess implementation</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$offset</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetGet"/>
+            <h4><span class="label public">public</span>offsetGet<span style="font-size:90%;">( <span class="param-type">int</span><strong> $offset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Proxy to {@see get()} Required by the ArrayAccess implementation</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$offset</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetSet"/>
+            <h4><span class="label public">public</span>offsetSet<span style="font-size:90%;">( <span class="param-type">int</span><strong> $offset</strong>, <span class="param-type">array</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Proxy to {@see set()} Required by the ArrayAccess implementation</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$offset</code> - </li>
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetUnset"/>
+            <h4><span class="label public">public</span>offsetUnset<span style="font-size:90%;">( <span class="param-type">int</span><strong> $offset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Proxy to {@see remove()} Required by the ArrayAccess implementation</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$offset</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepend"/>
+            <h4><span class="label public">public</span>prepend<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepend a DN part</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="remove"/>
+            <h4><span class="label public">public</span>remove<span style="font-size:90%;">( <span class="param-type">int</span><strong> $index</strong>, <span class="param-type">integer</span><strong> $length</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove a DN part</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$index</code> - </li>
+                <li><code>$length</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException if index is illegal</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="set"/>
+            <h4><span class="label public">public</span>set<span style="font-size:90%;">( <span class="param-type">int</span><strong> $index</strong>, <span class="param-type">Array</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set a DN part</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$index</code> - </li>
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException if index is illegal</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCaseFold"/>
+            <h4><span class="label public">public</span>setCaseFold<span style="font-size:90%;">( <span class="param-type"><span title="string|null">string|null</span></span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the case fold</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDefaultCaseFold"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setDefaultCaseFold<span style="font-size:90%;">( <span class="param-type">string</span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the default case fold</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toArray"/>
+            <h4><span class="label public">public</span>toArray<span style="font-size:90%;">( <span class="param-type">string</span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return DN as an array</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toString"/>
+            <h4><span class="label public">public</span>toString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return DN as a string</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unescapeValue"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>unescapeValue<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $values</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Undoes the conversion done by {@link escapeValue()}.<pre>Any escape sequence starting with a baskslash - hexpair or special character -
+will be transformed back to the corresponding character.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$values</code> - Array of DN Values</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Same as $values, but unescaped</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="assertIndex"/>
+            <h4><span class="label protected">protected</span>assertIndex<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Assert index is correct and usable</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$index</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="assertRdn"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>assertRdn<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Assert if value is in a correct RDN format</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\LdapException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="caseFoldDn"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>caseFoldDn<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $dn</strong>, <span class="param-type">string</span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Do a case folding on a DN ort part of it</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dn</code> - </li>
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="caseFoldRdn"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>caseFoldRdn<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $part</strong>, <span class="param-type">string</span><strong> $caseFold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Do a case folding on a RDN</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$part</code> - </li>
+                <li><code>$caseFold</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="sanitizeCaseFold"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>sanitizeCaseFold<span style="font-size:90%;">( <span class="param-type">string</span><strong> $caseFold</strong>, <span class="param-type">string</span><strong> $default</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sanitizes the case fold</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$caseFold</code> - </li>
+                <li><code>$default</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

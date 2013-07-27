@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Barcode\Barcode - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#OBJECT">OBJECT</a>
+          </li>
+          <li>
+            <a href="#RENDERER">RENDERER</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#staticFont">$staticFont</a>
+          </li>
+          <li>
+            <a href="#objectPlugins">$objectPlugins</a>
+          </li>
+          <li>
+            <a href="#rendererPlugins">$rendererPlugins</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#draw">draw</a>
+          </li>
+          <li>
+            <a href="#factory">factory</a>
+          </li>
+          <li>
+            <a href="#getBarcodeFont">getBarcodeFont</a>
+          </li>
+          <li>
+            <a href="#getObjectPluginManager">getObjectPluginManager</a>
+          </li>
+          <li>
+            <a href="#getRendererPluginManager">getRendererPluginManager</a>
+          </li>
+          <li>
+            <a href="#makeBarcode">makeBarcode</a>
+          </li>
+          <li>
+            <a href="#makeRenderer">makeRenderer</a>
+          </li>
+          <li>
+            <a href="#render">render</a>
+          </li>
+          <li>
+            <a href="#setBarcodeFont">setBarcodeFont</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Barcode\</span>Barcode</h2>
+        <div class="file-notice">
+          <p>Class for generate Barcode</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="OBJECT"/>OBJECT = 'OBJECT'<hr/></li>
+          <li><a name="RENDERER"/>RENDERER = 'RENDERER'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="staticFont"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $staticFont</h4>
+            <ul class="varlist">
+              <li>Default barcode TTF font name<pre>It's used by standard barcode objects derived from
+{@link Object\AbstractObject} class
+if corresponding constructor option is not provided.</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="objectPlugins"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $objectPlugins</h4>
+            <ul class="varlist">
+              <li>The parser plugin manager</li>
+            </ul>
+          </li>
+          <li>
+            <a name="rendererPlugins"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $rendererPlugins</h4>
+            <ul class="varlist">
+              <li>The renderer plugin manager</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="draw"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>draw<span style="font-size:90%;">( <span class="param-type"/><strong> $barcode</strong>, <span class="param-type"/><strong> $renderer</strong>, <span class="param-type">Array</span><strong> $barcodeConfig</strong>, <span class="param-type">Array</span><strong> $rendererConfig</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Proxy to renderer draw() method</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>|</code> - Object\ObjectInterface | array | Traversable $barcode</li>
+                <li><code>|</code> - Renderer\RendererInterface $renderer</li>
+                <li><code>|</code> - Traversable $barcodeConfig</li>
+                <li><code>|</code> - Traversable $rendererConfig</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="factory"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>factory<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $barcode</strong>, <span class="param-type">string</span><strong> $renderer</strong>, <span class="param-type">Array</span><strong> $barcodeConfig</strong>, <span class="param-type">Array</span><strong> $rendererConfig</strong>, <span class="param-type">boolean</span><strong> $automaticRenderError</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Factory for Zend_Barcode classes.<pre>First argument may be a string containing the base of the adapter class
+name, e.g. 'int25' corresponds to class Object\Int25.  This
+is case-insensitive.
+
+First argument may alternatively be an object of type Traversable.
+The barcode class base name is read from the 'barcode' property.
+The barcode config parameters are read from the 'params' property.
+
+Second argument is optional and may be an associative array of key-value
+pairs.  This is used as the argument to the barcode constructor.
+
+If the first argument is of type Traversable, it is assumed to contain
+all parameters, and the second argument is ignored.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$barcode</code> - String name of barcode class, or Traversable object.</li>
+                <li><code>$renderer</code> - String name of renderer class</li>
+                <li><code>$barcodeConfig</code> - OPTIONAL; an array or Traversable object with barcode parameters.</li>
+                <li><code>$rendererConfig</code> - OPTIONAL; an array or Traversable object with renderer parameters.</li>
+                <li><code>$automaticRenderError</code> - OPTIONAL; set the automatic rendering of exception</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBarcodeFont"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getBarcodeFont<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get current default font</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getObjectPluginManager"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getObjectPluginManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the parser plugin manager</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRendererPluginManager"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getRendererPluginManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the renderer plugin manager</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="makeBarcode"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>makeBarcode<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $barcode</strong>, <span class="param-type">Array</span><strong> $barcodeConfig</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Barcode Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$barcode</code> - String name of barcode class, or Traversable object, or barcode object.</li>
+                <li><code>$barcodeConfig</code> - OPTIONAL; an array or Traversable object with barcode parameters.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="makeRenderer"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>makeRenderer<span style="font-size:90%;">( <span class="param-type">string</span><strong> $renderer</strong>, <span class="param-type">Array</span><strong> $rendererConfig</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renderer Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$renderer</code> - String name of renderer class, or Traversable object.</li>
+                <li><code>$rendererConfig</code> - OPTIONAL; an array or Traversable object with renderer parameters.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RendererCreationException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="render"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>render<span style="font-size:90%;">( <span class="param-type"/><strong> $barcode</strong>, <span class="param-type"/><strong> $renderer</strong>, <span class="param-type">Array</span><strong> $barcodeConfig</strong>, <span class="param-type">Array</span><strong> $rendererConfig</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Proxy to renderer render() method</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>|</code> - Object\ObjectInterface | array | Traversable $barcode</li>
+                <li><code>|</code> - Renderer\RendererInterface $renderer</li>
+                <li><code>|</code> - Traversable $barcodeConfig</li>
+                <li><code>|</code> - Traversable $rendererConfig</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setBarcodeFont"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setBarcodeFont<span style="font-size:90%;">( <span class="param-type">string</span><strong> $font</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the default font for new instances of barcode</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$font</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

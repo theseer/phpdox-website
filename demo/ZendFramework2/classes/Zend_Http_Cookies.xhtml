@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Http\Cookies - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#headers">$headers</a>
+          </li>
+          <li>
+            <a href="#rawCookies">$rawCookies</a>
+          </li>
+          <li>
+            <a href="#pluginClassLoader">$pluginClassLoader</a>
+          </li>
+          <li>
+            <a href="#headersKeys">$headersKeys</a>
+          </li>
+          <li>
+            <a href="#headers">$headers</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_flattenCookiesArray">_flattenCookiesArray</a>
+          </li>
+          <li>
+            <a href="#_matchDomain">_matchDomain</a>
+          </li>
+          <li>
+            <a href="#_matchPath">_matchPath</a>
+          </li>
+          <li>
+            <a href="#addCookie">addCookie</a>
+          </li>
+          <li>
+            <a href="#addCookiesFromResponse">addCookiesFromResponse</a>
+          </li>
+          <li>
+            <a href="#addHeader">addHeader</a>
+          </li>
+          <li>
+            <a href="#addHeaderLine">addHeaderLine</a>
+          </li>
+          <li>
+            <a href="#addHeaders">addHeaders</a>
+          </li>
+          <li>
+            <a href="#clearHeaders">clearHeaders</a>
+          </li>
+          <li>
+            <a href="#count">count</a>
+          </li>
+          <li>
+            <a href="#createKey">createKey</a>
+          </li>
+          <li>
+            <a href="#current">current</a>
+          </li>
+          <li>
+            <a href="#forceLoading">forceLoading</a>
+          </li>
+          <li>
+            <a href="#fromResponse">fromResponse</a>
+          </li>
+          <li>
+            <a href="#fromString">fromString</a>
+          </li>
+          <li>
+            <a href="#fromString">fromString</a>
+          </li>
+          <li>
+            <a href="#get">get</a>
+          </li>
+          <li>
+            <a href="#getAllCookies">getAllCookies</a>
+          </li>
+          <li>
+            <a href="#getCookie">getCookie</a>
+          </li>
+          <li>
+            <a href="#getMatchingCookies">getMatchingCookies</a>
+          </li>
+          <li>
+            <a href="#getPluginClassLoader">getPluginClassLoader</a>
+          </li>
+          <li>
+            <a href="#has">has</a>
+          </li>
+          <li>
+            <a href="#isEmpty">isEmpty</a>
+          </li>
+          <li>
+            <a href="#key">key</a>
+          </li>
+          <li>
+            <a href="#lazyLoadHeader">lazyLoadHeader</a>
+          </li>
+          <li>
+            <a href="#next">next</a>
+          </li>
+          <li>
+            <a href="#removeHeader">removeHeader</a>
+          </li>
+          <li>
+            <a href="#reset">reset</a>
+          </li>
+          <li>
+            <a href="#rewind">rewind</a>
+          </li>
+          <li>
+            <a href="#setPluginClassLoader">setPluginClassLoader</a>
+          </li>
+          <li>
+            <a href="#toArray">toArray</a>
+          </li>
+          <li>
+            <a href="#toString">toString</a>
+          </li>
+          <li>
+            <a href="#valid">valid</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Http\</span>Cookies</h2>
+        <div class="file-notice">
+          <p>A Zend_Http_CookieJar object is designed to contain and maintain HTTP cookies, and should be used along with Zend_Http_Client in order to manage cookies across HTTP requests and responses.</p>
+          <p>
+            <pre>The class contains an array of Zend\Http\Header\Cookie objects. Cookies can be added
+automatically from a request or manually. Then, the Cookies class can find and return the
+cookies needed for a specific HTTP request.
+
+A special parameter can be passed to all methods of this class that return cookies: Cookies
+can be returned either in their native form (as Zend\Http\Header\Cookie objects) or as strings -
+the later is suitable for sending as the value of the "Cookie" header in an HTTP request.
+You can also choose, when returning more than one cookie, whether to get an array of strings
+(by passing Zend\Http\Client\Cookies::COOKIE_STRING_ARRAY) or one unified string for all cookies
+(by passing Zend\Http\Client\Cookies::COOKIE_STRING_CONCAT).</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="headers"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $headers</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="rawCookies"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $rawCookies</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Http_Headers.xhtml">Zend\Http\Headers</a></span><strong> $headers</strong>, <span class="param-type"/><strong> $context</strong> )</span></h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addCookie"/>
+            <h4><span class="label public">public</span>addCookie<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Http_Header_Cookie.xhtml">Zend\Http\Header\Cookie</a></span><strong> $cookie</strong>, <span class="param-type"><span title="Uri\Uri|string">Uri|string</span></span><strong> $ref_uri</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a cookie to the class. Cookie should be passed either as a Zend\Http\Header\Cookie object or as a string - in which case an object is created from the string.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cookie</code> - </li>
+                <li><code>$ref_uri</code> - Optional reference URI (for domain, path, secure)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addCookiesFromResponse"/>
+            <h4><span class="label public">public</span>addCookiesFromResponse<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Http_Response.xhtml">Zend\Http\Response</a></span><strong> $response</strong>, <span class="param-type"><span title="Uri\Uri|string">Uri|string</span></span><strong> $ref_uri</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Parse an HTTP response, adding all the cookies set in that response</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$response</code> - </li>
+                <li><code>$ref_uri</code> - Requested URI</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addHeader"/>
+            <h4><span class="label public">public</span>addHeader<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Http_Header_HeaderInterface.xhtml">Zend\Http\Header\HeaderInterface</a></span><strong> $header</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a Header to this container, for raw values @see addHeaderLine() and addHeaders()</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$header</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addHeaderLine"/>
+            <h4><span class="label public">public</span>addHeaderLine<span style="font-size:90%;">( <span class="param-type">string</span><strong> $headerFieldNameOrLine</strong>, <span class="param-type">string</span><strong> $fieldValue</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a raw header line, either in name =&gt; value, or as a single string 'name: value'<pre>This method allows for lazy-loading in that the parsing and instantiation of Header object
+will be delayed until they are retrieved by either get() or current()</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$headerFieldNameOrLine</code> - </li>
+                <li><code>$fieldValue</code> - optional</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addHeaders"/>
+            <h4><span class="label public">public</span>addHeaders<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $headers</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add many headers at once<pre>Expects an array (or Traversable object) of type/value pairs.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$headers</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="clearHeaders"/>
+            <h4><span class="label public">public</span>clearHeaders<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clear all headers<pre>Removes all headers from queue</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="count"/>
+            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the number of headers in this contain, if all headers have not been parsed, actual count could increase if MultipleHeader objects exist in the Request/Response.  If you need an exact count, iterate</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>count of currently known headers</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="current"/>
+            <h4><span class="label public">public</span>current<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the current value for this iterator, lazy loading it if need be</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="forceLoading"/>
+            <h4><span class="label public">public</span>forceLoading<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>By calling this, it will force parsing and loading of all headers, after this count() will be accurate</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fromResponse"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>fromResponse<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Http_Response.xhtml">Zend\Http\Response</a></span><strong> $response</strong>, <span class="param-type"><span title="Uri\Uri|string">Uri|string</span></span><strong> $ref_uri</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new Cookies object and automatically load into it all the cookies set in an Http_Response object. If $uri is set, it will be considered as the requested URI for setting default domain and path of the cookie.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$response</code> - HTTP Response object</li>
+                <li><code>$ref_uri</code> - The requested URI</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fromString"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>fromString<span style="font-size:90%;">( <span class="param-type"/><strong> $string</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$string</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fromString"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>fromString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $string</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Populates headers from string representation<pre>Parses a string for headers, and aggregates them, in order, in the
+current instance, primarily as strings until they are needed (they
+will be lazy loaded)</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$string</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="get"/>
+            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all headers of a certain name/type</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAllCookies"/>
+            <h4><span class="label public">public</span>getAllCookies<span style="font-size:90%;">( <span class="param-type">int</span><strong> $ret_as</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all cookies in the cookie jar as an array</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$ret_as</code> - Whether to return cookies as objects of \Zend\Http\Header\Cookie or as strings</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCookie"/>
+            <h4><span class="label public">public</span>getCookie<span style="font-size:90%;">( <span class="param-type"><span title="Uri\Uri|string">Uri|string</span></span><strong> $uri</strong>, <span class="param-type">string</span><strong> $cookie_name</strong>, <span class="param-type">int</span><strong> $ret_as</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get a specific cookie according to a URI and name</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$uri</code> - The uri (domain and path) to match</li>
+                <li><code>$cookie_name</code> - The cookie's name</li>
+                <li><code>$ret_as</code> - Whether to return cookies as objects of \Zend\Http\Header\Cookie or as strings</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException if invalid URI specified or invalid $ret_as value</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMatchingCookies"/>
+            <h4><span class="label public">public</span>getMatchingCookies<span style="font-size:90%;">( <span class="param-type"><span title="string|Uri\Uri">Uri</span></span><strong> $uri</strong>, <span class="param-type">boolean</span><strong> $matchSessionCookies</strong>, <span class="param-type">int</span><strong> $ret_as</strong>, <span class="param-type">int</span><strong> $now</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return an array of all cookies matching a specific request according to the request URI, whether session cookies should be sent or not, and the time to consider as "now" when checking cookie expiry time.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$uri</code> - URI to check against (secure, domain, path)</li>
+                <li><code>$matchSessionCookies</code> - Whether to send session cookies</li>
+                <li><code>$ret_as</code> - Whether to return cookies as objects of \Zend\Http\Header\Cookie or as strings</li>
+                <li><code>$now</code> - Override the current time when checking for expiry time</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException if invalid URI specified</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPluginClassLoader"/>
+            <h4><span class="label public">public</span>getPluginClassLoader<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return an instance of a PluginClassLocator, lazyload and inject map if necessary</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="has"/>
+            <h4><span class="label public">public</span>has<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Test for existence of a type of header</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isEmpty"/>
+            <h4><span class="label public">public</span>isEmpty<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Tells if the array of cookies is empty</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="key"/>
+            <h4><span class="label public">public</span>key<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the current key for this object as an iterator</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="next"/>
+            <h4><span class="label public">public</span>next<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Advance the pointer for this object as an interator</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeHeader"/>
+            <h4><span class="label public">public</span>removeHeader<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Http_Header_HeaderInterface.xhtml">Zend\Http\Header\HeaderInterface</a></span><strong> $header</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove a Header from the container</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$header</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="reset"/>
+            <h4><span class="label public">public</span>reset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Empties the cookieJar of any cookie</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="rewind"/>
+            <h4><span class="label public">public</span>rewind<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Reset the internal pointer for this object as an iterator</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPluginClassLoader"/>
+            <h4><span class="label public">public</span>setPluginClassLoader<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Loader_PluginClassLocator.xhtml">Zend\Loader\PluginClassLocator</a></span><strong> $pluginClassLoader</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set an alternate implementation for the PluginClassLoader</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pluginClassLoader</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toArray"/>
+            <h4><span class="label public">public</span>toArray<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the headers container as an array</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toString"/>
+            <h4><span class="label public">public</span>toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Render all headers at once<pre>This method handles the normal iteration of headers; it is up to the
+concrete classes to prepend with the appropriate status/request line.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="valid"/>
+            <h4><span class="label public">public</span>valid<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this iterator still valid?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_flattenCookiesArray"/>
+            <h4><span class="label protected">protected</span>_flattenCookiesArray<span style="font-size:90%;">( <span class="param-type"><span title="\Zend\Http\Header\Cookie|array">Cookie|array</span></span><strong> $ptr</strong>, <span class="param-type">int</span><strong> $ret_as</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Helper function to recursively flatten an array. Should be used when exporting the cookies array (or parts of it)</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$ptr</code> - </li>
+                <li><code>$ret_as</code> - What value to return</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_matchDomain"/>
+            <h4><span class="label protected">protected</span>_matchDomain<span style="font-size:90%;">( <span class="param-type">string</span><strong> $domain</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return a subset of the cookies array matching a specific domain</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$domain</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_matchPath"/>
+            <h4><span class="label protected">protected</span>_matchPath<span style="font-size:90%;">( <span class="param-type">array</span><strong> $domains</strong>, <span class="param-type">string</span><strong> $path</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return a subset of a domain-matching cookies that also match a specified path</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$domains</code> - </li>
+                <li><code>$path</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createKey"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>createKey<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create array key from header name</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="lazyLoadHeader"/>
+            <h4><span class="label protected">protected</span>lazyLoadHeader<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$index</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

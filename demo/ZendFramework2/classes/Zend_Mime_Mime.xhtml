@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Mime\Mime - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#TYPE_OCTETSTREAM">TYPE_OCTETSTREAM</a>
+          </li>
+          <li>
+            <a href="#TYPE_TEXT">TYPE_TEXT</a>
+          </li>
+          <li>
+            <a href="#TYPE_HTML">TYPE_HTML</a>
+          </li>
+          <li>
+            <a href="#ENCODING_7BIT">ENCODING_7BIT</a>
+          </li>
+          <li>
+            <a href="#ENCODING_8BIT">ENCODING_8BIT</a>
+          </li>
+          <li>
+            <a href="#ENCODING_QUOTEDPRINTABLE">ENCODING_QUOTEDPRINTABLE</a>
+          </li>
+          <li>
+            <a href="#ENCODING_BASE64">ENCODING_BASE64</a>
+          </li>
+          <li>
+            <a href="#DISPOSITION_ATTACHMENT">DISPOSITION_ATTACHMENT</a>
+          </li>
+          <li>
+            <a href="#DISPOSITION_INLINE">DISPOSITION_INLINE</a>
+          </li>
+          <li>
+            <a href="#LINELENGTH">LINELENGTH</a>
+          </li>
+          <li>
+            <a href="#LINEEND">LINEEND</a>
+          </li>
+          <li>
+            <a href="#MULTIPART_ALTERNATIVE">MULTIPART_ALTERNATIVE</a>
+          </li>
+          <li>
+            <a href="#MULTIPART_MIXED">MULTIPART_MIXED</a>
+          </li>
+          <li>
+            <a href="#MULTIPART_RELATED">MULTIPART_RELATED</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#boundary">$boundary</a>
+          </li>
+          <li>
+            <a href="#makeUnique">$makeUnique</a>
+          </li>
+          <li>
+            <a href="#qpKeys">$qpKeys</a>
+          </li>
+          <li>
+            <a href="#qpReplaceValues">$qpReplaceValues</a>
+          </li>
+          <li>
+            <a href="#qpKeysString">$qpKeysString</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_encodeQuotedPrintable">_encodeQuotedPrintable</a>
+          </li>
+          <li>
+            <a href="#boundary">boundary</a>
+          </li>
+          <li>
+            <a href="#boundaryLine">boundaryLine</a>
+          </li>
+          <li>
+            <a href="#encode">encode</a>
+          </li>
+          <li>
+            <a href="#encodeBase64">encodeBase64</a>
+          </li>
+          <li>
+            <a href="#encodeBase64Header">encodeBase64Header</a>
+          </li>
+          <li>
+            <a href="#encodeQuotedPrintable">encodeQuotedPrintable</a>
+          </li>
+          <li>
+            <a href="#encodeQuotedPrintableHeader">encodeQuotedPrintableHeader</a>
+          </li>
+          <li>
+            <a href="#getNextQuotedPrintableToken">getNextQuotedPrintableToken</a>
+          </li>
+          <li>
+            <a href="#isPrintable">isPrintable</a>
+          </li>
+          <li>
+            <a href="#mimeEnd">mimeEnd</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Mime\</span>Mime</h2>
+        <div class="file-notice">
+          <p>Support class for MultiPart Mime Messages</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="TYPE_OCTETSTREAM"/>TYPE_OCTETSTREAM = 'application/octet-stream'<hr/></li>
+          <li><a name="TYPE_TEXT"/>TYPE_TEXT = 'text/plain'<hr/></li>
+          <li><a name="TYPE_HTML"/>TYPE_HTML = 'text/html'<hr/></li>
+          <li><a name="ENCODING_7BIT"/>ENCODING_7BIT = '7bit'<hr/></li>
+          <li><a name="ENCODING_8BIT"/>ENCODING_8BIT = '8bit'<hr/></li>
+          <li><a name="ENCODING_QUOTEDPRINTABLE"/>ENCODING_QUOTEDPRINTABLE = 'quoted-printable'<hr/></li>
+          <li><a name="ENCODING_BASE64"/>ENCODING_BASE64 = 'base64'<hr/></li>
+          <li><a name="DISPOSITION_ATTACHMENT"/>DISPOSITION_ATTACHMENT = 'attachment'<hr/></li>
+          <li><a name="DISPOSITION_INLINE"/>DISPOSITION_INLINE = 'inline'<hr/></li>
+          <li><a name="LINELENGTH"/>LINELENGTH = 72<hr/></li>
+          <li><a name="LINEEND"/>LINEEND = "\n"<hr/></li>
+          <li><a name="MULTIPART_ALTERNATIVE"/>MULTIPART_ALTERNATIVE = 'multipart/alternative'<hr/></li>
+          <li><a name="MULTIPART_MIXED"/>MULTIPART_MIXED = 'multipart/mixed'<hr/></li>
+          <li><a name="MULTIPART_RELATED"/>MULTIPART_RELATED = 'multipart/related'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="boundary"/>
+            <h4><span class="label protected">protected</span>
+                $boundary</h4>
+          </li>
+          <li>
+            <a name="makeUnique"/>
+            <h4><span class="label protected">protected</span>
+                $makeUnique</h4>
+          </li>
+          <li>
+            <a name="qpKeys"/>
+            <h4><span class="label public">public</span>
+                $qpKeys</h4>
+          </li>
+          <li>
+            <a name="qpReplaceValues"/>
+            <h4><span class="label public">public</span>
+                $qpReplaceValues</h4>
+          </li>
+          <li>
+            <a name="qpKeysString"/>
+            <h4><span class="label public">public</span>
+                $qpKeysString</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="null|string">null|string</span></span><strong> $boundary</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$boundary</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="boundary"/>
+            <h4><span class="label public">public</span>boundary<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return a MIME boundary</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="boundaryLine"/>
+            <h4><span class="label public">public</span>boundaryLine<span style="font-size:90%;">( <span class="param-type">string</span><strong> $EOL</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return a MIME boundary line</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$EOL</code> - Defaults to {@link LINEEND}</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="encode"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>encode<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong>, <span class="param-type">string</span><strong> $encoding</strong>, <span class="param-type">string</span><strong> $EOL</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encode the given string with the given encoding.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - </li>
+                <li><code>$encoding</code> - </li>
+                <li><code>$EOL</code> - EOL string; defaults to {@link Zend_Mime::LINEEND}</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="encodeBase64"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>encodeBase64<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong>, <span class="param-type">int</span><strong> $lineLength</strong>, <span class="param-type">string</span><strong> $lineEnd</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encode a given string in base64 encoding and break lines according to the maximum linelength.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - </li>
+                <li><code>$lineLength</code> - Defaults to {@link LINELENGTH}</li>
+                <li><code>$lineEnd</code> - Defaults to {@link LINEEND}</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="encodeBase64Header"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>encodeBase64Header<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong>, <span class="param-type">string</span><strong> $charset</strong>, <span class="param-type">int</span><strong> $lineLength</strong>, <span class="param-type">string</span><strong> $lineEnd</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encode a given string in mail header compatible base64 encoding.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - </li>
+                <li><code>$charset</code> - </li>
+                <li><code>$lineLength</code> - Defaults to {@link LINELENGTH}</li>
+                <li><code>$lineEnd</code> - Defaults to {@link LINEEND}</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="encodeQuotedPrintable"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>encodeQuotedPrintable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong>, <span class="param-type">int</span><strong> $lineLength</strong>, <span class="param-type">string</span><strong> $lineEnd</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encode a given string with the QUOTED_PRINTABLE mechanism and wrap the lines.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - </li>
+                <li><code>$lineLength</code> - Defaults to {@link LINELENGTH}</li>
+                <li><code>$lineEnd</code> - Defaults to {@link LINEEND}</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="encodeQuotedPrintableHeader"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>encodeQuotedPrintableHeader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong>, <span class="param-type">string</span><strong> $charset</strong>, <span class="param-type">int</span><strong> $lineLength</strong>, <span class="param-type">string</span><strong> $lineEnd</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encode a given string with the QUOTED_PRINTABLE mechanism for Mail Headers.<pre>Mail headers depend on an extended quoted printable algorithm otherwise
+a range of bugs can occur.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - </li>
+                <li><code>$charset</code> - </li>
+                <li><code>$lineLength</code> - Defaults to {@link LINELENGTH}</li>
+                <li><code>$lineEnd</code> - Defaults to {@link LINEEND}</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isPrintable"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>isPrintable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if the given string is "printable"<pre>Checks that a string contains no unprintable characters. If this returns
+false, encode the string for secure delivery.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="mimeEnd"/>
+            <h4><span class="label public">public</span>mimeEnd<span style="font-size:90%;">( <span class="param-type">string</span><strong> $EOL</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return MIME ending</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$EOL</code> - Defaults to {@link LINEEND}</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_encodeQuotedPrintable"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>_encodeQuotedPrintable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Converts a string into quoted printable format.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNextQuotedPrintableToken"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>getNextQuotedPrintableToken<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieves the first token from a quoted printable string.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

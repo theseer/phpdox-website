@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>PHPUnit - PHPUnit_Util_Configuration - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">PHPUnit - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#instances">$instances</a>
+          </li>
+          <li>
+            <a href="#document">$document</a>
+          </li>
+          <li>
+            <a href="#xpath">$xpath</a>
+          </li>
+          <li>
+            <a href="#filename">$filename</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__clone">__clone</a>
+          </li>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#getBoolean">getBoolean</a>
+          </li>
+          <li>
+            <a href="#getFilename">getFilename</a>
+          </li>
+          <li>
+            <a href="#getFilterConfiguration">getFilterConfiguration</a>
+          </li>
+          <li>
+            <a href="#getGroupConfiguration">getGroupConfiguration</a>
+          </li>
+          <li>
+            <a href="#getInstance">getInstance</a>
+          </li>
+          <li>
+            <a href="#getInteger">getInteger</a>
+          </li>
+          <li>
+            <a href="#getListenerConfiguration">getListenerConfiguration</a>
+          </li>
+          <li>
+            <a href="#getLoggingConfiguration">getLoggingConfiguration</a>
+          </li>
+          <li>
+            <a href="#getPHPConfiguration">getPHPConfiguration</a>
+          </li>
+          <li>
+            <a href="#getPHPUnitConfiguration">getPHPUnitConfiguration</a>
+          </li>
+          <li>
+            <a href="#getSeleniumBrowserConfiguration">getSeleniumBrowserConfiguration</a>
+          </li>
+          <li>
+            <a href="#getTestSuite">getTestSuite</a>
+          </li>
+          <li>
+            <a href="#getTestSuiteConfiguration">getTestSuiteConfiguration</a>
+          </li>
+          <li>
+            <a href="#handlePHPConfiguration">handlePHPConfiguration</a>
+          </li>
+          <li>
+            <a href="#readFilterDirectories">readFilterDirectories</a>
+          </li>
+          <li>
+            <a href="#readFilterFiles">readFilterFiles</a>
+          </li>
+          <li>
+            <a href="#toAbsolutePath">toAbsolutePath</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>PHPUnit_Util_Configuration</h2>
+        <div class="file-notice">
+          <p>Wrapper for the PHPUnit XML configuration file.</p>
+          <p>
+            <pre>Example XML configuration file:
+&lt;code&gt;
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+
+&lt;phpunit backupGlobals="true"
+         backupStaticAttributes="false"
+         bootstrap="/path/to/bootstrap.php"
+         cacheTokens="false"
+         colors="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         forceCoversAnnotation="false"
+         mapTestClassNameToCoveredClassName="false"
+         printerClass="PHPUnit_TextUI_ResultPrinter"
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"
+         timeoutForSmallTests="1"
+         timeoutForMediumTests="10"
+         timeoutForLargeTests="60"
+         strict="false"
+         verbose="false"&gt;
+  &lt;testsuites&gt;
+    &lt;testsuite name="My Test Suite"&gt;
+      &lt;directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator="&gt;="&gt;/path/to/files&lt;/directory&gt;
+      &lt;file phpVersion="5.3.0" phpVersionOperator="&gt;="&gt;/path/to/MyTest.php&lt;/file&gt;
+      &lt;exclude&gt;/path/to/files/exclude&lt;/exclude&gt;
+    &lt;/testsuite&gt;
+  &lt;/testsuites&gt;
+
+  &lt;groups&gt;
+    &lt;include&gt;
+      &lt;group&gt;name&lt;/group&gt;
+    &lt;/include&gt;
+    &lt;exclude&gt;
+      &lt;group&gt;name&lt;/group&gt;
+    &lt;/exclude&gt;
+  &lt;/groups&gt;
+
+  &lt;filter&gt;
+    &lt;blacklist&gt;
+      &lt;directory suffix=".php"&gt;/path/to/files&lt;/directory&gt;
+      &lt;file&gt;/path/to/file&lt;/file&gt;
+      &lt;exclude&gt;
+        &lt;directory suffix=".php"&gt;/path/to/files&lt;/directory&gt;
+        &lt;file&gt;/path/to/file&lt;/file&gt;
+      &lt;/exclude&gt;
+    &lt;/blacklist&gt;
+    &lt;whitelist addUncoveredFilesFromWhitelist="true"
+               processUncoveredFilesFromWhitelist="false"&gt;
+      &lt;directory suffix=".php"&gt;/path/to/files&lt;/directory&gt;
+      &lt;file&gt;/path/to/file&lt;/file&gt;
+      &lt;exclude&gt;
+        &lt;directory suffix=".php"&gt;/path/to/files&lt;/directory&gt;
+        &lt;file&gt;/path/to/file&lt;/file&gt;
+      &lt;/exclude&gt;
+    &lt;/whitelist&gt;
+  &lt;/filter&gt;
+
+  &lt;listeners&gt;
+    &lt;listener class="MyListener" file="/optional/path/to/MyListener.php"&gt;
+      &lt;arguments&gt;
+        &lt;array&gt;
+          &lt;element key="0"&gt;
+            &lt;string&gt;Sebastian&lt;/string&gt;
+          &lt;/element&gt;
+        &lt;/array&gt;
+        &lt;integer&gt;22&lt;/integer&gt;
+        &lt;string&gt;April&lt;/string&gt;
+        &lt;double&gt;19.78&lt;/double&gt;
+        &lt;null/&gt;
+        &lt;object class="stdClass"/&gt;
+        &lt;file&gt;MyRelativeFile.php&lt;/file&gt;
+        &lt;directory&gt;MyRelativeDir&lt;/directory&gt;
+      &lt;/arguments&gt;
+    &lt;/listener&gt;
+  &lt;/listeners&gt;
+
+  &lt;logging&gt;
+    &lt;log type="coverage-html" target="/tmp/report"
+arset="UTF-8" highlight="false"
+         lowUpperBound="35" highLowerBound="70"/&gt;
+    &lt;log type="coverage-clover" target="/tmp/clover.xml"/&gt;
+    &lt;log type="json" target="/tmp/logfile.json"/&gt;
+    &lt;log type="plain" target="/tmp/logfile.txt"/&gt;
+    &lt;log type="tap" target="/tmp/logfile.tap"/&gt;
+    &lt;log type="junit" target="/tmp/logfile.xml" logIncompleteSkipped="false"/&gt;
+    &lt;log type="testdox-html" target="/tmp/testdox.html"/&gt;
+    &lt;log type="testdox-text" target="/tmp/testdox.txt"/&gt;
+    &lt;log type="coverage-crap4j" target="/tmp/crap.xml"/&gt;
+  &lt;/logging&gt;
+
+  &lt;php&gt;
+    &lt;includePath&gt;.&lt;/includePath&gt;
+    &lt;ini name="foo" value="bar"/&gt;
+    &lt;const name="foo" value="bar"/&gt;
+    &lt;var name="foo" value="bar"/&gt;
+    &lt;env name="foo" value="bar"/&gt;
+    &lt;post name="foo" value="bar"/&gt;
+    &lt;get name="foo" value="bar"/&gt;
+    &lt;cookie name="foo" value="bar"/&gt;
+    &lt;server name="foo" value="bar"/&gt;
+    &lt;files name="foo" value="bar"/&gt;
+    &lt;request name="foo" value="bar"/&gt;
+  &lt;/php&gt;
+
+  &lt;selenium&gt;
+    &lt;browser name="Firefox on Linux"
+             browser="*firefox /usr/lib/firefox/firefox-bin"
+             host="my.linux.box"
+             port="4444"
+             timeout="30000"/&gt;
+  &lt;/selenium&gt;
+&lt;/phpunit&gt;
+&lt;/code&gt;</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li><b>Copyright: </b>2001-2013 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li><b>License: </b>http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="instances"/>
+            <h4><span class="label private">private</span>
+                $instances</h4>
+          </li>
+          <li>
+            <a name="document"/>
+            <h4><span class="label protected">protected</span>
+                $document</h4>
+          </li>
+          <li>
+            <a name="xpath"/>
+            <h4><span class="label protected">protected</span>
+                $xpath</h4>
+          </li>
+          <li>
+            <a name="filename"/>
+            <h4><span class="label protected">protected</span>
+                $filename</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label protected">protected</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $filename</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Loads a PHPUnit configuration file.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$filename</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getFilename"/>
+            <h4><span class="label public">public</span>getFilename<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the realpath to the configuration file.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFilterConfiguration"/>
+            <h4><span class="label public">public</span>getFilterConfiguration<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the configuration for SUT filtering.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getGroupConfiguration"/>
+            <h4><span class="label public">public</span>getGroupConfiguration<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the configuration for groups.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInstance"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getInstance<span style="font-size:90%;">( <span class="param-type">string</span><strong> $filename</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a PHPUnit configuration object.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$filename</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getListenerConfiguration"/>
+            <h4><span class="label public">public</span>getListenerConfiguration<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the configuration for listeners.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLoggingConfiguration"/>
+            <h4><span class="label public">public</span>getLoggingConfiguration<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the logging configuration.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPHPConfiguration"/>
+            <h4><span class="label public">public</span>getPHPConfiguration<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the PHP configuration.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPHPUnitConfiguration"/>
+            <h4><span class="label public">public</span>getPHPUnitConfiguration<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the PHPUnit configuration.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSeleniumBrowserConfiguration"/>
+            <h4><span class="label public">public</span>getSeleniumBrowserConfiguration<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the SeleniumTestCase browser configuration.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTestSuiteConfiguration"/>
+            <h4><span class="label public">public</span>getTestSuiteConfiguration<span style="font-size:90%;">( <span class="param-type"/><strong> $testSuiteFilter</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the test suite configuration.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="handlePHPConfiguration"/>
+            <h4><span class="label public">public</span>handlePHPConfiguration<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Handles the PHP configuration.</li>
+            </p>
+          </li>
+          <li>
+            <a name="getBoolean"/>
+            <h4><span class="label protected">protected</span>getBoolean<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong>, <span class="param-type">boolean</span><strong> $default</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$default</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInteger"/>
+            <h4><span class="label protected">protected</span>getInteger<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong>, <span class="param-type">boolean</span><strong> $default</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$default</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTestSuite"/>
+            <h4><span class="label protected">protected</span>getTestSuite<span style="font-size:90%;">( <span class="param-type"><span title="\\DOMElement">DOMElement</span></span><strong> $testSuiteNode</strong>, <span class="param-type"/><strong> $testSuiteFilter</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$testSuiteNode</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="readFilterDirectories"/>
+            <h4><span class="label protected">protected</span>readFilterDirectories<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="readFilterFiles"/>
+            <h4><span class="label protected">protected</span>readFilterFiles<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toAbsolutePath"/>
+            <h4><span class="label protected">protected</span>toAbsolutePath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $path</strong>, <span class="param-type">boolean</span><strong> $useIncludePath</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$path</code> - </li>
+                <li><code>$useIncludePath</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="__clone"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>__clone<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

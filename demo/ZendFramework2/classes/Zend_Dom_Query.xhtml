@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Dom\Query - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#DOC_XML">DOC_XML</a>
+          </li>
+          <li>
+            <a href="#DOC_HTML">DOC_HTML</a>
+          </li>
+          <li>
+            <a href="#DOC_XHTML">DOC_XHTML</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#document">$document</a>
+          </li>
+          <li>
+            <a href="#documentErrors">$documentErrors</a>
+          </li>
+          <li>
+            <a href="#docType">$docType</a>
+          </li>
+          <li>
+            <a href="#encoding">$encoding</a>
+          </li>
+          <li>
+            <a href="#xpathNamespaces">$xpathNamespaces</a>
+          </li>
+          <li>
+            <a href="#xpathPhpFunctions">$xpathPhpFunctions</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#execute">execute</a>
+          </li>
+          <li>
+            <a href="#getDocument">getDocument</a>
+          </li>
+          <li>
+            <a href="#getDocumentErrors">getDocumentErrors</a>
+          </li>
+          <li>
+            <a href="#getDocumentType">getDocumentType</a>
+          </li>
+          <li>
+            <a href="#getEncoding">getEncoding</a>
+          </li>
+          <li>
+            <a href="#getNodeList">getNodeList</a>
+          </li>
+          <li>
+            <a href="#queryXpath">queryXpath</a>
+          </li>
+          <li>
+            <a href="#registerXpathNamespaces">registerXpathNamespaces</a>
+          </li>
+          <li>
+            <a href="#registerXpathPhpFunctions">registerXpathPhpFunctions</a>
+          </li>
+          <li>
+            <a href="#setDocument">setDocument</a>
+          </li>
+          <li>
+            <a href="#setDocumentHtml">setDocumentHtml</a>
+          </li>
+          <li>
+            <a href="#setDocumentXhtml">setDocumentXhtml</a>
+          </li>
+          <li>
+            <a href="#setDocumentXml">setDocumentXml</a>
+          </li>
+          <li>
+            <a href="#setEncoding">setEncoding</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Dom\</span>Query</h2>
+        <div class="file-notice">
+          <p>Query DOM structures based on CSS selectors and/or XPath</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="DOC_XML"/>DOC_XML = 'docXml'<hr/></li>
+          <li><a name="DOC_HTML"/>DOC_HTML = 'docHtml'<hr/></li>
+          <li><a name="DOC_XHTML"/>DOC_XHTML = 'docXhtml'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="document"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $document</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="documentErrors"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $documentErrors</h4>
+            <ul class="varlist">
+              <li>DOMDocument errors, if any</li>
+            </ul>
+          </li>
+          <li>
+            <a name="docType"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $docType</h4>
+            <ul class="varlist">
+              <li>Document type</li>
+            </ul>
+          </li>
+          <li>
+            <a name="encoding"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $encoding</h4>
+            <ul class="varlist">
+              <li>Document encoding</li>
+            </ul>
+          </li>
+          <li>
+            <a name="xpathNamespaces"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $xpathNamespaces</h4>
+            <ul class="varlist">
+              <li>XPath namespaces</li>
+            </ul>
+          </li>
+          <li>
+            <a name="xpathPhpFunctions"/>
+            <h4><span class="label protected">protected</span>mixed 
+                
+                $xpathPhpFunctions</h4>
+            <ul class="varlist">
+              <li>XPath PHP Functions</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="null|string">null|string</span></span><strong> $document</strong>, <span class="param-type"><span title="null|string">null|string</span></span><strong> $encoding</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$document</code> - </li>
+                <li><code>$encoding</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="execute"/>
+            <h4><span class="label public">public</span>execute<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Perform a CSS selector query</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDocument"/>
+            <h4><span class="label public">public</span>getDocument<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve current document</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDocumentErrors"/>
+            <h4><span class="label public">public</span>getDocumentErrors<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get any DOMDocument errors found</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDocumentType"/>
+            <h4><span class="label public">public</span>getDocumentType<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get document type</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEncoding"/>
+            <h4><span class="label public">public</span>getEncoding<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get document encoding</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="queryXpath"/>
+            <h4><span class="label public">public</span>queryXpath<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $xpathQuery</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $query</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Perform an XPath query</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$xpathQuery</code> - </li>
+                <li><code>$query</code> - CSS selector query</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerXpathNamespaces"/>
+            <h4><span class="label public">public</span>registerXpathNamespaces<span style="font-size:90%;">( <span class="param-type">array</span><strong> $xpathNamespaces</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register XPath namespaces</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$xpathNamespaces</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerXpathPhpFunctions"/>
+            <h4><span class="label public">public</span>registerXpathPhpFunctions<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $xpathPhpFunctions</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register PHP Functions to use in internal DOMXPath</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$xpathPhpFunctions</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDocument"/>
+            <h4><span class="label public">public</span>setDocument<span style="font-size:90%;">( <span class="param-type">string</span><strong> $document</strong>, <span class="param-type"><span title="null|string">null|string</span></span><strong> $encoding</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set document to query</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$document</code> - </li>
+                <li><code>$encoding</code> - Document encoding</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDocumentHtml"/>
+            <h4><span class="label public">public</span>setDocumentHtml<span style="font-size:90%;">( <span class="param-type">string</span><strong> $document</strong>, <span class="param-type"><span title="null|string">null|string</span></span><strong> $encoding</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register HTML document</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$document</code> - </li>
+                <li><code>$encoding</code> - Document encoding</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDocumentXhtml"/>
+            <h4><span class="label public">public</span>setDocumentXhtml<span style="font-size:90%;">( <span class="param-type">string</span><strong> $document</strong>, <span class="param-type"><span title="null|string">null|string</span></span><strong> $encoding</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register XHTML document</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$document</code> - </li>
+                <li><code>$encoding</code> - Document encoding</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDocumentXml"/>
+            <h4><span class="label public">public</span>setDocumentXml<span style="font-size:90%;">( <span class="param-type">string</span><strong> $document</strong>, <span class="param-type"><span title="null|string">null|string</span></span><strong> $encoding</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register XML document</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$document</code> - </li>
+                <li><code>$encoding</code> - Document encoding</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setEncoding"/>
+            <h4><span class="label public">public</span>setEncoding<span style="font-size:90%;">( <span class="param-type">string</span><strong> $encoding</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set document encoding</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$encoding</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNodeList"/>
+            <h4><span class="label protected">protected</span>getNodeList<span style="font-size:90%;">( <span class="param-type"><span title="DOMDocument">DOMDocument</span></span><strong> $document</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $xpathQuery</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepare node list</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$document</code> - </li>
+                <li><code>$xpathQuery</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Mail\Storage\Folder - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#folders">$folders</a>
+          </li>
+          <li>
+            <a href="#localName">$localName</a>
+          </li>
+          <li>
+            <a href="#globalName">$globalName</a>
+          </li>
+          <li>
+            <a href="#selectable">$selectable</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__get">__get</a>
+          </li>
+          <li>
+            <a href="#__set">__set</a>
+          </li>
+          <li>
+            <a href="#__toString">__toString</a>
+          </li>
+          <li>
+            <a href="#__unset">__unset</a>
+          </li>
+          <li>
+            <a href="#current">current</a>
+          </li>
+          <li>
+            <a href="#getChildren">getChildren</a>
+          </li>
+          <li>
+            <a href="#getGlobalName">getGlobalName</a>
+          </li>
+          <li>
+            <a href="#getLocalName">getLocalName</a>
+          </li>
+          <li>
+            <a href="#hasChildren">hasChildren</a>
+          </li>
+          <li>
+            <a href="#isLeaf">isLeaf</a>
+          </li>
+          <li>
+            <a href="#isSelectable">isSelectable</a>
+          </li>
+          <li>
+            <a href="#key">key</a>
+          </li>
+          <li>
+            <a href="#next">next</a>
+          </li>
+          <li>
+            <a href="#rewind">rewind</a>
+          </li>
+          <li>
+            <a href="#valid">valid</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Mail\Storage\</span>Folder</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/RecursiveIterator.xhtml">RecursiveIterator</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="folders"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $folders</h4>
+            <ul class="varlist">
+              <li>subfolders of folder array(localName =&gt; \Zend\Mail\Storage\Folder folder)</li>
+            </ul>
+          </li>
+          <li>
+            <a name="localName"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $localName</h4>
+            <ul class="varlist">
+              <li>local name (name of folder in parent folder)</li>
+            </ul>
+          </li>
+          <li>
+            <a name="globalName"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $globalName</h4>
+            <ul class="varlist">
+              <li>global name (absolute name of folder)</li>
+            </ul>
+          </li>
+          <li>
+            <a name="selectable"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $selectable</h4>
+            <ul class="varlist">
+              <li>folder is selectable if folder is able to hold messages, else it's just a parent folder</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $localName</strong>, <span class="param-type">string</span><strong> $globalName</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $selectable</strong>, <span class="param-type">Array</span><strong> $folders</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>create a new mail folder instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$localName</code> - name of folder in current subdirectory</li>
+                <li><code>$globalName</code> - absolute name of folder</li>
+                <li><code>$selectable</code> - if true folder holds messages, if false it's just a parent for subfolders (Default: true)</li>
+                <li><code>$folders</code> - init with given instances of \Zend\Mail\Storage\Folder as subfolders</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__get"/>
+            <h4><span class="label public">public</span>__get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>get subfolder named $name</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - wanted subfolder</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>folder named $folder</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="__set"/>
+            <h4><span class="label public">public</span>__set<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type"><a href="../classes/Zend_Mail_Storage_Folder.xhtml">Zend\Mail\Storage\Folder</a></span><strong> $folder</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>add or replace subfolder named $name</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - local name of subfolder</li>
+                <li><code>$folder</code> - instance for new subfolder</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="__toString"/>
+            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>magic method for easy output of global name</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>global name of folder</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="__unset"/>
+            <h4><span class="label public">public</span>__unset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>remove subfolder named $name</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - local name of subfolder</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="current"/>
+            <h4><span class="label public">public</span>current<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>implements Iterator::current()</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>current folder</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getChildren"/>
+            <h4><span class="label public">public</span>getChildren<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>implements RecursiveIterator::getChildren()</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>same as self::current()</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getGlobalName"/>
+            <h4><span class="label public">public</span>getGlobalName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>get global name</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>global name</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLocalName"/>
+            <h4><span class="label public">public</span>getLocalName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>get local name</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>local name</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasChildren"/>
+            <h4><span class="label public">public</span>hasChildren<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>implements RecursiveIterator::hasChildren()</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>current element has children</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isLeaf"/>
+            <h4><span class="label public">public</span>isLeaf<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>check if folder has no subfolder</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if no subfolders</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isSelectable"/>
+            <h4><span class="label public">public</span>isSelectable<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>is this folder selectable?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>selectable</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="key"/>
+            <h4><span class="label public">public</span>key<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>implements Iterator::key()</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>key/local name of current element</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="next"/>
+            <h4><span class="label public">public</span>next<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>implements Iterator::next()</li>
+            </p>
+          </li>
+          <li>
+            <a name="rewind"/>
+            <h4><span class="label public">public</span>rewind<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>implements Iterator::rewind()</li>
+            </p>
+          </li>
+          <li>
+            <a name="valid"/>
+            <h4><span class="label public">public</span>valid<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>implements Iterator::valid()</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>check if there's a current element</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

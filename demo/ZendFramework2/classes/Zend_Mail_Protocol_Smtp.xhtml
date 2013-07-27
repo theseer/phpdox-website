@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Mail\Protocol\Smtp - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#transport">$transport</a>
+          </li>
+          <li>
+            <a href="#secure">$secure</a>
+          </li>
+          <li>
+            <a href="#sess">$sess</a>
+          </li>
+          <li>
+            <a href="#helo">$helo</a>
+          </li>
+          <li>
+            <a href="#auth">$auth</a>
+          </li>
+          <li>
+            <a href="#mail">$mail</a>
+          </li>
+          <li>
+            <a href="#rcpt">$rcpt</a>
+          </li>
+          <li>
+            <a href="#data">$data</a>
+          </li>
+          <li>
+            <a href="#maximumLog">$maximumLog</a>
+          </li>
+          <li>
+            <a href="#host">$host</a>
+          </li>
+          <li>
+            <a href="#port">$port</a>
+          </li>
+          <li>
+            <a href="#validHost">$validHost</a>
+          </li>
+          <li>
+            <a href="#socket">$socket</a>
+          </li>
+          <li>
+            <a href="#request">$request</a>
+          </li>
+          <li>
+            <a href="#response">$response</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_addLog">_addLog</a>
+          </li>
+          <li>
+            <a href="#_connect">_connect</a>
+          </li>
+          <li>
+            <a href="#_disconnect">_disconnect</a>
+          </li>
+          <li>
+            <a href="#_ehlo">_ehlo</a>
+          </li>
+          <li>
+            <a href="#_expect">_expect</a>
+          </li>
+          <li>
+            <a href="#_receive">_receive</a>
+          </li>
+          <li>
+            <a href="#_send">_send</a>
+          </li>
+          <li>
+            <a href="#_startSession">_startSession</a>
+          </li>
+          <li>
+            <a href="#_stopSession">_stopSession</a>
+          </li>
+          <li>
+            <a href="#auth">auth</a>
+          </li>
+          <li>
+            <a href="#connect">connect</a>
+          </li>
+          <li>
+            <a href="#connect">connect</a>
+          </li>
+          <li>
+            <a href="#data">data</a>
+          </li>
+          <li>
+            <a href="#disconnect">disconnect</a>
+          </li>
+          <li>
+            <a href="#getLog">getLog</a>
+          </li>
+          <li>
+            <a href="#getMaximumLog">getMaximumLog</a>
+          </li>
+          <li>
+            <a href="#getRequest">getRequest</a>
+          </li>
+          <li>
+            <a href="#getResponse">getResponse</a>
+          </li>
+          <li>
+            <a href="#helo">helo</a>
+          </li>
+          <li>
+            <a href="#mail">mail</a>
+          </li>
+          <li>
+            <a href="#noop">noop</a>
+          </li>
+          <li>
+            <a href="#quit">quit</a>
+          </li>
+          <li>
+            <a href="#rcpt">rcpt</a>
+          </li>
+          <li>
+            <a href="#resetLog">resetLog</a>
+          </li>
+          <li>
+            <a href="#rset">rset</a>
+          </li>
+          <li>
+            <a href="#setMaximumLog">setMaximumLog</a>
+          </li>
+          <li>
+            <a href="#vrfy">vrfy</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Mail\Protocol\</span>Smtp</h2>
+        <div class="file-notice">
+          <p>SMTP implementation of Zend\Mail\Protocol\AbstractProtocol</p>
+          <p>
+            <pre>Minimum implementation according to RFC2821: EHLO, MAIL FROM, RCPT TO, DATA, RSET, NOOP, QUIT</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="transport"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $transport</h4>
+            <ul class="varlist">
+              <li>The transport method for the socket</li>
+            </ul>
+          </li>
+          <li>
+            <a name="secure"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $secure</h4>
+            <ul class="varlist">
+              <li>Indicates that a session is requested to be secure</li>
+            </ul>
+          </li>
+          <li>
+            <a name="sess"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $sess</h4>
+            <ul class="varlist">
+              <li>Indicates an smtp session has been started by the HELO command</li>
+            </ul>
+          </li>
+          <li>
+            <a name="helo"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $helo</h4>
+            <ul class="varlist">
+              <li>Indicates the HELO command has been issues</li>
+            </ul>
+          </li>
+          <li>
+            <a name="auth"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $auth</h4>
+            <ul class="varlist">
+              <li>Indicates an smtp AUTH has been issued and authenticated</li>
+            </ul>
+          </li>
+          <li>
+            <a name="mail"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $mail</h4>
+            <ul class="varlist">
+              <li>Indicates a MAIL command has been issued</li>
+            </ul>
+          </li>
+          <li>
+            <a name="rcpt"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $rcpt</h4>
+            <ul class="varlist">
+              <li>Indicates one or more RCTP commands have been issued</li>
+            </ul>
+          </li>
+          <li>
+            <a name="data"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $data</h4>
+            <ul class="varlist">
+              <li>Indicates that DATA has been issued and sent</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong>, <span class="param-type"><span title="null|integer">null|integer</span></span><strong> $port</strong>, <span class="param-type">Array</span><strong> $config</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.<pre>The first argument may be an array of all options. If so, it must include
+the 'host' and 'port' keys in order to ensure that all required values
+are present.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$host</code> - </li>
+                <li><code>$port</code> - </li>
+                <li><code>$config</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Destructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__destruct"/>
+            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Class destructor to cleanup open resources</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="auth"/>
+            <h4><span class="label public">public</span>auth<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Default authentication method<pre>This default method is implemented by AUTH adapters to properly authenticate to a remote host.</pre></li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="connect"/>
+            <h4><span class="label public">public</span>connect<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Connect to the server with the parameters given in the constructor.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="connect"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>connect<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a connection to the remote host<pre>Concrete adapters for this class will implement their own unique connect scripts, using the _connect() method to create the socket resource.</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="data"/>
+            <h4><span class="label public">public</span>data<span style="font-size:90%;">( <span class="param-type">string</span><strong> $data</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Issues DATA command</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$data</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="disconnect"/>
+            <h4><span class="label public">public</span>disconnect<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Closes connection</li>
+            </p>
+          </li>
+          <li>
+            <a name="getLog"/>
+            <h4><span class="label public">public</span>getLog<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the transaction log</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMaximumLog"/>
+            <h4><span class="label public">public</span>getMaximumLog<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the maximum log size</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>the maximum log size</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRequest"/>
+            <h4><span class="label public">public</span>getRequest<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the last client request</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getResponse"/>
+            <h4><span class="label public">public</span>getResponse<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the last server response</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="helo"/>
+            <h4><span class="label public">public</span>helo<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initiate HELO/EHLO sequence and set flag to indicate valid smtp session</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$host</code> - The client hostname or IP address (default: 127.0.0.1)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="mail"/>
+            <h4><span class="label public">public</span>mail<span style="font-size:90%;">( <span class="param-type">string</span><strong> $from</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Issues MAIL command</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$from</code> - Sender mailbox</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="noop"/>
+            <h4><span class="label public">public</span>noop<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Issues the NOOP command end validates answer<pre>Not used by Zend_Mail, could be used to keep a connection alive or check if it is still open.</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="quit"/>
+            <h4><span class="label public">public</span>quit<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Issues the QUIT command and clears the current session</li>
+            </p>
+          </li>
+          <li>
+            <a name="rcpt"/>
+            <h4><span class="label public">public</span>rcpt<span style="font-size:90%;">( <span class="param-type">string</span><strong> $to</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Issues RCPT command</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$to</code> - Receiver(s) mailbox</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="resetLog"/>
+            <h4><span class="label public">public</span>resetLog<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Reset the transaction log</li>
+            </p>
+          </li>
+          <li>
+            <a name="rset"/>
+            <h4><span class="label public">public</span>rset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Issues the RSET command end validates answer<pre>Can be used to restore a clean smtp communication state when a transaction has been cancelled or commencing a new transaction.</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="setMaximumLog"/>
+            <h4><span class="label public">public</span>setMaximumLog<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $maximumLog</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the maximum log size</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$maximumLog</code> - Maximum log size</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="vrfy"/>
+            <h4><span class="label public">public</span>vrfy<span style="font-size:90%;">( <span class="param-type">string</span><strong> $user</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Issues the VRFY command end validates answer<pre>Not used by Zend_Mail.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$user</code> - User Name or eMail to verify</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_addLog"/>
+            <h4><span class="label protected">protected</span>_addLog<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add the transaction log</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - new transaction</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_connect"/>
+            <h4><span class="label protected">protected</span>_connect<span style="font-size:90%;">( <span class="param-type">string</span><strong> $remote</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Connect to the server using the supplied transport and target<pre>An example $remote string may be 'tcp://mail.example.com:25' or 'ssh://hostname.com:2222'</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$remote</code> - Remote</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_disconnect"/>
+            <h4><span class="label protected">protected</span>_disconnect<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Disconnect from remote host and free resource</li>
+            </p>
+          </li>
+          <li>
+            <a name="_ehlo"/>
+            <h4><span class="label protected">protected</span>_ehlo<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send EHLO or HELO depending on capabilities of smtp host</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$host</code> - The client hostname or IP address (default: 127.0.0.1)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Exception|Exception\ExceptionInterface</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_expect"/>
+            <h4><span class="label protected">protected</span>_expect<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $code</strong>, <span class="param-type">integer</span><strong> $timeout</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Parse server response for successful codes<pre>Read the response from the stream and check for expected return code.
+Throws a Zend_Mail_Protocol_Exception if an unexpected code is returned.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$code</code> - One or more codes that indicate a successful response</li>
+                <li><code>$timeout</code> - Per-request timeout value if applicable</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Last line of response string</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_receive"/>
+            <h4><span class="label protected">protected</span>_receive<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $timeout</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get a line from the stream.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$timeout</code> - Per-request timeout value if applicable</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_send"/>
+            <h4><span class="label protected">protected</span>_send<span style="font-size:90%;">( <span class="param-type">string</span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send the given request followed by a LINEEND to the server.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Number of bytes written to remote host</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_startSession"/>
+            <h4><span class="label protected">protected</span>_startSession<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Start mail session</li>
+            </p>
+          </li>
+          <li>
+            <a name="_stopSession"/>
+            <h4><span class="label protected">protected</span>_stopSession<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Stop mail session</li>
+            </p>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

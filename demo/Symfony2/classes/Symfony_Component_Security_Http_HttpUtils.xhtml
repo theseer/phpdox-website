@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Security\Http\HttpUtils - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#urlGenerator">$urlGenerator</a>
+          </li>
+          <li>
+            <a href="#urlMatcher">$urlMatcher</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#checkRequestPath">checkRequestPath</a>
+          </li>
+          <li>
+            <a href="#createRedirectResponse">createRedirectResponse</a>
+          </li>
+          <li>
+            <a href="#createRequest">createRequest</a>
+          </li>
+          <li>
+            <a href="#generateUri">generateUri</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Security\Http\</span>HttpUtils</h2>
+        <div class="file-notice">
+          <p>Encapsulates the logic needed to create sub-requests, redirect the user, and match URLs.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="urlGenerator"/>
+            <h4><span class="label private">private</span>
+                $urlGenerator</h4>
+          </li>
+          <li>
+            <a name="urlMatcher"/>
+            <h4><span class="label private">private</span>
+                $urlMatcher</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Routing_Generator_UrlGeneratorInterface.xhtml">Symfony\Component\Routing\Generator\UrlGeneratorInterface</a></span><strong> $urlGenerator</strong>, <span class="param-type"><span title="UrlMatcherInterface|RequestMatcherInterface">UrlMatcherInterface|RequestMatcherInterface</span></span><strong> $urlMatcher</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$urlGenerator</code> - A UrlGeneratorInterface instance</li>
+                <li><code>$urlMatcher</code> - The Url or Request matcher</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="checkRequestPath"/>
+            <h4><span class="label public">public</span>checkRequestPath<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong>, <span class="param-type">string</span><strong> $path</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks that a given path matches the Request.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - A Request instance</li>
+                <li><code>$path</code> - A path (an absolute path (/foo), an absolute URL (http://...), or a route name (foo))</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if the path is the same as the one from the Request, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createRedirectResponse"/>
+            <h4><span class="label public">public</span>createRedirectResponse<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong>, <span class="param-type">string</span><strong> $path</strong>, <span class="param-type">integer</span><strong> $status</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a redirect Response.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - A Request instance</li>
+                <li><code>$path</code> - A path (an absolute path (/foo), an absolute URL (http://...), or a route name (foo))</li>
+                <li><code>$status</code> - The status code</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A RedirectResponse instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createRequest"/>
+            <h4><span class="label public">public</span>createRequest<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong>, <span class="param-type">string</span><strong> $path</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a Request.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - The current Request instance</li>
+                <li><code>$path</code> - A path (an absolute path (/foo), an absolute URL (http://...), or a route name (foo))</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A Request instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="generateUri"/>
+            <h4><span class="label public">public</span>generateUri<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong>, <span class="param-type">string</span><strong> $path</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates a URI, based on the given path or absolute URL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - A Request instance</li>
+                <li><code>$path</code> - A path (an absolute path (/foo), an absolute URL (http://...), or a route name (foo))</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An absolute URL</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

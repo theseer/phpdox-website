@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\EventManager\EventManager - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#events">$events</a>
+          </li>
+          <li>
+            <a href="#eventClass">$eventClass</a>
+          </li>
+          <li>
+            <a href="#identifiers">$identifiers</a>
+          </li>
+          <li>
+            <a href="#sharedManager">$sharedManager</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addIdentifiers">addIdentifiers</a>
+          </li>
+          <li>
+            <a href="#attach">attach</a>
+          </li>
+          <li>
+            <a href="#attachAggregate">attachAggregate</a>
+          </li>
+          <li>
+            <a href="#clearListeners">clearListeners</a>
+          </li>
+          <li>
+            <a href="#detach">detach</a>
+          </li>
+          <li>
+            <a href="#detachAggregate">detachAggregate</a>
+          </li>
+          <li>
+            <a href="#getEvents">getEvents</a>
+          </li>
+          <li>
+            <a href="#getIdentifiers">getIdentifiers</a>
+          </li>
+          <li>
+            <a href="#getListeners">getListeners</a>
+          </li>
+          <li>
+            <a href="#getSharedListeners">getSharedListeners</a>
+          </li>
+          <li>
+            <a href="#getSharedManager">getSharedManager</a>
+          </li>
+          <li>
+            <a href="#insertListeners">insertListeners</a>
+          </li>
+          <li>
+            <a href="#prepareArgs">prepareArgs</a>
+          </li>
+          <li>
+            <a href="#setEventClass">setEventClass</a>
+          </li>
+          <li>
+            <a href="#setIdentifiers">setIdentifiers</a>
+          </li>
+          <li>
+            <a href="#setSharedManager">setSharedManager</a>
+          </li>
+          <li>
+            <a href="#trigger">trigger</a>
+          </li>
+          <li>
+            <a href="#triggerListeners">triggerListeners</a>
+          </li>
+          <li>
+            <a href="#triggerUntil">triggerUntil</a>
+          </li>
+          <li>
+            <a href="#unsetSharedManager">unsetSharedManager</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\EventManager\</span>EventManager</h2>
+        <div class="file-notice">
+          <p>Event manager: notification system</p>
+          <p>
+            <pre>Use the EventManager when you want to create a per-instance notification
+system for your objects.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_EventManager_EventManagerInterface.xhtml">Zend\EventManager\EventManagerInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="events"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $events</h4>
+            <ul class="varlist">
+              <li>Subscribed events and their listeners</li>
+            </ul>
+          </li>
+          <li>
+            <a name="eventClass"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $eventClass</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="identifiers"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $identifiers</h4>
+            <ul class="varlist">
+              <li>Identifiers, used to pull shared signals from SharedEventManagerInterface instance</li>
+            </ul>
+          </li>
+          <li>
+            <a name="sharedManager"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $sharedManager</h4>
+            <ul class="varlist">
+              <li>Shared event manager</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="null|string|int|array|Traversable">null|string|int|array|Traversable</span></span><strong> $identifiers</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor<pre>Allows optionally specifying identifier(s) to use to pull signals from a
+SharedEventManagerInterface.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identifiers</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addIdentifiers"/>
+            <h4><span class="label public">public</span>addIdentifiers<span style="font-size:90%;">( <span class="param-type"><span title="string|int|array|Traversable">string|int|array|Traversable</span></span><strong> $identifiers</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add some identifier(s) (appends to any currently set identifiers)</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identifiers</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="attach"/>
+            <h4><span class="label public">public</span>attach<span style="font-size:90%;">( <span class="param-type"><span title="string|array|ListenerAggregateInterface">string|array|ListenerAggregateInterface</span></span><strong> $event</strong>, <span class="param-type"><span title="callable|int">callable|int</span></span><strong> $callback</strong>, <span class="param-type">integer</span><strong> $priority</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach a listener to an event<pre>The first argument is the event, and the next argument describes a
+callback that will respond to that event. A CallbackHandler instance
+describing the event listener combination will be returned.
+
+The last argument indicates a priority at which the event should be
+executed. By default, this value is 1; however, you may set it for any
+integer value. Higher values have higher priority (i.e., execute first).
+
+You can specify "*" for the event name. In such cases, the listener will
+be triggered for every event.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - An event or array of event names. If a ListenerAggregateInterface, proxies to {@link attachAggregate()}.</li>
+                <li><code>$callback</code> - If string $event provided, expects PHP callback; for a ListenerAggregateInterface $event, this will be the priority</li>
+                <li><code>$priority</code> - If provided, the priority at which to register the callable</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>CallbackHandler if attaching callable (to allow later unsubscribe); mixed if attaching aggregate</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="attachAggregate"/>
+            <h4><span class="label public">public</span>attachAggregate<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_EventManager_ListenerAggregateInterface.xhtml">Zend\EventManager\ListenerAggregateInterface</a></span><strong> $aggregate</strong>, <span class="param-type">integer</span><strong> $priority</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach a listener aggregate<pre>Listener aggregates accept an EventManagerInterface instance, and call attach()
+one or more times, typically to attach to multiple events using local
+methods.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$aggregate</code> - </li>
+                <li><code>$priority</code> - If provided, a suggested priority for the aggregate to use</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>return value of {@link ListenerAggregateInterface::attach()}</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="clearListeners"/>
+            <h4><span class="label public">public</span>clearListeners<span style="font-size:90%;">( <span class="param-type">string</span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clear all listeners for a given event</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="detach"/>
+            <h4><span class="label public">public</span>detach<span style="font-size:90%;">( <span class="param-type"><span title="CallbackHandler|ListenerAggregateInterface">CallbackHandler|ListenerAggregateInterface</span></span><strong> $listener</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Unsubscribe a listener from an event</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$listener</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Returns true if event and listener found, and unsubscribed; returns false if either event or listener not found</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException if invalid listener provided</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="detachAggregate"/>
+            <h4><span class="label public">public</span>detachAggregate<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_EventManager_ListenerAggregateInterface.xhtml">Zend\EventManager\ListenerAggregateInterface</a></span><strong> $aggregate</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Detach a listener aggregate<pre>Listener aggregates accept an EventManagerInterface instance, and call detach()
+of all previously attached listeners.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$aggregate</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>return value of {@link ListenerAggregateInterface::detach()}</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEvents"/>
+            <h4><span class="label public">public</span>getEvents<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve all registered events</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIdentifiers"/>
+            <h4><span class="label public">public</span>getIdentifiers<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the identifier(s) for this EventManager</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getListeners"/>
+            <h4><span class="label public">public</span>getListeners<span style="font-size:90%;">( <span class="param-type">string</span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve all listeners for a given event</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSharedManager"/>
+            <h4><span class="label public">public</span>getSharedManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get shared event manager<pre>If one is not defined, but we have a static instance in
+StaticEventManager, that one will be used and set in this instance.
+
+If none is available in the StaticEventManager, a boolean false is
+returned.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepareArgs"/>
+            <h4><span class="label public">public</span>prepareArgs<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $args</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepare arguments<pre>Use this method if you want to be able to modify arguments from within a
+listener. It returns an ArrayObject of the arguments, which may then be
+passed to trigger() or triggerUntil().</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$args</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setEventClass"/>
+            <h4><span class="label public">public</span>setEventClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the event class to utilize</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setIdentifiers"/>
+            <h4><span class="label public">public</span>setIdentifiers<span style="font-size:90%;">( <span class="param-type"><span title="string|int|array|Traversable">string|int|array|Traversable</span></span><strong> $identifiers</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the identifiers (overrides any currently set identifiers)</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identifiers</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Provides a fluent interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSharedManager"/>
+            <h4><span class="label public">public</span>setSharedManager<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_EventManager_SharedEventManagerInterface.xhtml">Zend\EventManager\SharedEventManagerInterface</a></span><strong> $sharedEventManager</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set shared event manager</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sharedEventManager</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="trigger"/>
+            <h4><span class="label public">public</span>trigger<span style="font-size:90%;">( <span class="param-type">string</span><strong> $event</strong>, <span class="param-type"><span title="string|object">string|object</span></span><strong> $target</strong>, <span class="param-type">Array</span><strong> $argv</strong>, <span class="param-type"><span title="null|callable">null|callable</span></span><strong> $callback</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Trigger all listeners for a given event<pre>Can emulate triggerUntil() if the last argument provided is a callback.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - </li>
+                <li><code>$target</code> - Object calling emit, or symbol describing target (such as static method name)</li>
+                <li><code>$argv</code> - Array of arguments; typically, should be associative</li>
+                <li><code>$callback</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>All listener return values</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidCallbackException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="triggerUntil"/>
+            <h4><span class="label public">public</span>triggerUntil<span style="font-size:90%;">( <span class="param-type">string</span><strong> $event</strong>, <span class="param-type"><span title="string|object">string|object</span></span><strong> $target</strong>, <span class="param-type"><span title="array|ArrayAccess">array|ArrayAccess</span></span><strong> $argv</strong>, <span class="param-type"><span title="callable">callable</span></span><strong> $callback</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Trigger listeners until return value of one causes a callback to evaluate to true<pre>Triggers listeners until the provided callback evaluates the return
+value of one as true, or until all listeners have been executed.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - </li>
+                <li><code>$target</code> - Object calling emit, or symbol describing target (such as static method name)</li>
+                <li><code>$argv</code> - Array of arguments; typically, should be associative</li>
+                <li><code>$callback</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidCallbackException if invalid callable provided</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unsetSharedManager"/>
+            <h4><span class="label public">public</span>unsetSharedManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove any shared event manager currently attached</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSharedListeners"/>
+            <h4><span class="label protected">protected</span>getSharedListeners<span style="font-size:90%;">( <span class="param-type">string</span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get list of all listeners attached to the shared event manager for identifiers registered by this instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="insertListeners"/>
+            <h4><span class="label protected">protected</span>insertListeners<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Stdlib_PriorityQueue.xhtml">Zend\Stdlib\PriorityQueue</a></span><strong> $masterListeners</strong>, <span class="param-type"><a href="../classes/Zend_Stdlib_PriorityQueue.xhtml">Zend\Stdlib\PriorityQueue</a></span><strong> $listeners</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add listeners to the master queue of listeners<pre>Used to inject shared listeners and wildcard listeners.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$masterListeners</code> - </li>
+                <li><code>$listeners</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="triggerListeners"/>
+            <h4><span class="label protected">protected</span>triggerListeners<span style="font-size:90%;">( <span class="param-type">string</span><strong> $event</strong>, <span class="param-type"><a href="../interfaces/Zend_EventManager_EventInterface.xhtml">Zend\EventManager\EventInterface</a></span><strong> $e</strong>, <span class="param-type"><span title="null|callable">null|callable</span></span><strong> $callback</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Trigger listeners<pre>Actual functionality for triggering listeners, to which both trigger() and triggerUntil()
+delegate.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - Event name</li>
+                <li><code>$e</code> - </li>
+                <li><code>$callback</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

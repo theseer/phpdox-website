@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Bundle\FrameworkBundle\Templating\Helper\FormHelper - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#renderer">$renderer</a>
+          </li>
+          <li>
+            <a href="#charset">$charset</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#block">block</a>
+          </li>
+          <li>
+            <a href="#csrfToken">csrfToken</a>
+          </li>
+          <li>
+            <a href="#enctype">enctype</a>
+          </li>
+          <li>
+            <a href="#end">end</a>
+          </li>
+          <li>
+            <a href="#errors">errors</a>
+          </li>
+          <li>
+            <a href="#form">form</a>
+          </li>
+          <li>
+            <a href="#getCharset">getCharset</a>
+          </li>
+          <li>
+            <a href="#getName">getName</a>
+          </li>
+          <li>
+            <a href="#humanize">humanize</a>
+          </li>
+          <li>
+            <a href="#label">label</a>
+          </li>
+          <li>
+            <a href="#rest">rest</a>
+          </li>
+          <li>
+            <a href="#row">row</a>
+          </li>
+          <li>
+            <a href="#setCharset">setCharset</a>
+          </li>
+          <li>
+            <a href="#setTheme">setTheme</a>
+          </li>
+          <li>
+            <a href="#start">start</a>
+          </li>
+          <li>
+            <a href="#widget">widget</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Bundle\FrameworkBundle\Templating\Helper\</span>FormHelper</h2>
+        <div class="file-notice">
+          <p>FormHelper provides helpers to help display forms.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="renderer"/>
+            <h4><span class="label private">private</span>object 
+                
+                $renderer</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Form_FormRendererInterface.xhtml">Symfony\Component\Form\FormRendererInterface</a></span><strong> $renderer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$renderer</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="block"/>
+            <h4><span class="label public">public</span>block<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">string</span><strong> $blockName</strong>, <span class="param-type">Array</span><strong> $variables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders a block of the template.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for determining the used themes.</li>
+                <li><code>$blockName</code> - The name of the block to render.</li>
+                <li><code>$variables</code> - The variable to pass to the template.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="csrfToken"/>
+            <h4><span class="label public">public</span>csrfToken<span style="font-size:90%;">( <span class="param-type">string</span><strong> $intention</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a CSRF token.<pre>Use this helper for CSRF protection without the overhead of creating a
+form.
+
+&lt;code&gt;
+echo $view['form']-&gt;csrfToken('rm_user_'.$user-&gt;getId());
+&lt;/code&gt;
+
+Check the token in your action using the same intention.
+
+&lt;code&gt;
+$csrfProvider = $this-&gt;get('form.csrf_provider');
+if (!$csrfProvider-&gt;isCsrfTokenValid('rm_user_'.$user-&gt;getId(), $token)) {
+    throw new \RuntimeException('CSRF attack detected.');
+}
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$intention</code> - The intention of the protected action</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A CSRF token</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\BadMethodCallException When no CSRF provider was injected in the constructor.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="enctype"/>
+            <h4><span class="label public">public</span>enctype<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders the HTML enctype in the form tag, if necessary.<pre>Example usage templates:
+
+    &lt;form action="..." method="post" &lt;?php echo $view['form']-&gt;enctype($form) ?&gt;&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for which to render the encoding type</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="end"/>
+            <h4><span class="label public">public</span>end<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">Array</span><strong> $variables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders the form end tag.<pre>Example usage templates:
+
+    &lt;?php echo $view['form']-&gt;end($form) ?&gt;&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for which to render the end tag</li>
+                <li><code>$variables</code> - Additional variables passed to the template</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="errors"/>
+            <h4><span class="label public">public</span>errors<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders the errors of the given view.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view to render the errors for</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="form"/>
+            <h4><span class="label public">public</span>form<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">Array</span><strong> $variables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders the HTML for a form.<pre>Example usage:
+
+    &lt;?php echo view['form']-&gt;form($form) ?&gt;
+
+You can pass options during the call:
+
+    &lt;?php echo view['form']-&gt;form($form, array('attr' =&gt; array('class' =&gt; 'foo'))) ?&gt;
+
+    &lt;?php echo view['form']-&gt;form($form, array('separator' =&gt; '+++++')) ?&gt;
+
+This method is mainly intended for prototyping purposes. If you want to
+control the layout of a form in a more fine-grained manner, you are
+advised to use the other helper methods for rendering the parts of the
+form individually. You can also create a custom form theme to adapt
+the look of the form.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for which to render the form</li>
+                <li><code>$variables</code> - Additional variables passed to the template</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCharset"/>
+            <h4><span class="label public">public</span>getCharset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the default charset.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The default charset</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getName"/>
+            <h4><span class="label public">public</span>getName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="humanize"/>
+            <h4><span class="label public">public</span>humanize<span style="font-size:90%;">( <span class="param-type"/><strong> $text</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="label"/>
+            <h4><span class="label public">public</span>label<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">string</span><strong> $label</strong>, <span class="param-type">Array</span><strong> $variables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders the label of the given view.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for which to render the label</li>
+                <li><code>$label</code> - The label</li>
+                <li><code>$variables</code> - Additional variables passed to the template</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="rest"/>
+            <h4><span class="label public">public</span>rest<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">Array</span><strong> $variables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders views which have not already been rendered.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The parent view</li>
+                <li><code>$variables</code> - An array of variables</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="row"/>
+            <h4><span class="label public">public</span>row<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">Array</span><strong> $variables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders the entire form field "row".</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for which to render the row</li>
+                <li><code>$variables</code> - Additional variables passed to the template</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCharset"/>
+            <h4><span class="label public">public</span>setCharset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $charset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the default charset.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$charset</code> - The charset</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTheme"/>
+            <h4><span class="label public">public</span>setTheme<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $themes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a theme for a given view.<pre>The theme format is "&lt;Bundle&gt;:&lt;Controller&gt;".</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - A FormView instance</li>
+                <li><code>$themes</code> - A theme or an array of theme</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="start"/>
+            <h4><span class="label public">public</span>start<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">Array</span><strong> $variables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders the form start tag.<pre>Example usage templates:
+
+    &lt;?php echo $view['form']-&gt;start($form) ?&gt;&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for which to render the start tag</li>
+                <li><code>$variables</code> - Additional variables passed to the template</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="widget"/>
+            <h4><span class="label public">public</span>widget<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">Array</span><strong> $variables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders the HTML for a given view.<pre>Example usage:
+
+    &lt;?php echo view['form']-&gt;widget($form) ?&gt;
+
+You can pass options during the call:
+
+    &lt;?php echo view['form']-&gt;widget($form, array('attr' =&gt; array('class' =&gt; 'foo'))) ?&gt;
+
+    &lt;?php echo view['form']-&gt;widget($form, array('separator' =&gt; '+++++')) ?&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for which to render the widget</li>
+                <li><code>$variables</code> - Additional variables passed to the template</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

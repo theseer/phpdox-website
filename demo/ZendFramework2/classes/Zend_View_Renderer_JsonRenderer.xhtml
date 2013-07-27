@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\View\Renderer\JsonRenderer - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#mergeUnnamedChildren">$mergeUnnamedChildren</a>
+          </li>
+          <li>
+            <a href="#resolver">$resolver</a>
+          </li>
+          <li>
+            <a href="#jsonpCallback">$jsonpCallback</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#canRenderTrees">canRenderTrees</a>
+          </li>
+          <li>
+            <a href="#getEngine">getEngine</a>
+          </li>
+          <li>
+            <a href="#hasJsonpCallback">hasJsonpCallback</a>
+          </li>
+          <li>
+            <a href="#mergeUnnamedChildren">mergeUnnamedChildren</a>
+          </li>
+          <li>
+            <a href="#recurseModel">recurseModel</a>
+          </li>
+          <li>
+            <a href="#render">render</a>
+          </li>
+          <li>
+            <a href="#setJsonpCallback">setJsonpCallback</a>
+          </li>
+          <li>
+            <a href="#setMergeUnnamedChildren">setMergeUnnamedChildren</a>
+          </li>
+          <li>
+            <a href="#setResolver">setResolver</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\View\Renderer\</span>JsonRenderer</h2>
+        <div class="file-notice">
+          <p>JSON renderer</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_View_Renderer_RendererInterface.xhtml">Zend\View\Renderer\RendererInterface</a>
+          </li>
+          <li>
+            <a href="../interfaces/Zend_View_Renderer_TreeRendererInterface.xhtml">Zend\View\Renderer\TreeRendererInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="mergeUnnamedChildren"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $mergeUnnamedChildren</h4>
+            <ul class="varlist">
+              <li>Whether or not to merge child models with no capture-to value set</li>
+            </ul>
+          </li>
+          <li>
+            <a name="resolver"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $resolver</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="jsonpCallback"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $jsonpCallback</h4>
+            <ul class="varlist">
+              <li>JSONP callback (if set, wraps the return in a function call)</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="canRenderTrees"/>
+            <h4><span class="label public">public</span>canRenderTrees<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Can this renderer render trees of view models?<pre>Yes.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEngine"/>
+            <h4><span class="label public">public</span>getEngine<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the template engine object, if any<pre>If using a third-party template engine, such as Smarty, patTemplate,
+phplib, etc, return the template engine object. Useful for calling
+methods on these objects, such as for setting filters, modifiers, etc.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasJsonpCallback"/>
+            <h4><span class="label public">public</span>hasJsonpCallback<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether or not the jsonpCallback has been set</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="mergeUnnamedChildren"/>
+            <h4><span class="label public">public</span>mergeUnnamedChildren<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Should we merge unnamed children?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="render"/>
+            <h4><span class="label public">public</span>render<span style="font-size:90%;">( <span class="param-type"><span title="string|Model">string|Model</span></span><strong> $nameOrModel</strong>, <span class="param-type"><span title="null|array|\ArrayAccess">ArrayAccess</span></span><strong> $values</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders values as JSON</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$nameOrModel</code> - The script/resource process, or a view model</li>
+                <li><code>$values</code> - Values to use during rendering</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The script output.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\DomainException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setJsonpCallback"/>
+            <h4><span class="label public">public</span>setJsonpCallback<span style="font-size:90%;">( <span class="param-type">string</span><strong> $callback</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the JSONP callback function name</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$callback</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setMergeUnnamedChildren"/>
+            <h4><span class="label public">public</span>setMergeUnnamedChildren<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $mergeUnnamedChildren</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set flag indicating whether or not to merge unnamed children</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$mergeUnnamedChildren</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setResolver"/>
+            <h4><span class="label public">public</span>setResolver<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_View_Resolver_ResolverInterface.xhtml">Zend\View\Resolver\ResolverInterface</a></span><strong> $resolver</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the resolver used to map a template name to a resource the renderer may consume.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$resolver</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="recurseModel"/>
+            <h4><span class="label protected">protected</span>recurseModel<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_View_Model_ModelInterface.xhtml">Zend\View\Model\ModelInterface</a></span><strong> $model</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve values from a model and recurse its children to build a data structure</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$model</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

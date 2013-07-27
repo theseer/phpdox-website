@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Form\FormRendererEngineInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#getResourceForBlockName">getResourceForBlockName</a>
+          </li>
+          <li>
+            <a href="#getResourceForBlockNameHierarchy">getResourceForBlockNameHierarchy</a>
+          </li>
+          <li>
+            <a href="#getResourceHierarchyLevel">getResourceHierarchyLevel</a>
+          </li>
+          <li>
+            <a href="#renderBlock">renderBlock</a>
+          </li>
+          <li>
+            <a href="#setTheme">setTheme</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Form\</span>FormRendererEngineInterface</h2>
+        <div class="file-notice">
+          <p>Adapter for rendering form templates with a specific templating engine.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getResourceForBlockName"/>
+            <h4><span class="label public">public</span>getResourceForBlockName<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">string</span><strong> $blockName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the resource for a block name.<pre>The resource is first searched in the themes attached to $view, then
+in the themes of its parent view and so on, until a resource was found.
+The type of the resource is decided by the implementation. The resource
+is later passed to  by the rendering algorithm.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for determining the used themes.</li>
+                <li><code>$blockName</code> - The name of the block to render.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The renderer resource or false, if none was found.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getResourceForBlockNameHierarchy"/>
+            <h4><span class="label public">public</span>getResourceForBlockNameHierarchy<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">Array</span><strong> $blockNameHierarchy</strong>, <span class="param-type">integer</span><strong> $hierarchyLevel</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the resource for a block hierarchy.<pre>A block hierarchy is an array which starts with the root of the hierarchy
+and continues with the child of that root, the child of that child etc.
+The following is an example for a block hierarchy:
+&lt;code&gt;
+form_widget
+text_widget
+url_widget
+&lt;/code&gt;
+In this example, "url_widget" is the most specific block, while the other
+blocks are its ancestors in the hierarchy.
+The second parameter $hierarchyLevel determines the level of the hierarchy
+that should be rendered. For example, if $hierarchyLevel is 2 for the
+above hierarchy, the engine will first look for the block "url_widget",
+then, if that does not exist, for the block "text_widget" etc.
+The type of the resource is decided by the implementation. The resource
+is later passed to  by the rendering algorithm.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for determining the</li>
+                <li><code>$blockNameHierarchy</code> - The block name hierarchy, with</li>
+                <li><code>$hierarchyLevel</code> - The level in the hierarchy at</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The renderer resource or false, if none was found.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getResourceHierarchyLevel"/>
+            <h4><span class="label public">public</span>getResourceHierarchyLevel<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">Array</span><strong> $blockNameHierarchy</strong>, <span class="param-type">integer</span><strong> $hierarchyLevel</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the hierarchy level at which a resource can be found.<pre>A block hierarchy is an array which starts with the root of the hierarchy
+and continues with the child of that root, the child of that child etc.
+The following is an example for a block hierarchy:
+&lt;code&gt;
+form_widget
+text_widget
+url_widget
+&lt;/code&gt;
+The second parameter $hierarchyLevel determines the level of the hierarchy
+that should be rendered.
+If we call this method with the hierarchy level 2, the engine will first
+look for a resource for block "url_widget". If such a resource exists,
+the method returns 2. Otherwise it tries to find a resource for block
+"text_widget" (at level 1) and, again, returns 1 if a resource was found.
+The method continues to look for resources until the root level was
+reached and nothing was found. In this case false is returned.
+The type of the resource is decided by the implementation. The resource
+is later passed to  by the rendering algorithm.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for determining the</li>
+                <li><code>$blockNameHierarchy</code> - The block name hierarchy, with</li>
+                <li><code>$hierarchyLevel</code> - The level in the hierarchy at</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The hierarchy level or false, if no resource was found.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="renderBlock"/>
+            <h4><span class="label public">public</span>renderBlock<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">mixed</span><strong> $resource</strong>, <span class="param-type">string</span><strong> $blockName</strong>, <span class="param-type">Array</span><strong> $variables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders a block in the given renderer resource.<pre>The resource can be obtained by calling or . The type of the resource is
+decided by the implementation.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view to render.</li>
+                <li><code>$resource</code> - The renderer resource.</li>
+                <li><code>$blockName</code> - The name of the block to render.</li>
+                <li><code>$variables</code> - The variables to pass to the template.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTheme"/>
+            <h4><span class="label public">public</span>setTheme<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">mixed</span><strong> $themes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the theme(s) to be used for rendering a view and its children.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view to assign the theme(s) to.</li>
+                <li><code>$themes</code> - The theme(s). The type of these themes</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

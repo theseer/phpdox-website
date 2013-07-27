@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>PHPUnit - PHPUnit_Util_Test - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">PHPUnit - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#REGEX_DATA_PROVIDER">REGEX_DATA_PROVIDER</a>
+          </li>
+          <li>
+            <a href="#REGEX_EXPECTED_EXCEPTION">REGEX_EXPECTED_EXCEPTION</a>
+          </li>
+          <li>
+            <a href="#REGEX_REQUIRES_VERSION">REGEX_REQUIRES_VERSION</a>
+          </li>
+          <li>
+            <a href="#REGEX_REQUIRES_OS">REGEX_REQUIRES_OS</a>
+          </li>
+          <li>
+            <a href="#REGEX_REQUIRES">REGEX_REQUIRES</a>
+          </li>
+          <li>
+            <a href="#SMALL">SMALL</a>
+          </li>
+          <li>
+            <a href="#MEDIUM">MEDIUM</a>
+          </li>
+          <li>
+            <a href="#LARGE">LARGE</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#annotationCache">$annotationCache</a>
+          </li>
+          <li>
+            <a href="#templateMethods">$templateMethods</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#_parseAnnotationContent">_parseAnnotationContent</a>
+          </li>
+          <li>
+            <a href="#describe">describe</a>
+          </li>
+          <li>
+            <a href="#getBackupSettings">getBackupSettings</a>
+          </li>
+          <li>
+            <a href="#getBooleanAnnotationSetting">getBooleanAnnotationSetting</a>
+          </li>
+          <li>
+            <a href="#getDependencies">getDependencies</a>
+          </li>
+          <li>
+            <a href="#getErrorHandlerSettings">getErrorHandlerSettings</a>
+          </li>
+          <li>
+            <a href="#getExpectedException">getExpectedException</a>
+          </li>
+          <li>
+            <a href="#getGroups">getGroups</a>
+          </li>
+          <li>
+            <a href="#getLinesToBeCovered">getLinesToBeCovered</a>
+          </li>
+          <li>
+            <a href="#getOutputBufferingSettings">getOutputBufferingSettings</a>
+          </li>
+          <li>
+            <a href="#getPreserveGlobalStateSettings">getPreserveGlobalStateSettings</a>
+          </li>
+          <li>
+            <a href="#getProcessIsolationSettings">getProcessIsolationSettings</a>
+          </li>
+          <li>
+            <a href="#getProvidedData">getProvidedData</a>
+          </li>
+          <li>
+            <a href="#getRequirements">getRequirements</a>
+          </li>
+          <li>
+            <a href="#getSize">getSize</a>
+          </li>
+          <li>
+            <a href="#getTickets">getTickets</a>
+          </li>
+          <li>
+            <a href="#parseAnnotations">parseAnnotations</a>
+          </li>
+          <li>
+            <a href="#parseTestMethodAnnotations">parseTestMethodAnnotations</a>
+          </li>
+          <li>
+            <a href="#resolveCoversToReflectionObjects">resolveCoversToReflectionObjects</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>PHPUnit_Util_Test</h2>
+        <div class="file-notice">
+          <p>Test helpers.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li><b>Copyright: </b>2001-2013 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li><b>License: </b>http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="REGEX_DATA_PROVIDER"/>REGEX_DATA_PROVIDER = '/@dataProvider\s+([a-zA-Z0-9._:-\\\\x7f-\xff]+)/'<hr/></li>
+          <li><a name="REGEX_EXPECTED_EXCEPTION"/>REGEX_EXPECTED_EXCEPTION = '(@expectedException\s+([:.\w\\\\x7f-\xff]+)(?:[\t ]+(\S*))?(?:[\t ]+(\S*))?\s*$)m'<hr/></li>
+          <li><a name="REGEX_REQUIRES_VERSION"/>REGEX_REQUIRES_VERSION = '/@requires\s+(?P&lt;name&gt;PHP(?:Unit)?)\s+(?P&lt;value&gt;[\d\.-]+(dev|(RC|alpha|beta)[\d\.])?)[ \t]*\r?$/m'<hr/></li>
+          <li><a name="REGEX_REQUIRES_OS"/>REGEX_REQUIRES_OS = '/@requires\s+OS\s+(?P&lt;value&gt;.+)\r?$/m'<hr/></li>
+          <li><a name="REGEX_REQUIRES"/>REGEX_REQUIRES = '/@requires\s+(?P&lt;name&gt;function|extension)\s(?P&lt;value&gt;([^ ]+))\r?$/m'<hr/></li>
+          <li><a name="SMALL"/>SMALL = 0<hr/></li>
+          <li><a name="MEDIUM"/>MEDIUM = 1<hr/></li>
+          <li><a name="LARGE"/>LARGE = 2<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="annotationCache"/>
+            <h4><span class="label private">private</span>
+                $annotationCache</h4>
+          </li>
+          <li>
+            <a name="templateMethods"/>
+            <h4><span class="label protected">protected</span>
+                $templateMethods</h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="describe"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>describe<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type">boolean</span><strong> $asString</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$test</code> - </li>
+                <li><code>$asString</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBackupSettings"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getBackupSettings<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the backup settings for a test.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDependencies"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getDependencies<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the dependencies for a test class or method.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getErrorHandlerSettings"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getErrorHandlerSettings<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the error handler settings for a test.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getExpectedException"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getExpectedException<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the expected exception for a test.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getGroups"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getGroups<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the groups for a test class or method.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLinesToBeCovered"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getLinesToBeCovered<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the files and lines a test method wants to cover.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getOutputBufferingSettings"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getOutputBufferingSettings<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the output buffering settings for a test.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPreserveGlobalStateSettings"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getPreserveGlobalStateSettings<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the preserve global state settings for a test.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getProcessIsolationSettings"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getProcessIsolationSettings<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the process isolation settings for a test.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getProvidedData"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getProvidedData<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the provided data for a method.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+                <li><code>$docComment</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>array|Iterator when a data provider is specified and exists</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRequirements"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getRequirements<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the requirements for a test.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSize"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getSize<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the size of the test.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTickets"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getTickets<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the tickets for a test class or method.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="parseTestMethodAnnotations"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>parseTestMethodAnnotations<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ReflectionException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_parseAnnotationContent"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>_parseAnnotationContent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Parse annotation content to use constant/class constant values<pre>Constants are specified using a starting '@'. For example: @ClassName::CONST_NAME
+
+If the constant is not found the string is used as is to ensure maximum BC.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="resolveCoversToReflectionObjects"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>resolveCoversToReflectionObjects<span style="font-size:90%;">( <span class="param-type">string</span><strong> $coveredElement</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$coveredElement</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBooleanAnnotationSetting"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>getBooleanAnnotationSetting<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $methodName</strong>, <span class="param-type">string</span><strong> $settingName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$methodName</code> - </li>
+                <li><code>$settingName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="parseAnnotations"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>parseAnnotations<span style="font-size:90%;">( <span class="param-type">string</span><strong> $docblock</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$docblock</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

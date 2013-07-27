@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\View\Resolver\TemplatePathStack - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#FAILURE_NO_PATHS">FAILURE_NO_PATHS</a>
+          </li>
+          <li>
+            <a href="#FAILURE_NOT_FOUND">FAILURE_NOT_FOUND</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#defaultSuffix">$defaultSuffix</a>
+          </li>
+          <li>
+            <a href="#paths">$paths</a>
+          </li>
+          <li>
+            <a href="#lastLookupFailure">$lastLookupFailure</a>
+          </li>
+          <li>
+            <a href="#lfiProtectionOn">$lfiProtectionOn</a>
+          </li>
+          <li>
+            <a href="#useViewStream">$useViewStream</a>
+          </li>
+          <li>
+            <a href="#useStreamWrapper">$useStreamWrapper</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addPath">addPath</a>
+          </li>
+          <li>
+            <a href="#addPaths">addPaths</a>
+          </li>
+          <li>
+            <a href="#clearPaths">clearPaths</a>
+          </li>
+          <li>
+            <a href="#getDefaultSuffix">getDefaultSuffix</a>
+          </li>
+          <li>
+            <a href="#getLastLookupFailure">getLastLookupFailure</a>
+          </li>
+          <li>
+            <a href="#getPaths">getPaths</a>
+          </li>
+          <li>
+            <a href="#isLfiProtectionOn">isLfiProtectionOn</a>
+          </li>
+          <li>
+            <a href="#normalizePath">normalizePath</a>
+          </li>
+          <li>
+            <a href="#resolve">resolve</a>
+          </li>
+          <li>
+            <a href="#setDefaultSuffix">setDefaultSuffix</a>
+          </li>
+          <li>
+            <a href="#setLfiProtection">setLfiProtection</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+          <li>
+            <a href="#setPaths">setPaths</a>
+          </li>
+          <li>
+            <a href="#setUseStreamWrapper">setUseStreamWrapper</a>
+          </li>
+          <li>
+            <a href="#useStreamWrapper">useStreamWrapper</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\View\Resolver\</span>TemplatePathStack</h2>
+        <div class="file-notice">
+          <p>Resolves view scripts based on a stack of paths</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_View_Resolver_ResolverInterface.xhtml">Zend\View\Resolver\ResolverInterface</a>
+          </li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="FAILURE_NO_PATHS"/>FAILURE_NO_PATHS = 'TemplatePathStack_Failure_No_Paths'<hr/></li>
+          <li><a name="FAILURE_NOT_FOUND"/>FAILURE_NOT_FOUND = 'TemplatePathStack_Failure_Not_Found'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="defaultSuffix"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $defaultSuffix</h4>
+            <ul class="varlist">
+              <li>Default suffix to use<pre>Appends this suffix if the template requested does not use it.</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="paths"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $paths</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="lastLookupFailure"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $lastLookupFailure</h4>
+            <ul class="varlist">
+              <li>Reason for last lookup failure</li>
+            </ul>
+          </li>
+          <li>
+            <a name="lfiProtectionOn"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $lfiProtectionOn</h4>
+            <ul class="varlist">
+              <li>Flag indicating whether or not LFI protection for rendering view scripts is enabled</li>
+            </ul>
+          </li>
+          <li>
+            <a name="useViewStream"/>
+            <h4><span class="label protected">protected</span>
+                $useViewStream</h4>
+          </li>
+          <li>
+            <a name="useStreamWrapper"/>
+            <h4><span class="label protected">protected</span>
+                $useStreamWrapper</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="null|array|Traversable">null|array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addPath"/>
+            <h4><span class="label public">public</span>addPath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $path</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a single path to the stack</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$path</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addPaths"/>
+            <h4><span class="label public">public</span>addPaths<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $paths</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add many paths to the stack at once</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$paths</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="clearPaths"/>
+            <h4><span class="label public">public</span>clearPaths<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clear all paths</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDefaultSuffix"/>
+            <h4><span class="label public">public</span>getDefaultSuffix<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get default file suffix</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLastLookupFailure"/>
+            <h4><span class="label public">public</span>getLastLookupFailure<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the last lookup failure message, if any</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPaths"/>
+            <h4><span class="label public">public</span>getPaths<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns stack of paths</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isLfiProtectionOn"/>
+            <h4><span class="label public">public</span>isLfiProtectionOn<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return status of LFI protection flag</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="normalizePath"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>normalizePath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $path</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Normalize a path for insertion in the stack</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$path</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="resolve"/>
+            <h4><span class="label public">public</span>resolve<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type"><a href="../interfaces/Zend_View_Renderer_RendererInterface.xhtml">Zend\View\Renderer\RendererInterface</a></span><strong> $renderer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the filesystem path to a view script</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$renderer</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\DomainException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDefaultSuffix"/>
+            <h4><span class="label public">public</span>setDefaultSuffix<span style="font-size:90%;">( <span class="param-type">string</span><strong> $defaultSuffix</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set default file suffix</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$defaultSuffix</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setLfiProtection"/>
+            <h4><span class="label public">public</span>setLfiProtection<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $flag</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set LFI protection flag</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$flag</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Configure object</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPaths"/>
+            <h4><span class="label public">public</span>setPaths<span style="font-size:90%;">( <span class="param-type"><span title="SplStack|array">SplStack|array</span></span><strong> $paths</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Rest the path stack to the paths provided</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$paths</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setUseStreamWrapper"/>
+            <h4><span class="label public">public</span>setUseStreamWrapper<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $flag</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set flag indicating if stream wrapper should be used if short_open_tag is off</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$flag</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="useStreamWrapper"/>
+            <h4><span class="label public">public</span>useStreamWrapper<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Should the stream wrapper be used if short_open_tag is off?<pre>Returns true if the use_stream_wrapper flag is set, and if short_open_tag
+is disabled.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

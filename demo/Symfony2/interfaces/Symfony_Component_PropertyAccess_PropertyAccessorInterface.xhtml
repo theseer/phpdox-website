@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\PropertyAccess\PropertyAccessorInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#getValue">getValue</a>
+          </li>
+          <li>
+            <a href="#setValue">setValue</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\PropertyAccess\</span>PropertyAccessorInterface</h2>
+        <div class="file-notice">
+          <p>Writes and reads values to/from an object/array graph.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getValue"/>
+            <h4><span class="label public">public</span>getValue<span style="font-size:90%;">( <span class="param-type"><span title="object|array">object|array</span></span><strong> $objectOrArray</strong>, <span class="param-type"><span title="string|PropertyPathInterface">string|PropertyPathInterface</span></span><strong> $propertyPath</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the value at the end of the property path of the object<pre>Example:
+
+    use Symfony\Component\PropertyAccess\PropertyAccess;
+
+    $propertyAccessor = PropertyAccess::getPropertyAccessor();
+
+    echo $propertyAccessor-&gt;getValue($object, 'child.name);
+    // equals echo $object-&gt;getChild()-&gt;getName();
+
+This method first tries to find a public getter for each property in the
+path. The name of the getter must be the camel-cased property name
+prefixed with "get", "is", or "has".
+
+If the getter does not exist, this method tries to find a public
+property. The value of the property is then returned.
+
+If none of them are found, an exception is thrown.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$objectOrArray</code> - The object or array to traverse</li>
+                <li><code>$propertyPath</code> - The property path to read</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The value at the end of the property path</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\NoSuchPropertyException If a property does not exist or is not public.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setValue"/>
+            <h4><span class="label public">public</span>setValue<span style="font-size:90%;">( <span class="param-type"><span title="object|array">object|array</span></span><strong> &amp;$objectOrArray</strong>, <span class="param-type"><span title="string|PropertyPathInterface">string|PropertyPathInterface</span></span><strong> $propertyPath</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the value at the end of the property path of the object<pre>Example:
+
+    use Symfony\Component\PropertyAccess\PropertyAccess;
+
+    $propertyAccessor = PropertyAccess::getPropertyAccessor();
+
+    echo $propertyAccessor-&gt;setValue($object, 'child.name', 'Fabien');
+    // equals echo $object-&gt;getChild()-&gt;setName('Fabien');
+
+This method first tries to find a public setter for each property in the
+path. The name of the setter must be the camel-cased property name
+prefixed with "set".
+
+If the setter does not exist, this method tries to find a public
+property. The value of the property is then changed.
+
+If neither is found, an exception is thrown.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$objectOrArray</code> - The object or array to modify</li>
+                <li><code>$propertyPath</code> - The property path to modify</li>
+                <li><code>$value</code> - The value to set at the end of the property path</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\NoSuchPropertyException If a property does not exist or is not public.</code>
+                </li>
+                <li>
+                  <code>Exception\UnexpectedTypeException If a value within the path is neither object</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

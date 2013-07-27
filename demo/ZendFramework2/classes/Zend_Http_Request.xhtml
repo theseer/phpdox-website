@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Http\Request - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#METHOD_OPTIONS">METHOD_OPTIONS</a>
+          </li>
+          <li>
+            <a href="#METHOD_GET">METHOD_GET</a>
+          </li>
+          <li>
+            <a href="#METHOD_HEAD">METHOD_HEAD</a>
+          </li>
+          <li>
+            <a href="#METHOD_POST">METHOD_POST</a>
+          </li>
+          <li>
+            <a href="#METHOD_PUT">METHOD_PUT</a>
+          </li>
+          <li>
+            <a href="#METHOD_DELETE">METHOD_DELETE</a>
+          </li>
+          <li>
+            <a href="#METHOD_TRACE">METHOD_TRACE</a>
+          </li>
+          <li>
+            <a href="#METHOD_CONNECT">METHOD_CONNECT</a>
+          </li>
+          <li>
+            <a href="#METHOD_PATCH">METHOD_PATCH</a>
+          </li>
+          <li>
+            <a href="#VERSION_10">VERSION_10</a>
+          </li>
+          <li>
+            <a href="#VERSION_11">VERSION_11</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#method">$method</a>
+          </li>
+          <li>
+            <a href="#uri">$uri</a>
+          </li>
+          <li>
+            <a href="#queryParams">$queryParams</a>
+          </li>
+          <li>
+            <a href="#postParams">$postParams</a>
+          </li>
+          <li>
+            <a href="#fileParams">$fileParams</a>
+          </li>
+          <li>
+            <a href="#version">$version</a>
+          </li>
+          <li>
+            <a href="#headers">$headers</a>
+          </li>
+          <li>
+            <a href="#metadata">$metadata</a>
+          </li>
+          <li>
+            <a href="#content">$content</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__toString">__toString</a>
+          </li>
+          <li>
+            <a href="#fromString">fromString</a>
+          </li>
+          <li>
+            <a href="#getContent">getContent</a>
+          </li>
+          <li>
+            <a href="#getCookie">getCookie</a>
+          </li>
+          <li>
+            <a href="#getFiles">getFiles</a>
+          </li>
+          <li>
+            <a href="#getHeader">getHeader</a>
+          </li>
+          <li>
+            <a href="#getHeaders">getHeaders</a>
+          </li>
+          <li>
+            <a href="#getHeaders">getHeaders</a>
+          </li>
+          <li>
+            <a href="#getMetadata">getMetadata</a>
+          </li>
+          <li>
+            <a href="#getMethod">getMethod</a>
+          </li>
+          <li>
+            <a href="#getPost">getPost</a>
+          </li>
+          <li>
+            <a href="#getQuery">getQuery</a>
+          </li>
+          <li>
+            <a href="#getUri">getUri</a>
+          </li>
+          <li>
+            <a href="#getUriString">getUriString</a>
+          </li>
+          <li>
+            <a href="#getVersion">getVersion</a>
+          </li>
+          <li>
+            <a href="#isConnect">isConnect</a>
+          </li>
+          <li>
+            <a href="#isDelete">isDelete</a>
+          </li>
+          <li>
+            <a href="#isFlashRequest">isFlashRequest</a>
+          </li>
+          <li>
+            <a href="#isGet">isGet</a>
+          </li>
+          <li>
+            <a href="#isHead">isHead</a>
+          </li>
+          <li>
+            <a href="#isOptions">isOptions</a>
+          </li>
+          <li>
+            <a href="#isPatch">isPatch</a>
+          </li>
+          <li>
+            <a href="#isPost">isPost</a>
+          </li>
+          <li>
+            <a href="#isPut">isPut</a>
+          </li>
+          <li>
+            <a href="#isTrace">isTrace</a>
+          </li>
+          <li>
+            <a href="#isXmlHttpRequest">isXmlHttpRequest</a>
+          </li>
+          <li>
+            <a href="#renderRequestLine">renderRequestLine</a>
+          </li>
+          <li>
+            <a href="#setContent">setContent</a>
+          </li>
+          <li>
+            <a href="#setFiles">setFiles</a>
+          </li>
+          <li>
+            <a href="#setHeaders">setHeaders</a>
+          </li>
+          <li>
+            <a href="#setMetadata">setMetadata</a>
+          </li>
+          <li>
+            <a href="#setMethod">setMethod</a>
+          </li>
+          <li>
+            <a href="#setPost">setPost</a>
+          </li>
+          <li>
+            <a href="#setQuery">setQuery</a>
+          </li>
+          <li>
+            <a href="#setUri">setUri</a>
+          </li>
+          <li>
+            <a href="#setVersion">setVersion</a>
+          </li>
+          <li>
+            <a href="#toString">toString</a>
+          </li>
+          <li>
+            <a href="#toString">toString</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Http\</span>Request</h2>
+        <div class="file-notice">
+          <p>HTTP Request</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_Stdlib_RequestInterface.xhtml">Zend\Stdlib\RequestInterface</a>
+          </li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="METHOD_OPTIONS"/>METHOD_OPTIONS = 'OPTIONS'<hr/></li>
+          <li><a name="METHOD_GET"/>METHOD_GET = 'GET'<hr/></li>
+          <li><a name="METHOD_HEAD"/>METHOD_HEAD = 'HEAD'<hr/></li>
+          <li><a name="METHOD_POST"/>METHOD_POST = 'POST'<hr/></li>
+          <li><a name="METHOD_PUT"/>METHOD_PUT = 'PUT'<hr/></li>
+          <li><a name="METHOD_DELETE"/>METHOD_DELETE = 'DELETE'<hr/></li>
+          <li><a name="METHOD_TRACE"/>METHOD_TRACE = 'TRACE'<hr/></li>
+          <li><a name="METHOD_CONNECT"/>METHOD_CONNECT = 'CONNECT'<hr/></li>
+          <li><a name="METHOD_PATCH"/>METHOD_PATCH = 'PATCH'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="method"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $method</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="uri"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $uri</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="queryParams"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $queryParams</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="postParams"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $postParams</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="fileParams"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $fileParams</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__toString"/>
+            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Allow PHP casting of this object</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fromString"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>fromString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $string</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>A factory that produces a Request object from a well-formed Http Request string</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$string</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getContent"/>
+            <h4><span class="label public">public</span>getContent<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get message content</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCookie"/>
+            <h4><span class="label public">public</span>getCookie<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the Cookie header, this is the same as calling $request-&gt;getHeaders()-&gt;get('Cookie');</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFiles"/>
+            <h4><span class="label public">public</span>getFiles<span style="font-size:90%;">( <span class="param-type"><span title="string|null">string|null</span></span><strong> $name</strong>, <span class="param-type"><span title="mixed|null">mixed|null</span></span><strong> $default</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the parameter container responsible for file parameters or a single file.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - Parameter name to retrieve, or null to get the whole container.</li>
+                <li><code>$default</code> - Default value to use when the parameter is missing.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHeader"/>
+            <h4><span class="label public">public</span>getHeader<span style="font-size:90%;">( <span class="param-type"><span title="string|null">string|null</span></span><strong> $name</strong>, <span class="param-type"><span title="mixed|null">mixed|null</span></span><strong> $default</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all headers of a certain name/type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - Header name to retrieve, or null to get the whole container.</li>
+                <li><code>$default</code> - Default value to use when the requested header is missing.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHeaders"/>
+            <h4><span class="label public">public</span>getHeaders<span style="font-size:90%;">( <span class="param-type"><span title="string|null">string|null</span></span><strong> $name</strong>, <span class="param-type"><span title="mixed|null">mixed|null</span></span><strong> $default</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the header container responsible for headers or all headers of a certain name/type</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - Header name to retrieve, or null to get the whole container.</li>
+                <li><code>$default</code> - Default value to use when the requested header is missing.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHeaders"/>
+            <h4><span class="label public">public</span>getHeaders<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the header container responsible for headers</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMetadata"/>
+            <h4><span class="label public">public</span>getMetadata<span style="font-size:90%;">( <span class="param-type"><span title="null|string|int">null|string|int</span></span><strong> $key</strong>, <span class="param-type"><span title="null|mixed">null|mixed</span></span><strong> $default</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve all metadata or a single metadatum as specified by key</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - </li>
+                <li><code>$default</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMethod"/>
+            <h4><span class="label public">public</span>getMethod<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the method for this request</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPost"/>
+            <h4><span class="label public">public</span>getPost<span style="font-size:90%;">( <span class="param-type"><span title="string|null">string|null</span></span><strong> $name</strong>, <span class="param-type"><span title="mixed|null">mixed|null</span></span><strong> $default</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the parameter container responsible for post parameters or a single post parameter.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - Parameter name to retrieve, or null to get the whole container.</li>
+                <li><code>$default</code> - Default value to use when the parameter is missing.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getQuery"/>
+            <h4><span class="label public">public</span>getQuery<span style="font-size:90%;">( <span class="param-type"><span title="string|null">string|null</span></span><strong> $name</strong>, <span class="param-type"><span title="mixed|null">mixed|null</span></span><strong> $default</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the parameter container responsible for query parameters or a single query parameter</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - Parameter name to retrieve, or null to get the whole container.</li>
+                <li><code>$default</code> - Default value to use when the parameter is missing.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUri"/>
+            <h4><span class="label public">public</span>getUri<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the URI for this request object</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUriString"/>
+            <h4><span class="label public">public</span>getUriString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the URI for this request object as a string</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getVersion"/>
+            <h4><span class="label public">public</span>getVersion<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the HTTP version for this request</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isConnect"/>
+            <h4><span class="label public">public</span>isConnect<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this a CONNECT method request?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isDelete"/>
+            <h4><span class="label public">public</span>isDelete<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this a DELETE method request?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isFlashRequest"/>
+            <h4><span class="label public">public</span>isFlashRequest<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this a Flash request?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isGet"/>
+            <h4><span class="label public">public</span>isGet<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this a GET method request?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isHead"/>
+            <h4><span class="label public">public</span>isHead<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this a HEAD method request?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isOptions"/>
+            <h4><span class="label public">public</span>isOptions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this an OPTIONS method request?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isPatch"/>
+            <h4><span class="label public">public</span>isPatch<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="isPost"/>
+            <h4><span class="label public">public</span>isPost<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this a POST method request?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isPut"/>
+            <h4><span class="label public">public</span>isPut<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this a PUT method request?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isTrace"/>
+            <h4><span class="label public">public</span>isTrace<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this a TRACE method request?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isXmlHttpRequest"/>
+            <h4><span class="label public">public</span>isXmlHttpRequest<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is the request a Javascript XMLHttpRequest?<pre>Should work with Prototype/Script.aculo.us, possibly others.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="renderRequestLine"/>
+            <h4><span class="label public">public</span>renderRequestLine<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the formatted request line (first line) for this http request</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setContent"/>
+            <h4><span class="label public">public</span>setContent<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set message content</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFiles"/>
+            <h4><span class="label public">public</span>setFiles<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Stdlib_ParametersInterface.xhtml">Zend\Stdlib\ParametersInterface</a></span><strong> $files</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Provide an alternate Parameter Container implementation for file parameters in this object, (this is NOT the primary API for value setting, for that see getFiles())</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$files</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setHeaders"/>
+            <h4><span class="label public">public</span>setHeaders<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Http_Headers.xhtml">Zend\Http\Headers</a></span><strong> $headers</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Provide an alternate Parameter Container implementation for headers in this object, (this is NOT the primary API for value setting, for that see getHeaders())</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$headers</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setMetadata"/>
+            <h4><span class="label public">public</span>setMetadata<span style="font-size:90%;">( <span class="param-type"><span title="string|int|array|Traversable">string|int|array|Traversable</span></span><strong> $spec</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set message metadata<pre>Non-destructive setting of message metadata; always adds to the metadata, never overwrites
+the entire metadata container.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$spec</code> - </li>
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setMethod"/>
+            <h4><span class="label public">public</span>setMethod<span style="font-size:90%;">( <span class="param-type">string</span><strong> $method</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the method for this request</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPost"/>
+            <h4><span class="label public">public</span>setPost<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Stdlib_ParametersInterface.xhtml">Zend\Stdlib\ParametersInterface</a></span><strong> $post</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Provide an alternate Parameter Container implementation for post parameters in this object, (this is NOT the primary API for value setting, for that see getPost())</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$post</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setQuery"/>
+            <h4><span class="label public">public</span>setQuery<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Stdlib_ParametersInterface.xhtml">Zend\Stdlib\ParametersInterface</a></span><strong> $query</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Provide an alternate Parameter Container implementation for query parameters in this object, (this is NOT the primary API for value setting, for that see getQuery())</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setUri"/>
+            <h4><span class="label public">public</span>setUri<span style="font-size:90%;">( <span class="param-type"><span title="string|HttpUri">string|HttpUri</span></span><strong> $uri</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the URI/URL for this request, this can be a string or an instance of Zend\Uri\Http</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$uri</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setVersion"/>
+            <h4><span class="label public">public</span>setVersion<span style="font-size:90%;">( <span class="param-type">string</span><strong> $version</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the HTTP version for this object, one of 1.0 or 1.1 (AbstractMessage::VERSION_10, AbstractMessage::VERSION_11)</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$version</code> - (Must be 1.0 or 1.1)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toString"/>
+            <h4><span class="label public">public</span>toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toString"/>
+            <h4><span class="label public">public</span>toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

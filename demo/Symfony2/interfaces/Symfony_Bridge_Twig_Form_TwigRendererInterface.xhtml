@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Bridge\Twig\Form\TwigRendererInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#getEngine">getEngine</a>
+          </li>
+          <li>
+            <a href="#humanize">humanize</a>
+          </li>
+          <li>
+            <a href="#renderBlock">renderBlock</a>
+          </li>
+          <li>
+            <a href="#renderCsrfToken">renderCsrfToken</a>
+          </li>
+          <li>
+            <a href="#searchAndRenderBlock">searchAndRenderBlock</a>
+          </li>
+          <li>
+            <a href="#setEnvironment">setEnvironment</a>
+          </li>
+          <li>
+            <a href="#setTheme">setTheme</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Bridge\Twig\Form\</span>TwigRendererInterface</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getEngine"/>
+            <h4><span class="label public">public</span>getEngine<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the engine used by this renderer.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The renderer engine.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="humanize"/>
+            <h4><span class="label public">public</span>humanize<span style="font-size:90%;">( <span class="param-type">string</span><strong> $text</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Makes a technical name human readable.<pre>Sequences of underscores are replaced by single spaces. The first letter
+of the resulting string is capitalized, while all other letters are
+turned to lowercase.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$text</code> - The text to humanize.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The humanized text.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="renderBlock"/>
+            <h4><span class="label public">public</span>renderBlock<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">string</span><strong> $blockName</strong>, <span class="param-type">Array</span><strong> $variables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders a named block of the form theme.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for which to render the block.</li>
+                <li><code>$blockName</code> - The name of the block.</li>
+                <li><code>$variables</code> - The variables to pass to the template.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="renderCsrfToken"/>
+            <h4><span class="label public">public</span>renderCsrfToken<span style="font-size:90%;">( <span class="param-type">string</span><strong> $intention</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Renders a CSRF token.<pre>Use this helper for CSRF protection without the overhead of creating a
+form.
+
+&lt;code&gt;
+&lt;input type="hidden" name="token" value="&lt;?php $renderer-&gt;renderCsrfToken('rm_user_'.$user-&gt;getId()) ?&gt;"&gt;
+&lt;/code&gt;
+
+Check the token in your action using the same intention.
+
+&lt;code&gt;
+$csrfProvider = $this-&gt;get('form.csrf_provider');
+if (!$csrfProvider-&gt;isCsrfTokenValid('rm_user_'.$user-&gt;getId(), $token)) {
+    throw new \RuntimeException('CSRF attack detected.');
+}
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$intention</code> - The intention of the protected action</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A CSRF token</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="searchAndRenderBlock"/>
+            <h4><span class="label public">public</span>searchAndRenderBlock<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">string</span><strong> $blockNameSuffix</strong>, <span class="param-type">Array</span><strong> $variables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Searches and renders a block for a given name suffix.<pre>The block is searched by combining the block names stored in the
+form view with the given suffix. If a block name is found, that
+block is rendered.
+
+If this method is called recursively, the block search is continued
+where a block was found before.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view for which to render the block.</li>
+                <li><code>$blockNameSuffix</code> - The suffix of the block name.</li>
+                <li><code>$variables</code> - The variables to pass to the template.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML markup</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setEnvironment"/>
+            <h4><span class="label public">public</span>setEnvironment<span style="font-size:90%;">( <span class="param-type"><span title="Twig_Environment">Twig_Environment</span></span><strong> $environment</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets Twig's environment.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$environment</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTheme"/>
+            <h4><span class="label public">public</span>setTheme<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $view</strong>, <span class="param-type">mixed</span><strong> $themes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the theme(s) to be used for rendering a view and its children.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - The view to assign the theme(s) to.</li>
+                <li><code>$themes</code> - The theme(s). The type of these themes</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

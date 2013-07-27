@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Yaml\Unescaper - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#ENCODING">ENCODING</a>
+          </li>
+          <li>
+            <a href="#REGEX_ESCAPED_CHARACTER">REGEX_ESCAPED_CHARACTER</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#convertEncoding">convertEncoding</a>
+          </li>
+          <li>
+            <a href="#unescapeCharacter">unescapeCharacter</a>
+          </li>
+          <li>
+            <a href="#unescapeDoubleQuotedString">unescapeDoubleQuotedString</a>
+          </li>
+          <li>
+            <a href="#unescapeSingleQuotedString">unescapeSingleQuotedString</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Yaml\</span>Unescaper</h2>
+        <div class="file-notice">
+          <p>Unescaper encapsulates unescaping rules for single and double-quoted YAML strings.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Matthew Lewinski &lt;matthew@lewinski.org&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="ENCODING"/>ENCODING = 'UTF-8'<hr/></li>
+          <li><a name="REGEX_ESCAPED_CHARACTER"/>REGEX_ESCAPED_CHARACTER = "\\\\([0abt\tnvfre \\\"\\/\\\\N_LP]|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})"<hr/></li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="unescapeCharacter"/>
+            <h4><span class="label public">public</span>unescapeCharacter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Unescapes a character that was found in a double-quoted string</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - An escaped character</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The unescaped character</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unescapeDoubleQuotedString"/>
+            <h4><span class="label public">public</span>unescapeDoubleQuotedString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Unescapes a double quoted string.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - A double quoted string.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The unescaped string.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unescapeSingleQuotedString"/>
+            <h4><span class="label public">public</span>unescapeSingleQuotedString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Unescapes a single quoted string.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - A single quoted string.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The unescaped string.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="convertEncoding"/>
+            <h4><span class="label private">private</span>convertEncoding<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong>, <span class="param-type">string</span><strong> $to</strong>, <span class="param-type">string</span><strong> $from</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Convert a string from one encoding to another.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The string to convert</li>
+                <li><code>$to</code> - The input encoding</li>
+                <li><code>$from</code> - The output encoding</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The string with the new encoding</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>RuntimeException if no suitable encoding function is found (iconv or mbstring)</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

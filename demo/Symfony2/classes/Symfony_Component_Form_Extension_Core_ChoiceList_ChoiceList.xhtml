@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#choices">$choices</a>
+          </li>
+          <li>
+            <a href="#values">$values</a>
+          </li>
+          <li>
+            <a href="#preferredViews">$preferredViews</a>
+          </li>
+          <li>
+            <a href="#remainingViews">$remainingViews</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addChoice">addChoice</a>
+          </li>
+          <li>
+            <a href="#addChoiceGroup">addChoiceGroup</a>
+          </li>
+          <li>
+            <a href="#addChoices">addChoices</a>
+          </li>
+          <li>
+            <a href="#createIndex">createIndex</a>
+          </li>
+          <li>
+            <a href="#createValue">createValue</a>
+          </li>
+          <li>
+            <a href="#fixChoice">fixChoice</a>
+          </li>
+          <li>
+            <a href="#fixChoices">fixChoices</a>
+          </li>
+          <li>
+            <a href="#fixIndex">fixIndex</a>
+          </li>
+          <li>
+            <a href="#fixIndices">fixIndices</a>
+          </li>
+          <li>
+            <a href="#fixValue">fixValue</a>
+          </li>
+          <li>
+            <a href="#fixValues">fixValues</a>
+          </li>
+          <li>
+            <a href="#getChoices">getChoices</a>
+          </li>
+          <li>
+            <a href="#getChoicesForValues">getChoicesForValues</a>
+          </li>
+          <li>
+            <a href="#getIndicesForChoices">getIndicesForChoices</a>
+          </li>
+          <li>
+            <a href="#getIndicesForValues">getIndicesForValues</a>
+          </li>
+          <li>
+            <a href="#getPreferredViews">getPreferredViews</a>
+          </li>
+          <li>
+            <a href="#getRemainingViews">getRemainingViews</a>
+          </li>
+          <li>
+            <a href="#getValues">getValues</a>
+          </li>
+          <li>
+            <a href="#getValuesForChoices">getValuesForChoices</a>
+          </li>
+          <li>
+            <a href="#initialize">initialize</a>
+          </li>
+          <li>
+            <a href="#isPreferred">isPreferred</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Form\Extension\Core\ChoiceList\</span>ChoiceList</h2>
+        <div class="file-notice">
+          <p>A choice list for choices of arbitrary data types.</p>
+          <p>
+            <pre>Choices and labels are passed in two arrays. The indices of the choices
+and the labels should match. Choices may also be given as hierarchy of
+unlimited depth by creating nested arrays. The title of the sub-hierarchy
+can be stored in the array key pointing to the nested array. The topmost
+level of the hierarchy may also be a \Traversable.
+
+&lt;code&gt;
+$choices = array(true, false);
+$labels = array('Agree', 'Disagree');
+$choiceList = new ChoiceList($choices, $labels);
+&lt;/code&gt;</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Symfony_Component_Form_Extension_Core_ChoiceList_ChoiceListInterface.xhtml">Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="choices"/>
+            <h4><span class="label private">private</span>array 
+                
+                $choices</h4>
+            <ul class="varlist">
+              <li>The choices with their indices as keys.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="values"/>
+            <h4><span class="label private">private</span>array 
+                
+                $values</h4>
+            <ul class="varlist">
+              <li>The choice values with the indices of the matching choices as keys.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="preferredViews"/>
+            <h4><span class="label private">private</span>array 
+                
+                $preferredViews</h4>
+            <ul class="varlist">
+              <li>The preferred view objects as hierarchy containing also the choice groups with the indices of the matching choices as bottom-level keys.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="remainingViews"/>
+            <h4><span class="label private">private</span>array 
+                
+                $remainingViews</h4>
+            <ul class="varlist">
+              <li>The non-preferred view objects as hierarchy containing also the choice groups with the indices of the matching choices as bottom-level keys.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="array|\Traversable">Traversable</span></span><strong> $choices</strong>, <span class="param-type">Array</span><strong> $labels</strong>, <span class="param-type">Array</span><strong> $preferredChoices</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a new choice list.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$choices</code> - The array of choices. Choices may also be given</li>
+                <li><code>$labels</code> - The array of labels. The structure of this array</li>
+                <li><code>$preferredChoices</code> - A flat array of choices that should be</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>UnexpectedTypeException If the choices are not an array or \Traversable.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getChoices"/>
+            <h4><span class="label public">public</span>getChoices<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getChoicesForValues"/>
+            <h4><span class="label public">public</span>getChoicesForValues<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $values</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getIndicesForChoices"/>
+            <h4><span class="label public">public</span>getIndicesForChoices<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $choices</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getIndicesForValues"/>
+            <h4><span class="label public">public</span>getIndicesForValues<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $values</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getPreferredViews"/>
+            <h4><span class="label public">public</span>getPreferredViews<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getRemainingViews"/>
+            <h4><span class="label public">public</span>getRemainingViews<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getValues"/>
+            <h4><span class="label public">public</span>getValues<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getValuesForChoices"/>
+            <h4><span class="label public">public</span>getValuesForChoices<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $choices</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="addChoice"/>
+            <h4><span class="label protected">protected</span>addChoice<span style="font-size:90%;">( <span class="param-type">Array</span><strong> &amp;$bucketForPreferred</strong>, <span class="param-type">Array</span><strong> &amp;$bucketForRemaining</strong>, <span class="param-type">mixed</span><strong> $choice</strong>, <span class="param-type">string</span><strong> $label</strong>, <span class="param-type">Array</span><strong> $preferredChoices</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a new choice.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bucketForPreferred</code> - The bucket where to store the preferred</li>
+                <li><code>$bucketForRemaining</code> - The bucket where to store the</li>
+                <li><code>$choice</code> - The choice to add.</li>
+                <li><code>$label</code> - The label for the choice.</li>
+                <li><code>$preferredChoices</code> - The preferred choices.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidConfigurationException If no valid value or index could be created.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addChoiceGroup"/>
+            <h4><span class="label protected">protected</span>addChoiceGroup<span style="font-size:90%;">( <span class="param-type">string</span><strong> $group</strong>, <span class="param-type">Array</span><strong> &amp;$bucketForPreferred</strong>, <span class="param-type">Array</span><strong> &amp;$bucketForRemaining</strong>, <span class="param-type">Array</span><strong> $choices</strong>, <span class="param-type">Array</span><strong> $labels</strong>, <span class="param-type">Array</span><strong> $preferredChoices</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Recursively adds a choice group.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$group</code> - The name of the group.</li>
+                <li><code>$bucketForPreferred</code> - The bucket where to store the preferred</li>
+                <li><code>$bucketForRemaining</code> - The bucket where to store the</li>
+                <li><code>$choices</code> - The list of choices in the group.</li>
+                <li><code>$labels</code> - The labels corresponding to the choices in the group.</li>
+                <li><code>$preferredChoices</code> - The preferred choices.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidConfigurationException If no valid value or index could be created for a choice.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addChoices"/>
+            <h4><span class="label protected">protected</span>addChoices<span style="font-size:90%;">( <span class="param-type">Array</span><strong> &amp;$bucketForPreferred</strong>, <span class="param-type">Array</span><strong> &amp;$bucketForRemaining</strong>, <span class="param-type"><span title="array|\Traversable">Traversable</span></span><strong> $choices</strong>, <span class="param-type">Array</span><strong> $labels</strong>, <span class="param-type">Array</span><strong> $preferredChoices</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Recursively adds the given choices to the list.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bucketForPreferred</code> - The bucket where to store the preferred</li>
+                <li><code>$bucketForRemaining</code> - The bucket where to store the</li>
+                <li><code>$choices</code> - The list of choices.</li>
+                <li><code>$labels</code> - The labels corresponding to the choices.</li>
+                <li><code>$preferredChoices</code> - The preferred choices.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidArgumentException     If the structures of the choices and labels array do not match.</code>
+                </li>
+                <li>
+                  <code>InvalidConfigurationException If no valid value or index could be created for a choice.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createIndex"/>
+            <h4><span class="label protected">protected</span>createIndex<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $choice</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a new unique index for this choice.<pre>Extension point to change the indexing strategy.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$choice</code> - The choice to create an index for</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A unique index containing only ASCII letters,</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createValue"/>
+            <h4><span class="label protected">protected</span>createValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $choice</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a new unique value for this choice.<pre>By default, an integer is generated since it cannot be guaranteed that
+all values in the list are convertible to (unique) strings. Subclasses
+can override this behaviour if they can guarantee this property.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$choice</code> - The choice to create a value for</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A unique string.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fixChoice"/>
+            <h4><span class="label protected">protected</span>fixChoice<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $choice</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Fixes the data type of the given choice to avoid comparison problems.<pre>Extension point. In this implementation, choices are guaranteed to
+always maintain their type and thus can be typesafely compared.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$choice</code> - The choice.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The fixed choice.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fixChoices"/>
+            <h4><span class="label protected">protected</span>fixChoices<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $choices</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Fixes the data type of the given choices to avoid comparison problems.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$choices</code> - The choices.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The fixed choices.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fixIndex"/>
+            <h4><span class="label protected">protected</span>fixIndex<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Fixes the data type of the given choice index to avoid comparison problems.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$index</code> - The choice index.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The index as PHP array key.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fixIndices"/>
+            <h4><span class="label protected">protected</span>fixIndices<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $indices</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Fixes the data types of the given choice indices to avoid comparison problems.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$indices</code> - The choice indices.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The indices as strings.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fixValue"/>
+            <h4><span class="label protected">protected</span>fixValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Fixes the data type of the given choice value to avoid comparison problems.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The choice value.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The value as string.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fixValues"/>
+            <h4><span class="label protected">protected</span>fixValues<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $values</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Fixes the data types of the given choice values to avoid comparison problems.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$values</code> - The choice values.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The values as strings.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="initialize"/>
+            <h4><span class="label protected">protected</span>initialize<span style="font-size:90%;">( <span class="param-type"><span title="array|\Traversable">Traversable</span></span><strong> $choices</strong>, <span class="param-type">Array</span><strong> $labels</strong>, <span class="param-type">Array</span><strong> $preferredChoices</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initializes the list with choices.<pre>Safe to be called multiple times. The list is cleared on every call.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$choices</code> - The choices to write into the list.</li>
+                <li><code>$labels</code> - The labels belonging to the choices.</li>
+                <li><code>$preferredChoices</code> - The choices to display with priority.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isPreferred"/>
+            <h4><span class="label protected">protected</span>isPreferred<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $choice</strong>, <span class="param-type">Array</span><strong> $preferredChoices</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether the given choice should be preferred judging by the given array of preferred choices.<pre>Extension point to optimize performance by changing the structure of the
+$preferredChoices array.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$choice</code> - The choice to test.</li>
+                <li><code>$preferredChoices</code> - An array of preferred choices.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Whether the choice is preferred.</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

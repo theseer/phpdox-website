@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Form\Extension\Core\DataTransformer\DateTimeToLocalizedStringTransformer - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#dateFormat">$dateFormat</a>
+          </li>
+          <li>
+            <a href="#timeFormat">$timeFormat</a>
+          </li>
+          <li>
+            <a href="#pattern">$pattern</a>
+          </li>
+          <li>
+            <a href="#calendar">$calendar</a>
+          </li>
+          <li>
+            <a href="#formats">$formats</a>
+          </li>
+          <li>
+            <a href="#inputTimezone">$inputTimezone</a>
+          </li>
+          <li>
+            <a href="#outputTimezone">$outputTimezone</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#getIntlDateFormatter">getIntlDateFormatter</a>
+          </li>
+          <li>
+            <a href="#reverseTransform">reverseTransform</a>
+          </li>
+          <li>
+            <a href="#transform">transform</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Form\Extension\Core\DataTransformer\</span>DateTimeToLocalizedStringTransformer</h2>
+        <div class="file-notice">
+          <p>Transforms between a normalized time and a localized time string</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+          <li><b>Author: </b>Florian Eckerstorfer &lt;florian@eckerstorfer.org&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="dateFormat"/>
+            <h4><span class="label private">private</span>
+                $dateFormat</h4>
+          </li>
+          <li>
+            <a name="timeFormat"/>
+            <h4><span class="label private">private</span>
+                $timeFormat</h4>
+          </li>
+          <li>
+            <a name="pattern"/>
+            <h4><span class="label private">private</span>
+                $pattern</h4>
+          </li>
+          <li>
+            <a name="calendar"/>
+            <h4><span class="label private">private</span>
+                $calendar</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $inputTimezone</strong>, <span class="param-type">string</span><strong> $outputTimezone</strong>, <span class="param-type">integer</span><strong> $dateFormat</strong>, <span class="param-type">integer</span><strong> $timeFormat</strong>, <span class="param-type">integer</span><strong> $calendar</strong>, <span class="param-type">string</span><strong> $pattern</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$inputTimezone</code> - The name of the input timezone</li>
+                <li><code>$outputTimezone</code> - The name of the output timezone</li>
+                <li><code>$dateFormat</code> - The date format</li>
+                <li><code>$timeFormat</code> - The time format</li>
+                <li><code>$calendar</code> - One of the \IntlDateFormatter calendar constants</li>
+                <li><code>$pattern</code> - A pattern to pass to \IntlDateFormatter</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>UnexpectedTypeException If a format is not supported or if a timezone is not a string</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="reverseTransform"/>
+            <h4><span class="label public">public</span>reverseTransform<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Transforms a localized date string/array into a normalized date.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - Localized date string/array</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Normalized date</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>TransformationFailedException if the given value is not a string,</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="transform"/>
+            <h4><span class="label public">public</span>transform<span style="font-size:90%;">( <span class="param-type"><span title="\DateTime">DateTime</span></span><strong> $dateTime</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Transforms a normalized date into a localized date string/array.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dateTime</code> - Normalized date.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Localized date string/array.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>TransformationFailedException If the given value is not an instance</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIntlDateFormatter"/>
+            <h4><span class="label protected">protected</span>getIntlDateFormatter<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a preconfigured IntlDateFormatter instance</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

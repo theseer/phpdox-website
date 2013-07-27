@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\OptionsResolver\OptionsResolverInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#addAllowedTypes">addAllowedTypes</a>
+          </li>
+          <li>
+            <a href="#addAllowedValues">addAllowedValues</a>
+          </li>
+          <li>
+            <a href="#isKnown">isKnown</a>
+          </li>
+          <li>
+            <a href="#isRequired">isRequired</a>
+          </li>
+          <li>
+            <a href="#replaceDefaults">replaceDefaults</a>
+          </li>
+          <li>
+            <a href="#resolve">resolve</a>
+          </li>
+          <li>
+            <a href="#setAllowedTypes">setAllowedTypes</a>
+          </li>
+          <li>
+            <a href="#setAllowedValues">setAllowedValues</a>
+          </li>
+          <li>
+            <a href="#setDefaults">setDefaults</a>
+          </li>
+          <li>
+            <a href="#setNormalizers">setNormalizers</a>
+          </li>
+          <li>
+            <a href="#setOptional">setOptional</a>
+          </li>
+          <li>
+            <a href="#setRequired">setRequired</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\OptionsResolver\</span>OptionsResolverInterface</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addAllowedTypes"/>
+            <h4><span class="label public">public</span>addAllowedTypes<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $allowedTypes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds allowed types for a list of options.<pre>The types are merged with the allowed types defined previously.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$allowedTypes</code> - A list of option names as keys and type</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The resolver instance.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidOptionsException If an option has not been defined for</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addAllowedValues"/>
+            <h4><span class="label public">public</span>addAllowedValues<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $allowedValues</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds allowed values for a list of options.<pre>The values are merged with the allowed values defined previously.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$allowedValues</code> - A list of option names as keys and arrays</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The resolver instance.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidOptionsException If an option has not been defined</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isKnown"/>
+            <h4><span class="label public">public</span>isKnown<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether an option is known.<pre>An option is known if it has been passed to either ,
+ or  before.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The name of the option.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Whether the option is known.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isRequired"/>
+            <h4><span class="label public">public</span>isRequired<span style="font-size:90%;">( <span class="param-type">string</span><strong> $option</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether an option is required.<pre>An option is required if it has been passed to ,
+but not to . That is, the option has been declared
+as required and no default value has been set.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$option</code> - The name of the option.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Whether the option is required.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="replaceDefaults"/>
+            <h4><span class="label public">public</span>replaceDefaults<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $defaultValues</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Replaces default option values.<pre>Old defaults are erased, which means that closures passed here cannot
+access the previous default value. This may be useful to improve
+performance if the previous default value is calculated by an expensive
+closure.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$defaultValues</code> - A list of option names as keys and default</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The resolver instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="resolve"/>
+            <h4><span class="label public">public</span>resolve<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the combination of the default and the passed options.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - The custom option values.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A list of options and their values.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidOptionsException   If any of the passed options has not</code>
+                </li>
+                <li>
+                  <code>Exception\MissingOptionsException   If a required option is missing.</code>
+                </li>
+                <li>
+                  <code>Exception\OptionDefinitionException If a cyclic dependency is detected</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setAllowedTypes"/>
+            <h4><span class="label public">public</span>setAllowedTypes<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $allowedTypes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets allowed types for a list of options.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$allowedTypes</code> - A list of option names as keys and type</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The resolver instance.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidOptionsException If an option has not been defined for</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setAllowedValues"/>
+            <h4><span class="label public">public</span>setAllowedValues<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $allowedValues</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets allowed values for a list of options.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$allowedValues</code> - A list of option names as keys and arrays</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The resolver instance.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidOptionsException If an option has not been defined</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDefaults"/>
+            <h4><span class="label public">public</span>setDefaults<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $defaultValues</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets default option values.<pre>The options can either be values of any types or closures that
+evaluate the option value lazily. These closures must have one
+of the following signatures:
+
+&lt;code&gt;
+function (Options $options)
+function (Options $options, $value)
+&lt;/code&gt;
+
+The second parameter passed to the closure is the previously
+set default value, in case you are overwriting an existing
+default value.
+
+The closures should return the lazily created option value.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$defaultValues</code> - A list of option names as keys and default</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The resolver instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setNormalizers"/>
+            <h4><span class="label public">public</span>setNormalizers<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $normalizers</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets normalizers that are applied on resolved options.<pre>The normalizers should be closures with the following signature:
+
+&lt;code&gt;
+function (Options $options, $value)
+&lt;/code&gt;
+
+The second parameter passed to the closure is the value of
+the option.
+
+The closure should return the normalized value.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$normalizers</code> - An array of closures.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The resolver instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptional"/>
+            <h4><span class="label public">public</span>setOptional<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $optionNames</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets optional options.<pre>This method declares valid option names without setting default values for them.
+If these options are not passed to  and no default has been set
+for them, they will be missing in the final options array. This can be helpful
+if you want to determine whether an option has been set or not because otherwise
+ would trigger an exception for unknown options.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$optionNames</code> - A list of option names.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The resolver instance.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\OptionDefinitionException When trying to pass default values.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setRequired"/>
+            <h4><span class="label public">public</span>setRequired<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $optionNames</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets required options.<pre>If these options are not passed to  and no default has been set for
+them, an exception will be thrown.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$optionNames</code> - A list of option names.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The resolver instance.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\OptionDefinitionException When trying to pass default values.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Text\Table\Table - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#AUTO_SEPARATE_NONE">AUTO_SEPARATE_NONE</a>
+          </li>
+          <li>
+            <a href="#AUTO_SEPARATE_HEADER">AUTO_SEPARATE_HEADER</a>
+          </li>
+          <li>
+            <a href="#AUTO_SEPARATE_FOOTER">AUTO_SEPARATE_FOOTER</a>
+          </li>
+          <li>
+            <a href="#AUTO_SEPARATE_ALL">AUTO_SEPARATE_ALL</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#decorator">$decorator</a>
+          </li>
+          <li>
+            <a href="#columnWidths">$columnWidths</a>
+          </li>
+          <li>
+            <a href="#rows">$rows</a>
+          </li>
+          <li>
+            <a href="#autoSeparate">$autoSeparate</a>
+          </li>
+          <li>
+            <a href="#padding">$padding</a>
+          </li>
+          <li>
+            <a href="#defaultColumnAligns">$defaultColumnAligns</a>
+          </li>
+          <li>
+            <a href="#decoratorManager">$decoratorManager</a>
+          </li>
+          <li>
+            <a href="#inputCharset">$inputCharset</a>
+          </li>
+          <li>
+            <a href="#outputCharset">$outputCharset</a>
+          </li>
+          <li>
+            <a href="#skipOptions">$skipOptions</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__toString">__toString</a>
+          </li>
+          <li>
+            <a href="#appendRow">appendRow</a>
+          </li>
+          <li>
+            <a href="#getDecoratorManager">getDecoratorManager</a>
+          </li>
+          <li>
+            <a href="#getInputCharset">getInputCharset</a>
+          </li>
+          <li>
+            <a href="#getOutputCharset">getOutputCharset</a>
+          </li>
+          <li>
+            <a href="#render">render</a>
+          </li>
+          <li>
+            <a href="#setAutoSeparate">setAutoSeparate</a>
+          </li>
+          <li>
+            <a href="#setColumnWidths">setColumnWidths</a>
+          </li>
+          <li>
+            <a href="#setDecorator">setDecorator</a>
+          </li>
+          <li>
+            <a href="#setDecoratorManager">setDecoratorManager</a>
+          </li>
+          <li>
+            <a href="#setDefaultColumnAlign">setDefaultColumnAlign</a>
+          </li>
+          <li>
+            <a href="#setInputCharset">setInputCharset</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+          <li>
+            <a href="#setOutputCharset">setOutputCharset</a>
+          </li>
+          <li>
+            <a href="#setPadding">setPadding</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Text\Table\</span>Table</h2>
+        <div class="file-notice">
+          <p>Zend\Text\Table\Table enables developers to create tables out of characters</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="AUTO_SEPARATE_NONE"/>AUTO_SEPARATE_NONE = 0x0<em> </em><p><li>Auto separator settings</li></p><hr/></li>
+          <li><a name="AUTO_SEPARATE_HEADER"/>AUTO_SEPARATE_HEADER = 0x1<hr/></li>
+          <li><a name="AUTO_SEPARATE_FOOTER"/>AUTO_SEPARATE_FOOTER = 0x2<hr/></li>
+          <li><a name="AUTO_SEPARATE_ALL"/>AUTO_SEPARATE_ALL = 0x4<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="decorator"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $decorator</h4>
+            <ul class="varlist">
+              <li>Decorator used for the table borders</li>
+            </ul>
+          </li>
+          <li>
+            <a name="columnWidths"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $columnWidths</h4>
+            <ul class="varlist">
+              <li>List of all column widths</li>
+            </ul>
+          </li>
+          <li>
+            <a name="rows"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $rows</h4>
+            <ul class="varlist">
+              <li>Rows of the table</li>
+            </ul>
+          </li>
+          <li>
+            <a name="autoSeparate"/>
+            <h4><span class="label protected">protected</span>integer 
+                
+                $autoSeparate</h4>
+            <ul class="varlist">
+              <li>Auto separation mode</li>
+            </ul>
+          </li>
+          <li>
+            <a name="padding"/>
+            <h4><span class="label protected">protected</span>integer 
+                
+                $padding</h4>
+            <ul class="varlist">
+              <li>Padding for columns</li>
+            </ul>
+          </li>
+          <li>
+            <a name="defaultColumnAligns"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $defaultColumnAligns</h4>
+            <ul class="varlist">
+              <li>Default column aligns for rows created by appendRow(array $data)</li>
+            </ul>
+          </li>
+          <li>
+            <a name="decoratorManager"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $decoratorManager</h4>
+            <ul class="varlist">
+              <li>Plugin loader for decorators</li>
+            </ul>
+          </li>
+          <li>
+            <a name="inputCharset"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $inputCharset</h4>
+            <ul class="varlist">
+              <li>Charset which is used for input by default</li>
+            </ul>
+          </li>
+          <li>
+            <a name="outputCharset"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $outputCharset</h4>
+            <ul class="varlist">
+              <li>Charset which is used internally</li>
+            </ul>
+          </li>
+          <li>
+            <a name="skipOptions"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $skipOptions</h4>
+            <ul class="varlist">
+              <li>Option keys to skip when calling setOptions()</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a basic table object</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - Configuration options</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\UnexpectedValueException When no columns widths were set</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__toString"/>
+            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Magic method which returns the rendered table</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="appendRow"/>
+            <h4><span class="label public">public</span>appendRow<span style="font-size:90%;">( <span class="param-type"><span title="array|Row">array|Row</span></span><strong> $row</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Append a row to the table</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$row</code> - The row to append to the table</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException When $row is neither an array nor Zend_Zext_Table_Row</code>
+                </li>
+                <li>
+                  <code>Exception\OverflowException When a row contains too many columns</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDecoratorManager"/>
+            <h4><span class="label public">public</span>getDecoratorManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the plugin manager for decorators</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInputCharset"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getInputCharset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the input charset for column contents</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getOutputCharset"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getOutputCharset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the output charset for column contents</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="render"/>
+            <h4><span class="label public">public</span>render<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Render the table</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\UnexpectedValueException When no rows were added to the table</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setAutoSeparate"/>
+            <h4><span class="label public">public</span>setAutoSeparate<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $autoSeparate</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set auto separation mode</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$autoSeparate</code> - Auto separation mode</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setColumnWidths"/>
+            <h4><span class="label public">public</span>setColumnWidths<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $columnWidths</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set column widths</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnWidths</code> - Widths of all columns</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException When no columns were supplied</code>
+                </li>
+                <li>
+                  <code>Exception\InvalidArgumentException When a column has an invalid width</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDecorator"/>
+            <h4><span class="label public">public</span>setDecorator<span style="font-size:90%;">( <span class="param-type"><span title="Decorator|string">Decorator|string</span></span><strong> $decorator</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set decorator</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$decorator</code> - Decorator to use</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDecoratorManager"/>
+            <h4><span class="label public">public</span>setDecoratorManager<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Text_Table_DecoratorManager.xhtml">Zend\Text\Table\DecoratorManager</a></span><strong> $decoratorManager</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the plugin manager instance for decorators</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$decoratorManager</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDefaultColumnAlign"/>
+            <h4><span class="label public">public</span>setDefaultColumnAlign<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $columnNum</strong>, <span class="param-type">string</span><strong> $align</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set default column align for rows created by appendRow(array $data)</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnNum</code> - </li>
+                <li><code>$align</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setInputCharset"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setInputCharset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $charset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the input charset for column contents</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$charset</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set options from array</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - Configuration for Table</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOutputCharset"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setOutputCharset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $charset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the output charset for column contents</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$charset</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPadding"/>
+            <h4><span class="label public">public</span>setPadding<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $padding</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the column padding</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$padding</code> - The padding for the columns</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

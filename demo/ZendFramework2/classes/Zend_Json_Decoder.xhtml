@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Json\Decoder - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#EOF">EOF</a>
+          </li>
+          <li>
+            <a href="#DATUM">DATUM</a>
+          </li>
+          <li>
+            <a href="#LBRACE">LBRACE</a>
+          </li>
+          <li>
+            <a href="#LBRACKET">LBRACKET</a>
+          </li>
+          <li>
+            <a href="#RBRACE">RBRACE</a>
+          </li>
+          <li>
+            <a href="#RBRACKET">RBRACKET</a>
+          </li>
+          <li>
+            <a href="#COMMA">COMMA</a>
+          </li>
+          <li>
+            <a href="#COLON">COLON</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#source">$source</a>
+          </li>
+          <li>
+            <a href="#sourceLength">$sourceLength</a>
+          </li>
+          <li>
+            <a href="#offset">$offset</a>
+          </li>
+          <li>
+            <a href="#token">$token</a>
+          </li>
+          <li>
+            <a href="#decodeType">$decodeType</a>
+          </li>
+          <li>
+            <a href="#tokenValue">$tokenValue</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_decodeArray">_decodeArray</a>
+          </li>
+          <li>
+            <a href="#_decodeObject">_decodeObject</a>
+          </li>
+          <li>
+            <a href="#_decodeValue">_decodeValue</a>
+          </li>
+          <li>
+            <a href="#_eatWhitespace">_eatWhitespace</a>
+          </li>
+          <li>
+            <a href="#_getNextToken">_getNextToken</a>
+          </li>
+          <li>
+            <a href="#_utf162utf8">_utf162utf8</a>
+          </li>
+          <li>
+            <a href="#decode">decode</a>
+          </li>
+          <li>
+            <a href="#decodeUnicodeString">decodeUnicodeString</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Json\</span>Decoder</h2>
+        <div class="file-notice">
+          <p>Decode JSON encoded string to PHP variable constructs</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="EOF"/>EOF = 0<em> </em><p><li>Parse tokens used to decode the JSON object. These are not for public consumption, they are just used internally to the class.</li></p><hr/></li>
+          <li><a name="DATUM"/>DATUM = 1<hr/></li>
+          <li><a name="LBRACE"/>LBRACE = 2<hr/></li>
+          <li><a name="LBRACKET"/>LBRACKET = 3<hr/></li>
+          <li><a name="RBRACE"/>RBRACE = 4<hr/></li>
+          <li><a name="RBRACKET"/>RBRACKET = 5<hr/></li>
+          <li><a name="COMMA"/>COMMA = 6<hr/></li>
+          <li><a name="COLON"/>COLON = 7<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="source"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $source</h4>
+            <ul class="varlist">
+              <li>Use to maintain a "pointer" to the source being decoded</li>
+            </ul>
+          </li>
+          <li>
+            <a name="sourceLength"/>
+            <h4><span class="label protected">protected</span>int 
+                
+                $sourceLength</h4>
+            <ul class="varlist">
+              <li>Caches the source length</li>
+            </ul>
+          </li>
+          <li>
+            <a name="offset"/>
+            <h4><span class="label protected">protected</span>int 
+                
+                $offset</h4>
+            <ul class="varlist">
+              <li>The offset within the source being decoded</li>
+            </ul>
+          </li>
+          <li>
+            <a name="token"/>
+            <h4><span class="label protected">protected</span>int 
+                
+                $token</h4>
+            <ul class="varlist">
+              <li>The current token being considered in the parser cycle</li>
+            </ul>
+          </li>
+          <li>
+            <a name="decodeType"/>
+            <h4><span class="label protected">protected</span>int 
+                
+                $decodeType</h4>
+            <ul class="varlist">
+              <li>Flag indicating how objects should be decoded</li>
+            </ul>
+          </li>
+          <li>
+            <a name="tokenValue"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $tokenValue</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label protected">protected</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $source</strong>, <span class="param-type">int</span><strong> $decodeType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$source</code> - String source to decode</li>
+                <li><code>$decodeType</code> - How objects should be decoded -- see</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="decode"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>decode<span style="font-size:90%;">( <span class="param-type">string</span><strong> $source</strong>, <span class="param-type">int</span><strong> $objectDecodeType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Decode a JSON source string<pre>Decodes a JSON encoded string. The value returned will be one of the
+following:
+       - integer
+       - float
+       - boolean
+       - null
+     - StdClass
+     - array
+        - array of one or more of the above types
+By default, decoded objects will be returned as associative arrays; to
+return a StdClass object instead, pass  to
+the $objectDecodeType parameter.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$source</code> - String to be decoded</li>
+                <li><code>$objectDecodeType</code> - How objects should be decoded; should be</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="decodeUnicodeString"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>decodeUnicodeString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $chrs</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Decode Unicode Characters from \u0000 ASCII syntax.<pre>This algorithm was originally developed for the
+Solar Framework by Paul M. Jones</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$chrs</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_decodeArray"/>
+            <h4><span class="label protected">protected</span>_decodeArray<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Decodes a JSON array format:    [element, element2,...,elementN]</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_decodeObject"/>
+            <h4><span class="label protected">protected</span>_decodeObject<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Decodes an object of the form:  { "attribute: value, "attribute2" : value,...}<pre>If Zend_Json_Encoder was used to encode the original object then
+a special attribute called __className which specifies a class
+name that should wrap the data contained within the encoded source.
+
+Decodes to either an array or StdClass object, based on the value of
+{@link $decodeType}. If invalid $decodeType present, returns as an
+array.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_decodeValue"/>
+            <h4><span class="label protected">protected</span>_decodeValue<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Recursive driving routine for supported toplevel tops</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_eatWhitespace"/>
+            <h4><span class="label protected">protected</span>_eatWhitespace<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes whitespace characters from the source input</li>
+            </p>
+          </li>
+          <li>
+            <a name="_getNextToken"/>
+            <h4><span class="label protected">protected</span>_getNextToken<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieves the next token from the source stream</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Token constant value specified in class definition</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_utf162utf8"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>_utf162utf8<span style="font-size:90%;">( <span class="param-type">string</span><strong> $utf16</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Convert a string from one UTF-16 char to one UTF-8 char.<pre>Normally should be handled by mb_convert_encoding, but
+provides a slower PHP-only method for installations
+that lack the multibyte string extension.
+
+This method is from the Solar Framework by Paul M. Jones</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$utf16</code> - UTF-16 character</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>UTF-8 character</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

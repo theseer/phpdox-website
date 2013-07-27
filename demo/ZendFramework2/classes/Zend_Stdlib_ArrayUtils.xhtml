@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Stdlib\ArrayUtils - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#hasIntegerKeys">hasIntegerKeys</a>
+          </li>
+          <li>
+            <a href="#hasNumericKeys">hasNumericKeys</a>
+          </li>
+          <li>
+            <a href="#hasStringKeys">hasStringKeys</a>
+          </li>
+          <li>
+            <a href="#isHashTable">isHashTable</a>
+          </li>
+          <li>
+            <a href="#isList">isList</a>
+          </li>
+          <li>
+            <a href="#iteratorToArray">iteratorToArray</a>
+          </li>
+          <li>
+            <a href="#merge">merge</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Stdlib\</span>ArrayUtils</h2>
+        <div class="file-notice">
+          <p>Utility class for testing and manipulation of PHP arrays.</p>
+          <p>
+            <pre>Declared abstract, as we have no need for instantiation.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="hasIntegerKeys"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>hasIntegerKeys<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $allowEmpty</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Test whether an array contains one or more integer keys</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$allowEmpty</code> - Should an empty array() return true</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasNumericKeys"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>hasNumericKeys<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $allowEmpty</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Test whether an array contains one or more numeric keys.<pre>A numeric key can be one of the following:
+- an integer 1,
+- a string with a number '20'
+- a string with negative number: '-1000'
+- a float: 2.2120, -78.150999
+- a string with float:  '4000.99999', '-10.10'</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$allowEmpty</code> - Should an empty array() return true</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasStringKeys"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>hasStringKeys<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $allowEmpty</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Test whether an array contains one or more string keys</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$allowEmpty</code> - Should an empty array() return true</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isHashTable"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>isHashTable<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $allowEmpty</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Test whether an array is a hash table.<pre>An array is a hash table if:
+
+1. Contains one or more non-integer keys, or
+2. Integer keys are non-continuous or misaligned (not starting with 0)
+
+For example:
+&lt;code&gt;
+$hash = array(
+    'foo' =&gt; 15,
+    'bar' =&gt; false,
+);
+$hash = array(
+    1995  =&gt; 'Birth of PHP',
+    2009  =&gt; 'PHP 5.3.0',
+    2012  =&gt; 'PHP 5.4.0',
+);
+$hash = array(
+    'formElement,
+    'options' =&gt; array( 'debug' =&gt; true ),
+);
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$allowEmpty</code> - Is an empty array() a valid hash table?</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isList"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>isList<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $allowEmpty</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Test whether an array is a list<pre>A list is a collection of values assigned to continuous integer keys
+starting at 0 and ending at count() - 1.
+
+For example:
+&lt;code&gt;
+$list = array( 'a','b','c','d' );
+$list = array(
+    0 =&gt; 'foo',
+    1 =&gt; 'bar',
+    2 =&gt; array( 'foo' =&gt; 'baz' ),
+);
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$allowEmpty</code> - Is an empty list a valid list?</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="iteratorToArray"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>iteratorToArray<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $iterator</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $recursive</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Convert an iterator to an array.<pre>Converts an iterator to an array. The $recursive flag, on by default,
+hints whether or not you want to do so recursively.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$iterator</code> - The array or Traversable object to convert</li>
+                <li><code>$recursive</code> - Recursively check all nested structures</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException if $iterator is not an array or a Traversable object</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="merge"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>merge<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $a</strong>, <span class="param-type">Array</span><strong> $b</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Merge two arrays together.<pre>If an integer key exists in both arrays, the value from the second array
+will be appended the the first array. If both values are arrays, they
+are merged together, else the value of the second array overwrites the
+one of the first array.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$a</code> - </li>
+                <li><code>$b</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

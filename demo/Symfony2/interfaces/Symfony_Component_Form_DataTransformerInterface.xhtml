@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Form\DataTransformerInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#reverseTransform">reverseTransform</a>
+          </li>
+          <li>
+            <a href="#transform">transform</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Form\</span>DataTransformerInterface</h2>
+        <div class="file-notice">
+          <p>Transforms a value between different representations.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="reverseTransform"/>
+            <h4><span class="label public">public</span>reverseTransform<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Transforms a value from the transformed representation to its original representation.<pre>This method is called when  is called to transform the requests tainted data
+into an acceptable format for your data processing/model layer.
+This method must be able to deal with empty values. Usually this will
+be an empty string, but depending on your implementation other empty
+values are possible as well (such as empty strings). The reasoning behind
+this is that value transformers must be chainable. If the
+reverseTransform() method of the first value transformer outputs an
+empty string, the second value transformer must be able to process that
+value.
+By convention, reverseTransform() should return NULL if an empty string
+is passed.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The value in the transformed representation</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The value in the original representation</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>TransformationFailedException When the transformation fails.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="transform"/>
+            <h4><span class="label public">public</span>transform<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Transforms a value from the original representation to a transformed representation.<pre>This method is called on two occasions inside a form field:
+1. When the form field is initialized with the data attached from the datasource (object or array).
+2. When data from a request is submitted using  to transform the new input data
+   back into the renderable format. For example if you have a date field and submit '2009-10-10'
+   you might accept this value because its easily parsed, but the transformer still writes back
+   "2009/10/10" onto the form field (for further displaying or other purposes).
+This method must be able to deal with empty values. Usually this will
+be NULL, but depending on your implementation other empty values are
+possible as well (such as empty strings). The reasoning behind this is
+that value transformers must be chainable. If the transform() method
+of the first value transformer outputs NULL, the second value transformer
+must be able to process that value.
+By convention, transform() should return an empty string if NULL is
+passed.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The value in the original representation</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The value in the transformed representation</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>TransformationFailedException When the transformation fails.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

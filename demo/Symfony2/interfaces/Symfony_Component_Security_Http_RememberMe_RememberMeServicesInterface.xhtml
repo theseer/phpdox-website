@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Security\Http\RememberMe\RememberMeServicesInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#COOKIE_ATTR_NAME">COOKIE_ATTR_NAME</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#autoLogin">autoLogin</a>
+          </li>
+          <li>
+            <a href="#loginFail">loginFail</a>
+          </li>
+          <li>
+            <a href="#loginSuccess">loginSuccess</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Security\Http\RememberMe\</span>RememberMeServicesInterface</h2>
+        <div class="file-notice">
+          <p>Interface that needs to be implemented by classes which provide remember-me capabilities.</p>
+          <p>
+            <pre>We provide two implementations out-of-the-box:
+- TokenBasedRememberMeServices (does not require a TokenProvider)
+- PersistentTokenBasedRememberMeServices (requires a TokenProvider)</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="COOKIE_ATTR_NAME"/>COOKIE_ATTR_NAME = '_security_remember_me_cookie'<em> string</em><p><li>This attribute name can be used by the implementation if it needs to set a cookie on the Request when there is no actual Response, yet.</li></p><hr/></li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="autoLogin"/>
+            <h4><span class="label public">public</span>autoLogin<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>This method will be called whenever the SecurityContext does not contain an TokenInterface object and the framework wishes to provide an implementation with an opportunity to authenticate the request using remember-me capabilities.<pre>No attempt whatsoever is made to determine whether the browser has requested
+remember-me services or presented a valid cookie. Any and all such determinations
+are left to the implementation of this method.
+
+If a browser has presented an unauthorised cookie for whatever reason,
+make sure to throw an AuthenticationException as this will consequentially
+result in a call to loginFail() and therefore an invalidation of the cookie.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="loginFail"/>
+            <h4><span class="label public">public</span>loginFail<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Called whenever an interactive authentication attempt was made, but the credentials supplied by the user were missing or otherwise invalid.<pre>This method needs to take care of invalidating the cookie.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="loginSuccess"/>
+            <h4><span class="label public">public</span>loginSuccess<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong>, <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Response.xhtml">Symfony\Component\HttpFoundation\Response</a></span><strong> $response</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Core_Authentication_Token_TokenInterface.xhtml">Symfony\Component\Security\Core\Authentication\Token\TokenInterface</a></span><strong> $token</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Called whenever an interactive authentication attempt is successful (e.g. a form login).<pre>An implementation may always set a remember-me cookie in the Response,
+although this is not recommended.
+
+Instead, implementations should typically look for a request parameter
+(such as a HTTP POST parameter) that indicates the browser has explicitly
+requested for the authentication to be remembered.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - </li>
+                <li><code>$response</code> - </li>
+                <li><code>$token</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

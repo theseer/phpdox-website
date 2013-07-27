@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Form\Form - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#config">$config</a>
+          </li>
+          <li>
+            <a href="#parent">$parent</a>
+          </li>
+          <li>
+            <a href="#children">$children</a>
+          </li>
+          <li>
+            <a href="#errors">$errors</a>
+          </li>
+          <li>
+            <a href="#submitted">$submitted</a>
+          </li>
+          <li>
+            <a href="#modelData">$modelData</a>
+          </li>
+          <li>
+            <a href="#normData">$normData</a>
+          </li>
+          <li>
+            <a href="#viewData">$viewData</a>
+          </li>
+          <li>
+            <a href="#extraData">$extraData</a>
+          </li>
+          <li>
+            <a href="#synchronized">$synchronized</a>
+          </li>
+          <li>
+            <a href="#defaultDataSet">$defaultDataSet</a>
+          </li>
+          <li>
+            <a href="#lockSetData">$lockSetData</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__clone">__clone</a>
+          </li>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#add">add</a>
+          </li>
+          <li>
+            <a href="#addError">addError</a>
+          </li>
+          <li>
+            <a href="#all">all</a>
+          </li>
+          <li>
+            <a href="#bind">bind</a>
+          </li>
+          <li>
+            <a href="#count">count</a>
+          </li>
+          <li>
+            <a href="#createView">createView</a>
+          </li>
+          <li>
+            <a href="#get">get</a>
+          </li>
+          <li>
+            <a href="#getConfig">getConfig</a>
+          </li>
+          <li>
+            <a href="#getData">getData</a>
+          </li>
+          <li>
+            <a href="#getErrors">getErrors</a>
+          </li>
+          <li>
+            <a href="#getErrorsAsString">getErrorsAsString</a>
+          </li>
+          <li>
+            <a href="#getExtraData">getExtraData</a>
+          </li>
+          <li>
+            <a href="#getIterator">getIterator</a>
+          </li>
+          <li>
+            <a href="#getName">getName</a>
+          </li>
+          <li>
+            <a href="#getNormData">getNormData</a>
+          </li>
+          <li>
+            <a href="#getParent">getParent</a>
+          </li>
+          <li>
+            <a href="#getPropertyPath">getPropertyPath</a>
+          </li>
+          <li>
+            <a href="#getRoot">getRoot</a>
+          </li>
+          <li>
+            <a href="#getViewData">getViewData</a>
+          </li>
+          <li>
+            <a href="#handleRequest">handleRequest</a>
+          </li>
+          <li>
+            <a href="#has">has</a>
+          </li>
+          <li>
+            <a href="#initialize">initialize</a>
+          </li>
+          <li>
+            <a href="#isBound">isBound</a>
+          </li>
+          <li>
+            <a href="#isDisabled">isDisabled</a>
+          </li>
+          <li>
+            <a href="#isEmpty">isEmpty</a>
+          </li>
+          <li>
+            <a href="#isRequired">isRequired</a>
+          </li>
+          <li>
+            <a href="#isRoot">isRoot</a>
+          </li>
+          <li>
+            <a href="#isSubmitted">isSubmitted</a>
+          </li>
+          <li>
+            <a href="#isSynchronized">isSynchronized</a>
+          </li>
+          <li>
+            <a href="#isValid">isValid</a>
+          </li>
+          <li>
+            <a href="#modelToNorm">modelToNorm</a>
+          </li>
+          <li>
+            <a href="#normToModel">normToModel</a>
+          </li>
+          <li>
+            <a href="#normToView">normToView</a>
+          </li>
+          <li>
+            <a href="#offsetExists">offsetExists</a>
+          </li>
+          <li>
+            <a href="#offsetGet">offsetGet</a>
+          </li>
+          <li>
+            <a href="#offsetSet">offsetSet</a>
+          </li>
+          <li>
+            <a href="#offsetUnset">offsetUnset</a>
+          </li>
+          <li>
+            <a href="#remove">remove</a>
+          </li>
+          <li>
+            <a href="#setData">setData</a>
+          </li>
+          <li>
+            <a href="#setParent">setParent</a>
+          </li>
+          <li>
+            <a href="#submit">submit</a>
+          </li>
+          <li>
+            <a href="#viewToNorm">viewToNorm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Form\</span>Form</h2>
+        <div class="file-notice">
+          <p>Form represents a form.</p>
+          <p>
+            <pre>To implement your own form fields, you need to have a thorough understanding
+of the data flow within a form. A form stores its data in three different
+representations:
+
+  (1) the "model" format required by the form's object
+  (2) the "normalized" format for internal processing
+  (3) the "view" format used for display
+
+A date field, for example, may store a date as "Y-m-d" string (1) in the
+object. To facilitate processing in the field, this value is normalized
+to a DateTime object (2). In the HTML representation of your form, a
+localized string (3) is presented to and modified by the user.
+
+In most cases, format (1) and format (2) will be the same. For example,
+a checkbox field uses a Boolean value for both internal processing and
+storage in the object. In these cases you simply need to set a value
+transformer to convert between formats (2) and (3). You can do this by
+calling addViewTransformer().
+
+In some cases though it makes sense to make format (1) configurable. To
+demonstrate this, let's extend our above date field to store the value
+either as "Y-m-d" string or as timestamp. Internally we still want to
+use a DateTime object for processing. To convert the data from string/integer
+to DateTime you can set a normalization transformer by calling
+addNormTransformer(). The normalized data is then converted to the displayed
+data as described before.
+
+The conversions (1) -&gt; (2) -&gt; (3) use the transform methods of the transformers.
+The conversions (3) -&gt; (2) -&gt; (1) use the reverseTransform methods of the transformers.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <span title="IteratorAggregate">IteratorAggregate</span>
+          </li>
+          <li>
+            <a href="../interfaces/Symfony_Component_Form_FormInterface.xhtml">Symfony\Component\Form\FormInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="config"/>
+            <h4><span class="label private">private</span>object 
+                
+                $config</h4>
+            <ul class="varlist">
+              <li>The form's configuration</li>
+            </ul>
+          </li>
+          <li>
+            <a name="parent"/>
+            <h4><span class="label private">private</span>object 
+                
+                $parent</h4>
+            <ul class="varlist">
+              <li>The parent of this form</li>
+            </ul>
+          </li>
+          <li>
+            <a name="children"/>
+            <h4><span class="label private">private</span>array 
+                
+                $children</h4>
+            <ul class="varlist">
+              <li>The children of this form</li>
+            </ul>
+          </li>
+          <li>
+            <a name="errors"/>
+            <h4><span class="label private">private</span>array 
+                
+                $errors</h4>
+            <ul class="varlist">
+              <li>The errors of this form</li>
+            </ul>
+          </li>
+          <li>
+            <a name="submitted"/>
+            <h4><span class="label private">private</span>object 
+                
+                $submitted</h4>
+            <ul class="varlist">
+              <li>Whether this form was submitted</li>
+            </ul>
+          </li>
+          <li>
+            <a name="modelData"/>
+            <h4><span class="label private">private</span>mixed 
+                
+                $modelData</h4>
+            <ul class="varlist">
+              <li>The form data in model format</li>
+            </ul>
+          </li>
+          <li>
+            <a name="normData"/>
+            <h4><span class="label private">private</span>mixed 
+                
+                $normData</h4>
+            <ul class="varlist">
+              <li>The form data in normalized format</li>
+            </ul>
+          </li>
+          <li>
+            <a name="viewData"/>
+            <h4><span class="label private">private</span>mixed 
+                
+                $viewData</h4>
+            <ul class="varlist">
+              <li>The form data in view format</li>
+            </ul>
+          </li>
+          <li>
+            <a name="extraData"/>
+            <h4><span class="label private">private</span>array 
+                
+                $extraData</h4>
+            <ul class="varlist">
+              <li>The submitted values that don't belong to any children</li>
+            </ul>
+          </li>
+          <li>
+            <a name="synchronized"/>
+            <h4><span class="label private">private</span>object 
+                
+                $synchronized</h4>
+            <ul class="varlist">
+              <li>Whether the data in model, normalized and view format is synchronized. Data may not be synchronized if transformation errors occur.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="defaultDataSet"/>
+            <h4><span class="label private">private</span>object 
+                
+                $defaultDataSet</h4>
+            <ul class="varlist">
+              <li>Whether the form's data has been initialized.<pre>When the data is initialized with its default value, that default value
+is passed through the transformer chain in order to synchronize the
+model, normalized and view format for the first time. This is done
+lazily in order to save performance when  is called
+manually, making the initialization with the configured default value
+superfluous.
+</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="lockSetData"/>
+            <h4><span class="label private">private</span>object 
+                
+                $lockSetData</h4>
+            <ul class="varlist">
+              <li>Whether setData() is currently being called.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Form_FormConfigInterface.xhtml">Symfony\Component\Form\FormConfigInterface</a></span><strong> $config</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a new form based on the given configuration.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$config</code> - The form configuration.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>LogicException if a data mapper is not provided for a compound form</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__clone"/>
+            <h4><span class="label public">public</span>__clone<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="add"/>
+            <h4><span class="label public">public</span>add<span style="font-size:90%;">( <span class="param-type"/><strong> $child</strong>, <span class="param-type"/><strong> $type</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="addError"/>
+            <h4><span class="label public">public</span>addError<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormError.xhtml">Symfony\Component\Form\FormError</a></span><strong> $error</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="all"/>
+            <h4><span class="label public">public</span>all<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="bind"/>
+            <h4><span class="label public">public</span>bind<span style="font-size:90%;">( <span class="param-type"/><strong> $submittedData</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Alias of {@link submit()}.</li>
+            </p>
+          </li>
+          <li>
+            <a name="count"/>
+            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the number of form children (implements the \Countable interface).</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The number of embedded form children</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createView"/>
+            <h4><span class="label public">public</span>createView<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Form_FormView.xhtml">Symfony\Component\Form\FormView</a></span><strong> $parent</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="get"/>
+            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getConfig"/>
+            <h4><span class="label public">public</span>getConfig<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getData"/>
+            <h4><span class="label public">public</span>getData<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getErrors"/>
+            <h4><span class="label public">public</span>getErrors<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getErrorsAsString"/>
+            <h4><span class="label public">public</span>getErrorsAsString<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $level</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a string representation of all form errors (including children errors).<pre>This method should only be used to help debug a form.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$level</code> - The indentation level (used internally)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A string representation of all errors</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getExtraData"/>
+            <h4><span class="label public">public</span>getExtraData<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getIterator"/>
+            <h4><span class="label public">public</span>getIterator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the iterator for this group.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getName"/>
+            <h4><span class="label public">public</span>getName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getNormData"/>
+            <h4><span class="label public">public</span>getNormData<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getParent"/>
+            <h4><span class="label public">public</span>getParent<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getPropertyPath"/>
+            <h4><span class="label public">public</span>getPropertyPath<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getRoot"/>
+            <h4><span class="label public">public</span>getRoot<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getViewData"/>
+            <h4><span class="label public">public</span>getViewData<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="handleRequest"/>
+            <h4><span class="label public">public</span>handleRequest<span style="font-size:90%;">( <span class="param-type"/><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="has"/>
+            <h4><span class="label public">public</span>has<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="initialize"/>
+            <h4><span class="label public">public</span>initialize<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="isBound"/>
+            <h4><span class="label public">public</span>isBound<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Alias of {@link isSubmitted()}.</li>
+            </p>
+          </li>
+          <li>
+            <a name="isDisabled"/>
+            <h4><span class="label public">public</span>isDisabled<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="isEmpty"/>
+            <h4><span class="label public">public</span>isEmpty<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="isRequired"/>
+            <h4><span class="label public">public</span>isRequired<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="isRoot"/>
+            <h4><span class="label public">public</span>isRoot<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="isSubmitted"/>
+            <h4><span class="label public">public</span>isSubmitted<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="isSynchronized"/>
+            <h4><span class="label public">public</span>isSynchronized<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="isValid"/>
+            <h4><span class="label public">public</span>isValid<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="offsetExists"/>
+            <h4><span class="label public">public</span>offsetExists<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether a child with the given name exists (implements the \ArrayAccess interface).</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - The name of the child</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetGet"/>
+            <h4><span class="label public">public</span>offsetGet<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the child with the given name (implements the \ArrayAccess interface).</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - The name of the child</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The child form</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\OutOfBoundsException If the named child does not exist.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetSet"/>
+            <h4><span class="label public">public</span>offsetSet<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type"><span title="FormInterface">FormInterface</span></span><strong> $child</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a child to the form (implements the \ArrayAccess interface).</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - Ignored. The name of the child is used.</li>
+                <li><code>$child</code> - The child to be added.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AlreadySubmittedException If the form has already been submitted.</code>
+                </li>
+                <li>
+                  <code>LogicException            When trying to add a child to a non-compound form.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetUnset"/>
+            <h4><span class="label public">public</span>offsetUnset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes the child with the given name from the form (implements the \ArrayAccess interface).</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - The name of the child to remove</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AlreadySubmittedException If the form has already been submitted.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="remove"/>
+            <h4><span class="label public">public</span>remove<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="setData"/>
+            <h4><span class="label public">public</span>setData<span style="font-size:90%;">( <span class="param-type"/><strong> $modelData</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="setParent"/>
+            <h4><span class="label public">public</span>setParent<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Form_FormInterface.xhtml">Symfony\Component\Form\FormInterface</a></span><strong> $parent</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="submit"/>
+            <h4><span class="label public">public</span>submit<span style="font-size:90%;">( <span class="param-type"/><strong> $submittedData</strong>, <span class="param-type"/><strong> $clearMissing</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="modelToNorm"/>
+            <h4><span class="label private">private</span>modelToNorm<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Normalizes the value if a normalization transformer is set.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The value to transform</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="normToModel"/>
+            <h4><span class="label private">private</span>normToModel<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Reverse transforms a value if a normalization transformer is set.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The value to reverse transform</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="normToView"/>
+            <h4><span class="label private">private</span>normToView<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Transforms the value if a value transformer is set.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The value to transform</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="viewToNorm"/>
+            <h4><span class="label private">private</span>viewToNorm<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Reverse transforms a value if a value transformer is set.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The value to reverse transform</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

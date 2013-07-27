@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\ProgressBar\Adapter\Console - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#ELEMENT_PERCENT">ELEMENT_PERCENT</a>
+          </li>
+          <li>
+            <a href="#ELEMENT_BAR">ELEMENT_BAR</a>
+          </li>
+          <li>
+            <a href="#ELEMENT_ETA">ELEMENT_ETA</a>
+          </li>
+          <li>
+            <a href="#ELEMENT_TEXT">ELEMENT_TEXT</a>
+          </li>
+          <li>
+            <a href="#FINISH_ACTION_EOL">FINISH_ACTION_EOL</a>
+          </li>
+          <li>
+            <a href="#FINISH_ACTION_CLEAR_LINE">FINISH_ACTION_CLEAR_LINE</a>
+          </li>
+          <li>
+            <a href="#FINISH_ACTION_NONE">FINISH_ACTION_NONE</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#width">$width</a>
+          </li>
+          <li>
+            <a href="#elements">$elements</a>
+          </li>
+          <li>
+            <a href="#finishAction">$finishAction</a>
+          </li>
+          <li>
+            <a href="#barWidth">$barWidth</a>
+          </li>
+          <li>
+            <a href="#barLeftChar">$barLeftChar</a>
+          </li>
+          <li>
+            <a href="#barIndicatorChar">$barIndicatorChar</a>
+          </li>
+          <li>
+            <a href="#barRightChar">$barRightChar</a>
+          </li>
+          <li>
+            <a href="#outputStream">$outputStream</a>
+          </li>
+          <li>
+            <a href="#textWidth">$textWidth</a>
+          </li>
+          <li>
+            <a href="#outputStarted">$outputStarted</a>
+          </li>
+          <li>
+            <a href="#charset">$charset</a>
+          </li>
+          <li>
+            <a href="#skipOptions">$skipOptions</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__destruct">__destruct</a>
+          </li>
+          <li>
+            <a href="#_calculateBarWidth">_calculateBarWidth</a>
+          </li>
+          <li>
+            <a href="#_outputData">_outputData</a>
+          </li>
+          <li>
+            <a href="#finish">finish</a>
+          </li>
+          <li>
+            <a href="#finish">finish</a>
+          </li>
+          <li>
+            <a href="#getOutputStream">getOutputStream</a>
+          </li>
+          <li>
+            <a href="#notify">notify</a>
+          </li>
+          <li>
+            <a href="#notify">notify</a>
+          </li>
+          <li>
+            <a href="#setBarIndicatorChar">setBarIndicatorChar</a>
+          </li>
+          <li>
+            <a href="#setBarLeftChar">setBarLeftChar</a>
+          </li>
+          <li>
+            <a href="#setBarRightChar">setBarRightChar</a>
+          </li>
+          <li>
+            <a href="#setCharset">setCharset</a>
+          </li>
+          <li>
+            <a href="#setElements">setElements</a>
+          </li>
+          <li>
+            <a href="#setFinishAction">setFinishAction</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+          <li>
+            <a href="#setOutputStream">setOutputStream</a>
+          </li>
+          <li>
+            <a href="#setTextWidth">setTextWidth</a>
+          </li>
+          <li>
+            <a href="#setWidth">setWidth</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\ProgressBar\Adapter\</span>Console</h2>
+        <div class="file-notice">
+          <p>Zend_ProgressBar_Adapter_Console offers a text-based progressbar for console applications</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="ELEMENT_PERCENT"/>ELEMENT_PERCENT = 'ELEMENT_PERCENT'<em> </em><p><li>Percentage value of the progress</li></p><hr/></li>
+          <li><a name="ELEMENT_BAR"/>ELEMENT_BAR = 'ELEMENT_BAR'<em> </em><p><li>Visual value of the progress</li></p><hr/></li>
+          <li><a name="ELEMENT_ETA"/>ELEMENT_ETA = 'ELEMENT_ETA'<em> </em><p><li>ETA of the progress</li></p><hr/></li>
+          <li><a name="ELEMENT_TEXT"/>ELEMENT_TEXT = 'ELEMENT_TEXT'<em> </em><p><li>Text part of the progress</li></p><hr/></li>
+          <li><a name="FINISH_ACTION_EOL"/>FINISH_ACTION_EOL = 'FINISH_ACTION_EOL'<em> </em><p><li>Finish action: End of Line</li></p><hr/></li>
+          <li><a name="FINISH_ACTION_CLEAR_LINE"/>FINISH_ACTION_CLEAR_LINE = 'FINISH_ACTION_CLEAR_LINE'<em> </em><p><li>Finish action: Clear Line</li></p><hr/></li>
+          <li><a name="FINISH_ACTION_NONE"/>FINISH_ACTION_NONE = 'FINISH_ACTION_NONE'<em> </em><p><li>Finish action: None</li></p><hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="width"/>
+            <h4><span class="label protected">protected</span>integer 
+                
+                $width</h4>
+            <ul class="varlist">
+              <li>Width of the progressbar</li>
+            </ul>
+          </li>
+          <li>
+            <a name="elements"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $elements</h4>
+            <ul class="varlist">
+              <li>Elements to display</li>
+            </ul>
+          </li>
+          <li>
+            <a name="finishAction"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $finishAction</h4>
+            <ul class="varlist">
+              <li>Which action to do at finish call</li>
+            </ul>
+          </li>
+          <li>
+            <a name="barWidth"/>
+            <h4><span class="label protected">protected</span>integer 
+                
+                $barWidth</h4>
+            <ul class="varlist">
+              <li>Width of the bar element</li>
+            </ul>
+          </li>
+          <li>
+            <a name="barLeftChar"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $barLeftChar</h4>
+            <ul class="varlist">
+              <li>Left character(s) within the bar</li>
+            </ul>
+          </li>
+          <li>
+            <a name="barIndicatorChar"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $barIndicatorChar</h4>
+            <ul class="varlist">
+              <li>Indicator character(s) within the bar</li>
+            </ul>
+          </li>
+          <li>
+            <a name="barRightChar"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $barRightChar</h4>
+            <ul class="varlist">
+              <li>Right character(s) within the bar</li>
+            </ul>
+          </li>
+          <li>
+            <a name="outputStream"/>
+            <h4><span class="label protected">protected</span>resource 
+                
+                $outputStream</h4>
+            <ul class="varlist">
+              <li>Output-stream, when STDOUT is not defined (e.g. in CGI) or set manually</li>
+            </ul>
+          </li>
+          <li>
+            <a name="textWidth"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $textWidth</h4>
+            <ul class="varlist">
+              <li>Width of the text element</li>
+            </ul>
+          </li>
+          <li>
+            <a name="outputStarted"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $outputStarted</h4>
+            <ul class="varlist">
+              <li>Whether the output started yet or not</li>
+            </ul>
+          </li>
+          <li>
+            <a name="charset"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $charset</h4>
+            <ul class="varlist">
+              <li>Charset of text element</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="array|\Traversable">Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Defined by Zend_ProgressBar_Adapter</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Destructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__destruct"/>
+            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Close local stdout, when open</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="finish"/>
+            <h4><span class="label public">public</span>finish<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Defined by Zend\ProgressBar\Adapter\AbstractAdapter</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="finish"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>finish<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Called when the progress is explicitly finished</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getOutputStream"/>
+            <h4><span class="label public">public</span>getOutputStream<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the current output stream</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="notify"/>
+            <h4><span class="label public">public</span>notify<span style="font-size:90%;">( <span class="param-type">float</span><strong> $current</strong>, <span class="param-type">float</span><strong> $max</strong>, <span class="param-type">float</span><strong> $percent</strong>, <span class="param-type">integer</span><strong> $timeTaken</strong>, <span class="param-type">integer</span><strong> $timeRemaining</strong>, <span class="param-type">string</span><strong> $text</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Defined by Zend\ProgressBar\Adapter\AbstractAdapter</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$current</code> - Current progress value</li>
+                <li><code>$max</code> - Max progress value</li>
+                <li><code>$percent</code> - Current percent value</li>
+                <li><code>$timeTaken</code> - Taken time in seconds</li>
+                <li><code>$timeRemaining</code> - Remaining time in seconds</li>
+                <li><code>$text</code> - Status text</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="notify"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>notify<span style="font-size:90%;">( <span class="param-type">float</span><strong> $current</strong>, <span class="param-type">float</span><strong> $max</strong>, <span class="param-type">float</span><strong> $percent</strong>, <span class="param-type">integer</span><strong> $timeTaken</strong>, <span class="param-type">integer</span><strong> $timeRemaining</strong>, <span class="param-type">string</span><strong> $text</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Notify the adapter about an update</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$current</code> - Current progress value</li>
+                <li><code>$max</code> - Max progress value</li>
+                <li><code>$percent</code> - Current percent value</li>
+                <li><code>$timeTaken</code> - Taken time in seconds</li>
+                <li><code>$timeRemaining</code> - Remaining time in seconds</li>
+                <li><code>$text</code> - Status text</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setBarIndicatorChar"/>
+            <h4><span class="label public">public</span>setBarIndicatorChar<span style="font-size:90%;">( <span class="param-type">string</span><strong> $char</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the indicator character for the bar</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$char</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setBarLeftChar"/>
+            <h4><span class="label public">public</span>setBarLeftChar<span style="font-size:90%;">( <span class="param-type">string</span><strong> $char</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the left-hand character for the bar</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$char</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\ProgressBar\Adapter\Exception\InvalidArgumentException When character is empty</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setBarRightChar"/>
+            <h4><span class="label public">public</span>setBarRightChar<span style="font-size:90%;">( <span class="param-type">string</span><strong> $char</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the right-hand character for the bar</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$char</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\ProgressBar\Adapter\Exception\InvalidArgumentException When character is empty</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCharset"/>
+            <h4><span class="label public">public</span>setCharset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $charset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the charset of the text element</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$charset</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setElements"/>
+            <h4><span class="label public">public</span>setElements<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $elements</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the elements to display with the progressbar</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$elements</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\ProgressBar\Adapter\Exception\InvalidArgumentException When an invalid element is found in the array</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFinishAction"/>
+            <h4><span class="label public">public</span>setFinishAction<span style="font-size:90%;">( <span class="param-type">string</span><strong> $action</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the finish action</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$action</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\ProgressBar\Adapter\Exception\InvalidArgumentException When an invalid action is specified</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set options via an array</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOutputStream"/>
+            <h4><span class="label public">public</span>setOutputStream<span style="font-size:90%;">( <span class="param-type">string</span><strong> $resource</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set a different output-stream</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$resource</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTextWidth"/>
+            <h4><span class="label public">public</span>setTextWidth<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $width</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the width of the text element</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$width</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setWidth"/>
+            <h4><span class="label public">public</span>setWidth<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $width</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the width of the progressbar</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$width</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_calculateBarWidth"/>
+            <h4><span class="label protected">protected</span>_calculateBarWidth<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Calculate the bar width when other elements changed</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_outputData"/>
+            <h4><span class="label protected">protected</span>_outputData<span style="font-size:90%;">( <span class="param-type">string</span><strong> $data</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Outputs given data to STDOUT.<pre>This split-off is required for unit-testing.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$data</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

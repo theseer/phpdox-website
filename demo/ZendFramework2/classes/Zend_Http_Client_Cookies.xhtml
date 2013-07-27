@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Http\Client\Cookies - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#COOKIE_OBJECT">COOKIE_OBJECT</a>
+          </li>
+          <li>
+            <a href="#COOKIE_STRING_ARRAY">COOKIE_STRING_ARRAY</a>
+          </li>
+          <li>
+            <a href="#COOKIE_STRING_CONCAT">COOKIE_STRING_CONCAT</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#cookies">$cookies</a>
+          </li>
+          <li>
+            <a href="#rawCookies">$rawCookies</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_flattenCookiesArray">_flattenCookiesArray</a>
+          </li>
+          <li>
+            <a href="#_matchDomain">_matchDomain</a>
+          </li>
+          <li>
+            <a href="#_matchPath">_matchPath</a>
+          </li>
+          <li>
+            <a href="#addCookie">addCookie</a>
+          </li>
+          <li>
+            <a href="#addCookiesFromResponse">addCookiesFromResponse</a>
+          </li>
+          <li>
+            <a href="#count">count</a>
+          </li>
+          <li>
+            <a href="#fromArray">fromArray</a>
+          </li>
+          <li>
+            <a href="#fromResponse">fromResponse</a>
+          </li>
+          <li>
+            <a href="#fromString">fromString</a>
+          </li>
+          <li>
+            <a href="#get">get</a>
+          </li>
+          <li>
+            <a href="#getAllCookies">getAllCookies</a>
+          </li>
+          <li>
+            <a href="#getCookie">getCookie</a>
+          </li>
+          <li>
+            <a href="#getIterator">getIterator</a>
+          </li>
+          <li>
+            <a href="#getMatchingCookies">getMatchingCookies</a>
+          </li>
+          <li>
+            <a href="#isEmpty">isEmpty</a>
+          </li>
+          <li>
+            <a href="#offsetExists">offsetExists</a>
+          </li>
+          <li>
+            <a href="#offsetGet">offsetGet</a>
+          </li>
+          <li>
+            <a href="#offsetSet">offsetSet</a>
+          </li>
+          <li>
+            <a href="#offsetUnset">offsetUnset</a>
+          </li>
+          <li>
+            <a href="#reset">reset</a>
+          </li>
+          <li>
+            <a href="#serialize">serialize</a>
+          </li>
+          <li>
+            <a href="#set">set</a>
+          </li>
+          <li>
+            <a href="#toArray">toArray</a>
+          </li>
+          <li>
+            <a href="#toString">toString</a>
+          </li>
+          <li>
+            <a href="#unserialize">unserialize</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Http\Client\</span>Cookies</h2>
+        <div class="file-notice">
+          <p>A Cookies object is designed to contain and maintain HTTP cookies, and should be used along with Zend_Http_Client in order to manage cookies across HTTP requests and responses.</p>
+          <p>
+            <pre>The class contains an array of Zend\Http\Header\Cookie objects. Cookies can be added
+automatically from a request or manually. Then, the Cookies class can find and return the
+cookies needed for a specific HTTP request.
+
+A special parameter can be passed to all methods of this class that return cookies: Cookies
+can be returned either in their native form (as Zend\Http\Header\Cookie objects) or as strings -
+the later is suitable for sending as the value of the "Cookie" header in an HTTP request.
+You can also choose, when returning more than one cookie, whether to get an array of strings
+(by passing Zend\Http\Client\Cookies::COOKIE_STRING_ARRAY) or one unified string for all cookies
+(by passing Zend\Http\Client\Cookies::COOKIE_STRING_CONCAT).</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="COOKIE_OBJECT"/>COOKIE_OBJECT = 0<em> </em><p><li>Return cookie(s) as a Zend\Http\Header\Cookie object</li></p><hr/></li>
+          <li><a name="COOKIE_STRING_ARRAY"/>COOKIE_STRING_ARRAY = 1<em> </em><p><li>Return cookie(s) as a string (suitable for sending in an HTTP request)</li></p><hr/></li>
+          <li><a name="COOKIE_STRING_CONCAT"/>COOKIE_STRING_CONCAT = 2<em> </em><p><li>Return all cookies as one long string (suitable for sending in an HTTP request)</li></p><hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="cookies"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $cookies</h4>
+            <ul class="varlist">
+              <li>Array storing cookies<pre>Cookies are stored according to domain and path:
+$cookies
+ + www.mydomain.com
+   + /
+     - cookie1
+     - cookie2
+   + /somepath
+     - othercookie
+ + www.otherdomain.net
+   + /
+     - alsocookie</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="rawCookies"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $rawCookies</h4>
+            <ul class="varlist">
+              <li>The Zend\Http\Header\Cookie array</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Construct</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addCookie"/>
+            <h4><span class="label public">public</span>addCookie<span style="font-size:90%;">( <span class="param-type"><span title="Cookie|string">Cookie|string</span></span><strong> $cookie</strong>, <span class="param-type"><span title="Uri\Uri|string">Uri|string</span></span><strong> $ref_uri</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a cookie to the class. Cookie should be passed either as a Zend\Http\Header\Cookie object or as a string - in which case an object is created from the string.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cookie</code> - </li>
+                <li><code>$ref_uri</code> - Optional reference URI (for domain, path, secure)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException if invalid $cookie value</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addCookiesFromResponse"/>
+            <h4><span class="label public">public</span>addCookiesFromResponse<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Http_Response.xhtml">Zend\Http\Response</a></span><strong> $response</strong>, <span class="param-type"><span title="Uri\Uri|string">Uri|string</span></span><strong> $ref_uri</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Parse an HTTP response, adding all the cookies set in that response</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$response</code> - </li>
+                <li><code>$ref_uri</code> - Requested URI</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="count"/>
+            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Required by Countable interface</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fromArray"/>
+            <h4><span class="label public">public</span>fromArray<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $values</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="fromResponse"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>fromResponse<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Http_Response.xhtml">Zend\Http\Response</a></span><strong> $response</strong>, <span class="param-type"/><strong> $ref_uri</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new Cookies object and automatically load into it all the cookies set in an Http_Response object. If $uri is set, it will be considered as the requested URI for setting default domain and path of the cookie.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$response</code> - HTTP Response object</li>
+                <li><code>$uri</code> - The requested URI</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fromString"/>
+            <h4><span class="label public">public</span>fromString<span style="font-size:90%;">( <span class="param-type"/><strong> $string</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="get"/>
+            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $default</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getAllCookies"/>
+            <h4><span class="label public">public</span>getAllCookies<span style="font-size:90%;">( <span class="param-type">int</span><strong> $ret_as</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all cookies in the cookie jar as an array</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$ret_as</code> - Whether to return cookies as objects of \Zend\Http\Header\Cookie or as strings</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCookie"/>
+            <h4><span class="label public">public</span>getCookie<span style="font-size:90%;">( <span class="param-type"><span title="Uri\Uri|string">Uri|string</span></span><strong> $uri</strong>, <span class="param-type">string</span><strong> $cookie_name</strong>, <span class="param-type">int</span><strong> $ret_as</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get a specific cookie according to a URI and name</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$uri</code> - The uri (domain and path) to match</li>
+                <li><code>$cookie_name</code> - The cookie's name</li>
+                <li><code>$ret_as</code> - Whether to return cookies as objects of \Zend\Http\Header\Cookie or as strings</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException if invalid URI specified or invalid $ret_as value</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIterator"/>
+            <h4><span class="label public">public</span>getIterator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Required by IteratorAggregate interface</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMatchingCookies"/>
+            <h4><span class="label public">public</span>getMatchingCookies<span style="font-size:90%;">( <span class="param-type"><span title="string|Uri\Uri">Uri</span></span><strong> $uri</strong>, <span class="param-type">boolean</span><strong> $matchSessionCookies</strong>, <span class="param-type">int</span><strong> $ret_as</strong>, <span class="param-type">int</span><strong> $now</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return an array of all cookies matching a specific request according to the request URI, whether session cookies should be sent or not, and the time to consider as "now" when checking cookie expiry time.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$uri</code> - URI to check against (secure, domain, path)</li>
+                <li><code>$matchSessionCookies</code> - Whether to send session cookies</li>
+                <li><code>$ret_as</code> - Whether to return cookies as objects of \Zend\Http\Header\Cookie or as strings</li>
+                <li><code>$now</code> - Override the current time when checking for expiry time</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException if invalid URI</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isEmpty"/>
+            <h4><span class="label public">public</span>isEmpty<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Tells if the array of cookies is empty</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetExists"/>
+            <h4><span class="label public">public</span>offsetExists<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $offset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>(PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; Whether a offset exists</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$offset</code> - &lt;p&gt;</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Returns true on success or false on failure.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetGet"/>
+            <h4><span class="label public">public</span>offsetGet<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $offset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>(PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; Offset to retrieve</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$offset</code> - &lt;p&gt;</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Can return all value types.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetSet"/>
+            <h4><span class="label public">public</span>offsetSet<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $offset</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>(PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; Offset to set</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$offset</code> - &lt;p&gt;</li>
+                <li><code>$value</code> - &lt;p&gt;</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="offsetUnset"/>
+            <h4><span class="label public">public</span>offsetUnset<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $offset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>(PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; Offset to unset</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$offset</code> - &lt;p&gt;</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="reset"/>
+            <h4><span class="label public">public</span>reset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Empties the cookieJar of any cookie</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="serialize"/>
+            <h4><span class="label public">public</span>serialize<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>(PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; String representation of object</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>the string representation of the object or &amp;null;</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="set"/>
+            <h4><span class="label public">public</span>set<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $value</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="toArray"/>
+            <h4><span class="label public">public</span>toArray<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="toString"/>
+            <h4><span class="label public">public</span>toString<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="unserialize"/>
+            <h4><span class="label public">public</span>unserialize<span style="font-size:90%;">( <span class="param-type">string</span><strong> $serialized</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>(PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; Constructs the object</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$serialized</code> - &lt;p&gt;</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>the original value unserialized.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_flattenCookiesArray"/>
+            <h4><span class="label protected">protected</span>_flattenCookiesArray<span style="font-size:90%;">( <span class="param-type"><span title="\Zend\Http\Header\Cookie|array">Cookie|array</span></span><strong> $ptr</strong>, <span class="param-type">int</span><strong> $ret_as</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Helper function to recursively flatten an array. Should be used when exporting the cookies array (or parts of it)</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$ptr</code> - </li>
+                <li><code>$ret_as</code> - What value to return</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_matchDomain"/>
+            <h4><span class="label protected">protected</span>_matchDomain<span style="font-size:90%;">( <span class="param-type">string</span><strong> $domain</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return a subset of the cookies array matching a specific domain</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$domain</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_matchPath"/>
+            <h4><span class="label protected">protected</span>_matchPath<span style="font-size:90%;">( <span class="param-type">array</span><strong> $domains</strong>, <span class="param-type">string</span><strong> $path</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return a subset of a domain-matching cookies that also match a specified path</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$domains</code> - </li>
+                <li><code>$path</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Mvc\Controller\AbstractController - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#plugins">$plugins</a>
+          </li>
+          <li>
+            <a href="#request">$request</a>
+          </li>
+          <li>
+            <a href="#response">$response</a>
+          </li>
+          <li>
+            <a href="#event">$event</a>
+          </li>
+          <li>
+            <a href="#events">$events</a>
+          </li>
+          <li>
+            <a href="#serviceLocator">$serviceLocator</a>
+          </li>
+          <li>
+            <a href="#eventIdentifier">$eventIdentifier</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__call">__call</a>
+          </li>
+          <li>
+            <a href="#attachDefaultListeners">attachDefaultListeners</a>
+          </li>
+          <li>
+            <a href="#dispatch">dispatch</a>
+          </li>
+          <li>
+            <a href="#getEvent">getEvent</a>
+          </li>
+          <li>
+            <a href="#getEventManager">getEventManager</a>
+          </li>
+          <li>
+            <a href="#getMethodFromAction">getMethodFromAction</a>
+          </li>
+          <li>
+            <a href="#getPluginManager">getPluginManager</a>
+          </li>
+          <li>
+            <a href="#getRequest">getRequest</a>
+          </li>
+          <li>
+            <a href="#getResponse">getResponse</a>
+          </li>
+          <li>
+            <a href="#getServiceLocator">getServiceLocator</a>
+          </li>
+          <li>
+            <a href="#onDispatch">onDispatch</a>
+          </li>
+          <li>
+            <a href="#plugin">plugin</a>
+          </li>
+          <li>
+            <a href="#setEvent">setEvent</a>
+          </li>
+          <li>
+            <a href="#setEventManager">setEventManager</a>
+          </li>
+          <li>
+            <a href="#setPluginManager">setPluginManager</a>
+          </li>
+          <li>
+            <a href="#setServiceLocator">setServiceLocator</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Mvc\Controller\</span>AbstractController</h2>
+        <div class="file-notice">
+          <p>Abstract controller</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_Stdlib_DispatchableInterface.xhtml">Zend\Stdlib\DispatchableInterface</a>
+          </li>
+          <li>
+            <a href="../interfaces/Zend_EventManager_EventManagerAwareInterface.xhtml">Zend\EventManager\EventManagerAwareInterface</a>
+          </li>
+          <li>
+            <a href="../interfaces/Zend_Mvc_InjectApplicationEventInterface.xhtml">Zend\Mvc\InjectApplicationEventInterface</a>
+          </li>
+          <li>
+            <a href="../interfaces/Zend_ServiceManager_ServiceLocatorAwareInterface.xhtml">Zend\ServiceManager\ServiceLocatorAwareInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="plugins"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $plugins</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="request"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $request</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="response"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $response</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="event"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $event</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="events"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $events</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="serviceLocator"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $serviceLocator</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="eventIdentifier"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $eventIdentifier</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__call"/>
+            <h4><span class="label public">public</span>__call<span style="font-size:90%;">( <span class="param-type">string</span><strong> $method</strong>, <span class="param-type">array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Method overloading: return/call plugins<pre>If the plugin is a functor, call it, passing the parameters provided.
+Otherwise, return the plugin instance.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - </li>
+                <li><code>$params</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="dispatch"/>
+            <h4><span class="label public">public</span>dispatch<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Stdlib_RequestInterface.xhtml">Zend\Stdlib\RequestInterface</a></span><strong> $request</strong>, <span class="param-type"><a href="../interfaces/Zend_Stdlib_ResponseInterface.xhtml">Zend\Stdlib\ResponseInterface</a></span><strong> $response</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Dispatch a request</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - </li>
+                <li><code>$response</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEvent"/>
+            <h4><span class="label public">public</span>getEvent<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the attached event<pre>Will create a new MvcEvent if none provided.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEventManager"/>
+            <h4><span class="label public">public</span>getEventManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the event manager<pre>Lazy-loads an EventManager instance if none registered.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMethodFromAction"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getMethodFromAction<span style="font-size:90%;">( <span class="param-type">string</span><strong> $action</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Transform an "action" token into a method name</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$action</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPluginManager"/>
+            <h4><span class="label public">public</span>getPluginManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get plugin manager</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRequest"/>
+            <h4><span class="label public">public</span>getRequest<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get request object</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getResponse"/>
+            <h4><span class="label public">public</span>getResponse<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get response object</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getServiceLocator"/>
+            <h4><span class="label public">public</span>getServiceLocator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve serviceManager instance</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="onDispatch"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>onDispatch<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Mvc_MvcEvent.xhtml">Zend\Mvc\MvcEvent</a></span><strong> $e</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Execute the request</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$e</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="plugin"/>
+            <h4><span class="label public">public</span>plugin<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get plugin instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - Name of plugin to return</li>
+                <li><code>$options</code> - Options to pass to plugin constructor (if not already instantiated)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setEvent"/>
+            <h4><span class="label public">public</span>setEvent<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_EventManager_EventInterface.xhtml">Zend\EventManager\EventInterface</a></span><strong> $e</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set an event to use during dispatch<pre>By default, will re-cast to MvcEvent if another event type is provided.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$e</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setEventManager"/>
+            <h4><span class="label public">public</span>setEventManager<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_EventManager_EventManagerInterface.xhtml">Zend\EventManager\EventManagerInterface</a></span><strong> $events</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the event manager instance used by this context</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$events</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPluginManager"/>
+            <h4><span class="label public">public</span>setPluginManager<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Mvc_Controller_PluginManager.xhtml">Zend\Mvc\Controller\PluginManager</a></span><strong> $plugins</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set plugin manager</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$plugins</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setServiceLocator"/>
+            <h4><span class="label public">public</span>setServiceLocator<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_ServiceManager_ServiceLocatorInterface.xhtml">Zend\ServiceManager\ServiceLocatorInterface</a></span><strong> $serviceLocator</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set serviceManager instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$serviceLocator</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="attachDefaultListeners"/>
+            <h4><span class="label protected">protected</span>attachDefaultListeners<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register the default events for this controller</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

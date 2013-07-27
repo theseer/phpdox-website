@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#logger">$logger</a>
+          </li>
+          <li>
+            <a href="#called">$called</a>
+          </li>
+          <li>
+            <a href="#stopwatch">$stopwatch</a>
+          </li>
+          <li>
+            <a href="#profiler">$profiler</a>
+          </li>
+          <li>
+            <a href="#dispatcher">$dispatcher</a>
+          </li>
+          <li>
+            <a href="#wrappedListeners">$wrappedListeners</a>
+          </li>
+          <li>
+            <a href="#firstCalledEvent">$firstCalledEvent</a>
+          </li>
+          <li>
+            <a href="#id">$id</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__call">__call</a>
+          </li>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addListener">addListener</a>
+          </li>
+          <li>
+            <a href="#addSubscriber">addSubscriber</a>
+          </li>
+          <li>
+            <a href="#dispatch">dispatch</a>
+          </li>
+          <li>
+            <a href="#getCalledListeners">getCalledListeners</a>
+          </li>
+          <li>
+            <a href="#getListenerInfo">getListenerInfo</a>
+          </li>
+          <li>
+            <a href="#getListeners">getListeners</a>
+          </li>
+          <li>
+            <a href="#getNotCalledListeners">getNotCalledListeners</a>
+          </li>
+          <li>
+            <a href="#hasListeners">hasListeners</a>
+          </li>
+          <li>
+            <a href="#logSkippedListeners">logSkippedListeners</a>
+          </li>
+          <li>
+            <a href="#postDispatch">postDispatch</a>
+          </li>
+          <li>
+            <a href="#preDispatch">preDispatch</a>
+          </li>
+          <li>
+            <a href="#preListenerCall">preListenerCall</a>
+          </li>
+          <li>
+            <a href="#removeListener">removeListener</a>
+          </li>
+          <li>
+            <a href="#removeSubscriber">removeSubscriber</a>
+          </li>
+          <li>
+            <a href="#saveInfoInProfile">saveInfoInProfile</a>
+          </li>
+          <li>
+            <a href="#setProfiler">setProfiler</a>
+          </li>
+          <li>
+            <a href="#unwrapListener">unwrapListener</a>
+          </li>
+          <li>
+            <a href="#updateProfiles">updateProfiles</a>
+          </li>
+          <li>
+            <a href="#wrapListener">wrapListener</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\HttpKernel\Debug\</span>TraceableEventDispatcher</h2>
+        <div class="file-notice">
+          <p>Collects some data about event listeners.</p>
+          <p>
+            <pre>This event dispatcher delegates the dispatching to another one.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Symfony_Component_EventDispatcher_EventDispatcherInterface.xhtml">Symfony\Component\EventDispatcher\EventDispatcherInterface</a>
+          </li>
+          <li>
+            <a href="../interfaces/Symfony_Component_EventDispatcher_Debug_TraceableEventDispatcherInterface.xhtml">Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcherInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="logger"/>
+            <h4><span class="label private">private</span>
+                $logger</h4>
+          </li>
+          <li>
+            <a name="called"/>
+            <h4><span class="label private">private</span>
+                $called</h4>
+          </li>
+          <li>
+            <a name="stopwatch"/>
+            <h4><span class="label private">private</span>
+                $stopwatch</h4>
+          </li>
+          <li>
+            <a name="profiler"/>
+            <h4><span class="label private">private</span>
+                $profiler</h4>
+          </li>
+          <li>
+            <a name="dispatcher"/>
+            <h4><span class="label private">private</span>
+                $dispatcher</h4>
+          </li>
+          <li>
+            <a name="wrappedListeners"/>
+            <h4><span class="label private">private</span>
+                $wrappedListeners</h4>
+          </li>
+          <li>
+            <a name="firstCalledEvent"/>
+            <h4><span class="label private">private</span>
+                $firstCalledEvent</h4>
+          </li>
+          <li>
+            <a name="id"/>
+            <h4><span class="label private">private</span>
+                $id</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_EventDispatcher_EventDispatcherInterface.xhtml">Symfony\Component\EventDispatcher\EventDispatcherInterface</a></span><strong> $dispatcher</strong>, <span class="param-type"><a href="../classes/Symfony_Component_Stopwatch_Stopwatch.xhtml">Symfony\Component\Stopwatch\Stopwatch</a></span><strong> $stopwatch</strong>, <span class="param-type"><span title="Psr\Log\LoggerInterface">LoggerInterface</span></span><strong> $logger</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dispatcher</code> - An EventDispatcherInterface instance</li>
+                <li><code>$stopwatch</code> - A Stopwatch instance</li>
+                <li><code>$logger</code> - A LoggerInterface instance</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__call"/>
+            <h4><span class="label public">public</span>__call<span style="font-size:90%;">( <span class="param-type">string</span><strong> $method</strong>, <span class="param-type">array</span><strong> $arguments</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Proxies all method calls to the original event dispatcher.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - The method name</li>
+                <li><code>$arguments</code> - The method arguments</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addListener"/>
+            <h4><span class="label public">public</span>addListener<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"/><strong> $listener</strong>, <span class="param-type">integer</span><strong> $priority</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="addSubscriber"/>
+            <h4><span class="label public">public</span>addSubscriber<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_EventDispatcher_EventSubscriberInterface.xhtml">Symfony\Component\EventDispatcher\EventSubscriberInterface</a></span><strong> $subscriber</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="dispatch"/>
+            <h4><span class="label public">public</span>dispatch<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"><a href="../classes/Symfony_Component_EventDispatcher_Event.xhtml">Symfony\Component\EventDispatcher\Event</a></span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getCalledListeners"/>
+            <h4><span class="label public">public</span>getCalledListeners<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getListeners"/>
+            <h4><span class="label public">public</span>getListeners<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getNotCalledListeners"/>
+            <h4><span class="label public">public</span>getNotCalledListeners<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="hasListeners"/>
+            <h4><span class="label public">public</span>hasListeners<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="logSkippedListeners"/>
+            <h4><span class="label public">public</span>logSkippedListeners<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"><a href="../classes/Symfony_Component_EventDispatcher_Event.xhtml">Symfony\Component\EventDispatcher\Event</a></span><strong> $event</strong>, <span class="param-type"/><strong> $listener</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>This is a private method and must not be used.<pre>This method is public because it is used in a closure.
+Whenever Symfony will require PHP 5.4, this could be changed
+to a proper private method.</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="preListenerCall"/>
+            <h4><span class="label public">public</span>preListenerCall<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"/><strong> $listener</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>This is a private method.<pre>This method is public because it is used in a closure.
+Whenever Symfony will require PHP 5.4, this could be changed
+to a proper private method.</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="removeListener"/>
+            <h4><span class="label public">public</span>removeListener<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"/><strong> $listener</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="removeSubscriber"/>
+            <h4><span class="label public">public</span>removeSubscriber<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_EventDispatcher_EventSubscriberInterface.xhtml">Symfony\Component\EventDispatcher\EventSubscriberInterface</a></span><strong> $subscriber</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="setProfiler"/>
+            <h4><span class="label public">public</span>setProfiler<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpKernel_Profiler_Profiler.xhtml">Symfony\Component\HttpKernel\Profiler\Profiler</a></span><strong> $profiler</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the profiler.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$profiler</code> - A Profiler instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getListenerInfo"/>
+            <h4><span class="label private">private</span>getListenerInfo<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $listener</strong>, <span class="param-type">string</span><strong> $eventName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns information about the listener</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$listener</code> - The listener</li>
+                <li><code>$eventName</code> - The event name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Informations about the listener</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="postDispatch"/>
+            <h4><span class="label private">private</span>postDispatch<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"><a href="../classes/Symfony_Component_EventDispatcher_Event.xhtml">Symfony\Component\EventDispatcher\Event</a></span><strong> $event</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="preDispatch"/>
+            <h4><span class="label private">private</span>preDispatch<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"><a href="../classes/Symfony_Component_EventDispatcher_Event.xhtml">Symfony\Component\EventDispatcher\Event</a></span><strong> $event</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="saveInfoInProfile"/>
+            <h4><span class="label private">private</span>saveInfoInProfile<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpKernel_Profiler_Profile.xhtml">Symfony\Component\HttpKernel\Profiler\Profile</a></span><strong> $profile</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $updateChildren</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Update the profiles with the timing and events information and saves them.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$profile</code> - The root profile</li>
+                <li><code>$updateChildren</code> - Whether to update the children altogether</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unwrapListener"/>
+            <h4><span class="label private">private</span>unwrapListener<span style="font-size:90%;">( <span class="param-type"/><strong> $listener</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="updateProfiles"/>
+            <h4><span class="label private">private</span>updateProfiles<span style="font-size:90%;">( <span class="param-type">string</span><strong> $token</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $updateChildren</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Updates the stopwatch data in the profile hierarchy.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$token</code> - Profile token</li>
+                <li><code>$updateChildren</code> - Whether to update the children altogether</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="wrapListener"/>
+            <h4><span class="label private">private</span>wrapListener<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"/><strong> $listener</strong> )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

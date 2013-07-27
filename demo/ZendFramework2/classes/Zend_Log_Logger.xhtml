@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Log\Logger - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#EMERG">EMERG</a>
+          </li>
+          <li>
+            <a href="#ALERT">ALERT</a>
+          </li>
+          <li>
+            <a href="#CRIT">CRIT</a>
+          </li>
+          <li>
+            <a href="#ERR">ERR</a>
+          </li>
+          <li>
+            <a href="#WARN">WARN</a>
+          </li>
+          <li>
+            <a href="#NOTICE">NOTICE</a>
+          </li>
+          <li>
+            <a href="#INFO">INFO</a>
+          </li>
+          <li>
+            <a href="#DEBUG">DEBUG</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#priorities">$priorities</a>
+          </li>
+          <li>
+            <a href="#writers">$writers</a>
+          </li>
+          <li>
+            <a href="#writerPlugins">$writerPlugins</a>
+          </li>
+          <li>
+            <a href="#registeredErrorHandler">$registeredErrorHandler</a>
+          </li>
+          <li>
+            <a href="#registeredExceptionHandler">$registeredExceptionHandler</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__destruct">__destruct</a>
+          </li>
+          <li>
+            <a href="#addWriter">addWriter</a>
+          </li>
+          <li>
+            <a href="#alert">alert</a>
+          </li>
+          <li>
+            <a href="#crit">crit</a>
+          </li>
+          <li>
+            <a href="#debug">debug</a>
+          </li>
+          <li>
+            <a href="#emerg">emerg</a>
+          </li>
+          <li>
+            <a href="#err">err</a>
+          </li>
+          <li>
+            <a href="#getWriterPluginManager">getWriterPluginManager</a>
+          </li>
+          <li>
+            <a href="#getWriters">getWriters</a>
+          </li>
+          <li>
+            <a href="#info">info</a>
+          </li>
+          <li>
+            <a href="#log">log</a>
+          </li>
+          <li>
+            <a href="#notice">notice</a>
+          </li>
+          <li>
+            <a href="#registerErrorHandler">registerErrorHandler</a>
+          </li>
+          <li>
+            <a href="#registerExceptionHandler">registerExceptionHandler</a>
+          </li>
+          <li>
+            <a href="#setWriterPluginManager">setWriterPluginManager</a>
+          </li>
+          <li>
+            <a href="#setWriters">setWriters</a>
+          </li>
+          <li>
+            <a href="#unregisterErrorHandler">unregisterErrorHandler</a>
+          </li>
+          <li>
+            <a href="#unregisterExceptionHandler">unregisterExceptionHandler</a>
+          </li>
+          <li>
+            <a href="#warn">warn</a>
+          </li>
+          <li>
+            <a href="#writerPlugin">writerPlugin</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Log\</span>Logger</h2>
+        <div class="file-notice">
+          <p>Logging messages with a stack of backends</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_Log_LoggerInterface.xhtml">Zend\Log\LoggerInterface</a>
+          </li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="EMERG"/>EMERG = 0<em> </em><p><li/></p><hr/></li>
+          <li><a name="ALERT"/>ALERT = 1<hr/></li>
+          <li><a name="CRIT"/>CRIT = 2<hr/></li>
+          <li><a name="ERR"/>ERR = 3<hr/></li>
+          <li><a name="WARN"/>WARN = 4<hr/></li>
+          <li><a name="NOTICE"/>NOTICE = 5<hr/></li>
+          <li><a name="INFO"/>INFO = 6<hr/></li>
+          <li><a name="DEBUG"/>DEBUG = 7<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="priorities"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $priorities</h4>
+            <ul class="varlist">
+              <li>List of priority code =&gt; priority (short) name</li>
+            </ul>
+          </li>
+          <li>
+            <a name="writers"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $writers</h4>
+            <ul class="varlist">
+              <li>Writers</li>
+            </ul>
+          </li>
+          <li>
+            <a name="writerPlugins"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $writerPlugins</h4>
+            <ul class="varlist">
+              <li>Writer plugins</li>
+            </ul>
+          </li>
+          <li>
+            <a name="registeredErrorHandler"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $registeredErrorHandler</h4>
+            <ul class="varlist">
+              <li>Registered error handler</li>
+            </ul>
+          </li>
+          <li>
+            <a name="registeredExceptionHandler"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $registeredExceptionHandler</h4>
+            <ul class="varlist">
+              <li>Registered exception handler</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Destructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__destruct"/>
+            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Shutdown all writers</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addWriter"/>
+            <h4><span class="label public">public</span>addWriter<span style="font-size:90%;">( <span class="param-type"><span title="string|Writer\WriterInterface">WriterInterface</span></span><strong> $writer</strong>, <span class="param-type">integer</span><strong> $priority</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a writer to a logger</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$writer</code> - </li>
+                <li><code>$priority</code> - </li>
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="alert"/>
+            <h4><span class="label public">public</span>alert<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+                <li><code>$extra</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="crit"/>
+            <h4><span class="label public">public</span>crit<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+                <li><code>$extra</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="debug"/>
+            <h4><span class="label public">public</span>debug<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+                <li><code>$extra</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="emerg"/>
+            <h4><span class="label public">public</span>emerg<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+                <li><code>$extra</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="err"/>
+            <h4><span class="label public">public</span>err<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+                <li><code>$extra</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getWriterPluginManager"/>
+            <h4><span class="label public">public</span>getWriterPluginManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get writer plugin manager</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getWriters"/>
+            <h4><span class="label public">public</span>getWriters<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get writers</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="info"/>
+            <h4><span class="label public">public</span>info<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+                <li><code>$extra</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="log"/>
+            <h4><span class="label public">public</span>log<span style="font-size:90%;">( <span class="param-type">int</span><strong> $priority</strong>, <span class="param-type">mixed</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a message as a log entry</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$priority</code> - </li>
+                <li><code>$message</code> - </li>
+                <li><code>$extra</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException if message can't be cast to string</code>
+                </li>
+                <li>
+                  <code>Exception\InvalidArgumentException if extra can't be iterated over</code>
+                </li>
+                <li>
+                  <code>Exception\RuntimeException if no log writer specified</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="notice"/>
+            <h4><span class="label public">public</span>notice<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+                <li><code>$extra</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerErrorHandler"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>registerErrorHandler<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Log_Logger.xhtml">Zend\Log\Logger</a></span><strong> $logger</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register logging system as an error handler to log PHP errors</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$logger</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException if logger is null</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerExceptionHandler"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>registerExceptionHandler<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Log_Logger.xhtml">Zend\Log\Logger</a></span><strong> $logger</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register logging system as an exception handler to log PHP exceptions</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$logger</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException if logger is null</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setWriterPluginManager"/>
+            <h4><span class="label public">public</span>setWriterPluginManager<span style="font-size:90%;">( <span class="param-type"><span title="string|WriterPluginManager">string|WriterPluginManager</span></span><strong> $plugins</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set writer plugin manager</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$plugins</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setWriters"/>
+            <h4><span class="label public">public</span>setWriters<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Stdlib_SplPriorityQueue.xhtml">Zend\Stdlib\SplPriorityQueue</a></span><strong> $writers</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the writers</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$writers</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unregisterErrorHandler"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>unregisterErrorHandler<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Unregister error handler</li>
+            </p>
+          </li>
+          <li>
+            <a name="unregisterExceptionHandler"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>unregisterExceptionHandler<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Unregister exception handler</li>
+            </p>
+          </li>
+          <li>
+            <a name="warn"/>
+            <h4><span class="label public">public</span>warn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+                <li><code>$extra</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="writerPlugin"/>
+            <h4><span class="label public">public</span>writerPlugin<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get writer instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

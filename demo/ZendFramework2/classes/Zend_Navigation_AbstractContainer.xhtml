@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Navigation\AbstractContainer - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#pages">$pages</a>
+          </li>
+          <li>
+            <a href="#index">$index</a>
+          </li>
+          <li>
+            <a href="#dirtyIndex">$dirtyIndex</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__call">__call</a>
+          </li>
+          <li>
+            <a href="#addPage">addPage</a>
+          </li>
+          <li>
+            <a href="#addPages">addPages</a>
+          </li>
+          <li>
+            <a href="#count">count</a>
+          </li>
+          <li>
+            <a href="#current">current</a>
+          </li>
+          <li>
+            <a href="#findAllBy">findAllBy</a>
+          </li>
+          <li>
+            <a href="#findBy">findBy</a>
+          </li>
+          <li>
+            <a href="#findOneBy">findOneBy</a>
+          </li>
+          <li>
+            <a href="#getChildren">getChildren</a>
+          </li>
+          <li>
+            <a href="#getPages">getPages</a>
+          </li>
+          <li>
+            <a href="#hasChildren">hasChildren</a>
+          </li>
+          <li>
+            <a href="#hasPage">hasPage</a>
+          </li>
+          <li>
+            <a href="#hasPages">hasPages</a>
+          </li>
+          <li>
+            <a href="#key">key</a>
+          </li>
+          <li>
+            <a href="#next">next</a>
+          </li>
+          <li>
+            <a href="#notifyOrderUpdated">notifyOrderUpdated</a>
+          </li>
+          <li>
+            <a href="#removePage">removePage</a>
+          </li>
+          <li>
+            <a href="#removePages">removePages</a>
+          </li>
+          <li>
+            <a href="#rewind">rewind</a>
+          </li>
+          <li>
+            <a href="#setPages">setPages</a>
+          </li>
+          <li>
+            <a href="#sort">sort</a>
+          </li>
+          <li>
+            <a href="#toArray">toArray</a>
+          </li>
+          <li>
+            <a href="#valid">valid</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Navigation\</span>AbstractContainer</h2>
+        <div class="file-notice">
+          <p>Zend_Navigation_Container</p>
+          <p>
+            <pre>AbstractContainer class for Zend\Navigation\Page classes.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Countable.xhtml">Countable</a>
+          </li>
+          <li>
+            <a href="../interfaces/RecursiveIterator.xhtml">RecursiveIterator</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="pages"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $pages</h4>
+            <ul class="varlist">
+              <li>Contains sub pages</li>
+            </ul>
+          </li>
+          <li>
+            <a name="index"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $index</h4>
+            <ul class="varlist">
+              <li>An index that contains the order in which to iterate pages</li>
+            </ul>
+          </li>
+          <li>
+            <a name="dirtyIndex"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $dirtyIndex</h4>
+            <ul class="varlist">
+              <li>Whether index is dirty and needs to be re-arranged</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__call"/>
+            <h4><span class="label public">public</span>__call<span style="font-size:90%;">( <span class="param-type">string</span><strong> $method</strong>, <span class="param-type">array</span><strong> $arguments</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Magic overload: Proxy calls to finder methods<pre>Examples of finder calls:
+&lt;code&gt;
+// METHOD                    // SAME AS
+$nav-&gt;findByLabel('foo');    // $nav-&gt;findOneBy('label', 'foo');
+$nav-&gt;findOneByLabel('foo'); // $nav-&gt;findOneBy('label', 'foo');
+$nav-&gt;findAllByClass('foo'); // $nav-&gt;findAllBy('class', 'foo');
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - method name</li>
+                <li><code>$arguments</code> - method arguments</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\BadMethodCallException  if method does not exist</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addPage"/>
+            <h4><span class="label public">public</span>addPage<span style="font-size:90%;">( <span class="param-type"><span title="Page\AbstractPage|array|Traversable">AbstractPage|array|Traversable</span></span><strong> $page</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a page to the container<pre>This method will inject the container as the given page's parent by
+calling .
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$page</code> - page to add</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>fluent interface, returns self</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException if page is invalid</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addPages"/>
+            <h4><span class="label public">public</span>addPages<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable|AbstractContainer">array|Traversable|AbstractContainer</span></span><strong> $pages</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds several pages at once</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pages</code> - pages to add</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>fluent interface, returns self</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException if $pages is not array,</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="count"/>
+            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns number of pages in container<pre>Implements Countable interface.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>number of pages in the container</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="current"/>
+            <h4><span class="label public">public</span>current<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns current page<pre>Implements RecursiveIterator interface.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>current page or null</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\OutOfBoundsException  if the index is invalid</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="findAllBy"/>
+            <h4><span class="label public">public</span>findAllBy<span style="font-size:90%;">( <span class="param-type">string</span><strong> $property</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns all child pages matching $property == $value, or an empty array if no pages are found</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$property</code> - name of property to match against</li>
+                <li><code>$value</code> - value to match property against</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>array containing only Page\AbstractPage instances</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="findBy"/>
+            <h4><span class="label public">public</span>findBy<span style="font-size:90%;">( <span class="param-type">string</span><strong> $property</strong>, <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $all</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns page(s) matching $property == $value</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$property</code> - name of property to match against</li>
+                <li><code>$value</code> - value to match property against</li>
+                <li><code>$all</code> - [optional] whether an array of all matching</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>matching page or null</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="findOneBy"/>
+            <h4><span class="label public">public</span>findOneBy<span style="font-size:90%;">( <span class="param-type">string</span><strong> $property</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a child page matching $property == $value, or null if not found</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$property</code> - name of property to match against</li>
+                <li><code>$value</code> - value to match property against</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>matching page or null</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getChildren"/>
+            <h4><span class="label public">public</span>getChildren<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the child container.<pre>Implements RecursiveIterator interface.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPages"/>
+            <h4><span class="label public">public</span>getPages<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns pages in the container</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>array of Page\AbstractPage instances</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasChildren"/>
+            <h4><span class="label public">public</span>hasChildren<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Proxy to hasPages()<pre>Implements RecursiveIterator interface.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>whether container has any pages</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasPage"/>
+            <h4><span class="label public">public</span>hasPage<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Navigation_Page_AbstractPage.xhtml">Zend\Navigation\Page\AbstractPage</a></span><strong> $page</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $recursive</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if the container has the given page</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$page</code> - page to look for</li>
+                <li><code>$recursive</code> - [optional] whether to search recursively.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>whether page is in container</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasPages"/>
+            <h4><span class="label public">public</span>hasPages<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns true if container contains any pages</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>whether container has any pages</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="key"/>
+            <h4><span class="label public">public</span>key<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns hash code of current page<pre>Implements RecursiveIterator interface.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>hash code of current page</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="next"/>
+            <h4><span class="label public">public</span>next<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Moves index pointer to next page in the container<pre>Implements RecursiveIterator interface.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="notifyOrderUpdated"/>
+            <h4><span class="label public">public</span>notifyOrderUpdated<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Notifies container that the order of pages are updated</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removePage"/>
+            <h4><span class="label public">public</span>removePage<span style="font-size:90%;">( <span class="param-type"><span title="Page\AbstractPage|int">AbstractPage|int</span></span><strong> $page</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes the given page from the container</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$page</code> - page to remove, either a page</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>whether the removal was successful</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removePages"/>
+            <h4><span class="label public">public</span>removePages<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes all pages in container</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>fluent interface, returns self</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="rewind"/>
+            <h4><span class="label public">public</span>rewind<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets index pointer to first page in the container<pre>Implements RecursiveIterator interface.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPages"/>
+            <h4><span class="label public">public</span>setPages<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $pages</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets pages this container should have, removing existing pages</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pages</code> - pages to set</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>fluent interface, returns self</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toArray"/>
+            <h4><span class="label public">public</span>toArray<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns an array representation of all pages in container</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="valid"/>
+            <h4><span class="label public">public</span>valid<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if container index is valid<pre>Implements RecursiveIterator interface.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="sort"/>
+            <h4><span class="label protected">protected</span>sort<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sorts the page index according to page order</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

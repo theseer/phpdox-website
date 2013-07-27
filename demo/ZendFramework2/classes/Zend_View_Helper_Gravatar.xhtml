@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\View\Helper\Gravatar - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#GRAVATAR_URL">GRAVATAR_URL</a>
+          </li>
+          <li>
+            <a href="#GRAVATAR_URL_SECURE">GRAVATAR_URL_SECURE</a>
+          </li>
+          <li>
+            <a href="#RATING_G">RATING_G</a>
+          </li>
+          <li>
+            <a href="#RATING_PG">RATING_PG</a>
+          </li>
+          <li>
+            <a href="#RATING_R">RATING_R</a>
+          </li>
+          <li>
+            <a href="#RATING_X">RATING_X</a>
+          </li>
+          <li>
+            <a href="#DEFAULT_404">DEFAULT_404</a>
+          </li>
+          <li>
+            <a href="#DEFAULT_MM">DEFAULT_MM</a>
+          </li>
+          <li>
+            <a href="#DEFAULT_IDENTICON">DEFAULT_IDENTICON</a>
+          </li>
+          <li>
+            <a href="#DEFAULT_MONSTERID">DEFAULT_MONSTERID</a>
+          </li>
+          <li>
+            <a href="#DEFAULT_WAVATAR">DEFAULT_WAVATAR</a>
+          </li>
+          <li>
+            <a href="#EOL">EOL</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#options">$options</a>
+          </li>
+          <li>
+            <a href="#email">$email</a>
+          </li>
+          <li>
+            <a href="#attribs">$attribs</a>
+          </li>
+          <li>
+            <a href="#closingBracket">$closingBracket</a>
+          </li>
+          <li>
+            <a href="#view">$view</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__invoke">__invoke</a>
+          </li>
+          <li>
+            <a href="#__toString">__toString</a>
+          </li>
+          <li>
+            <a href="#getAttribs">getAttribs</a>
+          </li>
+          <li>
+            <a href="#getAvatarUrl">getAvatarUrl</a>
+          </li>
+          <li>
+            <a href="#getClosingBracket">getClosingBracket</a>
+          </li>
+          <li>
+            <a href="#getDefaultImg">getDefaultImg</a>
+          </li>
+          <li>
+            <a href="#getEmail">getEmail</a>
+          </li>
+          <li>
+            <a href="#getGravatarUrl">getGravatarUrl</a>
+          </li>
+          <li>
+            <a href="#getImgSize">getImgSize</a>
+          </li>
+          <li>
+            <a href="#getImgTag">getImgTag</a>
+          </li>
+          <li>
+            <a href="#getRating">getRating</a>
+          </li>
+          <li>
+            <a href="#getSecure">getSecure</a>
+          </li>
+          <li>
+            <a href="#getView">getView</a>
+          </li>
+          <li>
+            <a href="#htmlAttribs">htmlAttribs</a>
+          </li>
+          <li>
+            <a href="#isXhtml">isXhtml</a>
+          </li>
+          <li>
+            <a href="#normalizeId">normalizeId</a>
+          </li>
+          <li>
+            <a href="#setAttribs">setAttribs</a>
+          </li>
+          <li>
+            <a href="#setDefaultImg">setDefaultImg</a>
+          </li>
+          <li>
+            <a href="#setEmail">setEmail</a>
+          </li>
+          <li>
+            <a href="#setImgSize">setImgSize</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+          <li>
+            <a href="#setRating">setRating</a>
+          </li>
+          <li>
+            <a href="#setSecure">setSecure</a>
+          </li>
+          <li>
+            <a href="#setSrcAttribForImg">setSrcAttribForImg</a>
+          </li>
+          <li>
+            <a href="#setView">setView</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\View\Helper\</span>Gravatar</h2>
+        <div class="file-notice">
+          <p>Helper for retrieving avatars from gravatar.com</p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="GRAVATAR_URL"/>GRAVATAR_URL = 'http://www.gravatar.com/avatar'<em> </em><p><li>URL to gravatar service</li></p><hr/></li>
+          <li><a name="GRAVATAR_URL_SECURE"/>GRAVATAR_URL_SECURE = 'https://secure.gravatar.com/avatar'<em> </em><p><li>Secure URL to gravatar service</li></p><hr/></li>
+          <li><a name="RATING_G"/>RATING_G = 'g'<em> </em><p><li>Gravatar rating</li></p><hr/></li>
+          <li><a name="RATING_PG"/>RATING_PG = 'pg'<hr/></li>
+          <li><a name="RATING_R"/>RATING_R = 'r'<hr/></li>
+          <li><a name="RATING_X"/>RATING_X = 'x'<hr/></li>
+          <li><a name="DEFAULT_404"/>DEFAULT_404 = '404'<em> </em><p><li>Default gravatar image value constants</li></p><hr/></li>
+          <li><a name="DEFAULT_MM"/>DEFAULT_MM = 'mm'<hr/></li>
+          <li><a name="DEFAULT_IDENTICON"/>DEFAULT_IDENTICON = 'identicon'<hr/></li>
+          <li><a name="DEFAULT_MONSTERID"/>DEFAULT_MONSTERID = 'monsterid'<hr/></li>
+          <li><a name="DEFAULT_WAVATAR"/>DEFAULT_WAVATAR = 'wavatar'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="options"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $options</h4>
+            <ul class="varlist">
+              <li>Options</li>
+            </ul>
+          </li>
+          <li>
+            <a name="email"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $email</h4>
+            <ul class="varlist">
+              <li>Email Address</li>
+            </ul>
+          </li>
+          <li>
+            <a name="attribs"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $attribs</h4>
+            <ul class="varlist">
+              <li>Attributes for HTML image tag</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__invoke"/>
+            <h4><span class="label public">public</span>__invoke<span style="font-size:90%;">( <span class="param-type">string</span><strong> $email</strong>, <span class="param-type">Array</span><strong> $options</strong>, <span class="param-type">Array</span><strong> $attribs</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns an avatar from gravatar's service.<pre>$options may include the following:
+- 'img_size' int height of img to return
+- 'default_img' string img to return if email address has not found
+- 'rating' string rating parameter for avatar
+- 'secure' bool load from the SSL or Non-SSL location</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$email</code> - Email address.</li>
+                <li><code>$options</code> - Options</li>
+                <li><code>$attribs</code> - Attributes for image tag (title, alt etc.)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="__toString"/>
+            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return valid image tag</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAttribs"/>
+            <h4><span class="label public">public</span>getAttribs<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get attribs of image<pre>Warning!
+If you set src attrib, you get it, but this value will be overwritten in
+protected method setSrcAttribForImg(). And finally your get other src
+value!</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getClosingBracket"/>
+            <h4><span class="label public">public</span>getClosingBracket<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the tag closing bracket</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDefaultImg"/>
+            <h4><span class="label public">public</span>getDefaultImg<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get default img</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEmail"/>
+            <h4><span class="label public">public</span>getEmail<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get email address</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getImgSize"/>
+            <h4><span class="label public">public</span>getImgSize<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get img size</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The img size</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getImgTag"/>
+            <h4><span class="label public">public</span>getImgTag<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return valid image tag</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRating"/>
+            <h4><span class="label public">public</span>getRating<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get rating value</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSecure"/>
+            <h4><span class="label public">public</span>getSecure<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get an SSL or a No-SSL location</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getView"/>
+            <h4><span class="label public">public</span>getView<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the view object</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setAttribs"/>
+            <h4><span class="label public">public</span>setAttribs<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $attribs</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set attribs for image tag<pre>Warning! You shouldn't set src attrib for image tag.
+This attrib is overwritten in protected method setSrcAttribForImg().
+This method(_setSrcAttribForImg) is called in public method getImgTag().</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$attribs</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDefaultImg"/>
+            <h4><span class="label public">public</span>setDefaultImg<span style="font-size:90%;">( <span class="param-type">string</span><strong> $defaultImg</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set default img<pre>Can be either an absolute URL to an image, or one of the DEFAULT_* constants</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$defaultImg</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setEmail"/>
+            <h4><span class="label public">public</span>setEmail<span style="font-size:90%;">( <span class="param-type">string</span><strong> $email</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set email address</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$email</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setImgSize"/>
+            <h4><span class="label public">public</span>setImgSize<span style="font-size:90%;">( <span class="param-type">int</span><strong> $imgSize</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set img size in pixels</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$imgSize</code> - Size of img must be between 1 and 512</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Configure state</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setRating"/>
+            <h4><span class="label public">public</span>setRating<span style="font-size:90%;">( <span class="param-type">string</span><strong> $rating</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set rating value<pre>Must be one of the RATING_* constants</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$rating</code> - Value for rating. Allowed values are: g, px, r,x</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\DomainException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSecure"/>
+            <h4><span class="label public">public</span>setSecure<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $flag</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Load from an SSL or No-SSL location?</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$flag</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setView"/>
+            <h4><span class="label public">public</span>setView<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_View_Renderer_RendererInterface.xhtml">Zend\View\Renderer\RendererInterface</a></span><strong> $view</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the View object</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$view</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAvatarUrl"/>
+            <h4><span class="label protected">protected</span>getAvatarUrl<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get avatar url (including size, rating and default image options)</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getGravatarUrl"/>
+            <h4><span class="label protected">protected</span>getGravatarUrl<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get URL to gravatar's service.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>URL</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="htmlAttribs"/>
+            <h4><span class="label protected">protected</span>htmlAttribs<span style="font-size:90%;">( <span class="param-type">array</span><strong> $attribs</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Converts an associative array to a string of tag attributes.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$attribs</code> - From this array, each key-value pair is</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The XHTML for the attributes.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isXhtml"/>
+            <h4><span class="label protected">protected</span>isXhtml<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is doctype XHTML?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="normalizeId"/>
+            <h4><span class="label protected">protected</span>normalizeId<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Normalize an ID</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSrcAttribForImg"/>
+            <h4><span class="label protected">protected</span>setSrcAttribForImg<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set src attrib for image.<pre>You shouldn't set a own url value!
+It sets value, uses protected method getAvatarUrl.
+
+If already exists, it will be overwritten.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

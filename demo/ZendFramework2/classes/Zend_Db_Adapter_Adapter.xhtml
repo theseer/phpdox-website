@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Db\Adapter\Adapter - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#QUERY_MODE_EXECUTE">QUERY_MODE_EXECUTE</a>
+          </li>
+          <li>
+            <a href="#QUERY_MODE_PREPARE">QUERY_MODE_PREPARE</a>
+          </li>
+          <li>
+            <a href="#PREPARE_TYPE_POSITIONAL">PREPARE_TYPE_POSITIONAL</a>
+          </li>
+          <li>
+            <a href="#PREPARE_TYPE_NAMED">PREPARE_TYPE_NAMED</a>
+          </li>
+          <li>
+            <a href="#FUNCTION_FORMAT_PARAMETER_NAME">FUNCTION_FORMAT_PARAMETER_NAME</a>
+          </li>
+          <li>
+            <a href="#FUNCTION_QUOTE_IDENTIFIER">FUNCTION_QUOTE_IDENTIFIER</a>
+          </li>
+          <li>
+            <a href="#FUNCTION_QUOTE_VALUE">FUNCTION_QUOTE_VALUE</a>
+          </li>
+          <li>
+            <a href="#VALUE_QUOTE_SEPARATOR">VALUE_QUOTE_SEPARATOR</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#driver">$driver</a>
+          </li>
+          <li>
+            <a href="#platform">$platform</a>
+          </li>
+          <li>
+            <a href="#queryResultSetPrototype">$queryResultSetPrototype</a>
+          </li>
+          <li>
+            <a href="#lastPreparedStatement">$lastPreparedStatement</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__get">__get</a>
+          </li>
+          <li>
+            <a href="#createDriverFromParameters">createDriverFromParameters</a>
+          </li>
+          <li>
+            <a href="#createPlatformFromDriver">createPlatformFromDriver</a>
+          </li>
+          <li>
+            <a href="#createStatement">createStatement</a>
+          </li>
+          <li>
+            <a href="#getCurrentSchema">getCurrentSchema</a>
+          </li>
+          <li>
+            <a href="#getDriver">getDriver</a>
+          </li>
+          <li>
+            <a href="#getHelpers">getHelpers</a>
+          </li>
+          <li>
+            <a href="#getPlatform">getPlatform</a>
+          </li>
+          <li>
+            <a href="#getQueryResultSetPrototype">getQueryResultSetPrototype</a>
+          </li>
+          <li>
+            <a href="#query">query</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Db\Adapter\</span>Adapter</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="QUERY_MODE_EXECUTE"/>QUERY_MODE_EXECUTE = 'execute'<em> </em><p><li>Query Mode Constants</li></p><hr/></li>
+          <li><a name="QUERY_MODE_PREPARE"/>QUERY_MODE_PREPARE = 'prepare'<hr/></li>
+          <li><a name="PREPARE_TYPE_POSITIONAL"/>PREPARE_TYPE_POSITIONAL = 'positional'<em> </em><p><li>Prepare Type Constants</li></p><hr/></li>
+          <li><a name="PREPARE_TYPE_NAMED"/>PREPARE_TYPE_NAMED = 'named'<hr/></li>
+          <li><a name="FUNCTION_FORMAT_PARAMETER_NAME"/>FUNCTION_FORMAT_PARAMETER_NAME = 'formatParameterName'<hr/></li>
+          <li><a name="FUNCTION_QUOTE_IDENTIFIER"/>FUNCTION_QUOTE_IDENTIFIER = 'quoteIdentifier'<hr/></li>
+          <li><a name="FUNCTION_QUOTE_VALUE"/>FUNCTION_QUOTE_VALUE = 'quoteValue'<hr/></li>
+          <li><a name="VALUE_QUOTE_SEPARATOR"/>VALUE_QUOTE_SEPARATOR = 'quoteSeparator'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="driver"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $driver</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="platform"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $platform</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="queryResultSetPrototype"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $queryResultSetPrototype</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="lastPreparedStatement"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $lastPreparedStatement</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="Driver\DriverInterface|array">DriverInterface|array</span></span><strong> $driver</strong>, <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Platform_PlatformInterface.xhtml">Zend\Db\Adapter\Platform\PlatformInterface</a></span><strong> $platform</strong>, <span class="param-type"><span title="Zend\Db\Adapter\ResultSet\ResultSetInterface">ResultSetInterface</span></span><strong> $queryResultPrototype</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$driver</code> - </li>
+                <li><code>$platform</code> - </li>
+                <li><code>$queryResultPrototype</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__get"/>
+            <h4><span class="label public">public</span>__get<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createStatement"/>
+            <h4><span class="label public">public</span>createStatement<span style="font-size:90%;">( <span class="param-type">string</span><strong> $initialSql</strong>, <span class="param-type"><span title="ParameterContainer">ParameterContainer</span></span><strong> $initialParameters</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create statement</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$initialSql</code> - </li>
+                <li><code>$initialParameters</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCurrentSchema"/>
+            <h4><span class="label public">public</span>getCurrentSchema<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getDriver"/>
+            <h4><span class="label public">public</span>getDriver<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>getDriver()</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHelpers"/>
+            <h4><span class="label public">public</span>getHelpers<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getPlatform"/>
+            <h4><span class="label public">public</span>getPlatform<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getQueryResultSetPrototype"/>
+            <h4><span class="label public">public</span>getQueryResultSetPrototype<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="query"/>
+            <h4><span class="label public">public</span>query<span style="font-size:90%;">( <span class="param-type">string</span><strong> $sql</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $parametersOrQueryMode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>query() is a convenience function</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sql</code> - </li>
+                <li><code>$parametersOrQueryMode</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createDriverFromParameters"/>
+            <h4><span class="label protected">protected</span>createDriverFromParameters<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $parameters</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$parameters</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createPlatformFromDriver"/>
+            <h4><span class="label protected">protected</span>createPlatformFromDriver<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Db_Adapter_Driver_DriverInterface.xhtml">Zend\Db\Adapter\Driver\DriverInterface</a></span><strong> $driver</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$driver</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

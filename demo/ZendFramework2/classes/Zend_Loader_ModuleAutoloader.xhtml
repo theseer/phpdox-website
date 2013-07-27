@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Loader\ModuleAutoloader - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#paths">$paths</a>
+          </li>
+          <li>
+            <a href="#explicitPaths">$explicitPaths</a>
+          </li>
+          <li>
+            <a href="#pharExtensions">$pharExtensions</a>
+          </li>
+          <li>
+            <a href="#moduleClassMap">$moduleClassMap</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#autoload">autoload</a>
+          </li>
+          <li>
+            <a href="#getPaths">getPaths</a>
+          </li>
+          <li>
+            <a href="#loadModuleFromDir">loadModuleFromDir</a>
+          </li>
+          <li>
+            <a href="#loadModuleFromPhar">loadModuleFromPhar</a>
+          </li>
+          <li>
+            <a href="#normalizePath">normalizePath</a>
+          </li>
+          <li>
+            <a href="#pharFileToModuleName">pharFileToModuleName</a>
+          </li>
+          <li>
+            <a href="#register">register</a>
+          </li>
+          <li>
+            <a href="#registerPath">registerPath</a>
+          </li>
+          <li>
+            <a href="#registerPaths">registerPaths</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+          <li>
+            <a href="#unregister">unregister</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Loader\</span>ModuleAutoloader</h2>
+        <ul class="fileinfos"/>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Zend_Loader_SplAutoloader.xhtml">Zend\Loader\SplAutoloader</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="paths"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $paths</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="explicitPaths"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $explicitPaths</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="pharExtensions"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $pharExtensions</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="moduleClassMap"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $moduleClassMap</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="null|array|Traversable">null|array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor<pre>Allow configuration of the autoloader via the constructor.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="autoload"/>
+            <h4><span class="label public">public</span>autoload<span style="font-size:90%;">( <span class="param-type"/><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Autoload a class</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPaths"/>
+            <h4><span class="label public">public</span>getPaths<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>getPaths<pre>This is primarily for unit testing, but could have other uses.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="normalizePath"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>normalizePath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $path</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $trailingSlash</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Normalize a path for insertion in the stack</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$path</code> - </li>
+                <li><code>$trailingSlash</code> - Whether trailing slash should be included</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="register"/>
+            <h4><span class="label public">public</span>register<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register the autoloader with spl_autoload registry</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerPath"/>
+            <h4><span class="label public">public</span>registerPath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $path</strong>, <span class="param-type"><span title="bool|string">bool|string</span></span><strong> $moduleName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>registerPath</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$path</code> - </li>
+                <li><code>$moduleName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerPaths"/>
+            <h4><span class="label public">public</span>registerPaths<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $paths</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>registerPaths</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$paths</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Configure the autoloader<pre>In most cases, $options should be either an associative array or
+Traversable object.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unregister"/>
+            <h4><span class="label public">public</span>unregister<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Unregister the autoloader with spl_autoload registry</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="loadModuleFromDir"/>
+            <h4><span class="label protected">protected</span>loadModuleFromDir<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dirPath</strong>, <span class="param-type">string</span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>loadModuleFromDir</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dirPath</code> - </li>
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="loadModuleFromPhar"/>
+            <h4><span class="label protected">protected</span>loadModuleFromPhar<span style="font-size:90%;">( <span class="param-type">string</span><strong> $pharPath</strong>, <span class="param-type">string</span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>loadModuleFromPhar</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pharPath</code> - </li>
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="pharFileToModuleName"/>
+            <h4><span class="label protected">protected</span>pharFileToModuleName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $pharPath</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the base module name from the path to a phar</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$pharPath</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

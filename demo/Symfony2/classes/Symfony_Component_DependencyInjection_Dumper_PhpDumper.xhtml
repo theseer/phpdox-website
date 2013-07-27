@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\DependencyInjection\Dumper\PhpDumper - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#FIRST_CHARS">FIRST_CHARS</a>
+          </li>
+          <li>
+            <a href="#NON_FIRST_CHARS">NON_FIRST_CHARS</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#inlinedDefinitions">$inlinedDefinitions</a>
+          </li>
+          <li>
+            <a href="#definitionVariables">$definitionVariables</a>
+          </li>
+          <li>
+            <a href="#referenceVariables">$referenceVariables</a>
+          </li>
+          <li>
+            <a href="#variableCount">$variableCount</a>
+          </li>
+          <li>
+            <a href="#reservedVariables">$reservedVariables</a>
+          </li>
+          <li>
+            <a href="#proxyDumper">$proxyDumper</a>
+          </li>
+          <li>
+            <a href="#container">$container</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addAliases">addAliases</a>
+          </li>
+          <li>
+            <a href="#addConstructor">addConstructor</a>
+          </li>
+          <li>
+            <a href="#addDefaultParametersMethod">addDefaultParametersMethod</a>
+          </li>
+          <li>
+            <a href="#addFrozenConstructor">addFrozenConstructor</a>
+          </li>
+          <li>
+            <a href="#addMethodMap">addMethodMap</a>
+          </li>
+          <li>
+            <a href="#addNewInstance">addNewInstance</a>
+          </li>
+          <li>
+            <a href="#addProxyClasses">addProxyClasses</a>
+          </li>
+          <li>
+            <a href="#addService">addService</a>
+          </li>
+          <li>
+            <a href="#addServiceConfigurator">addServiceConfigurator</a>
+          </li>
+          <li>
+            <a href="#addServiceInclude">addServiceInclude</a>
+          </li>
+          <li>
+            <a href="#addServiceInlinedDefinitions">addServiceInlinedDefinitions</a>
+          </li>
+          <li>
+            <a href="#addServiceInlinedDefinitionsSetup">addServiceInlinedDefinitionsSetup</a>
+          </li>
+          <li>
+            <a href="#addServiceInstance">addServiceInstance</a>
+          </li>
+          <li>
+            <a href="#addServiceLocalTempVariables">addServiceLocalTempVariables</a>
+          </li>
+          <li>
+            <a href="#addServiceMethodCalls">addServiceMethodCalls</a>
+          </li>
+          <li>
+            <a href="#addServiceProperties">addServiceProperties</a>
+          </li>
+          <li>
+            <a href="#addServiceReturn">addServiceReturn</a>
+          </li>
+          <li>
+            <a href="#addServiceSynchronizer">addServiceSynchronizer</a>
+          </li>
+          <li>
+            <a href="#addServices">addServices</a>
+          </li>
+          <li>
+            <a href="#dump">dump</a>
+          </li>
+          <li>
+            <a href="#dumpParameter">dumpParameter</a>
+          </li>
+          <li>
+            <a href="#dumpValue">dumpValue</a>
+          </li>
+          <li>
+            <a href="#endClass">endClass</a>
+          </li>
+          <li>
+            <a href="#exportParameters">exportParameters</a>
+          </li>
+          <li>
+            <a href="#getDefinitionsFromArguments">getDefinitionsFromArguments</a>
+          </li>
+          <li>
+            <a href="#getInlinedDefinitions">getInlinedDefinitions</a>
+          </li>
+          <li>
+            <a href="#getNextVariableName">getNextVariableName</a>
+          </li>
+          <li>
+            <a href="#getProxyDumper">getProxyDumper</a>
+          </li>
+          <li>
+            <a href="#getServiceCall">getServiceCall</a>
+          </li>
+          <li>
+            <a href="#getServiceCallsFromArguments">getServiceCallsFromArguments</a>
+          </li>
+          <li>
+            <a href="#hasReference">hasReference</a>
+          </li>
+          <li>
+            <a href="#isSimpleInstance">isSimpleInstance</a>
+          </li>
+          <li>
+            <a href="#setProxyDumper">setProxyDumper</a>
+          </li>
+          <li>
+            <a href="#startClass">startClass</a>
+          </li>
+          <li>
+            <a href="#wrapServiceConditionals">wrapServiceConditionals</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\DependencyInjection\Dumper\</span>PhpDumper</h2>
+        <div class="file-notice">
+          <p>PhpDumper dumps a service container as a PHP class.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+          <li><b>Author: </b>Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="FIRST_CHARS"/>FIRST_CHARS = 'abcdefghijklmnopqrstuvwxyz'<em> string</em><p><li>Characters that might appear in the generated variable name as first character</li></p><hr/></li>
+          <li><a name="NON_FIRST_CHARS"/>NON_FIRST_CHARS = 'abcdefghijklmnopqrstuvwxyz0123456789_'<em> string</em><p><li>Characters that might appear in the generated variable name as any but the first character</li></p><hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="inlinedDefinitions"/>
+            <h4><span class="label private">private</span>
+                $inlinedDefinitions</h4>
+          </li>
+          <li>
+            <a name="definitionVariables"/>
+            <h4><span class="label private">private</span>
+                $definitionVariables</h4>
+          </li>
+          <li>
+            <a name="referenceVariables"/>
+            <h4><span class="label private">private</span>
+                $referenceVariables</h4>
+          </li>
+          <li>
+            <a name="variableCount"/>
+            <h4><span class="label private">private</span>
+                $variableCount</h4>
+          </li>
+          <li>
+            <a name="reservedVariables"/>
+            <h4><span class="label private">private</span>
+                $reservedVariables</h4>
+          </li>
+          <li>
+            <a name="proxyDumper"/>
+            <h4><span class="label private">private</span>object 
+                
+                $proxyDumper</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder.xhtml">Symfony\Component\DependencyInjection\ContainerBuilder</a></span><strong> $container</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="dump"/>
+            <h4><span class="label public">public</span>dump<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Dumps the service container as a PHP class.<pre>Available options:
+
+ * class:      The class name
+ * base_class: The base class name</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - An array of options</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A PHP class representing of the service container</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="dumpParameter"/>
+            <h4><span class="label public">public</span>dumpParameter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Dumps a parameter</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setProxyDumper"/>
+            <h4><span class="label public">public</span>setProxyDumper<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_DependencyInjection_LazyProxy_PhpDumper_DumperInterface.xhtml">Symfony\Component\DependencyInjection\LazyProxy\PhpDumper\DumperInterface</a></span><strong> $proxyDumper</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the dumper to be used when dumping proxies in the generated container.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$proxyDumper</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addAliases"/>
+            <h4><span class="label private">private</span>addAliases<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds the aliases property definition</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addConstructor"/>
+            <h4><span class="label private">private</span>addConstructor<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds the constructor.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addDefaultParametersMethod"/>
+            <h4><span class="label private">private</span>addDefaultParametersMethod<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds default parameters method.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addFrozenConstructor"/>
+            <h4><span class="label private">private</span>addFrozenConstructor<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds the constructor for a frozen container.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addMethodMap"/>
+            <h4><span class="label private">private</span>addMethodMap<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds the methodMap property definition</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addNewInstance"/>
+            <h4><span class="label private">private</span>addNewInstance<span style="font-size:90%;">( <span class="param-type"/><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong>, <span class="param-type"/><strong> $return</strong>, <span class="param-type"/><strong> $instantiation</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="addProxyClasses"/>
+            <h4><span class="label private">private</span>addProxyClasses<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates code for the proxies to be attached after the container class</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addService"/>
+            <h4><span class="label private">private</span>addService<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a service</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+                <li><code>$definition</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addServiceConfigurator"/>
+            <h4><span class="label private">private</span>addServiceConfigurator<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong>, <span class="param-type">string</span><strong> $variableName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds configurator definition</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+                <li><code>$definition</code> - </li>
+                <li><code>$variableName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addServiceInclude"/>
+            <h4><span class="label private">private</span>addServiceInclude<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates the require_once statement for service includes.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - The service id</li>
+                <li><code>$definition</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addServiceInlinedDefinitions"/>
+            <h4><span class="label private">private</span>addServiceInlinedDefinitions<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates the inline definition of a service.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+                <li><code>$definition</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>RuntimeException When the factory definition is incomplete</code>
+                </li>
+                <li>
+                  <code>ServiceCircularReferenceException When a circular reference is detected</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addServiceInlinedDefinitionsSetup"/>
+            <h4><span class="label private">private</span>addServiceInlinedDefinitionsSetup<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates the inline definition setup.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+                <li><code>$definition</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addServiceInstance"/>
+            <h4><span class="label private">private</span>addServiceInstance<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates the service instance.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+                <li><code>$definition</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidArgumentException</code>
+                </li>
+                <li>
+                  <code>RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addServiceLocalTempVariables"/>
+            <h4><span class="label private">private</span>addServiceLocalTempVariables<span style="font-size:90%;">( <span class="param-type">string</span><strong> $cId</strong>, <span class="param-type">string</span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates Service local temp variables.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cId</code> - </li>
+                <li><code>$definition</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addServiceMethodCalls"/>
+            <h4><span class="label private">private</span>addServiceMethodCalls<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong>, <span class="param-type">string</span><strong> $variableName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds method calls to a service definition.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+                <li><code>$definition</code> - </li>
+                <li><code>$variableName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addServiceProperties"/>
+            <h4><span class="label private">private</span>addServiceProperties<span style="font-size:90%;">( <span class="param-type"/><strong> $id</strong>, <span class="param-type"/><strong> $definition</strong>, <span class="param-type">string</span><strong> $variableName</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="addServiceReturn"/>
+            <h4><span class="label private">private</span>addServiceReturn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds the service return statement.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - Service id</li>
+                <li><code>$definition</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addServiceSynchronizer"/>
+            <h4><span class="label private">private</span>addServiceSynchronizer<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds synchronizer methods.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - A service identifier</li>
+                <li><code>$definition</code> - A Definition instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addServices"/>
+            <h4><span class="label private">private</span>addServices<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds multiple services</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="dumpValue"/>
+            <h4><span class="label private">private</span>dumpValue<span style="font-size:90%;">( <span class="param-type">array</span><strong> $value</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $interpolate</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Dumps values.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$interpolate</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="endClass"/>
+            <h4><span class="label private">private</span>endClass<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Ends the class definition.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="exportParameters"/>
+            <h4><span class="label private">private</span>exportParameters<span style="font-size:90%;">( <span class="param-type">array</span><strong> $parameters</strong>, <span class="param-type">string</span><strong> $path</strong>, <span class="param-type">integer</span><strong> $indent</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Exports parameters.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$parameters</code> - </li>
+                <li><code>$path</code> - </li>
+                <li><code>$indent</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDefinitionsFromArguments"/>
+            <h4><span class="label private">private</span>getDefinitionsFromArguments<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $arguments</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the definition from arguments.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$arguments</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInlinedDefinitions"/>
+            <h4><span class="label private">private</span>getInlinedDefinitions<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the inline definition.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$definition</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNextVariableName"/>
+            <h4><span class="label private">private</span>getNextVariableName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the next name to use</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getProxyDumper"/>
+            <h4><span class="label private">private</span>getProxyDumper<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieves the currently set proxy dumper or instantiates one.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getServiceCall"/>
+            <h4><span class="label private">private</span>getServiceCall<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Reference.xhtml">Symfony\Component\DependencyInjection\Reference</a></span><strong> $reference</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a service call</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+                <li><code>$reference</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getServiceCallsFromArguments"/>
+            <h4><span class="label private">private</span>getServiceCallsFromArguments<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $arguments</strong>, <span class="param-type">Array</span><strong> &amp;$calls</strong>, <span class="param-type">Array</span><strong> &amp;$behavior</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Builds service calls from arguments.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$arguments</code> - </li>
+                <li><code>&amp;$calls</code> - By reference</li>
+                <li><code>&amp;$behavior</code> - By reference</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasReference"/>
+            <h4><span class="label private">private</span>hasReference<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type">Array</span><strong> $arguments</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $deep</strong>, <span class="param-type">Array</span><strong> $visited</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if a service id has a reference.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+                <li><code>$arguments</code> - </li>
+                <li><code>$deep</code> - </li>
+                <li><code>$visited</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isSimpleInstance"/>
+            <h4><span class="label private">private</span>isSimpleInstance<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if the definition is a simple instance.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - </li>
+                <li><code>$definition</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="startClass"/>
+            <h4><span class="label private">private</span>startClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong>, <span class="param-type">string</span><strong> $baseClass</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds the class headers.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - Class name</li>
+                <li><code>$baseClass</code> - The name of the base class</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="wrapServiceConditionals"/>
+            <h4><span class="label private">private</span>wrapServiceConditionals<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong>, <span class="param-type">string</span><strong> $code</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Wraps the service conditionals.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$code</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

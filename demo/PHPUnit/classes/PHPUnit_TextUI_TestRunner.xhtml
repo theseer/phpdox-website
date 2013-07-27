@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>PHPUnit - PHPUnit_TextUI_TestRunner - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">PHPUnit - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#SUCCESS_EXIT">SUCCESS_EXIT</a>
+          </li>
+          <li>
+            <a href="#FAILURE_EXIT">FAILURE_EXIT</a>
+          </li>
+          <li>
+            <a href="#EXCEPTION_EXIT">EXCEPTION_EXIT</a>
+          </li>
+          <li>
+            <a href="#STATUS_PASSED">STATUS_PASSED</a>
+          </li>
+          <li>
+            <a href="#STATUS_SKIPPED">STATUS_SKIPPED</a>
+          </li>
+          <li>
+            <a href="#STATUS_INCOMPLETE">STATUS_INCOMPLETE</a>
+          </li>
+          <li>
+            <a href="#STATUS_FAILURE">STATUS_FAILURE</a>
+          </li>
+          <li>
+            <a href="#STATUS_ERROR">STATUS_ERROR</a>
+          </li>
+          <li>
+            <a href="#SUITE_METHODNAME">SUITE_METHODNAME</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#codeCoverageFilter">$codeCoverageFilter</a>
+          </li>
+          <li>
+            <a href="#loader">$loader</a>
+          </li>
+          <li>
+            <a href="#printer">$printer</a>
+          </li>
+          <li>
+            <a href="#versionStringPrinted">$versionStringPrinted</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#clearStatus">clearStatus</a>
+          </li>
+          <li>
+            <a href="#createTestResult">createTestResult</a>
+          </li>
+          <li>
+            <a href="#doRun">doRun</a>
+          </li>
+          <li>
+            <a href="#getLoader">getLoader</a>
+          </li>
+          <li>
+            <a href="#getLoader">getLoader</a>
+          </li>
+          <li>
+            <a href="#getTest">getTest</a>
+          </li>
+          <li>
+            <a href="#handleConfiguration">handleConfiguration</a>
+          </li>
+          <li>
+            <a href="#loadSuiteClass">loadSuiteClass</a>
+          </li>
+          <li>
+            <a href="#printVersionString">printVersionString</a>
+          </li>
+          <li>
+            <a href="#processSuiteFilters">processSuiteFilters</a>
+          </li>
+          <li>
+            <a href="#run">run</a>
+          </li>
+          <li>
+            <a href="#runFailed">runFailed</a>
+          </li>
+          <li>
+            <a href="#runFailed">runFailed</a>
+          </li>
+          <li>
+            <a href="#setPrinter">setPrinter</a>
+          </li>
+          <li>
+            <a href="#showError">showError</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>PHPUnit_TextUI_TestRunner</h2>
+        <div class="file-notice">
+          <p>A TestRunner for the Command Line Interface (CLI) PHP SAPI Module.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li><b>Copyright: </b>2001-2013 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li><b>License: </b>http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="SUCCESS_EXIT"/>SUCCESS_EXIT = 0<hr/></li>
+          <li><a name="FAILURE_EXIT"/>FAILURE_EXIT = 1<hr/></li>
+          <li><a name="EXCEPTION_EXIT"/>EXCEPTION_EXIT = 2<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="codeCoverageFilter"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $codeCoverageFilter</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="loader"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $loader</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="printer"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $printer</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="versionStringPrinted"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $versionStringPrinted</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Runner_TestSuiteLoader">PHPUnit_Runner_TestSuiteLoader</span></span><strong> $loader</strong>, <span class="param-type"><span title="\\PHP_CodeCoverage_Filter">PHP_CodeCoverage_Filter</span></span><strong> $filter</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$loader</code> - </li>
+                <li><code>$filter</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="doRun"/>
+            <h4><span class="label public">public</span>doRun<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $suite</strong>, <span class="param-type">Array</span><strong> $arguments</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$suite</code> - </li>
+                <li><code>$arguments</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLoader"/>
+            <h4><span class="label public">public</span>getLoader<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the loader to be used.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLoader"/>
+            <h4><span class="label public">public</span>getLoader<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the loader to be used.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTest"/>
+            <h4><span class="label public">public</span>getTest<span style="font-size:90%;">( <span class="param-type">string</span><strong> $suiteClassName</strong>, <span class="param-type">string</span><strong> $suiteClassFile</strong>, <span class="param-type">string</span><strong> $suffixes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the Test corresponding to the given suite.<pre>This is a template method, subclasses override
+the runFailed() and clearStatus() methods.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$suiteClassName</code> - </li>
+                <li><code>$suiteClassFile</code> - </li>
+                <li><code>$suffixes</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="printVersionString"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>printVersionString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+          <li>
+            <a name="run"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>run<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $test</strong>, <span class="param-type">Array</span><strong> $arguments</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$test</code> - </li>
+                <li><code>$arguments</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>PHPUnit_Framework_Exception</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPrinter"/>
+            <h4><span class="label public">public</span>setPrinter<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_TextUI_ResultPrinter">PHPUnit_TextUI_ResultPrinter</span></span><strong> $resultPrinter</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$resultPrinter</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="showError"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>showError<span style="font-size:90%;">( <span class="param-type"/><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+          <li>
+            <a name="clearStatus"/>
+            <h4><span class="label protected">protected</span>clearStatus<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clears the status message.</li>
+            </p>
+          </li>
+          <li>
+            <a name="createTestResult"/>
+            <h4><span class="label protected">protected</span>createTestResult<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="handleConfiguration"/>
+            <h4><span class="label protected">protected</span>handleConfiguration<span style="font-size:90%;">( <span class="param-type">Array</span><strong> &amp;$arguments</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$arguments</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="loadSuiteClass"/>
+            <h4><span class="label protected">protected</span>loadSuiteClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $suiteClassName</strong>, <span class="param-type">string</span><strong> $suiteClassFile</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the loaded ReflectionClass for a suite name.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$suiteClassName</code> - </li>
+                <li><code>$suiteClassFile</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="runFailed"/>
+            <h4><span class="label protected">protected</span>runFailed<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Override to define how to handle a failed loading of a test suite.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="runFailed"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>runFailed<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Override to define how to handle a failed loading of a test suite.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>write<span style="font-size:90%;">( <span class="param-type">string</span><strong> $buffer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$buffer</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="processSuiteFilters"/>
+            <h4><span class="label private">private</span>processSuiteFilters<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestSuite">PHPUnit_Framework_TestSuite</span></span><strong> $suite</strong>, <span class="param-type">Array</span><strong> $arguments</strong> )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

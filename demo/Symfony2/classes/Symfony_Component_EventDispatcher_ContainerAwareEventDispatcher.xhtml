@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#container">$container</a>
+          </li>
+          <li>
+            <a href="#listenerIds">$listenerIds</a>
+          </li>
+          <li>
+            <a href="#listeners">$listeners</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addListener">addListener</a>
+          </li>
+          <li>
+            <a href="#addListenerService">addListenerService</a>
+          </li>
+          <li>
+            <a href="#addSubscriber">addSubscriber</a>
+          </li>
+          <li>
+            <a href="#addSubscriberService">addSubscriberService</a>
+          </li>
+          <li>
+            <a href="#dispatch">dispatch</a>
+          </li>
+          <li>
+            <a href="#dispatch">dispatch</a>
+          </li>
+          <li>
+            <a href="#doDispatch">doDispatch</a>
+          </li>
+          <li>
+            <a href="#getContainer">getContainer</a>
+          </li>
+          <li>
+            <a href="#getListeners">getListeners</a>
+          </li>
+          <li>
+            <a href="#getListeners">getListeners</a>
+          </li>
+          <li>
+            <a href="#hasListeners">hasListeners</a>
+          </li>
+          <li>
+            <a href="#hasListeners">hasListeners</a>
+          </li>
+          <li>
+            <a href="#lazyLoad">lazyLoad</a>
+          </li>
+          <li>
+            <a href="#removeListener">removeListener</a>
+          </li>
+          <li>
+            <a href="#removeListener">removeListener</a>
+          </li>
+          <li>
+            <a href="#removeSubscriber">removeSubscriber</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\EventDispatcher\</span>ContainerAwareEventDispatcher</h2>
+        <div class="file-notice">
+          <p>Lazily loads listeners and subscribers from the dependency injection container</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+          <li><b>Author: </b>Jordan Alliot &lt;jordan.alliot@gmail.com&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="container"/>
+            <h4><span class="label private">private</span>object 
+                
+                $container</h4>
+            <ul class="varlist">
+              <li>The container from where services are loaded</li>
+            </ul>
+          </li>
+          <li>
+            <a name="listenerIds"/>
+            <h4><span class="label private">private</span>array 
+                
+                $listenerIds</h4>
+            <ul class="varlist">
+              <li>The service IDs of the event listeners and subscribers</li>
+            </ul>
+          </li>
+          <li>
+            <a name="listeners"/>
+            <h4><span class="label private">private</span>array 
+                
+                $listeners</h4>
+            <ul class="varlist">
+              <li>The services registered as listeners</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_DependencyInjection_ContainerInterface.xhtml">Symfony\Component\DependencyInjection\ContainerInterface</a></span><strong> $container</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$container</code> - A ContainerInterface instance</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addListener"/>
+            <h4><span class="label public">public</span>addListener<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"/><strong> $listener</strong>, <span class="param-type">integer</span><strong> $priority</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+          <li>
+            <a name="addListenerService"/>
+            <h4><span class="label public">public</span>addListenerService<span style="font-size:90%;">( <span class="param-type">string</span><strong> $eventName</strong>, <span class="param-type">array</span><strong> $callback</strong>, <span class="param-type">integer</span><strong> $priority</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a service as event listener</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$eventName</code> - Event for which the listener is added</li>
+                <li><code>$callback</code> - The service ID of the listener service &amp; the method</li>
+                <li><code>$priority</code> - The higher this value, the earlier an event listener</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addSubscriber"/>
+            <h4><span class="label public">public</span>addSubscriber<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_EventDispatcher_EventSubscriberInterface.xhtml">Symfony\Component\EventDispatcher\EventSubscriberInterface</a></span><strong> $subscriber</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+          <li>
+            <a name="addSubscriberService"/>
+            <h4><span class="label public">public</span>addSubscriberService<span style="font-size:90%;">( <span class="param-type">string</span><strong> $serviceId</strong>, <span class="param-type">string</span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a service as event subscriber</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$serviceId</code> - The service ID of the subscriber service</li>
+                <li><code>$class</code> - The service's class name (which must implement EventSubscriberInterface)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="dispatch"/>
+            <h4><span class="label public">public</span>dispatch<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"><a href="../classes/Symfony_Component_EventDispatcher_Event.xhtml">Symfony\Component\EventDispatcher\Event</a></span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}<pre>Lazily loads listeners for this event from the dependency injection
+container.</pre></li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException if the service is not defined</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="dispatch"/>
+            <h4><span class="label public">public</span>dispatch<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"><a href="../classes/Symfony_Component_EventDispatcher_Event.xhtml">Symfony\Component\EventDispatcher\Event</a></span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+          <li>
+            <a name="getContainer"/>
+            <h4><span class="label public">public</span>getContainer<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getListeners"/>
+            <h4><span class="label public">public</span>getListeners<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+          <li>
+            <a name="getListeners"/>
+            <h4><span class="label public">public</span>getListeners<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+          <li>
+            <a name="hasListeners"/>
+            <h4><span class="label public">public</span>hasListeners<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+          <li>
+            <a name="hasListeners"/>
+            <h4><span class="label public">public</span>hasListeners<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+          <li>
+            <a name="removeListener"/>
+            <h4><span class="label public">public</span>removeListener<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"/><strong> $listener</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="removeListener"/>
+            <h4><span class="label public">public</span>removeListener<span style="font-size:90%;">( <span class="param-type"/><strong> $eventName</strong>, <span class="param-type"/><strong> $listener</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+          <li>
+            <a name="removeSubscriber"/>
+            <h4><span class="label public">public</span>removeSubscriber<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_EventDispatcher_EventSubscriberInterface.xhtml">Symfony\Component\EventDispatcher\EventSubscriberInterface</a></span><strong> $subscriber</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+          <li>
+            <a name="doDispatch"/>
+            <h4><span class="label protected">protected</span>doDispatch<span style="font-size:90%;">( <span class="param-type"><span title="array[callback]">array[callback]</span></span><strong> $listeners</strong>, <span class="param-type">string</span><strong> $eventName</strong>, <span class="param-type"><a href="../classes/Symfony_Component_EventDispatcher_Event.xhtml">Symfony\Component\EventDispatcher\Event</a></span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Triggers the listeners of an event.<pre>This method can be overridden to add functionality that is executed
+for each listener.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$listeners</code> - The event listeners.</li>
+                <li><code>$eventName</code> - The name of the event to dispatch.</li>
+                <li><code>$event</code> - The event object to pass to the event handlers/listeners.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="lazyLoad"/>
+            <h4><span class="label protected">protected</span>lazyLoad<span style="font-size:90%;">( <span class="param-type">string</span><strong> $eventName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Lazily loads listeners for this event from the dependency injection container.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$eventName</code> - The name of the event to dispatch. The name of</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

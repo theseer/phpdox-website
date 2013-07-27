@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\HttpKernel\HttpCache\StoreInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#cleanup">cleanup</a>
+          </li>
+          <li>
+            <a href="#invalidate">invalidate</a>
+          </li>
+          <li>
+            <a href="#isLocked">isLocked</a>
+          </li>
+          <li>
+            <a href="#lock">lock</a>
+          </li>
+          <li>
+            <a href="#lookup">lookup</a>
+          </li>
+          <li>
+            <a href="#purge">purge</a>
+          </li>
+          <li>
+            <a href="#unlock">unlock</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\HttpKernel\HttpCache\</span>StoreInterface</h2>
+        <div class="file-notice">
+          <p>Interface implemented by HTTP cache stores.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="cleanup"/>
+            <h4><span class="label public">public</span>cleanup<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Cleanups storage.</li>
+            </p>
+          </li>
+          <li>
+            <a name="invalidate"/>
+            <h4><span class="label public">public</span>invalidate<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Invalidates all cache entries that match the request.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - A Request instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isLocked"/>
+            <h4><span class="label public">public</span>isLocked<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether or not a lock exists.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - A Request instance</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if lock exists, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="lock"/>
+            <h4><span class="label public">public</span>lock<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Locks the cache for a given Request.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - A Request instance</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if the lock is acquired, the path to the current lock otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="lookup"/>
+            <h4><span class="label public">public</span>lookup<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Locates a cached Response for the Request provided.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - A Request instance</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A Response instance, or null if no cache entry was found</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="purge"/>
+            <h4><span class="label public">public</span>purge<span style="font-size:90%;">( <span class="param-type">string</span><strong> $url</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Purges data for the given URL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$url</code> - A URL</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if the URL exists and has been purged, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unlock"/>
+            <h4><span class="label public">public</span>unlock<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Releases the lock for the given Request.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - A Request instance</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>False if the lock file does not exist or cannot be unlocked, true otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong>, <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Response.xhtml">Symfony\Component\HttpFoundation\Response</a></span><strong> $response</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Writes a cache entry to the store for the given Request and Response.<pre>Existing entries are read and any that match the response are removed. This
+method calls write with the new list of cache entries.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$request</code> - A Request instance</li>
+                <li><code>$response</code> - A Response instance</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The key under which the response is stored</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

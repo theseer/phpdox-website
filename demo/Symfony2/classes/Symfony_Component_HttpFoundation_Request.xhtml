@@ -1,0 +1,1624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\HttpFoundation\Request - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#HEADER_CLIENT_IP">HEADER_CLIENT_IP</a>
+          </li>
+          <li>
+            <a href="#HEADER_CLIENT_HOST">HEADER_CLIENT_HOST</a>
+          </li>
+          <li>
+            <a href="#HEADER_CLIENT_PROTO">HEADER_CLIENT_PROTO</a>
+          </li>
+          <li>
+            <a href="#HEADER_CLIENT_PORT">HEADER_CLIENT_PORT</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#trustedProxies">$trustedProxies</a>
+          </li>
+          <li>
+            <a href="#trustedHeaders">$trustedHeaders</a>
+          </li>
+          <li>
+            <a href="#httpMethodParameterOverride">$httpMethodParameterOverride</a>
+          </li>
+          <li>
+            <a href="#attributes">$attributes</a>
+          </li>
+          <li>
+            <a href="#request">$request</a>
+          </li>
+          <li>
+            <a href="#query">$query</a>
+          </li>
+          <li>
+            <a href="#server">$server</a>
+          </li>
+          <li>
+            <a href="#files">$files</a>
+          </li>
+          <li>
+            <a href="#cookies">$cookies</a>
+          </li>
+          <li>
+            <a href="#headers">$headers</a>
+          </li>
+          <li>
+            <a href="#content">$content</a>
+          </li>
+          <li>
+            <a href="#languages">$languages</a>
+          </li>
+          <li>
+            <a href="#charsets">$charsets</a>
+          </li>
+          <li>
+            <a href="#acceptableContentTypes">$acceptableContentTypes</a>
+          </li>
+          <li>
+            <a href="#pathInfo">$pathInfo</a>
+          </li>
+          <li>
+            <a href="#requestUri">$requestUri</a>
+          </li>
+          <li>
+            <a href="#baseUrl">$baseUrl</a>
+          </li>
+          <li>
+            <a href="#basePath">$basePath</a>
+          </li>
+          <li>
+            <a href="#method">$method</a>
+          </li>
+          <li>
+            <a href="#format">$format</a>
+          </li>
+          <li>
+            <a href="#session">$session</a>
+          </li>
+          <li>
+            <a href="#locale">$locale</a>
+          </li>
+          <li>
+            <a href="#defaultLocale">$defaultLocale</a>
+          </li>
+          <li>
+            <a href="#formats">$formats</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__clone">__clone</a>
+          </li>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__toString">__toString</a>
+          </li>
+          <li>
+            <a href="#create">create</a>
+          </li>
+          <li>
+            <a href="#createFromGlobals">createFromGlobals</a>
+          </li>
+          <li>
+            <a href="#duplicate">duplicate</a>
+          </li>
+          <li>
+            <a href="#enableHttpMethodParameterOverride">enableHttpMethodParameterOverride</a>
+          </li>
+          <li>
+            <a href="#get">get</a>
+          </li>
+          <li>
+            <a href="#getAcceptableContentTypes">getAcceptableContentTypes</a>
+          </li>
+          <li>
+            <a href="#getBasePath">getBasePath</a>
+          </li>
+          <li>
+            <a href="#getBaseUrl">getBaseUrl</a>
+          </li>
+          <li>
+            <a href="#getCharsets">getCharsets</a>
+          </li>
+          <li>
+            <a href="#getClientIp">getClientIp</a>
+          </li>
+          <li>
+            <a href="#getClientIps">getClientIps</a>
+          </li>
+          <li>
+            <a href="#getContent">getContent</a>
+          </li>
+          <li>
+            <a href="#getContentType">getContentType</a>
+          </li>
+          <li>
+            <a href="#getETags">getETags</a>
+          </li>
+          <li>
+            <a href="#getFormat">getFormat</a>
+          </li>
+          <li>
+            <a href="#getHost">getHost</a>
+          </li>
+          <li>
+            <a href="#getHttpHost">getHttpHost</a>
+          </li>
+          <li>
+            <a href="#getHttpMethodParameterOverride">getHttpMethodParameterOverride</a>
+          </li>
+          <li>
+            <a href="#getLanguages">getLanguages</a>
+          </li>
+          <li>
+            <a href="#getLocale">getLocale</a>
+          </li>
+          <li>
+            <a href="#getMethod">getMethod</a>
+          </li>
+          <li>
+            <a href="#getMimeType">getMimeType</a>
+          </li>
+          <li>
+            <a href="#getPassword">getPassword</a>
+          </li>
+          <li>
+            <a href="#getPathInfo">getPathInfo</a>
+          </li>
+          <li>
+            <a href="#getPort">getPort</a>
+          </li>
+          <li>
+            <a href="#getPreferredLanguage">getPreferredLanguage</a>
+          </li>
+          <li>
+            <a href="#getQueryString">getQueryString</a>
+          </li>
+          <li>
+            <a href="#getRealMethod">getRealMethod</a>
+          </li>
+          <li>
+            <a href="#getRequestFormat">getRequestFormat</a>
+          </li>
+          <li>
+            <a href="#getRequestUri">getRequestUri</a>
+          </li>
+          <li>
+            <a href="#getScheme">getScheme</a>
+          </li>
+          <li>
+            <a href="#getSchemeAndHttpHost">getSchemeAndHttpHost</a>
+          </li>
+          <li>
+            <a href="#getScriptName">getScriptName</a>
+          </li>
+          <li>
+            <a href="#getSession">getSession</a>
+          </li>
+          <li>
+            <a href="#getTrustedHeaderName">getTrustedHeaderName</a>
+          </li>
+          <li>
+            <a href="#getTrustedProxies">getTrustedProxies</a>
+          </li>
+          <li>
+            <a href="#getUri">getUri</a>
+          </li>
+          <li>
+            <a href="#getUriForPath">getUriForPath</a>
+          </li>
+          <li>
+            <a href="#getUrlencodedPrefix">getUrlencodedPrefix</a>
+          </li>
+          <li>
+            <a href="#getUser">getUser</a>
+          </li>
+          <li>
+            <a href="#getUserInfo">getUserInfo</a>
+          </li>
+          <li>
+            <a href="#hasPreviousSession">hasPreviousSession</a>
+          </li>
+          <li>
+            <a href="#hasSession">hasSession</a>
+          </li>
+          <li>
+            <a href="#initialize">initialize</a>
+          </li>
+          <li>
+            <a href="#initializeFormats">initializeFormats</a>
+          </li>
+          <li>
+            <a href="#isMethod">isMethod</a>
+          </li>
+          <li>
+            <a href="#isMethodSafe">isMethodSafe</a>
+          </li>
+          <li>
+            <a href="#isNoCache">isNoCache</a>
+          </li>
+          <li>
+            <a href="#isSecure">isSecure</a>
+          </li>
+          <li>
+            <a href="#isXmlHttpRequest">isXmlHttpRequest</a>
+          </li>
+          <li>
+            <a href="#normalizeQueryString">normalizeQueryString</a>
+          </li>
+          <li>
+            <a href="#overrideGlobals">overrideGlobals</a>
+          </li>
+          <li>
+            <a href="#prepareBasePath">prepareBasePath</a>
+          </li>
+          <li>
+            <a href="#prepareBaseUrl">prepareBaseUrl</a>
+          </li>
+          <li>
+            <a href="#preparePathInfo">preparePathInfo</a>
+          </li>
+          <li>
+            <a href="#prepareRequestUri">prepareRequestUri</a>
+          </li>
+          <li>
+            <a href="#setDefaultLocale">setDefaultLocale</a>
+          </li>
+          <li>
+            <a href="#setFormat">setFormat</a>
+          </li>
+          <li>
+            <a href="#setLocale">setLocale</a>
+          </li>
+          <li>
+            <a href="#setMethod">setMethod</a>
+          </li>
+          <li>
+            <a href="#setPhpDefaultLocale">setPhpDefaultLocale</a>
+          </li>
+          <li>
+            <a href="#setRequestFormat">setRequestFormat</a>
+          </li>
+          <li>
+            <a href="#setSession">setSession</a>
+          </li>
+          <li>
+            <a href="#setTrustedHeaderName">setTrustedHeaderName</a>
+          </li>
+          <li>
+            <a href="#setTrustedProxies">setTrustedProxies</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\HttpFoundation\</span>Request</h2>
+        <div class="file-notice">
+          <p>Request represents an HTTP request.</p>
+          <p>
+            <pre>The methods dealing with URL accept / return a raw path (% encoded):
+  * getBasePath
+  * getBaseUrl
+  * getPathInfo
+  * getRequestUri
+  * getUri
+  * getUriForPath</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="HEADER_CLIENT_IP"/>HEADER_CLIENT_IP = 'client_ip'<hr/></li>
+          <li><a name="HEADER_CLIENT_HOST"/>HEADER_CLIENT_HOST = 'client_host'<hr/></li>
+          <li><a name="HEADER_CLIENT_PROTO"/>HEADER_CLIENT_PROTO = 'client_proto'<hr/></li>
+          <li><a name="HEADER_CLIENT_PORT"/>HEADER_CLIENT_PORT = 'client_port'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="trustedProxies"/>
+            <h4><span class="label protected">protected</span>
+                $trustedProxies</h4>
+          </li>
+          <li>
+            <a name="trustedHeaders"/>
+            <h4><span class="label protected">protected</span>
+                $trustedHeaders</h4>
+            <ul class="varlist">
+              <li>Names for headers that can be trusted when using trusted proxies.<pre>The default names are non-standard, but widely used
+by popular reverse proxies (like Apache mod_proxy or Amazon EC2).</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="httpMethodParameterOverride"/>
+            <h4><span class="label protected">protected</span>
+                $httpMethodParameterOverride</h4>
+          </li>
+          <li>
+            <a name="attributes"/>
+            <h4><span class="label public">public</span>object 
+                
+                $attributes</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="request"/>
+            <h4><span class="label public">public</span>object 
+                
+                $request</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="query"/>
+            <h4><span class="label public">public</span>object 
+                
+                $query</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="server"/>
+            <h4><span class="label public">public</span>object 
+                
+                $server</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="files"/>
+            <h4><span class="label public">public</span>object 
+                
+                $files</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="cookies"/>
+            <h4><span class="label public">public</span>object 
+                
+                $cookies</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="headers"/>
+            <h4><span class="label public">public</span>object 
+                
+                $headers</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="content"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $content</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="languages"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $languages</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="charsets"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $charsets</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="acceptableContentTypes"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $acceptableContentTypes</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="pathInfo"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $pathInfo</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="requestUri"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $requestUri</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="baseUrl"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $baseUrl</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="basePath"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $basePath</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="method"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $method</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="format"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $format</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="session"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $session</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="locale"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $locale</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="defaultLocale"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $defaultLocale</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="formats"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $formats</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $query</strong>, <span class="param-type">Array</span><strong> $request</strong>, <span class="param-type">Array</span><strong> $attributes</strong>, <span class="param-type">Array</span><strong> $cookies</strong>, <span class="param-type">Array</span><strong> $files</strong>, <span class="param-type">Array</span><strong> $server</strong>, <span class="param-type">string</span><strong> $content</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - The GET parameters</li>
+                <li><code>$request</code> - The POST parameters</li>
+                <li><code>$attributes</code> - The request attributes (parameters parsed from the PATH_INFO, ...)</li>
+                <li><code>$cookies</code> - The COOKIE parameters</li>
+                <li><code>$files</code> - The FILES parameters</li>
+                <li><code>$server</code> - The SERVER parameters</li>
+                <li><code>$content</code> - The raw body data</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__clone"/>
+            <h4><span class="label public">public</span>__clone<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clones the current request.<pre>Note that the session is not cloned as duplicated requests
+are most of the time sub-requests of the main one.</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="__toString"/>
+            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the request as a string.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The request</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="create"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>create<span style="font-size:90%;">( <span class="param-type">string</span><strong> $uri</strong>, <span class="param-type">string</span><strong> $method</strong>, <span class="param-type">Array</span><strong> $parameters</strong>, <span class="param-type">Array</span><strong> $cookies</strong>, <span class="param-type">Array</span><strong> $files</strong>, <span class="param-type">Array</span><strong> $server</strong>, <span class="param-type">string</span><strong> $content</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a Request based on a given URI and configuration.<pre>The information contained in the URI always take precedence
+over the other information (server and parameters).</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$uri</code> - The URI</li>
+                <li><code>$method</code> - The HTTP method</li>
+                <li><code>$parameters</code> - The query (GET) or request (POST) parameters</li>
+                <li><code>$cookies</code> - The request cookies ($_COOKIE)</li>
+                <li><code>$files</code> - The request files ($_FILES)</li>
+                <li><code>$server</code> - The server parameters ($_SERVER)</li>
+                <li><code>$content</code> - The raw body data</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A Request instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createFromGlobals"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>createFromGlobals<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a new request with values from PHP's super globals.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A new request</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="duplicate"/>
+            <h4><span class="label public">public</span>duplicate<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $query</strong>, <span class="param-type">Array</span><strong> $request</strong>, <span class="param-type">Array</span><strong> $attributes</strong>, <span class="param-type">Array</span><strong> $cookies</strong>, <span class="param-type">Array</span><strong> $files</strong>, <span class="param-type">Array</span><strong> $server</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clones a request and overrides some of its parameters.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - The GET parameters</li>
+                <li><code>$request</code> - The POST parameters</li>
+                <li><code>$attributes</code> - The request attributes (parameters parsed from the PATH_INFO, ...)</li>
+                <li><code>$cookies</code> - The COOKIE parameters</li>
+                <li><code>$files</code> - The FILES parameters</li>
+                <li><code>$server</code> - The SERVER parameters</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The duplicated request</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="enableHttpMethodParameterOverride"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>enableHttpMethodParameterOverride<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Enables support for the _method request parameter to determine the intended HTTP method.<pre>Be warned that enabling this feature might lead to CSRF issues in your code.
+Check that you are using CSRF tokens when required.
+
+The HTTP method can only be overridden when the real HTTP method is POST.</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="get"/>
+            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $key</strong>, <span class="param-type">mixed</span><strong> $default</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $deep</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a "parameter" value.<pre>This method is mainly useful for libraries that want to provide some flexibility.
+
+Order of precedence: GET, PATH, POST
+
+Avoid using this method in controllers:
+
+ * slow
+ * prefer to get from a "named" source
+
+It is better to explicitly get request parameters from the appropriate
+public property instead (query, attributes, request).</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - the key</li>
+                <li><code>$default</code> - the default value</li>
+                <li><code>$deep</code> - is parameter deep in multidimensional array</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAcceptableContentTypes"/>
+            <h4><span class="label public">public</span>getAcceptableContentTypes<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a list of content types acceptable by the client browser</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>List of content types in preferable order</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBasePath"/>
+            <h4><span class="label public">public</span>getBasePath<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the root path from which this request is executed.<pre>Suppose that an index.php file instantiates this request object:
+
+ * http://localhost/index.php         returns an empty string
+ * http://localhost/index.php/page    returns an empty string
+ * http://localhost/web/index.php     returns '/web'
+ * http://localhost/we%20b/index.php  returns '/we%20b'</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The raw path (i.e. not urldecoded)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBaseUrl"/>
+            <h4><span class="label public">public</span>getBaseUrl<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the root url from which this request is executed.<pre>The base URL never ends with a /.
+
+This is similar to getBasePath(), except that it also includes the
+script filename (e.g. index.php) if one exists.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The raw url (i.e. not urldecoded)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCharsets"/>
+            <h4><span class="label public">public</span>getCharsets<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a list of charsets acceptable by the client browser.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>List of charsets in preferable order</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getClientIp"/>
+            <h4><span class="label public">public</span>getClientIp<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the client IP address.<pre>This method can read the client IP address from the "X-Forwarded-For" header
+when trusted proxies were set via "setTrustedProxies()". The "X-Forwarded-For"
+header value is a comma+space separated list of IP addresses, the left-most
+being the original client, and each successive proxy that passed the request
+adding the IP address where it received the request from.
+
+If your reverse proxy uses a different header name than "X-Forwarded-For",
+("Client-Ip" for instance), configure it via "setTrustedHeaderName()" with
+the "client-ip" key.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The client IP address</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getClientIps"/>
+            <h4><span class="label public">public</span>getClientIps<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the client IP addresses.<pre>The most trusted IP address is first, and the less trusted one last.
+The "real" client IP address is the last one, but this is also the
+less trusted one.
+
+Use this method carefully; you should use getClientIp() instead.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The client IP addresses</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getContent"/>
+            <h4><span class="label public">public</span>getContent<span style="font-size:90%;">( <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $asResource</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the request body content.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$asResource</code> - If true, a resource will be returned</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The request body content or a resource to read the body stream.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\LogicException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getContentType"/>
+            <h4><span class="label public">public</span>getContentType<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the format associated with the request.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The format (null if no content type is present)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getETags"/>
+            <h4><span class="label public">public</span>getETags<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the Etags.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The entity tags</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFormat"/>
+            <h4><span class="label public">public</span>getFormat<span style="font-size:90%;">( <span class="param-type">string</span><strong> $mimeType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the format associated with the mime type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$mimeType</code> - The associated mime type</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The format (null if not found)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHost"/>
+            <h4><span class="label public">public</span>getHost<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the host name.<pre>This method can read the client port from the "X-Forwarded-Host" header
+when trusted proxies were set via "setTrustedProxies()".
+
+The "X-Forwarded-Host" header must contain the client host name.
+
+If your reverse proxy uses a different header name than "X-Forwarded-Host",
+configure it via "setTrustedHeaderName()" with the "client-host" key.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\UnexpectedValueException when the host name is invalid</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHttpHost"/>
+            <h4><span class="label public">public</span>getHttpHost<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the HTTP host being requested.<pre>The port name will be appended to the host if it's non-standard.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHttpMethodParameterOverride"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getHttpMethodParameterOverride<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether support for the _method request parameter is enabled.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>True when the _method request parameter is enabled, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLanguages"/>
+            <h4><span class="label public">public</span>getLanguages<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a list of languages acceptable by the client browser.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Languages ordered in the user browser preferences</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLocale"/>
+            <h4><span class="label public">public</span>getLocale<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the locale.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMethod"/>
+            <h4><span class="label public">public</span>getMethod<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the request "intended" method.<pre>If the X-HTTP-Method-Override header is set, and if the method is a POST,
+then it is used to determine the "real" intended HTTP method.
+
+The _method request parameter can also be used to determine the HTTP method,
+but only if enableHttpMethodParameterOverride() has been called.
+
+The method is always an uppercased string.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The request method</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMimeType"/>
+            <h4><span class="label public">public</span>getMimeType<span style="font-size:90%;">( <span class="param-type">string</span><strong> $format</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the mime type associated with the format.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$format</code> - The format</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The associated mime type (null if not found)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPassword"/>
+            <h4><span class="label public">public</span>getPassword<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the password.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPathInfo"/>
+            <h4><span class="label public">public</span>getPathInfo<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the path being requested relative to the executed script.<pre>The path info always starts with a /.
+
+Suppose this request is instantiated from /mysite on localhost:
+
+ * http://localhost/mysite              returns an empty string
+ * http://localhost/mysite/about        returns '/about'
+ * http://localhost/mysite/enco%20ded   returns '/enco%20ded'
+ * http://localhost/mysite/about?var=1  returns '/about'</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The raw path (i.e. not urldecoded)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPort"/>
+            <h4><span class="label public">public</span>getPort<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the port on which the request is made.<pre>This method can read the client port from the "X-Forwarded-Port" header
+when trusted proxies were set via "setTrustedProxies()".
+
+The "X-Forwarded-Port" header must contain the client port.
+
+If your reverse proxy uses a different header name than "X-Forwarded-Port",
+configure it via "setTrustedHeaderName()" with the "client-port" key.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPreferredLanguage"/>
+            <h4><span class="label public">public</span>getPreferredLanguage<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $locales</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the preferred language.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$locales</code> - An array of ordered available locales</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The preferred locale</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getQueryString"/>
+            <h4><span class="label public">public</span>getQueryString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates the normalized query string for the Request.<pre>It builds a normalized query string, where keys/value pairs are alphabetized
+and have consistent escaping.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A normalized query string for the Request</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRealMethod"/>
+            <h4><span class="label public">public</span>getRealMethod<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the "real" request method.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The request method</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRequestFormat"/>
+            <h4><span class="label public">public</span>getRequestFormat<span style="font-size:90%;">( <span class="param-type">string</span><strong> $default</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the request format.<pre>Here is the process to determine the format:
+
+ * format defined by the user (with setRequestFormat())
+ * _format request parameter
+ * $default</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$default</code> - The default format</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The request format</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRequestUri"/>
+            <h4><span class="label public">public</span>getRequestUri<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the requested URI.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The raw URI (i.e. not urldecoded)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getScheme"/>
+            <h4><span class="label public">public</span>getScheme<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the request's scheme.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSchemeAndHttpHost"/>
+            <h4><span class="label public">public</span>getSchemeAndHttpHost<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the scheme and HTTP host.<pre>If the URL was called with basic authentication, the user
+and the password are not added to the generated string.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The scheme and HTTP host</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getScriptName"/>
+            <h4><span class="label public">public</span>getScriptName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns current script name.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSession"/>
+            <h4><span class="label public">public</span>getSession<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the Session.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The session</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTrustedHeaderName"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getTrustedHeaderName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $key</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the trusted proxy header name.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - The header key</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The header name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTrustedProxies"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getTrustedProxies<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the list of trusted proxies.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of trusted proxies.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUri"/>
+            <h4><span class="label public">public</span>getUri<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates a normalized URI for the Request.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A normalized URI for the Request</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUriForPath"/>
+            <h4><span class="label public">public</span>getUriForPath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $path</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates a normalized URI for the given path.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$path</code> - A path to use instead of the current one</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The normalized URI for the path</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUser"/>
+            <h4><span class="label public">public</span>getUser<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the user.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUserInfo"/>
+            <h4><span class="label public">public</span>getUserInfo<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the user info.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A user name and, optionally, scheme-specific information about how to gain authorization to access the server</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasPreviousSession"/>
+            <h4><span class="label public">public</span>hasPreviousSession<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the request contains a Session which was started in one of the previous requests.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasSession"/>
+            <h4><span class="label public">public</span>hasSession<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the request contains a Session object.<pre>This method does not give any information about the state of the session object,
+like whether the session is started or not. It is just a way to check if this Request
+is associated with a Session instance.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true when the Request contains a Session object, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="initialize"/>
+            <h4><span class="label public">public</span>initialize<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $query</strong>, <span class="param-type">Array</span><strong> $request</strong>, <span class="param-type">Array</span><strong> $attributes</strong>, <span class="param-type">Array</span><strong> $cookies</strong>, <span class="param-type">Array</span><strong> $files</strong>, <span class="param-type">Array</span><strong> $server</strong>, <span class="param-type">string</span><strong> $content</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the parameters for this request.<pre>This method also re-initializes all properties.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - The GET parameters</li>
+                <li><code>$request</code> - The POST parameters</li>
+                <li><code>$attributes</code> - The request attributes (parameters parsed from the PATH_INFO, ...)</li>
+                <li><code>$cookies</code> - The COOKIE parameters</li>
+                <li><code>$files</code> - The FILES parameters</li>
+                <li><code>$server</code> - The SERVER parameters</li>
+                <li><code>$content</code> - The raw body data</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isMethod"/>
+            <h4><span class="label public">public</span>isMethod<span style="font-size:90%;">( <span class="param-type">string</span><strong> $method</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if the request method is of specified type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - Uppercase request method (GET, POST etc).</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isMethodSafe"/>
+            <h4><span class="label public">public</span>isMethodSafe<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether the method is safe or not.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isNoCache"/>
+            <h4><span class="label public">public</span>isNoCache<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isSecure"/>
+            <h4><span class="label public">public</span>isSecure<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether the request is secure or not.<pre>This method can read the client port from the "X-Forwarded-Proto" header
+when trusted proxies were set via "setTrustedProxies()".
+
+The "X-Forwarded-Proto" header must contain the protocol: "https" or "http".
+
+If your reverse proxy uses a different header name than "X-Forwarded-Proto"
+("SSL_HTTPS" for instance), configure it via "setTrustedHeaderName()" with
+the "client-proto" key.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isXmlHttpRequest"/>
+            <h4><span class="label public">public</span>isXmlHttpRequest<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns true if the request is a XMLHttpRequest.<pre>It works if your JavaScript library set an X-Requested-With HTTP header.
+It is known to work with common JavaScript frameworks:</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if the request is an XMLHttpRequest, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="normalizeQueryString"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>normalizeQueryString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $qs</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Normalizes a query string.<pre>It builds a normalized query string, where keys/value pairs are alphabetized,
+have consistent escaping and unneeded delimiters are removed.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$qs</code> - Query string</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A normalized query string for the Request</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="overrideGlobals"/>
+            <h4><span class="label public">public</span>overrideGlobals<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Overrides the PHP global variables according to this request instance.<pre>It overrides $_GET, $_POST, $_REQUEST, $_SERVER, $_COOKIE.
+$_FILES is never override, see rfc1867</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="setDefaultLocale"/>
+            <h4><span class="label public">public</span>setDefaultLocale<span style="font-size:90%;">( <span class="param-type">string</span><strong> $locale</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the default locale.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$locale</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFormat"/>
+            <h4><span class="label public">public</span>setFormat<span style="font-size:90%;">( <span class="param-type">string</span><strong> $format</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $mimeTypes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Associates a format with mime types.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$format</code> - The format</li>
+                <li><code>$mimeTypes</code> - The associated mime types (the preferred one must be the first as it will be used as the content type)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setLocale"/>
+            <h4><span class="label public">public</span>setLocale<span style="font-size:90%;">( <span class="param-type">string</span><strong> $locale</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the locale.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$locale</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setMethod"/>
+            <h4><span class="label public">public</span>setMethod<span style="font-size:90%;">( <span class="param-type">string</span><strong> $method</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the request method.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setRequestFormat"/>
+            <h4><span class="label public">public</span>setRequestFormat<span style="font-size:90%;">( <span class="param-type">string</span><strong> $format</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the request format.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$format</code> - The request format.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSession"/>
+            <h4><span class="label public">public</span>setSession<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_HttpFoundation_Session_SessionInterface.xhtml">Symfony\Component\HttpFoundation\Session\SessionInterface</a></span><strong> $session</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the Session.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$session</code> - The Session</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTrustedHeaderName"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setTrustedHeaderName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $key</strong>, <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the name for trusted headers.<pre>The following header keys are supported:
+
+ * Request::HEADER_CLIENT_IP:    defaults to X-Forwarded-For   (see getClientIp())
+ * Request::HEADER_CLIENT_HOST:  defaults to X-Forwarded-Host  (see getClientHost())
+ * Request::HEADER_CLIENT_PORT:  defaults to X-Forwarded-Port  (see getClientPort())
+ * Request::HEADER_CLIENT_PROTO: defaults to X-Forwarded-Proto (see getScheme() and isSecure())
+
+Setting an empty value allows to disable the trusted header for the given key.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - The header key</li>
+                <li><code>$value</code> - The header name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTrustedProxies"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setTrustedProxies<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $proxies</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a list of trusted proxies.<pre>You should only list the reverse proxies that you manage directly.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$proxies</code> - A list of trusted proxies</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="initializeFormats"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>initializeFormats<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initializes HTTP request formats.</li>
+            </p>
+          </li>
+          <li>
+            <a name="prepareBasePath"/>
+            <h4><span class="label protected">protected</span>prepareBasePath<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepares the base path.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>base path</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepareBaseUrl"/>
+            <h4><span class="label protected">protected</span>prepareBaseUrl<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepares the base URL.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="preparePathInfo"/>
+            <h4><span class="label protected">protected</span>preparePathInfo<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepares the path info.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>path info</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepareRequestUri"/>
+            <h4><span class="label protected">protected</span>prepareRequestUri<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getUrlencodedPrefix"/>
+            <h4><span class="label private">private</span>getUrlencodedPrefix<span style="font-size:90%;">( <span class="param-type"/><strong> $string</strong>, <span class="param-type"/><strong> $prefix</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="setPhpDefaultLocale"/>
+            <h4><span class="label private">private</span>setPhpDefaultLocale<span style="font-size:90%;">( <span class="param-type">string</span><strong> $locale</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the default PHP locale.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$locale</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

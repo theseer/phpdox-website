@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Loader\AutoloaderFactory - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#STANDARD_AUTOLOADER">STANDARD_AUTOLOADER</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#loaders">$loaders</a>
+          </li>
+          <li>
+            <a href="#standardAutoloader">$standardAutoloader</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#factory">factory</a>
+          </li>
+          <li>
+            <a href="#getRegisteredAutoloader">getRegisteredAutoloader</a>
+          </li>
+          <li>
+            <a href="#getRegisteredAutoloaders">getRegisteredAutoloaders</a>
+          </li>
+          <li>
+            <a href="#getStandardAutoloader">getStandardAutoloader</a>
+          </li>
+          <li>
+            <a href="#isSubclassOf">isSubclassOf</a>
+          </li>
+          <li>
+            <a href="#unregisterAutoloader">unregisterAutoloader</a>
+          </li>
+          <li>
+            <a href="#unregisterAutoloaders">unregisterAutoloaders</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Loader\</span>AutoloaderFactory</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="STANDARD_AUTOLOADER"/>STANDARD_AUTOLOADER = 'Zend\Loader\StandardAutoloader'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="loaders"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $loaders</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="standardAutoloader"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $standardAutoloader</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="factory"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>factory<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Factory for autoloaders<pre>Options should be an array or Traversable object of the following structure:
+&lt;code&gt;
+array(
+    '&lt;autoloader class name&gt;' =&gt; $autoloaderOptions,
+)
+&lt;/code&gt;
+
+The factory will then loop through and instantiate each autoloader with
+the specified options, and register each with the spl_autoloader.
+
+You may retrieve the concrete autoloader instances later using
+{@link getRegisteredAutoloaders()}.
+
+Note that the class names must be resolvable on the include_path or via
+the Zend library, using PSR-0 rules (unless the class has already been
+loaded).</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - (optional) options to use. Defaults to Zend\Loader\StandardAutoloader</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException for invalid options</code>
+                </li>
+                <li>
+                  <code>Exception\InvalidArgumentException for unloadable autoloader classes</code>
+                </li>
+                <li>
+                  <code>Exception\DomainException for autoloader classes not implementing SplAutoloader</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRegisteredAutoloader"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getRegisteredAutoloader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieves an autoloader by class name</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException for non-registered class</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRegisteredAutoloaders"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getRegisteredAutoloaders<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get an list of all autoloaders registered with the factory<pre>Returns an array of autoloader instances.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unregisterAutoloader"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>unregisterAutoloader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $autoloaderClass</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Unregister a single autoloader by class name</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$autoloaderClass</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unregisterAutoloaders"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>unregisterAutoloaders<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Unregisters all autoloaders that have been registered via the factory.<pre>This will NOT unregister autoloaders registered outside of the fctory.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getStandardAutoloader"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>getStandardAutoloader<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get an instance of the standard autoloader<pre>Used to attempt to resolve autoloader classes, using the
+StandardAutoloader. The instance is marked as a fallback autoloader, to
+allow resolving autoloaders not under the "Zend" namespace.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isSubclassOf"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>isSubclassOf<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if the object has this class as one of its parents</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$type</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

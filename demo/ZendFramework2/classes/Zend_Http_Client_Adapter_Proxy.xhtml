@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Http\Client\Adapter\Proxy - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#config">$config</a>
+          </li>
+          <li>
+            <a href="#negotiated">$negotiated</a>
+          </li>
+          <li>
+            <a href="#sslCryptoTypes">$sslCryptoTypes</a>
+          </li>
+          <li>
+            <a href="#socket">$socket</a>
+          </li>
+          <li>
+            <a href="#connected_to">$connected_to</a>
+          </li>
+          <li>
+            <a href="#out_stream">$out_stream</a>
+          </li>
+          <li>
+            <a href="#config">$config</a>
+          </li>
+          <li>
+            <a href="#method">$method</a>
+          </li>
+          <li>
+            <a href="#context">$context</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__destruct">__destruct</a>
+          </li>
+          <li>
+            <a href="#_checkSocketReadTimeout">_checkSocketReadTimeout</a>
+          </li>
+          <li>
+            <a href="#close">close</a>
+          </li>
+          <li>
+            <a href="#close">close</a>
+          </li>
+          <li>
+            <a href="#connect">connect</a>
+          </li>
+          <li>
+            <a href="#connect">connect</a>
+          </li>
+          <li>
+            <a href="#connectHandshake">connectHandshake</a>
+          </li>
+          <li>
+            <a href="#getConfig">getConfig</a>
+          </li>
+          <li>
+            <a href="#getStreamContext">getStreamContext</a>
+          </li>
+          <li>
+            <a href="#read">read</a>
+          </li>
+          <li>
+            <a href="#setOptions">setOptions</a>
+          </li>
+          <li>
+            <a href="#setOutputStream">setOutputStream</a>
+          </li>
+          <li>
+            <a href="#setStreamContext">setStreamContext</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Http\Client\Adapter\</span>Proxy</h2>
+        <div class="file-notice">
+          <p>HTTP Proxy-supporting Zend_Http_Client adapter class, based on the default socket based adapter.</p>
+          <p>
+            <pre>Should be used if proxy HTTP access is required. If no proxy is set, will
+fall back to Zend_Http_Client_Adapter_Socket behavior. Just like the
+default Socket adapter, this adapter does not require any special extensions
+installed.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="config"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $config</h4>
+            <ul class="varlist">
+              <li>Parameters array</li>
+            </ul>
+          </li>
+          <li>
+            <a name="negotiated"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $negotiated</h4>
+            <ul class="varlist">
+              <li>Whether HTTPS CONNECT was already negotiated with the proxy or not</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adapter constructor, currently empty. Config is set using setOptions()</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Destructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__destruct"/>
+            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Destructor: make sure the socket is disconnected</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="close"/>
+            <h4><span class="label public">public</span>close<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Close the connection to the server</li>
+            </p>
+          </li>
+          <li>
+            <a name="close"/>
+            <h4><span class="label public">public</span>close<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Close the connection to the server</li>
+            </p>
+          </li>
+          <li>
+            <a name="connect"/>
+            <h4><span class="label public">public</span>connect<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong>, <span class="param-type">integer</span><strong> $port</strong>, <span class="param-type">boolean</span><strong> $secure</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Connect to the remote server<pre>Will try to connect to the proxy server. If no proxy was set, will
+fall back to the target server (behave like regular Socket adapter)</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$host</code> - </li>
+                <li><code>$port</code> - </li>
+                <li><code>$secure</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="connect"/>
+            <h4><span class="label public">public</span>connect<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong>, <span class="param-type">integer</span><strong> $port</strong>, <span class="param-type">boolean</span><strong> $secure</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Connect to the remote server</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$host</code> - </li>
+                <li><code>$port</code> - </li>
+                <li><code>$secure</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AdapterException\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getConfig"/>
+            <h4><span class="label public">public</span>getConfig<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the array of all configuration options</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getStreamContext"/>
+            <h4><span class="label public">public</span>getStreamContext<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the stream context for the TCP connection to the server.<pre>If no stream context is set, will create a default one.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="read"/>
+            <h4><span class="label public">public</span>read<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Read response from server</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AdapterException\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOptions"/>
+            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the configuration array for the adapter</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AdapterException\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOutputStream"/>
+            <h4><span class="label public">public</span>setOutputStream<span style="font-size:90%;">( <span class="param-type">resource</span><strong> $stream</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set output stream for the response</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$stream</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setStreamContext"/>
+            <h4><span class="label public">public</span>setStreamContext<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $context</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the stream context for the TCP connection to the server<pre>Can accept either a pre-existing stream context resource, or an array
+of stream options, similar to the options array passed to the
+stream_context_create() PHP function. In such case a new stream context
+will be created using the passed options.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$context</code> - Stream context or array of context options</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">string</span><strong> $method</strong>, <span class="param-type"><span title="\Zend\Uri\Uri">Uri</span></span><strong> $uri</strong>, <span class="param-type">string</span><strong> $http_ver</strong>, <span class="param-type">Array</span><strong> $headers</strong>, <span class="param-type">string</span><strong> $body</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send request to the proxy server</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - </li>
+                <li><code>$uri</code> - </li>
+                <li><code>$http_ver</code> - </li>
+                <li><code>$headers</code> - </li>
+                <li><code>$body</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Request as string</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AdapterException\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">string</span><strong> $method</strong>, <span class="param-type"><span title="\Zend\Uri\Uri">Uri</span></span><strong> $uri</strong>, <span class="param-type">string</span><strong> $http_ver</strong>, <span class="param-type">Array</span><strong> $headers</strong>, <span class="param-type">string</span><strong> $body</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send request to the remote server</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - </li>
+                <li><code>$uri</code> - </li>
+                <li><code>$http_ver</code> - </li>
+                <li><code>$headers</code> - </li>
+                <li><code>$body</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Request as string</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AdapterException\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_checkSocketReadTimeout"/>
+            <h4><span class="label protected">protected</span>_checkSocketReadTimeout<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if the socket has timed out - if so close connection and throw an exception</li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AdapterException\TimeoutException with READ_TIMEOUT code</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="connectHandshake"/>
+            <h4><span class="label protected">protected</span>connectHandshake<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong>, <span class="param-type">integer</span><strong> $port</strong>, <span class="param-type">string</span><strong> $http_ver</strong>, <span class="param-type">Array</span><strong> &amp;$headers</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Preform handshaking with HTTPS proxy using CONNECT method</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$host</code> - </li>
+                <li><code>$port</code> - </li>
+                <li><code>$http_ver</code> - </li>
+                <li><code>$headers</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AdapterException\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

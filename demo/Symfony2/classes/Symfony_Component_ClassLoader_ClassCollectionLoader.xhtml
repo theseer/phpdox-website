@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\ClassLoader\ClassCollectionLoader - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#loaded">$loaded</a>
+          </li>
+          <li>
+            <a href="#seen">$seen</a>
+          </li>
+          <li>
+            <a href="#useTokenizer">$useTokenizer</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#compressCode">compressCode</a>
+          </li>
+          <li>
+            <a href="#computeTraitDeps">computeTraitDeps</a>
+          </li>
+          <li>
+            <a href="#enableTokenizer">enableTokenizer</a>
+          </li>
+          <li>
+            <a href="#fixNamespaceDeclarations">fixNamespaceDeclarations</a>
+          </li>
+          <li>
+            <a href="#getClassHierarchy">getClassHierarchy</a>
+          </li>
+          <li>
+            <a href="#getInterfaces">getInterfaces</a>
+          </li>
+          <li>
+            <a href="#getOrderedClasses">getOrderedClasses</a>
+          </li>
+          <li>
+            <a href="#load">load</a>
+          </li>
+          <li>
+            <a href="#resolveDependencies">resolveDependencies</a>
+          </li>
+          <li>
+            <a href="#writeCacheFile">writeCacheFile</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\ClassLoader\</span>ClassCollectionLoader</h2>
+        <div class="file-notice">
+          <p>ClassCollectionLoader.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="loaded"/>
+            <h4><span class="label private">private</span>
+                $loaded</h4>
+          </li>
+          <li>
+            <a name="seen"/>
+            <h4><span class="label private">private</span>
+                $seen</h4>
+          </li>
+          <li>
+            <a name="useTokenizer"/>
+            <h4><span class="label private">private</span>
+                $useTokenizer</h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="enableTokenizer"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>enableTokenizer<span style="font-size:90%;">( <span class="param-type"/><strong> $bool</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>This method is only useful for testing.</li>
+            </p>
+          </li>
+          <li>
+            <a name="fixNamespaceDeclarations"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>fixNamespaceDeclarations<span style="font-size:90%;">( <span class="param-type">string</span><strong> $source</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds brackets around each namespace if it's not already the case.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$source</code> - Namespace string</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Namespaces with brackets</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="load"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>load<span style="font-size:90%;">( <span class="param-type">array</span><strong> $classes</strong>, <span class="param-type">string</span><strong> $cacheDir</strong>, <span class="param-type">string</span><strong> $name</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $autoReload</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $adaptive</strong>, <span class="param-type">string</span><strong> $extension</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Loads a list of classes and caches them in one big file.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classes</code> - An array of classes to load</li>
+                <li><code>$cacheDir</code> - A cache directory</li>
+                <li><code>$name</code> - The cache name prefix</li>
+                <li><code>$autoReload</code> - Whether to flush the cache when the cache is stale or not</li>
+                <li><code>$adaptive</code> - Whether to remove already declared classes or not</li>
+                <li><code>$extension</code> - File extension of the resulting file</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException When class can't be loaded</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="compressCode"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>compressCode<span style="font-size:90%;">( <span class="param-type">string</span><strong> $code</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Strips leading &amp; trailing ws, multiple EOL, multiple ws.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$code</code> - Original PHP code</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>compressed code</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="computeTraitDeps"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>computeTraitDeps<span style="font-size:90%;">( <span class="param-type"><span title="ReflectionClass">ReflectionClass</span></span><strong> $class</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getClassHierarchy"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>getClassHierarchy<span style="font-size:90%;">( <span class="param-type"><span title="ReflectionClass">ReflectionClass</span></span><strong> $class</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getInterfaces"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>getInterfaces<span style="font-size:90%;">( <span class="param-type"><span title="ReflectionClass">ReflectionClass</span></span><strong> $class</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getOrderedClasses"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>getOrderedClasses<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $classes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets an ordered array of passed classes including all their dependencies.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classes</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of sorted \ReflectionClass instances (dependencies added if needed)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException When a class can't be loaded</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="resolveDependencies"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>resolveDependencies<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $tree</strong>, <span class="param-type"><span title="\ReflectionClass">ReflectionClass</span></span><strong> $node</strong>, <span class="param-type"><span title="ArrayObject">ArrayObject</span></span><strong> $resolved</strong>, <span class="param-type"><span title="ArrayObject">ArrayObject</span></span><strong> $unresolved</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Dependencies resolution.<pre>This function does not check for circular dependencies as it should never
+occur with PHP traits.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tree</code> - The dependency tree</li>
+                <li><code>$node</code> - The node</li>
+                <li><code>$resolved</code> - An array of already resolved dependencies</li>
+                <li><code>$unresolved</code> - An array of dependencies to be resolved</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The dependencies for the given node</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\RuntimeException if a circular dependency is detected</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="writeCacheFile"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>writeCacheFile<span style="font-size:90%;">( <span class="param-type">string</span><strong> $file</strong>, <span class="param-type">string</span><strong> $content</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Writes a cache file.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$file</code> - Filename</li>
+                <li><code>$content</code> - Temporary file content</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\RuntimeException when a cache file cannot be written</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

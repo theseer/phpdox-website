@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Routing\Generator\ConfigurableRequirementsInterface - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#isStrictRequirements">isStrictRequirements</a>
+          </li>
+          <li>
+            <a href="#setStrictRequirements">setStrictRequirements</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Routing\Generator\</span>ConfigurableRequirementsInterface</h2>
+        <div class="file-notice">
+          <p>ConfigurableRequirementsInterface must be implemented by URL generators that can be configured whether an exception should be generated when the parameters do not match the requirements. It is also possible to disable the requirements check for URL generation completely.</p>
+          <p>
+            <pre>The possible configurations and use-cases:
+- setStrictRequirements(true): Throw an exception for mismatching requirements. This
+  is mostly useful in development environment.
+- setStrictRequirements(false): Don't throw an exception but return null as URL for
+  mismatching requirements and log the problem. Useful when you cannot control all
+  params because they come from third party libs but don't want to have a 404 in
+  production environment. It should log the mismatch so one can review it.
+- setStrictRequirements(null): Return the URL with the given parameters without
+  checking the requirements at all. When generating an URL you should either trust
+  your params or you validated them beforehand because otherwise it would break your
+  link anyway. So in production environment you should know that params always pass
+  the requirements. Thus this option allows to disable the check on URL generation for
+  performance reasons (saving a preg_match for each requirement every time a URL is
+  generated).</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+          <li><b>Author: </b>Tobias Schultze &lt;http://tobion.de&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="isStrictRequirements"/>
+            <h4><span class="label public">public</span>isStrictRequirements<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether to throw an exception on incorrect parameters.<pre>Null means the requirements check is deactivated completely.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setStrictRequirements"/>
+            <h4><span class="label public">public</span>setStrictRequirements<span style="font-size:90%;">( <span class="param-type"><span title="Boolean|null">Boolean|null</span></span><strong> $enabled</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Enables or disables the exception on incorrect parameters.<pre>Passing null will deactivate the requirements check completely.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$enabled</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\Yaml\Parser - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#offset">$offset</a>
+          </li>
+          <li>
+            <a href="#lines">$lines</a>
+          </li>
+          <li>
+            <a href="#currentLineNb">$currentLineNb</a>
+          </li>
+          <li>
+            <a href="#currentLine">$currentLine</a>
+          </li>
+          <li>
+            <a href="#refs">$refs</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#cleanup">cleanup</a>
+          </li>
+          <li>
+            <a href="#getCurrentLineIndentation">getCurrentLineIndentation</a>
+          </li>
+          <li>
+            <a href="#getNextEmbedBlock">getNextEmbedBlock</a>
+          </li>
+          <li>
+            <a href="#getRealCurrentLineNb">getRealCurrentLineNb</a>
+          </li>
+          <li>
+            <a href="#isCurrentLineBlank">isCurrentLineBlank</a>
+          </li>
+          <li>
+            <a href="#isCurrentLineComment">isCurrentLineComment</a>
+          </li>
+          <li>
+            <a href="#isCurrentLineEmpty">isCurrentLineEmpty</a>
+          </li>
+          <li>
+            <a href="#isNextLineIndented">isNextLineIndented</a>
+          </li>
+          <li>
+            <a href="#isNextLineUnIndentedCollection">isNextLineUnIndentedCollection</a>
+          </li>
+          <li>
+            <a href="#isStringUnIndentedCollectionItem">isStringUnIndentedCollectionItem</a>
+          </li>
+          <li>
+            <a href="#moveToNextLine">moveToNextLine</a>
+          </li>
+          <li>
+            <a href="#moveToPreviousLine">moveToPreviousLine</a>
+          </li>
+          <li>
+            <a href="#parse">parse</a>
+          </li>
+          <li>
+            <a href="#parseFoldedScalar">parseFoldedScalar</a>
+          </li>
+          <li>
+            <a href="#parseValue">parseValue</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\Yaml\</span>Parser</h2>
+        <div class="file-notice">
+          <p>Parser parses YAML strings to convert them to PHP arrays.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="offset"/>
+            <h4><span class="label private">private</span>
+                $offset</h4>
+          </li>
+          <li>
+            <a name="lines"/>
+            <h4><span class="label private">private</span>
+                $lines</h4>
+          </li>
+          <li>
+            <a name="currentLineNb"/>
+            <h4><span class="label private">private</span>
+                $currentLineNb</h4>
+          </li>
+          <li>
+            <a name="currentLine"/>
+            <h4><span class="label private">private</span>
+                $currentLine</h4>
+          </li>
+          <li>
+            <a name="refs"/>
+            <h4><span class="label private">private</span>
+                $refs</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $offset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$offset</code> - The offset of YAML document (used for line numbers in error messages)</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="parse"/>
+            <h4><span class="label public">public</span>parse<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $exceptionOnInvalidType</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $objectSupport</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Parses a YAML string to a PHP value.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - A YAML string</li>
+                <li><code>$exceptionOnInvalidType</code> - true if an exception must be thrown on invalid types (a PHP resource or object), false otherwise</li>
+                <li><code>$objectSupport</code> - true if object support is enabled, false otherwise</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A PHP value</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ParseException If the YAML is not valid</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="cleanup"/>
+            <h4><span class="label private">private</span>cleanup<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Cleanups a YAML string to be parsed.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The input YAML string</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A cleaned up YAML string</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCurrentLineIndentation"/>
+            <h4><span class="label private">private</span>getCurrentLineIndentation<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the current line indentation.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The current line indentation</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNextEmbedBlock"/>
+            <h4><span class="label private">private</span>getNextEmbedBlock<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $indentation</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the next embed block of YAML.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$indentation</code> - The indent level at which the block is to be read, or null for default</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A YAML string</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ParseException When indentation problem are detected</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRealCurrentLineNb"/>
+            <h4><span class="label private">private</span>getRealCurrentLineNb<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the current line number (takes the offset into account).</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The current line number</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isCurrentLineBlank"/>
+            <h4><span class="label private">private</span>isCurrentLineBlank<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns true if the current line is blank.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Returns true if the current line is blank, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isCurrentLineComment"/>
+            <h4><span class="label private">private</span>isCurrentLineComment<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns true if the current line is a comment line.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Returns true if the current line is a comment line, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isCurrentLineEmpty"/>
+            <h4><span class="label private">private</span>isCurrentLineEmpty<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns true if the current line is blank or if it is a comment line.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Returns true if the current line is empty or if it is a comment line, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isNextLineIndented"/>
+            <h4><span class="label private">private</span>isNextLineIndented<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns true if the next line is indented.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Returns true if the next line is indented, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isNextLineUnIndentedCollection"/>
+            <h4><span class="label private">private</span>isNextLineUnIndentedCollection<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns true if the next line starts unindented collection</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Returns true if the next line starts unindented collection, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isStringUnIndentedCollectionItem"/>
+            <h4><span class="label private">private</span>isStringUnIndentedCollectionItem<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns true if the string is un-indented collection item</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Returns true if the string is un-indented collection item, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="moveToNextLine"/>
+            <h4><span class="label private">private</span>moveToNextLine<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Moves the parser to the next line.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="moveToPreviousLine"/>
+            <h4><span class="label private">private</span>moveToPreviousLine<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Moves the parser to the previous line.</li>
+            </p>
+          </li>
+          <li>
+            <a name="parseFoldedScalar"/>
+            <h4><span class="label private">private</span>parseFoldedScalar<span style="font-size:90%;">( <span class="param-type">string</span><strong> $separator</strong>, <span class="param-type">string</span><strong> $indicator</strong>, <span class="param-type">integer</span><strong> $indentation</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Parses a folded scalar.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$separator</code> - The separator that was used to begin this folded scalar (| or &gt;)</li>
+                <li><code>$indicator</code> - The indicator that was used to begin this folded scalar (+ or -)</li>
+                <li><code>$indentation</code> - The indentation that was used to begin this folded scalar</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The text value</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="parseValue"/>
+            <h4><span class="label private">private</span>parseValue<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $exceptionOnInvalidType</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $objectSupport</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Parses a YAML value.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - A YAML value</li>
+                <li><code>$exceptionOnInvalidType</code> - True if an exception must be thrown on invalid types false otherwise</li>
+                <li><code>$objectSupport</code> - True if object support is enabled, false otherwise</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A PHP value</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ParseException When reference does not exist</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

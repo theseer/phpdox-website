@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\XmlRpc\Server\Fault - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#exception">$exception</a>
+          </li>
+          <li>
+            <a href="#faultExceptionClasses">$faultExceptionClasses</a>
+          </li>
+          <li>
+            <a href="#observers">$observers</a>
+          </li>
+          <li>
+            <a href="#code">$code</a>
+          </li>
+          <li>
+            <a href="#encoding">$encoding</a>
+          </li>
+          <li>
+            <a href="#message">$message</a>
+          </li>
+          <li>
+            <a href="#internal">$internal</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__toString">__toString</a>
+          </li>
+          <li>
+            <a href="#attachFaultException">attachFaultException</a>
+          </li>
+          <li>
+            <a href="#attachObserver">attachObserver</a>
+          </li>
+          <li>
+            <a href="#detachFaultException">detachFaultException</a>
+          </li>
+          <li>
+            <a href="#detachObserver">detachObserver</a>
+          </li>
+          <li>
+            <a href="#getCode">getCode</a>
+          </li>
+          <li>
+            <a href="#getEncoding">getEncoding</a>
+          </li>
+          <li>
+            <a href="#getException">getException</a>
+          </li>
+          <li>
+            <a href="#getInstance">getInstance</a>
+          </li>
+          <li>
+            <a href="#getMessage">getMessage</a>
+          </li>
+          <li>
+            <a href="#isFault">isFault</a>
+          </li>
+          <li>
+            <a href="#loadXml">loadXml</a>
+          </li>
+          <li>
+            <a href="#saveXml">saveXml</a>
+          </li>
+          <li>
+            <a href="#setCode">setCode</a>
+          </li>
+          <li>
+            <a href="#setEncoding">setEncoding</a>
+          </li>
+          <li>
+            <a href="#setMessage">setMessage</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\XmlRpc\Server\</span>Fault</h2>
+        <div class="file-notice">
+          <p>XMLRPC Server Faults</p>
+          <p>
+            <pre>Encapsulates an exception for use as an XMLRPC fault response. Valid
+exception classes that may be used for generating the fault code and fault
+string can be attached using ; all others use a
+generic '404 Unknown error' response.
+You may also attach fault observers, which would allow you to monitor
+particular fault cases; this is done via . Observers
+need only implement a static 'observe' method.
+To allow method chaining, you may use the  factory
+to instantiate a Zend_XmlRpc_Server_Fault.
+</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="exception"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $exception</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="faultExceptionClasses"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $faultExceptionClasses</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="observers"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $observers</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Exception.xhtml">Exception</a></span><strong> $e</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$e</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__toString"/>
+            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return XML fault response</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="attachFaultException"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>attachFaultException<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $classes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach valid exceptions that can be used to define xmlrpc faults</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classes</code> - Class name or array of class names</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="attachObserver"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>attachObserver<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach an observer class<pre>Allows observation of xmlrpc server faults, thus allowing logging or mail
+notification of fault responses on the xmlrpc server.
+
+Expects a valid class name; that class must have a public static method
+'observe' that accepts an exception as its sole argument.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="detachFaultException"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>detachFaultException<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $classes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Detach fault exception classes</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$classes</code> - Class name or array of class names</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="detachObserver"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>detachObserver<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Detach an observer</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCode"/>
+            <h4><span class="label public">public</span>getCode<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return fault code</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEncoding"/>
+            <h4><span class="label public">public</span>getEncoding<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve current fault encoding</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getException"/>
+            <h4><span class="label public">public</span>getException<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the exception</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInstance"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getInstance<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Exception.xhtml">Exception</a></span><strong> $e</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return Zend\XmlRpc\Server\Fault instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$e</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMessage"/>
+            <h4><span class="label public">public</span>getMessage<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve fault message</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isFault"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>isFault<span style="font-size:90%;">( <span class="param-type">string</span><strong> $xml</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Determine if an XML response is an XMLRPC fault</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$xml</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="loadXml"/>
+            <h4><span class="label public">public</span>loadXml<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fault</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Load an XMLRPC fault from XML</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fault</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Returns true if successfully loaded fault response, false</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Zend\XmlRpc\Exception\ExceptionInterface if no or faulty XML provided, or if fault</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="saveXml"/>
+            <h4><span class="label public">public</span>saveXml<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Serialize fault to XML</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCode"/>
+            <h4><span class="label public">public</span>setCode<span style="font-size:90%;">( <span class="param-type">int</span><strong> $code</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the fault code</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$code</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setEncoding"/>
+            <h4><span class="label public">public</span>setEncoding<span style="font-size:90%;">( <span class="param-type">string</span><strong> $encoding</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set encoding to use in fault response</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$encoding</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setMessage"/>
+            <h4><span class="label public">public</span>setMessage<span style="font-size:90%;">( <span class="param-type"/><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve fault message</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

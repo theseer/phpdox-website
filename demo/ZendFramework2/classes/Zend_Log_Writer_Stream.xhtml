@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Log\Writer\Stream - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#logSeparator">$logSeparator</a>
+          </li>
+          <li>
+            <a href="#stream">$stream</a>
+          </li>
+          <li>
+            <a href="#filterPlugins">$filterPlugins</a>
+          </li>
+          <li>
+            <a href="#filters">$filters</a>
+          </li>
+          <li>
+            <a href="#formatter">$formatter</a>
+          </li>
+          <li>
+            <a href="#convertWriteErrorsToExceptions">$convertWriteErrorsToExceptions</a>
+          </li>
+          <li>
+            <a href="#errorsToExceptionsConversionLevel">$errorsToExceptionsConversionLevel</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addFilter">addFilter</a>
+          </li>
+          <li>
+            <a href="#doWrite">doWrite</a>
+          </li>
+          <li>
+            <a href="#doWrite">doWrite</a>
+          </li>
+          <li>
+            <a href="#filterPlugin">filterPlugin</a>
+          </li>
+          <li>
+            <a href="#getFilterPluginManager">getFilterPluginManager</a>
+          </li>
+          <li>
+            <a href="#getLogSeparator">getLogSeparator</a>
+          </li>
+          <li>
+            <a href="#setConvertWriteErrorsToExceptions">setConvertWriteErrorsToExceptions</a>
+          </li>
+          <li>
+            <a href="#setFilterPluginManager">setFilterPluginManager</a>
+          </li>
+          <li>
+            <a href="#setFormatter">setFormatter</a>
+          </li>
+          <li>
+            <a href="#setLogSeparator">setLogSeparator</a>
+          </li>
+          <li>
+            <a href="#shutdown">shutdown</a>
+          </li>
+          <li>
+            <a href="#shutdown">shutdown</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Log\Writer\</span>Stream</h2>
+        <div class="file-notice">
+          <p/>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="logSeparator"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $logSeparator</h4>
+            <ul class="varlist">
+              <li>Separator between log entries</li>
+            </ul>
+          </li>
+          <li>
+            <a name="stream"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $stream</h4>
+            <ul class="varlist">
+              <li>Holds the PHP stream to log to.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="string|resource|array|Traversable">string|resource|array|Traversable</span></span><strong> $streamOrUrl</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $mode</strong>, <span class="param-type"><span title="null|string">null|string</span></span><strong> $logSeparator</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$streamOrUrl</code> - Stream or URL to open as a stream</li>
+                <li><code>$mode</code> - Mode, only applicable if a URL is given</li>
+                <li><code>$logSeparator</code> - Log separator string</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addFilter"/>
+            <h4><span class="label public">public</span>addFilter<span style="font-size:90%;">( <span class="param-type"><span title="int|string|Filter\FilterInterface">FilterInterface</span></span><strong> $filter</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a filter specific to this writer.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$filter</code> - </li>
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="filterPlugin"/>
+            <h4><span class="label public">public</span>filterPlugin<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get filter instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFilterPluginManager"/>
+            <h4><span class="label public">public</span>getFilterPluginManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get filter plugin manager</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLogSeparator"/>
+            <h4><span class="label public">public</span>getLogSeparator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get log separator string</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setConvertWriteErrorsToExceptions"/>
+            <h4><span class="label public">public</span>setConvertWriteErrorsToExceptions<span style="font-size:90%;">( <span class="param-type"/><strong> $convertErrors</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set convert write errors to exception flag</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$ignoreWriteErrors</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFilterPluginManager"/>
+            <h4><span class="label public">public</span>setFilterPluginManager<span style="font-size:90%;">( <span class="param-type"><span title="string|FilterPluginManager">string|FilterPluginManager</span></span><strong> $plugins</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set filter plugin manager</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$plugins</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFormatter"/>
+            <h4><span class="label public">public</span>setFormatter<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Log_Formatter_FormatterInterface.xhtml">Zend\Log\Formatter\FormatterInterface</a></span><strong> $formatter</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set a new formatter for this writer</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$formatter</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setLogSeparator"/>
+            <h4><span class="label public">public</span>setLogSeparator<span style="font-size:90%;">( <span class="param-type">string</span><strong> $logSeparator</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set log separator string</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$logSeparator</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="shutdown"/>
+            <h4><span class="label public">public</span>shutdown<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Close the stream resource.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="shutdown"/>
+            <h4><span class="label public">public</span>shutdown<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Perform shutdown activities such as closing open resources</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Log a message to this writer.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - log data event</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="doWrite"/>
+            <h4><span class="label protected">protected</span>doWrite<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Write a message to the log.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - event data</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="doWrite"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>doWrite<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Write a message to the log</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - log data event</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

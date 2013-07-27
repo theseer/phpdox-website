@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\Log\Writer\Mail - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#eventsToMail">$eventsToMail</a>
+          </li>
+          <li>
+            <a href="#mail">$mail</a>
+          </li>
+          <li>
+            <a href="#transport">$transport</a>
+          </li>
+          <li>
+            <a href="#numEntriesPerPriority">$numEntriesPerPriority</a>
+          </li>
+          <li>
+            <a href="#subjectPrependText">$subjectPrependText</a>
+          </li>
+          <li>
+            <a href="#filterPlugins">$filterPlugins</a>
+          </li>
+          <li>
+            <a href="#filters">$filters</a>
+          </li>
+          <li>
+            <a href="#formatter">$formatter</a>
+          </li>
+          <li>
+            <a href="#convertWriteErrorsToExceptions">$convertWriteErrorsToExceptions</a>
+          </li>
+          <li>
+            <a href="#errorsToExceptionsConversionLevel">$errorsToExceptionsConversionLevel</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addFilter">addFilter</a>
+          </li>
+          <li>
+            <a href="#doWrite">doWrite</a>
+          </li>
+          <li>
+            <a href="#doWrite">doWrite</a>
+          </li>
+          <li>
+            <a href="#filterPlugin">filterPlugin</a>
+          </li>
+          <li>
+            <a href="#getFilterPluginManager">getFilterPluginManager</a>
+          </li>
+          <li>
+            <a href="#getFormattedNumEntriesPerPriority">getFormattedNumEntriesPerPriority</a>
+          </li>
+          <li>
+            <a href="#setConvertWriteErrorsToExceptions">setConvertWriteErrorsToExceptions</a>
+          </li>
+          <li>
+            <a href="#setFilterPluginManager">setFilterPluginManager</a>
+          </li>
+          <li>
+            <a href="#setFormatter">setFormatter</a>
+          </li>
+          <li>
+            <a href="#setSubjectPrependText">setSubjectPrependText</a>
+          </li>
+          <li>
+            <a href="#setTransport">setTransport</a>
+          </li>
+          <li>
+            <a href="#shutdown">shutdown</a>
+          </li>
+          <li>
+            <a href="#shutdown">shutdown</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\Log\Writer\</span>Mail</h2>
+        <div class="file-notice">
+          <p>Class used for writing log messages to email via Zend\Mail.</p>
+          <p>
+            <pre>Allows for emailing log messages at and above a certain level via a
+Zend\Mail\Message object.  Note that this class only sends the email upon
+completion, so any log entries accumulated are sent in a single email.
+The email is sent using a Zend\Mail\Transport\TransportInterface object
+(Sendmail is default).</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="eventsToMail"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $eventsToMail</h4>
+            <ul class="varlist">
+              <li>Array of formatted events to include in message body.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="mail"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $mail</h4>
+            <ul class="varlist">
+              <li>Mail message instance to use</li>
+            </ul>
+          </li>
+          <li>
+            <a name="transport"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $transport</h4>
+            <ul class="varlist">
+              <li>Mail transport instance to use; optional.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="numEntriesPerPriority"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $numEntriesPerPriority</h4>
+            <ul class="varlist">
+              <li>Array keeping track of the number of entries per priority level.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="subjectPrependText"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $subjectPrependText</h4>
+            <ul class="varlist">
+              <li>Subject prepend text.<pre>Can only be used of the Zend\Mail object has not already had its
+subject line set.  Using this will cause the subject to have the entry
+counts per-priority level appended to it.</pre></li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="MailMessage|array|Traversable">MailMessage|array|Traversable</span></span><strong> $mail</strong>, <span class="param-type"><span title="Zend\Log\Writer\Transport\TransportInterface">TransportInterface</span></span><strong> $transport</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$mail</code> - </li>
+                <li><code>$transport</code> - Optional</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addFilter"/>
+            <h4><span class="label public">public</span>addFilter<span style="font-size:90%;">( <span class="param-type"><span title="int|string|Filter\FilterInterface">FilterInterface</span></span><strong> $filter</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a filter specific to this writer.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$filter</code> - </li>
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="filterPlugin"/>
+            <h4><span class="label public">public</span>filterPlugin<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get filter instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFilterPluginManager"/>
+            <h4><span class="label public">public</span>getFilterPluginManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get filter plugin manager</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setConvertWriteErrorsToExceptions"/>
+            <h4><span class="label public">public</span>setConvertWriteErrorsToExceptions<span style="font-size:90%;">( <span class="param-type"/><strong> $convertErrors</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set convert write errors to exception flag</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$ignoreWriteErrors</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFilterPluginManager"/>
+            <h4><span class="label public">public</span>setFilterPluginManager<span style="font-size:90%;">( <span class="param-type"><span title="string|FilterPluginManager">string|FilterPluginManager</span></span><strong> $plugins</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set filter plugin manager</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$plugins</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFormatter"/>
+            <h4><span class="label public">public</span>setFormatter<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Log_Formatter_FormatterInterface.xhtml">Zend\Log\Formatter\FormatterInterface</a></span><strong> $formatter</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set a new formatter for this writer</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$formatter</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSubjectPrependText"/>
+            <h4><span class="label public">public</span>setSubjectPrependText<span style="font-size:90%;">( <span class="param-type">string</span><strong> $subject</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Allows caller to have the mail subject dynamically set to contain the entry counts per-priority level.<pre>Sets the text for use in the subject, with entry counts per-priority
+level appended to the end.  Since a Zend\Mail\Message subject can only be set
+once, this method cannot be used if the Zend\Mail\Message object already has a
+subject set.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$subject</code> - Subject prepend text</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTransport"/>
+            <h4><span class="label public">public</span>setTransport<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Log\Writer\Transport\TransportInterface">TransportInterface</span></span><strong> $transport</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the transport message</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$transport</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="shutdown"/>
+            <h4><span class="label public">public</span>shutdown<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sends mail to recipient(s) if log entries are present.  Note that both plaintext and HTML portions of email are handled here.</li>
+            </p>
+          </li>
+          <li>
+            <a name="shutdown"/>
+            <h4><span class="label public">public</span>shutdown<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Perform shutdown activities such as closing open resources</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Log a message to this writer.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - log data event</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="doWrite"/>
+            <h4><span class="label protected">protected</span>doWrite<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Places event line into array of lines to be used as message body.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - Event data</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="doWrite"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>doWrite<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Write a message to the log</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - log data event</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFormattedNumEntriesPerPriority"/>
+            <h4><span class="label protected">protected</span>getFormattedNumEntriesPerPriority<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a string of number of entries per-priority level that occurred, or an empty string if none occurred.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

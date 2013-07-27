@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Zend\XmlRpc\AbstractValue - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#AUTO_DETECT_TYPE">AUTO_DETECT_TYPE</a>
+          </li>
+          <li>
+            <a href="#XML_STRING">XML_STRING</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_I4">XMLRPC_TYPE_I4</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_INTEGER">XMLRPC_TYPE_INTEGER</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_I8">XMLRPC_TYPE_I8</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_APACHEI8">XMLRPC_TYPE_APACHEI8</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_DOUBLE">XMLRPC_TYPE_DOUBLE</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_BOOLEAN">XMLRPC_TYPE_BOOLEAN</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_STRING">XMLRPC_TYPE_STRING</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_DATETIME">XMLRPC_TYPE_DATETIME</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_BASE64">XMLRPC_TYPE_BASE64</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_ARRAY">XMLRPC_TYPE_ARRAY</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_STRUCT">XMLRPC_TYPE_STRUCT</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_NIL">XMLRPC_TYPE_NIL</a>
+          </li>
+          <li>
+            <a href="#XMLRPC_TYPE_APACHENIL">XMLRPC_TYPE_APACHENIL</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#value">$value</a>
+          </li>
+          <li>
+            <a href="#type">$type</a>
+          </li>
+          <li>
+            <a href="#xml">$xml</a>
+          </li>
+          <li>
+            <a href="#generator">$generator</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#_createSimpleXMLElement">_createSimpleXMLElement</a>
+          </li>
+          <li>
+            <a href="#_extractTypeAndValue">_extractTypeAndValue</a>
+          </li>
+          <li>
+            <a href="#_phpVarToNativeXmlRpc">_phpVarToNativeXmlRpc</a>
+          </li>
+          <li>
+            <a href="#_setXML">_setXML</a>
+          </li>
+          <li>
+            <a href="#_xmlStringToNativeXmlRpc">_xmlStringToNativeXmlRpc</a>
+          </li>
+          <li>
+            <a href="#generateXml">generateXml</a>
+          </li>
+          <li>
+            <a href="#getGenerator">getGenerator</a>
+          </li>
+          <li>
+            <a href="#getType">getType</a>
+          </li>
+          <li>
+            <a href="#getValue">getValue</a>
+          </li>
+          <li>
+            <a href="#getXmlRpcTypeByValue">getXmlRpcTypeByValue</a>
+          </li>
+          <li>
+            <a href="#getXmlRpcValue">getXmlRpcValue</a>
+          </li>
+          <li>
+            <a href="#saveXml">saveXml</a>
+          </li>
+          <li>
+            <a href="#setEncoding">setEncoding</a>
+          </li>
+          <li>
+            <a href="#setGenerator">setGenerator</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Zend\XmlRpc\</span>AbstractValue</h2>
+        <div class="file-notice">
+          <p>Represent a native XML-RPC value entity, used as parameters for the methods called by the Zend\XmlRpc\Client object and as the return value for those calls.</p>
+          <p>
+            <pre>This object as a very important static function Zend\XmlRpc\Value::getXmlRpcValue, this
+function acts likes a factory for the Zend\XmlRpc\Value objects
+
+Using this function, users/Zend\XmlRpc\Client object can create the Zend\XmlRpc\Value objects
+from PHP variables, XML string or by specifying the exact XML-RPC natvie type</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="AUTO_DETECT_TYPE"/>AUTO_DETECT_TYPE = 'auto_detect'<em> </em><p><li>Specify that the XML-RPC native type will be auto detected from a PHP variable type</li></p><hr/></li>
+          <li><a name="XML_STRING"/>XML_STRING = 'xml'<em> </em><p><li>Specify that the XML-RPC value will be parsed out from a given XML code</li></p><hr/></li>
+          <li><a name="XMLRPC_TYPE_I4"/>XMLRPC_TYPE_I4 = 'i4'<em> </em><p><li>All the XML-RPC native types</li></p><hr/></li>
+          <li><a name="XMLRPC_TYPE_INTEGER"/>XMLRPC_TYPE_INTEGER = 'int'<hr/></li>
+          <li><a name="XMLRPC_TYPE_I8"/>XMLRPC_TYPE_I8 = 'i8'<hr/></li>
+          <li><a name="XMLRPC_TYPE_APACHEI8"/>XMLRPC_TYPE_APACHEI8 = 'ex:i8'<hr/></li>
+          <li><a name="XMLRPC_TYPE_DOUBLE"/>XMLRPC_TYPE_DOUBLE = 'double'<hr/></li>
+          <li><a name="XMLRPC_TYPE_BOOLEAN"/>XMLRPC_TYPE_BOOLEAN = 'boolean'<hr/></li>
+          <li><a name="XMLRPC_TYPE_STRING"/>XMLRPC_TYPE_STRING = 'string'<hr/></li>
+          <li><a name="XMLRPC_TYPE_DATETIME"/>XMLRPC_TYPE_DATETIME = 'dateTime.iso8601'<hr/></li>
+          <li><a name="XMLRPC_TYPE_BASE64"/>XMLRPC_TYPE_BASE64 = 'base64'<hr/></li>
+          <li><a name="XMLRPC_TYPE_ARRAY"/>XMLRPC_TYPE_ARRAY = 'array'<hr/></li>
+          <li><a name="XMLRPC_TYPE_STRUCT"/>XMLRPC_TYPE_STRUCT = 'struct'<hr/></li>
+          <li><a name="XMLRPC_TYPE_NIL"/>XMLRPC_TYPE_NIL = 'nil'<hr/></li>
+          <li><a name="XMLRPC_TYPE_APACHENIL"/>XMLRPC_TYPE_APACHENIL = 'ex:nil'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="value"/>
+            <h4><span class="label protected">protected</span>
+                $value</h4>
+            <ul class="varlist">
+              <li>The native XML-RPC representation of this object's value<pre>If the native type of this object is array or struct, this will be an array
+of Value objects</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="type"/>
+            <h4><span class="label protected">protected</span>
+                $type</h4>
+            <ul class="varlist">
+              <li>The native XML-RPC type of this object One of the XMLRPC_TYPE_* constants</li>
+            </ul>
+          </li>
+          <li>
+            <a name="xml"/>
+            <h4><span class="label protected">protected</span>
+                $xml</h4>
+            <ul class="varlist">
+              <li>XML code representation of this object (will be calculated only once)</li>
+            </ul>
+          </li>
+          <li>
+            <a name="generator"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $generator</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="generateXml"/>
+            <h4><span class="label public">public</span>generateXml<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate XML code that represent a native XML/RPC value</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getGenerator"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getGenerator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get XML generator instance</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getType"/>
+            <h4><span class="label public">public</span>getType<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the native XML-RPC type (the type is one of the Value::XMLRPC_TYPE_* constants)</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getValue"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getValue<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the value of this object, convert the XML-RPC native value into a PHP variable</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getXmlRpcTypeByValue"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getXmlRpcTypeByValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get XML-RPC type for a PHP native variable</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getXmlRpcValue"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getXmlRpcValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type"><span title="Zend\XmlRpc\Value::constant">Value::constant</span></span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a Value* object, representing a native XML-RPC value A XmlRpcValue object can be created in 3 ways: 1. Autodetecting the native type out of a PHP variable    (if $type is not set or equal to Value::AUTO_DETECT_TYPE) 2. By specifying the native type ($type is one of the Value::XMLRPC_TYPE_* constants) 3. From a XML string ($type is set to Value::XML_STRING)<pre>By default the value type is autodetected according to it's PHP type</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$type</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\ValueException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="saveXml"/>
+            <h4><span class="label public">public</span>saveXml<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the XML code that represent a native MXL-RPC value</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setEncoding"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setEncoding<span style="font-size:90%;">( <span class="param-type">string</span><strong> $encoding</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Changes the encoding of the generator</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$encoding</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setGenerator"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>setGenerator<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_XmlRpc_Generator_GeneratorInterface.xhtml">Zend\XmlRpc\Generator\GeneratorInterface</a></span><strong> $generator</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets XML generator instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$generator</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_createSimpleXMLElement"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>_createSimpleXMLElement<span style="font-size:90%;">( <span class="param-type"/><strong> &amp;$xml</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="_extractTypeAndValue"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>_extractTypeAndValue<span style="font-size:90%;">( <span class="param-type"><span title="SimpleXMLElement">SimpleXMLElement</span></span><strong> $xml</strong>, <span class="param-type"/><strong> &amp;$type</strong>, <span class="param-type"/><strong> &amp;$value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Extract XML/RPC type and value from SimpleXMLElement object</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$xml</code> - </li>
+                <li><code>&amp;$type</code> - Type bind variable</li>
+                <li><code>&amp;$value</code> - Value bind variable</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_phpVarToNativeXmlRpc"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>_phpVarToNativeXmlRpc<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Transform a PHP native variable into a XML-RPC native value</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The PHP variable for conversion</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_setXML"/>
+            <h4><span class="label protected">protected</span>_setXML<span style="font-size:90%;">( <span class="param-type"/><strong> $xml</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$xml</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_xmlStringToNativeXmlRpc"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>_xmlStringToNativeXmlRpc<span style="font-size:90%;">( <span class="param-type"><span title="string|\SimpleXMLElement">SimpleXMLElement</span></span><strong> $xml</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Transform an XML string into a XML-RPC native value</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$xml</code> - A SimpleXMLElement object represent the XML string</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Exception\ValueException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

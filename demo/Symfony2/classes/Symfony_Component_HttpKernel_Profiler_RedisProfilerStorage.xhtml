@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>zf - Symfony\Component\HttpKernel\Profiler\RedisProfilerStorage - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#TOKEN_PREFIX">TOKEN_PREFIX</a>
+          </li>
+          <li>
+            <a href="#REDIS_OPT_SERIALIZER">REDIS_OPT_SERIALIZER</a>
+          </li>
+          <li>
+            <a href="#REDIS_OPT_PREFIX">REDIS_OPT_PREFIX</a>
+          </li>
+          <li>
+            <a href="#REDIS_SERIALIZER_NONE">REDIS_SERIALIZER_NONE</a>
+          </li>
+          <li>
+            <a href="#REDIS_SERIALIZER_PHP">REDIS_SERIALIZER_PHP</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#dsn">$dsn</a>
+          </li>
+          <li>
+            <a href="#lifetime">$lifetime</a>
+          </li>
+          <li>
+            <a href="#redis">$redis</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#appendValue">appendValue</a>
+          </li>
+          <li>
+            <a href="#createProfileFromData">createProfileFromData</a>
+          </li>
+          <li>
+            <a href="#delete">delete</a>
+          </li>
+          <li>
+            <a href="#find">find</a>
+          </li>
+          <li>
+            <a href="#getIndexName">getIndexName</a>
+          </li>
+          <li>
+            <a href="#getItemName">getItemName</a>
+          </li>
+          <li>
+            <a href="#getRedis">getRedis</a>
+          </li>
+          <li>
+            <a href="#getValue">getValue</a>
+          </li>
+          <li>
+            <a href="#isItemNameValid">isItemNameValid</a>
+          </li>
+          <li>
+            <a href="#purge">purge</a>
+          </li>
+          <li>
+            <a href="#read">read</a>
+          </li>
+          <li>
+            <a href="#setRedis">setRedis</a>
+          </li>
+          <li>
+            <a href="#setValue">setValue</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Symfony\Component\HttpKernel\Profiler\</span>RedisProfilerStorage</h2>
+        <div class="file-notice">
+          <p>RedisProfilerStorage stores profiling information in Redis.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Andrej Hudec &lt;pulzarraider@gmail.com&gt;</li>
+          <li><b>Author: </b>Stephane PY &lt;py.stephane1@gmail.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Symfony_Component_HttpKernel_Profiler_ProfilerStorageInterface.xhtml">Symfony\Component\HttpKernel\Profiler\ProfilerStorageInterface</a>
+          </li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="TOKEN_PREFIX"/>TOKEN_PREFIX = 'sf_profiler_'<hr/></li>
+          <li><a name="REDIS_OPT_SERIALIZER"/>REDIS_OPT_SERIALIZER = 1<hr/></li>
+          <li><a name="REDIS_OPT_PREFIX"/>REDIS_OPT_PREFIX = 2<hr/></li>
+          <li><a name="REDIS_SERIALIZER_NONE"/>REDIS_SERIALIZER_NONE = 0<hr/></li>
+          <li><a name="REDIS_SERIALIZER_PHP"/>REDIS_SERIALIZER_PHP = 1<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="dsn"/>
+            <h4><span class="label protected">protected</span>
+                $dsn</h4>
+          </li>
+          <li>
+            <a name="lifetime"/>
+            <h4><span class="label protected">protected</span>
+                $lifetime</h4>
+          </li>
+          <li>
+            <a name="redis"/>
+            <h4><span class="label private">private</span>object 
+                
+                $redis</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dsn</strong>, <span class="param-type">string</span><strong> $username</strong>, <span class="param-type">string</span><strong> $password</strong>, <span class="param-type">integer</span><strong> $lifetime</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dsn</code> - A data source name</li>
+                <li><code>$username</code> - Not used</li>
+                <li><code>$password</code> - Not used</li>
+                <li><code>$lifetime</code> - The lifetime to use for the purge</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="find"/>
+            <h4><span class="label public">public</span>find<span style="font-size:90%;">( <span class="param-type"/><strong> $ip</strong>, <span class="param-type"/><strong> $url</strong>, <span class="param-type"/><strong> $limit</strong>, <span class="param-type"/><strong> $method</strong>, <span class="param-type"/><strong> $start</strong>, <span class="param-type"/><strong> $end</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="purge"/>
+            <h4><span class="label public">public</span>purge<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="read"/>
+            <h4><span class="label public">public</span>read<span style="font-size:90%;">( <span class="param-type"/><strong> $token</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="setRedis"/>
+            <h4><span class="label public">public</span>setRedis<span style="font-size:90%;">( <span class="param-type"><span title="Redis">Redis</span></span><strong> $redis</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set instance of the Redis</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$redis</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpKernel_Profiler_Profile.xhtml">Symfony\Component\HttpKernel\Profiler\Profile</a></span><strong> $profile</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getRedis"/>
+            <h4><span class="label protected">protected</span>getRedis<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Internal convenience method that returns the instance of Redis.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="appendValue"/>
+            <h4><span class="label private">private</span>appendValue<span style="font-size:90%;">( <span class="param-type">string</span><strong> $key</strong>, <span class="param-type">string</span><strong> $value</strong>, <span class="param-type">integer</span><strong> $expiration</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Appends data to an existing item on the Redis server.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - </li>
+                <li><code>$value</code> - </li>
+                <li><code>$expiration</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createProfileFromData"/>
+            <h4><span class="label private">private</span>createProfileFromData<span style="font-size:90%;">( <span class="param-type"/><strong> $token</strong>, <span class="param-type"/><strong> $data</strong>, <span class="param-type"/><strong> $parent</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="delete"/>
+            <h4><span class="label private">private</span>delete<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $keys</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes the specified keys.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$keys</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIndexName"/>
+            <h4><span class="label private">private</span>getIndexName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the name of the index.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getItemName"/>
+            <h4><span class="label private">private</span>getItemName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $token</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the item name.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$token</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getValue"/>
+            <h4><span class="label private">private</span>getValue<span style="font-size:90%;">( <span class="param-type">string</span><strong> $key</strong>, <span class="param-type">int</span><strong> $serializer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieves an item from the Redis server.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - </li>
+                <li><code>$serializer</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isItemNameValid"/>
+            <h4><span class="label private">private</span>isItemNameValid<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="setValue"/>
+            <h4><span class="label private">private</span>setValue<span style="font-size:90%;">( <span class="param-type">string</span><strong> $key</strong>, <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">integer</span><strong> $expiration</strong>, <span class="param-type">int</span><strong> $serializer</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Stores an item on the Redis server under the specified key.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - </li>
+                <li><code>$value</code> - </li>
+                <li><code>$expiration</code> - </li>
+                <li><code>$serializer</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>
