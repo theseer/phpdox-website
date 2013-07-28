@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>zf - Symfony\Bridge\Doctrine\ContainerAwareEventManager - API Documentation</title>
+    <title>Symfony2 - Symfony\Bridge\Doctrine\ContainerAwareEventManager - API Documentation</title>
     <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
   </head>
@@ -11,7 +11,7 @@
     <div class="wrapper clearfix">
       <div class="topbar clearfix">
         <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
         </h1>
         <ul class="nav">
           <li class="active">
@@ -41,7 +41,19 @@
             <a href="#addEventListener">addEventListener</a>
           </li>
           <li>
+            <a href="#addEventListener">addEventListener</a>
+          </li>
+          <li>
+            <a href="#addEventSubscriber">addEventSubscriber</a>
+          </li>
+          <li>
             <a href="#dispatchEvent">dispatchEvent</a>
+          </li>
+          <li>
+            <a href="#dispatchEvent">dispatchEvent</a>
+          </li>
+          <li>
+            <a href="#getListeners">getListeners</a>
           </li>
           <li>
             <a href="#getListeners">getListeners</a>
@@ -50,7 +62,16 @@
             <a href="#hasListeners">hasListeners</a>
           </li>
           <li>
+            <a href="#hasListeners">hasListeners</a>
+          </li>
+          <li>
             <a href="#removeEventListener">removeEventListener</a>
+          </li>
+          <li>
+            <a href="#removeEventListener">removeEventListener</a>
+          </li>
+          <li>
+            <a href="#removeEventSubscriber">removeEventSubscriber</a>
           </li>
         </ul>
       </div>
@@ -116,8 +137,35 @@
             </ul>
           </li>
           <li>
+            <a name="addEventListener"/>
+            <h4><span class="label public">public</span>addEventListener<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $events</strong>, <span class="param-type">invalid method call</span><strong> $listener</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds an event listener that listens on the specified events.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$events</code> - The event(s) to listen on.</li>
+                <li><code>$listener</code> - The listener object.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addEventSubscriber"/>
+            <h4><span class="label public">public</span>addEventSubscriber<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_EventSubscriber.xhtml">Doctrine\Common\EventSubscriber</a></span><strong> $subscriber</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds an EventSubscriber. The subscriber is asked for all the events he is interested in and added as a listener for these events.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$subscriber</code> - The subscriber.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
             <a name="dispatchEvent"/>
-            <h4><span class="label public">public</span>dispatchEvent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $eventName</strong>, <span class="param-type"><span title="Doctrine\Common\EventArgs">EventArgs</span></span><strong> $eventArgs</strong> )</span></h4>
+            <h4><span class="label public">public</span>dispatchEvent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $eventName</strong>, <span class="param-type"><a href="../classes/Doctrine_Common_EventArgs.xhtml">Doctrine\Common\EventArgs</a></span><strong> $eventArgs</strong> )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
               <li>Dispatches an event to all registered listeners.</li>
             </p>
@@ -132,6 +180,45 @@
               <h4 class="return">Returns:</h4>
               <ul class="return">
                 <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="dispatchEvent"/>
+            <h4><span class="label public">public</span>dispatchEvent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $eventName</strong>, <span class="param-type"><a href="../classes/Doctrine_Common_EventArgs.xhtml">Doctrine\Common\EventArgs</a></span><strong> $eventArgs</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Dispatches an event to all registered listeners.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$eventName</code> - The name of the event to dispatch. The name of the event is</li>
+                <li><code>$eventArgs</code> - The event arguments to pass to the event handlers/listeners.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getListeners"/>
+            <h4><span class="label public">public</span>getListeners<span style="font-size:90%;">( <span class="param-type">string</span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the listeners of a specific event or all listeners.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - The name of the event.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The event listeners for the specified event, or all event listeners.</li>
               </ul>
             </ul>
           </li>
@@ -174,6 +261,25 @@
             </ul>
           </li>
           <li>
+            <a name="hasListeners"/>
+            <h4><span class="label public">public</span>hasListeners<span style="font-size:90%;">( <span class="param-type">string</span><strong> $event</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether an event has any registered listeners.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$event</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>TRUE if the specified event has any listeners, FALSE otherwise.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
             <a name="removeEventListener"/>
             <h4><span class="label public">public</span>removeEventListener<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $events</strong>, <span class="param-type"><span title="object|string">object|string</span></span><strong> $listener</strong> )</span></h4>
             <p style="font-size:110%; padding-top:5px;">
@@ -187,8 +293,35 @@
               </ul>
             </ul>
           </li>
+          <li>
+            <a name="removeEventListener"/>
+            <h4><span class="label public">public</span>removeEventListener<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $events</strong>, <span class="param-type">invalid method call</span><strong> $listener</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes an event listener from the specified events.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$events</code> - </li>
+                <li><code>$listener</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeEventSubscriber"/>
+            <h4><span class="label public">public</span>removeEventSubscriber<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_EventSubscriber.xhtml">Doctrine\Common\EventSubscriber</a></span><strong> $subscriber</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes an EventSubscriber. The subscriber is asked for all the events it is interested in and removed as a listener for these events.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$subscriber</code> - The subscriber.</li>
+              </ul>
+            </ul>
+          </li>
         </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
       </div>
     </div>
   </body>

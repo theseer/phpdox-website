@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\DBAL\Schema\SchemaDiff - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#newTables">$newTables</a>
+          </li>
+          <li>
+            <a href="#changedTables">$changedTables</a>
+          </li>
+          <li>
+            <a href="#removedTables">$removedTables</a>
+          </li>
+          <li>
+            <a href="#newSequences">$newSequences</a>
+          </li>
+          <li>
+            <a href="#changedSequences">$changedSequences</a>
+          </li>
+          <li>
+            <a href="#removedSequences">$removedSequences</a>
+          </li>
+          <li>
+            <a href="#orphanedForeignKeys">$orphanedForeignKeys</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_toSql">_toSql</a>
+          </li>
+          <li>
+            <a href="#toSaveSql">toSaveSql</a>
+          </li>
+          <li>
+            <a href="#toSql">toSql</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\DBAL\Schema\</span>SchemaDiff</h2>
+        <div class="file-notice">
+          <p>Schema Diff</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+          <li><b>Copyright: </b>Copyright (C) 2005-2009 eZ Systems AS. All rights reserved.</li>
+          <li><b>License: </b>http://ez.no/licenses/new_bsd New BSD License</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="newTables"/>
+            <h4><span class="label public">public</span>object 
+                
+                $newTables</h4>
+            <ul class="varlist">
+              <li>All added tables</li>
+            </ul>
+          </li>
+          <li>
+            <a name="changedTables"/>
+            <h4><span class="label public">public</span>object 
+                
+                $changedTables</h4>
+            <ul class="varlist">
+              <li>All changed tables</li>
+            </ul>
+          </li>
+          <li>
+            <a name="removedTables"/>
+            <h4><span class="label public">public</span>object 
+                
+                $removedTables</h4>
+            <ul class="varlist">
+              <li>All removed tables</li>
+            </ul>
+          </li>
+          <li>
+            <a name="newSequences"/>
+            <h4><span class="label public">public</span>array 
+                
+                $newSequences</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="changedSequences"/>
+            <h4><span class="label public">public</span>array 
+                
+                $changedSequences</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="removedSequences"/>
+            <h4><span class="label public">public</span>array 
+                
+                $removedSequences</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="orphanedForeignKeys"/>
+            <h4><span class="label public">public</span>array 
+                
+                $orphanedForeignKeys</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $newTables</strong>, <span class="param-type">Array</span><strong> $changedTables</strong>, <span class="param-type">Array</span><strong> $removedTables</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs an SchemaDiff object.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$newTables</code> - </li>
+                <li><code>$changedTables</code> - </li>
+                <li><code>$removedTables</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="toSaveSql"/>
+            <h4><span class="label public">public</span>toSaveSql<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Platforms_AbstractPlatform.xhtml">Doctrine\DBAL\Platforms\AbstractPlatform</a></span><strong> $platform</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>The to save sql mode ensures that the following things don't happen:<pre>1. Tables are deleted
+2. Sequences are deleted
+3. Foreign Keys which reference tables that would otherwise be deleted.
+
+This way it is ensured that assets are deleted which might not be relevant to the metadata schema at all.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$platform</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toSql"/>
+            <h4><span class="label public">public</span>toSql<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Platforms_AbstractPlatform.xhtml">Doctrine\DBAL\Platforms\AbstractPlatform</a></span><strong> $platform</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$platform</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_toSql"/>
+            <h4><span class="label protected">protected</span>_toSql<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Platforms_AbstractPlatform.xhtml">Doctrine\DBAL\Platforms\AbstractPlatform</a></span><strong> $platform</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $saveMode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$platform</code> - </li>
+                <li><code>$saveMode</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

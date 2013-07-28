@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Swift_InputByteStream - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#bind">bind</a>
+          </li>
+          <li>
+            <a href="#commit">commit</a>
+          </li>
+          <li>
+            <a href="#flushBuffers">flushBuffers</a>
+          </li>
+          <li>
+            <a href="#unbind">unbind</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Swift_InputByteStream</h2>
+        <div class="file-notice">
+          <p>An abstract means of writing data.</p>
+          <p>
+            <pre>Classes implementing this interface may use a subsystem which requires less
+memory than working with large strings of data.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Chris Corbyn</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="bind"/>
+            <h4><span class="label public">public</span>bind<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $is</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach $is to this stream.<pre>The stream acts as an observer, receiving all data that is written.
+All  and  operations will be mirrored.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$is</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="commit"/>
+            <h4><span class="label public">public</span>commit<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>For any bytes that are currently buffered inside the stream, force them off the buffer.</li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_IoException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="flushBuffers"/>
+            <h4><span class="label public">public</span>flushBuffers<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Flush the contents of the stream (empty it) and set the internal pointer to the beginning.</li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_IoException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unbind"/>
+            <h4><span class="label public">public</span>unbind<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $is</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove an already bound stream.<pre>If $is is not bound, no errors will be raised.
+If the stream currently has any buffered data it will be written to $is
+before unbinding occurs.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$is</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">string</span><strong> $bytes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Writes $bytes to the end of the stream.<pre>Writing may not happen immediately if the stream chooses to buffer.  If
+you want to write these bytes with immediate effect, call after calling write().
+This method returns the sequence ID of the write (i.e. 1 for first, 2 for
+second, etc etc).
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bytes</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_IoException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

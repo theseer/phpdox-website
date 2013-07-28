@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\Common\Annotations\AnnotationReader - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#globalImports">$globalImports</a>
+          </li>
+          <li>
+            <a href="#globalIgnoredNames">$globalIgnoredNames</a>
+          </li>
+          <li>
+            <a href="#parser">$parser</a>
+          </li>
+          <li>
+            <a href="#preParser">$preParser</a>
+          </li>
+          <li>
+            <a href="#phpParser">$phpParser</a>
+          </li>
+          <li>
+            <a href="#imports">$imports</a>
+          </li>
+          <li>
+            <a href="#ignoredAnnotationNames">$ignoredAnnotationNames</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addGlobalIgnoredName">addGlobalIgnoredName</a>
+          </li>
+          <li>
+            <a href="#collectParsingMetadata">collectParsingMetadata</a>
+          </li>
+          <li>
+            <a href="#getClassAnnotation">getClassAnnotation</a>
+          </li>
+          <li>
+            <a href="#getClassAnnotations">getClassAnnotations</a>
+          </li>
+          <li>
+            <a href="#getIgnoredAnnotationNames">getIgnoredAnnotationNames</a>
+          </li>
+          <li>
+            <a href="#getImports">getImports</a>
+          </li>
+          <li>
+            <a href="#getMethodAnnotation">getMethodAnnotation</a>
+          </li>
+          <li>
+            <a href="#getMethodAnnotations">getMethodAnnotations</a>
+          </li>
+          <li>
+            <a href="#getPropertyAnnotation">getPropertyAnnotation</a>
+          </li>
+          <li>
+            <a href="#getPropertyAnnotations">getPropertyAnnotations</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\Common\Annotations\</span>AnnotationReader</h2>
+        <div class="file-notice">
+          <p>A reader for docblock annotations.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+          <li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
+          <li><b>Author: </b>Jonathan Wage &lt;jonwage@gmail.com&gt;</li>
+          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
+          <li><b>Author: </b>Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Doctrine_Common_Annotations_Reader.xhtml">Doctrine\Common\Annotations\Reader</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="globalImports"/>
+            <h4><span class="label private">private</span>array 
+                
+                $globalImports</h4>
+            <ul class="varlist">
+              <li>Global map for imports.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="globalIgnoredNames"/>
+            <h4><span class="label private">private</span>array 
+                
+                $globalIgnoredNames</h4>
+            <ul class="varlist">
+              <li>A list with annotations that are not causing exceptions when not resolved to an annotation class.<pre>The names are case sensitive.</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="parser"/>
+            <h4><span class="label private">private</span>object 
+                
+                $parser</h4>
+            <ul class="varlist">
+              <li>Annotations Parser</li>
+            </ul>
+          </li>
+          <li>
+            <a name="preParser"/>
+            <h4><span class="label private">private</span>object 
+                
+                $preParser</h4>
+            <ul class="varlist">
+              <li>Annotations Parser used to collect parsing metadata</li>
+            </ul>
+          </li>
+          <li>
+            <a name="phpParser"/>
+            <h4><span class="label private">private</span>object 
+                
+                $phpParser</h4>
+            <ul class="varlist">
+              <li>PHP Parser used to collect imports.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="imports"/>
+            <h4><span class="label private">private</span>array 
+                
+                $imports</h4>
+            <ul class="varlist">
+              <li>In-memory cache mechanism to store imported annotations per class.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="ignoredAnnotationNames"/>
+            <h4><span class="label private">private</span>array 
+                
+                $ignoredAnnotationNames</h4>
+            <ul class="varlist">
+              <li>In-memory cache mechanism to store ignored annotations per class.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.<pre>Initializes a new AnnotationReader.</pre></li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addGlobalIgnoredName"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>addGlobalIgnoredName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a new annotation to the globally ignored annotation names with regard to exception handling.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getClassAnnotation"/>
+            <h4><span class="label public">public</span>getClassAnnotation<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $class</strong>, <span class="param-type">string</span><strong> $annotationName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a class annotation.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - The ReflectionClass of the class from which</li>
+                <li><code>$annotationName</code> - The name of the annotation.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The Annotation or NULL, if the requested annotation does not exist.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getClassAnnotations"/>
+            <h4><span class="label public">public</span>getClassAnnotations<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the annotations applied to a class.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - The ReflectionClass of the class from which</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of Annotations.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMethodAnnotation"/>
+            <h4><span class="label public">public</span>getMethodAnnotation<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionMethod.xhtml">ReflectionMethod</a></span><strong> $method</strong>, <span class="param-type">string</span><strong> $annotationName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a method annotation.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - </li>
+                <li><code>$annotationName</code> - The name of the annotation.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The Annotation or NULL, if the requested annotation does not exist.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMethodAnnotations"/>
+            <h4><span class="label public">public</span>getMethodAnnotations<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionMethod.xhtml">ReflectionMethod</a></span><strong> $method</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the annotations applied to a method.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - The ReflectionMethod of the method from which</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of Annotations.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPropertyAnnotation"/>
+            <h4><span class="label public">public</span>getPropertyAnnotation<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionProperty.xhtml">ReflectionProperty</a></span><strong> $property</strong>, <span class="param-type">string</span><strong> $annotationName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a property annotation.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$property</code> - </li>
+                <li><code>$annotationName</code> - The name of the annotation.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The Annotation or NULL, if the requested annotation does not exist.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPropertyAnnotations"/>
+            <h4><span class="label public">public</span>getPropertyAnnotations<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionProperty.xhtml">ReflectionProperty</a></span><strong> $property</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the annotations applied to a property.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$property</code> - The ReflectionProperty of the property</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of Annotations.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="collectParsingMetadata"/>
+            <h4><span class="label private">private</span>collectParsingMetadata<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Collects parsing metadata for a given class</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIgnoredAnnotationNames"/>
+            <h4><span class="label private">private</span>getIgnoredAnnotationNames<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the ignored annotations for the given class.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getImports"/>
+            <h4><span class="label private">private</span>getImports<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve imports</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

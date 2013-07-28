@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Swift_KeyCache - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#MODE_WRITE">MODE_WRITE</a>
+          </li>
+          <li>
+            <a href="#MODE_APPEND">MODE_APPEND</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#clearAll">clearAll</a>
+          </li>
+          <li>
+            <a href="#clearKey">clearKey</a>
+          </li>
+          <li>
+            <a href="#exportToByteStream">exportToByteStream</a>
+          </li>
+          <li>
+            <a href="#getInputByteStream">getInputByteStream</a>
+          </li>
+          <li>
+            <a href="#getString">getString</a>
+          </li>
+          <li>
+            <a href="#hasKey">hasKey</a>
+          </li>
+          <li>
+            <a href="#importFromByteStream">importFromByteStream</a>
+          </li>
+          <li>
+            <a href="#setString">setString</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Swift_KeyCache</h2>
+        <div class="file-notice">
+          <p>Provides a mechanism for storing data using two keys.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Chris Corbyn</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="MODE_WRITE"/>MODE_WRITE = 1<em> </em><p><li>Mode for replacing existing cached data</li></p><hr/></li>
+          <li><a name="MODE_APPEND"/>MODE_APPEND = 2<em> </em><p><li>Mode for appending data to the end of existing cached data</li></p><hr/></li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="clearAll"/>
+            <h4><span class="label public">public</span>clearAll<span style="font-size:90%;">( <span class="param-type">string</span><strong> $nsKey</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clear all data in the namespace $nsKey if it exists.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$nsKey</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="clearKey"/>
+            <h4><span class="label public">public</span>clearKey<span style="font-size:90%;">( <span class="param-type">string</span><strong> $nsKey</strong>, <span class="param-type">string</span><strong> $itemKey</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clear data for $itemKey in the namespace $nsKey if it exists.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$nsKey</code> - </li>
+                <li><code>$itemKey</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="exportToByteStream"/>
+            <h4><span class="label public">public</span>exportToByteStream<span style="font-size:90%;">( <span class="param-type">string</span><strong> $nsKey</strong>, <span class="param-type">string</span><strong> $itemKey</strong>, <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $is</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get data back out of the cache as a ByteStream.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$nsKey</code> - </li>
+                <li><code>$itemKey</code> - </li>
+                <li><code>$is</code> - stream to write the data to</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInputByteStream"/>
+            <h4><span class="label public">public</span>getInputByteStream<span style="font-size:90%;">( <span class="param-type">string</span><strong> $nsKey</strong>, <span class="param-type">string</span><strong> $itemKey</strong>, <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $is</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Provides a ByteStream which when written to, writes data to $itemKey.<pre>NOTE: The stream will always write in append mode.
+If the optional third parameter is passed all writes will go through $is.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$nsKey</code> - </li>
+                <li><code>$itemKey</code> - </li>
+                <li><code>$is</code> - optional input stream</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getString"/>
+            <h4><span class="label public">public</span>getString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $nsKey</strong>, <span class="param-type">string</span><strong> $itemKey</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get data back out of the cache as a string.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$nsKey</code> - </li>
+                <li><code>$itemKey</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasKey"/>
+            <h4><span class="label public">public</span>hasKey<span style="font-size:90%;">( <span class="param-type">string</span><strong> $nsKey</strong>, <span class="param-type">string</span><strong> $itemKey</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if the given $itemKey exists in the namespace $nsKey.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$nsKey</code> - </li>
+                <li><code>$itemKey</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="importFromByteStream"/>
+            <h4><span class="label public">public</span>importFromByteStream<span style="font-size:90%;">( <span class="param-type">string</span><strong> $nsKey</strong>, <span class="param-type">string</span><strong> $itemKey</strong>, <span class="param-type"><span title="\\Swift_OutputByteStream">Swift_OutputByteStream</span></span><strong> $os</strong>, <span class="param-type">integer</span><strong> $mode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set a ByteStream into the cache under $itemKey for the namespace $nsKey.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$nsKey</code> - </li>
+                <li><code>$itemKey</code> - </li>
+                <li><code>$os</code> - </li>
+                <li><code>$mode</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setString"/>
+            <h4><span class="label public">public</span>setString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $nsKey</strong>, <span class="param-type">string</span><strong> $itemKey</strong>, <span class="param-type">string</span><strong> $string</strong>, <span class="param-type">integer</span><strong> $mode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set a string into the cache under $itemKey for the namespace $nsKey.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$nsKey</code> - </li>
+                <li><code>$itemKey</code> - </li>
+                <li><code>$string</code> - </li>
+                <li><code>$mode</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

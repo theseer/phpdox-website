@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Assetic\Util\CssUtils - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#REGEX_URLS">REGEX_URLS</a>
+          </li>
+          <li>
+            <a href="#REGEX_IMPORTS">REGEX_IMPORTS</a>
+          </li>
+          <li>
+            <a href="#REGEX_IMPORTS_NO_URLS">REGEX_IMPORTS_NO_URLS</a>
+          </li>
+          <li>
+            <a href="#REGEX_IE_FILTERS">REGEX_IE_FILTERS</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#extractImports">extractImports</a>
+          </li>
+          <li>
+            <a href="#filterIEFilters">filterIEFilters</a>
+          </li>
+          <li>
+            <a href="#filterImports">filterImports</a>
+          </li>
+          <li>
+            <a href="#filterReferences">filterReferences</a>
+          </li>
+          <li>
+            <a href="#filterUrls">filterUrls</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Assetic\Util\</span>CssUtils</h2>
+        <div class="file-notice">
+          <p>CSS Utils.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Kris Wallsmith &lt;kris.wallsmith@gmail.com&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="REGEX_URLS"/>REGEX_URLS = '/url\((["\']?)(?P&lt;url&gt;.*?)(\\1)\)/'<hr/></li>
+          <li><a name="REGEX_IMPORTS"/>REGEX_IMPORTS = '/@import (?:url\()?(\'|"|)(?P&lt;url&gt;[^\'"\)\n\r]*)\1\)?;?/'<hr/></li>
+          <li><a name="REGEX_IMPORTS_NO_URLS"/>REGEX_IMPORTS_NO_URLS = '/@import (?!url\()(\'|"|)(?P&lt;url&gt;[^\'"\)\n\r]*)\1;?/'<hr/></li>
+          <li><a name="REGEX_IE_FILTERS"/>REGEX_IE_FILTERS = '/src=(["\']?)(?P&lt;url&gt;.*?)\\1/'<hr/></li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>__construct<span style="font-size:90%;">(  )</span></h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="extractImports"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>extractImports<span style="font-size:90%;">( <span class="param-type">string</span><strong> $content</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Extracts all references from the supplied CSS content.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$content</code> - The CSS content</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of unique URLs</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="filterIEFilters"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>filterIEFilters<span style="font-size:90%;">( <span class="param-type">string</span><strong> $content</strong>, <span class="param-type"><span title="callable">callable</span></span><strong> $callback</strong>, <span class="param-type">integer</span><strong> $limit</strong>, <span class="param-type">integer</span><strong> &amp;$count</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Filters all IE filters (AlphaImageLoader filter) through a callable.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$content</code> - The CSS</li>
+                <li><code>$callback</code> - A PHP callable</li>
+                <li><code>$limit</code> - Limit the number of replacements</li>
+                <li><code>$count</code> - Will be populated with the count</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The filtered CSS</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="filterImports"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>filterImports<span style="font-size:90%;">( <span class="param-type">string</span><strong> $content</strong>, <span class="param-type"><span title="callable">callable</span></span><strong> $callback</strong>, <span class="param-type">integer</span><strong> $limit</strong>, <span class="param-type">integer</span><strong> &amp;$count</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $includeUrl</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Filters all CSS imports through a callable.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$content</code> - The CSS</li>
+                <li><code>$callback</code> - A PHP callable</li>
+                <li><code>$limit</code> - Limit the number of replacements</li>
+                <li><code>$count</code> - Will be populated with the count</li>
+                <li><code>$includeUrl</code> - Whether to include url() in the pattern</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The filtered CSS</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="filterReferences"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>filterReferences<span style="font-size:90%;">( <span class="param-type">string</span><strong> $content</strong>, <span class="param-type"><span title="callable">callable</span></span><strong> $callback</strong>, <span class="param-type">integer</span><strong> $limit</strong>, <span class="param-type">integer</span><strong> &amp;$count</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Filters all references -- url() and "@import" -- through a callable.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$content</code> - The CSS</li>
+                <li><code>$callback</code> - A PHP callable</li>
+                <li><code>$limit</code> - </li>
+                <li><code>$count</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The filtered CSS</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="filterUrls"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>filterUrls<span style="font-size:90%;">( <span class="param-type">string</span><strong> $content</strong>, <span class="param-type"><span title="callable">callable</span></span><strong> $callback</strong>, <span class="param-type">integer</span><strong> $limit</strong>, <span class="param-type">integer</span><strong> &amp;$count</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Filters all CSS url()'s through a callable.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$content</code> - The CSS</li>
+                <li><code>$callback</code> - A PHP callable</li>
+                <li><code>$limit</code> - Limit the number of replacements</li>
+                <li><code>$count</code> - Will be populated with the count</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The filtered CSS</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

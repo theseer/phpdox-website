@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\Common\Annotations\DocParser - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#classIdentifiers">$classIdentifiers</a>
+          </li>
+          <li>
+            <a href="#lexer">$lexer</a>
+          </li>
+          <li>
+            <a href="#target">$target</a>
+          </li>
+          <li>
+            <a href="#metadataParser">$metadataParser</a>
+          </li>
+          <li>
+            <a href="#isNestedAnnotation">$isNestedAnnotation</a>
+          </li>
+          <li>
+            <a href="#imports">$imports</a>
+          </li>
+          <li>
+            <a href="#classExists">$classExists</a>
+          </li>
+          <li>
+            <a href="#ignoreNotImportedAnnotations">$ignoreNotImportedAnnotations</a>
+          </li>
+          <li>
+            <a href="#namespaces">$namespaces</a>
+          </li>
+          <li>
+            <a href="#ignoredAnnotationNames">$ignoredAnnotationNames</a>
+          </li>
+          <li>
+            <a href="#context">$context</a>
+          </li>
+          <li>
+            <a href="#annotationMetadata">$annotationMetadata</a>
+          </li>
+          <li>
+            <a href="#typeMap">$typeMap</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#Annotation">Annotation</a>
+          </li>
+          <li>
+            <a href="#Annotations">Annotations</a>
+          </li>
+          <li>
+            <a href="#ArrayEntry">ArrayEntry</a>
+          </li>
+          <li>
+            <a href="#Arrayx">Arrayx</a>
+          </li>
+          <li>
+            <a href="#Constant">Constant</a>
+          </li>
+          <li>
+            <a href="#FieldAssignment">FieldAssignment</a>
+          </li>
+          <li>
+            <a href="#Identifier">Identifier</a>
+          </li>
+          <li>
+            <a href="#PlainValue">PlainValue</a>
+          </li>
+          <li>
+            <a href="#Value">Value</a>
+          </li>
+          <li>
+            <a href="#Values">Values</a>
+          </li>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addNamespace">addNamespace</a>
+          </li>
+          <li>
+            <a href="#classExists">classExists</a>
+          </li>
+          <li>
+            <a href="#collectAnnotationMetadata">collectAnnotationMetadata</a>
+          </li>
+          <li>
+            <a href="#match">match</a>
+          </li>
+          <li>
+            <a href="#matchAny">matchAny</a>
+          </li>
+          <li>
+            <a href="#parse">parse</a>
+          </li>
+          <li>
+            <a href="#setIgnoreNotImportedAnnotations">setIgnoreNotImportedAnnotations</a>
+          </li>
+          <li>
+            <a href="#setIgnoredAnnotationNames">setIgnoredAnnotationNames</a>
+          </li>
+          <li>
+            <a href="#setImports">setImports</a>
+          </li>
+          <li>
+            <a href="#setTarget">setTarget</a>
+          </li>
+          <li>
+            <a href="#syntaxError">syntaxError</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\Common\Annotations\</span>DocParser</h2>
+        <div class="file-notice">
+          <p>A parser for docblock annotations.</p>
+          <p>
+            <pre>It is strongly discouraged to change the default annotation parsing process.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+          <li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
+          <li><b>Author: </b>Jonathan Wage &lt;jonwage@gmail.com&gt;</li>
+          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
+          <li><b>Author: </b>Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
+          <li><b>Author: </b>Fabio B. Silva &lt;fabio.bat.silva@gmail.com&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="classIdentifiers"/>
+            <h4><span class="label private">private</span>array 
+                
+                $classIdentifiers</h4>
+            <ul class="varlist">
+              <li>An array of all valid tokens for a class name.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="lexer"/>
+            <h4><span class="label private">private</span>object 
+                
+                $lexer</h4>
+            <ul class="varlist">
+              <li>The lexer.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="target"/>
+            <h4><span class="label private">private</span>string 
+                
+                $target</h4>
+            <ul class="varlist">
+              <li>Current target context</li>
+            </ul>
+          </li>
+          <li>
+            <a name="metadataParser"/>
+            <h4><span class="label private">private</span>object 
+                
+                $metadataParser</h4>
+            <ul class="varlist">
+              <li>Doc Parser used to collect annotation target</li>
+            </ul>
+          </li>
+          <li>
+            <a name="isNestedAnnotation"/>
+            <h4><span class="label private">private</span>boolean 
+                
+                $isNestedAnnotation</h4>
+            <ul class="varlist">
+              <li>Flag to control if the current annotation is nested or not.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="imports"/>
+            <h4><span class="label private">private</span>array 
+                
+                $imports</h4>
+            <ul class="varlist">
+              <li>Hashmap containing all use-statements that are to be used when parsing the given doc block.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="classExists"/>
+            <h4><span class="label private">private</span>array 
+                
+                $classExists</h4>
+            <ul class="varlist">
+              <li>This hashmap is used internally to cache results of class_exists() look-ups.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="ignoreNotImportedAnnotations"/>
+            <h4><span class="label private">private</span>boolean 
+                
+                $ignoreNotImportedAnnotations</h4>
+            <ul class="varlist">
+              <li>Whether annotations that have not been imported should be ignored.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="namespaces"/>
+            <h4><span class="label private">private</span>array 
+                
+                $namespaces</h4>
+            <ul class="varlist">
+              <li>An array of default namespaces if operating in simple mode.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="ignoredAnnotationNames"/>
+            <h4><span class="label private">private</span>array 
+                
+                $ignoredAnnotationNames</h4>
+            <ul class="varlist">
+              <li>A list with annotations that are not causing exceptions when not resolved to an annotation class.<pre>The names must be the raw names as used in the class, not the fully qualified
+class names.</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="context"/>
+            <h4><span class="label private">private</span>string 
+                
+                $context</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="annotationMetadata"/>
+            <h4><span class="label private">private</span>array 
+                
+                $annotationMetadata</h4>
+            <ul class="varlist">
+              <li>Hash-map for caching annotation metadata</li>
+            </ul>
+          </li>
+          <li>
+            <a name="typeMap"/>
+            <h4><span class="label private">private</span>array 
+                
+                $typeMap</h4>
+            <ul class="varlist">
+              <li>Hash-map for handle types declaration</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructs a new DocParser.</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addNamespace"/>
+            <h4><span class="label public">public</span>addNamespace<span style="font-size:90%;">( <span class="param-type">array</span><strong> $namespace</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the default namespaces.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$namespace</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="parse"/>
+            <h4><span class="label public">public</span>parse<span style="font-size:90%;">( <span class="param-type">string</span><strong> $input</strong>, <span class="param-type">string</span><strong> $context</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Parses the given docblock string for annotations.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$input</code> - The docblock string to parse.</li>
+                <li><code>$context</code> - The parsing context.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Array of annotations. If no annotations are found, an empty array is returned.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setIgnoreNotImportedAnnotations"/>
+            <h4><span class="label public">public</span>setIgnoreNotImportedAnnotations<span style="font-size:90%;">( <span class="param-type"/><strong> $bool</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets ignore on not-imported annotations</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bool</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setIgnoredAnnotationNames"/>
+            <h4><span class="label public">public</span>setIgnoredAnnotationNames<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $names</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the annotation names that are ignored during the parsing process.<pre>The names are supposed to be the raw names as used in the class, not the
+fully qualified class names.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$names</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setImports"/>
+            <h4><span class="label public">public</span>setImports<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $imports</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the imports</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$imports</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTarget"/>
+            <h4><span class="label public">public</span>setTarget<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $target</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets current target context as bitmask.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$target</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="Annotation"/>
+            <h4><span class="label private">private</span>Annotation<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Annotation     ::= "@" AnnotationName ["(" [Values] ")"] AnnotationName ::= QualifiedName | SimpleName QualifiedName  ::= NameSpacePart "\" {NameSpacePart "\"}* SimpleName NameSpacePart  ::= identifier | null | false | true SimpleName     ::= identifier | null | false | true</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>False if it is not a valid annotation.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AnnotationException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="Annotations"/>
+            <h4><span class="label private">private</span>Annotations<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Annotations ::= Annotation {[ "*" ]* [Annotation]}</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="ArrayEntry"/>
+            <h4><span class="label private">private</span>ArrayEntry<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>ArrayEntry ::= Value | KeyValuePair KeyValuePair ::= Key ("=" | ":") PlainValue | Constant Key ::= string | integer | Constant</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="Arrayx"/>
+            <h4><span class="label private">private</span>Arrayx<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Array ::= "{" ArrayEntry {"," ArrayEntry}* [","] "}"</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="Constant"/>
+            <h4><span class="label private">private</span>Constant<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constant ::= integer | string | float | boolean</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AnnotationException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="FieldAssignment"/>
+            <h4><span class="label private">private</span>FieldAssignment<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>FieldAssignment ::= FieldName "=" PlainValue FieldName ::= identifier</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="Identifier"/>
+            <h4><span class="label private">private</span>Identifier<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Identifier ::= string</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="PlainValue"/>
+            <h4><span class="label private">private</span>PlainValue<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>PlainValue ::= integer | string | float | boolean | Array | Annotation</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="Value"/>
+            <h4><span class="label private">private</span>Value<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Value ::= PlainValue | FieldAssignment</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="Values"/>
+            <h4><span class="label private">private</span>Values<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Values ::= Array | Value {"," Value}</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="classExists"/>
+            <h4><span class="label private">private</span>classExists<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fqcn</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attempt to check if a class exists or not. This never goes through the PHP autoloading mechanism but uses the {@link AnnotationRegistry} to load classes.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fqcn</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="collectAnnotationMetadata"/>
+            <h4><span class="label private">private</span>collectAnnotationMetadata<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Collects parsing metadata for a given annotation class</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - The annotation name</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="match"/>
+            <h4><span class="label private">private</span>match<span style="font-size:90%;">( <span class="param-type">int</span><strong> $token</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attempts to match the given token with the current lookahead token.<pre>If they match, updates the lookahead token; otherwise raises a syntax error.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$token</code> - type of Token.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>True if tokens match; false otherwise.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="matchAny"/>
+            <h4><span class="label private">private</span>matchAny<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $tokens</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attempts to match the current lookahead token with any of the given tokens.<pre>If any of them matches, this method updates the lookahead token; otherwise
+a syntax error is raised.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tokens</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="syntaxError"/>
+            <h4><span class="label private">private</span>syntaxError<span style="font-size:90%;">( <span class="param-type">string</span><strong> $expected</strong>, <span class="param-type">array</span><strong> $token</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates a new syntax error.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$expected</code> - Expected string.</li>
+                <li><code>$token</code> - Optional token.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>AnnotationException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

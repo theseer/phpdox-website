@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\ORM\Query\FilterCollection - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#FILTERS_STATE_CLEAN">FILTERS_STATE_CLEAN</a>
+          </li>
+          <li>
+            <a href="#FILTERS_STATE_DIRTY">FILTERS_STATE_DIRTY</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#config">$config</a>
+          </li>
+          <li>
+            <a href="#em">$em</a>
+          </li>
+          <li>
+            <a href="#enabledFilters">$enabledFilters</a>
+          </li>
+          <li>
+            <a href="#filterHash">$filterHash</a>
+          </li>
+          <li>
+            <a href="#filtersState">$filtersState</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#disable">disable</a>
+          </li>
+          <li>
+            <a href="#enable">enable</a>
+          </li>
+          <li>
+            <a href="#getEnabledFilters">getEnabledFilters</a>
+          </li>
+          <li>
+            <a href="#getFilter">getFilter</a>
+          </li>
+          <li>
+            <a href="#getHash">getHash</a>
+          </li>
+          <li>
+            <a href="#isClean">isClean</a>
+          </li>
+          <li>
+            <a href="#setFiltersStateDirty">setFiltersStateDirty</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\ORM\Query\</span>FilterCollection</h2>
+        <div class="file-notice">
+          <p>Collection class for all the query filters.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Alexander &lt;iam.asm89@gmail.com&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="FILTERS_STATE_CLEAN"/>FILTERS_STATE_CLEAN = 1<em> </em><p><li>A filter object is in CLEAN state when it has no changed parameters.</li></p><hr/></li>
+          <li><a name="FILTERS_STATE_DIRTY"/>FILTERS_STATE_DIRTY = 2<em> </em><p><li>A filter object is in DIRTY state when it has changed parameters.</li></p><hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="config"/>
+            <h4><span class="label private">private</span>object 
+                
+                $config</h4>
+            <ul class="varlist">
+              <li>The used Configuration.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="em"/>
+            <h4><span class="label private">private</span>object 
+                
+                $em</h4>
+            <ul class="varlist">
+              <li>The EntityManager that "owns" this FilterCollection instance.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="enabledFilters"/>
+            <h4><span class="label private">private</span>array 
+                
+                $enabledFilters</h4>
+            <ul class="varlist">
+              <li>Instances of enabled filters.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="filterHash"/>
+            <h4><span class="label private">private</span>string 
+                
+                $filterHash</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="filtersState"/>
+            <h4><span class="label private">private</span>integer 
+                
+                $filtersState</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_EntityManager.xhtml">Doctrine\ORM\EntityManager</a></span><strong> $em</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$em</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="disable"/>
+            <h4><span class="label public">public</span>disable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Disables a filter.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - Name of the filter.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The disabled filter.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException If the filter does not exist.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="enable"/>
+            <h4><span class="label public">public</span>enable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Enables a filter from the collection.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - Name of the filter.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The enabled filter.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException If the filter does not exist.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEnabledFilters"/>
+            <h4><span class="label public">public</span>getEnabledFilters<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all the enabled filters.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The enabled filters.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFilter"/>
+            <h4><span class="label public">public</span>getFilter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get an enabled filter from the collection.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - Name of the filter.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The filter.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException If the filter is not enabled.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHash"/>
+            <h4><span class="label public">public</span>getHash<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates a string of currently enabled filters to use for the cache id.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isClean"/>
+            <h4><span class="label public">public</span>isClean<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>True, if the filter collection is clean.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFiltersStateDirty"/>
+            <h4><span class="label public">public</span>setFiltersStateDirty<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the filter state to dirty.</li>
+            </p>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

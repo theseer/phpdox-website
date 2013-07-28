@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Swift_Signers_SMimeSigner - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#signCertificate">$signCertificate</a>
+          </li>
+          <li>
+            <a href="#signPrivateKey">$signPrivateKey</a>
+          </li>
+          <li>
+            <a href="#encryptCert">$encryptCert</a>
+          </li>
+          <li>
+            <a href="#signThenEncrypt">$signThenEncrypt</a>
+          </li>
+          <li>
+            <a href="#signLevel">$signLevel</a>
+          </li>
+          <li>
+            <a href="#encryptLevel">$encryptLevel</a>
+          </li>
+          <li>
+            <a href="#signOptions">$signOptions</a>
+          </li>
+          <li>
+            <a href="#encryptOptions">$encryptOptions</a>
+          </li>
+          <li>
+            <a href="#encryptCipher">$encryptCipher</a>
+          </li>
+          <li>
+            <a href="#replacementFactory">$replacementFactory</a>
+          </li>
+          <li>
+            <a href="#headerFactory">$headerFactory</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#copyFromOpenSSLOutput">copyFromOpenSSLOutput</a>
+          </li>
+          <li>
+            <a href="#createMessage">createMessage</a>
+          </li>
+          <li>
+            <a href="#getAlteredHeaders">getAlteredHeaders</a>
+          </li>
+          <li>
+            <a href="#getSignCertificate">getSignCertificate</a>
+          </li>
+          <li>
+            <a href="#getSignPrivateKey">getSignPrivateKey</a>
+          </li>
+          <li>
+            <a href="#isSignThenEncrypt">isSignThenEncrypt</a>
+          </li>
+          <li>
+            <a href="#messageStreamToEncryptedByteStream">messageStreamToEncryptedByteStream</a>
+          </li>
+          <li>
+            <a href="#messageStreamToSignedByteStream">messageStreamToSignedByteStream</a>
+          </li>
+          <li>
+            <a href="#newInstance">newInstance</a>
+          </li>
+          <li>
+            <a href="#reset">reset</a>
+          </li>
+          <li>
+            <a href="#setEncryptCertificate">setEncryptCertificate</a>
+          </li>
+          <li>
+            <a href="#setSignCertificate">setSignCertificate</a>
+          </li>
+          <li>
+            <a href="#setSignThenEncrypt">setSignThenEncrypt</a>
+          </li>
+          <li>
+            <a href="#signMessage">signMessage</a>
+          </li>
+          <li>
+            <a href="#streamToMime">streamToMime</a>
+          </li>
+          <li>
+            <a href="#toSMimeByteStream">toSMimeByteStream</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Swift_Signers_SMimeSigner</h2>
+        <div class="file-notice">
+          <p>MIME Message Signer used to apply S/MIME Signature/Encryption to a message.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Romain-Geissler</li>
+          <li><b>Author: </b>Sebastiaan Stok &lt;s.stok@rollerscapes.net&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Swift_Signers_BodySigner.xhtml">Swift_Signers_BodySigner</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="signCertificate"/>
+            <h4><span class="label protected">protected</span>
+                $signCertificate</h4>
+          </li>
+          <li>
+            <a name="signPrivateKey"/>
+            <h4><span class="label protected">protected</span>
+                $signPrivateKey</h4>
+          </li>
+          <li>
+            <a name="encryptCert"/>
+            <h4><span class="label protected">protected</span>
+                $encryptCert</h4>
+          </li>
+          <li>
+            <a name="signThenEncrypt"/>
+            <h4><span class="label protected">protected</span>
+                $signThenEncrypt</h4>
+          </li>
+          <li>
+            <a name="signLevel"/>
+            <h4><span class="label protected">protected</span>
+                $signLevel</h4>
+          </li>
+          <li>
+            <a name="encryptLevel"/>
+            <h4><span class="label protected">protected</span>
+                $encryptLevel</h4>
+          </li>
+          <li>
+            <a name="signOptions"/>
+            <h4><span class="label protected">protected</span>
+                $signOptions</h4>
+          </li>
+          <li>
+            <a name="encryptOptions"/>
+            <h4><span class="label protected">protected</span>
+                $encryptOptions</h4>
+          </li>
+          <li>
+            <a name="encryptCipher"/>
+            <h4><span class="label protected">protected</span>
+                $encryptCipher</h4>
+          </li>
+          <li>
+            <a name="replacementFactory"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $replacementFactory</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="headerFactory"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $headerFactory</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"/><strong> $signCertificate</strong>, <span class="param-type"/><strong> $signPrivateKey</strong>, <span class="param-type">string</span><strong> $encryptCertificate</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$certificate</code> - </li>
+                <li><code>$privateKey</code> - </li>
+                <li><code>$encryptCertificate</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getAlteredHeaders"/>
+            <h4><span class="label public">public</span>getAlteredHeaders<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the list of header a signer might tamper.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSignCertificate"/>
+            <h4><span class="label public">public</span>getSignCertificate<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSignPrivateKey"/>
+            <h4><span class="label public">public</span>getSignPrivateKey<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isSignThenEncrypt"/>
+            <h4><span class="label public">public</span>isSignThenEncrypt<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="newInstance"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>newInstance<span style="font-size:90%;">( <span class="param-type">string</span><strong> $certificate</strong>, <span class="param-type">string</span><strong> $privateKey</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns an new Swift_Signers_SMimeSigner instance.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$certificate</code> - </li>
+                <li><code>$privateKey</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="reset"/>
+            <h4><span class="label public">public</span>reset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Resets internal states.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setEncryptCertificate"/>
+            <h4><span class="label public">public</span>setEncryptCertificate<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $recipientCerts</strong>, <span class="param-type">integer</span><strong> $cipher</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the certificate location to use for encryption.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$recipientCerts</code> - Either an single X.509 certificate, or an assoc array of X.509 certificates.</li>
+                <li><code>$cipher</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSignCertificate"/>
+            <h4><span class="label public">public</span>setSignCertificate<span style="font-size:90%;">( <span class="param-type">string</span><strong> $certificate</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $privateKey</strong>, <span class="param-type">integer</span><strong> $signOptions</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the certificate location to use for signing.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$certificate</code> - </li>
+                <li><code>$privateKey</code> - If the key needs an passphrase use array('file-location', 'passphrase') instead</li>
+                <li><code>$signOptions</code> - Bitwise operator options for openssl_pkcs7_sign()</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSignThenEncrypt"/>
+            <h4><span class="label public">public</span>setSignThenEncrypt<span style="font-size:90%;">( <span class="param-type">string</span><strong> $signThenEncrypt</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set perform signing before encryption.<pre>The default is to first sign the message and then encrypt.
+But some older mail clients, namely Microsoft Outlook 2000 will work when the message first encrypted.
+As this goes against the official specs, its recommended to only use 'encryption -&gt; signing' when specifically targeting these 'broken' clients.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$signThenEncrypt</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="signMessage"/>
+            <h4><span class="label public">public</span>signMessage<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_SignedMessage">Swift_SignedMessage</span></span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Change the Swift_SignedMessage to apply the singing.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="copyFromOpenSSLOutput"/>
+            <h4><span class="label protected">protected</span>copyFromOpenSSLOutput<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_OutputByteStream">Swift_OutputByteStream</span></span><strong> $fromStream</strong>, <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $toStream</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fromStream</code> - </li>
+                <li><code>$toStream</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createMessage"/>
+            <h4><span class="label protected">protected</span>createMessage<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_SignedMessage">Swift_SignedMessage</span></span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="messageStreamToEncryptedByteStream"/>
+            <h4><span class="label protected">protected</span>messageStreamToEncryptedByteStream<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_FileStream">Swift_FileStream</span></span><strong> $outputStream</strong>, <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $is</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$outputStream</code> - </li>
+                <li><code>$is</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_IoException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="messageStreamToSignedByteStream"/>
+            <h4><span class="label protected">protected</span>messageStreamToSignedByteStream<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_FileStream">Swift_FileStream</span></span><strong> $outputStream</strong>, <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $inputStream</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$outputStream</code> - </li>
+                <li><code>$inputStream</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_IoException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="streamToMime"/>
+            <h4><span class="label protected">protected</span>streamToMime<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_OutputByteStream">Swift_OutputByteStream</span></span><strong> $fromStream</strong>, <span class="param-type"><span title="\\Swift_Message">Swift_Message</span></span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Merges an OutputByteStream to Swift_SignedMessage.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fromStream</code> - </li>
+                <li><code>$message</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toSMimeByteStream"/>
+            <h4><span class="label protected">protected</span>toSMimeByteStream<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $inputStream</strong>, <span class="param-type"><span title="\\Swift_SignedMessage">Swift_SignedMessage</span></span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$inputStream</code> - </li>
+                <li><code>$mimeEntity</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

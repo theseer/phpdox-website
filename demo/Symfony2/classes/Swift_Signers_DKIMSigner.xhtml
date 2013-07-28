@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Swift_Signers_DKIMSigner - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_privateKey">$_privateKey</a>
+          </li>
+          <li>
+            <a href="#_domainName">$_domainName</a>
+          </li>
+          <li>
+            <a href="#_selector">$_selector</a>
+          </li>
+          <li>
+            <a href="#_hashAlgorithm">$_hashAlgorithm</a>
+          </li>
+          <li>
+            <a href="#_bodyCanon">$_bodyCanon</a>
+          </li>
+          <li>
+            <a href="#_headerCanon">$_headerCanon</a>
+          </li>
+          <li>
+            <a href="#_ignoredHeaders">$_ignoredHeaders</a>
+          </li>
+          <li>
+            <a href="#_signerIdentity">$_signerIdentity</a>
+          </li>
+          <li>
+            <a href="#_bodyLen">$_bodyLen</a>
+          </li>
+          <li>
+            <a href="#_maxLen">$_maxLen</a>
+          </li>
+          <li>
+            <a href="#_showLen">$_showLen</a>
+          </li>
+          <li>
+            <a href="#_signatureTimestamp">$_signatureTimestamp</a>
+          </li>
+          <li>
+            <a href="#_signatureExpiration">$_signatureExpiration</a>
+          </li>
+          <li>
+            <a href="#_debugHeaders">$_debugHeaders</a>
+          </li>
+          <li>
+            <a href="#_signedHeaders">$_signedHeaders</a>
+          </li>
+          <li>
+            <a href="#_debugHeadersData">$_debugHeadersData</a>
+          </li>
+          <li>
+            <a href="#_bodyHash">$_bodyHash</a>
+          </li>
+          <li>
+            <a href="#_dkimHeader">$_dkimHeader</a>
+          </li>
+          <li>
+            <a href="#_headerHashHandler">$_headerHashHandler</a>
+          </li>
+          <li>
+            <a href="#_bodyHashHandler">$_bodyHashHandler</a>
+          </li>
+          <li>
+            <a href="#_headerHash">$_headerHash</a>
+          </li>
+          <li>
+            <a href="#_headerCanonData">$_headerCanonData</a>
+          </li>
+          <li>
+            <a href="#_bodyCanonEmptyCounter">$_bodyCanonEmptyCounter</a>
+          </li>
+          <li>
+            <a href="#_bodyCanonIgnoreStart">$_bodyCanonIgnoreStart</a>
+          </li>
+          <li>
+            <a href="#_bodyCanonSpace">$_bodyCanonSpace</a>
+          </li>
+          <li>
+            <a href="#_bodyCanonLastChar">$_bodyCanonLastChar</a>
+          </li>
+          <li>
+            <a href="#_bodyCanonLine">$_bodyCanonLine</a>
+          </li>
+          <li>
+            <a href="#_bound">$_bound</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_addHeader">_addHeader</a>
+          </li>
+          <li>
+            <a href="#_addToBodyHash">_addToBodyHash</a>
+          </li>
+          <li>
+            <a href="#_addToHeaderHash">_addToHeaderHash</a>
+          </li>
+          <li>
+            <a href="#_canonicalizeBody">_canonicalizeBody</a>
+          </li>
+          <li>
+            <a href="#_endOfBody">_endOfBody</a>
+          </li>
+          <li>
+            <a href="#_endOfHeaders">_endOfHeaders</a>
+          </li>
+          <li>
+            <a href="#_getEncryptedHash">_getEncryptedHash</a>
+          </li>
+          <li>
+            <a href="#addSignature">addSignature</a>
+          </li>
+          <li>
+            <a href="#bind">bind</a>
+          </li>
+          <li>
+            <a href="#commit">commit</a>
+          </li>
+          <li>
+            <a href="#endBody">endBody</a>
+          </li>
+          <li>
+            <a href="#flushBuffers">flushBuffers</a>
+          </li>
+          <li>
+            <a href="#getAlteredHeaders">getAlteredHeaders</a>
+          </li>
+          <li>
+            <a href="#ignoreHeader">ignoreHeader</a>
+          </li>
+          <li>
+            <a href="#reset">reset</a>
+          </li>
+          <li>
+            <a href="#setBodyCanon">setBodyCanon</a>
+          </li>
+          <li>
+            <a href="#setBodySignedLen">setBodySignedLen</a>
+          </li>
+          <li>
+            <a href="#setDebugHeaders">setDebugHeaders</a>
+          </li>
+          <li>
+            <a href="#setHashAlgorithm">setHashAlgorithm</a>
+          </li>
+          <li>
+            <a href="#setHeaderCanon">setHeaderCanon</a>
+          </li>
+          <li>
+            <a href="#setHeaders">setHeaders</a>
+          </li>
+          <li>
+            <a href="#setSignatureExpiration">setSignatureExpiration</a>
+          </li>
+          <li>
+            <a href="#setSignatureTimestamp">setSignatureTimestamp</a>
+          </li>
+          <li>
+            <a href="#setSignerIdentity">setSignerIdentity</a>
+          </li>
+          <li>
+            <a href="#startBody">startBody</a>
+          </li>
+          <li>
+            <a href="#unbind">unbind</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Swift_Signers_DKIMSigner</h2>
+        <div class="file-notice">
+          <p>DKIM Signer used to apply DKIM Signature to a message</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Xavier De Cock &lt;xdecock@gmail.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Swift_Signers_HeaderSigner.xhtml">Swift_Signers_HeaderSigner</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_privateKey"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $_privateKey</h4>
+            <ul class="varlist">
+              <li>PrivateKey</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_domainName"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $_domainName</h4>
+            <ul class="varlist">
+              <li>DomainName</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_selector"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $_selector</h4>
+            <ul class="varlist">
+              <li>Selector</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_hashAlgorithm"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $_hashAlgorithm</h4>
+            <ul class="varlist">
+              <li>Hash algorithm used</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_bodyCanon"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $_bodyCanon</h4>
+            <ul class="varlist">
+              <li>Body canon method</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_headerCanon"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $_headerCanon</h4>
+            <ul class="varlist">
+              <li>Header canon method</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_ignoredHeaders"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $_ignoredHeaders</h4>
+            <ul class="varlist">
+              <li>Headers not being signed</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_signerIdentity"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $_signerIdentity</h4>
+            <ul class="varlist">
+              <li>Signer identity</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_bodyLen"/>
+            <h4><span class="label protected">protected</span>int 
+                
+                $_bodyLen</h4>
+            <ul class="varlist">
+              <li>BodyLength</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_maxLen"/>
+            <h4><span class="label protected">protected</span>int 
+                
+                $_maxLen</h4>
+            <ul class="varlist">
+              <li>Maximum signedLen</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_showLen"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $_showLen</h4>
+            <ul class="varlist">
+              <li>Embbed bodyLen in signature</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_signatureTimestamp"/>
+            <h4><span class="label protected">protected</span>mixed 
+                
+                $_signatureTimestamp</h4>
+            <ul class="varlist">
+              <li>When the signature has been applied (true means time()), false means not embedded</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_signatureExpiration"/>
+            <h4><span class="label protected">protected</span>int 
+                
+                $_signatureExpiration</h4>
+            <ul class="varlist">
+              <li>When will the signature expires false means not embedded, if sigTimestamp is auto Expiration is relative, otherwhise it's absolute</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_debugHeaders"/>
+            <h4><span class="label protected">protected</span>boolean 
+                
+                $_debugHeaders</h4>
+            <ul class="varlist">
+              <li>Must we embed signed headers?</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_signedHeaders"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $_signedHeaders</h4>
+            <ul class="varlist">
+              <li>Headers used to generate hash</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_debugHeadersData"/>
+            <h4><span class="label private">private</span>string 
+                
+                $_debugHeadersData</h4>
+            <ul class="varlist">
+              <li>If debugHeaders is set store debugDatas here</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_bodyHash"/>
+            <h4><span class="label private">private</span>string 
+                
+                $_bodyHash</h4>
+            <ul class="varlist">
+              <li>Stores the bodyHash</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_dkimHeader"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $_dkimHeader</h4>
+            <ul class="varlist">
+              <li>Stores the signature header</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_headerHashHandler"/>
+            <h4><span class="label private">private</span>object 
+                
+                $_headerHashHandler</h4>
+            <ul class="varlist">
+              <li>Hash Handler</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_bodyHashHandler"/>
+            <h4><span class="label private">private</span>
+                $_bodyHashHandler</h4>
+          </li>
+          <li>
+            <a name="_headerHash"/>
+            <h4><span class="label private">private</span>
+                $_headerHash</h4>
+          </li>
+          <li>
+            <a name="_headerCanonData"/>
+            <h4><span class="label private">private</span>
+                $_headerCanonData</h4>
+          </li>
+          <li>
+            <a name="_bodyCanonEmptyCounter"/>
+            <h4><span class="label private">private</span>
+                $_bodyCanonEmptyCounter</h4>
+          </li>
+          <li>
+            <a name="_bodyCanonIgnoreStart"/>
+            <h4><span class="label private">private</span>
+                $_bodyCanonIgnoreStart</h4>
+          </li>
+          <li>
+            <a name="_bodyCanonSpace"/>
+            <h4><span class="label private">private</span>
+                $_bodyCanonSpace</h4>
+          </li>
+          <li>
+            <a name="_bodyCanonLastChar"/>
+            <h4><span class="label private">private</span>
+                $_bodyCanonLastChar</h4>
+          </li>
+          <li>
+            <a name="_bodyCanonLine"/>
+            <h4><span class="label private">private</span>
+                $_bodyCanonLine</h4>
+          </li>
+          <li>
+            <a name="_bound"/>
+            <h4><span class="label private">private</span>
+                $_bound</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $privateKey</strong>, <span class="param-type">string</span><strong> $domainName</strong>, <span class="param-type">string</span><strong> $selector</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$privateKey</code> - </li>
+                <li><code>$domainName</code> - </li>
+                <li><code>$selector</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addSignature"/>
+            <h4><span class="label public">public</span>addSignature<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_HeaderSet">Swift_Mime_HeaderSet</span></span><strong> $headers</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add the signature to the given Headers</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$headers</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="bind"/>
+            <h4><span class="label public">public</span>bind<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $is</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach $is to this stream.<pre>The stream acts as an observer, receiving all data that is written.
+All  and  operations will be mirrored.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$is</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="commit"/>
+            <h4><span class="label public">public</span>commit<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>For any bytes that are currently buffered inside the stream, force them off the buffer.</li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_IoException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="endBody"/>
+            <h4><span class="label public">public</span>endBody<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>End Body</li>
+            </p>
+          </li>
+          <li>
+            <a name="flushBuffers"/>
+            <h4><span class="label public">public</span>flushBuffers<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Flush the contents of the stream (empty it) and set the internal pointer to the beginning.</li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_IoException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAlteredHeaders"/>
+            <h4><span class="label public">public</span>getAlteredHeaders<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the list of Headers Tampered by this plugin</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="ignoreHeader"/>
+            <h4><span class="label public">public</span>ignoreHeader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $header_name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds an ignored Header</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$header_name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="reset"/>
+            <h4><span class="label public">public</span>reset<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="setBodyCanon"/>
+            <h4><span class="label public">public</span>setBodyCanon<span style="font-size:90%;">( <span class="param-type">string</span><strong> $canon</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the body canonicalization algorithm</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$canon</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setBodySignedLen"/>
+            <h4><span class="label public">public</span>setBodySignedLen<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $len</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the length of the body to sign</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$len</code> - (bool or int)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setDebugHeaders"/>
+            <h4><span class="label public">public</span>setDebugHeaders<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $debug</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Enable / disable the DebugHeaders</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$debug</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setHashAlgorithm"/>
+            <h4><span class="label public">public</span>setHashAlgorithm<span style="font-size:90%;">( <span class="param-type">string</span><strong> $hash</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set hash_algorithm, must be one of rsa-sha256 | rsa-sha1 defaults to rsa-sha256</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$hash</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setHeaderCanon"/>
+            <h4><span class="label public">public</span>setHeaderCanon<span style="font-size:90%;">( <span class="param-type">string</span><strong> $canon</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the header canonicalization algorithm</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$canon</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setHeaders"/>
+            <h4><span class="label public">public</span>setHeaders<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_HeaderSet">Swift_Mime_HeaderSet</span></span><strong> $headers</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the headers to sign</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$headers</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSignatureExpiration"/>
+            <h4><span class="label public">public</span>setSignatureExpiration<span style="font-size:90%;">( <span class="param-type"><span title="timestamp">timestamp</span></span><strong> $time</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the signature expiration timestamp</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$time</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSignatureTimestamp"/>
+            <h4><span class="label public">public</span>setSignatureTimestamp<span style="font-size:90%;">( <span class="param-type"><span title="timestamp">timestamp</span></span><strong> $time</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the signature timestamp</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$time</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSignerIdentity"/>
+            <h4><span class="label public">public</span>setSignerIdentity<span style="font-size:90%;">( <span class="param-type">string</span><strong> $identity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the signer identity</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="startBody"/>
+            <h4><span class="label public">public</span>startBody<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Start Body</li>
+            </p>
+          </li>
+          <li>
+            <a name="unbind"/>
+            <h4><span class="label public">public</span>unbind<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $is</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove an already bound stream.<pre>If $is is not bound, no errors will be raised.
+If the stream currently has any buffered data it will be written to $is
+before unbinding occurs.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$is</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">string</span><strong> $bytes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Writes $bytes to the end of the stream.<pre>Writing may not happen immediately if the stream chooses to buffer.  If
+you want to write these bytes with immediate effect, call after calling write().
+This method returns the sequence ID of the write (i.e. 1 for first, 2 for
+second, etc etc).
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bytes</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_IoException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_addHeader"/>
+            <h4><span class="label protected">protected</span>_addHeader<span style="font-size:90%;">( <span class="param-type"/><strong> $header</strong>, <span class="param-type"/><strong> $is_sig</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="_canonicalizeBody"/>
+            <h4><span class="label protected">protected</span>_canonicalizeBody<span style="font-size:90%;">( <span class="param-type"/><strong> $string</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="_endOfBody"/>
+            <h4><span class="label protected">protected</span>_endOfBody<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="_endOfHeaders"/>
+            <h4><span class="label protected">protected</span>_endOfHeaders<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="_addToBodyHash"/>
+            <h4><span class="label private">private</span>_addToBodyHash<span style="font-size:90%;">( <span class="param-type"/><strong> $string</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="_addToHeaderHash"/>
+            <h4><span class="label private">private</span>_addToHeaderHash<span style="font-size:90%;">( <span class="param-type"/><strong> $header</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="_getEncryptedHash"/>
+            <h4><span class="label private">private</span>_getEncryptedHash<span style="font-size:90%;">(  )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Monolog\Handler\PushoverHandler - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#token">$token</a>
+          </li>
+          <li>
+            <a href="#user">$user</a>
+          </li>
+          <li>
+            <a href="#title">$title</a>
+          </li>
+          <li>
+            <a href="#level">$level</a>
+          </li>
+          <li>
+            <a href="#bubble">$bubble</a>
+          </li>
+          <li>
+            <a href="#formatter">$formatter</a>
+          </li>
+          <li>
+            <a href="#processors">$processors</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#buildContent">buildContent</a>
+          </li>
+          <li>
+            <a href="#buildHeader">buildHeader</a>
+          </li>
+          <li>
+            <a href="#close">close</a>
+          </li>
+          <li>
+            <a href="#close">close</a>
+          </li>
+          <li>
+            <a href="#closeSocket">closeSocket</a>
+          </li>
+          <li>
+            <a href="#fsockopen">fsockopen</a>
+          </li>
+          <li>
+            <a href="#fwrite">fwrite</a>
+          </li>
+          <li>
+            <a href="#generateDataStream">generateDataStream</a>
+          </li>
+          <li>
+            <a href="#generateDataStream">generateDataStream</a>
+          </li>
+          <li>
+            <a href="#getBubble">getBubble</a>
+          </li>
+          <li>
+            <a href="#getConnectionString">getConnectionString</a>
+          </li>
+          <li>
+            <a href="#getConnectionTimeout">getConnectionTimeout</a>
+          </li>
+          <li>
+            <a href="#getDefaultFormatter">getDefaultFormatter</a>
+          </li>
+          <li>
+            <a href="#getFormatter">getFormatter</a>
+          </li>
+          <li>
+            <a href="#getLevel">getLevel</a>
+          </li>
+          <li>
+            <a href="#getTimeout">getTimeout</a>
+          </li>
+          <li>
+            <a href="#handle">handle</a>
+          </li>
+          <li>
+            <a href="#handleBatch">handleBatch</a>
+          </li>
+          <li>
+            <a href="#isConnected">isConnected</a>
+          </li>
+          <li>
+            <a href="#isHandling">isHandling</a>
+          </li>
+          <li>
+            <a href="#isPersistent">isPersistent</a>
+          </li>
+          <li>
+            <a href="#pfsockopen">pfsockopen</a>
+          </li>
+          <li>
+            <a href="#popProcessor">popProcessor</a>
+          </li>
+          <li>
+            <a href="#processRecord">processRecord</a>
+          </li>
+          <li>
+            <a href="#pushProcessor">pushProcessor</a>
+          </li>
+          <li>
+            <a href="#setBubble">setBubble</a>
+          </li>
+          <li>
+            <a href="#setConnectionTimeout">setConnectionTimeout</a>
+          </li>
+          <li>
+            <a href="#setFormatter">setFormatter</a>
+          </li>
+          <li>
+            <a href="#setLevel">setLevel</a>
+          </li>
+          <li>
+            <a href="#setPersistent">setPersistent</a>
+          </li>
+          <li>
+            <a href="#setTimeout">setTimeout</a>
+          </li>
+          <li>
+            <a href="#streamGetMetadata">streamGetMetadata</a>
+          </li>
+          <li>
+            <a href="#streamSetTimeout">streamSetTimeout</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Monolog\Handler\</span>PushoverHandler</h2>
+        <div class="file-notice">
+          <p>Sends notifications through the pushover api to mobile phones</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Sebastian Göttschkes &lt;sebastian.goettschkes@googlemail.com&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="token"/>
+            <h4><span class="label private">private</span>
+                $token</h4>
+          </li>
+          <li>
+            <a name="user"/>
+            <h4><span class="label private">private</span>
+                $user</h4>
+          </li>
+          <li>
+            <a name="title"/>
+            <h4><span class="label private">private</span>
+                $title</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $token</strong>, <span class="param-type">string</span><strong> $user</strong>, <span class="param-type">string</span><strong> $title</strong>, <span class="param-type">integer</span><strong> $level</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $bubble</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $useSSL</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$token</code> - Pushover api token</li>
+                <li><code>$user</code> - Pushover user id the message will be sent to</li>
+                <li><code>$title</code> - Title sent to Pushover API</li>
+                <li><code>$level</code> - The minimum logging level at which this handler will be triggered</li>
+                <li><code>$bubble</code> - Whether the messages that are handled can bubble up the stack or not</li>
+                <li><code>$useSSL</code> - Whether to connect via SSL. Required when pushing messages to users that are not</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Destructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__destruct"/>
+            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="close"/>
+            <h4><span class="label public">public</span>close<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>We will not close a PersistentSocket instance so it can be reused in other requests.</li>
+            </p>
+          </li>
+          <li>
+            <a name="close"/>
+            <h4><span class="label public">public</span>close<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Closes the handler.<pre>This will be called automatically when the object is destroyed</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="closeSocket"/>
+            <h4><span class="label public">public</span>closeSocket<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Close socket, if open</li>
+            </p>
+          </li>
+          <li>
+            <a name="getBubble"/>
+            <h4><span class="label public">public</span>getBubble<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the bubbling behavior.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>True means that bubbling is not permitted.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getConnectionString"/>
+            <h4><span class="label public">public</span>getConnectionString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get current connection string</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getConnectionTimeout"/>
+            <h4><span class="label public">public</span>getConnectionTimeout<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get current connection timeout setting</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFormatter"/>
+            <h4><span class="label public">public</span>getFormatter<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getLevel"/>
+            <h4><span class="label public">public</span>getLevel<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets minimum logging level at which this handler will be triggered.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTimeout"/>
+            <h4><span class="label public">public</span>getTimeout<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get current in-transfer timeout</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="handle"/>
+            <h4><span class="label public">public</span>handle<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $record</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="handleBatch"/>
+            <h4><span class="label public">public</span>handleBatch<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $records</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="isConnected"/>
+            <h4><span class="label public">public</span>isConnected<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check to see if the socket is currently available.<pre>UDP might appear to be connected but might fail when writing.  See http://php.net/fsockopen for details.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isHandling"/>
+            <h4><span class="label public">public</span>isHandling<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $record</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="isPersistent"/>
+            <h4><span class="label public">public</span>isPersistent<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get persistent setting</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="popProcessor"/>
+            <h4><span class="label public">public</span>popProcessor<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="pushProcessor"/>
+            <h4><span class="label public">public</span>pushProcessor<span style="font-size:90%;">( <span class="param-type"/><strong> $callback</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="setBubble"/>
+            <h4><span class="label public">public</span>setBubble<span style="font-size:90%;">( <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $bubble</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the bubbling behavior.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bubble</code> - True means that bubbling is not permitted.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setConnectionTimeout"/>
+            <h4><span class="label public">public</span>setConnectionTimeout<span style="font-size:90%;">( <span class="param-type">float</span><strong> $seconds</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set connection timeout.  Only has effect before we connect.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$seconds</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFormatter"/>
+            <h4><span class="label public">public</span>setFormatter<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Monolog_Formatter_FormatterInterface.xhtml">Monolog\Formatter\FormatterInterface</a></span><strong> $formatter</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="setLevel"/>
+            <h4><span class="label public">public</span>setLevel<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $level</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets minimum logging level at which this handler will be triggered.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$level</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPersistent"/>
+            <h4><span class="label public">public</span>setPersistent<span style="font-size:90%;">( <span class="param-type"><span title="type">type</span></span><strong> $boolean</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set socket connection to nbe persistent. It only has effect before the connection is initiated.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$boolean</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTimeout"/>
+            <h4><span class="label public">public</span>setTimeout<span style="font-size:90%;">( <span class="param-type">float</span><strong> $seconds</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set write timeout. Only has effect before we connect.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$seconds</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $record</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $record</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Connect (if necessary) and write to the socket</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$record</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\UnexpectedValueException</code>
+                </li>
+                <li>
+                  <code>\RuntimeException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fsockopen"/>
+            <h4><span class="label protected">protected</span>fsockopen<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Wrapper to allow mocking</li>
+            </p>
+          </li>
+          <li>
+            <a name="fwrite"/>
+            <h4><span class="label protected">protected</span>fwrite<span style="font-size:90%;">( <span class="param-type"/><strong> $data</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Wrapper to allow mocking</li>
+            </p>
+          </li>
+          <li>
+            <a name="generateDataStream"/>
+            <h4><span class="label protected">protected</span>generateDataStream<span style="font-size:90%;">( <span class="param-type"/><strong> $record</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateDataStream"/>
+            <h4><span class="label protected">protected</span>generateDataStream<span style="font-size:90%;">( <span class="param-type"/><strong> $record</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getDefaultFormatter"/>
+            <h4><span class="label protected">protected</span>getDefaultFormatter<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the default formatter.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="pfsockopen"/>
+            <h4><span class="label protected">protected</span>pfsockopen<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Wrapper to allow mocking</li>
+            </p>
+          </li>
+          <li>
+            <a name="processRecord"/>
+            <h4><span class="label protected">protected</span>processRecord<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $record</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Processes a record.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$record</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="streamGetMetadata"/>
+            <h4><span class="label protected">protected</span>streamGetMetadata<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Wrapper to allow mocking</li>
+            </p>
+          </li>
+          <li>
+            <a name="streamSetTimeout"/>
+            <h4><span class="label protected">protected</span>streamSetTimeout<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Wrapper to allow mocking</li>
+            </p>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>write<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $record</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Writes the record down to the log of the implementing handler</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$record</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="buildContent"/>
+            <h4><span class="label private">private</span>buildContent<span style="font-size:90%;">( <span class="param-type"/><strong> $record</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="buildHeader"/>
+            <h4><span class="label private">private</span>buildHeader<span style="font-size:90%;">( <span class="param-type"/><strong> $content</strong> )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>
