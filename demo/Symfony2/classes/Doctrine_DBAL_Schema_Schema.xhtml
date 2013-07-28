@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\DBAL\Schema\Schema - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_tables">$_tables</a>
+          </li>
+          <li>
+            <a href="#_sequences">$_sequences</a>
+          </li>
+          <li>
+            <a href="#_schemaConfig">$_schemaConfig</a>
+          </li>
+          <li>
+            <a href="#_name">$_name</a>
+          </li>
+          <li>
+            <a href="#_namespace">$_namespace</a>
+          </li>
+          <li>
+            <a href="#_quoted">$_quoted</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__clone">__clone</a>
+          </li>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_addSequence">_addSequence</a>
+          </li>
+          <li>
+            <a href="#_addTable">_addTable</a>
+          </li>
+          <li>
+            <a href="#_generateIdentifierName">_generateIdentifierName</a>
+          </li>
+          <li>
+            <a href="#_setName">_setName</a>
+          </li>
+          <li>
+            <a href="#createSequence">createSequence</a>
+          </li>
+          <li>
+            <a href="#createTable">createTable</a>
+          </li>
+          <li>
+            <a href="#dropSequence">dropSequence</a>
+          </li>
+          <li>
+            <a href="#dropTable">dropTable</a>
+          </li>
+          <li>
+            <a href="#getFullQualifiedAssetName">getFullQualifiedAssetName</a>
+          </li>
+          <li>
+            <a href="#getFullQualifiedName">getFullQualifiedName</a>
+          </li>
+          <li>
+            <a href="#getMigrateFromSql">getMigrateFromSql</a>
+          </li>
+          <li>
+            <a href="#getMigrateToSql">getMigrateToSql</a>
+          </li>
+          <li>
+            <a href="#getName">getName</a>
+          </li>
+          <li>
+            <a href="#getNamespaceName">getNamespaceName</a>
+          </li>
+          <li>
+            <a href="#getQuotedName">getQuotedName</a>
+          </li>
+          <li>
+            <a href="#getSequence">getSequence</a>
+          </li>
+          <li>
+            <a href="#getSequences">getSequences</a>
+          </li>
+          <li>
+            <a href="#getShortestName">getShortestName</a>
+          </li>
+          <li>
+            <a href="#getTable">getTable</a>
+          </li>
+          <li>
+            <a href="#getTableNames">getTableNames</a>
+          </li>
+          <li>
+            <a href="#getTables">getTables</a>
+          </li>
+          <li>
+            <a href="#hasExplicitForeignKeyIndexes">hasExplicitForeignKeyIndexes</a>
+          </li>
+          <li>
+            <a href="#hasSequence">hasSequence</a>
+          </li>
+          <li>
+            <a href="#hasTable">hasTable</a>
+          </li>
+          <li>
+            <a href="#isIdentifierQuoted">isIdentifierQuoted</a>
+          </li>
+          <li>
+            <a href="#isInDefaultNamespace">isInDefaultNamespace</a>
+          </li>
+          <li>
+            <a href="#isQuoted">isQuoted</a>
+          </li>
+          <li>
+            <a href="#renameTable">renameTable</a>
+          </li>
+          <li>
+            <a href="#toDropSql">toDropSql</a>
+          </li>
+          <li>
+            <a href="#toSql">toSql</a>
+          </li>
+          <li>
+            <a href="#trimQuotes">trimQuotes</a>
+          </li>
+          <li>
+            <a href="#visit">visit</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\DBAL\Schema\</span>Schema</h2>
+        <div class="file-notice">
+          <p>Object representation of a database schema</p>
+          <p>
+            <pre>Different vendors have very inconsistent naming with regard to the concept
+of a "schema". Doctrine understands a schema as the entity that conceptually
+wraps a set of database objects such as tables, sequences, indexes and
+foreign keys that belong to each other into a namespace. A Doctrine Schema
+has nothing to do with the "SCHEMA" defined as in PostgreSQL, it is more
+related to the concept of "DATABASE" that exists in MySQL and PostgreSQL.
+
+Every asset in the doctrine schema has a name. A name consists of either a
+namespace.local name pair or just a local unqualified name.
+
+The abstraction layer that covers a PostgreSQL schema is the namespace of an
+database object (asset). A schema can have a name, which will be used as
+default namespace for the unqualified database objects that are created in
+the schema.
+
+In the case of MySQL where cross-database queries are allowed this leads to
+databases being "misinterpreted" as namespaces. This is intentional, however
+the CREATE/DROP SQL visitors will just filter this queries and do not
+execute them. Only the queries for the currently connected database are
+executed.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_tables"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $_tables</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="_sequences"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $_sequences</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="_schemaConfig"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $_schemaConfig</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $tables</strong>, <span class="param-type">Array</span><strong> $sequences</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_SchemaConfig.xhtml">Doctrine\DBAL\Schema\SchemaConfig</a></span><strong> $schemaConfig</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tables</code> - </li>
+                <li><code>$sequences</code> - </li>
+                <li><code>$views</code> - </li>
+                <li><code>$triggers</code> - </li>
+                <li><code>$schemaConfig</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__clone"/>
+            <h4><span class="label public">public</span>__clone<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Cloning a Schema triggers a deep clone of all related assets.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createSequence"/>
+            <h4><span class="label public">public</span>createSequence<span style="font-size:90%;">( <span class="param-type">string</span><strong> $sequenceName</strong>, <span class="param-type">integer</span><strong> $allocationSize</strong>, <span class="param-type">integer</span><strong> $initialValue</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new sequence</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sequenceName</code> - </li>
+                <li><code>$allocationSize</code> - </li>
+                <li><code>$initialValue</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createTable"/>
+            <h4><span class="label public">public</span>createTable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new table</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="dropSequence"/>
+            <h4><span class="label public">public</span>dropSequence<span style="font-size:90%;">( <span class="param-type">string</span><strong> $sequenceName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sequenceName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="dropTable"/>
+            <h4><span class="label public">public</span>dropTable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Drop a table from the schema.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFullQualifiedName"/>
+            <h4><span class="label public">public</span>getFullQualifiedName<span style="font-size:90%;">( <span class="param-type"/><strong> $defaultNamespaceName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>The normalized name is full-qualified and lowerspaced. Lowerspacing is actually wrong, but we have to do it to keep our sanity. If you are using database objects that only differentiate in the casing (FOO vs Foo) then you will NOT be able to use Doctrine Schema abstraction.<pre>Every non-namespaced element is prefixed with the default namespace
+name which is passed as argument to this method.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMigrateFromSql"/>
+            <h4><span class="label public">public</span>getMigrateFromSql<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Schema.xhtml">Doctrine\DBAL\Schema\Schema</a></span><strong> $fromSchema</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Platforms_AbstractPlatform.xhtml">Doctrine\DBAL\Platforms\AbstractPlatform</a></span><strong> $platform</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fromSchema</code> - </li>
+                <li><code>$platform</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMigrateToSql"/>
+            <h4><span class="label public">public</span>getMigrateToSql<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Schema.xhtml">Doctrine\DBAL\Schema\Schema</a></span><strong> $toSchema</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Platforms_AbstractPlatform.xhtml">Doctrine\DBAL\Platforms\AbstractPlatform</a></span><strong> $platform</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$toSchema</code> - </li>
+                <li><code>$platform</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getName"/>
+            <h4><span class="label public">public</span>getName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return name of this schema asset.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNamespaceName"/>
+            <h4><span class="label public">public</span>getNamespaceName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get namespace name of this asset.<pre>If NULL is returned this means the default namespace is used.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getQuotedName"/>
+            <h4><span class="label public">public</span>getQuotedName<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Platforms_AbstractPlatform.xhtml">Doctrine\DBAL\Platforms\AbstractPlatform</a></span><strong> $platform</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the quoted representation of this asset but only if it was defined with one. Otherwise return the plain unquoted value as inserted.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$platform</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSequence"/>
+            <h4><span class="label public">public</span>getSequence<span style="font-size:90%;">( <span class="param-type">string</span><strong> $sequenceName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sequenceName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>SchemaException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSequences"/>
+            <h4><span class="label public">public</span>getSequences<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getShortestName"/>
+            <h4><span class="label public">public</span>getShortestName<span style="font-size:90%;">( <span class="param-type"/><strong> $defaultNamespaceName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>The shortest name is stripped of the default namespace. All other namespaced elements are returned as full-qualified names.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTable"/>
+            <h4><span class="label public">public</span>getTable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTableNames"/>
+            <h4><span class="label public">public</span>getTableNames<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all table names, prefixed with a schema name, even the default one if present.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTables"/>
+            <h4><span class="label public">public</span>getTables<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all tables of this schema.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasExplicitForeignKeyIndexes"/>
+            <h4><span class="label public">public</span>hasExplicitForeignKeyIndexes<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasSequence"/>
+            <h4><span class="label public">public</span>hasSequence<span style="font-size:90%;">( <span class="param-type"/><strong> $sequenceName</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="hasTable"/>
+            <h4><span class="label public">public</span>hasTable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Does this schema have a table with the given name?</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isInDefaultNamespace"/>
+            <h4><span class="label public">public</span>isInDefaultNamespace<span style="font-size:90%;">( <span class="param-type">string</span><strong> $defaultNamespaceName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this asset in the default namespace?</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$defaultNamespaceName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isQuoted"/>
+            <h4><span class="label public">public</span>isQuoted<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if this asset's name is quoted</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="renameTable"/>
+            <h4><span class="label public">public</span>renameTable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $oldTableName</strong>, <span class="param-type">string</span><strong> $newTableName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Rename a table</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$oldTableName</code> - </li>
+                <li><code>$newTableName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toDropSql"/>
+            <h4><span class="label public">public</span>toDropSql<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Platforms_AbstractPlatform.xhtml">Doctrine\DBAL\Platforms\AbstractPlatform</a></span><strong> $platform</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return an array of necessary sql queries to drop the schema on the given platform.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$platform</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toSql"/>
+            <h4><span class="label public">public</span>toSql<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Platforms_AbstractPlatform.xhtml">Doctrine\DBAL\Platforms\AbstractPlatform</a></span><strong> $platform</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return an array of necessary sql queries to create the schema on the given platform.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$platform</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="visit"/>
+            <h4><span class="label public">public</span>visit<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_DBAL_Schema_Visitor_Visitor.xhtml">Doctrine\DBAL\Schema\Visitor\Visitor</a></span><strong> $visitor</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$visitor</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_addSequence"/>
+            <h4><span class="label protected">protected</span>_addSequence<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Sequence.xhtml">Doctrine\DBAL\Schema\Sequence</a></span><strong> $sequence</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sequence</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_addTable"/>
+            <h4><span class="label protected">protected</span>_addTable<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Table.xhtml">Doctrine\DBAL\Schema\Table</a></span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$table</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_generateIdentifierName"/>
+            <h4><span class="label protected">protected</span>_generateIdentifierName<span style="font-size:90%;">( <span class="param-type">array</span><strong> $columnNames</strong>, <span class="param-type">string</span><strong> $prefix</strong>, <span class="param-type">integer</span><strong> $maxSize</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate an identifier from a list of column names obeying a certain string length.<pre>This is especially important for Oracle, since it does not allow identifiers larger than 30 chars,
+however building idents automatically for foreign keys, composite keys or such can easily create
+very long names.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnNames</code> - </li>
+                <li><code>$prefix</code> - </li>
+                <li><code>$maxSize</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_setName"/>
+            <h4><span class="label protected">protected</span>_setName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set name of this asset</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isIdentifierQuoted"/>
+            <h4><span class="label protected">protected</span>isIdentifierQuoted<span style="font-size:90%;">( <span class="param-type">string</span><strong> $identifier</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if this identifier is quoted.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identifier</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="trimQuotes"/>
+            <h4><span class="label protected">protected</span>trimQuotes<span style="font-size:90%;">( <span class="param-type">string</span><strong> $identifier</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Trim quotes from the identifier.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identifier</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFullQualifiedAssetName"/>
+            <h4><span class="label private">private</span>getFullQualifiedAssetName<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

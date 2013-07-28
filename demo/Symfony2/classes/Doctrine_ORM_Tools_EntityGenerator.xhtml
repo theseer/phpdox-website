@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\ORM\Tools\EntityGenerator - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#FIELD_VISIBLE_PROTECTED">FIELD_VISIBLE_PROTECTED</a>
+          </li>
+          <li>
+            <a href="#FIELD_VISIBLE_PRIVATE">FIELD_VISIBLE_PRIVATE</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#backupExisting">$backupExisting</a>
+          </li>
+          <li>
+            <a href="#extension">$extension</a>
+          </li>
+          <li>
+            <a href="#isNew">$isNew</a>
+          </li>
+          <li>
+            <a href="#staticReflection">$staticReflection</a>
+          </li>
+          <li>
+            <a href="#numSpaces">$numSpaces</a>
+          </li>
+          <li>
+            <a href="#spaces">$spaces</a>
+          </li>
+          <li>
+            <a href="#classToExtend">$classToExtend</a>
+          </li>
+          <li>
+            <a href="#generateAnnotations">$generateAnnotations</a>
+          </li>
+          <li>
+            <a href="#annotationsPrefix">$annotationsPrefix</a>
+          </li>
+          <li>
+            <a href="#generateEntityStubMethods">$generateEntityStubMethods</a>
+          </li>
+          <li>
+            <a href="#updateEntityIfExists">$updateEntityIfExists</a>
+          </li>
+          <li>
+            <a href="#regenerateEntityIfExists">$regenerateEntityIfExists</a>
+          </li>
+          <li>
+            <a href="#fieldVisibility">$fieldVisibility</a>
+          </li>
+          <li>
+            <a href="#typeAlias">$typeAlias</a>
+          </li>
+          <li>
+            <a href="#generatorStrategyMap">$generatorStrategyMap</a>
+          </li>
+          <li>
+            <a href="#changeTrackingPolicyMap">$changeTrackingPolicyMap</a>
+          </li>
+          <li>
+            <a href="#inheritanceTypeMap">$inheritanceTypeMap</a>
+          </li>
+          <li>
+            <a href="#classTemplate">$classTemplate</a>
+          </li>
+          <li>
+            <a href="#getMethodTemplate">$getMethodTemplate</a>
+          </li>
+          <li>
+            <a href="#setMethodTemplate">$setMethodTemplate</a>
+          </li>
+          <li>
+            <a href="#addMethodTemplate">$addMethodTemplate</a>
+          </li>
+          <li>
+            <a href="#removeMethodTemplate">$removeMethodTemplate</a>
+          </li>
+          <li>
+            <a href="#lifecycleCallbackMethodTemplate">$lifecycleCallbackMethodTemplate</a>
+          </li>
+          <li>
+            <a href="#constructorMethodTemplate">$constructorMethodTemplate</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#extendsClass">extendsClass</a>
+          </li>
+          <li>
+            <a href="#generate">generate</a>
+          </li>
+          <li>
+            <a href="#generateAssociationMappingPropertyDocBlock">generateAssociationMappingPropertyDocBlock</a>
+          </li>
+          <li>
+            <a href="#generateDiscriminatorColumnAnnotation">generateDiscriminatorColumnAnnotation</a>
+          </li>
+          <li>
+            <a href="#generateDiscriminatorMapAnnotation">generateDiscriminatorMapAnnotation</a>
+          </li>
+          <li>
+            <a href="#generateEntityAssociationMappingProperties">generateEntityAssociationMappingProperties</a>
+          </li>
+          <li>
+            <a href="#generateEntityBody">generateEntityBody</a>
+          </li>
+          <li>
+            <a href="#generateEntityClass">generateEntityClass</a>
+          </li>
+          <li>
+            <a href="#generateEntityClassName">generateEntityClassName</a>
+          </li>
+          <li>
+            <a href="#generateEntityConstructor">generateEntityConstructor</a>
+          </li>
+          <li>
+            <a href="#generateEntityDocBlock">generateEntityDocBlock</a>
+          </li>
+          <li>
+            <a href="#generateEntityFieldMappingProperties">generateEntityFieldMappingProperties</a>
+          </li>
+          <li>
+            <a href="#generateEntityLifecycleCallbackMethods">generateEntityLifecycleCallbackMethods</a>
+          </li>
+          <li>
+            <a href="#generateEntityNamespace">generateEntityNamespace</a>
+          </li>
+          <li>
+            <a href="#generateEntityStubMethod">generateEntityStubMethod</a>
+          </li>
+          <li>
+            <a href="#generateEntityStubMethods">generateEntityStubMethods</a>
+          </li>
+          <li>
+            <a href="#generateFieldMappingPropertyDocBlock">generateFieldMappingPropertyDocBlock</a>
+          </li>
+          <li>
+            <a href="#generateInheritanceAnnotation">generateInheritanceAnnotation</a>
+          </li>
+          <li>
+            <a href="#generateJoinColumnAnnotation">generateJoinColumnAnnotation</a>
+          </li>
+          <li>
+            <a href="#generateLifecycleCallbackMethod">generateLifecycleCallbackMethod</a>
+          </li>
+          <li>
+            <a href="#generateTableAnnotation">generateTableAnnotation</a>
+          </li>
+          <li>
+            <a href="#generateTableConstraints">generateTableConstraints</a>
+          </li>
+          <li>
+            <a href="#generateUpdatedEntityClass">generateUpdatedEntityClass</a>
+          </li>
+          <li>
+            <a href="#getChangeTrackingPolicyString">getChangeTrackingPolicyString</a>
+          </li>
+          <li>
+            <a href="#getClassName">getClassName</a>
+          </li>
+          <li>
+            <a href="#getClassToExtend">getClassToExtend</a>
+          </li>
+          <li>
+            <a href="#getClassToExtendName">getClassToExtendName</a>
+          </li>
+          <li>
+            <a href="#getIdGeneratorTypeString">getIdGeneratorTypeString</a>
+          </li>
+          <li>
+            <a href="#getInheritanceTypeString">getInheritanceTypeString</a>
+          </li>
+          <li>
+            <a href="#getNamespace">getNamespace</a>
+          </li>
+          <li>
+            <a href="#getType">getType</a>
+          </li>
+          <li>
+            <a href="#hasMethod">hasMethod</a>
+          </li>
+          <li>
+            <a href="#hasNamespace">hasNamespace</a>
+          </li>
+          <li>
+            <a href="#hasProperty">hasProperty</a>
+          </li>
+          <li>
+            <a href="#isAssociationIsNullable">isAssociationIsNullable</a>
+          </li>
+          <li>
+            <a href="#parseTokensInEntityFile">parseTokensInEntityFile</a>
+          </li>
+          <li>
+            <a href="#prefixCodeWithSpaces">prefixCodeWithSpaces</a>
+          </li>
+          <li>
+            <a href="#setAnnotationPrefix">setAnnotationPrefix</a>
+          </li>
+          <li>
+            <a href="#setBackupExisting">setBackupExisting</a>
+          </li>
+          <li>
+            <a href="#setClassToExtend">setClassToExtend</a>
+          </li>
+          <li>
+            <a href="#setExtension">setExtension</a>
+          </li>
+          <li>
+            <a href="#setFieldVisibility">setFieldVisibility</a>
+          </li>
+          <li>
+            <a href="#setGenerateAnnotations">setGenerateAnnotations</a>
+          </li>
+          <li>
+            <a href="#setGenerateStubMethods">setGenerateStubMethods</a>
+          </li>
+          <li>
+            <a href="#setNumSpaces">setNumSpaces</a>
+          </li>
+          <li>
+            <a href="#setRegenerateEntityIfExists">setRegenerateEntityIfExists</a>
+          </li>
+          <li>
+            <a href="#setUpdateEntityIfExists">setUpdateEntityIfExists</a>
+          </li>
+          <li>
+            <a href="#writeEntityClass">writeEntityClass</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\ORM\Tools\</span>EntityGenerator</h2>
+        <div class="file-notice">
+          <p>Generic class used to generate PHP5 entity classes from ClassMetadataInfo instances</p>
+          <p>
+            <pre>[php]
+    $classes = $em-&gt;getClassMetadataFactory()-&gt;getAllMetadata();
+
+    $generator = new \Doctrine\ORM\Tools\EntityGenerator();
+    $generator-&gt;setGenerateAnnotations(true);
+    $generator-&gt;setGenerateStubMethods(true);
+    $generator-&gt;setRegenerateEntityIfExists(false);
+    $generator-&gt;setUpdateEntityIfExists(true);
+    $generator-&gt;generate($classes, '/path/to/generate/entities');</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+          <li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
+          <li><b>Author: </b>Jonathan Wage &lt;jonwage@gmail.com&gt;</li>
+          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="FIELD_VISIBLE_PROTECTED"/>FIELD_VISIBLE_PROTECTED = 'protected'<em> </em><p><li>Specifies class fields should be protected</li></p><hr/></li>
+          <li><a name="FIELD_VISIBLE_PRIVATE"/>FIELD_VISIBLE_PRIVATE = 'private'<em> </em><p><li>Specifies class fields should be private</li></p><hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="backupExisting"/>
+            <h4><span class="label private">private</span>object 
+                
+                $backupExisting</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="extension"/>
+            <h4><span class="label private">private</span>string 
+                
+                $extension</h4>
+            <ul class="varlist">
+              <li>The extension to use for written php files</li>
+            </ul>
+          </li>
+          <li>
+            <a name="isNew"/>
+            <h4><span class="label private">private</span>boolean 
+                
+                $isNew</h4>
+            <ul class="varlist">
+              <li>Whether or not the current ClassMetadataInfo instance is new or old</li>
+            </ul>
+          </li>
+          <li>
+            <a name="staticReflection"/>
+            <h4><span class="label private">private</span>array 
+                
+                $staticReflection</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="numSpaces"/>
+            <h4><span class="label private">private</span>
+                $numSpaces</h4>
+            <ul class="varlist">
+              <li>Number of spaces to use for indention in generated code</li>
+            </ul>
+          </li>
+          <li>
+            <a name="spaces"/>
+            <h4><span class="label private">private</span>string 
+                
+                $spaces</h4>
+            <ul class="varlist">
+              <li>The actual spaces to use for indention</li>
+            </ul>
+          </li>
+          <li>
+            <a name="classToExtend"/>
+            <h4><span class="label private">private</span>string 
+                
+                $classToExtend</h4>
+            <ul class="varlist">
+              <li>The class all generated entities should extend</li>
+            </ul>
+          </li>
+          <li>
+            <a name="generateAnnotations"/>
+            <h4><span class="label private">private</span>boolean 
+                
+                $generateAnnotations</h4>
+            <ul class="varlist">
+              <li>Whether or not to generation annotations</li>
+            </ul>
+          </li>
+          <li>
+            <a name="annotationsPrefix"/>
+            <h4><span class="label private">private</span>string 
+                
+                $annotationsPrefix</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="generateEntityStubMethods"/>
+            <h4><span class="label private">private</span>boolean 
+                
+                $generateEntityStubMethods</h4>
+            <ul class="varlist">
+              <li>Whether or not to generated sub methods</li>
+            </ul>
+          </li>
+          <li>
+            <a name="updateEntityIfExists"/>
+            <h4><span class="label private">private</span>boolean 
+                
+                $updateEntityIfExists</h4>
+            <ul class="varlist">
+              <li>Whether or not to update the entity class if it exists already</li>
+            </ul>
+          </li>
+          <li>
+            <a name="regenerateEntityIfExists"/>
+            <h4><span class="label private">private</span>boolean 
+                
+                $regenerateEntityIfExists</h4>
+            <ul class="varlist">
+              <li>Whether or not to re-generate entity class if it exists already</li>
+            </ul>
+          </li>
+          <li>
+            <a name="fieldVisibility"/>
+            <h4><span class="label private">private</span>boolean 
+                
+                $fieldVisibility</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="typeAlias"/>
+            <h4><span class="label private">private</span>array 
+                
+                $typeAlias</h4>
+            <ul class="varlist">
+              <li>Hash-map for handle types</li>
+            </ul>
+          </li>
+          <li>
+            <a name="generatorStrategyMap"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $generatorStrategyMap</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="changeTrackingPolicyMap"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $changeTrackingPolicyMap</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="inheritanceTypeMap"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $inheritanceTypeMap</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="classTemplate"/>
+            <h4><span class="label private">private</span>string 
+                
+                $classTemplate</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="getMethodTemplate"/>
+            <h4><span class="label private">private</span>string 
+                
+                $getMethodTemplate</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="setMethodTemplate"/>
+            <h4><span class="label private">private</span>string 
+                
+                $setMethodTemplate</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="addMethodTemplate"/>
+            <h4><span class="label private">private</span>string 
+                
+                $addMethodTemplate</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="removeMethodTemplate"/>
+            <h4><span class="label private">private</span>string 
+                
+                $removeMethodTemplate</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="lifecycleCallbackMethodTemplate"/>
+            <h4><span class="label private">private</span>string 
+                
+                $lifecycleCallbackMethodTemplate</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="constructorMethodTemplate"/>
+            <h4><span class="label private">private</span>string 
+                
+                $constructorMethodTemplate</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="generate"/>
+            <h4><span class="label public">public</span>generate<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $metadatas</strong>, <span class="param-type">string</span><strong> $outputDirectory</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate and write entity classes for the given array of ClassMetadataInfo instances</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$metadatas</code> - </li>
+                <li><code>$outputDirectory</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="generateEntityClass"/>
+            <h4><span class="label public">public</span>generateEntityClass<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate a PHP5 Doctrine 2 entity class from the given ClassMetadataInfo instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$metadata</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>$code</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="generateUpdatedEntityClass"/>
+            <h4><span class="label public">public</span>generateUpdatedEntityClass<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong>, <span class="param-type">string</span><strong> $path</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate the updated code for the given ClassMetadataInfo and entity at path</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$metadata</code> - </li>
+                <li><code>$path</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>$code;</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setAnnotationPrefix"/>
+            <h4><span class="label public">public</span>setAnnotationPrefix<span style="font-size:90%;">( <span class="param-type">string</span><strong> $prefix</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set an annotation prefix.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$prefix</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setBackupExisting"/>
+            <h4><span class="label public">public</span>setBackupExisting<span style="font-size:90%;">( <span class="param-type"/><strong> $bool</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Should an existing entity be backed up if it already exists?</li>
+            </p>
+          </li>
+          <li>
+            <a name="setClassToExtend"/>
+            <h4><span class="label public">public</span>setClassToExtend<span style="font-size:90%;">( <span class="param-type"/><strong> $classToExtend</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the name of the class the generated classes should extend from</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setExtension"/>
+            <h4><span class="label public">public</span>setExtension<span style="font-size:90%;">( <span class="param-type">string</span><strong> $extension</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the extension to use when writing php files to disk</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$extension</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFieldVisibility"/>
+            <h4><span class="label public">public</span>setFieldVisibility<span style="font-size:90%;">( <span class="param-type"/><strong> $visibility</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the class fields visibility for the entity (can either be private or protected)</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bool</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setGenerateAnnotations"/>
+            <h4><span class="label public">public</span>setGenerateAnnotations<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $bool</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set whether or not to generate annotations for the entity</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bool</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setGenerateStubMethods"/>
+            <h4><span class="label public">public</span>setGenerateStubMethods<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $bool</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set whether or not to generate stub methods for the entity</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bool</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setNumSpaces"/>
+            <h4><span class="label public">public</span>setNumSpaces<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $numSpaces</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the number of spaces the exported class should have</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$numSpaces</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setRegenerateEntityIfExists"/>
+            <h4><span class="label public">public</span>setRegenerateEntityIfExists<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $bool</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set whether or not to regenerate the entity if it exists</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bool</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setUpdateEntityIfExists"/>
+            <h4><span class="label public">public</span>setUpdateEntityIfExists<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $bool</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set whether or not to try and update the entity if it already exists</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bool</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="writeEntityClass"/>
+            <h4><span class="label public">public</span>writeEntityClass<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong>, <span class="param-type">string</span><strong> $outputDirectory</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generated and write entity class to disk for the given ClassMetadataInfo instance</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$metadata</code> - </li>
+                <li><code>$outputDirectory</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getChangeTrackingPolicyString"/>
+            <h4><span class="label protected">protected</span>getChangeTrackingPolicyString<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$type</code> - The policy used for change-tracking for the mapped class.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The literal string for the change-tracking type.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException    When the change-tracking type does not exists.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIdGeneratorTypeString"/>
+            <h4><span class="label protected">protected</span>getIdGeneratorTypeString<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$type</code> - The generator to use for the mapped class.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The literal string for the generetor type.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException    When the generator type does not exists.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInheritanceTypeString"/>
+            <h4><span class="label protected">protected</span>getInheritanceTypeString<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$type</code> - The inheritance type used by the class and it's subclasses.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The literal string for the inheritance type.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException    When the inheritance type does not exists.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="extendsClass"/>
+            <h4><span class="label private">private</span>extendsClass<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="generateAssociationMappingPropertyDocBlock"/>
+            <h4><span class="label private">private</span>generateAssociationMappingPropertyDocBlock<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $associationMapping</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateDiscriminatorColumnAnnotation"/>
+            <h4><span class="label private">private</span>generateDiscriminatorColumnAnnotation<span style="font-size:90%;">( <span class="param-type"/><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateDiscriminatorMapAnnotation"/>
+            <h4><span class="label private">private</span>generateDiscriminatorMapAnnotation<span style="font-size:90%;">( <span class="param-type"/><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateEntityAssociationMappingProperties"/>
+            <h4><span class="label private">private</span>generateEntityAssociationMappingProperties<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateEntityBody"/>
+            <h4><span class="label private">private</span>generateEntityBody<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateEntityClassName"/>
+            <h4><span class="label private">private</span>generateEntityClassName<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateEntityConstructor"/>
+            <h4><span class="label private">private</span>generateEntityConstructor<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateEntityDocBlock"/>
+            <h4><span class="label private">private</span>generateEntityDocBlock<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateEntityFieldMappingProperties"/>
+            <h4><span class="label private">private</span>generateEntityFieldMappingProperties<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateEntityLifecycleCallbackMethods"/>
+            <h4><span class="label private">private</span>generateEntityLifecycleCallbackMethods<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateEntityNamespace"/>
+            <h4><span class="label private">private</span>generateEntityNamespace<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateEntityStubMethod"/>
+            <h4><span class="label private">private</span>generateEntityStubMethod<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong>, <span class="param-type"/><strong> $type</strong>, <span class="param-type"/><strong> $fieldName</strong>, <span class="param-type"/><strong> $typeHint</strong>, <span class="param-type"/><strong> $defaultValue</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateEntityStubMethods"/>
+            <h4><span class="label private">private</span>generateEntityStubMethods<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateFieldMappingPropertyDocBlock"/>
+            <h4><span class="label private">private</span>generateFieldMappingPropertyDocBlock<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldMapping</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateInheritanceAnnotation"/>
+            <h4><span class="label private">private</span>generateInheritanceAnnotation<span style="font-size:90%;">( <span class="param-type"/><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateJoinColumnAnnotation"/>
+            <h4><span class="label private">private</span>generateJoinColumnAnnotation<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $joinColumn</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateLifecycleCallbackMethod"/>
+            <h4><span class="label private">private</span>generateLifecycleCallbackMethod<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $methodName</strong>, <span class="param-type"/><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateTableAnnotation"/>
+            <h4><span class="label private">private</span>generateTableAnnotation<span style="font-size:90%;">( <span class="param-type"/><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="generateTableConstraints"/>
+            <h4><span class="label private">private</span>generateTableConstraints<span style="font-size:90%;">( <span class="param-type"/><strong> $constraintName</strong>, <span class="param-type"/><strong> $constraints</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getClassName"/>
+            <h4><span class="label private">private</span>getClassName<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getClassToExtend"/>
+            <h4><span class="label private">private</span>getClassToExtend<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getClassToExtendName"/>
+            <h4><span class="label private">private</span>getClassToExtendName<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getNamespace"/>
+            <h4><span class="label private">private</span>getNamespace<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getType"/>
+            <h4><span class="label private">private</span>getType<span style="font-size:90%;">( <span class="param-type">string</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$type</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasMethod"/>
+            <h4><span class="label private">private</span>hasMethod<span style="font-size:90%;">( <span class="param-type"/><strong> $method</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="hasNamespace"/>
+            <h4><span class="label private">private</span>hasNamespace<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="hasProperty"/>
+            <h4><span class="label private">private</span>hasProperty<span style="font-size:90%;">( <span class="param-type"/><strong> $property</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></span><strong> $metadata</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="isAssociationIsNullable"/>
+            <h4><span class="label private">private</span>isAssociationIsNullable<span style="font-size:90%;">( <span class="param-type"/><strong> $associationMapping</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="parseTokensInEntityFile"/>
+            <h4><span class="label private">private</span>parseTokensInEntityFile<span style="font-size:90%;">( <span class="param-type">string</span><strong> $src</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$src</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prefixCodeWithSpaces"/>
+            <h4><span class="label private">private</span>prefixCodeWithSpaces<span style="font-size:90%;">( <span class="param-type"/><strong> $code</strong>, <span class="param-type">integer</span><strong> $num</strong> )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

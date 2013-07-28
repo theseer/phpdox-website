@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\Common\Annotations\CachedReader - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#CACHE_SALT">$CACHE_SALT</a>
+          </li>
+          <li>
+            <a href="#delegate">$delegate</a>
+          </li>
+          <li>
+            <a href="#cache">$cache</a>
+          </li>
+          <li>
+            <a href="#debug">$debug</a>
+          </li>
+          <li>
+            <a href="#loadedAnnotations">$loadedAnnotations</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#clearLoadedAnnotations">clearLoadedAnnotations</a>
+          </li>
+          <li>
+            <a href="#fetchFromCache">fetchFromCache</a>
+          </li>
+          <li>
+            <a href="#getClassAnnotation">getClassAnnotation</a>
+          </li>
+          <li>
+            <a href="#getClassAnnotations">getClassAnnotations</a>
+          </li>
+          <li>
+            <a href="#getMethodAnnotation">getMethodAnnotation</a>
+          </li>
+          <li>
+            <a href="#getMethodAnnotations">getMethodAnnotations</a>
+          </li>
+          <li>
+            <a href="#getPropertyAnnotation">getPropertyAnnotation</a>
+          </li>
+          <li>
+            <a href="#getPropertyAnnotations">getPropertyAnnotations</a>
+          </li>
+          <li>
+            <a href="#isCacheFresh">isCacheFresh</a>
+          </li>
+          <li>
+            <a href="#saveToCache">saveToCache</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\Common\Annotations\</span>CachedReader</h2>
+        <div class="file-notice">
+          <p>A cache aware annotation reader.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Doctrine_Common_Annotations_Reader.xhtml">Doctrine\Common\Annotations\Reader</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="CACHE_SALT"/>
+            <h4><span class="label private">private</span>string 
+                
+                $CACHE_SALT</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="delegate"/>
+            <h4><span class="label private">private</span>object 
+                
+                $delegate</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="cache"/>
+            <h4><span class="label private">private</span>object 
+                
+                $cache</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="debug"/>
+            <h4><span class="label private">private</span>boolean 
+                
+                $debug</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="loadedAnnotations"/>
+            <h4><span class="label private">private</span>array 
+                
+                $loadedAnnotations</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Annotations_Reader.xhtml">Doctrine\Common\Annotations\Reader</a></span><strong> $reader</strong>, <span class="param-type"><a href="../interfaces/Doctrine_Common_Cache_Cache.xhtml">Doctrine\Common\Cache\Cache</a></span><strong> $cache</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $debug</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$reader</code> - </li>
+                <li><code>$cache</code> - </li>
+                <li><code>$debug</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="clearLoadedAnnotations"/>
+            <h4><span class="label public">public</span>clearLoadedAnnotations<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clear loaded annotations</li>
+            </p>
+          </li>
+          <li>
+            <a name="getClassAnnotation"/>
+            <h4><span class="label public">public</span>getClassAnnotation<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $class</strong>, <span class="param-type">string</span><strong> $annotationName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get selected annotation for class</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+                <li><code>$annotationName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getClassAnnotations"/>
+            <h4><span class="label public">public</span>getClassAnnotations<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get annotations for class</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMethodAnnotation"/>
+            <h4><span class="label public">public</span>getMethodAnnotation<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionMethod.xhtml">ReflectionMethod</a></span><strong> $method</strong>, <span class="param-type">string</span><strong> $annotationName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get selected method annotation</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - </li>
+                <li><code>$annotationName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMethodAnnotations"/>
+            <h4><span class="label public">public</span>getMethodAnnotations<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionMethod.xhtml">ReflectionMethod</a></span><strong> $method</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get method annotations</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$method</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPropertyAnnotation"/>
+            <h4><span class="label public">public</span>getPropertyAnnotation<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionProperty.xhtml">ReflectionProperty</a></span><strong> $property</strong>, <span class="param-type">string</span><strong> $annotationName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get selected annotation for property</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$property</code> - </li>
+                <li><code>$annotationName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPropertyAnnotations"/>
+            <h4><span class="label public">public</span>getPropertyAnnotations<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionProperty.xhtml">ReflectionProperty</a></span><strong> $property</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get annotations for property</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$property</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fetchFromCache"/>
+            <h4><span class="label private">private</span>fetchFromCache<span style="font-size:90%;">( <span class="param-type">string</span><strong> $rawCacheKey</strong>, <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Fetches a value from the cache.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$rawCacheKey</code> - The cache key.</li>
+                <li><code>$class</code> - The related class.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The cached value or false when the value is not in cache.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isCacheFresh"/>
+            <h4><span class="label private">private</span>isCacheFresh<span style="font-size:90%;">( <span class="param-type">string</span><strong> $cacheKey</strong>, <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if cache is fresh</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cacheKey</code> - </li>
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="saveToCache"/>
+            <h4><span class="label private">private</span>saveToCache<span style="font-size:90%;">( <span class="param-type">string</span><strong> $rawCacheKey</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Saves a value to the cache</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$rawCacheKey</code> - The cache key.</li>
+                <li><code>$value</code> - The value.</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

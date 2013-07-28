@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\DBAL\DriverManager - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_driverMap">$_driverMap</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_checkParams">_checkParams</a>
+          </li>
+          <li>
+            <a href="#getConnection">getConnection</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\DBAL\</span>DriverManager</h2>
+        <div class="file-notice">
+          <p>Factory for creating Doctrine\DBAL\Connection instances.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_driverMap"/>
+            <h4><span class="label private">private</span>array 
+                
+                $_driverMap</h4>
+            <ul class="varlist">
+              <li>List of supported drivers and their mappings to the driver classes.<pre>To add your own driver use the 'driverClass' parameter to
+{@link DriverManager::getConnection()}.</pre></li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label private">private</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Private constructor. This class cannot be instantiated.</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getConnection"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getConnection<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Configuration.xhtml">Doctrine\DBAL\Configuration</a></span><strong> $config</strong>, <span class="param-type"><a href="../classes/Doctrine_Common_EventManager.xhtml">Doctrine\Common\EventManager</a></span><strong> $eventManager</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a connection object based on the specified parameters.<pre>This method returns a Doctrine\DBAL\Connection which wraps the underlying
+driver connection.
+
+$params must contain at least one of the following.
+
+Either 'driver' with one of the following values:
+
+    pdo_mysql
+    pdo_sqlite
+    pdo_pgsql
+    pdo_oci (unstable)
+    pdo_sqlsrv
+    pdo_ibm (unstable)
+    pdo_sqlsrv
+    mysqli
+    sqlsrv
+    ibm_db2 (unstable)
+    drizzle_pdo_mysql
+
+OR 'driverClass' that contains the full class name (with namespace) of the
+driver class to instantiate.
+
+Other (optional) parameters:
+
+&lt;b&gt;user (string)&lt;/b&gt;:
+The username to use when connecting.
+
+&lt;b&gt;password (string)&lt;/b&gt;:
+The password to use when connecting.
+
+&lt;b&gt;driverOptions (array)&lt;/b&gt;:
+Any additional driver-specific options for the driver. These are just passed
+through to the driver.
+
+&lt;b&gt;pdo&lt;/b&gt;:
+You can pass an existing PDO instance through this parameter. The PDO
+instance will be wrapped in a Doctrine\DBAL\Connection.
+
+&lt;b&gt;wrapperClass&lt;/b&gt;:
+You may specify a custom wrapper class through the 'wrapperClass'
+parameter but this class MUST inherit from Doctrine\DBAL\Connection.
+
+&lt;b&gt;driverClass&lt;/b&gt;:
+The driver class to use.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$params</code> - The parameters.</li>
+                <li><code>The</code> - configuration to use.</li>
+                <li><code>The</code> - event manager to use.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_checkParams"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>_checkParams<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks the list of parameters.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$params</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

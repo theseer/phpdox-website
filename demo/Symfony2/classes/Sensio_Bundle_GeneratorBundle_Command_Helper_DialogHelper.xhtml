@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Sensio\Bundle\GeneratorBundle\Command\Helper\DialogHelper - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#ask">ask</a>
+          </li>
+          <li>
+            <a href="#askAndValidate">askAndValidate</a>
+          </li>
+          <li>
+            <a href="#askConfirmation">askConfirmation</a>
+          </li>
+          <li>
+            <a href="#askHiddenResponse">askHiddenResponse</a>
+          </li>
+          <li>
+            <a href="#askHiddenResponseAndValidate">askHiddenResponseAndValidate</a>
+          </li>
+          <li>
+            <a href="#getHelperSet">getHelperSet</a>
+          </li>
+          <li>
+            <a href="#getInputStream">getInputStream</a>
+          </li>
+          <li>
+            <a href="#getName">getName</a>
+          </li>
+          <li>
+            <a href="#getQuestion">getQuestion</a>
+          </li>
+          <li>
+            <a href="#getRunner">getRunner</a>
+          </li>
+          <li>
+            <a href="#select">select</a>
+          </li>
+          <li>
+            <a href="#setHelperSet">setHelperSet</a>
+          </li>
+          <li>
+            <a href="#setInputStream">setInputStream</a>
+          </li>
+          <li>
+            <a href="#strlen">strlen</a>
+          </li>
+          <li>
+            <a href="#writeGeneratorSummary">writeGeneratorSummary</a>
+          </li>
+          <li>
+            <a href="#writeSection">writeSection</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Sensio\Bundle\GeneratorBundle\Command\Helper\</span>DialogHelper</h2>
+        <div class="file-notice">
+          <p>Generates bundles.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist"/>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="ask"/>
+            <h4><span class="label public">public</span>ask<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Console_Output_OutputInterface.xhtml">Symfony\Component\Console\Output\OutputInterface</a></span><strong> $output</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $question</strong>, <span class="param-type">string</span><strong> $default</strong>, <span class="param-type">Array</span><strong> $autocomplete</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Asks a question to the user.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$output</code> - An Output instance</li>
+                <li><code>$question</code> - The question to ask</li>
+                <li><code>$default</code> - The default answer if none is given by the user</li>
+                <li><code>$autocomplete</code> - List of values to autocomplete</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The user answer</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\RuntimeException If there is no data to read in the input stream</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="askAndValidate"/>
+            <h4><span class="label public">public</span>askAndValidate<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Console_Output_OutputInterface.xhtml">Symfony\Component\Console\Output\OutputInterface</a></span><strong> $output</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $question</strong>, <span class="param-type"><span title="callable">callable</span></span><strong> $validator</strong>, <span class="param-type">integer</span><strong> $attempts</strong>, <span class="param-type">string</span><strong> $default</strong>, <span class="param-type">Array</span><strong> $autocomplete</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Asks for a value and validates the response.<pre>The validator receives the data to validate. It must return the
+validated data when the data is valid and throw an exception
+otherwise.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$output</code> - An Output instance</li>
+                <li><code>$question</code> - The question to ask</li>
+                <li><code>$validator</code> - A PHP callback</li>
+                <li><code>$attempts</code> - Max number of times to ask before giving up (false by default, which means infinite)</li>
+                <li><code>$default</code> - The default answer if none is given by the user</li>
+                <li><code>$autocomplete</code> - List of values to autocomplete</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Exception When any of the validators return an error</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="askConfirmation"/>
+            <h4><span class="label public">public</span>askConfirmation<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Console_Output_OutputInterface.xhtml">Symfony\Component\Console\Output\OutputInterface</a></span><strong> $output</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $question</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $default</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Asks a confirmation to the user.<pre>The question will be asked until the user answers by nothing, yes, or no.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$output</code> - An Output instance</li>
+                <li><code>$question</code> - The question to ask</li>
+                <li><code>$default</code> - The default answer if the user enters nothing</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if the user has confirmed, false otherwise</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="askHiddenResponse"/>
+            <h4><span class="label public">public</span>askHiddenResponse<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Console_Output_OutputInterface.xhtml">Symfony\Component\Console\Output\OutputInterface</a></span><strong> $output</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $question</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $fallback</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Asks a question to the user, the response is hidden</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$output</code> - An Output instance</li>
+                <li><code>$question</code> - The question</li>
+                <li><code>$fallback</code> - In case the response can not be hidden, whether to fallback on non-hidden question or not</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The answer</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\RuntimeException In case the fallback is deactivated and the response can not be hidden</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="askHiddenResponseAndValidate"/>
+            <h4><span class="label public">public</span>askHiddenResponseAndValidate<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Console_Output_OutputInterface.xhtml">Symfony\Component\Console\Output\OutputInterface</a></span><strong> $output</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $question</strong>, <span class="param-type"><span title="callable">callable</span></span><strong> $validator</strong>, <span class="param-type">integer</span><strong> $attempts</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $fallback</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Asks for a value, hide and validates the response.<pre>The validator receives the data to validate. It must return the
+validated data when the data is valid and throw an exception
+otherwise.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$output</code> - An Output instance</li>
+                <li><code>$question</code> - The question to ask</li>
+                <li><code>$validator</code> - A PHP callback</li>
+                <li><code>$attempts</code> - Max number of times to ask before giving up (false by default, which means infinite)</li>
+                <li><code>$fallback</code> - In case the response can not be hidden, whether to fallback on non-hidden question or not</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The response</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Exception        When any of the validators return an error</code>
+                </li>
+                <li>
+                  <code>\RuntimeException In case the fallback is deactivated and the response can not be hidden</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHelperSet"/>
+            <h4><span class="label public">public</span>getHelperSet<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the helper set associated with this helper.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A HelperSet instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInputStream"/>
+            <h4><span class="label public">public</span>getInputStream<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the helper's input stream</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getName"/>
+            <h4><span class="label public">public</span>getName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getQuestion"/>
+            <h4><span class="label public">public</span>getQuestion<span style="font-size:90%;">( <span class="param-type"/><strong> $question</strong>, <span class="param-type"/><strong> $default</strong>, <span class="param-type">string</span><strong> $sep</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getRunner"/>
+            <h4><span class="label public">public</span>getRunner<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Console_Output_OutputInterface.xhtml">Symfony\Component\Console\Output\OutputInterface</a></span><strong> $output</strong>, <span class="param-type"/><strong> &amp;$errors</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="select"/>
+            <h4><span class="label public">public</span>select<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Console_Output_OutputInterface.xhtml">Symfony\Component\Console\Output\OutputInterface</a></span><strong> $output</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $question</strong>, <span class="param-type">array</span><strong> $choices</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $default</strong>, <span class="param-type"><span title="Boolean|integer">Boolean|integer</span></span><strong> $attempts</strong>, <span class="param-type">string</span><strong> $errorMessage</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $multiselect</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Asks the user to select a value.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$output</code> - An Output instance</li>
+                <li><code>$question</code> - The question to ask</li>
+                <li><code>$choices</code> - List of choices to pick from</li>
+                <li><code>$default</code> - The default answer if the user enters nothing</li>
+                <li><code>$attempts</code> - Max number of times to ask before giving up (false by default, which means infinite)</li>
+                <li><code>$errorMessage</code> - Message which will be shown if invalid value from choice list would be picked</li>
+                <li><code>$multiselect</code> - Select more than one value separated by comma</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The selected value or values (the key of the choices array)</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setHelperSet"/>
+            <h4><span class="label public">public</span>setHelperSet<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_Console_Helper_HelperSet.xhtml">Symfony\Component\Console\Helper\HelperSet</a></span><strong> $helperSet</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the helper set associated with this helper.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$helperSet</code> - A HelperSet instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setInputStream"/>
+            <h4><span class="label public">public</span>setInputStream<span style="font-size:90%;">( <span class="param-type">resource</span><strong> $stream</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the input stream to read from when interacting with the user.<pre>This is mainly useful for testing purpose.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$stream</code> - The input stream</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="writeGeneratorSummary"/>
+            <h4><span class="label public">public</span>writeGeneratorSummary<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Console_Output_OutputInterface.xhtml">Symfony\Component\Console\Output\OutputInterface</a></span><strong> $output</strong>, <span class="param-type"/><strong> $errors</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="writeSection"/>
+            <h4><span class="label public">public</span>writeSection<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Console_Output_OutputInterface.xhtml">Symfony\Component\Console\Output\OutputInterface</a></span><strong> $output</strong>, <span class="param-type"/><strong> $text</strong>, <span class="param-type">string</span><strong> $style</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="strlen"/>
+            <h4><span class="label protected">protected</span>strlen<span style="font-size:90%;">( <span class="param-type">string</span><strong> $string</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the length of a string, using mb_strlen if it is available.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$string</code> - The string to check its length</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The length of the string</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

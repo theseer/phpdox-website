@@ -1,0 +1,1341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\DBAL\Portability\Connection - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#PORTABILITY_ALL">PORTABILITY_ALL</a>
+          </li>
+          <li>
+            <a href="#PORTABILITY_NONE">PORTABILITY_NONE</a>
+          </li>
+          <li>
+            <a href="#PORTABILITY_RTRIM">PORTABILITY_RTRIM</a>
+          </li>
+          <li>
+            <a href="#PORTABILITY_EMPTY_TO_NULL">PORTABILITY_EMPTY_TO_NULL</a>
+          </li>
+          <li>
+            <a href="#PORTABILITY_FIX_CASE">PORTABILITY_FIX_CASE</a>
+          </li>
+          <li>
+            <a href="#PORTABILITY_ORACLE">PORTABILITY_ORACLE</a>
+          </li>
+          <li>
+            <a href="#PORTABILITY_POSTGRESQL">PORTABILITY_POSTGRESQL</a>
+          </li>
+          <li>
+            <a href="#PORTABILITY_SQLITE">PORTABILITY_SQLITE</a>
+          </li>
+          <li>
+            <a href="#PORTABILITY_OTHERVENDORS">PORTABILITY_OTHERVENDORS</a>
+          </li>
+          <li>
+            <a href="#PORTABILITY_DRIZZLE">PORTABILITY_DRIZZLE</a>
+          </li>
+          <li>
+            <a href="#PORTABILITY_SQLSRV">PORTABILITY_SQLSRV</a>
+          </li>
+          <li>
+            <a href="#TRANSACTION_READ_UNCOMMITTED">TRANSACTION_READ_UNCOMMITTED</a>
+          </li>
+          <li>
+            <a href="#TRANSACTION_READ_COMMITTED">TRANSACTION_READ_COMMITTED</a>
+          </li>
+          <li>
+            <a href="#TRANSACTION_REPEATABLE_READ">TRANSACTION_REPEATABLE_READ</a>
+          </li>
+          <li>
+            <a href="#TRANSACTION_SERIALIZABLE">TRANSACTION_SERIALIZABLE</a>
+          </li>
+          <li>
+            <a href="#PARAM_INT_ARRAY">PARAM_INT_ARRAY</a>
+          </li>
+          <li>
+            <a href="#PARAM_STR_ARRAY">PARAM_STR_ARRAY</a>
+          </li>
+          <li>
+            <a href="#ARRAY_PARAM_OFFSET">ARRAY_PARAM_OFFSET</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#portability">$portability</a>
+          </li>
+          <li>
+            <a href="#case">$case</a>
+          </li>
+          <li>
+            <a href="#_conn">$_conn</a>
+          </li>
+          <li>
+            <a href="#_config">$_config</a>
+          </li>
+          <li>
+            <a href="#_eventManager">$_eventManager</a>
+          </li>
+          <li>
+            <a href="#_expr">$_expr</a>
+          </li>
+          <li>
+            <a href="#_platform">$_platform</a>
+          </li>
+          <li>
+            <a href="#_schemaManager">$_schemaManager</a>
+          </li>
+          <li>
+            <a href="#_driver">$_driver</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_getNestedTransactionSavePointName">_getNestedTransactionSavePointName</a>
+          </li>
+          <li>
+            <a href="#beginTransaction">beginTransaction</a>
+          </li>
+          <li>
+            <a href="#close">close</a>
+          </li>
+          <li>
+            <a href="#commit">commit</a>
+          </li>
+          <li>
+            <a href="#connect">connect</a>
+          </li>
+          <li>
+            <a href="#connect">connect</a>
+          </li>
+          <li>
+            <a href="#convertToDatabaseValue">convertToDatabaseValue</a>
+          </li>
+          <li>
+            <a href="#convertToPHPValue">convertToPHPValue</a>
+          </li>
+          <li>
+            <a href="#createQueryBuilder">createQueryBuilder</a>
+          </li>
+          <li>
+            <a href="#createSavepoint">createSavepoint</a>
+          </li>
+          <li>
+            <a href="#delete">delete</a>
+          </li>
+          <li>
+            <a href="#errorCode">errorCode</a>
+          </li>
+          <li>
+            <a href="#errorInfo">errorInfo</a>
+          </li>
+          <li>
+            <a href="#exec">exec</a>
+          </li>
+          <li>
+            <a href="#executeCacheQuery">executeCacheQuery</a>
+          </li>
+          <li>
+            <a href="#executeQuery">executeQuery</a>
+          </li>
+          <li>
+            <a href="#executeQuery">executeQuery</a>
+          </li>
+          <li>
+            <a href="#executeUpdate">executeUpdate</a>
+          </li>
+          <li>
+            <a href="#fetchAll">fetchAll</a>
+          </li>
+          <li>
+            <a href="#fetchArray">fetchArray</a>
+          </li>
+          <li>
+            <a href="#fetchAssoc">fetchAssoc</a>
+          </li>
+          <li>
+            <a href="#fetchColumn">fetchColumn</a>
+          </li>
+          <li>
+            <a href="#getConfiguration">getConfiguration</a>
+          </li>
+          <li>
+            <a href="#getDatabase">getDatabase</a>
+          </li>
+          <li>
+            <a href="#getDatabasePlatform">getDatabasePlatform</a>
+          </li>
+          <li>
+            <a href="#getDriver">getDriver</a>
+          </li>
+          <li>
+            <a href="#getEventManager">getEventManager</a>
+          </li>
+          <li>
+            <a href="#getExpressionBuilder">getExpressionBuilder</a>
+          </li>
+          <li>
+            <a href="#getFetchCase">getFetchCase</a>
+          </li>
+          <li>
+            <a href="#getHost">getHost</a>
+          </li>
+          <li>
+            <a href="#getNestTransactionsWithSavepoints">getNestTransactionsWithSavepoints</a>
+          </li>
+          <li>
+            <a href="#getParams">getParams</a>
+          </li>
+          <li>
+            <a href="#getPassword">getPassword</a>
+          </li>
+          <li>
+            <a href="#getPort">getPort</a>
+          </li>
+          <li>
+            <a href="#getPortability">getPortability</a>
+          </li>
+          <li>
+            <a href="#getSchemaManager">getSchemaManager</a>
+          </li>
+          <li>
+            <a href="#getTransactionIsolation">getTransactionIsolation</a>
+          </li>
+          <li>
+            <a href="#getTransactionNestingLevel">getTransactionNestingLevel</a>
+          </li>
+          <li>
+            <a href="#getUsername">getUsername</a>
+          </li>
+          <li>
+            <a href="#getWrappedConnection">getWrappedConnection</a>
+          </li>
+          <li>
+            <a href="#insert">insert</a>
+          </li>
+          <li>
+            <a href="#isConnected">isConnected</a>
+          </li>
+          <li>
+            <a href="#isRollbackOnly">isRollbackOnly</a>
+          </li>
+          <li>
+            <a href="#isTransactionActive">isTransactionActive</a>
+          </li>
+          <li>
+            <a href="#lastInsertId">lastInsertId</a>
+          </li>
+          <li>
+            <a href="#prepare">prepare</a>
+          </li>
+          <li>
+            <a href="#prepare">prepare</a>
+          </li>
+          <li>
+            <a href="#project">project</a>
+          </li>
+          <li>
+            <a href="#query">query</a>
+          </li>
+          <li>
+            <a href="#query">query</a>
+          </li>
+          <li>
+            <a href="#quote">quote</a>
+          </li>
+          <li>
+            <a href="#quoteIdentifier">quoteIdentifier</a>
+          </li>
+          <li>
+            <a href="#releaseSavepoint">releaseSavepoint</a>
+          </li>
+          <li>
+            <a href="#resolveParams">resolveParams</a>
+          </li>
+          <li>
+            <a href="#rollBack">rollBack</a>
+          </li>
+          <li>
+            <a href="#rollbackSavepoint">rollbackSavepoint</a>
+          </li>
+          <li>
+            <a href="#setFetchMode">setFetchMode</a>
+          </li>
+          <li>
+            <a href="#setNestTransactionsWithSavepoints">setNestTransactionsWithSavepoints</a>
+          </li>
+          <li>
+            <a href="#setRollbackOnly">setRollbackOnly</a>
+          </li>
+          <li>
+            <a href="#setTransactionIsolation">setTransactionIsolation</a>
+          </li>
+          <li>
+            <a href="#transactional">transactional</a>
+          </li>
+          <li>
+            <a href="#update">update</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\DBAL\Portability\</span>Connection</h2>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="PORTABILITY_ALL"/>PORTABILITY_ALL = 255<hr/></li>
+          <li><a name="PORTABILITY_NONE"/>PORTABILITY_NONE = 0<hr/></li>
+          <li><a name="PORTABILITY_RTRIM"/>PORTABILITY_RTRIM = 1<hr/></li>
+          <li><a name="PORTABILITY_EMPTY_TO_NULL"/>PORTABILITY_EMPTY_TO_NULL = 4<hr/></li>
+          <li><a name="PORTABILITY_FIX_CASE"/>PORTABILITY_FIX_CASE = 8<hr/></li>
+          <li><a name="PORTABILITY_ORACLE"/>PORTABILITY_ORACLE = 9<hr/></li>
+          <li><a name="PORTABILITY_POSTGRESQL"/>PORTABILITY_POSTGRESQL = 13<hr/></li>
+          <li><a name="PORTABILITY_SQLITE"/>PORTABILITY_SQLITE = 13<hr/></li>
+          <li><a name="PORTABILITY_OTHERVENDORS"/>PORTABILITY_OTHERVENDORS = 12<hr/></li>
+          <li><a name="PORTABILITY_DRIZZLE"/>PORTABILITY_DRIZZLE = 13<hr/></li>
+          <li><a name="PORTABILITY_SQLSRV"/>PORTABILITY_SQLSRV = 13<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="portability"/>
+            <h4><span class="label private">private</span>int 
+                
+                $portability</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="case"/>
+            <h4><span class="label private">private</span>int 
+                
+                $case</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type"><a href="../interfaces/Doctrine_DBAL_Driver.xhtml">Doctrine\DBAL\Driver</a></span><strong> $driver</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Configuration.xhtml">Doctrine\DBAL\Configuration</a></span><strong> $config</strong>, <span class="param-type"><a href="../classes/Doctrine_Common_EventManager.xhtml">Doctrine\Common\EventManager</a></span><strong> $eventManager</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initializes a new instance of the Connection class.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$params</code> - The connection parameters.</li>
+                <li><code>$driver</code> - </li>
+                <li><code>$config</code> - </li>
+                <li><code>$eventManager</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="beginTransaction"/>
+            <h4><span class="label public">public</span>beginTransaction<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Starts a transaction by suspending auto-commit mode.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="close"/>
+            <h4><span class="label public">public</span>close<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Closes the connection.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="commit"/>
+            <h4><span class="label public">public</span>commit<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Commits the current transaction.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ConnectionException If the commit failed due to no active transaction or</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="connect"/>
+            <h4><span class="label public">public</span>connect<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="connect"/>
+            <h4><span class="label public">public</span>connect<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Establishes the connection with the database.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>TRUE if the connection was successfully established, FALSE if</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="convertToDatabaseValue"/>
+            <h4><span class="label public">public</span>convertToDatabaseValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Converts a given value to its database representation according to the conversion rules of a specific DBAL mapping type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The value to convert.</li>
+                <li><code>$type</code> - The name of the DBAL mapping type.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The converted value.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="convertToPHPValue"/>
+            <h4><span class="label public">public</span>convertToPHPValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Converts a given value to its PHP representation according to the conversion rules of a specific DBAL mapping type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - The value to convert.</li>
+                <li><code>$type</code> - The name of the DBAL mapping type.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The converted type.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createQueryBuilder"/>
+            <h4><span class="label public">public</span>createQueryBuilder<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new instance of a SQL query builder.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createSavepoint"/>
+            <h4><span class="label public">public</span>createSavepoint<span style="font-size:90%;">( <span class="param-type">string</span><strong> $savepoint</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>createSavepoint creates a new savepoint</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$savepoint</code> - name of a savepoint to set</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="delete"/>
+            <h4><span class="label public">public</span>delete<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong>, <span class="param-type">Array</span><strong> $identifier</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes an SQL DELETE statement on a table.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - The name of the table on which to delete.</li>
+                <li><code>$identifier</code> - The deletion criteria. An associative array containing column-value pairs.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The number of affected rows.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="errorCode"/>
+            <h4><span class="label public">public</span>errorCode<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Fetch the SQLSTATE associated with the last database operation.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The last error code.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="errorInfo"/>
+            <h4><span class="label public">public</span>errorInfo<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Fetch extended error information associated with the last database operation.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The last error information.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="exec"/>
+            <h4><span class="label public">public</span>exec<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Execute an SQL statement and return the number of affected rows.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$statement</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The number of affected rows.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="executeCacheQuery"/>
+            <h4><span class="label public">public</span>executeCacheQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong>, <span class="param-type">array</span><strong> $params</strong>, <span class="param-type">array</span><strong> $types</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Cache_QueryCacheProfile.xhtml">Doctrine\DBAL\Cache\QueryCacheProfile</a></span><strong> $qcp</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Execute a caching query and</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - </li>
+                <li><code>$params</code> - </li>
+                <li><code>$types</code> - </li>
+                <li><code>$qcp</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="executeQuery"/>
+            <h4><span class="label public">public</span>executeQuery<span style="font-size:90%;">( <span class="param-type"/><strong> $query</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">Array</span><strong> $types</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Cache_QueryCacheProfile.xhtml">Doctrine\DBAL\Cache\QueryCacheProfile</a></span><strong> $qcp</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="executeQuery"/>
+            <h4><span class="label public">public</span>executeQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">Array</span><strong> $types</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Cache_QueryCacheProfile.xhtml">Doctrine\DBAL\Cache\QueryCacheProfile</a></span><strong> $qcp</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes an, optionally parameterized, SQL query.<pre>If the query is parameterized, a prepared statement is used.
+If an SQLLogger is configured, the execution is logged.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - The SQL query to execute.</li>
+                <li><code>$params</code> - The parameters to bind to the query, if any.</li>
+                <li><code>$types</code> - The types the previous parameters are in.</li>
+                <li><code>$qcp</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The executed statement.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="executeUpdate"/>
+            <h4><span class="label public">public</span>executeUpdate<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">Array</span><strong> $types</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes an SQL INSERT/UPDATE/DELETE query with the given parameters and returns the number of affected rows.<pre>This method supports PDO binding types as well as DBAL mapping types.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - The SQL query.</li>
+                <li><code>$params</code> - The query parameters.</li>
+                <li><code>$types</code> - The parameter types.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The number of affected rows.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fetchAll"/>
+            <h4><span class="label public">public</span>fetchAll<span style="font-size:90%;">( <span class="param-type">string</span><strong> $sql</strong>, <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepares and executes an SQL query and returns the result as an associative array.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sql</code> - The SQL query.</li>
+                <li><code>$params</code> - The query parameters.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fetchArray"/>
+            <h4><span class="label public">public</span>fetchArray<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong>, <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepares and executes an SQL query and returns the first row of the result as a numerically indexed array.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$statement</code> - sql query to be executed</li>
+                <li><code>$params</code> - prepared statement params</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fetchAssoc"/>
+            <h4><span class="label public">public</span>fetchAssoc<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong>, <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepares and executes an SQL query and returns the first row of the result as an associative array.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$statement</code> - The SQL query.</li>
+                <li><code>$params</code> - The query parameters.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fetchColumn"/>
+            <h4><span class="label public">public</span>fetchColumn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">integer</span><strong> $colnum</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepares and executes an SQL query and returns the value of a single column of the first row of the result.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$statement</code> - sql query to be executed</li>
+                <li><code>$params</code> - prepared statement params</li>
+                <li><code>$colnum</code> - 0-indexed column number to retrieve</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getConfiguration"/>
+            <h4><span class="label public">public</span>getConfiguration<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the Configuration used by the Connection.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDatabase"/>
+            <h4><span class="label public">public</span>getDatabase<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the name of the database this Connection is connected to.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>$database</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDatabasePlatform"/>
+            <h4><span class="label public">public</span>getDatabasePlatform<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the DatabasePlatform for the connection.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDriver"/>
+            <h4><span class="label public">public</span>getDriver<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the DBAL driver instance.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEventManager"/>
+            <h4><span class="label public">public</span>getEventManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the EventManager used by the Connection.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getExpressionBuilder"/>
+            <h4><span class="label public">public</span>getExpressionBuilder<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the ExpressionBuilder for the connection.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFetchCase"/>
+            <h4><span class="label public">public</span>getFetchCase<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getHost"/>
+            <h4><span class="label public">public</span>getHost<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the hostname of the currently connected database.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNestTransactionsWithSavepoints"/>
+            <h4><span class="label public">public</span>getNestTransactionsWithSavepoints<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get if nested transactions should use savepoints</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getParams"/>
+            <h4><span class="label public">public</span>getParams<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the parameters used during instantiation.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>$params</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPassword"/>
+            <h4><span class="label public">public</span>getPassword<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the password used by this connection.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPort"/>
+            <h4><span class="label public">public</span>getPort<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the port of the currently connected database.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPortability"/>
+            <h4><span class="label public">public</span>getPortability<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getSchemaManager"/>
+            <h4><span class="label public">public</span>getSchemaManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SchemaManager that can be used to inspect or change the database schema through the connection.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTransactionIsolation"/>
+            <h4><span class="label public">public</span>getTransactionIsolation<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the currently active transaction isolation level.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The current transaction isolation level.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTransactionNestingLevel"/>
+            <h4><span class="label public">public</span>getTransactionNestingLevel<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the current transaction nesting level.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The nesting level. A value of 0 means there's no active transaction.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUsername"/>
+            <h4><span class="label public">public</span>getUsername<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the username used by this connection.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getWrappedConnection"/>
+            <h4><span class="label public">public</span>getWrappedConnection<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the wrapped driver connection.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="insert"/>
+            <h4><span class="label public">public</span>insert<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong>, <span class="param-type">Array</span><strong> $data</strong>, <span class="param-type">Array</span><strong> $types</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Inserts a table row with specified data.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - The name of the table to insert data into.</li>
+                <li><code>$data</code> - An associative array containing column-value pairs.</li>
+                <li><code>$types</code> - Types of the inserted data.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The number of affected rows.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isConnected"/>
+            <h4><span class="label public">public</span>isConnected<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether an actual connection to the database is established.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isRollbackOnly"/>
+            <h4><span class="label public">public</span>isRollbackOnly<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check whether the current transaction is marked for rollback only.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ConnectionException If no transaction is active.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isTransactionActive"/>
+            <h4><span class="label public">public</span>isTransactionActive<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether a transaction is currently active.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>TRUE if a transaction is currently active, FALSE otherwise.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="lastInsertId"/>
+            <h4><span class="label public">public</span>lastInsertId<span style="font-size:90%;">( <span class="param-type">string</span><strong> $seqName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the ID of the last inserted row, or the last value from a sequence object, depending on the underlying driver.<pre>Note: This method may not return a meaningful or consistent result across different drivers,
+because the underlying database may not even support the notion of AUTO_INCREMENT/IDENTITY
+columns or sequences.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$seqName</code> - Name of the sequence object from which the ID should be returned.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A string representation of the last inserted ID.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepare"/>
+            <h4><span class="label public">public</span>prepare<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepares an SQL statement.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$statement</code> - The SQL statement to prepare.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The prepared statement.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepare"/>
+            <h4><span class="label public">public</span>prepare<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Prepares an SQL statement.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$statement</code> - The SQL statement to prepare.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The prepared statement.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="project"/>
+            <h4><span class="label public">public</span>project<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type"><span title="Closure">Closure</span></span><strong> $function</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes an, optionally parameterized, SQL query and returns the result, applying a given projection/transformation function on each row of the result.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - The SQL query to execute.</li>
+                <li><code>$params</code> - The parameters, if any.</li>
+                <li><code>$mapper</code> - The transformation function that is applied on each row.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The projected result of the query.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="query"/>
+            <h4><span class="label public">public</span>query<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="query"/>
+            <h4><span class="label public">public</span>query<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes an SQL statement, returning a result set as a Statement object.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$statement</code> - </li>
+                <li><code>$fetchType</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="quote"/>
+            <h4><span class="label public">public</span>quote<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $input</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Quotes a given input parameter.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$input</code> - Parameter to be quoted.</li>
+                <li><code>$type</code> - Type of the parameter.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The quoted parameter.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="quoteIdentifier"/>
+            <h4><span class="label public">public</span>quoteIdentifier<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Quote a string so it can be safely used as a table or column name, even if it is a reserved name.<pre>Delimiting style depends on the underlying database platform that is being used.
+
+NOTE: Just because you CAN use quoted identifiers does not mean
+you SHOULD use them. In general, they end up causing way more
+problems than they solve.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - The name to be quoted.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The quoted name.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="releaseSavepoint"/>
+            <h4><span class="label public">public</span>releaseSavepoint<span style="font-size:90%;">( <span class="param-type">string</span><strong> $savepoint</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>releaseSavePoint releases given savepoint</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$savepoint</code> - name of a savepoint to release</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="resolveParams"/>
+            <h4><span class="label public">public</span>resolveParams<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">Array</span><strong> $types</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Resolves the parameters to a format which can be displayed.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$params</code> - </li>
+                <li><code>$types</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="rollBack"/>
+            <h4><span class="label public">public</span>rollBack<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Cancel any database changes done during the current transaction.<pre>this method can be listened with onPreTransactionRollback and onTransactionRollback
+eventlistener methods</pre></li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ConnectionException If the rollback operation failed.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="rollbackSavepoint"/>
+            <h4><span class="label public">public</span>rollbackSavepoint<span style="font-size:90%;">( <span class="param-type">string</span><strong> $savepoint</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>rollbackSavePoint releases given savepoint</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$savepoint</code> - name of a savepoint to rollback to</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFetchMode"/>
+            <h4><span class="label public">public</span>setFetchMode<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $fetchMode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>setFetchMode</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fetchMode</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setNestTransactionsWithSavepoints"/>
+            <h4><span class="label public">public</span>setNestTransactionsWithSavepoints<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $nestTransactionsWithSavepoints</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set if nested transactions should use savepoints</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$nestTransactionsWithSavepoints</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setRollbackOnly"/>
+            <h4><span class="label public">public</span>setRollbackOnly<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Marks the current transaction so that the only possible outcome for the transaction to be rolled back.</li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ConnectionException If no transaction is active.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTransactionIsolation"/>
+            <h4><span class="label public">public</span>setTransactionIsolation<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $level</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the transaction isolation level.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$level</code> - The level to set.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="transactional"/>
+            <h4><span class="label public">public</span>transactional<span style="font-size:90%;">( <span class="param-type"><span title="Closure">Closure</span></span><strong> $func</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes a function in a transaction.<pre>The function gets passed this Connection instance as an (optional) parameter.
+
+If an exception occurs during execution of the function or transaction commit,
+the transaction is rolled back and the exception re-thrown.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$func</code> - The function to execute transactionally.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="update"/>
+            <h4><span class="label public">public</span>update<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong>, <span class="param-type">Array</span><strong> $data</strong>, <span class="param-type">Array</span><strong> $identifier</strong>, <span class="param-type">Array</span><strong> $types</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes an SQL UPDATE statement on a table.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - The name of the table to update.</li>
+                <li><code>$data</code> - </li>
+                <li><code>$identifier</code> - The update criteria. An associative array containing column-value pairs.</li>
+                <li><code>$types</code> - Types of the merged $data and $identifier arrays in that order.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The number of affected rows.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getNestedTransactionSavePointName"/>
+            <h4><span class="label protected">protected</span>_getNestedTransactionSavePointName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the savepoint name to use for nested transactions are false if they are not supported "savepointFormat" parameter is not set</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>a string with the savepoint name or false</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

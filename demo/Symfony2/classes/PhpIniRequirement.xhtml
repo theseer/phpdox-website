@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - PhpIniRequirement - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#getHelpHtml">getHelpHtml</a>
+          </li>
+          <li>
+            <a href="#getHelpText">getHelpText</a>
+          </li>
+          <li>
+            <a href="#getTestMessage">getTestMessage</a>
+          </li>
+          <li>
+            <a href="#isFulfilled">isFulfilled</a>
+          </li>
+          <li>
+            <a href="#isOptional">isOptional</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>PhpIniRequirement</h2>
+        <div class="file-notice">
+          <p>Represents a PHP requirement in form of a php.ini configuration.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Tobias Schultze &lt;http://tobion.de&gt;</li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $cfgName</strong>, <span class="param-type"><span title="Boolean|callback">Boolean|callback</span></span><strong> $evaluation</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $approveCfgAbsence</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $testMessage</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $helpHtml</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $helpText</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $optional</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor that initializes the requirement.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cfgName</code> - The configuration name used for ini_get()</li>
+                <li><code>$evaluation</code> - Either a Boolean indicating whether the configuration should evaluate to true or false,</li>
+                <li><code>$approveCfgAbsence</code> - If true the Requirement will be fulfilled even if the configuration option does not exist, i.e. ini_get() returns false.</li>
+                <li><code>$testMessage</code> - The message for testing the requirement (when null and $evaluation is a Boolean a default message is derived)</li>
+                <li><code>$helpHtml</code> - The help text formatted in HTML for resolving the problem (when null and $evaluation is a Boolean a default help is derived)</li>
+                <li><code>$helpText</code> - The help text (when null, it will be inferred from $helpHtml, i.e. stripped from HTML tags)</li>
+                <li><code>$optional</code> - Whether this is only an optional recommendation not a mandatory requirement</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getHelpHtml"/>
+            <h4><span class="label public">public</span>getHelpHtml<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the help text formatted in HTML.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The HTML help</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getHelpText"/>
+            <h4><span class="label public">public</span>getHelpText<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the help text for resolving the problem</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The help text</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTestMessage"/>
+            <h4><span class="label public">public</span>getTestMessage<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the message for testing the requirement.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The test message</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isFulfilled"/>
+            <h4><span class="label public">public</span>isFulfilled<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether the requirement is fulfilled.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if fulfilled, otherwise false</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isOptional"/>
+            <h4><span class="label public">public</span>isOptional<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether this is only an optional recommendation and not a mandatory requirement.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>true if optional, false if mandatory</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\DBAL\Schema\View - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_sql">$_sql</a>
+          </li>
+          <li>
+            <a href="#_name">$_name</a>
+          </li>
+          <li>
+            <a href="#_namespace">$_namespace</a>
+          </li>
+          <li>
+            <a href="#_quoted">$_quoted</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_generateIdentifierName">_generateIdentifierName</a>
+          </li>
+          <li>
+            <a href="#_setName">_setName</a>
+          </li>
+          <li>
+            <a href="#getFullQualifiedName">getFullQualifiedName</a>
+          </li>
+          <li>
+            <a href="#getName">getName</a>
+          </li>
+          <li>
+            <a href="#getNamespaceName">getNamespaceName</a>
+          </li>
+          <li>
+            <a href="#getQuotedName">getQuotedName</a>
+          </li>
+          <li>
+            <a href="#getShortestName">getShortestName</a>
+          </li>
+          <li>
+            <a href="#getSql">getSql</a>
+          </li>
+          <li>
+            <a href="#isIdentifierQuoted">isIdentifierQuoted</a>
+          </li>
+          <li>
+            <a href="#isInDefaultNamespace">isInDefaultNamespace</a>
+          </li>
+          <li>
+            <a href="#isQuoted">isQuoted</a>
+          </li>
+          <li>
+            <a href="#trimQuotes">trimQuotes</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\DBAL\Schema\</span>View</h2>
+        <div class="file-notice">
+          <p>Representation of a Database View</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+          <li><b>License: </b>http://www.opensource.org/licenses/lgpl-license.php LGPL</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_sql"/>
+            <h4><span class="label private">private</span>string 
+                
+                $_sql</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $sql</strong> )</span></h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getFullQualifiedName"/>
+            <h4><span class="label public">public</span>getFullQualifiedName<span style="font-size:90%;">( <span class="param-type"/><strong> $defaultNamespaceName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>The normalized name is full-qualified and lowerspaced. Lowerspacing is actually wrong, but we have to do it to keep our sanity. If you are using database objects that only differentiate in the casing (FOO vs Foo) then you will NOT be able to use Doctrine Schema abstraction.<pre>Every non-namespaced element is prefixed with the default namespace
+name which is passed as argument to this method.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getName"/>
+            <h4><span class="label public">public</span>getName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return name of this schema asset.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNamespaceName"/>
+            <h4><span class="label public">public</span>getNamespaceName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get namespace name of this asset.<pre>If NULL is returned this means the default namespace is used.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getQuotedName"/>
+            <h4><span class="label public">public</span>getQuotedName<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Platforms_AbstractPlatform.xhtml">Doctrine\DBAL\Platforms\AbstractPlatform</a></span><strong> $platform</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the quoted representation of this asset but only if it was defined with one. Otherwise return the plain unquoted value as inserted.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$platform</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getShortestName"/>
+            <h4><span class="label public">public</span>getShortestName<span style="font-size:90%;">( <span class="param-type"/><strong> $defaultNamespaceName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>The shortest name is stripped of the default namespace. All other namespaced elements are returned as full-qualified names.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSql"/>
+            <h4><span class="label public">public</span>getSql<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isInDefaultNamespace"/>
+            <h4><span class="label public">public</span>isInDefaultNamespace<span style="font-size:90%;">( <span class="param-type">string</span><strong> $defaultNamespaceName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this asset in the default namespace?</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$defaultNamespaceName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isQuoted"/>
+            <h4><span class="label public">public</span>isQuoted<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if this asset's name is quoted</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_generateIdentifierName"/>
+            <h4><span class="label protected">protected</span>_generateIdentifierName<span style="font-size:90%;">( <span class="param-type">array</span><strong> $columnNames</strong>, <span class="param-type">string</span><strong> $prefix</strong>, <span class="param-type">integer</span><strong> $maxSize</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate an identifier from a list of column names obeying a certain string length.<pre>This is especially important for Oracle, since it does not allow identifiers larger than 30 chars,
+however building idents automatically for foreign keys, composite keys or such can easily create
+very long names.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnNames</code> - </li>
+                <li><code>$prefix</code> - </li>
+                <li><code>$maxSize</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_setName"/>
+            <h4><span class="label protected">protected</span>_setName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set name of this asset</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isIdentifierQuoted"/>
+            <h4><span class="label protected">protected</span>isIdentifierQuoted<span style="font-size:90%;">( <span class="param-type">string</span><strong> $identifier</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if this identifier is quoted.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identifier</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="trimQuotes"/>
+            <h4><span class="label protected">protected</span>trimQuotes<span style="font-size:90%;">( <span class="param-type">string</span><strong> $identifier</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Trim quotes from the identifier.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identifier</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

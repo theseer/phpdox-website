@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\Common\Persistence\Mapping\Driver\FileDriver - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#locator">$locator</a>
+          </li>
+          <li>
+            <a href="#classCache">$classCache</a>
+          </li>
+          <li>
+            <a href="#globalBasename">$globalBasename</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#getAllClassNames">getAllClassNames</a>
+          </li>
+          <li>
+            <a href="#getElement">getElement</a>
+          </li>
+          <li>
+            <a href="#getGlobalBasename">getGlobalBasename</a>
+          </li>
+          <li>
+            <a href="#getLocator">getLocator</a>
+          </li>
+          <li>
+            <a href="#initialize">initialize</a>
+          </li>
+          <li>
+            <a href="#isTransient">isTransient</a>
+          </li>
+          <li>
+            <a href="#loadMappingFile">loadMappingFile</a>
+          </li>
+          <li>
+            <a href="#setGlobalBasename">setGlobalBasename</a>
+          </li>
+          <li>
+            <a href="#setLocator">setLocator</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\Common\Persistence\Mapping\Driver\</span>FileDriver</h2>
+        <div class="file-notice">
+          <p>Base driver for file-based metadata drivers.</p>
+          <p>
+            <pre>A file driver operates in a mode where it loads the mapping files of individual
+classes on demand. This requires the user to adhere to the convention of 1 mapping
+file per class and the file names of the mapping files must correspond to the full
+class name, including namespace, with the namespace delimiters '\', replaced by dots '.'.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+          <li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
+          <li><b>Author: </b>Jonathan H. Wage &lt;jonwage@gmail.com&gt;</li>
+          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
+          <li><b>License: </b>http://www.opensource.org/licenses/lgpl-license.php LGPL</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Doctrine_Common_Persistence_Mapping_Driver_MappingDriver.xhtml">Doctrine\Common\Persistence\Mapping\Driver\MappingDriver</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="locator"/>
+            <h4><span class="label protected">protected</span>object 
+                
+                $locator</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="classCache"/>
+            <h4><span class="label protected">protected</span>array 
+                
+                $classCache</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="globalBasename"/>
+            <h4><span class="label protected">protected</span>string 
+                
+                $globalBasename</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="string|array|FileLocator">string|array|FileLocator</span></span><strong> $locator</strong>, <span class="param-type">string</span><strong> $fileExtension</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initializes a new FileDriver that looks in the given path(s) for mapping documents and operates in the specified operating mode.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$locator</code> - A FileLocator or one/multiple paths where mapping documents can be found.</li>
+                <li><code>$fileExtension</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getAllClassNames"/>
+            <h4><span class="label public">public</span>getAllClassNames<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the names of all mapped classes known to this driver.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The names of all mapped classes known to this driver.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getElement"/>
+            <h4><span class="label public">public</span>getElement<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the element of schema meta data for the class from the mapping file.<pre>This will lazily load the mapping file if it is not loaded yet</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The element of schema meta data</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>MappingException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getGlobalBasename"/>
+            <h4><span class="label public">public</span>getGlobalBasename<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve global basename</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLocator"/>
+            <h4><span class="label public">public</span>getLocator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve the locator used to discover mapping files by className</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isTransient"/>
+            <h4><span class="label public">public</span>isTransient<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the class with the specified name should have its metadata loaded.<pre>This is only the case if it is either mapped as an Entity or a
+MappedSuperclass.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setGlobalBasename"/>
+            <h4><span class="label public">public</span>setGlobalBasename<span style="font-size:90%;">( <span class="param-type">string</span><strong> $file</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set global basename</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$file</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setLocator"/>
+            <h4><span class="label public">public</span>setLocator<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Persistence_Mapping_Driver_FileLocator.xhtml">Doctrine\Common\Persistence\Mapping\Driver\FileLocator</a></span><strong> $locator</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the locator used to discover mapping files by className</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$locator</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="initialize"/>
+            <h4><span class="label protected">protected</span>initialize<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initialize the class cache from all the global files.<pre>Using this feature adds a substantial performance hit to file drivers as
+more metadata has to be loaded into memory than might actually be
+necessary. This may not be relevant to scenarios where caching of
+metadata is in place, however hits very hard in scenarios where no
+caching is used.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="loadMappingFile"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>loadMappingFile<span style="font-size:90%;">( <span class="param-type">string</span><strong> $file</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Loads a mapping file with the given name and returns a map from class/entity names to their corresponding file driver elements.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$file</code> - The mapping file to load.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

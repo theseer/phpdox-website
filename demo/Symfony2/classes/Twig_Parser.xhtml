@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Twig_Parser - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#stack">$stack</a>
+          </li>
+          <li>
+            <a href="#stream">$stream</a>
+          </li>
+          <li>
+            <a href="#parent">$parent</a>
+          </li>
+          <li>
+            <a href="#handlers">$handlers</a>
+          </li>
+          <li>
+            <a href="#visitors">$visitors</a>
+          </li>
+          <li>
+            <a href="#expressionParser">$expressionParser</a>
+          </li>
+          <li>
+            <a href="#blocks">$blocks</a>
+          </li>
+          <li>
+            <a href="#blockStack">$blockStack</a>
+          </li>
+          <li>
+            <a href="#macros">$macros</a>
+          </li>
+          <li>
+            <a href="#env">$env</a>
+          </li>
+          <li>
+            <a href="#reservedMacroNames">$reservedMacroNames</a>
+          </li>
+          <li>
+            <a href="#importedSymbols">$importedSymbols</a>
+          </li>
+          <li>
+            <a href="#traits">$traits</a>
+          </li>
+          <li>
+            <a href="#embeddedTemplates">$embeddedTemplates</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addHandler">addHandler</a>
+          </li>
+          <li>
+            <a href="#addImportedSymbol">addImportedSymbol</a>
+          </li>
+          <li>
+            <a href="#addNodeVisitor">addNodeVisitor</a>
+          </li>
+          <li>
+            <a href="#addTrait">addTrait</a>
+          </li>
+          <li>
+            <a href="#embedTemplate">embedTemplate</a>
+          </li>
+          <li>
+            <a href="#filterBodyNodes">filterBodyNodes</a>
+          </li>
+          <li>
+            <a href="#getBlock">getBlock</a>
+          </li>
+          <li>
+            <a href="#getBlockStack">getBlockStack</a>
+          </li>
+          <li>
+            <a href="#getCurrentToken">getCurrentToken</a>
+          </li>
+          <li>
+            <a href="#getEnvironment">getEnvironment</a>
+          </li>
+          <li>
+            <a href="#getExpressionParser">getExpressionParser</a>
+          </li>
+          <li>
+            <a href="#getFilename">getFilename</a>
+          </li>
+          <li>
+            <a href="#getImportedSymbol">getImportedSymbol</a>
+          </li>
+          <li>
+            <a href="#getParent">getParent</a>
+          </li>
+          <li>
+            <a href="#getStream">getStream</a>
+          </li>
+          <li>
+            <a href="#getVarName">getVarName</a>
+          </li>
+          <li>
+            <a href="#hasBlock">hasBlock</a>
+          </li>
+          <li>
+            <a href="#hasMacro">hasMacro</a>
+          </li>
+          <li>
+            <a href="#hasTraits">hasTraits</a>
+          </li>
+          <li>
+            <a href="#isMainScope">isMainScope</a>
+          </li>
+          <li>
+            <a href="#parse">parse</a>
+          </li>
+          <li>
+            <a href="#peekBlockStack">peekBlockStack</a>
+          </li>
+          <li>
+            <a href="#popBlockStack">popBlockStack</a>
+          </li>
+          <li>
+            <a href="#popLocalScope">popLocalScope</a>
+          </li>
+          <li>
+            <a href="#pushBlockStack">pushBlockStack</a>
+          </li>
+          <li>
+            <a href="#pushLocalScope">pushLocalScope</a>
+          </li>
+          <li>
+            <a href="#setBlock">setBlock</a>
+          </li>
+          <li>
+            <a href="#setMacro">setMacro</a>
+          </li>
+          <li>
+            <a href="#setParent">setParent</a>
+          </li>
+          <li>
+            <a href="#subparse">subparse</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Twig_Parser</h2>
+        <div class="file-notice">
+          <p>Default parser implementation.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Twig_ParserInterface.xhtml">Twig_ParserInterface</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="stack"/>
+            <h4><span class="label protected">protected</span>
+                $stack</h4>
+          </li>
+          <li>
+            <a name="stream"/>
+            <h4><span class="label protected">protected</span>
+                $stream</h4>
+          </li>
+          <li>
+            <a name="parent"/>
+            <h4><span class="label protected">protected</span>
+                $parent</h4>
+          </li>
+          <li>
+            <a name="handlers"/>
+            <h4><span class="label protected">protected</span>
+                $handlers</h4>
+          </li>
+          <li>
+            <a name="visitors"/>
+            <h4><span class="label protected">protected</span>
+                $visitors</h4>
+          </li>
+          <li>
+            <a name="expressionParser"/>
+            <h4><span class="label protected">protected</span>
+                $expressionParser</h4>
+          </li>
+          <li>
+            <a name="blocks"/>
+            <h4><span class="label protected">protected</span>
+                $blocks</h4>
+          </li>
+          <li>
+            <a name="blockStack"/>
+            <h4><span class="label protected">protected</span>
+                $blockStack</h4>
+          </li>
+          <li>
+            <a name="macros"/>
+            <h4><span class="label protected">protected</span>
+                $macros</h4>
+          </li>
+          <li>
+            <a name="env"/>
+            <h4><span class="label protected">protected</span>
+                $env</h4>
+          </li>
+          <li>
+            <a name="reservedMacroNames"/>
+            <h4><span class="label protected">protected</span>
+                $reservedMacroNames</h4>
+          </li>
+          <li>
+            <a name="importedSymbols"/>
+            <h4><span class="label protected">protected</span>
+                $importedSymbols</h4>
+          </li>
+          <li>
+            <a name="traits"/>
+            <h4><span class="label protected">protected</span>
+                $traits</h4>
+          </li>
+          <li>
+            <a name="embeddedTemplates"/>
+            <h4><span class="label protected">protected</span>
+                $embeddedTemplates</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="\\Twig_Environment">Twig_Environment</span></span><strong> $env</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$env</code> - A Twig_Environment instance</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addHandler"/>
+            <h4><span class="label public">public</span>addHandler<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $class</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="addImportedSymbol"/>
+            <h4><span class="label public">public</span>addImportedSymbol<span style="font-size:90%;">( <span class="param-type"/><strong> $type</strong>, <span class="param-type"/><strong> $alias</strong>, <span class="param-type"/><strong> $name</strong>, <span class="param-type"><span title="\\Twig_Node_Expression">Twig_Node_Expression</span></span><strong> $node</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="addNodeVisitor"/>
+            <h4><span class="label public">public</span>addNodeVisitor<span style="font-size:90%;">( <span class="param-type"><span title="\\Twig_NodeVisitorInterface">Twig_NodeVisitorInterface</span></span><strong> $visitor</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="addTrait"/>
+            <h4><span class="label public">public</span>addTrait<span style="font-size:90%;">( <span class="param-type"/><strong> $trait</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="embedTemplate"/>
+            <h4><span class="label public">public</span>embedTemplate<span style="font-size:90%;">( <span class="param-type"><span title="\\Twig_Node_Module">Twig_Node_Module</span></span><strong> $template</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getBlock"/>
+            <h4><span class="label public">public</span>getBlock<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getBlockStack"/>
+            <h4><span class="label public">public</span>getBlockStack<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getCurrentToken"/>
+            <h4><span class="label public">public</span>getCurrentToken<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the current token.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The current token</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEnvironment"/>
+            <h4><span class="label public">public</span>getEnvironment<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getExpressionParser"/>
+            <h4><span class="label public">public</span>getExpressionParser<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the expression parser.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The expression parser</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFilename"/>
+            <h4><span class="label public">public</span>getFilename<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getImportedSymbol"/>
+            <h4><span class="label public">public</span>getImportedSymbol<span style="font-size:90%;">( <span class="param-type"/><strong> $type</strong>, <span class="param-type"/><strong> $alias</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getParent"/>
+            <h4><span class="label public">public</span>getParent<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getStream"/>
+            <h4><span class="label public">public</span>getStream<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the token stream.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The token stream</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getVarName"/>
+            <h4><span class="label public">public</span>getVarName<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="hasBlock"/>
+            <h4><span class="label public">public</span>hasBlock<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="hasMacro"/>
+            <h4><span class="label public">public</span>hasMacro<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="hasTraits"/>
+            <h4><span class="label public">public</span>hasTraits<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="isMainScope"/>
+            <h4><span class="label public">public</span>isMainScope<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="parse"/>
+            <h4><span class="label public">public</span>parse<span style="font-size:90%;">( <span class="param-type"><span title="\\Twig_TokenStream">Twig_TokenStream</span></span><strong> $stream</strong>, <span class="param-type"/><strong> $test</strong>, <span class="param-type"/><strong> $dropNeedle</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Converts a token stream to a node tree.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$stream</code> - A token stream instance</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A node tree</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="peekBlockStack"/>
+            <h4><span class="label public">public</span>peekBlockStack<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="popBlockStack"/>
+            <h4><span class="label public">public</span>popBlockStack<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="popLocalScope"/>
+            <h4><span class="label public">public</span>popLocalScope<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="pushBlockStack"/>
+            <h4><span class="label public">public</span>pushBlockStack<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="pushLocalScope"/>
+            <h4><span class="label public">public</span>pushLocalScope<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="setBlock"/>
+            <h4><span class="label public">public</span>setBlock<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $value</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="setMacro"/>
+            <h4><span class="label public">public</span>setMacro<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"><span title="\\Twig_Node_Macro">Twig_Node_Macro</span></span><strong> $node</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="setParent"/>
+            <h4><span class="label public">public</span>setParent<span style="font-size:90%;">( <span class="param-type"/><strong> $parent</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="subparse"/>
+            <h4><span class="label public">public</span>subparse<span style="font-size:90%;">( <span class="param-type"/><strong> $test</strong>, <span class="param-type"/><strong> $dropNeedle</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="filterBodyNodes"/>
+            <h4><span class="label protected">protected</span>filterBodyNodes<span style="font-size:90%;">( <span class="param-type"><span title="\\Twig_NodeInterface">Twig_NodeInterface</span></span><strong> $node</strong> )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

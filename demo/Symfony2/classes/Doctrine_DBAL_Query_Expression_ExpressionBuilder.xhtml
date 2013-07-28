@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\DBAL\Query\Expression\ExpressionBuilder - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#EQ">EQ</a>
+          </li>
+          <li>
+            <a href="#NEQ">NEQ</a>
+          </li>
+          <li>
+            <a href="#LT">LT</a>
+          </li>
+          <li>
+            <a href="#LTE">LTE</a>
+          </li>
+          <li>
+            <a href="#GT">GT</a>
+          </li>
+          <li>
+            <a href="#GTE">GTE</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#connection">$connection</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#andX">andX</a>
+          </li>
+          <li>
+            <a href="#comparison">comparison</a>
+          </li>
+          <li>
+            <a href="#eq">eq</a>
+          </li>
+          <li>
+            <a href="#gt">gt</a>
+          </li>
+          <li>
+            <a href="#gte">gte</a>
+          </li>
+          <li>
+            <a href="#isNotNull">isNotNull</a>
+          </li>
+          <li>
+            <a href="#isNull">isNull</a>
+          </li>
+          <li>
+            <a href="#like">like</a>
+          </li>
+          <li>
+            <a href="#literal">literal</a>
+          </li>
+          <li>
+            <a href="#lt">lt</a>
+          </li>
+          <li>
+            <a href="#lte">lte</a>
+          </li>
+          <li>
+            <a href="#neq">neq</a>
+          </li>
+          <li>
+            <a href="#orX">orX</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\DBAL\Query\Expression\</span>ExpressionBuilder</h2>
+        <div class="file-notice">
+          <p>ExpressionBuilder class is responsible to dynamically create SQL query parts.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+          <li><b>License: </b>http://www.opensource.org/licenses/lgpl-license.php LGPL</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="EQ"/>EQ = '='<hr/></li>
+          <li><a name="NEQ"/>NEQ = '&lt;&gt;'<hr/></li>
+          <li><a name="LT"/>LT = '&lt;'<hr/></li>
+          <li><a name="LTE"/>LTE = '&lt;='<hr/></li>
+          <li><a name="GT"/>GT = '&gt;'<hr/></li>
+          <li><a name="GTE"/>GTE = '&gt;='<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="connection"/>
+            <h4><span class="label private">private</span>object 
+                
+                $connection</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Connection.xhtml">Doctrine\DBAL\Connection</a></span><strong> $connection</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initializes a new &lt;tt&gt;ExpressionBuilder&lt;/tt&gt;.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$connection</code> - DBAL Connection</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="andX"/>
+            <h4><span class="label public">public</span>andX<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $x</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a conjunction of the given boolean expressions.<pre>Example:
+
+    [php]
+    // (u.type = ?) AND (u.role = ?)
+    $expr-&gt;andX('u.type = ?', 'u.role = ?'));</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$x</code> - Optional clause. Defaults = null, but requires</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="comparison"/>
+            <h4><span class="label public">public</span>comparison<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $x</strong>, <span class="param-type">string</span><strong> $operator</strong>, <span class="param-type">mixed</span><strong> $y</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a comparison expression.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$x</code> - Left expression</li>
+                <li><code>$operator</code> - One of the ExpressionBuilder::* constants.</li>
+                <li><code>$y</code> - Right expression</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="eq"/>
+            <h4><span class="label public">public</span>eq<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $x</strong>, <span class="param-type">mixed</span><strong> $y</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates an equality comparison expression with the given arguments.<pre>First argument is considered the left expression and the second is the right expression.
+When converted to string, it will generated a &lt;left expr&gt; = &lt;right expr&gt;. Example:
+
+    [php]
+    // u.id = ?
+    $expr-&gt;eq('u.id', '?');</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$x</code> - Left expression</li>
+                <li><code>$y</code> - Right expression</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="gt"/>
+            <h4><span class="label public">public</span>gt<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $x</strong>, <span class="param-type">mixed</span><strong> $y</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a greater-than comparison expression with the given arguments.<pre>First argument is considered the left expression and the second is the right expression.
+When converted to string, it will generated a &lt;left expr&gt; &gt; &lt;right expr&gt;. Example:
+
+    [php]
+    // u.id &gt; ?
+    $q-&gt;where($q-&gt;expr()-&gt;gt('u.id', '?'));</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$x</code> - Left expression</li>
+                <li><code>$y</code> - Right expression</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="gte"/>
+            <h4><span class="label public">public</span>gte<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $x</strong>, <span class="param-type">mixed</span><strong> $y</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a greater-than-equal comparison expression with the given arguments.<pre>First argument is considered the left expression and the second is the right expression.
+When converted to string, it will generated a &lt;left expr&gt; &gt;= &lt;right expr&gt;. Example:
+
+    [php]
+    // u.id &gt;= ?
+    $q-&gt;where($q-&gt;expr()-&gt;gte('u.id', '?'));</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$x</code> - Left expression</li>
+                <li><code>$y</code> - Right expression</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isNotNull"/>
+            <h4><span class="label public">public</span>isNotNull<span style="font-size:90%;">( <span class="param-type">string</span><strong> $x</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates an IS NOT NULL expression with the given arguments.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$x</code> - Field in string format to be restricted by IS NOT NULL</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isNull"/>
+            <h4><span class="label public">public</span>isNull<span style="font-size:90%;">( <span class="param-type">string</span><strong> $x</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates an IS NULL expression with the given arguments.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$x</code> - Field in string format to be restricted by IS NULL</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="like"/>
+            <h4><span class="label public">public</span>like<span style="font-size:90%;">( <span class="param-type">string</span><strong> $x</strong>, <span class="param-type">mixed</span><strong> $y</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a LIKE() comparison expression with the given arguments.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$x</code> - Field in string format to be inspected by LIKE() comparison.</li>
+                <li><code>$y</code> - Argument to be used in LIKE() comparison.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="literal"/>
+            <h4><span class="label public">public</span>literal<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $input</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Quotes a given input parameter.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$input</code> - Parameter to be quoted.</li>
+                <li><code>$type</code> - Type of the parameter.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="lt"/>
+            <h4><span class="label public">public</span>lt<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $x</strong>, <span class="param-type">mixed</span><strong> $y</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a lower-than comparison expression with the given arguments.<pre>First argument is considered the left expression and the second is the right expression.
+When converted to string, it will generated a &lt;left expr&gt; &lt; &lt;right expr&gt;. Example:
+
+    [php]
+    // u.id &lt; ?
+    $q-&gt;where($q-&gt;expr()-&gt;lt('u.id', '?'));</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$x</code> - Left expression</li>
+                <li><code>$y</code> - Right expression</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="lte"/>
+            <h4><span class="label public">public</span>lte<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $x</strong>, <span class="param-type">mixed</span><strong> $y</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a lower-than-equal comparison expression with the given arguments.<pre>First argument is considered the left expression and the second is the right expression.
+When converted to string, it will generated a &lt;left expr&gt; &lt;= &lt;right expr&gt;. Example:
+
+    [php]
+    // u.id &lt;= ?
+    $q-&gt;where($q-&gt;expr()-&gt;lte('u.id', '?'));</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$x</code> - Left expression</li>
+                <li><code>$y</code> - Right expression</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="neq"/>
+            <h4><span class="label public">public</span>neq<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $x</strong>, <span class="param-type">mixed</span><strong> $y</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a non equality comparison expression with the given arguments.<pre>First argument is considered the left expression and the second is the right expression.
+When converted to string, it will generated a &lt;left expr&gt; &lt;&gt; &lt;right expr&gt;. Example:
+
+    [php]
+    // u.id &lt;&gt; 1
+    $q-&gt;where($q-&gt;expr()-&gt;neq('u.id', '1'));</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$x</code> - Left expression</li>
+                <li><code>$y</code> - Right expression</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="orX"/>
+            <h4><span class="label public">public</span>orX<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $x</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a disjunction of the given boolean expressions.<pre>Example:
+
+    [php]
+    // (u.type = ?) OR (u.role = ?)
+    $qb-&gt;where($qb-&gt;expr()-&gt;orX('u.type = ?', 'u.role = ?'));</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$x</code> - Optional clause. Defaults = null, but requires</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>
