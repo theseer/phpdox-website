@@ -1,0 +1,1299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\DBAL\Query\QueryBuilder - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#SELECT">SELECT</a>
+          </li>
+          <li>
+            <a href="#DELETE">DELETE</a>
+          </li>
+          <li>
+            <a href="#UPDATE">UPDATE</a>
+          </li>
+          <li>
+            <a href="#STATE_DIRTY">STATE_DIRTY</a>
+          </li>
+          <li>
+            <a href="#STATE_CLEAN">STATE_CLEAN</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#connection">$connection</a>
+          </li>
+          <li>
+            <a href="#sqlParts">$sqlParts</a>
+          </li>
+          <li>
+            <a href="#sql">$sql</a>
+          </li>
+          <li>
+            <a href="#params">$params</a>
+          </li>
+          <li>
+            <a href="#paramTypes">$paramTypes</a>
+          </li>
+          <li>
+            <a href="#type">$type</a>
+          </li>
+          <li>
+            <a href="#state">$state</a>
+          </li>
+          <li>
+            <a href="#firstResult">$firstResult</a>
+          </li>
+          <li>
+            <a href="#maxResults">$maxResults</a>
+          </li>
+          <li>
+            <a href="#boundCounter">$boundCounter</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__toString">__toString</a>
+          </li>
+          <li>
+            <a href="#add">add</a>
+          </li>
+          <li>
+            <a href="#addGroupBy">addGroupBy</a>
+          </li>
+          <li>
+            <a href="#addOrderBy">addOrderBy</a>
+          </li>
+          <li>
+            <a href="#addSelect">addSelect</a>
+          </li>
+          <li>
+            <a href="#andHaving">andHaving</a>
+          </li>
+          <li>
+            <a href="#andWhere">andWhere</a>
+          </li>
+          <li>
+            <a href="#createNamedParameter">createNamedParameter</a>
+          </li>
+          <li>
+            <a href="#createPositionalParameter">createPositionalParameter</a>
+          </li>
+          <li>
+            <a href="#delete">delete</a>
+          </li>
+          <li>
+            <a href="#execute">execute</a>
+          </li>
+          <li>
+            <a href="#expr">expr</a>
+          </li>
+          <li>
+            <a href="#from">from</a>
+          </li>
+          <li>
+            <a href="#getConnection">getConnection</a>
+          </li>
+          <li>
+            <a href="#getFirstResult">getFirstResult</a>
+          </li>
+          <li>
+            <a href="#getMaxResults">getMaxResults</a>
+          </li>
+          <li>
+            <a href="#getParameter">getParameter</a>
+          </li>
+          <li>
+            <a href="#getParameters">getParameters</a>
+          </li>
+          <li>
+            <a href="#getQueryPart">getQueryPart</a>
+          </li>
+          <li>
+            <a href="#getQueryParts">getQueryParts</a>
+          </li>
+          <li>
+            <a href="#getSQL">getSQL</a>
+          </li>
+          <li>
+            <a href="#getSQLForDelete">getSQLForDelete</a>
+          </li>
+          <li>
+            <a href="#getSQLForSelect">getSQLForSelect</a>
+          </li>
+          <li>
+            <a href="#getSQLForUpdate">getSQLForUpdate</a>
+          </li>
+          <li>
+            <a href="#getState">getState</a>
+          </li>
+          <li>
+            <a href="#getType">getType</a>
+          </li>
+          <li>
+            <a href="#groupBy">groupBy</a>
+          </li>
+          <li>
+            <a href="#having">having</a>
+          </li>
+          <li>
+            <a href="#innerJoin">innerJoin</a>
+          </li>
+          <li>
+            <a href="#join">join</a>
+          </li>
+          <li>
+            <a href="#leftJoin">leftJoin</a>
+          </li>
+          <li>
+            <a href="#orHaving">orHaving</a>
+          </li>
+          <li>
+            <a href="#orWhere">orWhere</a>
+          </li>
+          <li>
+            <a href="#orderBy">orderBy</a>
+          </li>
+          <li>
+            <a href="#resetQueryPart">resetQueryPart</a>
+          </li>
+          <li>
+            <a href="#resetQueryParts">resetQueryParts</a>
+          </li>
+          <li>
+            <a href="#rightJoin">rightJoin</a>
+          </li>
+          <li>
+            <a href="#select">select</a>
+          </li>
+          <li>
+            <a href="#set">set</a>
+          </li>
+          <li>
+            <a href="#setFirstResult">setFirstResult</a>
+          </li>
+          <li>
+            <a href="#setMaxResults">setMaxResults</a>
+          </li>
+          <li>
+            <a href="#setParameter">setParameter</a>
+          </li>
+          <li>
+            <a href="#setParameters">setParameters</a>
+          </li>
+          <li>
+            <a href="#update">update</a>
+          </li>
+          <li>
+            <a href="#where">where</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\DBAL\Query\</span>QueryBuilder</h2>
+        <div class="file-notice">
+          <p>QueryBuilder class is responsible to dynamically create SQL queries.</p>
+          <p>
+            <pre>Important: Verify that every feature you use will work with your database vendor.
+SQL Query Builder does not attempt to validate the generated SQL at all.
+
+The query builder does no validation whatsoever if certain features even work with the
+underlying database vendor. Limit queries and joins are NOT applied to UPDATE and DELETE statements
+even if some vendors such as MySQL support it.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+          <li><b>License: </b>http://www.opensource.org/licenses/lgpl-license.php LGPL</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="SELECT"/>SELECT = 0<hr/></li>
+          <li><a name="DELETE"/>DELETE = 1<hr/></li>
+          <li><a name="UPDATE"/>UPDATE = 2<hr/></li>
+          <li><a name="STATE_DIRTY"/>STATE_DIRTY = 0<em> </em><p><li>The builder states.</li></p><hr/></li>
+          <li><a name="STATE_CLEAN"/>STATE_CLEAN = 1<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="connection"/>
+            <h4><span class="label private">private</span>object 
+                
+                $connection</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="sqlParts"/>
+            <h4><span class="label private">private</span>array 
+                
+                $sqlParts</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="sql"/>
+            <h4><span class="label private">private</span>string 
+                
+                $sql</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="params"/>
+            <h4><span class="label private">private</span>array 
+                
+                $params</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="paramTypes"/>
+            <h4><span class="label private">private</span>array 
+                
+                $paramTypes</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="type"/>
+            <h4><span class="label private">private</span>integer 
+                
+                $type</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="state"/>
+            <h4><span class="label private">private</span>integer 
+                
+                $state</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="firstResult"/>
+            <h4><span class="label private">private</span>integer 
+                
+                $firstResult</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="maxResults"/>
+            <h4><span class="label private">private</span>integer 
+                
+                $maxResults</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="boundCounter"/>
+            <h4><span class="label private">private</span>int 
+                
+                $boundCounter</h4>
+            <ul class="varlist">
+              <li>The counter of bound parameters used with {@see bindValue)</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Connection.xhtml">Doctrine\DBAL\Connection</a></span><strong> $connection</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initializes a new &lt;tt&gt;QueryBuilder&lt;/tt&gt;.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$connection</code> - DBAL Connection</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__toString"/>
+            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a string representation of this QueryBuilder which corresponds to the final SQL query being constructed.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The string representation of this QueryBuilder.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="add"/>
+            <h4><span class="label public">public</span>add<span style="font-size:90%;">( <span class="param-type">string</span><strong> $sqlPartName</strong>, <span class="param-type">string</span><strong> $sqlPart</strong>, <span class="param-type">boolean</span><strong> $append</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Either appends to or replaces a single, generic query part.<pre>The available parts are: 'select', 'from', 'set', 'where',
+'groupBy', 'having' and 'orderBy'.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sqlPartName</code> - </li>
+                <li><code>$sqlPart</code> - </li>
+                <li><code>$append</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addGroupBy"/>
+            <h4><span class="label public">public</span>addGroupBy<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $groupBy</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a grouping expression to the query.<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u.name')
+        -&gt;from('users', 'u')
+        -&gt;groupBy('u.lastLogin');
+        -&gt;addGroupBy('u.createdAt')
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$groupBy</code> - The grouping expression.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addOrderBy"/>
+            <h4><span class="label public">public</span>addOrderBy<span style="font-size:90%;">( <span class="param-type">string</span><strong> $sort</strong>, <span class="param-type">string</span><strong> $order</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds an ordering to the query results.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sort</code> - The ordering expression.</li>
+                <li><code>$order</code> - The ordering direction.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addSelect"/>
+            <h4><span class="label public">public</span>addSelect<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $select</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds an item that is to be returned in the query result.<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u.id')
+        -&gt;addSelect('p.id')
+        -&gt;from('users', 'u')
+        -&gt;leftJoin('u', 'phonenumbers', 'u.id = p.user_id');
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$select</code> - The selection expression.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="andHaving"/>
+            <h4><span class="label public">public</span>andHaving<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $having</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a restriction over the groups of the query, forming a logical conjunction with any existing having restrictions.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$having</code> - The restriction to append.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="andWhere"/>
+            <h4><span class="label public">public</span>andWhere<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $where</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds one or more restrictions to the query results, forming a logical conjunction with any previously specified restrictions.<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u')
+        -&gt;from('users', 'u')
+        -&gt;where('u.username LIKE ?')
+        -&gt;andWhere('u.is_active = 1');
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$where</code> - The query restrictions.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createNamedParameter"/>
+            <h4><span class="label public">public</span>createNamedParameter<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">mixed</span><strong> $type</strong>, <span class="param-type">string</span><strong> $placeHolder</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new named parameter and bind the value $value to it.<pre>This method provides a shortcut for PDOStatement::bindValue
+when using prepared statements.
+The parameter $value specifies the value that you want to bind. If
+$placeholder is not provided bindValue() will automatically create a
+placeholder for you. An automatic placeholder will be of the name
+':dcValue1', ':dcValue2' etc.
+For more information see Example:
+&lt;code&gt;
+$value = 2;
+$q-&gt;eq( 'id', $q-&gt;bindValue( $value ) );
+$stmt = $q-&gt;executeQuery(); // executed with 'id = 2'
+&lt;/code&gt;
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$type</code> - </li>
+                <li><code>$placeHolder</code> - the name to bind with. The string must start with a colon ':'.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>the placeholder name used.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createPositionalParameter"/>
+            <h4><span class="label public">public</span>createPositionalParameter<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">mixed</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new positional parameter and bind the given value to it.<pre>Attention: If you are using positional parameters with the query builder you have
+to be very careful to bind all parameters in the order they appear in the SQL
+statement , otherwise they get bound in the wrong order which can lead to serious
+bugs in your code.
+
+Example:
+&lt;code&gt;
+ $qb = $conn-&gt;createQueryBuilder();
+ $qb-&gt;select('u.*')
+    -&gt;from('users', 'u')
+    -&gt;where('u.username = ' . $qb-&gt;createPositionalParameter('Foo', PDO::PARAM_STR))
+    -&gt;orWhere('u.username = ' . $qb-&gt;createPositionalParameter('Bar', PDO::PARAM_STR))
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$type</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="delete"/>
+            <h4><span class="label public">public</span>delete<span style="font-size:90%;">( <span class="param-type">string</span><strong> $delete</strong>, <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Turns the query being built into a bulk delete query that ranges over a certain table.<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;delete('users', 'u')
+        -&gt;where('u.id = :user_id');
+        -&gt;setParameter(':user_id', 1);
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$delete</code> - The table whose rows are subject to the deletion.</li>
+                <li><code>$alias</code> - The table alias used in the constructed query.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="execute"/>
+            <h4><span class="label public">public</span>execute<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Execute this query using the bound parameters and their types.<pre>Uses  for select statements and for insert, update and delete statements.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="expr"/>
+            <h4><span class="label public">public</span>expr<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets an ExpressionBuilder used for object-oriented construction of query expressions.<pre>This producer method is intended for convenient inline usage. Example:
+
+&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u')
+        -&gt;from('users', 'u')
+        -&gt;where($qb-&gt;expr()-&gt;eq('u.id', 1));
+&lt;/code&gt;
+
+For more complex expression construction, consider storing the expression
+builder object in a local variable.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="from"/>
+            <h4><span class="label public">public</span>from<span style="font-size:90%;">( <span class="param-type">string</span><strong> $from</strong>, <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create and add a query root corresponding to the table identified by the given alias, forming a cartesian product with any existing query roots.<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u.id')
+        -&gt;from('users', 'u')
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$from</code> - The table</li>
+                <li><code>$alias</code> - The alias of the table</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getConnection"/>
+            <h4><span class="label public">public</span>getConnection<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the associated DBAL Connection for this query builder.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFirstResult"/>
+            <h4><span class="label public">public</span>getFirstResult<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the position of the first result the query object was set to retrieve (the "offset").<pre>Returns NULL if  was not applied to this QueryBuilder.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The position of the first result.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMaxResults"/>
+            <h4><span class="label public">public</span>getMaxResults<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the maximum number of results the query object was set to retrieve (the "limit").<pre>Returns NULL if  was not applied to this query builder.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Maximum number of results.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getParameter"/>
+            <h4><span class="label public">public</span>getParameter<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $key</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a (previously set) query parameter of the query being constructed.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - The key (index or name) of the bound parameter.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The value of the bound parameter.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getParameters"/>
+            <h4><span class="label public">public</span>getParameters<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets all defined query parameters for the query being constructed.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The currently defined query parameters.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getQueryPart"/>
+            <h4><span class="label public">public</span>getQueryPart<span style="font-size:90%;">( <span class="param-type">string</span><strong> $queryPartName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get a query part by its name.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$queryPartName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>$queryPart</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getQueryParts"/>
+            <h4><span class="label public">public</span>getQueryParts<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all query parts.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>$sqlParts</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSQL"/>
+            <h4><span class="label public">public</span>getSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the complete SQL string formed by the current specifications of this QueryBuilder.<pre>&lt;code&gt;
+    $qb = $em-&gt;createQueryBuilder()
+        -&gt;select('u')
+        -&gt;from('User', 'u')
+    echo $qb-&gt;getSQL(); // SELECT u FROM User u
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The sql query string.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getState"/>
+            <h4><span class="label public">public</span>getState<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the state of this query builder instance.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Either QueryBuilder::STATE_DIRTY or QueryBuilder::STATE_CLEAN.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getType"/>
+            <h4><span class="label public">public</span>getType<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the type of the currently built query.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="groupBy"/>
+            <h4><span class="label public">public</span>groupBy<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $groupBy</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specifies a grouping over the results of the query.<pre>Replaces any previously specified groupings, if any.
+
+&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u.name')
+        -&gt;from('users', 'u')
+        -&gt;groupBy('u.id');
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$groupBy</code> - The grouping expression.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="having"/>
+            <h4><span class="label public">public</span>having<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $having</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specifies a restriction over the groups of the query.<pre>Replaces any previous having restrictions, if any.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$having</code> - The restriction over the groups.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="innerJoin"/>
+            <h4><span class="label public">public</span>innerJoin<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fromAlias</strong>, <span class="param-type">string</span><strong> $join</strong>, <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $condition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates and adds a join to the query.<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u.name')
+        -&gt;from('users', 'u')
+        -&gt;innerJoin('u', 'phonenumbers', 'p', 'p.is_primary = 1');
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fromAlias</code> - The alias that points to a from clause</li>
+                <li><code>$join</code> - The table name to join</li>
+                <li><code>$alias</code> - The alias of the join table</li>
+                <li><code>$condition</code> - The condition for the join</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="join"/>
+            <h4><span class="label public">public</span>join<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fromAlias</strong>, <span class="param-type">string</span><strong> $join</strong>, <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $condition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates and adds a join to the query.<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u.name')
+        -&gt;from('users', 'u')
+        -&gt;join('u', 'phonenumbers', 'p', 'p.is_primary = 1');
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fromAlias</code> - The alias that points to a from clause</li>
+                <li><code>$join</code> - The table name to join</li>
+                <li><code>$alias</code> - The alias of the join table</li>
+                <li><code>$condition</code> - The condition for the join</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="leftJoin"/>
+            <h4><span class="label public">public</span>leftJoin<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fromAlias</strong>, <span class="param-type">string</span><strong> $join</strong>, <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $condition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates and adds a left join to the query.<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u.name')
+        -&gt;from('users', 'u')
+        -&gt;leftJoin('u', 'phonenumbers', 'p', 'p.is_primary = 1');
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fromAlias</code> - The alias that points to a from clause</li>
+                <li><code>$join</code> - The table name to join</li>
+                <li><code>$alias</code> - The alias of the join table</li>
+                <li><code>$condition</code> - The condition for the join</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="orHaving"/>
+            <h4><span class="label public">public</span>orHaving<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $having</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a restriction over the groups of the query, forming a logical disjunction with any existing having restrictions.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$having</code> - The restriction to add.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="orWhere"/>
+            <h4><span class="label public">public</span>orWhere<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $where</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds one or more restrictions to the query results, forming a logical disjunction with any previously specified restrictions.<pre>&lt;code&gt;
+    $qb = $em-&gt;createQueryBuilder()
+        -&gt;select('u.name')
+        -&gt;from('users', 'u')
+        -&gt;where('u.id = 1')
+        -&gt;orWhere('u.id = 2');
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$where</code> - The WHERE statement</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>$qb</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="orderBy"/>
+            <h4><span class="label public">public</span>orderBy<span style="font-size:90%;">( <span class="param-type">string</span><strong> $sort</strong>, <span class="param-type">string</span><strong> $order</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specifies an ordering for the query results.<pre>Replaces any previously specified orderings, if any.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sort</code> - The ordering expression.</li>
+                <li><code>$order</code> - The ordering direction.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="resetQueryPart"/>
+            <h4><span class="label public">public</span>resetQueryPart<span style="font-size:90%;">( <span class="param-type">string</span><strong> $queryPartName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Reset single SQL part</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$queryPartName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="resetQueryParts"/>
+            <h4><span class="label public">public</span>resetQueryParts<span style="font-size:90%;">( <span class="param-type">array</span><strong> $queryPartNames</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Reset SQL parts</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$queryPartNames</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="rightJoin"/>
+            <h4><span class="label public">public</span>rightJoin<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fromAlias</strong>, <span class="param-type">string</span><strong> $join</strong>, <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $condition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates and adds a right join to the query.<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u.name')
+        -&gt;from('users', 'u')
+        -&gt;rightJoin('u', 'phonenumbers', 'p', 'p.is_primary = 1');
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fromAlias</code> - The alias that points to a from clause</li>
+                <li><code>$join</code> - The table name to join</li>
+                <li><code>$alias</code> - The alias of the join table</li>
+                <li><code>$condition</code> - The condition for the join</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="select"/>
+            <h4><span class="label public">public</span>select<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $select</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specifies an item that is to be returned in the query result.<pre>Replaces any previously specified selections, if any.
+
+&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u.id', 'p.id')
+        -&gt;from('users', 'u')
+        -&gt;leftJoin('u', 'phonenumbers', 'p', 'u.id = p.user_id');
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$select</code> - The selection expressions.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="set"/>
+            <h4><span class="label public">public</span>set<span style="font-size:90%;">( <span class="param-type">string</span><strong> $key</strong>, <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a new value for a column in a bulk update query.<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;update('users', 'u')
+        -&gt;set('u.password', md5('password'))
+        -&gt;where('u.id = ?');
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - The column to set.</li>
+                <li><code>$value</code> - The value, expression, placeholder, etc.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFirstResult"/>
+            <h4><span class="label public">public</span>setFirstResult<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $firstResult</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the position of the first result to retrieve (the "offset").</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$firstResult</code> - The first result to return.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setMaxResults"/>
+            <h4><span class="label public">public</span>setMaxResults<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $maxResults</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the maximum number of results to retrieve (the "limit").</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$maxResults</code> - The maximum number of results to retrieve.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setParameter"/>
+            <h4><span class="label public">public</span>setParameter<span style="font-size:90%;">( <span class="param-type"><span title="string|integer">string|integer</span></span><strong> $key</strong>, <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a query parameter for the query being constructed.<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u')
+        -&gt;from('users', 'u')
+        -&gt;where('u.id = :user_id')
+        -&gt;setParameter(':user_id', 1);
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - The parameter position or name.</li>
+                <li><code>$value</code> - The parameter value.</li>
+                <li><code>$type</code> - PDO::PARAM_*</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setParameters"/>
+            <h4><span class="label public">public</span>setParameters<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">Array</span><strong> $types</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets a collection of query parameters for the query being constructed.<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u')
+        -&gt;from('users', 'u')
+        -&gt;where('u.id = :user_id1 OR u.id = :user_id2')
+        -&gt;setParameters(array(
+            ':user_id1' =&gt; 1,
+            ':user_id2' =&gt; 2
+        ));
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$params</code> - The query parameters to set.</li>
+                <li><code>$types</code> - The query parameters types to set.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="update"/>
+            <h4><span class="label public">public</span>update<span style="font-size:90%;">( <span class="param-type">string</span><strong> $update</strong>, <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Turns the query being built into a bulk update query that ranges over a certain table<pre>&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;update('users', 'u')
+        -&gt;set('u.password', md5('password'))
+        -&gt;where('u.id = ?');
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$update</code> - The table whose rows are subject to the update.</li>
+                <li><code>$alias</code> - The table alias used in the constructed query.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="where"/>
+            <h4><span class="label public">public</span>where<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $predicates</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specifies one or more restrictions to the query result.<pre>Replaces any previously specified restrictions, if any.
+
+&lt;code&gt;
+    $qb = $conn-&gt;createQueryBuilder()
+        -&gt;select('u.name')
+        -&gt;from('users', 'u')
+        -&gt;where('u.id = ?');
+
+    // You can optionally programatically build and/or expressions
+    $qb = $conn-&gt;createQueryBuilder();
+
+    $or = $qb-&gt;expr()-&gt;orx();
+    $or-&gt;add($qb-&gt;expr()-&gt;eq('u.id', 1));
+    $or-&gt;add($qb-&gt;expr()-&gt;eq('u.id', 2));
+
+    $qb-&gt;update('users', 'u')
+        -&gt;set('u.password', md5('password'))
+        -&gt;where($or);
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$predicates</code> - The restriction predicates.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>This QueryBuilder instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSQLForDelete"/>
+            <h4><span class="label private">private</span>getSQLForDelete<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Converts this instance into a DELETE string in SQL.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSQLForSelect"/>
+            <h4><span class="label private">private</span>getSQLForSelect<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getSQLForUpdate"/>
+            <h4><span class="label private">private</span>getSQLForUpdate<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Converts this instance into an UPDATE string in SQL.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

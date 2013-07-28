@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Swift_Plugins_PopBeforeSmtpPlugin - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_connection">$_connection</a>
+          </li>
+          <li>
+            <a href="#_host">$_host</a>
+          </li>
+          <li>
+            <a href="#_port">$_port</a>
+          </li>
+          <li>
+            <a href="#_crypto">$_crypto</a>
+          </li>
+          <li>
+            <a href="#_username">$_username</a>
+          </li>
+          <li>
+            <a href="#_password">$_password</a>
+          </li>
+          <li>
+            <a href="#_socket">$_socket</a>
+          </li>
+          <li>
+            <a href="#_timeout">$_timeout</a>
+          </li>
+          <li>
+            <a href="#_transport">$_transport</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_assertOk">_assertOk</a>
+          </li>
+          <li>
+            <a href="#_command">_command</a>
+          </li>
+          <li>
+            <a href="#_getHostString">_getHostString</a>
+          </li>
+          <li>
+            <a href="#beforeTransportStarted">beforeTransportStarted</a>
+          </li>
+          <li>
+            <a href="#beforeTransportStopped">beforeTransportStopped</a>
+          </li>
+          <li>
+            <a href="#bindSmtp">bindSmtp</a>
+          </li>
+          <li>
+            <a href="#connect">connect</a>
+          </li>
+          <li>
+            <a href="#disconnect">disconnect</a>
+          </li>
+          <li>
+            <a href="#newInstance">newInstance</a>
+          </li>
+          <li>
+            <a href="#setConnection">setConnection</a>
+          </li>
+          <li>
+            <a href="#setPassword">setPassword</a>
+          </li>
+          <li>
+            <a href="#setTimeout">setTimeout</a>
+          </li>
+          <li>
+            <a href="#setUsername">setUsername</a>
+          </li>
+          <li>
+            <a href="#transportStarted">transportStarted</a>
+          </li>
+          <li>
+            <a href="#transportStopped">transportStopped</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Swift_Plugins_PopBeforeSmtpPlugin</h2>
+        <div class="file-notice">
+          <p>Makes sure a connection to a POP3 host has been established prior to connecting to SMTP.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Chris Corbyn</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Swift_Events_TransportChangeListener.xhtml">Swift_Events_TransportChangeListener</a>
+          </li>
+          <li>
+            <a href="../interfaces/Swift_Plugins_Pop_Pop3Connection.xhtml">Swift_Plugins_Pop_Pop3Connection</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_connection"/>
+            <h4><span class="label private">private</span>
+                $_connection</h4>
+            <ul class="varlist">
+              <li>A delegate connection to use (mostly a test hook)</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_host"/>
+            <h4><span class="label private">private</span>
+                $_host</h4>
+            <ul class="varlist">
+              <li>Hostname of the POP3 server</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_port"/>
+            <h4><span class="label private">private</span>
+                $_port</h4>
+            <ul class="varlist">
+              <li>Port number to connect on</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_crypto"/>
+            <h4><span class="label private">private</span>
+                $_crypto</h4>
+            <ul class="varlist">
+              <li>Encryption type to use (if any)</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_username"/>
+            <h4><span class="label private">private</span>
+                $_username</h4>
+            <ul class="varlist">
+              <li>Username to use (if any)</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_password"/>
+            <h4><span class="label private">private</span>
+                $_password</h4>
+            <ul class="varlist">
+              <li>Password to use (if any)</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_socket"/>
+            <h4><span class="label private">private</span>
+                $_socket</h4>
+            <ul class="varlist">
+              <li>Established connection via TCP socket</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_timeout"/>
+            <h4><span class="label private">private</span>
+                $_timeout</h4>
+            <ul class="varlist">
+              <li>Connect timeout in seconds</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_transport"/>
+            <h4><span class="label private">private</span>
+                $_transport</h4>
+            <ul class="varlist">
+              <li>SMTP Transport to bind to</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong>, <span class="param-type">integer</span><strong> $port</strong>, <span class="param-type">string</span><strong> $crypto</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new PopBeforeSmtpPlugin for $host and $port.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$host</code> - </li>
+                <li><code>$port</code> - </li>
+                <li><code>$crypto</code> - as "tls" or "ssl"</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="beforeTransportStarted"/>
+            <h4><span class="label public">public</span>beforeTransportStarted<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Events_TransportChangeEvent">Swift_Events_TransportChangeEvent</span></span><strong> $evt</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Invoked just before a Transport is started.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$evt</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="beforeTransportStopped"/>
+            <h4><span class="label public">public</span>beforeTransportStopped<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Events_TransportChangeEvent">Swift_Events_TransportChangeEvent</span></span><strong> $evt</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Not used.</li>
+            </p>
+          </li>
+          <li>
+            <a name="bindSmtp"/>
+            <h4><span class="label public">public</span>bindSmtp<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Transport">Swift_Transport</span></span><strong> $smtp</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Bind this plugin to a specific SMTP transport instance.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="connect"/>
+            <h4><span class="label public">public</span>connect<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Connect to the POP3 host and authenticate.</li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_Plugins_Pop_Pop3Exception if connection fails</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="disconnect"/>
+            <h4><span class="label public">public</span>disconnect<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Disconnect from the POP3 host.</li>
+            </p>
+          </li>
+          <li>
+            <a name="newInstance"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>newInstance<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong>, <span class="param-type">integer</span><strong> $port</strong>, <span class="param-type">string</span><strong> $crypto</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new PopBeforeSmtpPlugin for $host and $port.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$host</code> - </li>
+                <li><code>$port</code> - </li>
+                <li><code>$crypto</code> - as "tls" or "ssl"</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setConnection"/>
+            <h4><span class="label public">public</span>setConnection<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Plugins_Pop_Pop3Connection">Swift_Plugins_Pop_Pop3Connection</span></span><strong> $connection</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set a Pop3Connection to delegate to instead of connecting directly.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$connection</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setPassword"/>
+            <h4><span class="label public">public</span>setPassword<span style="font-size:90%;">( <span class="param-type">string</span><strong> $password</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the password to use when connecting (if needed).</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$password</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setTimeout"/>
+            <h4><span class="label public">public</span>setTimeout<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $timeout</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the connection timeout in seconds (default 10).</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$timeout</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setUsername"/>
+            <h4><span class="label public">public</span>setUsername<span style="font-size:90%;">( <span class="param-type">string</span><strong> $username</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the username to use when connecting (if needed).</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$username</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="transportStarted"/>
+            <h4><span class="label public">public</span>transportStarted<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Events_TransportChangeEvent">Swift_Events_TransportChangeEvent</span></span><strong> $evt</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Not used.</li>
+            </p>
+          </li>
+          <li>
+            <a name="transportStopped"/>
+            <h4><span class="label public">public</span>transportStopped<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Events_TransportChangeEvent">Swift_Events_TransportChangeEvent</span></span><strong> $evt</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Not used.</li>
+            </p>
+          </li>
+          <li>
+            <a name="_assertOk"/>
+            <h4><span class="label private">private</span>_assertOk<span style="font-size:90%;">( <span class="param-type"/><strong> $response</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="_command"/>
+            <h4><span class="label private">private</span>_command<span style="font-size:90%;">( <span class="param-type"/><strong> $command</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="_getHostString"/>
+            <h4><span class="label private">private</span>_getHostString<span style="font-size:90%;">(  )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

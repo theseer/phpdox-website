@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\ORM\Query\Exec\MultiTableUpdateExecutor - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_createTempTableSql">$_createTempTableSql</a>
+          </li>
+          <li>
+            <a href="#_dropTempTableSql">$_dropTempTableSql</a>
+          </li>
+          <li>
+            <a href="#_insertSql">$_insertSql</a>
+          </li>
+          <li>
+            <a href="#_sqlParameters">$_sqlParameters</a>
+          </li>
+          <li>
+            <a href="#_numParametersInUpdateClause">$_numParametersInUpdateClause</a>
+          </li>
+          <li>
+            <a href="#_sqlStatements">$_sqlStatements</a>
+          </li>
+          <li>
+            <a href="#queryCacheProfile">$queryCacheProfile</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#execute">execute</a>
+          </li>
+          <li>
+            <a href="#execute">execute</a>
+          </li>
+          <li>
+            <a href="#getSqlStatements">getSqlStatements</a>
+          </li>
+          <li>
+            <a href="#setQueryCacheProfile">setQueryCacheProfile</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\ORM\Query\Exec\</span>MultiTableUpdateExecutor</h2>
+        <div class="file-notice">
+          <p>Executes the SQL statements for bulk DQL UPDATE statements on classes in Class Table Inheritance (JOINED).</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_createTempTableSql"/>
+            <h4><span class="label private">private</span>
+                $_createTempTableSql</h4>
+          </li>
+          <li>
+            <a name="_dropTempTableSql"/>
+            <h4><span class="label private">private</span>
+                $_dropTempTableSql</h4>
+          </li>
+          <li>
+            <a name="_insertSql"/>
+            <h4><span class="label private">private</span>
+                $_insertSql</h4>
+          </li>
+          <li>
+            <a name="_sqlParameters"/>
+            <h4><span class="label private">private</span>
+                $_sqlParameters</h4>
+          </li>
+          <li>
+            <a name="_numParametersInUpdateClause"/>
+            <h4><span class="label private">private</span>
+                $_numParametersInUpdateClause</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="Doctrine\ORM\Query\Exec\AST\Node">Node</span></span><strong> $AST</strong>, <span class="param-type"><span title="SqlWalker">SqlWalker</span></span><strong> $sqlWalker</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initializes a new &lt;tt&gt;MultiTableUpdateExecutor&lt;/tt&gt;.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$AST</code> - The root AST node of the DQL query.</li>
+                <li><code>$sqlWalker</code> - The walker used for SQL generation from the AST.</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="execute"/>
+            <h4><span class="label public">public</span>execute<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Connection.xhtml">Doctrine\DBAL\Connection</a></span><strong> $conn</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">Array</span><strong> $types</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="execute"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>execute<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Connection.xhtml">Doctrine\DBAL\Connection</a></span><strong> $conn</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">Array</span><strong> $types</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes all sql statements.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$conn</code> - The database connection that is used to execute the queries.</li>
+                <li><code>$params</code> - The parameters.</li>
+                <li><code>$types</code> - The parameter types.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSqlStatements"/>
+            <h4><span class="label public">public</span>getSqlStatements<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL statements that are executed by the executor.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>All the SQL update statements.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setQueryCacheProfile"/>
+            <h4><span class="label public">public</span>setQueryCacheProfile<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Cache_QueryCacheProfile.xhtml">Doctrine\DBAL\Cache\QueryCacheProfile</a></span><strong> $qcp</strong> )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

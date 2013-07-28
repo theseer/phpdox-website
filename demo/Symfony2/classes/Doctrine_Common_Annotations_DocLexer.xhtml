@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\Common\Annotations\DocLexer - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#T_NONE">T_NONE</a>
+          </li>
+          <li>
+            <a href="#T_INTEGER">T_INTEGER</a>
+          </li>
+          <li>
+            <a href="#T_STRING">T_STRING</a>
+          </li>
+          <li>
+            <a href="#T_FLOAT">T_FLOAT</a>
+          </li>
+          <li>
+            <a href="#T_IDENTIFIER">T_IDENTIFIER</a>
+          </li>
+          <li>
+            <a href="#T_AT">T_AT</a>
+          </li>
+          <li>
+            <a href="#T_CLOSE_CURLY_BRACES">T_CLOSE_CURLY_BRACES</a>
+          </li>
+          <li>
+            <a href="#T_CLOSE_PARENTHESIS">T_CLOSE_PARENTHESIS</a>
+          </li>
+          <li>
+            <a href="#T_COMMA">T_COMMA</a>
+          </li>
+          <li>
+            <a href="#T_EQUALS">T_EQUALS</a>
+          </li>
+          <li>
+            <a href="#T_FALSE">T_FALSE</a>
+          </li>
+          <li>
+            <a href="#T_NAMESPACE_SEPARATOR">T_NAMESPACE_SEPARATOR</a>
+          </li>
+          <li>
+            <a href="#T_OPEN_CURLY_BRACES">T_OPEN_CURLY_BRACES</a>
+          </li>
+          <li>
+            <a href="#T_OPEN_PARENTHESIS">T_OPEN_PARENTHESIS</a>
+          </li>
+          <li>
+            <a href="#T_TRUE">T_TRUE</a>
+          </li>
+          <li>
+            <a href="#T_NULL">T_NULL</a>
+          </li>
+          <li>
+            <a href="#T_COLON">T_COLON</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#noCase">$noCase</a>
+          </li>
+          <li>
+            <a href="#withCase">$withCase</a>
+          </li>
+          <li>
+            <a href="#lookahead">$lookahead</a>
+          </li>
+          <li>
+            <a href="#token">$token</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#getCatchablePatterns">getCatchablePatterns</a>
+          </li>
+          <li>
+            <a href="#getCatchablePatterns">getCatchablePatterns</a>
+          </li>
+          <li>
+            <a href="#getLiteral">getLiteral</a>
+          </li>
+          <li>
+            <a href="#getNonCatchablePatterns">getNonCatchablePatterns</a>
+          </li>
+          <li>
+            <a href="#getNonCatchablePatterns">getNonCatchablePatterns</a>
+          </li>
+          <li>
+            <a href="#getType">getType</a>
+          </li>
+          <li>
+            <a href="#getType">getType</a>
+          </li>
+          <li>
+            <a href="#glimpse">glimpse</a>
+          </li>
+          <li>
+            <a href="#isA">isA</a>
+          </li>
+          <li>
+            <a href="#isNextToken">isNextToken</a>
+          </li>
+          <li>
+            <a href="#isNextTokenAny">isNextTokenAny</a>
+          </li>
+          <li>
+            <a href="#moveNext">moveNext</a>
+          </li>
+          <li>
+            <a href="#peek">peek</a>
+          </li>
+          <li>
+            <a href="#reset">reset</a>
+          </li>
+          <li>
+            <a href="#resetPeek">resetPeek</a>
+          </li>
+          <li>
+            <a href="#resetPosition">resetPosition</a>
+          </li>
+          <li>
+            <a href="#scan">scan</a>
+          </li>
+          <li>
+            <a href="#setInput">setInput</a>
+          </li>
+          <li>
+            <a href="#skipUntil">skipUntil</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\Common\Annotations\</span>DocLexer</h2>
+        <div class="file-notice">
+          <p>Simple lexer for docblock annotations.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+          <li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
+          <li><b>Author: </b>Jonathan Wage &lt;jonwage@gmail.com&gt;</li>
+          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
+          <li><b>Author: </b>Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="T_NONE"/>T_NONE = 1<hr/></li>
+          <li><a name="T_INTEGER"/>T_INTEGER = 2<hr/></li>
+          <li><a name="T_STRING"/>T_STRING = 3<hr/></li>
+          <li><a name="T_FLOAT"/>T_FLOAT = 4<hr/></li>
+          <li><a name="T_IDENTIFIER"/>T_IDENTIFIER = 100<hr/></li>
+          <li><a name="T_AT"/>T_AT = 101<hr/></li>
+          <li><a name="T_CLOSE_CURLY_BRACES"/>T_CLOSE_CURLY_BRACES = 102<hr/></li>
+          <li><a name="T_CLOSE_PARENTHESIS"/>T_CLOSE_PARENTHESIS = 103<hr/></li>
+          <li><a name="T_COMMA"/>T_COMMA = 104<hr/></li>
+          <li><a name="T_EQUALS"/>T_EQUALS = 105<hr/></li>
+          <li><a name="T_FALSE"/>T_FALSE = 106<hr/></li>
+          <li><a name="T_NAMESPACE_SEPARATOR"/>T_NAMESPACE_SEPARATOR = 107<hr/></li>
+          <li><a name="T_OPEN_CURLY_BRACES"/>T_OPEN_CURLY_BRACES = 108<hr/></li>
+          <li><a name="T_OPEN_PARENTHESIS"/>T_OPEN_PARENTHESIS = 109<hr/></li>
+          <li><a name="T_TRUE"/>T_TRUE = 110<hr/></li>
+          <li><a name="T_NULL"/>T_NULL = 111<hr/></li>
+          <li><a name="T_COLON"/>T_COLON = 112<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="noCase"/>
+            <h4><span class="label protected">protected</span>
+                $noCase</h4>
+          </li>
+          <li>
+            <a name="withCase"/>
+            <h4><span class="label protected">protected</span>
+                $withCase</h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getLiteral"/>
+            <h4><span class="label public">public</span>getLiteral<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $token</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the literal for a given token.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$token</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="glimpse"/>
+            <h4><span class="label public">public</span>glimpse<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Peeks at the next token, returns it and immediately resets the peek.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The next token or NULL if there are no more tokens ahead.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isA"/>
+            <h4><span class="label public">public</span>isA<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">integer</span><strong> $token</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks if given value is identical to the given token</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+                <li><code>$token</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isNextToken"/>
+            <h4><span class="label public">public</span>isNextToken<span style="font-size:90%;">( <span class="param-type"><span title="integer|string">integer|string</span></span><strong> $token</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether a given token matches the current lookahead.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$token</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isNextTokenAny"/>
+            <h4><span class="label public">public</span>isNextTokenAny<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $tokens</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether any of the given tokens matches the current lookahead</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tokens</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="moveNext"/>
+            <h4><span class="label public">public</span>moveNext<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Moves to the next token in the input string.<pre>A token is an associative array containing three items:
+ - 'value'    : the string value of the token in the input string
+ - 'type'     : the type of the token (identifier, numeric, string, input
+                parameter, none)
+ - 'position' : the position of the token in the input string</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>the next token; null if there is no more tokens left</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="peek"/>
+            <h4><span class="label public">public</span>peek<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Moves the lookahead token forward.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>| null The next token or NULL if there are no more tokens ahead.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="reset"/>
+            <h4><span class="label public">public</span>reset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Resets the lexer.</li>
+            </p>
+          </li>
+          <li>
+            <a name="resetPeek"/>
+            <h4><span class="label public">public</span>resetPeek<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Resets the peek pointer to 0.</li>
+            </p>
+          </li>
+          <li>
+            <a name="resetPosition"/>
+            <h4><span class="label public">public</span>resetPosition<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $position</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Resets the lexer position on the input to the given position.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$position</code> - Position to place the lexical scanner</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setInput"/>
+            <h4><span class="label public">public</span>setInput<span style="font-size:90%;">( <span class="param-type">string</span><strong> $input</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the input data to be tokenized.<pre>The Lexer is immediately reset and the new input tokenized.
+Any unprocessed tokens from any previous input are lost.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$input</code> - The input to be tokenized.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="skipUntil"/>
+            <h4><span class="label public">public</span>skipUntil<span style="font-size:90%;">( <span class="param-type">string</span><strong> $type</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Tells the lexer to skip input tokens until it sees a token with the given value.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$type</code> - The token type to skip until.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCatchablePatterns"/>
+            <h4><span class="label protected">protected</span>getCatchablePatterns<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getCatchablePatterns"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>getCatchablePatterns<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Lexical catchable patterns.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNonCatchablePatterns"/>
+            <h4><span class="label protected">protected</span>getNonCatchablePatterns<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getNonCatchablePatterns"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>getNonCatchablePatterns<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Lexical non-catchable patterns.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getType"/>
+            <h4><span class="label protected">protected</span>getType<span style="font-size:90%;">( <span class="param-type">string</span><strong> &amp;$value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getType"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>getType<span style="font-size:90%;">( <span class="param-type">string</span><strong> &amp;$value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Retrieve token type. Also processes the token value if necessary.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="scan"/>
+            <h4><span class="label protected">protected</span>scan<span style="font-size:90%;">( <span class="param-type">string</span><strong> $input</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Scans the input string for tokens.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$input</code> - a query string</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

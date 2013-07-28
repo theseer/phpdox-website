@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Swift_Transport_AbstractSmtpTransport - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_buffer">$_buffer</a>
+          </li>
+          <li>
+            <a href="#_started">$_started</a>
+          </li>
+          <li>
+            <a href="#_domain">$_domain</a>
+          </li>
+          <li>
+            <a href="#_eventDispatcher">$_eventDispatcher</a>
+          </li>
+          <li>
+            <a href="#_sourceIp">$_sourceIp</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__destruct">__destruct</a>
+          </li>
+          <li>
+            <a href="#_assertResponseCode">_assertResponseCode</a>
+          </li>
+          <li>
+            <a href="#_doDataCommand">_doDataCommand</a>
+          </li>
+          <li>
+            <a href="#_doHeloCommand">_doHeloCommand</a>
+          </li>
+          <li>
+            <a href="#_doMailFromCommand">_doMailFromCommand</a>
+          </li>
+          <li>
+            <a href="#_doMailTransaction">_doMailTransaction</a>
+          </li>
+          <li>
+            <a href="#_doRcptToCommand">_doRcptToCommand</a>
+          </li>
+          <li>
+            <a href="#_getBufferParams">_getBufferParams</a>
+          </li>
+          <li>
+            <a href="#_getFullResponse">_getFullResponse</a>
+          </li>
+          <li>
+            <a href="#_getReversePath">_getReversePath</a>
+          </li>
+          <li>
+            <a href="#_isFqdn">_isFqdn</a>
+          </li>
+          <li>
+            <a href="#_lookupHostname">_lookupHostname</a>
+          </li>
+          <li>
+            <a href="#_readGreeting">_readGreeting</a>
+          </li>
+          <li>
+            <a href="#_sendBcc">_sendBcc</a>
+          </li>
+          <li>
+            <a href="#_sendCc">_sendCc</a>
+          </li>
+          <li>
+            <a href="#_sendTo">_sendTo</a>
+          </li>
+          <li>
+            <a href="#_streamMessage">_streamMessage</a>
+          </li>
+          <li>
+            <a href="#_throwException">_throwException</a>
+          </li>
+          <li>
+            <a href="#executeCommand">executeCommand</a>
+          </li>
+          <li>
+            <a href="#getBuffer">getBuffer</a>
+          </li>
+          <li>
+            <a href="#getLocalDomain">getLocalDomain</a>
+          </li>
+          <li>
+            <a href="#getSourceIp">getSourceIp</a>
+          </li>
+          <li>
+            <a href="#isStarted">isStarted</a>
+          </li>
+          <li>
+            <a href="#registerPlugin">registerPlugin</a>
+          </li>
+          <li>
+            <a href="#reset">reset</a>
+          </li>
+          <li>
+            <a href="#send">send</a>
+          </li>
+          <li>
+            <a href="#setLocalDomain">setLocalDomain</a>
+          </li>
+          <li>
+            <a href="#setSourceIp">setSourceIp</a>
+          </li>
+          <li>
+            <a href="#start">start</a>
+          </li>
+          <li>
+            <a href="#stop">stop</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Swift_Transport_AbstractSmtpTransport</h2>
+        <div class="file-notice">
+          <p>Sends Messages over SMTP.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Chris Corbyn</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Swift_Transport.xhtml">Swift_Transport</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_buffer"/>
+            <h4><span class="label protected">protected</span>
+                $_buffer</h4>
+            <ul class="varlist">
+              <li>Input-Output buffer for sending/receiving SMTP commands and responses</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_started"/>
+            <h4><span class="label protected">protected</span>
+                $_started</h4>
+            <ul class="varlist">
+              <li>Connection status</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_domain"/>
+            <h4><span class="label protected">protected</span>
+                $_domain</h4>
+            <ul class="varlist">
+              <li>The domain name to use in HELO command</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_eventDispatcher"/>
+            <h4><span class="label protected">protected</span>
+                $_eventDispatcher</h4>
+            <ul class="varlist">
+              <li>The event dispatching layer</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_sourceIp"/>
+            <h4><span class="label protected">protected</span>
+                $_sourceIp</h4>
+            <ul class="varlist">
+              <li>Source Ip</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Transport_IoBuffer">Swift_Transport_IoBuffer</span></span><strong> $buf</strong>, <span class="param-type"><span title="\\Swift_Events_EventDispatcher">Swift_Events_EventDispatcher</span></span><strong> $dispatcher</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a new EsmtpTransport using the given I/O buffer.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$buf</code> - </li>
+                <li><code>$dispatcher</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Destructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__destruct"/>
+            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Destructor.</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="executeCommand"/>
+            <h4><span class="label public">public</span>executeCommand<span style="font-size:90%;">( <span class="param-type">string</span><strong> $command</strong>, <span class="param-type">Array</span><strong> $codes</strong>, <span class="param-type">array</span><strong> &amp;$failures</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Run a command against the buffer, expecting the given response codes.<pre>If no response codes are given, the response will not be validated.
+If codes are given, an exception will be thrown on an invalid response.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$command</code> - </li>
+                <li><code>$codes</code> - </li>
+                <li><code>$failures</code> - An array of failures by-reference</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBuffer"/>
+            <h4><span class="label public">public</span>getBuffer<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the IoBuffer where read/writes are occurring.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLocalDomain"/>
+            <h4><span class="label public">public</span>getLocalDomain<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the name of the domain Swift will identify as.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSourceIp"/>
+            <h4><span class="label public">public</span>getSourceIp<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the IP used to connect to the destination</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isStarted"/>
+            <h4><span class="label public">public</span>isStarted<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Test if an SMTP connection has been established.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerPlugin"/>
+            <h4><span class="label public">public</span>registerPlugin<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Events_EventListener">Swift_Events_EventListener</span></span><strong> $plugin</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register a plugin.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$plugin</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="reset"/>
+            <h4><span class="label public">public</span>reset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Reset the current mail transaction.</li>
+            </p>
+          </li>
+          <li>
+            <a name="send"/>
+            <h4><span class="label public">public</span>send<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_Message">Swift_Mime_Message</span></span><strong> $message</strong>, <span class="param-type">array</span><strong> &amp;$failedRecipients</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send the given Message.<pre>Recipient/sender data will be retrieved from the Message API.
+The return value is the number of recipients who were accepted for delivery.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$message</code> - </li>
+                <li><code>$failedRecipients</code> - An array of failures by-reference</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setLocalDomain"/>
+            <h4><span class="label public">public</span>setLocalDomain<span style="font-size:90%;">( <span class="param-type">string</span><strong> $domain</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the name of the local domain which Swift will identify itself as.<pre>This should be a fully-qualified domain name and should be truly the domain
+you're using.
+
+If your server doesn't have a domain name, use the IP in square
+brackets (i.e. [127.0.0.1]).</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$domain</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSourceIp"/>
+            <h4><span class="label public">public</span>setSourceIp<span style="font-size:90%;">( <span class="param-type">string</span><strong> $source</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the source IP.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$source</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="start"/>
+            <h4><span class="label public">public</span>start<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Start the SMTP connection.</li>
+            </p>
+          </li>
+          <li>
+            <a name="stop"/>
+            <h4><span class="label public">public</span>stop<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Stop the SMTP connection.</li>
+            </p>
+          </li>
+          <li>
+            <a name="_assertResponseCode"/>
+            <h4><span class="label protected">protected</span>_assertResponseCode<span style="font-size:90%;">( <span class="param-type"/><strong> $response</strong>, <span class="param-type"/><strong> $wanted</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Throws an Exception if a response code is incorrect</li>
+            </p>
+          </li>
+          <li>
+            <a name="_doDataCommand"/>
+            <h4><span class="label protected">protected</span>_doDataCommand<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send the DATA command</li>
+            </p>
+          </li>
+          <li>
+            <a name="_doHeloCommand"/>
+            <h4><span class="label protected">protected</span>_doHeloCommand<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send the HELO welcome</li>
+            </p>
+          </li>
+          <li>
+            <a name="_doMailFromCommand"/>
+            <h4><span class="label protected">protected</span>_doMailFromCommand<span style="font-size:90%;">( <span class="param-type"/><strong> $address</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send the MAIL FROM command</li>
+            </p>
+          </li>
+          <li>
+            <a name="_doRcptToCommand"/>
+            <h4><span class="label protected">protected</span>_doRcptToCommand<span style="font-size:90%;">( <span class="param-type"/><strong> $address</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send the RCPT TO command</li>
+            </p>
+          </li>
+          <li>
+            <a name="_getBufferParams"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>_getBufferParams<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return an array of params for the Buffer</li>
+            </p>
+          </li>
+          <li>
+            <a name="_getFullResponse"/>
+            <h4><span class="label protected">protected</span>_getFullResponse<span style="font-size:90%;">( <span class="param-type"/><strong> $seq</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get an entire multi-line response using its sequence number</li>
+            </p>
+          </li>
+          <li>
+            <a name="_getReversePath"/>
+            <h4><span class="label protected">protected</span>_getReversePath<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_Message">Swift_Mime_Message</span></span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Determine the best-use reverse path for this message</li>
+            </p>
+          </li>
+          <li>
+            <a name="_readGreeting"/>
+            <h4><span class="label protected">protected</span>_readGreeting<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Read the opening SMTP greeting</li>
+            </p>
+          </li>
+          <li>
+            <a name="_streamMessage"/>
+            <h4><span class="label protected">protected</span>_streamMessage<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_Message">Swift_Mime_Message</span></span><strong> $message</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Stream the contents of the message over the buffer</li>
+            </p>
+          </li>
+          <li>
+            <a name="_throwException"/>
+            <h4><span class="label protected">protected</span>_throwException<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_TransportException">Swift_TransportException</span></span><strong> $e</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Throw a TransportException, first sending it to any listeners</li>
+            </p>
+          </li>
+          <li>
+            <a name="_doMailTransaction"/>
+            <h4><span class="label private">private</span>_doMailTransaction<span style="font-size:90%;">( <span class="param-type"/><strong> $message</strong>, <span class="param-type"/><strong> $reversePath</strong>, <span class="param-type">Array</span><strong> $recipients</strong>, <span class="param-type">Array</span><strong> &amp;$failedRecipients</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send an email to the given recipients from the given reverse path</li>
+            </p>
+          </li>
+          <li>
+            <a name="_isFqdn"/>
+            <h4><span class="label private">private</span>_isFqdn<span style="font-size:90%;">( <span class="param-type"/><strong> $hostname</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Determine is the $hostname is a fully-qualified name</li>
+            </p>
+          </li>
+          <li>
+            <a name="_lookupHostname"/>
+            <h4><span class="label private">private</span>_lookupHostname<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Try to determine the hostname of the server this is run on</li>
+            </p>
+          </li>
+          <li>
+            <a name="_sendBcc"/>
+            <h4><span class="label private">private</span>_sendBcc<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_Message">Swift_Mime_Message</span></span><strong> $message</strong>, <span class="param-type"/><strong> $reversePath</strong>, <span class="param-type">Array</span><strong> $bcc</strong>, <span class="param-type">Array</span><strong> &amp;$failedRecipients</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send a message to all Bcc: recipients</li>
+            </p>
+          </li>
+          <li>
+            <a name="_sendCc"/>
+            <h4><span class="label private">private</span>_sendCc<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_Message">Swift_Mime_Message</span></span><strong> $message</strong>, <span class="param-type"/><strong> $reversePath</strong>, <span class="param-type">Array</span><strong> $cc</strong>, <span class="param-type">Array</span><strong> &amp;$failedRecipients</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send a message to the given Cc: recipients</li>
+            </p>
+          </li>
+          <li>
+            <a name="_sendTo"/>
+            <h4><span class="label private">private</span>_sendTo<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_Message">Swift_Mime_Message</span></span><strong> $message</strong>, <span class="param-type"/><strong> $reversePath</strong>, <span class="param-type">Array</span><strong> $to</strong>, <span class="param-type">Array</span><strong> &amp;$failedRecipients</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Send a message to the given To: recipients</li>
+            </p>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

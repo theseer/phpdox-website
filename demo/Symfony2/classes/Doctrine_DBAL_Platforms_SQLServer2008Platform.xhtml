@@ -1,0 +1,4326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\DBAL\Platforms\SQLServer2008Platform - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_getAlterTableIndexForeignKeySQL">_getAlterTableIndexForeignKeySQL</a>
+          </li>
+          <li>
+            <a href="#_getCommonIntegerTypeDeclarationSQL">_getCommonIntegerTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#_getCommonIntegerTypeDeclarationSQL">_getCommonIntegerTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#_getCreateTableSQL">_getCreateTableSQL</a>
+          </li>
+          <li>
+            <a href="#_getCreateTableSQL">_getCreateTableSQL</a>
+          </li>
+          <li>
+            <a href="#_getTransactionIsolationLevelSQL">_getTransactionIsolationLevelSQL</a>
+          </li>
+          <li>
+            <a href="#appendLockHint">appendLockHint</a>
+          </li>
+          <li>
+            <a href="#appendLockHint">appendLockHint</a>
+          </li>
+          <li>
+            <a href="#canEmulateSchemas">canEmulateSchemas</a>
+          </li>
+          <li>
+            <a href="#convertBooleans">convertBooleans</a>
+          </li>
+          <li>
+            <a href="#convertBooleans">convertBooleans</a>
+          </li>
+          <li>
+            <a href="#createSavePoint">createSavePoint</a>
+          </li>
+          <li>
+            <a href="#createSavePoint">createSavePoint</a>
+          </li>
+          <li>
+            <a href="#doModifyLimitQuery">doModifyLimitQuery</a>
+          </li>
+          <li>
+            <a href="#doModifyLimitQuery">doModifyLimitQuery</a>
+          </li>
+          <li>
+            <a href="#fixSchemaElementName">fixSchemaElementName</a>
+          </li>
+          <li>
+            <a href="#getAcosExpression">getAcosExpression</a>
+          </li>
+          <li>
+            <a href="#getAdvancedForeignKeyOptionsSQL">getAdvancedForeignKeyOptionsSQL</a>
+          </li>
+          <li>
+            <a href="#getAlterSequenceSQL">getAlterSequenceSQL</a>
+          </li>
+          <li>
+            <a href="#getAlterTableSQL">getAlterTableSQL</a>
+          </li>
+          <li>
+            <a href="#getAlterTableSQL">getAlterTableSQL</a>
+          </li>
+          <li>
+            <a href="#getAvgExpression">getAvgExpression</a>
+          </li>
+          <li>
+            <a href="#getBetweenExpression">getBetweenExpression</a>
+          </li>
+          <li>
+            <a href="#getBigIntTypeDeclarationSQL">getBigIntTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getBigIntTypeDeclarationSQL">getBigIntTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getBitAndComparisonExpression">getBitAndComparisonExpression</a>
+          </li>
+          <li>
+            <a href="#getBitOrComparisonExpression">getBitOrComparisonExpression</a>
+          </li>
+          <li>
+            <a href="#getBlobTypeDeclarationSQL">getBlobTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getBlobTypeDeclarationSQL">getBlobTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getBooleanTypeDeclarationSQL">getBooleanTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getBooleanTypeDeclarationSQL">getBooleanTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getCheckDeclarationSQL">getCheckDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getClobTypeDeclarationSQL">getClobTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getClobTypeDeclarationSQL">getClobTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getClobTypeDeclarationSQL">getClobTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getColumnCharsetDeclarationSQL">getColumnCharsetDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getColumnCollationDeclarationSQL">getColumnCollationDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getColumnComment">getColumnComment</a>
+          </li>
+          <li>
+            <a href="#getColumnDeclarationListSQL">getColumnDeclarationListSQL</a>
+          </li>
+          <li>
+            <a href="#getColumnDeclarationSQL">getColumnDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getCommentOnColumnSQL">getCommentOnColumnSQL</a>
+          </li>
+          <li>
+            <a href="#getConcatExpression">getConcatExpression</a>
+          </li>
+          <li>
+            <a href="#getConcatExpression">getConcatExpression</a>
+          </li>
+          <li>
+            <a href="#getCosExpression">getCosExpression</a>
+          </li>
+          <li>
+            <a href="#getCountExpression">getCountExpression</a>
+          </li>
+          <li>
+            <a href="#getCreateConstraintSQL">getCreateConstraintSQL</a>
+          </li>
+          <li>
+            <a href="#getCreateDatabaseSQL">getCreateDatabaseSQL</a>
+          </li>
+          <li>
+            <a href="#getCreateDatabaseSQL">getCreateDatabaseSQL</a>
+          </li>
+          <li>
+            <a href="#getCreateForeignKeySQL">getCreateForeignKeySQL</a>
+          </li>
+          <li>
+            <a href="#getCreateIndexSQL">getCreateIndexSQL</a>
+          </li>
+          <li>
+            <a href="#getCreateIndexSQL">getCreateIndexSQL</a>
+          </li>
+          <li>
+            <a href="#getCreateIndexSQLFlags">getCreateIndexSQLFlags</a>
+          </li>
+          <li>
+            <a href="#getCreateIndexSQLFlags">getCreateIndexSQLFlags</a>
+          </li>
+          <li>
+            <a href="#getCreatePrimaryKeySQL">getCreatePrimaryKeySQL</a>
+          </li>
+          <li>
+            <a href="#getCreatePrimaryKeySQL">getCreatePrimaryKeySQL</a>
+          </li>
+          <li>
+            <a href="#getCreateSequenceSQL">getCreateSequenceSQL</a>
+          </li>
+          <li>
+            <a href="#getCreateTableSQL">getCreateTableSQL</a>
+          </li>
+          <li>
+            <a href="#getCreateTemporaryTableSnippetSQL">getCreateTemporaryTableSnippetSQL</a>
+          </li>
+          <li>
+            <a href="#getCreateTemporaryTableSnippetSQL">getCreateTemporaryTableSnippetSQL</a>
+          </li>
+          <li>
+            <a href="#getCreateViewSQL">getCreateViewSQL</a>
+          </li>
+          <li>
+            <a href="#getCreateViewSQL">getCreateViewSQL</a>
+          </li>
+          <li>
+            <a href="#getCurrentDateSQL">getCurrentDateSQL</a>
+          </li>
+          <li>
+            <a href="#getCurrentTimeSQL">getCurrentTimeSQL</a>
+          </li>
+          <li>
+            <a href="#getCurrentTimestampSQL">getCurrentTimestampSQL</a>
+          </li>
+          <li>
+            <a href="#getCustomTypeDeclarationSQL">getCustomTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getDateAddDaysExpression">getDateAddDaysExpression</a>
+          </li>
+          <li>
+            <a href="#getDateAddDaysExpression">getDateAddDaysExpression</a>
+          </li>
+          <li>
+            <a href="#getDateAddMonthExpression">getDateAddMonthExpression</a>
+          </li>
+          <li>
+            <a href="#getDateAddMonthExpression">getDateAddMonthExpression</a>
+          </li>
+          <li>
+            <a href="#getDateDiffExpression">getDateDiffExpression</a>
+          </li>
+          <li>
+            <a href="#getDateDiffExpression">getDateDiffExpression</a>
+          </li>
+          <li>
+            <a href="#getDateFormatString">getDateFormatString</a>
+          </li>
+          <li>
+            <a href="#getDateFormatString">getDateFormatString</a>
+          </li>
+          <li>
+            <a href="#getDateFormatString">getDateFormatString</a>
+          </li>
+          <li>
+            <a href="#getDateSubDaysExpression">getDateSubDaysExpression</a>
+          </li>
+          <li>
+            <a href="#getDateSubDaysExpression">getDateSubDaysExpression</a>
+          </li>
+          <li>
+            <a href="#getDateSubMonthExpression">getDateSubMonthExpression</a>
+          </li>
+          <li>
+            <a href="#getDateSubMonthExpression">getDateSubMonthExpression</a>
+          </li>
+          <li>
+            <a href="#getDateTimeFormatString">getDateTimeFormatString</a>
+          </li>
+          <li>
+            <a href="#getDateTimeFormatString">getDateTimeFormatString</a>
+          </li>
+          <li>
+            <a href="#getDateTimeFormatString">getDateTimeFormatString</a>
+          </li>
+          <li>
+            <a href="#getDateTimeTypeDeclarationSQL">getDateTimeTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getDateTimeTypeDeclarationSQL">getDateTimeTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getDateTimeTypeDeclarationSQL">getDateTimeTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getDateTimeTzFormatString">getDateTimeTzFormatString</a>
+          </li>
+          <li>
+            <a href="#getDateTimeTzFormatString">getDateTimeTzFormatString</a>
+          </li>
+          <li>
+            <a href="#getDateTimeTzFormatString">getDateTimeTzFormatString</a>
+          </li>
+          <li>
+            <a href="#getDateTimeTzTypeDeclarationSQL">getDateTimeTzTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getDateTypeDeclarationSQL">getDateTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getDateTypeDeclarationSQL">getDateTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getDateTypeDeclarationSQL">getDateTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getDecimalTypeDeclarationSQL">getDecimalTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getDefaultTransactionIsolationLevel">getDefaultTransactionIsolationLevel</a>
+          </li>
+          <li>
+            <a href="#getDefaultValueDeclarationSQL">getDefaultValueDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getDefaultValueDeclarationSQL">getDefaultValueDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getDoctrineTypeComment">getDoctrineTypeComment</a>
+          </li>
+          <li>
+            <a href="#getDoctrineTypeMapping">getDoctrineTypeMapping</a>
+          </li>
+          <li>
+            <a href="#getDropConstraintSQL">getDropConstraintSQL</a>
+          </li>
+          <li>
+            <a href="#getDropDatabaseSQL">getDropDatabaseSQL</a>
+          </li>
+          <li>
+            <a href="#getDropDatabaseSQL">getDropDatabaseSQL</a>
+          </li>
+          <li>
+            <a href="#getDropForeignKeySQL">getDropForeignKeySQL</a>
+          </li>
+          <li>
+            <a href="#getDropForeignKeySQL">getDropForeignKeySQL</a>
+          </li>
+          <li>
+            <a href="#getDropIndexSQL">getDropIndexSQL</a>
+          </li>
+          <li>
+            <a href="#getDropIndexSQL">getDropIndexSQL</a>
+          </li>
+          <li>
+            <a href="#getDropSequenceSQL">getDropSequenceSQL</a>
+          </li>
+          <li>
+            <a href="#getDropTableSQL">getDropTableSQL</a>
+          </li>
+          <li>
+            <a href="#getDropTemporaryTableSQL">getDropTemporaryTableSQL</a>
+          </li>
+          <li>
+            <a href="#getDropViewSQL">getDropViewSQL</a>
+          </li>
+          <li>
+            <a href="#getDropViewSQL">getDropViewSQL</a>
+          </li>
+          <li>
+            <a href="#getDummySelectSQL">getDummySelectSQL</a>
+          </li>
+          <li>
+            <a href="#getEmptyIdentityInsertSQL">getEmptyIdentityInsertSQL</a>
+          </li>
+          <li>
+            <a href="#getEmptyIdentityInsertSQL">getEmptyIdentityInsertSQL</a>
+          </li>
+          <li>
+            <a href="#getEventManager">getEventManager</a>
+          </li>
+          <li>
+            <a href="#getFloatDeclarationSQL">getFloatDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getForUpdateSQL">getForUpdateSQL</a>
+          </li>
+          <li>
+            <a href="#getForUpdateSQL">getForUpdateSQL</a>
+          </li>
+          <li>
+            <a href="#getForeignKeyBaseDeclarationSQL">getForeignKeyBaseDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getForeignKeyDeclarationSQL">getForeignKeyDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getForeignKeyReferentialActionSQL">getForeignKeyReferentialActionSQL</a>
+          </li>
+          <li>
+            <a href="#getGuidExpression">getGuidExpression</a>
+          </li>
+          <li>
+            <a href="#getGuidExpression">getGuidExpression</a>
+          </li>
+          <li>
+            <a href="#getGuidTypeDeclarationSQL">getGuidTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getGuidTypeDeclarationSQL">getGuidTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getIdentifierQuoteCharacter">getIdentifierQuoteCharacter</a>
+          </li>
+          <li>
+            <a href="#getIdentityColumnNullInsertSQL">getIdentityColumnNullInsertSQL</a>
+          </li>
+          <li>
+            <a href="#getInExpression">getInExpression</a>
+          </li>
+          <li>
+            <a href="#getIndexDeclarationSQL">getIndexDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getIndexFieldDeclarationListSQL">getIndexFieldDeclarationListSQL</a>
+          </li>
+          <li>
+            <a href="#getIntegerTypeDeclarationSQL">getIntegerTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getIntegerTypeDeclarationSQL">getIntegerTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getIsNotNullExpression">getIsNotNullExpression</a>
+          </li>
+          <li>
+            <a href="#getIsNullExpression">getIsNullExpression</a>
+          </li>
+          <li>
+            <a href="#getLengthExpression">getLengthExpression</a>
+          </li>
+          <li>
+            <a href="#getLengthExpression">getLengthExpression</a>
+          </li>
+          <li>
+            <a href="#getListDatabasesSQL">getListDatabasesSQL</a>
+          </li>
+          <li>
+            <a href="#getListDatabasesSQL">getListDatabasesSQL</a>
+          </li>
+          <li>
+            <a href="#getListSequencesSQL">getListSequencesSQL</a>
+          </li>
+          <li>
+            <a href="#getListTableColumnsSQL">getListTableColumnsSQL</a>
+          </li>
+          <li>
+            <a href="#getListTableColumnsSQL">getListTableColumnsSQL</a>
+          </li>
+          <li>
+            <a href="#getListTableConstraintsSQL">getListTableConstraintsSQL</a>
+          </li>
+          <li>
+            <a href="#getListTableForeignKeysSQL">getListTableForeignKeysSQL</a>
+          </li>
+          <li>
+            <a href="#getListTableForeignKeysSQL">getListTableForeignKeysSQL</a>
+          </li>
+          <li>
+            <a href="#getListTableIndexesSQL">getListTableIndexesSQL</a>
+          </li>
+          <li>
+            <a href="#getListTableIndexesSQL">getListTableIndexesSQL</a>
+          </li>
+          <li>
+            <a href="#getListTablesSQL">getListTablesSQL</a>
+          </li>
+          <li>
+            <a href="#getListTablesSQL">getListTablesSQL</a>
+          </li>
+          <li>
+            <a href="#getListUsersSQL">getListUsersSQL</a>
+          </li>
+          <li>
+            <a href="#getListViewsSQL">getListViewsSQL</a>
+          </li>
+          <li>
+            <a href="#getListViewsSQL">getListViewsSQL</a>
+          </li>
+          <li>
+            <a href="#getLocateExpression">getLocateExpression</a>
+          </li>
+          <li>
+            <a href="#getLocateExpression">getLocateExpression</a>
+          </li>
+          <li>
+            <a href="#getLowerExpression">getLowerExpression</a>
+          </li>
+          <li>
+            <a href="#getLtrimExpression">getLtrimExpression</a>
+          </li>
+          <li>
+            <a href="#getMaxExpression">getMaxExpression</a>
+          </li>
+          <li>
+            <a href="#getMaxIdentifierLength">getMaxIdentifierLength</a>
+          </li>
+          <li>
+            <a href="#getMd5Expression">getMd5Expression</a>
+          </li>
+          <li>
+            <a href="#getMinExpression">getMinExpression</a>
+          </li>
+          <li>
+            <a href="#getModExpression">getModExpression</a>
+          </li>
+          <li>
+            <a href="#getModExpression">getModExpression</a>
+          </li>
+          <li>
+            <a href="#getName">getName</a>
+          </li>
+          <li>
+            <a href="#getName">getName</a>
+          </li>
+          <li>
+            <a href="#getNotExpression">getNotExpression</a>
+          </li>
+          <li>
+            <a href="#getNowExpression">getNowExpression</a>
+          </li>
+          <li>
+            <a href="#getPiExpression">getPiExpression</a>
+          </li>
+          <li>
+            <a href="#getPostAlterTableIndexForeignKeySQL">getPostAlterTableIndexForeignKeySQL</a>
+          </li>
+          <li>
+            <a href="#getPreAlterTableIndexForeignKeySQL">getPreAlterTableIndexForeignKeySQL</a>
+          </li>
+          <li>
+            <a href="#getReadLockSQL">getReadLockSQL</a>
+          </li>
+          <li>
+            <a href="#getRegexpExpression">getRegexpExpression</a>
+          </li>
+          <li>
+            <a href="#getRegexpExpression">getRegexpExpression</a>
+          </li>
+          <li>
+            <a href="#getReservedKeywordsClass">getReservedKeywordsClass</a>
+          </li>
+          <li>
+            <a href="#getReservedKeywordsClass">getReservedKeywordsClass</a>
+          </li>
+          <li>
+            <a href="#getReservedKeywordsList">getReservedKeywordsList</a>
+          </li>
+          <li>
+            <a href="#getRoundExpression">getRoundExpression</a>
+          </li>
+          <li>
+            <a href="#getRtrimExpression">getRtrimExpression</a>
+          </li>
+          <li>
+            <a href="#getSQLResultCasing">getSQLResultCasing</a>
+          </li>
+          <li>
+            <a href="#getSequenceNextValSQL">getSequenceNextValSQL</a>
+          </li>
+          <li>
+            <a href="#getSetTransactionIsolationSQL">getSetTransactionIsolationSQL</a>
+          </li>
+          <li>
+            <a href="#getSetTransactionIsolationSQL">getSetTransactionIsolationSQL</a>
+          </li>
+          <li>
+            <a href="#getShowDatabasesSQL">getShowDatabasesSQL</a>
+          </li>
+          <li>
+            <a href="#getShowDatabasesSQL">getShowDatabasesSQL</a>
+          </li>
+          <li>
+            <a href="#getSinExpression">getSinExpression</a>
+          </li>
+          <li>
+            <a href="#getSmallIntTypeDeclarationSQL">getSmallIntTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getSmallIntTypeDeclarationSQL">getSmallIntTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getSqlCommentEndString">getSqlCommentEndString</a>
+          </li>
+          <li>
+            <a href="#getSqlCommentStartString">getSqlCommentStartString</a>
+          </li>
+          <li>
+            <a href="#getSqrtExpression">getSqrtExpression</a>
+          </li>
+          <li>
+            <a href="#getSubstringExpression">getSubstringExpression</a>
+          </li>
+          <li>
+            <a href="#getSubstringExpression">getSubstringExpression</a>
+          </li>
+          <li>
+            <a href="#getSumExpression">getSumExpression</a>
+          </li>
+          <li>
+            <a href="#getTemporaryTableName">getTemporaryTableName</a>
+          </li>
+          <li>
+            <a href="#getTemporaryTableName">getTemporaryTableName</a>
+          </li>
+          <li>
+            <a href="#getTemporaryTableSQL">getTemporaryTableSQL</a>
+          </li>
+          <li>
+            <a href="#getTimeFormatString">getTimeFormatString</a>
+          </li>
+          <li>
+            <a href="#getTimeFormatString">getTimeFormatString</a>
+          </li>
+          <li>
+            <a href="#getTimeFormatString">getTimeFormatString</a>
+          </li>
+          <li>
+            <a href="#getTimeTypeDeclarationSQL">getTimeTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getTimeTypeDeclarationSQL">getTimeTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getTimeTypeDeclarationSQL">getTimeTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getTrimExpression">getTrimExpression</a>
+          </li>
+          <li>
+            <a href="#getTrimExpression">getTrimExpression</a>
+          </li>
+          <li>
+            <a href="#getTruncateTableSQL">getTruncateTableSQL</a>
+          </li>
+          <li>
+            <a href="#getTruncateTableSQL">getTruncateTableSQL</a>
+          </li>
+          <li>
+            <a href="#getUniqueConstraintDeclarationSQL">getUniqueConstraintDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getUniqueConstraintDeclarationSQL">getUniqueConstraintDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getUniqueFieldDeclarationSQL">getUniqueFieldDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getUpperExpression">getUpperExpression</a>
+          </li>
+          <li>
+            <a href="#getVarcharDefaultLength">getVarcharDefaultLength</a>
+          </li>
+          <li>
+            <a href="#getVarcharMaxLength">getVarcharMaxLength</a>
+          </li>
+          <li>
+            <a href="#getVarcharTypeDeclarationSQL">getVarcharTypeDeclarationSQL</a>
+          </li>
+          <li>
+            <a href="#getVarcharTypeDeclarationSQLSnippet">getVarcharTypeDeclarationSQLSnippet</a>
+          </li>
+          <li>
+            <a href="#getVarcharTypeDeclarationSQLSnippet">getVarcharTypeDeclarationSQLSnippet</a>
+          </li>
+          <li>
+            <a href="#getWildcards">getWildcards</a>
+          </li>
+          <li>
+            <a href="#getWriteLockSQL">getWriteLockSQL</a>
+          </li>
+          <li>
+            <a href="#hasDoctrineTypeMappingFor">hasDoctrineTypeMappingFor</a>
+          </li>
+          <li>
+            <a href="#initializeCommentedDoctrineTypes">initializeCommentedDoctrineTypes</a>
+          </li>
+          <li>
+            <a href="#initializeDoctrineTypeMappings">initializeDoctrineTypeMappings</a>
+          </li>
+          <li>
+            <a href="#initializeDoctrineTypeMappings">initializeDoctrineTypeMappings</a>
+          </li>
+          <li>
+            <a href="#initializeDoctrineTypeMappings">initializeDoctrineTypeMappings</a>
+          </li>
+          <li>
+            <a href="#isCommentedDoctrineType">isCommentedDoctrineType</a>
+          </li>
+          <li>
+            <a href="#markDoctrineTypeCommented">markDoctrineTypeCommented</a>
+          </li>
+          <li>
+            <a href="#modifyLimitQuery">modifyLimitQuery</a>
+          </li>
+          <li>
+            <a href="#onSchemaAlterTable">onSchemaAlterTable</a>
+          </li>
+          <li>
+            <a href="#onSchemaAlterTableAddColumn">onSchemaAlterTableAddColumn</a>
+          </li>
+          <li>
+            <a href="#onSchemaAlterTableChangeColumn">onSchemaAlterTableChangeColumn</a>
+          </li>
+          <li>
+            <a href="#onSchemaAlterTableRemoveColumn">onSchemaAlterTableRemoveColumn</a>
+          </li>
+          <li>
+            <a href="#onSchemaAlterTableRenameColumn">onSchemaAlterTableRenameColumn</a>
+          </li>
+          <li>
+            <a href="#prefersIdentityColumns">prefersIdentityColumns</a>
+          </li>
+          <li>
+            <a href="#prefersIdentityColumns">prefersIdentityColumns</a>
+          </li>
+          <li>
+            <a href="#prefersSequences">prefersSequences</a>
+          </li>
+          <li>
+            <a href="#quoteIdentifier">quoteIdentifier</a>
+          </li>
+          <li>
+            <a href="#quoteSingleIdentifier">quoteSingleIdentifier</a>
+          </li>
+          <li>
+            <a href="#quoteSingleIdentifier">quoteSingleIdentifier</a>
+          </li>
+          <li>
+            <a href="#registerDoctrineTypeMapping">registerDoctrineTypeMapping</a>
+          </li>
+          <li>
+            <a href="#releaseSavePoint">releaseSavePoint</a>
+          </li>
+          <li>
+            <a href="#releaseSavePoint">releaseSavePoint</a>
+          </li>
+          <li>
+            <a href="#rollbackSavePoint">rollbackSavePoint</a>
+          </li>
+          <li>
+            <a href="#rollbackSavePoint">rollbackSavePoint</a>
+          </li>
+          <li>
+            <a href="#setEventManager">setEventManager</a>
+          </li>
+          <li>
+            <a href="#supportsAlterTable">supportsAlterTable</a>
+          </li>
+          <li>
+            <a href="#supportsCommentOnStatement">supportsCommentOnStatement</a>
+          </li>
+          <li>
+            <a href="#supportsCreateDropDatabase">supportsCreateDropDatabase</a>
+          </li>
+          <li>
+            <a href="#supportsCreateDropDatabase">supportsCreateDropDatabase</a>
+          </li>
+          <li>
+            <a href="#supportsForeignKeyConstraints">supportsForeignKeyConstraints</a>
+          </li>
+          <li>
+            <a href="#supportsForeignKeyOnUpdate">supportsForeignKeyOnUpdate</a>
+          </li>
+          <li>
+            <a href="#supportsGettingAffectedRows">supportsGettingAffectedRows</a>
+          </li>
+          <li>
+            <a href="#supportsIdentityColumns">supportsIdentityColumns</a>
+          </li>
+          <li>
+            <a href="#supportsIdentityColumns">supportsIdentityColumns</a>
+          </li>
+          <li>
+            <a href="#supportsIndexes">supportsIndexes</a>
+          </li>
+          <li>
+            <a href="#supportsInlineColumnComments">supportsInlineColumnComments</a>
+          </li>
+          <li>
+            <a href="#supportsLimitOffset">supportsLimitOffset</a>
+          </li>
+          <li>
+            <a href="#supportsLimitOffset">supportsLimitOffset</a>
+          </li>
+          <li>
+            <a href="#supportsLimitOffset">supportsLimitOffset</a>
+          </li>
+          <li>
+            <a href="#supportsPrimaryConstraints">supportsPrimaryConstraints</a>
+          </li>
+          <li>
+            <a href="#supportsReleaseSavepoints">supportsReleaseSavepoints</a>
+          </li>
+          <li>
+            <a href="#supportsReleaseSavepoints">supportsReleaseSavepoints</a>
+          </li>
+          <li>
+            <a href="#supportsSavepoints">supportsSavepoints</a>
+          </li>
+          <li>
+            <a href="#supportsSchemas">supportsSchemas</a>
+          </li>
+          <li>
+            <a href="#supportsSequences">supportsSequences</a>
+          </li>
+          <li>
+            <a href="#supportsTransactions">supportsTransactions</a>
+          </li>
+          <li>
+            <a href="#supportsViews">supportsViews</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\DBAL\Platforms\</span>SQLServer2008Platform</h2>
+        <div class="file-notice">
+          <p>Platform to ensure compatibility of Doctrine with SQLServer2008 version.</p>
+          <p>
+            <pre>Differences to SQL Server 2005 and before are that a new DATETIME2 type was
+introduced that has a higher precision.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos"/>
+        <h3>Constants</h3>
+        <ul class="varlist"/>
+        <h3>Members</h3>
+        <ul class="varlist"/>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="appendLockHint"/>
+            <h4><span class="label public">public</span>appendLockHint<span style="font-size:90%;">( <span class="param-type"/><strong> $fromClause</strong>, <span class="param-type"/><strong> $lockMode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="appendLockHint"/>
+            <h4><span class="label public">public</span>appendLockHint<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fromClause</strong>, <span class="param-type">integer</span><strong> $lockMode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Honors that some SQL vendors such as MsSql use table hints for locking instead of the ANSI SQL FOR UPDATE specification.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fromClause</code> - </li>
+                <li><code>$lockMode</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="canEmulateSchemas"/>
+            <h4><span class="label public">public</span>canEmulateSchemas<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Can this platform emulate schemas?<pre>Platforms that either support or emulate schemas don't automatically
+filter a schema for the namespaced elements in .
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="convertBooleans"/>
+            <h4><span class="label public">public</span>convertBooleans<span style="font-size:90%;">( <span class="param-type"/><strong> $item</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="convertBooleans"/>
+            <h4><span class="label public">public</span>convertBooleans<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $item</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Some platforms need the boolean values to be converted.<pre>The default conversion in this implementation converts to integers (false =&gt; 0, true =&gt; 1).</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$item</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createSavePoint"/>
+            <h4><span class="label public">public</span>createSavePoint<span style="font-size:90%;">( <span class="param-type"/><strong> $savepoint</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="createSavePoint"/>
+            <h4><span class="label public">public</span>createSavePoint<span style="font-size:90%;">( <span class="param-type">string</span><strong> $savepoint</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate SQL to create a new savepoint</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$savepoint</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="fixSchemaElementName"/>
+            <h4><span class="label public">public</span>fixSchemaElementName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $schemaElementName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Makes any fixes to a name of a schema element (table, sequence, ...) that are required by restrictions of the platform, like a maximum length.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$schemaElementName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAcosExpression"/>
+            <h4><span class="label public">public</span>getAcosExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $value</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getAdvancedForeignKeyOptionsSQL"/>
+            <h4><span class="label public">public</span>getAdvancedForeignKeyOptionsSQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_ForeignKeyConstraint.xhtml">Doctrine\DBAL\Schema\ForeignKeyConstraint</a></span><strong> $foreignKey</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the FOREIGN KEY query section dealing with non-standard options as MATCH, INITIALLY DEFERRED, ON UPDATE, ...</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$foreignKey</code> - foreign key definition</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAlterSequenceSQL"/>
+            <h4><span class="label public">public</span>getAlterSequenceSQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Sequence.xhtml">Doctrine\DBAL\Schema\Sequence</a></span><strong> $sequence</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL statement to change a sequence on this platform.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sequence</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAlterTableSQL"/>
+            <h4><span class="label public">public</span>getAlterTableSQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_TableDiff.xhtml">Doctrine\DBAL\Schema\TableDiff</a></span><strong> $diff</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getAlterTableSQL"/>
+            <h4><span class="label public">public</span>getAlterTableSQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_TableDiff.xhtml">Doctrine\DBAL\Schema\TableDiff</a></span><strong> $diff</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the sql statements for altering an existing table.<pre>The method returns an array of sql statements, since some platforms need several statements.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$diff</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAvgExpression"/>
+            <h4><span class="label public">public</span>getAvgExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $column</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the average value of a column</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - the column to use</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>generated sql including an AVG aggregate function</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBetweenExpression"/>
+            <h4><span class="label public">public</span>getBetweenExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $expression</strong>, <span class="param-type">string</span><strong> $value1</strong>, <span class="param-type">string</span><strong> $value2</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns SQL that checks if an expression evaluates to a value between two values.<pre>The parameter $expression is checked if it is between $value1 and $value2.
+
+Note: There is a slight difference in the way BETWEEN works on some databases.
+http://www.w3schools.com/sql/sql_between.asp. If you want complete database
+independence you should avoid using between().</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$expression</code> - the value to compare to</li>
+                <li><code>$value1</code> - the lower value to compare with</li>
+                <li><code>$value2</code> - the higher value to compare with</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>logical expression</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBigIntTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getBigIntTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getBigIntTypeDeclarationSQL"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getBigIntTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $columnDef</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL snippet that declares an 8 byte integer column.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnDef</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBitAndComparisonExpression"/>
+            <h4><span class="label public">public</span>getBitAndComparisonExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value1</strong>, <span class="param-type">string</span><strong> $value2</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets SQL bit AND comparison  expression</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value1</code> - </li>
+                <li><code>$value2</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBitOrComparisonExpression"/>
+            <h4><span class="label public">public</span>getBitOrComparisonExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value1</strong>, <span class="param-type">string</span><strong> $value2</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets SQL bit OR comparison expression</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value1</code> - </li>
+                <li><code>$value2</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBlobTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getBlobTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getBlobTypeDeclarationSQL"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getBlobTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL Snippet used to declare a BLOB column type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$field</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getBooleanTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getBooleanTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getBooleanTypeDeclarationSQL"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getBooleanTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $columnDef</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL snippet that declares a boolean column.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnDef</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCheckDeclarationSQL"/>
+            <h4><span class="label public">public</span>getCheckDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL code portion needed to set a CHECK constraint declaration to be used in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$definition</code> - check definition</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>DBMS specific SQL code portion needed to set a CHECK constraint</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getClobTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getClobTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getClobTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getClobTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getClobTypeDeclarationSQL"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getClobTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL snippet used to declare a CLOB column type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$field</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getColumnCharsetDeclarationSQL"/>
+            <h4><span class="label public">public</span>getColumnCharsetDeclarationSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $charset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL code portion needed to set the CHARACTER SET of a field declaration to be used in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$charset</code> - name of the charset</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>DBMS specific SQL code portion needed to set the CHARACTER SET</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getColumnCollationDeclarationSQL"/>
+            <h4><span class="label public">public</span>getColumnCollationDeclarationSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $collation</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL code portion needed to set the COLLATION of a field declaration to be used in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$collation</code> - name of the collation</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>DBMS specific SQL code portion needed to set the COLLATION</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getColumnDeclarationListSQL"/>
+            <h4><span class="label public">public</span>getColumnDeclarationListSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fields</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get declaration of a number of fields in bulk</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fields</code> - a multidimensional associative array.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getColumnDeclarationSQL"/>
+            <h4><span class="label public">public</span>getColumnDeclarationSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL code portion needed to declare a generic type field to be used in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - name the field to be declared.</li>
+                <li><code>$field</code> - associative array with the name of the properties</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>DBMS specific SQL code portion that should be used to declare the column.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCommentOnColumnSQL"/>
+            <h4><span class="label public">public</span>getCommentOnColumnSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $tableName</strong>, <span class="param-type"/><strong> $columnName</strong>, <span class="param-type"/><strong> $comment</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getConcatExpression"/>
+            <h4><span class="label public">public</span>getConcatExpression<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getConcatExpression"/>
+            <h4><span class="label public">public</span>getConcatExpression<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a series of strings concatinated<pre>concat() accepts an arbitrary number of parameters. Each parameter
+must contain an expression</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$arg1</code> - $arg2 ... $argN     strings that will be concatenated.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCosExpression"/>
+            <h4><span class="label public">public</span>getCosExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $value</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getCountExpression"/>
+            <h4><span class="label public">public</span>getCountExpression<span style="font-size:90%;">( <span class="param-type"><span title="string|integer">string|integer</span></span><strong> $column</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the number of rows (without a NULL value) of a column<pre>If a '*' is used instead of a column the number of selected rows
+is returned.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - the column to use</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>generated sql including a COUNT aggregate function</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCreateConstraintSQL"/>
+            <h4><span class="label public">public</span>getCreateConstraintSQL<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_DBAL_Schema_Constraint.xhtml">Doctrine\DBAL\Schema\Constraint</a></span><strong> $constraint</strong>, <span class="param-type"><span title="string|Table">string|Table</span></span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL to create a constraint on a table on this platform.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$constraint</code> - </li>
+                <li><code>$table</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCreateDatabaseSQL"/>
+            <h4><span class="label public">public</span>getCreateDatabaseSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getCreateDatabaseSQL"/>
+            <h4><span class="label public">public</span>getCreateDatabaseSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $database</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>create a new database</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$database</code> - name of the database that should be created</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCreateForeignKeySQL"/>
+            <h4><span class="label public">public</span>getCreateForeignKeySQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_ForeignKeyConstraint.xhtml">Doctrine\DBAL\Schema\ForeignKeyConstraint</a></span><strong> $foreignKey</strong>, <span class="param-type"><span title="string|Table">string|Table</span></span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new foreign key</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$foreignKey</code> - ForeignKey instance</li>
+                <li><code>$table</code> - name of the table on which the foreign key is to be created</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCreateIndexSQL"/>
+            <h4><span class="label public">public</span>getCreateIndexSQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Index.xhtml">Doctrine\DBAL\Schema\Index</a></span><strong> $index</strong>, <span class="param-type"/><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getCreateIndexSQL"/>
+            <h4><span class="label public">public</span>getCreateIndexSQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Index.xhtml">Doctrine\DBAL\Schema\Index</a></span><strong> $index</strong>, <span class="param-type"><span title="string|Table">string|Table</span></span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL to create an index on a table on this platform.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$index</code> - </li>
+                <li><code>$table</code> - name of the table on which the index is to be created</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCreatePrimaryKeySQL"/>
+            <h4><span class="label public">public</span>getCreatePrimaryKeySQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Index.xhtml">Doctrine\DBAL\Schema\Index</a></span><strong> $index</strong>, <span class="param-type"/><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getCreatePrimaryKeySQL"/>
+            <h4><span class="label public">public</span>getCreatePrimaryKeySQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Index.xhtml">Doctrine\DBAL\Schema\Index</a></span><strong> $index</strong>, <span class="param-type"><span title="string|Table">string|Table</span></span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get SQL to create an unnamed primary key constraint.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$index</code> - </li>
+                <li><code>$table</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCreateSequenceSQL"/>
+            <h4><span class="label public">public</span>getCreateSequenceSQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Sequence.xhtml">Doctrine\DBAL\Schema\Sequence</a></span><strong> $sequence</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL to create a sequence on this platform.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sequence</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>DBALException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCreateTableSQL"/>
+            <h4><span class="label public">public</span>getCreateTableSQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Table.xhtml">Doctrine\DBAL\Schema\Table</a></span><strong> $table</strong>, <span class="param-type">integer</span><strong> $createFlags</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL statement(s) to create a table with the specified name, columns and constraints on this platform.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$table</code> - The name of the table.</li>
+                <li><code>$createFlags</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The sequence of SQL statements.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCreateTemporaryTableSnippetSQL"/>
+            <h4><span class="label public">public</span>getCreateTemporaryTableSnippetSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getCreateTemporaryTableSnippetSQL"/>
+            <h4><span class="label public">public</span>getCreateTemporaryTableSnippetSQL<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getCreateViewSQL"/>
+            <h4><span class="label public">public</span>getCreateViewSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $sql</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getCreateViewSQL"/>
+            <h4><span class="label public">public</span>getCreateViewSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $sql</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getCurrentDateSQL"/>
+            <h4><span class="label public">public</span>getCurrentDateSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL specific for the platform to get the current date.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCurrentTimeSQL"/>
+            <h4><span class="label public">public</span>getCurrentTimeSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL specific for the platform to get the current time.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCurrentTimestampSQL"/>
+            <h4><span class="label public">public</span>getCurrentTimestampSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL specific for the platform to get the current timestamp</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCustomTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getCustomTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $columnDef</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>getCustomTypeDeclarationSql Obtail SQL code portion needed to create a custom column, e.g. when a field has the "columnDefinition" keyword.<pre>Only "AUTOINCREMENT" and "PRIMARY KEY" are added if appropriate.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnDef</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDateAddDaysExpression"/>
+            <h4><span class="label public">public</span>getDateAddDaysExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $date</strong>, <span class="param-type"/><strong> $days</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateAddDaysExpression"/>
+            <h4><span class="label public">public</span>getDateAddDaysExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $date</strong>, <span class="param-type">integer</span><strong> $days</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add the number of given days to a date.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$date</code> - </li>
+                <li><code>$days</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDateAddMonthExpression"/>
+            <h4><span class="label public">public</span>getDateAddMonthExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $date</strong>, <span class="param-type"/><strong> $months</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateAddMonthExpression"/>
+            <h4><span class="label public">public</span>getDateAddMonthExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $date</strong>, <span class="param-type">integer</span><strong> $months</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add the number of given months to a date.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$date</code> - </li>
+                <li><code>$months</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDateDiffExpression"/>
+            <h4><span class="label public">public</span>getDateDiffExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $date1</strong>, <span class="param-type"/><strong> $date2</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateDiffExpression"/>
+            <h4><span class="label public">public</span>getDateDiffExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $date1</strong>, <span class="param-type">string</span><strong> $date2</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Calculate the difference in days between the two passed dates.<pre>Computes diff = date1 - date2</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$date1</code> - </li>
+                <li><code>$date2</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDateFormatString"/>
+            <h4><span class="label public">public</span>getDateFormatString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateFormatString"/>
+            <h4><span class="label public">public</span>getDateFormatString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateFormatString"/>
+            <h4><span class="label public">public</span>getDateFormatString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the format string, as accepted by the date() function, that describes the format of a stored date value of this platform.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The format string.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDateSubDaysExpression"/>
+            <h4><span class="label public">public</span>getDateSubDaysExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $date</strong>, <span class="param-type"/><strong> $days</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateSubDaysExpression"/>
+            <h4><span class="label public">public</span>getDateSubDaysExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $date</strong>, <span class="param-type">integer</span><strong> $days</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Substract the number of given days to a date.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$date</code> - </li>
+                <li><code>$days</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDateSubMonthExpression"/>
+            <h4><span class="label public">public</span>getDateSubMonthExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $date</strong>, <span class="param-type"/><strong> $months</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateSubMonthExpression"/>
+            <h4><span class="label public">public</span>getDateSubMonthExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $date</strong>, <span class="param-type">integer</span><strong> $months</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Substract the number of given months to a date.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$date</code> - </li>
+                <li><code>$months</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDateTimeFormatString"/>
+            <h4><span class="label public">public</span>getDateTimeFormatString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateTimeFormatString"/>
+            <h4><span class="label public">public</span>getDateTimeFormatString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateTimeFormatString"/>
+            <h4><span class="label public">public</span>getDateTimeFormatString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the format string, as accepted by the date() function, that describes the format of a stored datetime value of this platform.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The format string.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDateTimeTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getDateTimeTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldDeclaration</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateTimeTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getDateTimeTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldDeclaration</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateTimeTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getDateTimeTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldDeclaration</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL to be used to create datetime fields in statements like CREATE TABLE</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fieldDeclaration</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDateTimeTzFormatString"/>
+            <h4><span class="label public">public</span>getDateTimeTzFormatString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateTimeTzFormatString"/>
+            <h4><span class="label public">public</span>getDateTimeTzFormatString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateTimeTzFormatString"/>
+            <h4><span class="label public">public</span>getDateTimeTzFormatString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the format string, as accepted by the date() function, that describes the format of a stored datetime with timezone value of this platform.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The format string.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDateTimeTzTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getDateTimeTzTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldDeclaration</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL to be used to create datetime with timezone offset fields.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fieldDeclaration</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDateTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getDateTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldDeclaration</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getDateTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldDeclaration</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDateTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getDateTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldDeclaration</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL to be used to create date fields in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fieldDeclaration</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDecimalTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getDecimalTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $columnDef</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL snippet that declares a floating point column of arbitrary precision.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnDef</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDefaultTransactionIsolationLevel"/>
+            <h4><span class="label public">public</span>getDefaultTransactionIsolationLevel<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the default transaction isolation level of the platform.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The default isolation level.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDefaultValueDeclarationSQL"/>
+            <h4><span class="label public">public</span>getDefaultValueDeclarationSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDefaultValueDeclarationSQL"/>
+            <h4><span class="label public">public</span>getDefaultValueDeclarationSQL<span style="font-size:90%;">( <span class="param-type">array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL code portion needed to set a default value declaration to be used in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$field</code> - field definition array</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>DBMS specific SQL code portion needed to set a default value</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDoctrineTypeComment"/>
+            <h4><span class="label public">public</span>getDoctrineTypeComment<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Types_Type.xhtml">Doctrine\DBAL\Types\Type</a></span><strong> $doctrineType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the comment to append to a column comment that helps parsing this type in reverse engineering.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$doctrineType</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDoctrineTypeMapping"/>
+            <h4><span class="label public">public</span>getDoctrineTypeMapping<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dbType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the Doctrine type that is mapped for the given database column type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dbType</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDropConstraintSQL"/>
+            <h4><span class="label public">public</span>getDropConstraintSQL<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\DBAL\Schema\Constraint">Constraint</span></span><strong> $constraint</strong>, <span class="param-type"><span title="string|Table">string|Table</span></span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get drop constraint sql</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$constraint</code> - </li>
+                <li><code>$table</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDropDatabaseSQL"/>
+            <h4><span class="label public">public</span>getDropDatabaseSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDropDatabaseSQL"/>
+            <h4><span class="label public">public</span>getDropDatabaseSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $database</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the SQL snippet to drop an existing database</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$database</code> - name of the database that should be dropped</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDropForeignKeySQL"/>
+            <h4><span class="label public">public</span>getDropForeignKeySQL<span style="font-size:90%;">( <span class="param-type"/><strong> $foreignKey</strong>, <span class="param-type"/><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDropForeignKeySQL"/>
+            <h4><span class="label public">public</span>getDropForeignKeySQL<span style="font-size:90%;">( <span class="param-type"><span title="ForeignKeyConstraint|string">ForeignKeyConstraint|string</span></span><strong> $foreignKey</strong>, <span class="param-type"><span title="Table|string">Table|string</span></span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$foreignKey</code> - </li>
+                <li><code>$table</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDropIndexSQL"/>
+            <h4><span class="label public">public</span>getDropIndexSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"/><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDropIndexSQL"/>
+            <h4><span class="label public">public</span>getDropIndexSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"><span title="string|Table">string|Table</span></span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Drop index from a table</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$table</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDropSequenceSQL"/>
+            <h4><span class="label public">public</span>getDropSequenceSQL<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\DBAL\Schema\Sequence">Sequence</span></span><strong> $sequence</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the SQL snippet to drop an existing sequence</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sequence</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDropTableSQL"/>
+            <h4><span class="label public">public</span>getDropTableSQL<span style="font-size:90%;">( <span class="param-type"><span title="Table|string">Table|string</span></span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Drop a Table</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$table</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDropTemporaryTableSQL"/>
+            <h4><span class="label public">public</span>getDropTemporaryTableSQL<span style="font-size:90%;">( <span class="param-type"><span title="Table|string">Table|string</span></span><strong> $table</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get SQL to safely drop a temporary table WITHOUT implicitly committing an open transaction.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$table</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getDropViewSQL"/>
+            <h4><span class="label public">public</span>getDropViewSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getDropViewSQL"/>
+            <h4><span class="label public">public</span>getDropViewSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getDummySelectSQL"/>
+            <h4><span class="label public">public</span>getDummySelectSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>This is for test reasons, many vendors have special requirements for dummy statements.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEmptyIdentityInsertSQL"/>
+            <h4><span class="label public">public</span>getEmptyIdentityInsertSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $quotedTableName</strong>, <span class="param-type"/><strong> $quotedIdentifierColumnName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getEmptyIdentityInsertSQL"/>
+            <h4><span class="label public">public</span>getEmptyIdentityInsertSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong>, <span class="param-type">string</span><strong> $identifierColumnName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the insert sql for an empty insert statement</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - </li>
+                <li><code>$identifierColumnName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>$sql</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEventManager"/>
+            <h4><span class="label public">public</span>getEventManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the EventManager used by the Platform.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFloatDeclarationSQL"/>
+            <h4><span class="label public">public</span>getFloatDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldDeclaration</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getForUpdateSQL"/>
+            <h4><span class="label public">public</span>getForUpdateSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getForUpdateSQL"/>
+            <h4><span class="label public">public</span>getForUpdateSQL<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getForeignKeyBaseDeclarationSQL"/>
+            <h4><span class="label public">public</span>getForeignKeyBaseDeclarationSQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_ForeignKeyConstraint.xhtml">Doctrine\DBAL\Schema\ForeignKeyConstraint</a></span><strong> $foreignKey</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL code portion needed to set the FOREIGN KEY constraint of a field declaration to be used in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$foreignKey</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getForeignKeyDeclarationSQL"/>
+            <h4><span class="label public">public</span>getForeignKeyDeclarationSQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_ForeignKeyConstraint.xhtml">Doctrine\DBAL\Schema\ForeignKeyConstraint</a></span><strong> $foreignKey</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL code portion needed to set the FOREIGN KEY constraint of a field declaration to be used in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$foreignKey</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>DBMS specific SQL code portion needed to set the FOREIGN KEY constraint</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getForeignKeyReferentialActionSQL"/>
+            <h4><span class="label public">public</span>getForeignKeyReferentialActionSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $action</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>returns given referential action in uppercase if valid, otherwise throws an exception</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$action</code> - foreign key referential action</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException if unknown referential action given</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getGuidExpression"/>
+            <h4><span class="label public">public</span>getGuidExpression<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getGuidExpression"/>
+            <h4><span class="label public">public</span>getGuidExpression<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns global unique identifier</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>to get global unique identifier</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getGuidTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getGuidTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getGuidTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getGuidTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the SQL Snippet to create a GUID/UUID field.<pre>By default this maps directly to a VARCHAR and only maps to more
+special datatypes when the underlying databases support this datatype.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$field</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIdentifierQuoteCharacter"/>
+            <h4><span class="label public">public</span>getIdentifierQuoteCharacter<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the character used for identifier quoting.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIdentityColumnNullInsertSQL"/>
+            <h4><span class="label public">public</span>getIdentityColumnNullInsertSQL<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getInExpression"/>
+            <h4><span class="label public">public</span>getInExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $column</strong>, <span class="param-type"><span title="string|array&lt;string&gt;">string|array&lt;string&gt;</span></span><strong> $values</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the SQL to check if a value is one in a set of given values.<pre>in() accepts an arbitrary number of parameters. The first parameter
+must always specify the value that should be matched against. Successive
+must contain a logical expression or an array with logical expressions.
+These expressions will be matched against the first parameter.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - the value that should be matched against</li>
+                <li><code>$values</code> - values that will be matched against $column</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>logical expression</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIndexDeclarationSQL"/>
+            <h4><span class="label public">public</span>getIndexDeclarationSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Index.xhtml">Doctrine\DBAL\Schema\Index</a></span><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL code portion needed to set an index declaration to be used in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - name of the index</li>
+                <li><code>$index</code> - index definition</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>DBMS specific SQL code portion needed to set an index</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIndexFieldDeclarationListSQL"/>
+            <h4><span class="label public">public</span>getIndexFieldDeclarationListSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fields</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>getIndexFieldDeclarationList Obtain DBMS specific SQL code portion needed to set an index declaration to be used in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fields</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIntegerTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getIntegerTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getIntegerTypeDeclarationSQL"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getIntegerTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $columnDef</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL snippet that declares a 4 byte integer column.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnDef</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIsNotNullExpression"/>
+            <h4><span class="label public">public</span>getIsNotNullExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $expression</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns SQL that checks if a expression is not null.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$expression</code> - the expression that should be compared to null</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>logical expression</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIsNullExpression"/>
+            <h4><span class="label public">public</span>getIsNullExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $expression</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns SQL that checks if a expression is null.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$expression</code> - the expression that should be compared to null</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>logical expression</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLengthExpression"/>
+            <h4><span class="label public">public</span>getLengthExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $column</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getLengthExpression"/>
+            <h4><span class="label public">public</span>getLengthExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $column</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the length of a text field.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getListDatabasesSQL"/>
+            <h4><span class="label public">public</span>getListDatabasesSQL<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getListDatabasesSQL"/>
+            <h4><span class="label public">public</span>getListDatabasesSQL<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getListSequencesSQL"/>
+            <h4><span class="label public">public</span>getListSequencesSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $database</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getListTableColumnsSQL"/>
+            <h4><span class="label public">public</span>getListTableColumnsSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $table</strong>, <span class="param-type"/><strong> $database</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getListTableColumnsSQL"/>
+            <h4><span class="label public">public</span>getListTableColumnsSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $table</strong>, <span class="param-type"/><strong> $database</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getListTableConstraintsSQL"/>
+            <h4><span class="label public">public</span>getListTableConstraintsSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $table</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getListTableForeignKeysSQL"/>
+            <h4><span class="label public">public</span>getListTableForeignKeysSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $table</strong>, <span class="param-type"/><strong> $database</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getListTableForeignKeysSQL"/>
+            <h4><span class="label public">public</span>getListTableForeignKeysSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $table</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getListTableIndexesSQL"/>
+            <h4><span class="label public">public</span>getListTableIndexesSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $table</strong>, <span class="param-type"/><strong> $currentDatabase</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getListTableIndexesSQL"/>
+            <h4><span class="label public">public</span>getListTableIndexesSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $table</strong>, <span class="param-type">string</span><strong> $currentDatabase</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the list of indexes for the current database.<pre>The current database parameter is optional but will always be passed
+when using the SchemaManager API and is the database the given table is in.
+
+Attention: Some platforms only support currentDatabase when they
+are connected with that database. Cross-database information schema
+requests may be impossible.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$table</code> - </li>
+                <li><code>$currentDatabase</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getListTablesSQL"/>
+            <h4><span class="label public">public</span>getListTablesSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getListTablesSQL"/>
+            <h4><span class="label public">public</span>getListTablesSQL<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getListUsersSQL"/>
+            <h4><span class="label public">public</span>getListUsersSQL<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getListViewsSQL"/>
+            <h4><span class="label public">public</span>getListViewsSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $database</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getListViewsSQL"/>
+            <h4><span class="label public">public</span>getListViewsSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $database</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the SQL to list all views of a database or user.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$database</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLocateExpression"/>
+            <h4><span class="label public">public</span>getLocateExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $str</strong>, <span class="param-type"/><strong> $substr</strong>, <span class="param-type"/><strong> $startPos</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getLocateExpression"/>
+            <h4><span class="label public">public</span>getLocateExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong>, <span class="param-type">string</span><strong> $substr</strong>, <span class="param-type">integer</span><strong> $startPos</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>returns the position of the first occurrence of substring $substr in string $str</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - literal string</li>
+                <li><code>$substr</code> - literal string to find</li>
+                <li><code>$startPos</code> - position to start at, beginning of string by default</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLowerExpression"/>
+            <h4><span class="label public">public</span>getLowerExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>lower Returns the string $str with all characters changed to lowercase according to the current character set mapping.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - literal string or column name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLtrimExpression"/>
+            <h4><span class="label public">public</span>getLtrimExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>ltrim returns the string $str with leading space characters removed</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - literal string or column name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMaxExpression"/>
+            <h4><span class="label public">public</span>getMaxExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $column</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the highest value of a column</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - the column to use</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>generated sql including a MAX aggregate function</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMaxIdentifierLength"/>
+            <h4><span class="label public">public</span>getMaxIdentifierLength<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Maximum length of any given databse identifier, like tables or column names.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMd5Expression"/>
+            <h4><span class="label public">public</span>getMd5Expression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $column</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the md5 sum of a field.<pre>Note: Not SQL92, but common functionality</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMinExpression"/>
+            <h4><span class="label public">public</span>getMinExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $column</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the lowest value of a column</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - the column to use</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getModExpression"/>
+            <h4><span class="label public">public</span>getModExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $expression1</strong>, <span class="param-type"/><strong> $expression2</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getModExpression"/>
+            <h4><span class="label public">public</span>getModExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $expression1</strong>, <span class="param-type">string</span><strong> $expression2</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the remainder of the division operation $expression1 / $expression2.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$expression1</code> - </li>
+                <li><code>$expression2</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getName"/>
+            <h4><span class="label public">public</span>getName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getName"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the name of the platform.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNotExpression"/>
+            <h4><span class="label public">public</span>getNotExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $expression</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the SQL for a logical not.<pre>Example:
+&lt;code&gt;
+$q = new Doctrine_Query();
+$e = $q-&gt;expr;
+$q-&gt;select('*')-&gt;from('table')
+  -&gt;where($e-&gt;eq('id', $e-&gt;not('null'));
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$expression</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>a logical expression</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNowExpression"/>
+            <h4><span class="label public">public</span>getNowExpression<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the current system date.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPiExpression"/>
+            <h4><span class="label public">public</span>getPiExpression<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="getReadLockSQL"/>
+            <h4><span class="label public">public</span>getReadLockSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the sql snippet to append to any SELECT statement which locks rows in shared read lock.<pre>This defaults to the ASNI SQL "FOR UPDATE", which is an exclusive lock (Write). Some database
+vendors allow to lighten this constraint up to be a real read lock.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRegexpExpression"/>
+            <h4><span class="label public">public</span>getRegexpExpression<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getRegexpExpression"/>
+            <h4><span class="label public">public</span>getRegexpExpression<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the regular expression operator.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getReservedKeywordsList"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getReservedKeywordsList<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the keyword list instance of this platform.<pre>Throws exception if no keyword list is specified.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>DBALException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRoundExpression"/>
+            <h4><span class="label public">public</span>getRoundExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $column</strong>, <span class="param-type">integer</span><strong> $decimals</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Rounds a numeric field to the number of decimals specified.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - </li>
+                <li><code>$decimals</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRtrimExpression"/>
+            <h4><span class="label public">public</span>getRtrimExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>rtrim returns the string $str with proceeding space characters removed</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - literal string or column name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSQLResultCasing"/>
+            <h4><span class="label public">public</span>getSQLResultCasing<span style="font-size:90%;">( <span class="param-type">string</span><strong> $column</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the character casing of a column in an SQL result set of this platform.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - The column name for which to get the correct character casing.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The column name in the character casing used in SQL result sets.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSequenceNextValSQL"/>
+            <h4><span class="label public">public</span>getSequenceNextValSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $sequenceName</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getSetTransactionIsolationSQL"/>
+            <h4><span class="label public">public</span>getSetTransactionIsolationSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $level</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getSetTransactionIsolationSQL"/>
+            <h4><span class="label public">public</span>getSetTransactionIsolationSQL<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $level</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get sql to set the transaction isolation level</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$level</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getShowDatabasesSQL"/>
+            <h4><span class="label public">public</span>getShowDatabasesSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getShowDatabasesSQL"/>
+            <h4><span class="label public">public</span>getShowDatabasesSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get sql query to show a list of database.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSinExpression"/>
+            <h4><span class="label public">public</span>getSinExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $value</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getSmallIntTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getSmallIntTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getSmallIntTypeDeclarationSQL"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getSmallIntTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $columnDef</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL snippet that declares a 2 byte integer column.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnDef</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSqlCommentEndString"/>
+            <h4><span class="label public">public</span>getSqlCommentEndString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the string portion that ends an SQL comment.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSqlCommentStartString"/>
+            <h4><span class="label public">public</span>getSqlCommentStartString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the string portion that starts an SQL comment.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSqrtExpression"/>
+            <h4><span class="label public">public</span>getSqrtExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $column</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the squared value of a column</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - the column to use</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>generated sql including an SQRT aggregate function</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSubstringExpression"/>
+            <h4><span class="label public">public</span>getSubstringExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $value</strong>, <span class="param-type"/><strong> $from</strong>, <span class="param-type"/><strong> $length</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getSubstringExpression"/>
+            <h4><span class="label public">public</span>getSubstringExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong>, <span class="param-type">integer</span><strong> $from</strong>, <span class="param-type">integer</span><strong> $length</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>return string to call a function to get a substring inside an SQL statement<pre>Note: Not SQL92, but common functionality.
+
+SQLite only supports the 2 parameter variant of this function</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - an sql string literal or column name/alias</li>
+                <li><code>$from</code> - where to start the substring portion</li>
+                <li><code>$length</code> - the substring portion length</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSumExpression"/>
+            <h4><span class="label public">public</span>getSumExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $column</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the total sum of a column</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - the column to use</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTemporaryTableName"/>
+            <h4><span class="label public">public</span>getTemporaryTableName<span style="font-size:90%;">( <span class="param-type"/><strong> $tableName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getTemporaryTableName"/>
+            <h4><span class="label public">public</span>getTemporaryTableName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Some vendors require temporary table names to be qualified specially.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTemporaryTableSQL"/>
+            <h4><span class="label public">public</span>getTemporaryTableSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>A method to return the required SQL string that fits between CREATE ... TABLE to create the table as a temporary table.<pre>Should be overridden in driver classes to return the correct string for the
+specific database type.
+
+The default is to return the string "TEMPORARY" - this will result in a
+SQL error for any database that does not support temporary tables, or that
+requires a different SQL command from "CREATE TEMPORARY TABLE".</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The string required to be placed between "CREATE" and "TABLE"</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTimeFormatString"/>
+            <h4><span class="label public">public</span>getTimeFormatString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getTimeFormatString"/>
+            <h4><span class="label public">public</span>getTimeFormatString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getTimeFormatString"/>
+            <h4><span class="label public">public</span>getTimeFormatString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the format string, as accepted by the date() function, that describes the format of a stored time value of this platform.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The format string.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTimeTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getTimeTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldDeclaration</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getTimeTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getTimeTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldDeclaration</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getTimeTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getTimeTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldDeclaration</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL to be used to create time fields in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fieldDeclaration</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTrimExpression"/>
+            <h4><span class="label public">public</span>getTrimExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $str</strong>, <span class="param-type"/><strong> $pos</strong>, <span class="param-type"/><strong> $char</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getTrimExpression"/>
+            <h4><span class="label public">public</span>getTrimExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong>, <span class="param-type">integer</span><strong> $pos</strong>, <span class="param-type">string</span><strong> $char</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Trim a string, leading/trailing/both and with a given char which defaults to space.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - </li>
+                <li><code>$pos</code> - </li>
+                <li><code>$char</code> - has to be quoted already</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTruncateTableSQL"/>
+            <h4><span class="label public">public</span>getTruncateTableSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $tableName</strong>, <span class="param-type"/><strong> $cascade</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getTruncateTableSQL"/>
+            <h4><span class="label public">public</span>getTruncateTableSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong>, <span class="param-type">boolean</span><strong> $cascade</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate a Truncate Table SQL statement for a given table.<pre>Cascade is not supported on many platforms but would optionally cascade the truncate by
+following the foreign keys.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - </li>
+                <li><code>$cascade</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUniqueConstraintDeclarationSQL"/>
+            <h4><span class="label public">public</span>getUniqueConstraintDeclarationSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Index.xhtml">Doctrine\DBAL\Schema\Index</a></span><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getUniqueConstraintDeclarationSQL"/>
+            <h4><span class="label public">public</span>getUniqueConstraintDeclarationSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Index.xhtml">Doctrine\DBAL\Schema\Index</a></span><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL code portion needed to set a unique constraint declaration to be used in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - name of the unique constraint</li>
+                <li><code>$index</code> - index definition</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>DBMS specific SQL code portion needed</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUniqueFieldDeclarationSQL"/>
+            <h4><span class="label public">public</span>getUniqueFieldDeclarationSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Obtain DBMS specific SQL code portion needed to set the UNIQUE constraint of a field declaration to be used in statements like CREATE TABLE.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>DBMS specific SQL code portion needed to set the UNIQUE constraint</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getUpperExpression"/>
+            <h4><span class="label public">public</span>getUpperExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>upper Returns the string $str with all characters changed to uppercase according to the current character set mapping.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - literal string or column name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getVarcharDefaultLength"/>
+            <h4><span class="label public">public</span>getVarcharDefaultLength<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the default length of a varchar field.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getVarcharMaxLength"/>
+            <h4><span class="label public">public</span>getVarcharMaxLength<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the maximum length of a varchar field.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getVarcharTypeDeclarationSQL"/>
+            <h4><span class="label public">public</span>getVarcharTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $field</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL snippet used to declare a VARCHAR column type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$field</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getWildcards"/>
+            <h4><span class="label public">public</span>getWildcards<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets all SQL wildcard characters of the platform.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getWriteLockSQL"/>
+            <h4><span class="label public">public</span>getWriteLockSQL<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the SQL snippet to append to any SELECT statement which obtains an exclusive lock on the rows.<pre>The semantics of this lock mode should equal the SELECT .. FOR UPDATE of the ASNI SQL standard.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasDoctrineTypeMappingFor"/>
+            <h4><span class="label public">public</span>hasDoctrineTypeMappingFor<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dbType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Check if a database type is currently supported by this platform.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dbType</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isCommentedDoctrineType"/>
+            <h4><span class="label public">public</span>isCommentedDoctrineType<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Types_Type.xhtml">Doctrine\DBAL\Types\Type</a></span><strong> $doctrineType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is it necessary for the platform to add a parsable type comment to allow reverse engineering the given type?</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$doctrineType</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="markDoctrineTypeCommented"/>
+            <h4><span class="label public">public</span>markDoctrineTypeCommented<span style="font-size:90%;">( <span class="param-type"><span title="string|Type">string|Type</span></span><strong> $doctrineType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Mark this type as to be commented in ALTER TABLE and CREATE TABLE statements.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$doctrineType</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="modifyLimitQuery"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>modifyLimitQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong>, <span class="param-type">integer</span><strong> $limit</strong>, <span class="param-type">integer</span><strong> $offset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Modify limit query</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - </li>
+                <li><code>$limit</code> - </li>
+                <li><code>$offset</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prefersIdentityColumns"/>
+            <h4><span class="label public">public</span>prefersIdentityColumns<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}<pre>MsSql prefers "autoincrement" identity columns since sequences can only
+be emulated with a table.</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="prefersIdentityColumns"/>
+            <h4><span class="label public">public</span>prefersIdentityColumns<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the platform prefers identity columns (eg. autoincrement) for ID generation.<pre>Subclasses should override this method to return TRUE if they prefer identity columns.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prefersSequences"/>
+            <h4><span class="label public">public</span>prefersSequences<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the platform prefers sequences for ID generation.<pre>Subclasses should override this method to return TRUE if they prefer sequences.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="quoteIdentifier"/>
+            <h4><span class="label public">public</span>quoteIdentifier<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Quotes a string so that it can be safely used as a table or column name, even if it is a reserved word of the platform. This also detects identifier chains separated by dot and quotes them independently.<pre>NOTE: Just because you CAN use quoted identifiers doesn't mean
+you SHOULD use them.  In general, they end up causing way more
+problems than they solve.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - identifier name to be quoted</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>quoted identifier string</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="quoteSingleIdentifier"/>
+            <h4><span class="label public">public</span>quoteSingleIdentifier<span style="font-size:90%;">( <span class="param-type"/><strong> $str</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="quoteSingleIdentifier"/>
+            <h4><span class="label public">public</span>quoteSingleIdentifier<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Quote a single identifier (no dot chain separation)</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$str</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerDoctrineTypeMapping"/>
+            <h4><span class="label public">public</span>registerDoctrineTypeMapping<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dbType</strong>, <span class="param-type">string</span><strong> $doctrineType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register a doctrine type to be used in conjunction with a column type of this platform.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dbType</code> - </li>
+                <li><code>$doctrineType</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Doctrine\DBAL\DBALException if the type is not found</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="releaseSavePoint"/>
+            <h4><span class="label public">public</span>releaseSavePoint<span style="font-size:90%;">( <span class="param-type"/><strong> $savepoint</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="releaseSavePoint"/>
+            <h4><span class="label public">public</span>releaseSavePoint<span style="font-size:90%;">( <span class="param-type">string</span><strong> $savepoint</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate SQL to release a savepoint</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$savepoint</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="rollbackSavePoint"/>
+            <h4><span class="label public">public</span>rollbackSavePoint<span style="font-size:90%;">( <span class="param-type"/><strong> $savepoint</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="rollbackSavePoint"/>
+            <h4><span class="label public">public</span>rollbackSavePoint<span style="font-size:90%;">( <span class="param-type">string</span><strong> $savepoint</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate SQL to rollback a savepoint</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$savepoint</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setEventManager"/>
+            <h4><span class="label public">public</span>setEventManager<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_Common_EventManager.xhtml">Doctrine\Common\EventManager</a></span><strong> $eventManager</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the EventManager used by the Platform.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsAlterTable"/>
+            <h4><span class="label public">public</span>supportsAlterTable<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the platform supports altering tables.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsCommentOnStatement"/>
+            <h4><span class="label public">public</span>supportsCommentOnStatement<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Does this platform support the propriortary synatx "COMMENT ON asset"</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsCreateDropDatabase"/>
+            <h4><span class="label public">public</span>supportsCreateDropDatabase<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="supportsCreateDropDatabase"/>
+            <h4><span class="label public">public</span>supportsCreateDropDatabase<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Some databases don't allow to create and drop databases at all or only with certain tools.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsForeignKeyConstraints"/>
+            <h4><span class="label public">public</span>supportsForeignKeyConstraints<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Does the platform supports foreign key constraints?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsForeignKeyOnUpdate"/>
+            <h4><span class="label public">public</span>supportsForeignKeyOnUpdate<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Does this platform supports onUpdate in foreign key constraints?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsGettingAffectedRows"/>
+            <h4><span class="label public">public</span>supportsGettingAffectedRows<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the platform supports getting the affected rows of a recent update/delete type query.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsIdentityColumns"/>
+            <h4><span class="label public">public</span>supportsIdentityColumns<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}<pre>MsSql supports this through AUTO_INCREMENT columns.</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="supportsIdentityColumns"/>
+            <h4><span class="label public">public</span>supportsIdentityColumns<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the platform supports identity columns.<pre>Identity columns are columns that recieve an auto-generated value from the
+database on insert of a row.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsIndexes"/>
+            <h4><span class="label public">public</span>supportsIndexes<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the platform supports indexes.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsInlineColumnComments"/>
+            <h4><span class="label public">public</span>supportsInlineColumnComments<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Does this plaform support to add inline column comments as postfix.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsLimitOffset"/>
+            <h4><span class="label public">public</span>supportsLimitOffset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="supportsLimitOffset"/>
+            <h4><span class="label public">public</span>supportsLimitOffset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="supportsLimitOffset"/>
+            <h4><span class="label public">public</span>supportsLimitOffset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Does the database platform support offsets in modify limit clauses?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsPrimaryConstraints"/>
+            <h4><span class="label public">public</span>supportsPrimaryConstraints<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the platform supports primary key constraints.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsReleaseSavepoints"/>
+            <h4><span class="label public">public</span>supportsReleaseSavepoints<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="supportsReleaseSavepoints"/>
+            <h4><span class="label public">public</span>supportsReleaseSavepoints<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the platform supports releasing savepoints.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsSavepoints"/>
+            <h4><span class="label public">public</span>supportsSavepoints<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the platform supports savepoints.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsSchemas"/>
+            <h4><span class="label public">public</span>supportsSchemas<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the platform supports database schemas.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsSequences"/>
+            <h4><span class="label public">public</span>supportsSequences<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the platform supports sequences.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsTransactions"/>
+            <h4><span class="label public">public</span>supportsTransactions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Whether the platform supports transactions.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="supportsViews"/>
+            <h4><span class="label public">public</span>supportsViews<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Does this platform views ?</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getAlterTableIndexForeignKeySQL"/>
+            <h4><span class="label protected">protected</span>_getAlterTableIndexForeignKeySQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_TableDiff.xhtml">Doctrine\DBAL\Schema\TableDiff</a></span><strong> $diff</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Common code for alter table statement generation that updates the changed Index and Foreign Key definitions.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$diff</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getCommonIntegerTypeDeclarationSQL"/>
+            <h4><span class="label protected">protected</span>_getCommonIntegerTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $columnDef</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="_getCommonIntegerTypeDeclarationSQL"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>_getCommonIntegerTypeDeclarationSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $columnDef</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL snippet that declares common properties of an integer column.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnDef</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getCreateTableSQL"/>
+            <h4><span class="label protected">protected</span>_getCreateTableSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $tableName</strong>, <span class="param-type">Array</span><strong> $columns</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="_getCreateTableSQL"/>
+            <h4><span class="label protected">protected</span>_getCreateTableSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong>, <span class="param-type">Array</span><strong> $columns</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the SQL used to create a table.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - </li>
+                <li><code>$columns</code> - </li>
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getTransactionIsolationLevelSQL"/>
+            <h4><span class="label protected">protected</span>_getTransactionIsolationLevelSQL<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $level</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get sql for transaction isolation level Connection constant</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$level</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="doModifyLimitQuery"/>
+            <h4><span class="label protected">protected</span>doModifyLimitQuery<span style="font-size:90%;">( <span class="param-type"/><strong> $query</strong>, <span class="param-type"/><strong> $limit</strong>, <span class="param-type"/><strong> $offset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="doModifyLimitQuery"/>
+            <h4><span class="label protected">protected</span>doModifyLimitQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong>, <span class="param-type">integer</span><strong> $limit</strong>, <span class="param-type">integer</span><strong> $offset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds an driver-specific LIMIT clause to the query</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - </li>
+                <li><code>$limit</code> - </li>
+                <li><code>$offset</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getColumnComment"/>
+            <h4><span class="label protected">protected</span>getColumnComment<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Column.xhtml">Doctrine\DBAL\Schema\Column</a></span><strong> $column</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the comment of a passed column modified by potential doctrine type comment hints.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCreateIndexSQLFlags"/>
+            <h4><span class="label protected">protected</span>getCreateIndexSQLFlags<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Index.xhtml">Doctrine\DBAL\Schema\Index</a></span><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getCreateIndexSQLFlags"/>
+            <h4><span class="label protected">protected</span>getCreateIndexSQLFlags<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Index.xhtml">Doctrine\DBAL\Schema\Index</a></span><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds additional flags for index generation</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$index</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPostAlterTableIndexForeignKeySQL"/>
+            <h4><span class="label protected">protected</span>getPostAlterTableIndexForeignKeySQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_TableDiff.xhtml">Doctrine\DBAL\Schema\TableDiff</a></span><strong> $diff</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getPreAlterTableIndexForeignKeySQL"/>
+            <h4><span class="label protected">protected</span>getPreAlterTableIndexForeignKeySQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_TableDiff.xhtml">Doctrine\DBAL\Schema\TableDiff</a></span><strong> $diff</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getReservedKeywordsClass"/>
+            <h4><span class="label protected">protected</span>getReservedKeywordsClass<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getReservedKeywordsClass"/>
+            <h4><span class="label protected">protected</span>getReservedKeywordsClass<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>The class name of the reserved keywords list.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getVarcharTypeDeclarationSQLSnippet"/>
+            <h4><span class="label protected">protected</span>getVarcharTypeDeclarationSQLSnippet<span style="font-size:90%;">( <span class="param-type"/><strong> $length</strong>, <span class="param-type"/><strong> $fixed</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getVarcharTypeDeclarationSQLSnippet"/>
+            <h4><span class="label protected">protected</span>getVarcharTypeDeclarationSQLSnippet<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $length</strong>, <span class="param-type">boolean</span><strong> $fixed</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$length</code> - </li>
+                <li><code>$fixed</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Doctrine\DBAL\DBALException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="initializeCommentedDoctrineTypes"/>
+            <h4><span class="label protected">protected</span>initializeCommentedDoctrineTypes<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initialize the Doctrine Type comments instance variable for in_array() checks.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="initializeDoctrineTypeMappings"/>
+            <h4><span class="label protected">protected</span>initializeDoctrineTypeMappings<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}<pre>Adding Datetime2 Type</pre></li>
+            </p>
+          </li>
+          <li>
+            <a name="initializeDoctrineTypeMappings"/>
+            <h4><span class="label protected">protected</span>initializeDoctrineTypeMappings<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="initializeDoctrineTypeMappings"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>initializeDoctrineTypeMappings<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Lazy load Doctrine Type Mappings</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="onSchemaAlterTable"/>
+            <h4><span class="label protected">protected</span>onSchemaAlterTable<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_TableDiff.xhtml">Doctrine\DBAL\Schema\TableDiff</a></span><strong> $diff</strong>, <span class="param-type">array</span><strong> &amp;$sql</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$diff</code> - </li>
+                <li><code>$sql</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="onSchemaAlterTableAddColumn"/>
+            <h4><span class="label protected">protected</span>onSchemaAlterTableAddColumn<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Column.xhtml">Doctrine\DBAL\Schema\Column</a></span><strong> $column</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_TableDiff.xhtml">Doctrine\DBAL\Schema\TableDiff</a></span><strong> $diff</strong>, <span class="param-type">array</span><strong> &amp;$columnSql</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - </li>
+                <li><code>$diff</code> - </li>
+                <li><code>$columnSql</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="onSchemaAlterTableChangeColumn"/>
+            <h4><span class="label protected">protected</span>onSchemaAlterTableChangeColumn<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_ColumnDiff.xhtml">Doctrine\DBAL\Schema\ColumnDiff</a></span><strong> $columnDiff</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_TableDiff.xhtml">Doctrine\DBAL\Schema\TableDiff</a></span><strong> $diff</strong>, <span class="param-type">array</span><strong> &amp;$columnSql</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnDiff</code> - </li>
+                <li><code>$diff</code> - </li>
+                <li><code>$columnSql</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="onSchemaAlterTableRemoveColumn"/>
+            <h4><span class="label protected">protected</span>onSchemaAlterTableRemoveColumn<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Column.xhtml">Doctrine\DBAL\Schema\Column</a></span><strong> $column</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_TableDiff.xhtml">Doctrine\DBAL\Schema\TableDiff</a></span><strong> $diff</strong>, <span class="param-type">array</span><strong> &amp;$columnSql</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$column</code> - </li>
+                <li><code>$diff</code> - </li>
+                <li><code>$columnSql</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="onSchemaAlterTableRenameColumn"/>
+            <h4><span class="label protected">protected</span>onSchemaAlterTableRenameColumn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $oldColumnName</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_Column.xhtml">Doctrine\DBAL\Schema\Column</a></span><strong> $column</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Schema_TableDiff.xhtml">Doctrine\DBAL\Schema\TableDiff</a></span><strong> $diff</strong>, <span class="param-type">array</span><strong> &amp;$columnSql</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$oldColumnName</code> - </li>
+                <li><code>$column</code> - </li>
+                <li><code>$diff</code> - </li>
+                <li><code>$columnSql</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

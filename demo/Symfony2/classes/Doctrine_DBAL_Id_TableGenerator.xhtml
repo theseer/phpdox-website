@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\DBAL\Id\TableGenerator - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#conn">$conn</a>
+          </li>
+          <li>
+            <a href="#generatorTableName">$generatorTableName</a>
+          </li>
+          <li>
+            <a href="#sequences">$sequences</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#nextValue">nextValue</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\DBAL\Id\</span>TableGenerator</h2>
+        <div class="file-notice">
+          <p>Table ID Generator for those poor languages that are missing sequences.</p>
+          <p>
+            <pre>WARNING: The Table Id Generator clones a second independent database
+connection to work correctly. This means using the generator requests that
+generate IDs will have two open database connections. This is necessary to
+be safe from transaction failures in the main connection. Make sure to only
+ever use one TableGenerator otherwise you end up with many connections.
+
+TableID Generator does not work with SQLite.
+
+The TableGenerator does not take care of creating the SQL Table itself. You
+should look at the `TableGeneratorSchemaVisitor` to do this for you.
+Otherwise the schema for a table looks like:
+
+CREATE sequences (
+  sequence_name VARCHAR(255) NOT NULL,
+  sequence_value INT NOT NULL DEFAULT '1',
+  sequence_increment_by INT NOT NULL DEFAULT '1',
+  PRIMARY KEY (table_name)
+);
+
+Technically this generator works as follows:
+
+1. Use a robust transaction serialization level.
+2. Open transaction
+3. Acquire a read lock on the table row (SELECT .. FOR UPDATE)
+4. Increment current value by one and write back to database
+5. Commit transaction
+
+If you are using a sequence_increment_by value that is larger than one the
+ID Generator will keep incrementing values until it hits the incrementation
+gap before issuing another query.
+
+If no row is present for a given sequence a new one will be created with the
+default values 'value' = 1 and 'increment_by' = 1</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="conn"/>
+            <h4><span class="label private">private</span>object 
+                
+                $conn</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="generatorTableName"/>
+            <h4><span class="label private">private</span>string 
+                
+                $generatorTableName</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="sequences"/>
+            <h4><span class="label private">private</span>array 
+                
+                $sequences</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Connection.xhtml">Doctrine\DBAL\Connection</a></span><strong> $conn</strong>, <span class="param-type">string</span><strong> $generatorTableName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$conn</code> - </li>
+                <li><code>$generatorTableName</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="nextValue"/>
+            <h4><span class="label public">public</span>nextValue<span style="font-size:90%;">( <span class="param-type"/><strong> $sequenceName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate the next unused value for the given sequence name</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

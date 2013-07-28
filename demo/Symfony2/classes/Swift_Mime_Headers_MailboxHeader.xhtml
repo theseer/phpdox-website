@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Swift_Mime_Headers_MailboxHeader - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_mailboxes">$_mailboxes</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__toString">__toString</a>
+          </li>
+          <li>
+            <a href="#_assertValidAddress">_assertValidAddress</a>
+          </li>
+          <li>
+            <a href="#_createNameAddressStrings">_createNameAddressStrings</a>
+          </li>
+          <li>
+            <a href="#clearCachedValueIf">clearCachedValueIf</a>
+          </li>
+          <li>
+            <a href="#createDisplayNameString">createDisplayNameString</a>
+          </li>
+          <li>
+            <a href="#createMailboxListString">createMailboxListString</a>
+          </li>
+          <li>
+            <a href="#createPhrase">createPhrase</a>
+          </li>
+          <li>
+            <a href="#encodeWords">encodeWords</a>
+          </li>
+          <li>
+            <a href="#generateTokenLines">generateTokenLines</a>
+          </li>
+          <li>
+            <a href="#getAddresses">getAddresses</a>
+          </li>
+          <li>
+            <a href="#getCachedValue">getCachedValue</a>
+          </li>
+          <li>
+            <a href="#getCharset">getCharset</a>
+          </li>
+          <li>
+            <a href="#getEncodableWordTokens">getEncodableWordTokens</a>
+          </li>
+          <li>
+            <a href="#getEncoder">getEncoder</a>
+          </li>
+          <li>
+            <a href="#getFieldBody">getFieldBody</a>
+          </li>
+          <li>
+            <a href="#getFieldBodyModel">getFieldBodyModel</a>
+          </li>
+          <li>
+            <a href="#getFieldName">getFieldName</a>
+          </li>
+          <li>
+            <a href="#getFieldType">getFieldType</a>
+          </li>
+          <li>
+            <a href="#getGrammar">getGrammar</a>
+          </li>
+          <li>
+            <a href="#getLanguage">getLanguage</a>
+          </li>
+          <li>
+            <a href="#getMaxLineLength">getMaxLineLength</a>
+          </li>
+          <li>
+            <a href="#getNameAddressStrings">getNameAddressStrings</a>
+          </li>
+          <li>
+            <a href="#getNameAddresses">getNameAddresses</a>
+          </li>
+          <li>
+            <a href="#getTokenAsEncodedWord">getTokenAsEncodedWord</a>
+          </li>
+          <li>
+            <a href="#normalizeMailboxes">normalizeMailboxes</a>
+          </li>
+          <li>
+            <a href="#removeAddresses">removeAddresses</a>
+          </li>
+          <li>
+            <a href="#setAddresses">setAddresses</a>
+          </li>
+          <li>
+            <a href="#setCachedValue">setCachedValue</a>
+          </li>
+          <li>
+            <a href="#setCharset">setCharset</a>
+          </li>
+          <li>
+            <a href="#setEncoder">setEncoder</a>
+          </li>
+          <li>
+            <a href="#setFieldBodyModel">setFieldBodyModel</a>
+          </li>
+          <li>
+            <a href="#setFieldName">setFieldName</a>
+          </li>
+          <li>
+            <a href="#setGrammar">setGrammar</a>
+          </li>
+          <li>
+            <a href="#setLanguage">setLanguage</a>
+          </li>
+          <li>
+            <a href="#setMaxLineLength">setMaxLineLength</a>
+          </li>
+          <li>
+            <a href="#setNameAddresses">setNameAddresses</a>
+          </li>
+          <li>
+            <a href="#toString">toString</a>
+          </li>
+          <li>
+            <a href="#toTokens">toTokens</a>
+          </li>
+          <li>
+            <a href="#tokenNeedsEncoding">tokenNeedsEncoding</a>
+          </li>
+          <li>
+            <a href="#tokenNeedsEncoding">tokenNeedsEncoding</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Swift_Mime_Headers_MailboxHeader</h2>
+        <div class="file-notice">
+          <p>A Mailbox Address MIME Header for something like From or Sender.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Chris Corbyn</li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_mailboxes"/>
+            <h4><span class="label private">private</span>array 
+                
+                $_mailboxes</h4>
+            <ul class="varlist">
+              <li>The mailboxes used in this Header.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type"><span title="\\Swift_Mime_HeaderEncoder">Swift_Mime_HeaderEncoder</span></span><strong> $encoder</strong>, <span class="param-type"><span title="\\Swift_Mime_Grammar">Swift_Mime_Grammar</span></span><strong> $grammar</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a new MailboxHeader with $name.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - of Header</li>
+                <li><code>$encoder</code> - </li>
+                <li><code>$grammar</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__toString"/>
+            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a string representation of this object.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAddresses"/>
+            <h4><span class="label public">public</span>getAddresses<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all email addresses in this Header.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCharset"/>
+            <h4><span class="label public">public</span>getCharset<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the character set used in this Header.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEncoder"/>
+            <h4><span class="label public">public</span>getEncoder<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the encoder used for encoding this Header.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFieldBody"/>
+            <h4><span class="label public">public</span>getFieldBody<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the string value of the body in this Header.<pre>This is not necessarily RFC 2822 compliant since folding white space will
+not be added at this stage (see  for that).
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_RfcComplianceException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFieldBodyModel"/>
+            <h4><span class="label public">public</span>getFieldBodyModel<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the model for the field body.<pre>This method returns an associative array like </pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_RfcComplianceException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFieldName"/>
+            <h4><span class="label public">public</span>getFieldName<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the name of this header (e.g. charset).</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFieldType"/>
+            <h4><span class="label public">public</span>getFieldType<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the type of Header that this instance represents.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getGrammar"/>
+            <h4><span class="label public">public</span>getGrammar<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the grammar used for this Header.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLanguage"/>
+            <h4><span class="label public">public</span>getLanguage<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the language used in this Header.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getMaxLineLength"/>
+            <h4><span class="label public">public</span>getMaxLineLength<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the maximum permitted length of lines in this Header.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNameAddressStrings"/>
+            <h4><span class="label public">public</span>getNameAddressStrings<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the full mailbox list of this Header as an array of valid RFC 2822 strings.<pre>Example:
+&lt;code&gt;
+&lt;?php
+$header = new Swift_Mime_Headers_MailboxHeader('From',
+ array('chris@swiftmailer.org' =&gt; 'Chris Corbyn',
+ 'mark@swiftmailer.org' =&gt; 'Mark Corbyn')
+ );
+print_r($header-&gt;getNameAddressStrings());
+// array (
+// 0 =&gt; Chris Corbyn &lt;chris@swiftmailer.org&gt;,
+// 1 =&gt; Mark Corbyn &lt;mark@swiftmailer.org&gt;
+// )
+?&gt;
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_RfcComplianceException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getNameAddresses"/>
+            <h4><span class="label public">public</span>getNameAddresses<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all mailboxes in this Header as key=&gt;value pairs.<pre>The key is the address and the value is the name (or null if none set).
+Example:
+&lt;code&gt;
+&lt;?php
+$header = new Swift_Mime_Headers_MailboxHeader('From',
+ array('chris@swiftmailer.org' =&gt; 'Chris Corbyn',
+ 'mark@swiftmailer.org' =&gt; 'Mark Corbyn')
+ );
+print_r($header-&gt;getNameAddresses());
+// array (
+// chris@swiftmailer.org =&gt; Chris Corbyn,
+// mark@swiftmailer.org =&gt; Mark Corbyn
+// )
+?&gt;
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeAddresses"/>
+            <h4><span class="label public">public</span>removeAddresses<span style="font-size:90%;">( <span class="param-type">array</span><strong> $addresses</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove one or more addresses from this Header.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$addresses</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setAddresses"/>
+            <h4><span class="label public">public</span>setAddresses<span style="font-size:90%;">( <span class="param-type">array</span><strong> $addresses</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Makes this Header represent a list of plain email addresses with no names.<pre>Example:
+&lt;code&gt;
+&lt;?php
+//Sets three email addresses as the Header data
+$header-&gt;setAddresses(
+ array('one@domain.tld', 'two@domain.tld', 'three@domain.tld')
+ );
+?&gt;
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$addresses</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_RfcComplianceException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCharset"/>
+            <h4><span class="label public">public</span>setCharset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $charset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the character set used in this Header.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$charset</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setEncoder"/>
+            <h4><span class="label public">public</span>setEncoder<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_HeaderEncoder">Swift_Mime_HeaderEncoder</span></span><strong> $encoder</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the encoder used for encoding the header.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$encoder</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFieldBodyModel"/>
+            <h4><span class="label public">public</span>setFieldBodyModel<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $model</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the model for the field body.<pre>This method takes a string, or an array of addresses.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$model</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_RfcComplianceException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setGrammar"/>
+            <h4><span class="label public">public</span>setGrammar<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_Grammar">Swift_Mime_Grammar</span></span><strong> $grammar</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the grammar used for the header.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$grammar</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setLanguage"/>
+            <h4><span class="label public">public</span>setLanguage<span style="font-size:90%;">( <span class="param-type">string</span><strong> $lang</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the language used in this Header.<pre>For example, for US English, 'en-us'.
+This can be unspecified.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$lang</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setMaxLineLength"/>
+            <h4><span class="label public">public</span>setMaxLineLength<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $lineLength</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the maximum length of lines in the header (excluding EOL).</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$lineLength</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setNameAddresses"/>
+            <h4><span class="label public">public</span>setNameAddresses<span style="font-size:90%;">( <span class="param-type">array</span><strong> $mailboxes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set a list of mailboxes to be shown in this Header.<pre>The mailboxes can be a simple array of addresses, or an array of
+key=&gt;value pairs where (email =&gt; personalName).
+Example:
+&lt;code&gt;
+&lt;?php
+//Sets two mailboxes in the Header, one with a personal name
+$header-&gt;setNameAddresses(array(
+ 'chris@swiftmailer.org' =&gt; 'Chris Corbyn',
+ 'mark@swiftmailer.org' //No associated personal name
+ ));
+?&gt;
+&lt;/code&gt;</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$mailboxes</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_RfcComplianceException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toString"/>
+            <h4><span class="label public">public</span>toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get this Header rendered as a RFC 2822 compliant string.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_RfcComplianceException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="clearCachedValueIf"/>
+            <h4><span class="label protected">protected</span>clearCachedValueIf<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $condition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clear the cached value if $condition is met.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$condition</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createDisplayNameString"/>
+            <h4><span class="label protected">protected</span>createDisplayNameString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $displayName</strong>, <span class="param-type">boolean</span><strong> $shorten</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Produces a compliant, formatted display-name based on the string given.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$displayName</code> - as displayed</li>
+                <li><code>$shorten</code> - the first line to make remove for header name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createMailboxListString"/>
+            <h4><span class="label protected">protected</span>createMailboxListString<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mailboxes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Creates a string form of all the mailboxes in the passed array.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$mailboxes</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_RfcComplianceException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createPhrase"/>
+            <h4><span class="label protected">protected</span>createPhrase<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_Header">Swift_Mime_Header</span></span><strong> $header</strong>, <span class="param-type">string</span><strong> $string</strong>, <span class="param-type">string</span><strong> $charset</strong>, <span class="param-type"><span title="\\Swift_Mime_HeaderEncoder">Swift_Mime_HeaderEncoder</span></span><strong> $encoder</strong>, <span class="param-type">boolean</span><strong> $shorten</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Produces a compliant, formatted RFC 2822 'phrase' based on the string given.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$header</code> - </li>
+                <li><code>$string</code> - as displayed</li>
+                <li><code>$charset</code> - of the text</li>
+                <li><code>$encoder</code> - </li>
+                <li><code>$shorten</code> - the first line to make remove for header name</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="encodeWords"/>
+            <h4><span class="label protected">protected</span>encodeWords<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_Header">Swift_Mime_Header</span></span><strong> $header</strong>, <span class="param-type">string</span><strong> $input</strong>, <span class="param-type">integer</span><strong> $usedLength</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Encode needed word tokens within a string of input.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$header</code> - </li>
+                <li><code>$input</code> - </li>
+                <li><code>$usedLength</code> - optional</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="generateTokenLines"/>
+            <h4><span class="label protected">protected</span>generateTokenLines<span style="font-size:90%;">( <span class="param-type">string</span><strong> $token</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates tokens from the given string which include CRLF as individual tokens.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$token</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCachedValue"/>
+            <h4><span class="label protected">protected</span>getCachedValue<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the value in the cache.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEncodableWordTokens"/>
+            <h4><span class="label protected">protected</span>getEncodableWordTokens<span style="font-size:90%;">( <span class="param-type">string</span><strong> $string</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Splits a string into tokens in blocks of words which can be encoded quickly.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$string</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getTokenAsEncodedWord"/>
+            <h4><span class="label protected">protected</span>getTokenAsEncodedWord<span style="font-size:90%;">( <span class="param-type">string</span><strong> $token</strong>, <span class="param-type">integer</span><strong> $firstLineOffset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get a token as an encoded word for safe insertion into headers.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$token</code> - token to encode</li>
+                <li><code>$firstLineOffset</code> - optional</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="normalizeMailboxes"/>
+            <h4><span class="label protected">protected</span>normalizeMailboxes<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mailboxes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Normalizes a user-input list of mailboxes into consistent key=&gt;value pairs.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$mailboxes</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCachedValue"/>
+            <h4><span class="label protected">protected</span>setCachedValue<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set a value into the cache.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setFieldName"/>
+            <h4><span class="label protected">protected</span>setFieldName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the name of this Header field.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toTokens"/>
+            <h4><span class="label protected">protected</span>toTokens<span style="font-size:90%;">( <span class="param-type">string</span><strong> $string</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generate a list of all tokens in the final header.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$string</code> - The string to tokenize</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array of tokens as strings</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="tokenNeedsEncoding"/>
+            <h4><span class="label protected">protected</span>tokenNeedsEncoding<span style="font-size:90%;">( <span class="param-type">string</span><strong> $token</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Redefine the encoding requirements for mailboxes.<pre>Commas and semicolons are used to separate
+multiple addresses, and should therefore be encoded</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$token</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="tokenNeedsEncoding"/>
+            <h4><span class="label protected">protected</span>tokenNeedsEncoding<span style="font-size:90%;">( <span class="param-type">string</span><strong> $token</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Test if a token needs to be encoded or not.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$token</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_assertValidAddress"/>
+            <h4><span class="label private">private</span>_assertValidAddress<span style="font-size:90%;">( <span class="param-type">string</span><strong> $address</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Throws an Exception if the address passed does not comply with RFC 2822.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$address</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_RfcComplianceException If invalid.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_createNameAddressStrings"/>
+            <h4><span class="label private">private</span>_createNameAddressStrings<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mailboxes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return an array of strings conforming the the name-addr spec of RFC 2822.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$mailboxes</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>
