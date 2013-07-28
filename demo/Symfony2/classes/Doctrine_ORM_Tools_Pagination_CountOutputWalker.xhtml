@@ -1,0 +1,1512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\ORM\Tools\Pagination\CountOutputWalker - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#platform">$platform</a>
+          </li>
+          <li>
+            <a href="#rsm">$rsm</a>
+          </li>
+          <li>
+            <a href="#queryComponents">$queryComponents</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#getConnection">getConnection</a>
+          </li>
+          <li>
+            <a href="#getEntityManager">getEntityManager</a>
+          </li>
+          <li>
+            <a href="#getExecutor">getExecutor</a>
+          </li>
+          <li>
+            <a href="#getQuery">getQuery</a>
+          </li>
+          <li>
+            <a href="#getQueryComponent">getQueryComponent</a>
+          </li>
+          <li>
+            <a href="#getSQLColumnAlias">getSQLColumnAlias</a>
+          </li>
+          <li>
+            <a href="#getSQLTableAlias">getSQLTableAlias</a>
+          </li>
+          <li>
+            <a href="#setSQLTableAlias">setSQLTableAlias</a>
+          </li>
+          <li>
+            <a href="#walkAggregateExpression">walkAggregateExpression</a>
+          </li>
+          <li>
+            <a href="#walkArithmeticExpression">walkArithmeticExpression</a>
+          </li>
+          <li>
+            <a href="#walkArithmeticFactor">walkArithmeticFactor</a>
+          </li>
+          <li>
+            <a href="#walkArithmeticPrimary">walkArithmeticPrimary</a>
+          </li>
+          <li>
+            <a href="#walkArithmeticTerm">walkArithmeticTerm</a>
+          </li>
+          <li>
+            <a href="#walkBetweenExpression">walkBetweenExpression</a>
+          </li>
+          <li>
+            <a href="#walkCaseExpression">walkCaseExpression</a>
+          </li>
+          <li>
+            <a href="#walkCoalesceExpression">walkCoalesceExpression</a>
+          </li>
+          <li>
+            <a href="#walkCollectionMemberExpression">walkCollectionMemberExpression</a>
+          </li>
+          <li>
+            <a href="#walkComparisonExpression">walkComparisonExpression</a>
+          </li>
+          <li>
+            <a href="#walkConditionalExpression">walkConditionalExpression</a>
+          </li>
+          <li>
+            <a href="#walkConditionalFactor">walkConditionalFactor</a>
+          </li>
+          <li>
+            <a href="#walkConditionalPrimary">walkConditionalPrimary</a>
+          </li>
+          <li>
+            <a href="#walkConditionalTerm">walkConditionalTerm</a>
+          </li>
+          <li>
+            <a href="#walkDeleteClause">walkDeleteClause</a>
+          </li>
+          <li>
+            <a href="#walkDeleteStatement">walkDeleteStatement</a>
+          </li>
+          <li>
+            <a href="#walkEmptyCollectionComparisonExpression">walkEmptyCollectionComparisonExpression</a>
+          </li>
+          <li>
+            <a href="#walkEntityIdentificationVariable">walkEntityIdentificationVariable</a>
+          </li>
+          <li>
+            <a href="#walkExistsExpression">walkExistsExpression</a>
+          </li>
+          <li>
+            <a href="#walkFromClause">walkFromClause</a>
+          </li>
+          <li>
+            <a href="#walkFunction">walkFunction</a>
+          </li>
+          <li>
+            <a href="#walkGeneralCaseExpression">walkGeneralCaseExpression</a>
+          </li>
+          <li>
+            <a href="#walkGroupByClause">walkGroupByClause</a>
+          </li>
+          <li>
+            <a href="#walkGroupByItem">walkGroupByItem</a>
+          </li>
+          <li>
+            <a href="#walkHavingClause">walkHavingClause</a>
+          </li>
+          <li>
+            <a href="#walkIdentificationVariable">walkIdentificationVariable</a>
+          </li>
+          <li>
+            <a href="#walkInExpression">walkInExpression</a>
+          </li>
+          <li>
+            <a href="#walkInParameter">walkInParameter</a>
+          </li>
+          <li>
+            <a href="#walkInputParameter">walkInputParameter</a>
+          </li>
+          <li>
+            <a href="#walkInstanceOfExpression">walkInstanceOfExpression</a>
+          </li>
+          <li>
+            <a href="#walkJoin">walkJoin</a>
+          </li>
+          <li>
+            <a href="#walkJoinAssociationDeclaration">walkJoinAssociationDeclaration</a>
+          </li>
+          <li>
+            <a href="#walkLikeExpression">walkLikeExpression</a>
+          </li>
+          <li>
+            <a href="#walkLiteral">walkLiteral</a>
+          </li>
+          <li>
+            <a href="#walkNullComparisonExpression">walkNullComparisonExpression</a>
+          </li>
+          <li>
+            <a href="#walkNullIfExpression">walkNullIfExpression</a>
+          </li>
+          <li>
+            <a href="#walkOrderByClause">walkOrderByClause</a>
+          </li>
+          <li>
+            <a href="#walkOrderByItem">walkOrderByItem</a>
+          </li>
+          <li>
+            <a href="#walkPathExpression">walkPathExpression</a>
+          </li>
+          <li>
+            <a href="#walkQuantifiedExpression">walkQuantifiedExpression</a>
+          </li>
+          <li>
+            <a href="#walkRangeVariableDeclaration">walkRangeVariableDeclaration</a>
+          </li>
+          <li>
+            <a href="#walkResultVariable">walkResultVariable</a>
+          </li>
+          <li>
+            <a href="#walkSelectClause">walkSelectClause</a>
+          </li>
+          <li>
+            <a href="#walkSelectExpression">walkSelectExpression</a>
+          </li>
+          <li>
+            <a href="#walkSelectStatement">walkSelectStatement</a>
+          </li>
+          <li>
+            <a href="#walkSelectStatement">walkSelectStatement</a>
+          </li>
+          <li>
+            <a href="#walkSimpleArithmeticExpression">walkSimpleArithmeticExpression</a>
+          </li>
+          <li>
+            <a href="#walkSimpleCaseExpression">walkSimpleCaseExpression</a>
+          </li>
+          <li>
+            <a href="#walkSimpleSelectClause">walkSimpleSelectClause</a>
+          </li>
+          <li>
+            <a href="#walkSimpleSelectExpression">walkSimpleSelectExpression</a>
+          </li>
+          <li>
+            <a href="#walkStateFieldPathExpression">walkStateFieldPathExpression</a>
+          </li>
+          <li>
+            <a href="#walkStringPrimary">walkStringPrimary</a>
+          </li>
+          <li>
+            <a href="#walkSubselect">walkSubselect</a>
+          </li>
+          <li>
+            <a href="#walkSubselectFromClause">walkSubselectFromClause</a>
+          </li>
+          <li>
+            <a href="#walkUpdateClause">walkUpdateClause</a>
+          </li>
+          <li>
+            <a href="#walkUpdateItem">walkUpdateItem</a>
+          </li>
+          <li>
+            <a href="#walkUpdateStatement">walkUpdateStatement</a>
+          </li>
+          <li>
+            <a href="#walkWhereClause">walkWhereClause</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\ORM\Tools\Pagination\</span>CountOutputWalker</h2>
+        <div class="file-notice">
+          <p>Wrap the query in order to accurately count the root objects</p>
+          <p>
+            <pre>Given a DQL like `SELECT u FROM User u` it will generate an SQL query like:
+SELECT COUNT(*) (SELECT DISTINCT &lt;id&gt; FROM (&lt;original SQL&gt;))
+
+Works with composite keys but cannot deal with queries that have multiple
+root entities (e.g. `SELECT f, b from Foo, Bar`)</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Sander Marechal &lt;s.marechal@jejik.com&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist"/>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="platform"/>
+            <h4><span class="label private">private</span>object 
+                
+                $platform</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="rsm"/>
+            <h4><span class="label private">private</span>object 
+                
+                $rsm</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+          <li>
+            <a name="queryComponents"/>
+            <h4><span class="label private">private</span>array 
+                
+                $queryComponents</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Query.xhtml">Doctrine\ORM\Query</a></span><strong> $query</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_Query_ParserResult.xhtml">Doctrine\ORM\Query\ParserResult</a></span><strong> $parserResult</strong>, <span class="param-type">Array</span><strong> $queryComponents</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor. Stores various parameters that are otherwise unavailable because Doctrine\ORM\Query\SqlWalker keeps everything private without accessors.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$query</code> - </li>
+                <li><code>$parserResult</code> - </li>
+                <li><code>$queryComponents</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getConnection"/>
+            <h4><span class="label public">public</span>getConnection<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the Connection used by the walker.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEntityManager"/>
+            <h4><span class="label public">public</span>getEntityManager<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the EntityManager used by the walker.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getExecutor"/>
+            <h4><span class="label public">public</span>getExecutor<span style="font-size:90%;">( <span class="param-type"/><strong> $AST</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets an executor that can be used to execute the result of this walker.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getQuery"/>
+            <h4><span class="label public">public</span>getQuery<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the Query instance used by the walker.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getQueryComponent"/>
+            <h4><span class="label public">public</span>getQueryComponent<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dqlAlias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the information about a single query component.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$dqlAlias</code> - The DQL alias.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSQLColumnAlias"/>
+            <h4><span class="label public">public</span>getSQLColumnAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $columnName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets an SQL column alias for a column name.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$columnName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSQLTableAlias"/>
+            <h4><span class="label public">public</span>getSQLTableAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong>, <span class="param-type">string</span><strong> $dqlAlias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Generates a unique, short SQL table alias.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - Table name</li>
+                <li><code>$dqlAlias</code> - The DQL alias.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Generated table alias.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSQLTableAlias"/>
+            <h4><span class="label public">public</span>setSQLTableAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong>, <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $dqlAlias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Forces the SqlWalker to use a specific alias for a table name, rather than generating an alias on its own.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$tableName</code> - </li>
+                <li><code>$alias</code> - </li>
+                <li><code>$dqlAlias</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkAggregateExpression"/>
+            <h4><span class="label public">public</span>walkAggregateExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $aggExpression</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an AggregateExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkArithmeticExpression"/>
+            <h4><span class="label public">public</span>walkArithmeticExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $arithmeticExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an ArithmeticExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkArithmeticFactor"/>
+            <h4><span class="label public">public</span>walkArithmeticFactor<span style="font-size:90%;">( <span class="param-type"/><strong> $factor</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an ArithmeticFactor that represents an AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkArithmeticPrimary"/>
+            <h4><span class="label public">public</span>walkArithmeticPrimary<span style="font-size:90%;">( <span class="param-type"/><strong> $primary</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an ArithmeticPrimary that represents an AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkArithmeticTerm"/>
+            <h4><span class="label public">public</span>walkArithmeticTerm<span style="font-size:90%;">( <span class="param-type"/><strong> $term</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an ArithmeticTerm AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkBetweenExpression"/>
+            <h4><span class="label public">public</span>walkBetweenExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $betweenExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a BetweenExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkCaseExpression"/>
+            <h4><span class="label public">public</span>walkCaseExpression<span style="font-size:90%;">( <span class="param-type"><span title="CoalesceExpression|NullIfExpression|GeneralCaseExpression|SimpleCaseExpression">CoalesceExpression|NullIfExpression|GeneralCaseExpression|SimpleCaseExpression</span></span><strong> $expression</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a CaseExpression AST node and generates the corresponding SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$expression</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkCoalesceExpression"/>
+            <h4><span class="label public">public</span>walkCoalesceExpression<span style="font-size:90%;">( <span class="param-type"><span title="CoalesceExpression">CoalesceExpression</span></span><strong> $coalesceExpression</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a CoalesceExpression AST node and generates the corresponding SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$coalesceExpression</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkCollectionMemberExpression"/>
+            <h4><span class="label public">public</span>walkCollectionMemberExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $collMemberExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a CollectionMemberExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkComparisonExpression"/>
+            <h4><span class="label public">public</span>walkComparisonExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $compExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a ComparisonExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkConditionalExpression"/>
+            <h4><span class="label public">public</span>walkConditionalExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $condExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walk down a ConditionalExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkConditionalFactor"/>
+            <h4><span class="label public">public</span>walkConditionalFactor<span style="font-size:90%;">( <span class="param-type"/><strong> $factor</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a ConditionalFactor AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkConditionalPrimary"/>
+            <h4><span class="label public">public</span>walkConditionalPrimary<span style="font-size:90%;">( <span class="param-type"/><strong> $primary</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a ConditionalPrimary AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkConditionalTerm"/>
+            <h4><span class="label public">public</span>walkConditionalTerm<span style="font-size:90%;">( <span class="param-type"/><strong> $condTerm</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a ConditionalTerm AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkDeleteClause"/>
+            <h4><span class="label public">public</span>walkDeleteClause<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Query_AST_DeleteClause.xhtml">Doctrine\ORM\Query\AST\DeleteClause</a></span><strong> $deleteClause</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a DeleteClause AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkDeleteStatement"/>
+            <h4><span class="label public">public</span>walkDeleteStatement<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Query_AST_DeleteStatement.xhtml">Doctrine\ORM\Query\AST\DeleteStatement</a></span><strong> $AST</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a DeleteStatement AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkEmptyCollectionComparisonExpression"/>
+            <h4><span class="label public">public</span>walkEmptyCollectionComparisonExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $emptyCollCompExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an EmptyCollectionComparisonExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkEntityIdentificationVariable"/>
+            <h4><span class="label public">public</span>walkEntityIdentificationVariable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $identVariable</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an IdentificationVariable AST node, thereby generating the appropriate SQL.<pre>This one differs of -&gt;walkIdentificationVariable() because it generates the entity identifiers.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identVariable</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkExistsExpression"/>
+            <h4><span class="label public">public</span>walkExistsExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $existsExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an ExistsExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkFromClause"/>
+            <h4><span class="label public">public</span>walkFromClause<span style="font-size:90%;">( <span class="param-type"/><strong> $fromClause</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a FromClause AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkFunction"/>
+            <h4><span class="label public">public</span>walkFunction<span style="font-size:90%;">( <span class="param-type"/><strong> $function</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a FunctionNode AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkGeneralCaseExpression"/>
+            <h4><span class="label public">public</span>walkGeneralCaseExpression<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Query_AST_GeneralCaseExpression.xhtml">Doctrine\ORM\Query\AST\GeneralCaseExpression</a></span><strong> $generalCaseExpression</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a GeneralCaseExpression AST node and generates the corresponding SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$generalCaseExpression</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkGroupByClause"/>
+            <h4><span class="label public">public</span>walkGroupByClause<span style="font-size:90%;">( <span class="param-type"/><strong> $groupByClause</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a GroupByClause AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkGroupByItem"/>
+            <h4><span class="label public">public</span>walkGroupByItem<span style="font-size:90%;">( <span class="param-type"/><strong> $groupByItem</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a GroupByItem AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkHavingClause"/>
+            <h4><span class="label public">public</span>walkHavingClause<span style="font-size:90%;">( <span class="param-type"/><strong> $havingClause</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a HavingClause AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkIdentificationVariable"/>
+            <h4><span class="label public">public</span>walkIdentificationVariable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $identificationVariable</strong>, <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an IdentificationVariable (no AST node associated), thereby generating the SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$identificationVariable</code> - </li>
+                <li><code>$fieldName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkInExpression"/>
+            <h4><span class="label public">public</span>walkInExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $inExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an InExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkInParameter"/>
+            <h4><span class="label public">public</span>walkInParameter<span style="font-size:90%;">( <span class="param-type"/><strong> $inParam</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an InParameter AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkInputParameter"/>
+            <h4><span class="label public">public</span>walkInputParameter<span style="font-size:90%;">( <span class="param-type"/><strong> $inputParam</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an InputParameter AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkInstanceOfExpression"/>
+            <h4><span class="label public">public</span>walkInstanceOfExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $instanceOfExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an InstanceOfExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkJoin"/>
+            <h4><span class="label public">public</span>walkJoin<span style="font-size:90%;">( <span class="param-type"/><strong> $join</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a Join AST node and creates the corresponding SQL.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkJoinAssociationDeclaration"/>
+            <h4><span class="label public">public</span>walkJoinAssociationDeclaration<span style="font-size:90%;">( <span class="param-type"/><strong> $joinAssociationDeclaration</strong>, <span class="param-type"/><strong> $joinType</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a JoinAssociationDeclaration AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkLikeExpression"/>
+            <h4><span class="label public">public</span>walkLikeExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $likeExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a LikeExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkLiteral"/>
+            <h4><span class="label public">public</span>walkLiteral<span style="font-size:90%;">( <span class="param-type"/><strong> $literal</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a literal that represents an AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkNullComparisonExpression"/>
+            <h4><span class="label public">public</span>walkNullComparisonExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $nullCompExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a NullComparisonExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkNullIfExpression"/>
+            <h4><span class="label public">public</span>walkNullIfExpression<span style="font-size:90%;">( <span class="param-type"><span title="NullIfExpression">NullIfExpression</span></span><strong> $nullIfExpression</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a NullIfExpression AST node and generates the corresponding SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$nullIfExpression</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkOrderByClause"/>
+            <h4><span class="label public">public</span>walkOrderByClause<span style="font-size:90%;">( <span class="param-type"/><strong> $orderByClause</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an OrderByClause AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkOrderByItem"/>
+            <h4><span class="label public">public</span>walkOrderByItem<span style="font-size:90%;">( <span class="param-type"/><strong> $orderByItem</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an OrderByItem AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkPathExpression"/>
+            <h4><span class="label public">public</span>walkPathExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $pathExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a PathExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkQuantifiedExpression"/>
+            <h4><span class="label public">public</span>walkQuantifiedExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $qExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a QuantifiedExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkRangeVariableDeclaration"/>
+            <h4><span class="label public">public</span>walkRangeVariableDeclaration<span style="font-size:90%;">( <span class="param-type"/><strong> $rangeVariableDeclaration</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a RangeVariableDeclaration AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkResultVariable"/>
+            <h4><span class="label public">public</span>walkResultVariable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $resultVariable</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a ResultVriable that represents an AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$resultVariable</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkSelectClause"/>
+            <h4><span class="label public">public</span>walkSelectClause<span style="font-size:90%;">( <span class="param-type"/><strong> $selectClause</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a SelectClause AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$selectClause</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkSelectExpression"/>
+            <h4><span class="label public">public</span>walkSelectExpression<span style="font-size:90%;">( <span class="param-type"><span title="SelectExpression">SelectExpression</span></span><strong> $selectExpression</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a SelectExpression AST node and generates the corresponding SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$selectExpression</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkSelectStatement"/>
+            <h4><span class="label public">public</span>walkSelectStatement<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Query_AST_SelectStatement.xhtml">Doctrine\ORM\Query\AST\SelectStatement</a></span><strong> $AST</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a SelectStatement AST node, wrapping it in a COUNT (SELECT DISTINCT)<pre>Note that the ORDER BY clause is not removed. Many SQL implementations (e.g. MySQL)
+are able to cache subqueries. By keeping the ORDER BY clause intact, the limitSubQuery
+that will most likely be executed next can be read from the native SQL cache.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$AST</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkSelectStatement"/>
+            <h4><span class="label public">public</span>walkSelectStatement<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Query_AST_SelectStatement.xhtml">Doctrine\ORM\Query\AST\SelectStatement</a></span><strong> $AST</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a SelectStatement AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkSimpleArithmeticExpression"/>
+            <h4><span class="label public">public</span>walkSimpleArithmeticExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $simpleArithmeticExpr</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an SimpleArithmeticExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkSimpleCaseExpression"/>
+            <h4><span class="label public">public</span>walkSimpleCaseExpression<span style="font-size:90%;">( <span class="param-type"><span title="SimpleCaseExpression">SimpleCaseExpression</span></span><strong> $simpleCaseExpression</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a SimpleCaseExpression AST node and generates the corresponding SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$simpleCaseExpression</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkSimpleSelectClause"/>
+            <h4><span class="label public">public</span>walkSimpleSelectClause<span style="font-size:90%;">( <span class="param-type"/><strong> $simpleSelectClause</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a SimpleSelectClause AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkSimpleSelectExpression"/>
+            <h4><span class="label public">public</span>walkSimpleSelectExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $simpleSelectExpression</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a SimpleSelectExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkStateFieldPathExpression"/>
+            <h4><span class="label public">public</span>walkStateFieldPathExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $stateFieldPathExpression</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a StateFieldPathExpression AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkStringPrimary"/>
+            <h4><span class="label public">public</span>walkStringPrimary<span style="font-size:90%;">( <span class="param-type"/><strong> $stringPrimary</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a StringPrimary that represents an AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkSubselect"/>
+            <h4><span class="label public">public</span>walkSubselect<span style="font-size:90%;">( <span class="param-type"/><strong> $subselect</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a Subselect AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkSubselectFromClause"/>
+            <h4><span class="label public">public</span>walkSubselectFromClause<span style="font-size:90%;">( <span class="param-type"/><strong> $subselectFromClause</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a SubselectFromClause AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkUpdateClause"/>
+            <h4><span class="label public">public</span>walkUpdateClause<span style="font-size:90%;">( <span class="param-type"/><strong> $updateClause</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an UpdateClause AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkUpdateItem"/>
+            <h4><span class="label public">public</span>walkUpdateItem<span style="font-size:90%;">( <span class="param-type"/><strong> $updateItem</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an UpdateItem AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkUpdateStatement"/>
+            <h4><span class="label public">public</span>walkUpdateStatement<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Query_AST_UpdateStatement.xhtml">Doctrine\ORM\Query\AST\UpdateStatement</a></span><strong> $AST</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down an UpdateStatement AST node, thereby generating the appropriate SQL.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="walkWhereClause"/>
+            <h4><span class="label public">public</span>walkWhereClause<span style="font-size:90%;">( <span class="param-type"/><strong> $whereClause</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Walks down a WhereClause AST node, thereby generating the appropriate SQL.<pre>WhereClause or not, the appropriate discriminator sql is added.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The SQL.</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\ORM\Internal\Hydration\ObjectHydrator - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_ce">$_ce</a>
+          </li>
+          <li>
+            <a href="#_identifierMap">$_identifierMap</a>
+          </li>
+          <li>
+            <a href="#_resultPointers">$_resultPointers</a>
+          </li>
+          <li>
+            <a href="#_idTemplate">$_idTemplate</a>
+          </li>
+          <li>
+            <a href="#_resultCounter">$_resultCounter</a>
+          </li>
+          <li>
+            <a href="#_rootAliases">$_rootAliases</a>
+          </li>
+          <li>
+            <a href="#_initializedCollections">$_initializedCollections</a>
+          </li>
+          <li>
+            <a href="#_existingCollections">$_existingCollections</a>
+          </li>
+          <li>
+            <a href="#_rsm">$_rsm</a>
+          </li>
+          <li>
+            <a href="#_em">$_em</a>
+          </li>
+          <li>
+            <a href="#_platform">$_platform</a>
+          </li>
+          <li>
+            <a href="#_uow">$_uow</a>
+          </li>
+          <li>
+            <a href="#_cache">$_cache</a>
+          </li>
+          <li>
+            <a href="#_stmt">$_stmt</a>
+          </li>
+          <li>
+            <a href="#_hints">$_hints</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_getClassMetadata">_getClassMetadata</a>
+          </li>
+          <li>
+            <a href="#_getEntity">_getEntity</a>
+          </li>
+          <li>
+            <a href="#_getEntityFromIdentityMap">_getEntityFromIdentityMap</a>
+          </li>
+          <li>
+            <a href="#_initRelatedCollection">_initRelatedCollection</a>
+          </li>
+          <li>
+            <a href="#cleanup">cleanup</a>
+          </li>
+          <li>
+            <a href="#cleanup">cleanup</a>
+          </li>
+          <li>
+            <a href="#gatherRowData">gatherRowData</a>
+          </li>
+          <li>
+            <a href="#gatherScalarRowData">gatherScalarRowData</a>
+          </li>
+          <li>
+            <a href="#hydrateAll">hydrateAll</a>
+          </li>
+          <li>
+            <a href="#hydrateAllData">hydrateAllData</a>
+          </li>
+          <li>
+            <a href="#hydrateAllData">hydrateAllData</a>
+          </li>
+          <li>
+            <a href="#hydrateRow">hydrateRow</a>
+          </li>
+          <li>
+            <a href="#hydrateRowData">hydrateRowData</a>
+          </li>
+          <li>
+            <a href="#hydrateRowData">hydrateRowData</a>
+          </li>
+          <li>
+            <a href="#iterate">iterate</a>
+          </li>
+          <li>
+            <a href="#onClear">onClear</a>
+          </li>
+          <li>
+            <a href="#onClear">onClear</a>
+          </li>
+          <li>
+            <a href="#prepare">prepare</a>
+          </li>
+          <li>
+            <a href="#prepare">prepare</a>
+          </li>
+          <li>
+            <a href="#registerManaged">registerManaged</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\ORM\Internal\Hydration\</span>ObjectHydrator</h2>
+        <div class="file-notice">
+          <p>The ObjectHydrator constructs an object graph out of an SQL result set.</p>
+        </div>
+        <ul class="fileinfos"><li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li><li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanoc@hotmail.com&gt;</li>Highly performance-sensitive code.</ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_ce"/>
+            <h4><span class="label private">private</span>
+                $_ce</h4>
+          </li>
+          <li>
+            <a name="_identifierMap"/>
+            <h4><span class="label private">private</span>
+                $_identifierMap</h4>
+          </li>
+          <li>
+            <a name="_resultPointers"/>
+            <h4><span class="label private">private</span>
+                $_resultPointers</h4>
+          </li>
+          <li>
+            <a name="_idTemplate"/>
+            <h4><span class="label private">private</span>
+                $_idTemplate</h4>
+          </li>
+          <li>
+            <a name="_resultCounter"/>
+            <h4><span class="label private">private</span>
+                $_resultCounter</h4>
+          </li>
+          <li>
+            <a name="_rootAliases"/>
+            <h4><span class="label private">private</span>
+                $_rootAliases</h4>
+          </li>
+          <li>
+            <a name="_initializedCollections"/>
+            <h4><span class="label private">private</span>
+                $_initializedCollections</h4>
+          </li>
+          <li>
+            <a name="_existingCollections"/>
+            <h4><span class="label private">private</span>
+                $_existingCollections</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_EntityManager.xhtml">Doctrine\ORM\EntityManager</a></span><strong> $em</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initializes a new instance of a class derived from &lt;tt&gt;AbstractHydrator&lt;/tt&gt;.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$em</code> - The EntityManager to use.</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="hydrateAll"/>
+            <h4><span class="label public">public</span>hydrateAll<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $stmt</strong>, <span class="param-type">invalid method call</span><strong> $resultSetMapping</strong>, <span class="param-type">Array</span><strong> $hints</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Hydrates all rows returned by the passed statement instance at once.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$stmt</code> - </li>
+                <li><code>$resultSetMapping</code> - </li>
+                <li><code>$hints</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hydrateRow"/>
+            <h4><span class="label public">public</span>hydrateRow<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Hydrates a single row returned by the current statement instance during row-by-row hydration with {@link iterate()}.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="iterate"/>
+            <h4><span class="label public">public</span>iterate<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $stmt</strong>, <span class="param-type">invalid method call</span><strong> $resultSetMapping</strong>, <span class="param-type">Array</span><strong> $hints</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initiates a row-by-row hydration.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$stmt</code> - </li>
+                <li><code>$resultSetMapping</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="onClear"/>
+            <h4><span class="label public">public</span>onClear<span style="font-size:90%;">( <span class="param-type"/><strong> $eventArgs</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>When executed in a hydrate() loop we may have to clear internal state to decrease memory consumption.</li>
+            </p>
+          </li>
+          <li>
+            <a name="onClear"/>
+            <h4><span class="label public">public</span>onClear<span style="font-size:90%;">( <span class="param-type"/><strong> $eventArgs</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>When executed in a hydrate() loop we have to clear internal state to decrease memory consumption.</li>
+            </p>
+          </li>
+          <li>
+            <a name="cleanup"/>
+            <h4><span class="label protected">protected</span>cleanup<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="cleanup"/>
+            <h4><span class="label protected">protected</span>cleanup<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Excutes one-time cleanup tasks at the end of a hydration that was initiated through {@link hydrateAll} or {@link iterate()}.</li>
+            </p>
+          </li>
+          <li>
+            <a name="gatherRowData"/>
+            <h4><span class="label protected">protected</span>gatherRowData<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $data</strong>, <span class="param-type">Array</span><strong> &amp;$cache</strong>, <span class="param-type">Array</span><strong> &amp;$id</strong>, <span class="param-type">Array</span><strong> &amp;$nonemptyComponents</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Processes a row of the result set.<pre>Used for identity-based hydration (HYDRATE_OBJECT and HYDRATE_ARRAY).
+Puts the elements of a result row into a new array, grouped by the dql alias
+they belong to. The column names in the result set are mapped to their
+field names during this procedure as well as any necessary conversions on
+the values applied. Scalar values are kept in a specfic key 'scalars'.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$data</code> - SQL Result Row</li>
+                <li><code>&amp;$cache</code> - Cache for column to field result information</li>
+                <li><code>&amp;$id</code> - Dql-Alias =&gt; ID-Hash</li>
+                <li><code>&amp;$nonemptyComponents</code> - Does this DQL-Alias has at least one non NULL value?</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array with all the fields (name =&gt; value) of the data row,</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="gatherScalarRowData"/>
+            <h4><span class="label protected">protected</span>gatherScalarRowData<span style="font-size:90%;">( <span class="param-type">array</span><strong> &amp;$data</strong>, <span class="param-type">array</span><strong> &amp;$cache</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Processes a row of the result set.<pre>Used for HYDRATE_SCALAR. This is a variant of _gatherRowData() that
+simply converts column names to field names and properly converts the
+values according to their types. The resulting row has the same number
+of elements as before.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$data</code> - </li>
+                <li><code>$cache</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The processed row.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hydrateAllData"/>
+            <h4><span class="label protected">protected</span>hydrateAllData<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="hydrateAllData"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>hydrateAllData<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Hydrates all rows from the current statement instance at once.</li>
+            </p>
+          </li>
+          <li>
+            <a name="hydrateRowData"/>
+            <h4><span class="label protected">protected</span>hydrateRowData<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $row</strong>, <span class="param-type">Array</span><strong> &amp;$cache</strong>, <span class="param-type">Array</span><strong> &amp;$result</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Hydrates a single row in an SQL result set.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$row</code> - The data of the row to process.</li>
+                <li><code>$cache</code> - The cache to use.</li>
+                <li><code>$result</code> - The result array to fill.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hydrateRowData"/>
+            <h4><span class="label protected">protected</span>hydrateRowData<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $data</strong>, <span class="param-type">Array</span><strong> &amp;$cache</strong>, <span class="param-type">Array</span><strong> &amp;$result</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Hydrates a single row from the current statement instance.<pre>Template method.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$data</code> - The row data.</li>
+                <li><code>$cache</code> - The cache to use.</li>
+                <li><code>$result</code> - The result to fill.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="prepare"/>
+            <h4><span class="label protected">protected</span>prepare<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;"/>
+          </li>
+          <li>
+            <a name="prepare"/>
+            <h4><span class="label protected">protected</span>prepare<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Excutes one-time preparation tasks, once each time hydration is started through {@link hydrateAll} or {@link iterate()}.</li>
+            </p>
+          </li>
+          <li>
+            <a name="registerManaged"/>
+            <h4><span class="label protected">protected</span>registerManaged<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $class</strong>, <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> $data</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register entity as managed in UnitOfWork.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+                <li><code>$entity</code> - </li>
+                <li><code>$data</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getClassMetadata"/>
+            <h4><span class="label private">private</span>_getClassMetadata<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a ClassMetadata instance from the local cache.<pre>If the instance is not yet in the local cache, it is loaded into the
+local cache.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - The name of the class.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getEntity"/>
+            <h4><span class="label private">private</span>_getEntity<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $data</strong>, <span class="param-type">string</span><strong> $dqlAlias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets an entity instance.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$data</code> - The instance data.</li>
+                <li><code>$dqlAlias</code> - The DQL alias of the entity's class.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The entity.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_getEntityFromIdentityMap"/>
+            <h4><span class="label private">private</span>_getEntityFromIdentityMap<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">Array</span><strong> $data</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+                <li><code>$data</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_initRelatedCollection"/>
+            <h4><span class="label private">private</span>_initRelatedCollection<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $class</strong>, <span class="param-type">string</span><strong> $fieldName</strong>, <span class="param-type">string</span><strong> $parentDqlAlias</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initializes a related collection.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity to which the collection belongs.</li>
+                <li><code>$class</code> - </li>
+                <li><code>$fieldName</code> - The name of the field on the entity that holds the collection.</li>
+                <li><code>$parentDqlAlias</code> - Alias of the parent fetch joining this collection.</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

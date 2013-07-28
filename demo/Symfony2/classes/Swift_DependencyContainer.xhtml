@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Swift_DependencyContainer - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#TYPE_VALUE">TYPE_VALUE</a>
+          </li>
+          <li>
+            <a href="#TYPE_INSTANCE">TYPE_INSTANCE</a>
+          </li>
+          <li>
+            <a href="#TYPE_SHARED">TYPE_SHARED</a>
+          </li>
+          <li>
+            <a href="#TYPE_ALIAS">TYPE_ALIAS</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_instance">$_instance</a>
+          </li>
+          <li>
+            <a href="#_store">$_store</a>
+          </li>
+          <li>
+            <a href="#_endPoint">$_endPoint</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#_createAlias">_createAlias</a>
+          </li>
+          <li>
+            <a href="#_createNewInstance">_createNewInstance</a>
+          </li>
+          <li>
+            <a href="#_createSharedInstance">_createSharedInstance</a>
+          </li>
+          <li>
+            <a href="#_getEndPoint">_getEndPoint</a>
+          </li>
+          <li>
+            <a href="#_getValue">_getValue</a>
+          </li>
+          <li>
+            <a href="#_lookupRecursive">_lookupRecursive</a>
+          </li>
+          <li>
+            <a href="#_resolveArgs">_resolveArgs</a>
+          </li>
+          <li>
+            <a href="#addConstructorLookup">addConstructorLookup</a>
+          </li>
+          <li>
+            <a href="#addConstructorValue">addConstructorValue</a>
+          </li>
+          <li>
+            <a href="#asAliasOf">asAliasOf</a>
+          </li>
+          <li>
+            <a href="#asNewInstanceOf">asNewInstanceOf</a>
+          </li>
+          <li>
+            <a href="#asSharedInstanceOf">asSharedInstanceOf</a>
+          </li>
+          <li>
+            <a href="#asValue">asValue</a>
+          </li>
+          <li>
+            <a href="#createDependenciesFor">createDependenciesFor</a>
+          </li>
+          <li>
+            <a href="#getInstance">getInstance</a>
+          </li>
+          <li>
+            <a href="#has">has</a>
+          </li>
+          <li>
+            <a href="#listItems">listItems</a>
+          </li>
+          <li>
+            <a href="#lookup">lookup</a>
+          </li>
+          <li>
+            <a href="#register">register</a>
+          </li>
+          <li>
+            <a href="#withDependencies">withDependencies</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Swift_DependencyContainer</h2>
+        <div class="file-notice">
+          <p>Dependency Injection container.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Chris Corbyn</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="TYPE_VALUE"/>TYPE_VALUE = 0x0001<em> </em><p><li>Constant for literal value types</li></p><hr/></li>
+          <li><a name="TYPE_INSTANCE"/>TYPE_INSTANCE = 0x0010<em> </em><p><li>Constant for new instance types</li></p><hr/></li>
+          <li><a name="TYPE_SHARED"/>TYPE_SHARED = 0x0100<em> </em><p><li>Constant for shared instance types</li></p><hr/></li>
+          <li><a name="TYPE_ALIAS"/>TYPE_ALIAS = 0x1000<em> </em><p><li>Constant for aliases</li></p><hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_instance"/>
+            <h4><span class="label private">private</span>
+                $_instance</h4>
+            <ul class="varlist">
+              <li>Singleton instance</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_store"/>
+            <h4><span class="label private">private</span>
+                $_store</h4>
+            <ul class="varlist">
+              <li>The data container</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_endPoint"/>
+            <h4><span class="label private">private</span>
+                $_endPoint</h4>
+            <ul class="varlist">
+              <li>The current endpoint in the data container</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor should not be used.<pre>Use  instead.
+</pre></li>
+            </p>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addConstructorLookup"/>
+            <h4><span class="label public">public</span>addConstructorLookup<span style="font-size:90%;">( <span class="param-type">string</span><strong> $lookup</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specify a dependency lookup for the constructor of the previously registered item.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$lookup</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addConstructorValue"/>
+            <h4><span class="label public">public</span>addConstructorValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specify a literal (non looked up) value for the constructor of the previously registered item.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="asAliasOf"/>
+            <h4><span class="label public">public</span>asAliasOf<span style="font-size:90%;">( <span class="param-type">string</span><strong> $lookup</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specify the previously registered item as an alias of another item.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$lookup</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="asNewInstanceOf"/>
+            <h4><span class="label public">public</span>asNewInstanceOf<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specify the previously registered item as a new instance of $className.<pre> must be called before this will work.
+Any arguments can be set with ,
+ or .
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="asSharedInstanceOf"/>
+            <h4><span class="label public">public</span>asSharedInstanceOf<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specify the previously registered item as a shared instance of $className.<pre>{@link register()} must be called before this will work.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="asValue"/>
+            <h4><span class="label public">public</span>asValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specify the previously registered item as a literal value.<pre>{@link register()} must be called before this will work.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createDependenciesFor"/>
+            <h4><span class="label public">public</span>createDependenciesFor<span style="font-size:90%;">( <span class="param-type">string</span><strong> $itemName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create an array of arguments passed to the constructor of $itemName.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$itemName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getInstance"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>getInstance<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a singleton of the DependencyContainer.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="has"/>
+            <h4><span class="label public">public</span>has<span style="font-size:90%;">( <span class="param-type">string</span><strong> $itemName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Test if an item is registered in this container with the given name.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$itemName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="listItems"/>
+            <h4><span class="label public">public</span>listItems<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>List the names of all items stored in the Container.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="lookup"/>
+            <h4><span class="label public">public</span>lookup<span style="font-size:90%;">( <span class="param-type">string</span><strong> $itemName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Lookup the item with the given $itemName.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$itemName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_DependencyException If the dependency is not found</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="register"/>
+            <h4><span class="label public">public</span>register<span style="font-size:90%;">( <span class="param-type">string</span><strong> $itemName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Register a new dependency with $itemName.<pre>This method returns the current DependencyContainer instance because it
+requires the use of the fluid interface to set the specific details for the
+dependency.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$itemName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="withDependencies"/>
+            <h4><span class="label public">public</span>withDependencies<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $lookups</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Specify a list of injected dependencies for the previously registered item.<pre>This method takes an array of lookup names.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$lookups</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_createAlias"/>
+            <h4><span class="label private">private</span>_createAlias<span style="font-size:90%;">( <span class="param-type"/><strong> $itemName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Resolve an alias to another item</li>
+            </p>
+          </li>
+          <li>
+            <a name="_createNewInstance"/>
+            <h4><span class="label private">private</span>_createNewInstance<span style="font-size:90%;">( <span class="param-type"/><strong> $itemName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a fresh instance of $itemName</li>
+            </p>
+          </li>
+          <li>
+            <a name="_createSharedInstance"/>
+            <h4><span class="label private">private</span>_createSharedInstance<span style="font-size:90%;">( <span class="param-type"/><strong> $itemName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create and register a shared instance of $itemName</li>
+            </p>
+          </li>
+          <li>
+            <a name="_getEndPoint"/>
+            <h4><span class="label private">private</span>_getEndPoint<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the current endpoint in the store</li>
+            </p>
+          </li>
+          <li>
+            <a name="_getValue"/>
+            <h4><span class="label private">private</span>_getValue<span style="font-size:90%;">( <span class="param-type"/><strong> $itemName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the literal value with $itemName</li>
+            </p>
+          </li>
+          <li>
+            <a name="_lookupRecursive"/>
+            <h4><span class="label private">private</span>_lookupRecursive<span style="font-size:90%;">( <span class="param-type"/><strong> $item</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Resolve a single dependency with an collections</li>
+            </p>
+          </li>
+          <li>
+            <a name="_resolveArgs"/>
+            <h4><span class="label private">private</span>_resolveArgs<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $args</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get an argument list with dependencies resolved</li>
+            </p>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

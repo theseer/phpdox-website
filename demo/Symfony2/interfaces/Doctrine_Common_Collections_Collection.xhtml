@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\Common\Collections\Collection - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#add">add</a>
+          </li>
+          <li>
+            <a href="#clear">clear</a>
+          </li>
+          <li>
+            <a href="#contains">contains</a>
+          </li>
+          <li>
+            <a href="#containsKey">containsKey</a>
+          </li>
+          <li>
+            <a href="#current">current</a>
+          </li>
+          <li>
+            <a href="#exists">exists</a>
+          </li>
+          <li>
+            <a href="#filter">filter</a>
+          </li>
+          <li>
+            <a href="#first">first</a>
+          </li>
+          <li>
+            <a href="#forAll">forAll</a>
+          </li>
+          <li>
+            <a href="#get">get</a>
+          </li>
+          <li>
+            <a href="#getKeys">getKeys</a>
+          </li>
+          <li>
+            <a href="#getValues">getValues</a>
+          </li>
+          <li>
+            <a href="#indexOf">indexOf</a>
+          </li>
+          <li>
+            <a href="#isEmpty">isEmpty</a>
+          </li>
+          <li>
+            <a href="#key">key</a>
+          </li>
+          <li>
+            <a href="#last">last</a>
+          </li>
+          <li>
+            <a href="#map">map</a>
+          </li>
+          <li>
+            <a href="#next">next</a>
+          </li>
+          <li>
+            <a href="#partition">partition</a>
+          </li>
+          <li>
+            <a href="#remove">remove</a>
+          </li>
+          <li>
+            <a href="#removeElement">removeElement</a>
+          </li>
+          <li>
+            <a href="#set">set</a>
+          </li>
+          <li>
+            <a href="#slice">slice</a>
+          </li>
+          <li>
+            <a href="#toArray">toArray</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\Common\Collections\</span>Collection</h2>
+        <div class="file-notice">
+          <p>The missing (SPL) Collection/Array/OrderedMap interface.</p>
+          <p>
+            <pre>A Collection resembles the nature of a regular PHP array. That is,
+it is essentially an &lt;b&gt;ordered map&lt;/b&gt; that can also be used
+like a list.
+A Collection has an internal iterator just like a PHP array. In addition,
+a Collection can be iterated with external iterators, which is preferrable.
+To use an external iterator simply use the foreach language construct to
+iterate over the collection (which calls  internally) or
+explicitly retrieve an iterator though  which can then be
+used to iterate over the collection.
+You can not rely on the internal iterator of the collection being at a certain
+position unless you explicitly positioned it before. Prefer iteration with
+external iterators.
+</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
+          <li><b>Author: </b>Jonathan Wage &lt;jonwage@gmail.com&gt;</li>
+          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="add"/>
+            <h4><span class="label public">public</span>add<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $element</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds an element at the end of the collection.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$element</code> - The element to add.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Always TRUE.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="clear"/>
+            <h4><span class="label public">public</span>clear<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clears the collection, removing all elements.</li>
+            </p>
+          </li>
+          <li>
+            <a name="contains"/>
+            <h4><span class="label public">public</span>contains<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $element</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether an element is contained in the collection.<pre>This is an O(n) operation, where n is the size of the collection.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$element</code> - The element to search for.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>TRUE if the collection contains the element, FALSE otherwise.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="containsKey"/>
+            <h4><span class="label public">public</span>containsKey<span style="font-size:90%;">( <span class="param-type"><span title="string|integer">string|integer</span></span><strong> $key</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether the collection contains an element with the specified key/index.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - The key/index to check for.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>TRUE if the collection contains an element with the specified key/index,</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="current"/>
+            <h4><span class="label public">public</span>current<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the element of the collection at the current iterator position.</li>
+            </p>
+          </li>
+          <li>
+            <a name="exists"/>
+            <h4><span class="label public">public</span>exists<span style="font-size:90%;">( <span class="param-type"><span title="Closure">Closure</span></span><strong> $p</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Tests for the existence of an element that satisfies the given predicate.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$p</code> - The predicate.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>TRUE if the predicate is TRUE for at least one element, FALSE otherwise.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="filter"/>
+            <h4><span class="label public">public</span>filter<span style="font-size:90%;">( <span class="param-type"><span title="Closure">Closure</span></span><strong> $p</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns all the elements of this collection that satisfy the predicate p.<pre>The order of the elements is preserved.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$p</code> - The predicate used for filtering.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A collection with the results of the filter operation.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="first"/>
+            <h4><span class="label public">public</span>first<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the internal iterator to the first element in the collection and returns this element.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="forAll"/>
+            <h4><span class="label public">public</span>forAll<span style="font-size:90%;">( <span class="param-type"><span title="Closure">Closure</span></span><strong> $p</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Applies the given predicate p to all elements of this collection, returning true, if the predicate yields true for all elements.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$p</code> - The predicate.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>TRUE, if the predicate yields TRUE for all elements, FALSE otherwise.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="get"/>
+            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type"><span title="string|integer">string|integer</span></span><strong> $key</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the element at the specified key/index.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - The key/index of the element to retrieve.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getKeys"/>
+            <h4><span class="label public">public</span>getKeys<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets all keys/indices of the collection.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The keys/indices of the collection, in the order of the corresponding</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getValues"/>
+            <h4><span class="label public">public</span>getValues<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets all values of the collection.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The values of all elements in the collection, in the order they</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="indexOf"/>
+            <h4><span class="label public">public</span>indexOf<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $element</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the index/key of a given element. The comparison of two elements is strict, that means not only the value but also the type must match.<pre>For objects this means reference equality.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$element</code> - The element to search for.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The key/index of the element or FALSE if the element was not found.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isEmpty"/>
+            <h4><span class="label public">public</span>isEmpty<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether the collection is empty (contains no elements).</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>TRUE if the collection is empty, FALSE otherwise.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="key"/>
+            <h4><span class="label public">public</span>key<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the key/index of the element at the current iterator position.</li>
+            </p>
+          </li>
+          <li>
+            <a name="last"/>
+            <h4><span class="label public">public</span>last<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets the internal iterator to the last element in the collection and returns this element.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="map"/>
+            <h4><span class="label public">public</span>map<span style="font-size:90%;">( <span class="param-type"><span title="Closure">Closure</span></span><strong> $func</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Applies the given function to each element in the collection and returns a new collection with the elements returned by the function.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$func</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="next"/>
+            <h4><span class="label public">public</span>next<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Moves the internal iterator position to the next element.</li>
+            </p>
+          </li>
+          <li>
+            <a name="partition"/>
+            <h4><span class="label public">public</span>partition<span style="font-size:90%;">( <span class="param-type"><span title="Closure">Closure</span></span><strong> $p</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Partitions this collection in two collections according to a predicate.<pre>Keys are preserved in the resulting collections.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$p</code> - The predicate on which to partition.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>An array with two elements. The first element contains the collection</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="remove"/>
+            <h4><span class="label public">public</span>remove<span style="font-size:90%;">( <span class="param-type"><span title="string|integer">string|integer</span></span><strong> $key</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes the element at the specified index from the collection.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - The kex/index of the element to remove.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The removed element or NULL, if the collection did not contain the element.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeElement"/>
+            <h4><span class="label public">public</span>removeElement<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $element</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Removes the specified element from the collection, if it is found.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$element</code> - The element to remove.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>TRUE if this collection contained the specified element, FALSE otherwise.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="set"/>
+            <h4><span class="label public">public</span>set<span style="font-size:90%;">( <span class="param-type"><span title="string|integer">string|integer</span></span><strong> $key</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sets an element in the collection at the specified key/index.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - The key/index of the element to set.</li>
+                <li><code>$value</code> - The element to set.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="slice"/>
+            <h4><span class="label public">public</span>slice<span style="font-size:90%;">( <span class="param-type">int</span><strong> $offset</strong>, <span class="param-type">int</span><strong> $length</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Extract a slice of $length elements starting at position $offset from the Collection.<pre>If $length is null it returns all elements from $offset to the end of the Collection.
+Keys have to be preserved by this method. Calling this method will only return the
+selected slice and NOT change the elements contained in the collection slice is called on.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$offset</code> - </li>
+                <li><code>$length</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toArray"/>
+            <h4><span class="label public">public</span>toArray<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a native PHP array representation of the collection.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Twig_ExpressionParser - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#OPERATOR_LEFT">OPERATOR_LEFT</a>
+          </li>
+          <li>
+            <a href="#OPERATOR_RIGHT">OPERATOR_RIGHT</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#parser">$parser</a>
+          </li>
+          <li>
+            <a href="#unaryOperators">$unaryOperators</a>
+          </li>
+          <li>
+            <a href="#binaryOperators">$binaryOperators</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#checkConstantExpression">checkConstantExpression</a>
+          </li>
+          <li>
+            <a href="#getFilterNodeClass">getFilterNodeClass</a>
+          </li>
+          <li>
+            <a href="#getFunctionNode">getFunctionNode</a>
+          </li>
+          <li>
+            <a href="#getFunctionNodeClass">getFunctionNodeClass</a>
+          </li>
+          <li>
+            <a href="#getPrimary">getPrimary</a>
+          </li>
+          <li>
+            <a href="#isBinary">isBinary</a>
+          </li>
+          <li>
+            <a href="#isUnary">isUnary</a>
+          </li>
+          <li>
+            <a href="#parseArguments">parseArguments</a>
+          </li>
+          <li>
+            <a href="#parseArrayExpression">parseArrayExpression</a>
+          </li>
+          <li>
+            <a href="#parseAssignmentExpression">parseAssignmentExpression</a>
+          </li>
+          <li>
+            <a href="#parseConditionalExpression">parseConditionalExpression</a>
+          </li>
+          <li>
+            <a href="#parseExpression">parseExpression</a>
+          </li>
+          <li>
+            <a href="#parseFilterExpression">parseFilterExpression</a>
+          </li>
+          <li>
+            <a href="#parseFilterExpressionRaw">parseFilterExpressionRaw</a>
+          </li>
+          <li>
+            <a href="#parseHashExpression">parseHashExpression</a>
+          </li>
+          <li>
+            <a href="#parseMultitargetExpression">parseMultitargetExpression</a>
+          </li>
+          <li>
+            <a href="#parsePostfixExpression">parsePostfixExpression</a>
+          </li>
+          <li>
+            <a href="#parsePrimaryExpression">parsePrimaryExpression</a>
+          </li>
+          <li>
+            <a href="#parseStringExpression">parseStringExpression</a>
+          </li>
+          <li>
+            <a href="#parseSubscriptExpression">parseSubscriptExpression</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Twig_ExpressionParser</h2>
+        <div class="file-notice">
+          <p>Parses expressions.</p>
+          <p>
+            <pre>This parser implements a "Precedence climbing" algorithm.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="OPERATOR_LEFT"/>OPERATOR_LEFT = 1<hr/></li>
+          <li><a name="OPERATOR_RIGHT"/>OPERATOR_RIGHT = 2<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="parser"/>
+            <h4><span class="label protected">protected</span>
+                $parser</h4>
+          </li>
+          <li>
+            <a name="unaryOperators"/>
+            <h4><span class="label protected">protected</span>
+                $unaryOperators</h4>
+          </li>
+          <li>
+            <a name="binaryOperators"/>
+            <h4><span class="label protected">protected</span>
+                $binaryOperators</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="\\Twig_Parser">Twig_Parser</span></span><strong> $parser</strong>, <span class="param-type">Array</span><strong> $unaryOperators</strong>, <span class="param-type">Array</span><strong> $binaryOperators</strong> )</span></h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getFunctionNode"/>
+            <h4><span class="label public">public</span>getFunctionNode<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $line</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="parseArguments"/>
+            <h4><span class="label public">public</span>parseArguments<span style="font-size:90%;">( <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $namedArguments</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $definition</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Parses arguments.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$namedArguments</code> - Whether to allow named arguments or not</li>
+                <li><code>$definition</code> - Whether we are parsing arguments for a function definition</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="parseArrayExpression"/>
+            <h4><span class="label public">public</span>parseArrayExpression<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="parseAssignmentExpression"/>
+            <h4><span class="label public">public</span>parseAssignmentExpression<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="parseExpression"/>
+            <h4><span class="label public">public</span>parseExpression<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $precedence</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="parseFilterExpression"/>
+            <h4><span class="label public">public</span>parseFilterExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $node</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="parseFilterExpressionRaw"/>
+            <h4><span class="label public">public</span>parseFilterExpressionRaw<span style="font-size:90%;">( <span class="param-type"/><strong> $node</strong>, <span class="param-type"/><strong> $tag</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="parseHashExpression"/>
+            <h4><span class="label public">public</span>parseHashExpression<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="parseMultitargetExpression"/>
+            <h4><span class="label public">public</span>parseMultitargetExpression<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="parsePostfixExpression"/>
+            <h4><span class="label public">public</span>parsePostfixExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $node</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="parsePrimaryExpression"/>
+            <h4><span class="label public">public</span>parsePrimaryExpression<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="parseStringExpression"/>
+            <h4><span class="label public">public</span>parseStringExpression<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="parseSubscriptExpression"/>
+            <h4><span class="label public">public</span>parseSubscriptExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $node</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="checkConstantExpression"/>
+            <h4><span class="label protected">protected</span>checkConstantExpression<span style="font-size:90%;">( <span class="param-type"><span title="\\Twig_NodeInterface">Twig_NodeInterface</span></span><strong> $node</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getFilterNodeClass"/>
+            <h4><span class="label protected">protected</span>getFilterNodeClass<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $line</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getFunctionNodeClass"/>
+            <h4><span class="label protected">protected</span>getFunctionNodeClass<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $line</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="getPrimary"/>
+            <h4><span class="label protected">protected</span>getPrimary<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="isBinary"/>
+            <h4><span class="label protected">protected</span>isBinary<span style="font-size:90%;">( <span class="param-type"><span title="\\Twig_Token">Twig_Token</span></span><strong> $token</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="isUnary"/>
+            <h4><span class="label protected">protected</span>isUnary<span style="font-size:90%;">( <span class="param-type"><span title="\\Twig_Token">Twig_Token</span></span><strong> $token</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="parseConditionalExpression"/>
+            <h4><span class="label protected">protected</span>parseConditionalExpression<span style="font-size:90%;">( <span class="param-type"/><strong> $expr</strong> )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

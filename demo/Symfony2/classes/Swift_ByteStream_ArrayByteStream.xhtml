@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Swift_ByteStream_ArrayByteStream - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_array">$_array</a>
+          </li>
+          <li>
+            <a href="#_arraySize">$_arraySize</a>
+          </li>
+          <li>
+            <a href="#_offset">$_offset</a>
+          </li>
+          <li>
+            <a href="#_mirrors">$_mirrors</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#bind">bind</a>
+          </li>
+          <li>
+            <a href="#commit">commit</a>
+          </li>
+          <li>
+            <a href="#flushBuffers">flushBuffers</a>
+          </li>
+          <li>
+            <a href="#read">read</a>
+          </li>
+          <li>
+            <a href="#setReadPointer">setReadPointer</a>
+          </li>
+          <li>
+            <a href="#unbind">unbind</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Swift_ByteStream_ArrayByteStream</h2>
+        <div class="file-notice">
+          <p>Allows reading and writing of bytes to and from an array.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Chris Corbyn</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Swift_InputByteStream.xhtml">Swift_InputByteStream</a>
+          </li>
+          <li>
+            <a href="../interfaces/Swift_OutputByteStream.xhtml">Swift_OutputByteStream</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_array"/>
+            <h4><span class="label private">private</span>array 
+                
+                $_array</h4>
+            <ul class="varlist">
+              <li>The internal stack of bytes.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_arraySize"/>
+            <h4><span class="label private">private</span>integer 
+                
+                $_arraySize</h4>
+            <ul class="varlist">
+              <li>The size of the stack</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_offset"/>
+            <h4><span class="label private">private</span>integer 
+                
+                $_offset</h4>
+            <ul class="varlist">
+              <li>The internal pointer offset.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_mirrors"/>
+            <h4><span class="label private">private</span>array 
+                
+                $_mirrors</h4>
+            <ul class="varlist">
+              <li>Bound streams.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $stack</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new ArrayByteStream.<pre>If $stack is given the stream will be populated with the bytes it contains.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$stack</code> - of bytes in string or array form, optional</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="bind"/>
+            <h4><span class="label public">public</span>bind<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $is</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach $is to this stream.<pre>The stream acts as an observer, receiving all data that is written.
+All  and  operations will be mirrored.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$is</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="commit"/>
+            <h4><span class="label public">public</span>commit<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Not used.</li>
+            </p>
+          </li>
+          <li>
+            <a name="flushBuffers"/>
+            <h4><span class="label public">public</span>flushBuffers<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Flush the contents of the stream (empty it) and set the internal pointer to the beginning.</li>
+            </p>
+          </li>
+          <li>
+            <a name="read"/>
+            <h4><span class="label public">public</span>read<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $length</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Reads $length bytes from the stream into a string and moves the pointer through the stream by $length.<pre>If less bytes exist than are requested the
+remaining bytes are given instead. If no bytes are remaining at all, boolean
+false is returned.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$length</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setReadPointer"/>
+            <h4><span class="label public">public</span>setReadPointer<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $byteOffset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Move the internal read pointer to $byteOffset in the stream.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$byteOffset</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unbind"/>
+            <h4><span class="label public">public</span>unbind<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $is</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove an already bound stream.<pre>If $is is not bound, no errors will be raised.
+If the stream currently has any buffered data it will be written to $is
+before unbinding occurs.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$is</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">string</span><strong> $bytes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Writes $bytes to the end of the stream.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bytes</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Twig_Lexer - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#STATE_DATA">STATE_DATA</a>
+          </li>
+          <li>
+            <a href="#STATE_BLOCK">STATE_BLOCK</a>
+          </li>
+          <li>
+            <a href="#STATE_VAR">STATE_VAR</a>
+          </li>
+          <li>
+            <a href="#STATE_STRING">STATE_STRING</a>
+          </li>
+          <li>
+            <a href="#STATE_INTERPOLATION">STATE_INTERPOLATION</a>
+          </li>
+          <li>
+            <a href="#REGEX_NAME">REGEX_NAME</a>
+          </li>
+          <li>
+            <a href="#REGEX_NUMBER">REGEX_NUMBER</a>
+          </li>
+          <li>
+            <a href="#REGEX_STRING">REGEX_STRING</a>
+          </li>
+          <li>
+            <a href="#REGEX_DQ_STRING_DELIM">REGEX_DQ_STRING_DELIM</a>
+          </li>
+          <li>
+            <a href="#REGEX_DQ_STRING_PART">REGEX_DQ_STRING_PART</a>
+          </li>
+          <li>
+            <a href="#PUNCTUATION">PUNCTUATION</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#tokens">$tokens</a>
+          </li>
+          <li>
+            <a href="#code">$code</a>
+          </li>
+          <li>
+            <a href="#cursor">$cursor</a>
+          </li>
+          <li>
+            <a href="#lineno">$lineno</a>
+          </li>
+          <li>
+            <a href="#end">$end</a>
+          </li>
+          <li>
+            <a href="#state">$state</a>
+          </li>
+          <li>
+            <a href="#states">$states</a>
+          </li>
+          <li>
+            <a href="#brackets">$brackets</a>
+          </li>
+          <li>
+            <a href="#env">$env</a>
+          </li>
+          <li>
+            <a href="#filename">$filename</a>
+          </li>
+          <li>
+            <a href="#options">$options</a>
+          </li>
+          <li>
+            <a href="#regexes">$regexes</a>
+          </li>
+          <li>
+            <a href="#position">$position</a>
+          </li>
+          <li>
+            <a href="#positions">$positions</a>
+          </li>
+          <li>
+            <a href="#currentVarBlockLine">$currentVarBlockLine</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#getOperatorRegex">getOperatorRegex</a>
+          </li>
+          <li>
+            <a href="#lexBlock">lexBlock</a>
+          </li>
+          <li>
+            <a href="#lexComment">lexComment</a>
+          </li>
+          <li>
+            <a href="#lexData">lexData</a>
+          </li>
+          <li>
+            <a href="#lexExpression">lexExpression</a>
+          </li>
+          <li>
+            <a href="#lexInterpolation">lexInterpolation</a>
+          </li>
+          <li>
+            <a href="#lexRawData">lexRawData</a>
+          </li>
+          <li>
+            <a href="#lexString">lexString</a>
+          </li>
+          <li>
+            <a href="#lexVar">lexVar</a>
+          </li>
+          <li>
+            <a href="#moveCursor">moveCursor</a>
+          </li>
+          <li>
+            <a href="#popState">popState</a>
+          </li>
+          <li>
+            <a href="#pushState">pushState</a>
+          </li>
+          <li>
+            <a href="#pushToken">pushToken</a>
+          </li>
+          <li>
+            <a href="#tokenize">tokenize</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Twig_Lexer</h2>
+        <div class="file-notice">
+          <p>Lexes a template string.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Twig_LexerInterface.xhtml">Twig_LexerInterface</a>
+          </li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="STATE_DATA"/>STATE_DATA = 0<hr/></li>
+          <li><a name="STATE_BLOCK"/>STATE_BLOCK = 1<hr/></li>
+          <li><a name="STATE_VAR"/>STATE_VAR = 2<hr/></li>
+          <li><a name="STATE_STRING"/>STATE_STRING = 3<hr/></li>
+          <li><a name="STATE_INTERPOLATION"/>STATE_INTERPOLATION = 4<hr/></li>
+          <li><a name="REGEX_NAME"/>REGEX_NAME = '/[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/A'<hr/></li>
+          <li><a name="REGEX_NUMBER"/>REGEX_NUMBER = '/[0-9]+(?:\.[0-9]+)?/A'<hr/></li>
+          <li><a name="REGEX_STRING"/>REGEX_STRING = '/"([^#"\\\\]*(?:\\\\.[^#"\\\\]*)*)"|\'([^\'\\\\]*(?:\\\\.[^\'\\\\]*)*)\'/As'<hr/></li>
+          <li><a name="REGEX_DQ_STRING_DELIM"/>REGEX_DQ_STRING_DELIM = '/"/A'<hr/></li>
+          <li><a name="REGEX_DQ_STRING_PART"/>REGEX_DQ_STRING_PART = '/[^#"\\\\]*(?:(?:\\\\.|#(?!\{))[^#"\\\\]*)*/As'<hr/></li>
+          <li><a name="PUNCTUATION"/>PUNCTUATION = '()[]{}?:.,|'<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="tokens"/>
+            <h4><span class="label protected">protected</span>
+                $tokens</h4>
+          </li>
+          <li>
+            <a name="code"/>
+            <h4><span class="label protected">protected</span>
+                $code</h4>
+          </li>
+          <li>
+            <a name="cursor"/>
+            <h4><span class="label protected">protected</span>
+                $cursor</h4>
+          </li>
+          <li>
+            <a name="lineno"/>
+            <h4><span class="label protected">protected</span>
+                $lineno</h4>
+          </li>
+          <li>
+            <a name="end"/>
+            <h4><span class="label protected">protected</span>
+                $end</h4>
+          </li>
+          <li>
+            <a name="state"/>
+            <h4><span class="label protected">protected</span>
+                $state</h4>
+          </li>
+          <li>
+            <a name="states"/>
+            <h4><span class="label protected">protected</span>
+                $states</h4>
+          </li>
+          <li>
+            <a name="brackets"/>
+            <h4><span class="label protected">protected</span>
+                $brackets</h4>
+          </li>
+          <li>
+            <a name="env"/>
+            <h4><span class="label protected">protected</span>
+                $env</h4>
+          </li>
+          <li>
+            <a name="filename"/>
+            <h4><span class="label protected">protected</span>
+                $filename</h4>
+          </li>
+          <li>
+            <a name="options"/>
+            <h4><span class="label protected">protected</span>
+                $options</h4>
+          </li>
+          <li>
+            <a name="regexes"/>
+            <h4><span class="label protected">protected</span>
+                $regexes</h4>
+          </li>
+          <li>
+            <a name="position"/>
+            <h4><span class="label protected">protected</span>
+                $position</h4>
+          </li>
+          <li>
+            <a name="positions"/>
+            <h4><span class="label protected">protected</span>
+                $positions</h4>
+          </li>
+          <li>
+            <a name="currentVarBlockLine"/>
+            <h4><span class="label protected">protected</span>
+                $currentVarBlockLine</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="\\Twig_Environment">Twig_Environment</span></span><strong> $env</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="tokenize"/>
+            <h4><span class="label public">public</span>tokenize<span style="font-size:90%;">( <span class="param-type">string</span><strong> $code</strong>, <span class="param-type">string</span><strong> $filename</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Tokenizes a source code.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$code</code> - The source code</li>
+                <li><code>$filename</code> - A unique identifier for the source code</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A token stream instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getOperatorRegex"/>
+            <h4><span class="label protected">protected</span>getOperatorRegex<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="lexBlock"/>
+            <h4><span class="label protected">protected</span>lexBlock<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="lexComment"/>
+            <h4><span class="label protected">protected</span>lexComment<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="lexData"/>
+            <h4><span class="label protected">protected</span>lexData<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="lexExpression"/>
+            <h4><span class="label protected">protected</span>lexExpression<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="lexInterpolation"/>
+            <h4><span class="label protected">protected</span>lexInterpolation<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="lexRawData"/>
+            <h4><span class="label protected">protected</span>lexRawData<span style="font-size:90%;">( <span class="param-type"/><strong> $tag</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="lexString"/>
+            <h4><span class="label protected">protected</span>lexString<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="lexVar"/>
+            <h4><span class="label protected">protected</span>lexVar<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="moveCursor"/>
+            <h4><span class="label protected">protected</span>moveCursor<span style="font-size:90%;">( <span class="param-type"/><strong> $text</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="popState"/>
+            <h4><span class="label protected">protected</span>popState<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="pushState"/>
+            <h4><span class="label protected">protected</span>pushState<span style="font-size:90%;">( <span class="param-type"/><strong> $state</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="pushToken"/>
+            <h4><span class="label protected">protected</span>pushToken<span style="font-size:90%;">( <span class="param-type"/><strong> $type</strong>, <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

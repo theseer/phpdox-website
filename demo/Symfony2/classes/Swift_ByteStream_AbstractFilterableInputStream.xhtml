@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Swift_ByteStream_AbstractFilterableInputStream - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_sequence">$_sequence</a>
+          </li>
+          <li>
+            <a href="#_filters">$_filters</a>
+          </li>
+          <li>
+            <a href="#_writeBuffer">$_writeBuffer</a>
+          </li>
+          <li>
+            <a href="#_mirrors">$_mirrors</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#_commit">_commit</a>
+          </li>
+          <li>
+            <a href="#_doWrite">_doWrite</a>
+          </li>
+          <li>
+            <a href="#_filter">_filter</a>
+          </li>
+          <li>
+            <a href="#_flush">_flush</a>
+          </li>
+          <li>
+            <a href="#addFilter">addFilter</a>
+          </li>
+          <li>
+            <a href="#bind">bind</a>
+          </li>
+          <li>
+            <a href="#commit">commit</a>
+          </li>
+          <li>
+            <a href="#flushBuffers">flushBuffers</a>
+          </li>
+          <li>
+            <a href="#removeFilter">removeFilter</a>
+          </li>
+          <li>
+            <a href="#unbind">unbind</a>
+          </li>
+          <li>
+            <a href="#write">write</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Swift_ByteStream_AbstractFilterableInputStream</h2>
+        <div class="file-notice">
+          <p>Provides the base functionality for an InputStream supporting filters.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Chris Corbyn</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Swift_InputByteStream.xhtml">Swift_InputByteStream</a>
+          </li>
+          <li>
+            <a href="../interfaces/Swift_Filterable.xhtml">Swift_Filterable</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_sequence"/>
+            <h4><span class="label protected">protected</span>
+                $_sequence</h4>
+            <ul class="varlist">
+              <li>Write sequence.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_filters"/>
+            <h4><span class="label private">private</span>
+                $_filters</h4>
+            <ul class="varlist">
+              <li>StreamFilters.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_writeBuffer"/>
+            <h4><span class="label private">private</span>
+                $_writeBuffer</h4>
+            <ul class="varlist">
+              <li>A buffer for writing.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_mirrors"/>
+            <h4><span class="label private">private</span>array 
+                
+                $_mirrors</h4>
+            <ul class="varlist">
+              <li>Bound streams.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addFilter"/>
+            <h4><span class="label public">public</span>addFilter<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_StreamFilter">Swift_StreamFilter</span></span><strong> $filter</strong>, <span class="param-type">string</span><strong> $key</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a StreamFilter to this InputByteStream.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$filter</code> - </li>
+                <li><code>$key</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="bind"/>
+            <h4><span class="label public">public</span>bind<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $is</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Attach $is to this stream.<pre>The stream acts as an observer, receiving all data that is written.
+All  and  operations will be mirrored.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$is</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="commit"/>
+            <h4><span class="label public">public</span>commit<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>For any bytes that are currently buffered inside the stream, force them off the buffer.</li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_IoException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="flushBuffers"/>
+            <h4><span class="label public">public</span>flushBuffers<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Flush the contents of the stream (empty it) and set the internal pointer to the beginning.</li>
+            </p>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_IoException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeFilter"/>
+            <h4><span class="label public">public</span>removeFilter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $key</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove an already present StreamFilter based on its $key.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$key</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="unbind"/>
+            <h4><span class="label public">public</span>unbind<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_InputByteStream">Swift_InputByteStream</span></span><strong> $is</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove an already bound stream.<pre>If $is is not bound, no errors will be raised.
+If the stream currently has any buffered data it will be written to $is
+before unbinding occurs.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$is</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="write"/>
+            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">string</span><strong> $bytes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Writes $bytes to the end of the stream.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bytes</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>Swift_IoException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_commit"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>_commit<span style="font-size:90%;">( <span class="param-type">string</span><strong> $bytes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Commit the given bytes to the storage medium immediately.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$bytes</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_flush"/>
+            <h4><span class="label true">true</span><span class="label protected">protected</span>_flush<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Flush any buffers/content with immediate effect.</li>
+            </p>
+          </li>
+          <li>
+            <a name="_doWrite"/>
+            <h4><span class="label private">private</span>_doWrite<span style="font-size:90%;">( <span class="param-type"/><strong> $bytes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Just write the bytes to the stream</li>
+            </p>
+          </li>
+          <li>
+            <a name="_filter"/>
+            <h4><span class="label private">private</span>_filter<span style="font-size:90%;">( <span class="param-type"/><strong> $bytes</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Run $bytes through all filters</li>
+            </p>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

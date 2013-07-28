@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Swift_Plugins_AntiFloodPlugin - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_threshold">$_threshold</a>
+          </li>
+          <li>
+            <a href="#_sleep">$_sleep</a>
+          </li>
+          <li>
+            <a href="#_counter">$_counter</a>
+          </li>
+          <li>
+            <a href="#_sleeper">$_sleeper</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#beforeSendPerformed">beforeSendPerformed</a>
+          </li>
+          <li>
+            <a href="#getSleepTime">getSleepTime</a>
+          </li>
+          <li>
+            <a href="#getThreshold">getThreshold</a>
+          </li>
+          <li>
+            <a href="#sendPerformed">sendPerformed</a>
+          </li>
+          <li>
+            <a href="#setSleepTime">setSleepTime</a>
+          </li>
+          <li>
+            <a href="#setThreshold">setThreshold</a>
+          </li>
+          <li>
+            <a href="#sleep">sleep</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Swift_Plugins_AntiFloodPlugin</h2>
+        <div class="file-notice">
+          <p>Reduces network flooding when sending large amounts of mail.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Chris Corbyn</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Swift_Events_SendListener.xhtml">Swift_Events_SendListener</a>
+          </li>
+          <li>
+            <a href="../interfaces/Swift_Plugins_Sleeper.xhtml">Swift_Plugins_Sleeper</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_threshold"/>
+            <h4><span class="label private">private</span>int 
+                
+                $_threshold</h4>
+            <ul class="varlist">
+              <li>The number of emails to send before restarting Transport.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_sleep"/>
+            <h4><span class="label private">private</span>int 
+                
+                $_sleep</h4>
+            <ul class="varlist">
+              <li>The number of seconds to sleep for during a restart.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_counter"/>
+            <h4><span class="label private">private</span>int 
+                
+                $_counter</h4>
+            <ul class="varlist">
+              <li>The internal counter.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_sleeper"/>
+            <h4><span class="label private">private</span>object 
+                
+                $_sleeper</h4>
+            <ul class="varlist">
+              <li>The Sleeper instance for sleeping.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $threshold</strong>, <span class="param-type">integer</span><strong> $sleep</strong>, <span class="param-type"><span title="\\Swift_Plugins_Sleeper">Swift_Plugins_Sleeper</span></span><strong> $sleeper</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new AntiFloodPlugin with $threshold and $sleep time.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$threshold</code> - </li>
+                <li><code>$sleep</code> - time</li>
+                <li><code>$sleeper</code> - (not needed really)</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="beforeSendPerformed"/>
+            <h4><span class="label public">public</span>beforeSendPerformed<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Events_SendEvent">Swift_Events_SendEvent</span></span><strong> $evt</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Invoked immediately before the Message is sent.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$evt</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getSleepTime"/>
+            <h4><span class="label public">public</span>getSleepTime<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the number of seconds to sleep for during a restart.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getThreshold"/>
+            <h4><span class="label public">public</span>getThreshold<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the number of emails to send before restarting.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="sendPerformed"/>
+            <h4><span class="label public">public</span>sendPerformed<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Events_SendEvent">Swift_Events_SendEvent</span></span><strong> $evt</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Invoked immediately after the Message is sent.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$evt</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setSleepTime"/>
+            <h4><span class="label public">public</span>setSleepTime<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $sleep</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the number of seconds to sleep for during a restart.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sleep</code> - time</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setThreshold"/>
+            <h4><span class="label public">public</span>setThreshold<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $threshold</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the number of emails to send before restarting.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$threshold</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="sleep"/>
+            <h4><span class="label public">public</span>sleep<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $seconds</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Sleep for $seconds.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$seconds</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

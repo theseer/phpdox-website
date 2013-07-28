@@ -1,0 +1,2041 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\ORM\UnitOfWork - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#STATE_MANAGED">STATE_MANAGED</a>
+          </li>
+          <li>
+            <a href="#STATE_NEW">STATE_NEW</a>
+          </li>
+          <li>
+            <a href="#STATE_DETACHED">STATE_DETACHED</a>
+          </li>
+          <li>
+            <a href="#STATE_REMOVED">STATE_REMOVED</a>
+          </li>
+          <li>
+            <a href="#HINT_DEFEREAGERLOAD">HINT_DEFEREAGERLOAD</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#identityMap">$identityMap</a>
+          </li>
+          <li>
+            <a href="#entityIdentifiers">$entityIdentifiers</a>
+          </li>
+          <li>
+            <a href="#originalEntityData">$originalEntityData</a>
+          </li>
+          <li>
+            <a href="#entityChangeSets">$entityChangeSets</a>
+          </li>
+          <li>
+            <a href="#entityStates">$entityStates</a>
+          </li>
+          <li>
+            <a href="#scheduledForDirtyCheck">$scheduledForDirtyCheck</a>
+          </li>
+          <li>
+            <a href="#entityInsertions">$entityInsertions</a>
+          </li>
+          <li>
+            <a href="#entityUpdates">$entityUpdates</a>
+          </li>
+          <li>
+            <a href="#extraUpdates">$extraUpdates</a>
+          </li>
+          <li>
+            <a href="#entityDeletions">$entityDeletions</a>
+          </li>
+          <li>
+            <a href="#collectionDeletions">$collectionDeletions</a>
+          </li>
+          <li>
+            <a href="#collectionUpdates">$collectionUpdates</a>
+          </li>
+          <li>
+            <a href="#visitedCollections">$visitedCollections</a>
+          </li>
+          <li>
+            <a href="#em">$em</a>
+          </li>
+          <li>
+            <a href="#commitOrderCalculator">$commitOrderCalculator</a>
+          </li>
+          <li>
+            <a href="#persisters">$persisters</a>
+          </li>
+          <li>
+            <a href="#collectionPersisters">$collectionPersisters</a>
+          </li>
+          <li>
+            <a href="#evm">$evm</a>
+          </li>
+          <li>
+            <a href="#orphanRemovals">$orphanRemovals</a>
+          </li>
+          <li>
+            <a href="#readOnlyObjects">$readOnlyObjects</a>
+          </li>
+          <li>
+            <a href="#eagerLoadingEntities">$eagerLoadingEntities</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#addToIdentityMap">addToIdentityMap</a>
+          </li>
+          <li>
+            <a href="#cascadeDetach">cascadeDetach</a>
+          </li>
+          <li>
+            <a href="#cascadeMerge">cascadeMerge</a>
+          </li>
+          <li>
+            <a href="#cascadePersist">cascadePersist</a>
+          </li>
+          <li>
+            <a href="#cascadeRefresh">cascadeRefresh</a>
+          </li>
+          <li>
+            <a href="#cascadeRemove">cascadeRemove</a>
+          </li>
+          <li>
+            <a href="#clear">clear</a>
+          </li>
+          <li>
+            <a href="#clearEntityChangeSet">clearEntityChangeSet</a>
+          </li>
+          <li>
+            <a href="#commit">commit</a>
+          </li>
+          <li>
+            <a href="#computeAssociationChanges">computeAssociationChanges</a>
+          </li>
+          <li>
+            <a href="#computeChangeSet">computeChangeSet</a>
+          </li>
+          <li>
+            <a href="#computeChangeSets">computeChangeSets</a>
+          </li>
+          <li>
+            <a href="#computeScheduleInsertsChangeSets">computeScheduleInsertsChangeSets</a>
+          </li>
+          <li>
+            <a href="#computeSingleEntityChangeSet">computeSingleEntityChangeSet</a>
+          </li>
+          <li>
+            <a href="#containsIdHash">containsIdHash</a>
+          </li>
+          <li>
+            <a href="#createEntity">createEntity</a>
+          </li>
+          <li>
+            <a href="#detach">detach</a>
+          </li>
+          <li>
+            <a href="#doDetach">doDetach</a>
+          </li>
+          <li>
+            <a href="#doMerge">doMerge</a>
+          </li>
+          <li>
+            <a href="#doPersist">doPersist</a>
+          </li>
+          <li>
+            <a href="#doRefresh">doRefresh</a>
+          </li>
+          <li>
+            <a href="#doRemove">doRemove</a>
+          </li>
+          <li>
+            <a href="#executeDeletions">executeDeletions</a>
+          </li>
+          <li>
+            <a href="#executeExtraUpdates">executeExtraUpdates</a>
+          </li>
+          <li>
+            <a href="#executeInserts">executeInserts</a>
+          </li>
+          <li>
+            <a href="#executeUpdates">executeUpdates</a>
+          </li>
+          <li>
+            <a href="#flattenIdentifier">flattenIdentifier</a>
+          </li>
+          <li>
+            <a href="#getByIdHash">getByIdHash</a>
+          </li>
+          <li>
+            <a href="#getCollectionPersister">getCollectionPersister</a>
+          </li>
+          <li>
+            <a href="#getCommitOrder">getCommitOrder</a>
+          </li>
+          <li>
+            <a href="#getCommitOrderCalculator">getCommitOrderCalculator</a>
+          </li>
+          <li>
+            <a href="#getEntityChangeSet">getEntityChangeSet</a>
+          </li>
+          <li>
+            <a href="#getEntityIdentifier">getEntityIdentifier</a>
+          </li>
+          <li>
+            <a href="#getEntityPersister">getEntityPersister</a>
+          </li>
+          <li>
+            <a href="#getEntityState">getEntityState</a>
+          </li>
+          <li>
+            <a href="#getIdentityMap">getIdentityMap</a>
+          </li>
+          <li>
+            <a href="#getOriginalEntityData">getOriginalEntityData</a>
+          </li>
+          <li>
+            <a href="#getScheduledCollectionDeletions">getScheduledCollectionDeletions</a>
+          </li>
+          <li>
+            <a href="#getScheduledCollectionUpdates">getScheduledCollectionUpdates</a>
+          </li>
+          <li>
+            <a href="#getScheduledEntityDeletions">getScheduledEntityDeletions</a>
+          </li>
+          <li>
+            <a href="#getScheduledEntityInsertions">getScheduledEntityInsertions</a>
+          </li>
+          <li>
+            <a href="#getScheduledEntityUpdates">getScheduledEntityUpdates</a>
+          </li>
+          <li>
+            <a href="#hasPendingInsertions">hasPendingInsertions</a>
+          </li>
+          <li>
+            <a href="#initializeObject">initializeObject</a>
+          </li>
+          <li>
+            <a href="#isCollectionScheduledForDeletion">isCollectionScheduledForDeletion</a>
+          </li>
+          <li>
+            <a href="#isEntityScheduled">isEntityScheduled</a>
+          </li>
+          <li>
+            <a href="#isInIdentityMap">isInIdentityMap</a>
+          </li>
+          <li>
+            <a href="#isReadOnly">isReadOnly</a>
+          </li>
+          <li>
+            <a href="#isScheduledForDelete">isScheduledForDelete</a>
+          </li>
+          <li>
+            <a href="#isScheduledForDirtyCheck">isScheduledForDirtyCheck</a>
+          </li>
+          <li>
+            <a href="#isScheduledForInsert">isScheduledForInsert</a>
+          </li>
+          <li>
+            <a href="#isScheduledForUpdate">isScheduledForUpdate</a>
+          </li>
+          <li>
+            <a href="#loadCollection">loadCollection</a>
+          </li>
+          <li>
+            <a href="#lock">lock</a>
+          </li>
+          <li>
+            <a href="#markReadOnly">markReadOnly</a>
+          </li>
+          <li>
+            <a href="#merge">merge</a>
+          </li>
+          <li>
+            <a href="#newInstance">newInstance</a>
+          </li>
+          <li>
+            <a href="#objToStr">objToStr</a>
+          </li>
+          <li>
+            <a href="#persist">persist</a>
+          </li>
+          <li>
+            <a href="#persistNew">persistNew</a>
+          </li>
+          <li>
+            <a href="#propertyChanged">propertyChanged</a>
+          </li>
+          <li>
+            <a href="#recomputeSingleEntityChangeSet">recomputeSingleEntityChangeSet</a>
+          </li>
+          <li>
+            <a href="#refresh">refresh</a>
+          </li>
+          <li>
+            <a href="#registerManaged">registerManaged</a>
+          </li>
+          <li>
+            <a href="#remove">remove</a>
+          </li>
+          <li>
+            <a href="#removeFromIdentityMap">removeFromIdentityMap</a>
+          </li>
+          <li>
+            <a href="#scheduleCollectionDeletion">scheduleCollectionDeletion</a>
+          </li>
+          <li>
+            <a href="#scheduleExtraUpdate">scheduleExtraUpdate</a>
+          </li>
+          <li>
+            <a href="#scheduleForDelete">scheduleForDelete</a>
+          </li>
+          <li>
+            <a href="#scheduleForDirtyCheck">scheduleForDirtyCheck</a>
+          </li>
+          <li>
+            <a href="#scheduleForInsert">scheduleForInsert</a>
+          </li>
+          <li>
+            <a href="#scheduleForUpdate">scheduleForUpdate</a>
+          </li>
+          <li>
+            <a href="#scheduleOrphanRemoval">scheduleOrphanRemoval</a>
+          </li>
+          <li>
+            <a href="#setOriginalEntityData">setOriginalEntityData</a>
+          </li>
+          <li>
+            <a href="#setOriginalEntityProperty">setOriginalEntityProperty</a>
+          </li>
+          <li>
+            <a href="#size">size</a>
+          </li>
+          <li>
+            <a href="#triggerEagerLoads">triggerEagerLoads</a>
+          </li>
+          <li>
+            <a href="#tryGetById">tryGetById</a>
+          </li>
+          <li>
+            <a href="#tryGetByIdHash">tryGetByIdHash</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\ORM\</span>UnitOfWork</h2>
+        <div class="file-notice">
+          <p>The UnitOfWork is responsible for tracking changes to objects during an "object-level" transaction and for writing out changes to the database in the correct order.</p>
+        </div>
+        <ul class="fileinfos"><li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li><li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li><li><b>Author: </b>Jonathan Wage &lt;jonwage@gmail.com&gt;</li><li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>This class contains highly performance-sensitive code.</ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Doctrine_Common_PropertyChangedListener.xhtml">Doctrine\Common\PropertyChangedListener</a>
+          </li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="STATE_MANAGED"/>STATE_MANAGED = 1<em> </em><p><li>An entity is in MANAGED state when its persistence is managed by an EntityManager.</li></p><hr/></li>
+          <li><a name="STATE_NEW"/>STATE_NEW = 2<em> </em><p><li>An entity is new if it has just been instantiated (i.e. using the "new" operator) and is not (yet) managed by an EntityManager.</li></p><hr/></li>
+          <li><a name="STATE_DETACHED"/>STATE_DETACHED = 3<em> </em><p><li>A detached entity is an instance with persistent state and identity that is not (or no longer) associated with an EntityManager (and a UnitOfWork).</li></p><hr/></li>
+          <li><a name="STATE_REMOVED"/>STATE_REMOVED = 4<em> </em><p><li>A removed entity instance is an instance with a persistent identity, associated with an EntityManager, whose persistent state will be deleted on commit.</li></p><hr/></li>
+          <li><a name="HINT_DEFEREAGERLOAD"/>HINT_DEFEREAGERLOAD = 'deferEagerLoad'<em> </em><p><li>Hint used to collect all primary keys of associated entities during hydration and execute it in a dedicated query afterwards</li></p><hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="identityMap"/>
+            <h4><span class="label private">private</span>array 
+                
+                $identityMap</h4>
+            <ul class="varlist">
+              <li>The identity map that holds references to all managed entities that have an identity. The entities are grouped by their class name.<pre>Since all classes in a hierarchy must share the same identifier set,
+we always take the root class name of the hierarchy.</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="entityIdentifiers"/>
+            <h4><span class="label private">private</span>array 
+                
+                $entityIdentifiers</h4>
+            <ul class="varlist">
+              <li>Map of all identifiers of managed entities.<pre>Keys are object ids (spl_object_hash).</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="originalEntityData"/>
+            <h4><span class="label private">private</span>array 
+                
+                $originalEntityData</h4>
+            <ul class="varlist"><li>Map of the original entity data of managed entities.<pre>Keys are object ids (spl_object_hash). This is used for calculating changesets
+at commit time.</pre></li>Note that PHPs "copy-on-write" behavior helps a lot with memory usage.</ul>
+          </li>
+          <li>
+            <a name="entityChangeSets"/>
+            <h4><span class="label private">private</span>array 
+                
+                $entityChangeSets</h4>
+            <ul class="varlist">
+              <li>Map of entity changes. Keys are object ids (spl_object_hash).<pre>Filled at the beginning of a commit of the UnitOfWork and cleaned at the end.</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="entityStates"/>
+            <h4><span class="label private">private</span>array 
+                
+                $entityStates</h4>
+            <ul class="varlist">
+              <li>The (cached) states of any known entities.<pre>Keys are object ids (spl_object_hash).</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="scheduledForDirtyCheck"/>
+            <h4><span class="label private">private</span>array 
+                
+                $scheduledForDirtyCheck</h4>
+            <ul class="varlist">
+              <li>Map of entities that are scheduled for dirty checking at commit time.<pre>This is only used for entities with a change tracking policy of DEFERRED_EXPLICIT.
+Keys are object ids (spl_object_hash).</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="entityInsertions"/>
+            <h4><span class="label private">private</span>array 
+                
+                $entityInsertions</h4>
+            <ul class="varlist">
+              <li>A list of all pending entity insertions.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="entityUpdates"/>
+            <h4><span class="label private">private</span>array 
+                
+                $entityUpdates</h4>
+            <ul class="varlist">
+              <li>A list of all pending entity updates.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="extraUpdates"/>
+            <h4><span class="label private">private</span>array 
+                
+                $extraUpdates</h4>
+            <ul class="varlist">
+              <li>Any pending extra updates that have been scheduled by persisters.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="entityDeletions"/>
+            <h4><span class="label private">private</span>array 
+                
+                $entityDeletions</h4>
+            <ul class="varlist">
+              <li>A list of all pending entity deletions.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="collectionDeletions"/>
+            <h4><span class="label private">private</span>array 
+                
+                $collectionDeletions</h4>
+            <ul class="varlist">
+              <li>All pending collection deletions.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="collectionUpdates"/>
+            <h4><span class="label private">private</span>array 
+                
+                $collectionUpdates</h4>
+            <ul class="varlist">
+              <li>All pending collection updates.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="visitedCollections"/>
+            <h4><span class="label private">private</span>array 
+                
+                $visitedCollections</h4>
+            <ul class="varlist">
+              <li>List of collections visited during changeset calculation on a commit-phase of a UnitOfWork.<pre>At the end of the UnitOfWork all these collections will make new snapshots
+of their data.</pre></li>
+            </ul>
+          </li>
+          <li>
+            <a name="em"/>
+            <h4><span class="label private">private</span>object 
+                
+                $em</h4>
+            <ul class="varlist">
+              <li>The EntityManager that "owns" this UnitOfWork instance.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="commitOrderCalculator"/>
+            <h4><span class="label private">private</span>object 
+                
+                $commitOrderCalculator</h4>
+            <ul class="varlist">
+              <li>The calculator used to calculate the order in which changes to entities need to be written to the database.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="persisters"/>
+            <h4><span class="label private">private</span>array 
+                
+                $persisters</h4>
+            <ul class="varlist">
+              <li>The entity persister instances used to persist entity instances.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="collectionPersisters"/>
+            <h4><span class="label private">private</span>array 
+                
+                $collectionPersisters</h4>
+            <ul class="varlist">
+              <li>The collection persister instances used to persist collections.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="evm"/>
+            <h4><span class="label private">private</span>object 
+                
+                $evm</h4>
+            <ul class="varlist">
+              <li>The EventManager used for dispatching events.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="orphanRemovals"/>
+            <h4><span class="label private">private</span>array 
+                
+                $orphanRemovals</h4>
+            <ul class="varlist">
+              <li>Orphaned entities that are scheduled for removal.</li>
+            </ul>
+          </li>
+          <li>
+            <a name="readOnlyObjects"/>
+            <h4><span class="label private">private</span>array 
+                
+                $readOnlyObjects</h4>
+            <ul class="varlist">
+              <li>Read-Only objects are never evaluated</li>
+            </ul>
+          </li>
+          <li>
+            <a name="eagerLoadingEntities"/>
+            <h4><span class="label private">private</span>array 
+                
+                $eagerLoadingEntities</h4>
+            <ul class="varlist">
+              <li>Map of Entity Class-Names and corresponding IDs that should eager loaded when requested.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_EntityManager.xhtml">Doctrine\ORM\EntityManager</a></span><strong> $em</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initializes a new UnitOfWork instance, bound to the given EntityManager.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$em</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addToIdentityMap"/>
+            <h4><span class="label public">public</span>addToIdentityMap<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Registers an entity in the identity map.<pre>Note that entities in a hierarchy are registered with the class name of
+the root entity.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity to register.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>TRUE if the registration was successful, FALSE if the identity of</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ORMInvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="clear"/>
+            <h4><span class="label public">public</span>clear<span style="font-size:90%;">( <span class="param-type">string</span><strong> $entityName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clears the UnitOfWork.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entityName</code> - if given, only entities of this type will get detached</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="clearEntityChangeSet"/>
+            <h4><span class="label public">public</span>clearEntityChangeSet<span style="font-size:90%;">( <span class="param-type">string</span><strong> $oid</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Clears the property changeset of the entity with the given OID.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$oid</code> - The entity's OID.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="commit"/>
+            <h4><span class="label public">public</span>commit<span style="font-size:90%;">( <span class="param-type"><span title="null|object|array">null|object|array</span></span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Commits the UnitOfWork, executing all operations that have been postponed up to this point. The state of all managed entities will be synchronized with the database.<pre>The operations are executed in the following order:
+
+1) All entity insertions
+2) All entity updates
+3) All collection deletions
+4) All collection updates
+5) All entity deletions</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\Exception</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="computeChangeSet"/>
+            <h4><span class="label public">public</span>computeChangeSet<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $class</strong>, <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Computes the changes that happened to a single entity.<pre>Modifies/populates the following properties:
+
+{@link _originalEntityData}
+If the entity is NEW or MANAGED but not yet fully persisted (only has an id)
+then it was not fetched from the database and therefore we have no original
+entity data yet. All of the current entity data is stored as the original entity data.
+
+{@link _entityChangeSets}
+The changes detected on all properties of the entity are stored there.
+A change is a tuple array where the first entry is the old value and the second
+entry is the new value of the property. Changesets are used by persisters
+to INSERT/UPDATE the persistent entity state.
+
+{@link _entityUpdates}
+If the entity is already fully MANAGED (has been fetched from the database before)
+and any changes to its properties are detected, then a reference to the entity is stored
+there to mark it for an update.
+
+{@link _collectionDeletions}
+If a PersistentCollection has been de-referenced in a fully MANAGED entity,
+then this collection is marked for deletion.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - The class descriptor of the entity.</li>
+                <li><code>$entity</code> - The entity for which to compute the changes.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="computeChangeSets"/>
+            <h4><span class="label public">public</span>computeChangeSets<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Computes all the changes that have been done to entities and collections since the last commit and stores these changes in the _entityChangeSet map temporarily for access by the persisters, until the UoW commit is finished.</li>
+            </p>
+          </li>
+          <li>
+            <a name="containsIdHash"/>
+            <h4><span class="label public">public</span>containsIdHash<span style="font-size:90%;">( <span class="param-type">string</span><strong> $idHash</strong>, <span class="param-type">string</span><strong> $rootClassName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Checks whether an identifier hash exists in the identity map.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$idHash</code> - </li>
+                <li><code>$rootClassName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="createEntity"/>
+            <h4><span class="label public">public</span>createEntity<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">Array</span><strong> $data</strong>, <span class="param-type">Array</span><strong> &amp;$hints</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Creates an entity. Used for reconstitution of persistent entities.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$className</code> - The name of the entity class.</li>
+                <li><code>$data</code> - The data for the entity.</li>
+                <li><code>$hints</code> - Any hints to account for during reconstitution/lookup of the entity.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The managed entity instance.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="detach"/>
+            <h4><span class="label public">public</span>detach<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Detaches an entity from the persistence management. It's persistence will no longer be managed by Doctrine.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity to detach.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getByIdHash"/>
+            <h4><span class="label public">public</span>getByIdHash<span style="font-size:90%;">( <span class="param-type">string</span><strong> $idHash</strong>, <span class="param-type">string</span><strong> $rootClassName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Gets an entity in the identity map by its identifier hash.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$idHash</code> - </li>
+                <li><code>$rootClassName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCollectionPersister"/>
+            <h4><span class="label public">public</span>getCollectionPersister<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $association</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a collection persister for a collection-valued association.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$association</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCommitOrderCalculator"/>
+            <h4><span class="label public">public</span>getCommitOrderCalculator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the CommitOrderCalculator used by the UnitOfWork to order commits.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEntityChangeSet"/>
+            <h4><span class="label public">public</span>getEntityChangeSet<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the changeset for an entity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEntityIdentifier"/>
+            <h4><span class="label public">public</span>getEntityIdentifier<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the identifier of an entity.<pre>The returned value is always an array of identifier values. If the entity
+has a composite identifier then the identifier values are in the same
+order as the identifier field names as returned by ClassMetadata#getIdentifierFieldNames().</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The identifier values.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEntityPersister"/>
+            <h4><span class="label public">public</span>getEntityPersister<span style="font-size:90%;">( <span class="param-type">string</span><strong> $entityName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the EntityPersister for an Entity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entityName</code> - The name of the Entity.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getEntityState"/>
+            <h4><span class="label public">public</span>getEntityState<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">integer</span><strong> $assume</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the state of an entity with regard to the current unit of work.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+                <li><code>$assume</code> - The state to assume if the state is not yet known (not MANAGED or REMOVED).</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The entity state.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIdentityMap"/>
+            <h4><span class="label public">public</span>getIdentityMap<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the identity map of the UnitOfWork.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getOriginalEntityData"/>
+            <h4><span class="label public">public</span>getOriginalEntityData<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the original data of an entity. The original data is the data that was present at the time the entity was reconstituted from the database.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getScheduledCollectionDeletions"/>
+            <h4><span class="label public">public</span>getScheduledCollectionDeletions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the currently scheduled complete collection deletions</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getScheduledCollectionUpdates"/>
+            <h4><span class="label public">public</span>getScheduledCollectionUpdates<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the currently scheduled collection inserts, updates and deletes.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getScheduledEntityDeletions"/>
+            <h4><span class="label public">public</span>getScheduledEntityDeletions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the currently scheduled entity deletions in this UnitOfWork.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getScheduledEntityInsertions"/>
+            <h4><span class="label public">public</span>getScheduledEntityInsertions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the currently scheduled entity insertions in this UnitOfWork.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getScheduledEntityUpdates"/>
+            <h4><span class="label public">public</span>getScheduledEntityUpdates<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the currently scheduled entity updates in this UnitOfWork.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasPendingInsertions"/>
+            <h4><span class="label public">public</span>hasPendingInsertions<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether the UnitOfWork has any pending insertions.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>TRUE if this UnitOfWork has pending insertions, FALSE otherwise.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="initializeObject"/>
+            <h4><span class="label public">public</span>initializeObject<span style="font-size:90%;">( <span class="param-type"/><strong> $obj</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Helper method to initialize a lazy loading proxy or persistent collection.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code/> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isCollectionScheduledForDeletion"/>
+            <h4><span class="label public">public</span>isCollectionScheduledForDeletion<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_PersistentCollection.xhtml">Doctrine\ORM\PersistentCollection</a></span><strong> $coll</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$coll</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isEntityScheduled"/>
+            <h4><span class="label public">public</span>isEntityScheduled<span style="font-size:90%;">( <span class="param-type"/><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether an entity is scheduled for insertion, update or deletion.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isInIdentityMap"/>
+            <h4><span class="label public">public</span>isInIdentityMap<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether an entity is registered in the identity map of this UnitOfWork.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isReadOnly"/>
+            <h4><span class="label public">public</span>isReadOnly<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $object</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Is this entity read only?</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$object</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ORMInvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isScheduledForDelete"/>
+            <h4><span class="label public">public</span>isScheduledForDelete<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether an entity is registered as removed/deleted with the unit of work.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isScheduledForDirtyCheck"/>
+            <h4><span class="label public">public</span>isScheduledForDirtyCheck<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether an entity is registered to be checked in the unit of work.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isScheduledForInsert"/>
+            <h4><span class="label public">public</span>isScheduledForInsert<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether an entity is scheduled for insertion.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="isScheduledForUpdate"/>
+            <h4><span class="label public">public</span>isScheduledForUpdate<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Checks whether an entity is registered as dirty in the unit of work.<pre>Note: Is not very useful currently as dirty entities are only registered
+at commit time.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="loadCollection"/>
+            <h4><span class="label public">public</span>loadCollection<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_PersistentCollection.xhtml">Doctrine\ORM\PersistentCollection</a></span><strong> $collection</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Initializes (loads) an uninitialized persistent collection of an entity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$collection</code> - The collection to initialize.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="lock"/>
+            <h4><span class="label public">public</span>lock<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">int</span><strong> $lockMode</strong>, <span class="param-type">int</span><strong> $lockVersion</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Acquire a lock on the given entity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+                <li><code>$lockMode</code> - </li>
+                <li><code>$lockVersion</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ORMInvalidArgumentException</code>
+                </li>
+                <li>
+                  <code>TransactionRequiredException</code>
+                </li>
+                <li>
+                  <code>OptimisticLockException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="markReadOnly"/>
+            <h4><span class="label public">public</span>markReadOnly<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $object</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Marks an entity as read-only so that it will not be considered for updates during UnitOfWork#commit().<pre>This operation cannot be undone as some parts of the UnitOfWork now keep gathering information
+on this object that might be necessary to perform a correct update.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$object</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ORMInvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="merge"/>
+            <h4><span class="label public">public</span>merge<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Merges the state of the given detached entity into this UnitOfWork.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The managed copy of the entity.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>OptimisticLockException If the entity uses optimistic locking through a version</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="persist"/>
+            <h4><span class="label public">public</span>persist<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Persists an entity as part of the current unit of work.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity to persist.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="propertyChanged"/>
+            <h4><span class="label public">public</span>propertyChanged<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">string</span><strong> $propertyName</strong>, <span class="param-type">mixed</span><strong> $oldValue</strong>, <span class="param-type">mixed</span><strong> $newValue</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Notifies this UnitOfWork of a property change in an entity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity that owns the property.</li>
+                <li><code>$propertyName</code> - The name of the property that changed.</li>
+                <li><code>$oldValue</code> - The old value of the property.</li>
+                <li><code>$newValue</code> - The new value of the property.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="recomputeSingleEntityChangeSet"/>
+            <h4><span class="label public">public</span>recomputeSingleEntityChangeSet<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $class</strong>, <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Computes the changeset of an individual entity, independently of the computeChangeSets() routine that is used at the beginning of a UnitOfWork#commit().<pre>The passed entity must be a managed entity. If the entity already has a change set
+because this method is invoked during a commit cycle then the change sets are added.
+whereby changes detected in this method prevail.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - The class descriptor of the entity.</li>
+                <li><code>$entity</code> - The entity for which to (re)calculate the change set.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ORMInvalidArgumentException If the passed entity is not MANAGED.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="refresh"/>
+            <h4><span class="label public">public</span>refresh<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Refreshes the state of the given entity from the database, overwriting any local, unpersisted changes.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity to refresh.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>InvalidArgumentException If the entity is not MANAGED.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="registerManaged"/>
+            <h4><span class="label public">public</span>registerManaged<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> $id</strong>, <span class="param-type">Array</span><strong> $data</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Registers an entity as managed.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity.</li>
+                <li><code>$id</code> - The identifier values.</li>
+                <li><code>$data</code> - The original entity data.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="remove"/>
+            <h4><span class="label public">public</span>remove<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Deletes an entity as part of the current unit of work.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity to remove.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeFromIdentityMap"/>
+            <h4><span class="label public">public</span>removeFromIdentityMap<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Removes an entity from the identity map. This effectively detaches the entity from the persistence management of Doctrine.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ORMInvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="scheduleCollectionDeletion"/>
+            <h4><span class="label public">public</span>scheduleCollectionDeletion<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_PersistentCollection.xhtml">Doctrine\ORM\PersistentCollection</a></span><strong> $coll</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Schedules a complete collection for removal when this UnitOfWork commits.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$coll</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="scheduleExtraUpdate"/>
+            <h4><span class="label public">public</span>scheduleExtraUpdate<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> $changeset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Schedules an extra update that will be executed immediately after the regular entity updates within the currently running commit cycle.<pre>Extra updates for entities are stored as (entity, changeset) tuples.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity for which to schedule an extra update.</li>
+                <li><code>$changeset</code> - The changeset of the entity (what to update).</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="scheduleForDelete"/>
+            <h4><span class="label public">public</span>scheduleForDelete<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Schedules an entity for deletion.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="scheduleForDirtyCheck"/>
+            <h4><span class="label public">public</span>scheduleForDirtyCheck<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Schedules an entity for dirty-checking at commit-time.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity to schedule for dirty-checking.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="scheduleForInsert"/>
+            <h4><span class="label public">public</span>scheduleForInsert<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Schedules an entity for insertion into the database.<pre>If the entity already has an identifier, it will be added to the identity map.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity to schedule for insertion.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ORMInvalidArgumentException</code>
+                </li>
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="scheduleForUpdate"/>
+            <h4><span class="label public">public</span>scheduleForUpdate<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Schedules an entity for being updated.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity to schedule for being updated.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ORMInvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="scheduleOrphanRemoval"/>
+            <h4><span class="label public">public</span>scheduleOrphanRemoval<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Schedules an orphaned entity for removal. The remove() operation will be invoked on that entity at the beginning of the next commit of this UnitOfWork.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setOriginalEntityData"/>
+            <h4><span class="label public">public</span>setOriginalEntityData<span style="font-size:90%;">( <span class="param-type"/><strong> $entity</strong>, <span class="param-type">Array</span><strong> $data</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+          </li>
+          <li>
+            <a name="setOriginalEntityProperty"/>
+            <h4><span class="label public">public</span>setOriginalEntityProperty<span style="font-size:90%;">( <span class="param-type">string</span><strong> $oid</strong>, <span class="param-type">string</span><strong> $property</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Sets a property value of the original data array of an entity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$oid</code> - </li>
+                <li><code>$property</code> - </li>
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="size"/>
+            <h4><span class="label public">public</span>size<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Calculates the size of the UnitOfWork. The size of the UnitOfWork is the number of entities in the identity map.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="triggerEagerLoads"/>
+            <h4><span class="label public">public</span>triggerEagerLoads<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="tryGetById"/>
+            <h4><span class="label public">public</span>tryGetById<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $id</strong>, <span class="param-type">string</span><strong> $rootClassName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Tries to find an entity with the given identifier in the identity map of this UnitOfWork.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$id</code> - The entity identifier to look for.</li>
+                <li><code>$rootClassName</code> - The name of the root class of the mapped entity hierarchy.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Returns the entity with the specified identifier if it exists in</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="tryGetByIdHash"/>
+            <h4><span class="label public">public</span>tryGetByIdHash<span style="font-size:90%;">( <span class="param-type">string</span><strong> $idHash</strong>, <span class="param-type">string</span><strong> $rootClassName</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>INTERNAL: Tries to get an entity by its identifier hash. If no entity is found for the given hash, FALSE is returned.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$idHash</code> - </li>
+                <li><code>$rootClassName</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The found entity or FALSE.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="cascadeDetach"/>
+            <h4><span class="label private">private</span>cascadeDetach<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> &amp;$visited</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Cascades a detach operation to associated entities.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+                <li><code>$visited</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="cascadeMerge"/>
+            <h4><span class="label private">private</span>cascadeMerge<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">invalid method call</span><strong> $managedCopy</strong>, <span class="param-type">Array</span><strong> &amp;$visited</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Cascades a merge operation to associated entities.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+                <li><code>$managedCopy</code> - </li>
+                <li><code>$visited</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="cascadePersist"/>
+            <h4><span class="label private">private</span>cascadePersist<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> &amp;$visited</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Cascades the save operation to associated entities.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+                <li><code>$visited</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="cascadeRefresh"/>
+            <h4><span class="label private">private</span>cascadeRefresh<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> &amp;$visited</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Cascades a refresh operation to associated entities.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+                <li><code>$visited</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="cascadeRemove"/>
+            <h4><span class="label private">private</span>cascadeRemove<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> &amp;$visited</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Cascades the delete operation to associated entities.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+                <li><code>$visited</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="computeAssociationChanges"/>
+            <h4><span class="label private">private</span>computeAssociationChanges<span style="font-size:90%;">( <span class="param-type">array</span><strong> $assoc</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Computes the changes of an association.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$assoc</code> - </li>
+                <li><code>$value</code> - The value of the association.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ORMInvalidArgumentException</code>
+                </li>
+                <li>
+                  <code>ORMException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="computeScheduleInsertsChangeSets"/>
+            <h4><span class="label private">private</span>computeScheduleInsertsChangeSets<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Compute the changesets of all entities scheduled for insertion</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="computeSingleEntityChangeSet"/>
+            <h4><span class="label private">private</span>computeSingleEntityChangeSet<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Only flush the given entity according to a ruleset that keeps the UoW consistent.<pre>1. All entities scheduled for insertion, (orphan) removals and changes in collections are processed as well!
+2. Read Only entities are skipped.
+3. Proxies are skipped.
+4. Only if entity is properly managed.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>\InvalidArgumentException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="doDetach"/>
+            <h4><span class="label private">private</span>doDetach<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> &amp;$visited</strong>, <span class="param-type">boolean</span><strong> $noCascade</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes a detach operation on the given entity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+                <li><code>$visited</code> - </li>
+                <li><code>$noCascade</code> - if true, don't cascade detach operation</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="doMerge"/>
+            <h4><span class="label private">private</span>doMerge<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> &amp;$visited</strong>, <span class="param-type">invalid method call</span><strong> $prevManagedCopy</strong>, <span class="param-type">array</span><strong> $assoc</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes a merge operation on an entity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - </li>
+                <li><code>$visited</code> - </li>
+                <li><code>$prevManagedCopy</code> - </li>
+                <li><code>$assoc</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The managed copy of the entity.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>OptimisticLockException If the entity uses optimistic locking through a version</code>
+                </li>
+                <li>
+                  <code>ORMInvalidArgumentException If the entity instance is NEW.</code>
+                </li>
+                <li>
+                  <code>EntityNotFoundException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="doPersist"/>
+            <h4><span class="label private">private</span>doPersist<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> &amp;$visited</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Persists an entity as part of the current unit of work.<pre>This method is internally called during persist() cascades as it tracks
+the already visited entities to prevent infinite recursions.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity to persist.</li>
+                <li><code>$visited</code> - The already visited entities.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ORMInvalidArgumentException</code>
+                </li>
+                <li>
+                  <code>UnexpectedValueException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="doRefresh"/>
+            <h4><span class="label private">private</span>doRefresh<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> &amp;$visited</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes a refresh operation on an entity.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity to refresh.</li>
+                <li><code>$visited</code> - The already visited entities during cascades.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ORMInvalidArgumentException If the entity is not MANAGED.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="doRemove"/>
+            <h4><span class="label private">private</span>doRemove<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> &amp;$visited</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Deletes an entity as part of the current unit of work.<pre>This method is internally called during delete() cascades as it tracks
+the already visited entities to prevent infinite recursions.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entity</code> - The entity to delete.</li>
+                <li><code>$visited</code> - The map of the already visited entities.</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ORMInvalidArgumentException If the instance is a detached entity.</code>
+                </li>
+                <li>
+                  <code>UnexpectedValueException</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="executeDeletions"/>
+            <h4><span class="label private">private</span>executeDeletions<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\ORM\Mapping\ClassMetadata">ClassMetadata</span></span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes all entity deletions for entities of the specified type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="executeExtraUpdates"/>
+            <h4><span class="label private">private</span>executeExtraUpdates<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes any extra updates that have been scheduled.</li>
+            </p>
+          </li>
+          <li>
+            <a name="executeInserts"/>
+            <h4><span class="label private">private</span>executeInserts<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\ORM\Mapping\ClassMetadata">ClassMetadata</span></span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes all entity insertions for entities of the specified type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="executeUpdates"/>
+            <h4><span class="label private">private</span>executeUpdates<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\ORM\Mapping\ClassMetadata">ClassMetadata</span></span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Executes all entity updates for entities of the specified type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="flattenIdentifier"/>
+            <h4><span class="label private">private</span>flattenIdentifier<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $class</strong>, <span class="param-type">array</span><strong> $id</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>convert foreign identifiers into scalar foreign key values to avoid object to string conversion failures.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+                <li><code>$id</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCommitOrder"/>
+            <h4><span class="label private">private</span>getCommitOrder<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $entityChangeSet</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the commit order.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$entityChangeSet</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="newInstance"/>
+            <h4><span class="label private">private</span>newInstance<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $class</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="objToStr"/>
+            <h4><span class="label true">true</span><span class="label private">private</span>objToStr<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $obj</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Helper method to show an object as string.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$obj</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="persistNew"/>
+            <h4><span class="label private">private</span>persistNew<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $class</strong>, <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li/>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$class</code> - </li>
+                <li><code>$entity</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

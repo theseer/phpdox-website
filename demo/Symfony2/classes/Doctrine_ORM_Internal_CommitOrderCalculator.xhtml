@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\ORM\Internal\CommitOrderCalculator - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#NOT_VISITED">NOT_VISITED</a>
+          </li>
+          <li>
+            <a href="#IN_PROGRESS">IN_PROGRESS</a>
+          </li>
+          <li>
+            <a href="#VISITED">VISITED</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_nodeStates">$_nodeStates</a>
+          </li>
+          <li>
+            <a href="#_classes">$_classes</a>
+          </li>
+          <li>
+            <a href="#_relatedClasses">$_relatedClasses</a>
+          </li>
+          <li>
+            <a href="#_sorted">$_sorted</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#_visitNode">_visitNode</a>
+          </li>
+          <li>
+            <a href="#addClass">addClass</a>
+          </li>
+          <li>
+            <a href="#addDependency">addDependency</a>
+          </li>
+          <li>
+            <a href="#clear">clear</a>
+          </li>
+          <li>
+            <a href="#getCommitOrder">getCommitOrder</a>
+          </li>
+          <li>
+            <a href="#hasClass">hasClass</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\ORM\Internal\</span>CommitOrderCalculator</h2>
+        <div class="file-notice">
+          <p>The CommitOrderCalculator is used by the UnitOfWork to sort out the correct order in which changes to entities need to be persisted.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
+          <li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="NOT_VISITED"/>NOT_VISITED = 1<hr/></li>
+          <li><a name="IN_PROGRESS"/>IN_PROGRESS = 2<hr/></li>
+          <li><a name="VISITED"/>VISITED = 3<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_nodeStates"/>
+            <h4><span class="label private">private</span>
+                $_nodeStates</h4>
+          </li>
+          <li>
+            <a name="_classes"/>
+            <h4><span class="label private">private</span>
+                $_classes</h4>
+          </li>
+          <li>
+            <a name="_relatedClasses"/>
+            <h4><span class="label private">private</span>
+                $_relatedClasses</h4>
+          </li>
+          <li>
+            <a name="_sorted"/>
+            <h4><span class="label private">private</span>
+                $_sorted</h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="addClass"/>
+            <h4><span class="label public">public</span>addClass<span style="font-size:90%;">( <span class="param-type"/><strong> $class</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="addDependency"/>
+            <h4><span class="label public">public</span>addDependency<span style="font-size:90%;">( <span class="param-type"/><strong> $fromClass</strong>, <span class="param-type"/><strong> $toClass</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="clear"/>
+            <h4><span class="label public">public</span>clear<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Clears the current graph.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getCommitOrder"/>
+            <h4><span class="label public">public</span>getCommitOrder<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets a valid commit order for all current nodes.<pre>Uses a depth-first search (DFS) to traverse the graph.
+The desired topological sorting is the reverse postorder of these searches.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The list of ordered classes.</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasClass"/>
+            <h4><span class="label public">public</span>hasClass<span style="font-size:90%;">( <span class="param-type"/><strong> $className</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="_visitNode"/>
+            <h4><span class="label private">private</span>_visitNode<span style="font-size:90%;">( <span class="param-type"/><strong> $node</strong> )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

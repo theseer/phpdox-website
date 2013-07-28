@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - RequirementCollection - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#requirements">$requirements</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#add">add</a>
+          </li>
+          <li>
+            <a href="#addCollection">addCollection</a>
+          </li>
+          <li>
+            <a href="#addPhpIniRecommendation">addPhpIniRecommendation</a>
+          </li>
+          <li>
+            <a href="#addPhpIniRequirement">addPhpIniRequirement</a>
+          </li>
+          <li>
+            <a href="#addRecommendation">addRecommendation</a>
+          </li>
+          <li>
+            <a href="#addRequirement">addRequirement</a>
+          </li>
+          <li>
+            <a href="#all">all</a>
+          </li>
+          <li>
+            <a href="#getFailedRecommendations">getFailedRecommendations</a>
+          </li>
+          <li>
+            <a href="#getFailedRequirements">getFailedRequirements</a>
+          </li>
+          <li>
+            <a href="#getIterator">getIterator</a>
+          </li>
+          <li>
+            <a href="#getPhpIniConfigPath">getPhpIniConfigPath</a>
+          </li>
+          <li>
+            <a href="#getRecommendations">getRecommendations</a>
+          </li>
+          <li>
+            <a href="#getRequirements">getRequirements</a>
+          </li>
+          <li>
+            <a href="#hasPhpIniConfigIssue">hasPhpIniConfigIssue</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>RequirementCollection</h2>
+        <div class="file-notice">
+          <p>A RequirementCollection represents a set of Requirement instances.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Tobias Schultze &lt;http://tobion.de&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <span title="IteratorAggregate">IteratorAggregate</span>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="requirements"/>
+            <h4><span class="label private">private</span>
+                $requirements</h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="add"/>
+            <h4><span class="label public">public</span>add<span style="font-size:90%;">( <span class="param-type"><span title="\\Requirement">Requirement</span></span><strong> $requirement</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a Requirement.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$requirement</code> - A Requirement instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addCollection"/>
+            <h4><span class="label public">public</span>addCollection<span style="font-size:90%;">( <span class="param-type"><span title="\\RequirementCollection">RequirementCollection</span></span><strong> $collection</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a requirement collection to the current set of requirements.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$collection</code> - A RequirementCollection instance</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addPhpIniRecommendation"/>
+            <h4><span class="label public">public</span>addPhpIniRecommendation<span style="font-size:90%;">( <span class="param-type">string</span><strong> $cfgName</strong>, <span class="param-type"><span title="Boolean|callback">Boolean|callback</span></span><strong> $evaluation</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $approveCfgAbsence</strong>, <span class="param-type">string</span><strong> $testMessage</strong>, <span class="param-type">string</span><strong> $helpHtml</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $helpText</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds an optional recommendation in form of a php.ini configuration.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cfgName</code> - The configuration name used for ini_get()</li>
+                <li><code>$evaluation</code> - Either a Boolean indicating whether the configuration should evaluate to true or false,</li>
+                <li><code>$approveCfgAbsence</code> - If true the Requirement will be fulfilled even if the configuration option does not exist, i.e. ini_get() returns false.</li>
+                <li><code>$testMessage</code> - The message for testing the requirement (when null and $evaluation is a Boolean a default message is derived)</li>
+                <li><code>$helpHtml</code> - The help text formatted in HTML for resolving the problem (when null and $evaluation is a Boolean a default help is derived)</li>
+                <li><code>$helpText</code> - The help text (when null, it will be inferred from $helpHtml, i.e. stripped from HTML tags)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addPhpIniRequirement"/>
+            <h4><span class="label public">public</span>addPhpIniRequirement<span style="font-size:90%;">( <span class="param-type">string</span><strong> $cfgName</strong>, <span class="param-type"><span title="Boolean|callback">Boolean|callback</span></span><strong> $evaluation</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $approveCfgAbsence</strong>, <span class="param-type">string</span><strong> $testMessage</strong>, <span class="param-type">string</span><strong> $helpHtml</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $helpText</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a mandatory requirement in form of a php.ini configuration.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$cfgName</code> - The configuration name used for ini_get()</li>
+                <li><code>$evaluation</code> - Either a Boolean indicating whether the configuration should evaluate to true or false,</li>
+                <li><code>$approveCfgAbsence</code> - If true the Requirement will be fulfilled even if the configuration option does not exist, i.e. ini_get() returns false.</li>
+                <li><code>$testMessage</code> - The message for testing the requirement (when null and $evaluation is a Boolean a default message is derived)</li>
+                <li><code>$helpHtml</code> - The help text formatted in HTML for resolving the problem (when null and $evaluation is a Boolean a default help is derived)</li>
+                <li><code>$helpText</code> - The help text (when null, it will be inferred from $helpHtml, i.e. stripped from HTML tags)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addRecommendation"/>
+            <h4><span class="label public">public</span>addRecommendation<span style="font-size:90%;">( <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $fulfilled</strong>, <span class="param-type">string</span><strong> $testMessage</strong>, <span class="param-type">string</span><strong> $helpHtml</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $helpText</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds an optional recommendation.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fulfilled</code> - Whether the recommendation is fulfilled</li>
+                <li><code>$testMessage</code> - The message for testing the recommendation</li>
+                <li><code>$helpHtml</code> - The help text formatted in HTML for resolving the problem</li>
+                <li><code>$helpText</code> - The help text (when null, it will be inferred from $helpHtml, i.e. stripped from HTML tags)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addRequirement"/>
+            <h4><span class="label public">public</span>addRequirement<span style="font-size:90%;">( <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $fulfilled</strong>, <span class="param-type">string</span><strong> $testMessage</strong>, <span class="param-type">string</span><strong> $helpHtml</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $helpText</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Adds a mandatory requirement.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$fulfilled</code> - Whether the requirement is fulfilled</li>
+                <li><code>$testMessage</code> - The message for testing the requirement</li>
+                <li><code>$helpHtml</code> - The help text formatted in HTML for resolving the problem</li>
+                <li><code>$helpText</code> - The help text (when null, it will be inferred from $helpHtml, i.e. stripped from HTML tags)</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="all"/>
+            <h4><span class="label public">public</span>all<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns both requirements and recommendations.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Array of Requirement instances</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFailedRecommendations"/>
+            <h4><span class="label public">public</span>getFailedRecommendations<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the recommendations that were not met.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Array of Requirement instances</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getFailedRequirements"/>
+            <h4><span class="label public">public</span>getFailedRequirements<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the mandatory requirements that were not met.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Array of Requirement instances</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getIterator"/>
+            <h4><span class="label public">public</span>getIterator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the current RequirementCollection as an Iterator.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A Traversable interface</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getPhpIniConfigPath"/>
+            <h4><span class="label public">public</span>getPhpIniConfigPath<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the PHP configuration file (php.ini) path.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>php.ini file path</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRecommendations"/>
+            <h4><span class="label public">public</span>getRecommendations<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns all optional recommendations.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Array of Requirement instances</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getRequirements"/>
+            <h4><span class="label public">public</span>getRequirements<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns all mandatory requirements.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>Array of Requirement instances</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="hasPhpIniConfigIssue"/>
+            <h4><span class="label public">public</span>hasPhpIniConfigIssue<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns whether a php.ini configuration is not correct.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>php.ini configuration problem?</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

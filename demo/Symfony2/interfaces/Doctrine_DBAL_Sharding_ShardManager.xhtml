@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\DBAL\Sharding\ShardManager - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#getCurrentDistributionValue">getCurrentDistributionValue</a>
+          </li>
+          <li>
+            <a href="#getShards">getShards</a>
+          </li>
+          <li>
+            <a href="#queryAll">queryAll</a>
+          </li>
+          <li>
+            <a href="#selectGlobal">selectGlobal</a>
+          </li>
+          <li>
+            <a href="#selectShard">selectShard</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\DBAL\Sharding\</span>ShardManager</h2>
+        <div class="file-notice">
+          <p>Sharding Manager gives access to APIs to implementing sharding on top of Doctrine\DBAL\Connection instances.</p>
+          <p>
+            <pre>For simplicity and developer ease-of-use (and understanding) the sharding
+API only covers single shard queries, no fan-out support. It is primarily
+suited for multi-tenant applications.
+
+The assumption about sharding here
+is that a distribution value can be found that gives access to all the
+necessary data for all use-cases. Switching between shards should be done with
+caution, especially if lazy loading is implemented. Any query is always
+executed against the last shard that was selected. If a query is created for
+a shard Y but then a shard X is selected when its actually excecuted you
+will hit the wrong shard.</pre>
+          </p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="getCurrentDistributionValue"/>
+            <h4><span class="label public">public</span>getCurrentDistributionValue<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the distribution value currently used for sharding.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getShards"/>
+            <h4><span class="label public">public</span>getShards<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get information about the amount of shards and other details.<pre>Format is implementation specific, each shard is one element and has a
+'name' attribute at least.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="queryAll"/>
+            <h4><span class="label public">public</span>queryAll<span style="font-size:90%;">( <span class="param-type">string</span><strong> $sql</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">Array</span><strong> $types</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Query all shards in undefined order and return the results appended to each other. Restore the previous distribution value after execution.<pre>Using  to retrieve rows internally.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sql</code> - </li>
+                <li><code>$params</code> - </li>
+                <li><code>$types</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="selectGlobal"/>
+            <h4><span class="label public">public</span>selectGlobal<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Select global database with global data.<pre>This is the default database that is connected when no shard is
+selected.</pre></li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="selectShard"/>
+            <h4><span class="label public">public</span>selectShard<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $distributionValue</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>SELECT queries after this statement will be issued against the selected shard.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$distributionValue</code> - </li>
+                <li><code>$options</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="throws">Throws:</h4>
+              <ul class="throws">
+                <li>
+                  <code>ShardingException If no value is passed as shard identifier.</code>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

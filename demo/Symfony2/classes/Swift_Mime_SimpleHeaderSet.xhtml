@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Swift_Mime_SimpleHeaderSet - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#_factory">$_factory</a>
+          </li>
+          <li>
+            <a href="#_headers">$_headers</a>
+          </li>
+          <li>
+            <a href="#_order">$_order</a>
+          </li>
+          <li>
+            <a href="#_required">$_required</a>
+          </li>
+          <li>
+            <a href="#_charset">$_charset</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__toString">__toString</a>
+          </li>
+          <li>
+            <a href="#_canSort">_canSort</a>
+          </li>
+          <li>
+            <a href="#_isDisplayed">_isDisplayed</a>
+          </li>
+          <li>
+            <a href="#_notifyHeadersOfCharset">_notifyHeadersOfCharset</a>
+          </li>
+          <li>
+            <a href="#_sortHeaders">_sortHeaders</a>
+          </li>
+          <li>
+            <a href="#_storeHeader">_storeHeader</a>
+          </li>
+          <li>
+            <a href="#addDateHeader">addDateHeader</a>
+          </li>
+          <li>
+            <a href="#addIdHeader">addIdHeader</a>
+          </li>
+          <li>
+            <a href="#addMailboxHeader">addMailboxHeader</a>
+          </li>
+          <li>
+            <a href="#addParameterizedHeader">addParameterizedHeader</a>
+          </li>
+          <li>
+            <a href="#addPathHeader">addPathHeader</a>
+          </li>
+          <li>
+            <a href="#addTextHeader">addTextHeader</a>
+          </li>
+          <li>
+            <a href="#charsetChanged">charsetChanged</a>
+          </li>
+          <li>
+            <a href="#defineOrdering">defineOrdering</a>
+          </li>
+          <li>
+            <a href="#get">get</a>
+          </li>
+          <li>
+            <a href="#getAll">getAll</a>
+          </li>
+          <li>
+            <a href="#has">has</a>
+          </li>
+          <li>
+            <a href="#listAll">listAll</a>
+          </li>
+          <li>
+            <a href="#newInstance">newInstance</a>
+          </li>
+          <li>
+            <a href="#remove">remove</a>
+          </li>
+          <li>
+            <a href="#removeAll">removeAll</a>
+          </li>
+          <li>
+            <a href="#set">set</a>
+          </li>
+          <li>
+            <a href="#setAlwaysDisplayed">setAlwaysDisplayed</a>
+          </li>
+          <li>
+            <a href="#setCharset">setCharset</a>
+          </li>
+          <li>
+            <a href="#toString">toString</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Swift_Mime_SimpleHeaderSet</h2>
+        <div class="file-notice">
+          <p>A collection of MIME headers.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Chris Corbyn</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <a href="../interfaces/Swift_Mime_HeaderSet.xhtml">Swift_Mime_HeaderSet</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="_factory"/>
+            <h4><span class="label private">private</span>
+                $_factory</h4>
+            <ul class="varlist">
+              <li>HeaderFactory</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_headers"/>
+            <h4><span class="label private">private</span>
+                $_headers</h4>
+            <ul class="varlist">
+              <li>Collection of set Headers</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_order"/>
+            <h4><span class="label private">private</span>
+                $_order</h4>
+            <ul class="varlist">
+              <li>Field ordering details</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_required"/>
+            <h4><span class="label private">private</span>
+                $_required</h4>
+            <ul class="varlist">
+              <li>List of fields which are required to be displayed</li>
+            </ul>
+          </li>
+          <li>
+            <a name="_charset"/>
+            <h4><span class="label private">private</span>
+                $_charset</h4>
+            <ul class="varlist">
+              <li>The charset used by Headers</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_HeaderFactory">Swift_Mime_HeaderFactory</span></span><strong> $factory</strong>, <span class="param-type">string</span><strong> $charset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new SimpleHeaderSet with the given $factory.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$factory</code> - </li>
+                <li><code>$charset</code> - </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__toString"/>
+            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a string representation of this object.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addDateHeader"/>
+            <h4><span class="label public">public</span>addDateHeader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">integer</span><strong> $timestamp</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a new Date header using $timestamp (UNIX time).</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$timestamp</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addIdHeader"/>
+            <h4><span class="label public">public</span>addIdHeader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type"><span title="string|array">string|array</span></span><strong> $ids</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a new ID header for Message-ID or Content-ID.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$ids</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addMailboxHeader"/>
+            <h4><span class="label public">public</span>addMailboxHeader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type"><span title="array|string">array|string</span></span><strong> $addresses</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a new Mailbox Header with a list of $addresses.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$addresses</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addParameterizedHeader"/>
+            <h4><span class="label public">public</span>addParameterizedHeader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">string</span><strong> $value</strong>, <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a new ParameterizedHeader with $name, $value and $params.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$value</code> - </li>
+                <li><code>$params</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addPathHeader"/>
+            <h4><span class="label public">public</span>addPathHeader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">string</span><strong> $path</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a new Path header with an address (path) in it.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$path</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="addTextHeader"/>
+            <h4><span class="label public">public</span>addTextHeader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">string</span><strong> $value</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Add a new basic text header with $name and $value.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$value</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="charsetChanged"/>
+            <h4><span class="label public">public</span>charsetChanged<span style="font-size:90%;">( <span class="param-type">string</span><strong> $charset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Notify this observer that the entity's charset has changed.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$charset</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="defineOrdering"/>
+            <h4><span class="label public">public</span>defineOrdering<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $sequence</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Define a list of Header names as an array in the correct order.<pre>These Headers will be output in the given order where present.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$sequence</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="get"/>
+            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">integer</span><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get the header with the given $name.<pre>If multiple headers match, the actual one may be specified by $index.
+Returns NULL if none present.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$index</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getAll"/>
+            <h4><span class="label public">public</span>getAll<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Get all headers with the given $name.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="has"/>
+            <h4><span class="label public">public</span>has<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">integer</span><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns true if at least one header with the given $name exists.<pre>If multiple headers match, the actual one may be specified by $index.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$index</code> - </li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="listAll"/>
+            <h4><span class="label public">public</span>listAll<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Return the name of all Headers</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="newInstance"/>
+            <h4><span class="label public">public</span>newInstance<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Create a new instance of this HeaderSet.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="remove"/>
+            <h4><span class="label public">public</span>remove<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">integer</span><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove the header with the given $name if it's set.<pre>If multiple headers match, the actual one may be specified by $index.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+                <li><code>$index</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="removeAll"/>
+            <h4><span class="label public">public</span>removeAll<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Remove all headers with the given $name.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$name</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="set"/>
+            <h4><span class="label public">public</span>set<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_Header">Swift_Mime_Header</span></span><strong> $header</strong>, <span class="param-type">integer</span><strong> $index</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set a header in the HeaderSet.<pre>The header may be a previously fetched header via  or it may
+be one that has been created separately.
+If $index is specified, the header will be inserted into the set at this
+offset.
+</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$header</code> - </li>
+                <li><code>$index</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setAlwaysDisplayed"/>
+            <h4><span class="label public">public</span>setAlwaysDisplayed<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $names</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set a list of header names which must always be displayed when set.<pre>Usually headers without a field value won't be output unless set here.</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$names</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="setCharset"/>
+            <h4><span class="label public">public</span>setCharset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $charset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Set the charset used by these headers.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$charset</code> - </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="toString"/>
+            <h4><span class="label public">public</span>toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a string with a representation of all headers.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="_canSort"/>
+            <h4><span class="label private">private</span>_canSort<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Test if the headers can be sorted</li>
+            </p>
+          </li>
+          <li>
+            <a name="_isDisplayed"/>
+            <h4><span class="label private">private</span>_isDisplayed<span style="font-size:90%;">( <span class="param-type"><span title="\\Swift_Mime_Header">Swift_Mime_Header</span></span><strong> $header</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Test if the given Header is always displayed</li>
+            </p>
+          </li>
+          <li>
+            <a name="_notifyHeadersOfCharset"/>
+            <h4><span class="label private">private</span>_notifyHeadersOfCharset<span style="font-size:90%;">( <span class="param-type"/><strong> $charset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Notify all Headers of the new charset</li>
+            </p>
+          </li>
+          <li>
+            <a name="_sortHeaders"/>
+            <h4><span class="label private">private</span>_sortHeaders<span style="font-size:90%;">( <span class="param-type"/><strong> $a</strong>, <span class="param-type"/><strong> $b</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>uksort() algorithm for Header ordering</li>
+            </p>
+          </li>
+          <li>
+            <a name="_storeHeader"/>
+            <h4><span class="label private">private</span>_storeHeader<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"><span title="\\Swift_Mime_Header">Swift_Mime_Header</span></span><strong> $header</strong>, <span class="param-type"/><strong> $offset</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Save a Header to the internal collection</li>
+            </p>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

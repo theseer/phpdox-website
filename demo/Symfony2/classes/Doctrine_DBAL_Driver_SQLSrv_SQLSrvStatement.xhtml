@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Doctrine\DBAL\Driver\SQLSrv\SQLSrvStatement - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#LAST_INSERT_ID_SQL">LAST_INSERT_ID_SQL</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#conn">$conn</a>
+          </li>
+          <li>
+            <a href="#sql">$sql</a>
+          </li>
+          <li>
+            <a href="#stmt">$stmt</a>
+          </li>
+          <li>
+            <a href="#params">$params</a>
+          </li>
+          <li>
+            <a href="#fetchMap">$fetchMap</a>
+          </li>
+          <li>
+            <a href="#defaultFetchMode">$defaultFetchMode</a>
+          </li>
+          <li>
+            <a href="#lastInsertId">$lastInsertId</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#bindParam">bindParam</a>
+          </li>
+          <li>
+            <a href="#bindValue">bindValue</a>
+          </li>
+          <li>
+            <a href="#closeCursor">closeCursor</a>
+          </li>
+          <li>
+            <a href="#columnCount">columnCount</a>
+          </li>
+          <li>
+            <a href="#errorCode">errorCode</a>
+          </li>
+          <li>
+            <a href="#errorInfo">errorInfo</a>
+          </li>
+          <li>
+            <a href="#execute">execute</a>
+          </li>
+          <li>
+            <a href="#fetch">fetch</a>
+          </li>
+          <li>
+            <a href="#fetchAll">fetchAll</a>
+          </li>
+          <li>
+            <a href="#fetchColumn">fetchColumn</a>
+          </li>
+          <li>
+            <a href="#getIterator">getIterator</a>
+          </li>
+          <li>
+            <a href="#rowCount">rowCount</a>
+          </li>
+          <li>
+            <a href="#setFetchMode">setFetchMode</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">Doctrine\DBAL\Driver\SQLSrv\</span>SQLSrvStatement</h2>
+        <div class="file-notice">
+          <p>SQL Server Statement</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+        </ul>
+        <h3>Implements</h3>
+        <ul class="varlist">
+          <li>
+            <span title="IteratorAggregate">IteratorAggregate</span>
+          </li>
+          <li>
+            <a href="../interfaces/Doctrine_DBAL_Driver_Statement.xhtml">Doctrine\DBAL\Driver\Statement</a>
+          </li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="LAST_INSERT_ID_SQL"/>LAST_INSERT_ID_SQL = ';SELECT SCOPE_IDENTITY() AS LastInsertId;'<em> string</em><p><li>Append to any INSERT query to retrieve the last insert id.</li></p><hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="conn"/>
+            <h4><span class="label private">private</span>resource 
+                
+                $conn</h4>
+            <ul class="varlist">
+              <li>SQLSRV Resource</li>
+            </ul>
+          </li>
+          <li>
+            <a name="sql"/>
+            <h4><span class="label private">private</span>string 
+                
+                $sql</h4>
+            <ul class="varlist">
+              <li>SQL Statement to execute</li>
+            </ul>
+          </li>
+          <li>
+            <a name="stmt"/>
+            <h4><span class="label private">private</span>resource 
+                
+                $stmt</h4>
+            <ul class="varlist">
+              <li>SQLSRV Statement Resource</li>
+            </ul>
+          </li>
+          <li>
+            <a name="params"/>
+            <h4><span class="label private">private</span>array 
+                
+                $params</h4>
+            <ul class="varlist">
+              <li>Parameters to bind</li>
+            </ul>
+          </li>
+          <li>
+            <a name="fetchMap"/>
+            <h4><span class="label private">private</span>array 
+                
+                $fetchMap</h4>
+            <ul class="varlist">
+              <li>Translations</li>
+            </ul>
+          </li>
+          <li>
+            <a name="defaultFetchMode"/>
+            <h4><span class="label private">private</span>
+                $defaultFetchMode</h4>
+            <ul class="varlist">
+              <li>Fetch Style</li>
+              <li><code/> - </li>
+            </ul>
+          </li>
+          <li>
+            <a name="lastInsertId"/>
+            <h4><span class="label private">private</span>object 
+                
+                $lastInsertId</h4>
+            <ul class="varlist">
+              <li/>
+            </ul>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"/><strong> $conn</strong>, <span class="param-type"/><strong> $sql</strong>, <span class="param-type"/><strong> $lastInsertId</strong> )</span></h4>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="bindParam"/>
+            <h4><span class="label public">public</span>bindParam<span style="font-size:90%;">( <span class="param-type"/><strong> $column</strong>, <span class="param-type"/><strong> &amp;$variable</strong>, <span class="param-type"/><strong> $type</strong>, <span class="param-type"/><strong> $length</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="bindValue"/>
+            <h4><span class="label public">public</span>bindValue<span style="font-size:90%;">( <span class="param-type"/><strong> $param</strong>, <span class="param-type"/><strong> $value</strong>, <span class="param-type"/><strong> $type</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="closeCursor"/>
+            <h4><span class="label public">public</span>closeCursor<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="columnCount"/>
+            <h4><span class="label public">public</span>columnCount<span style="font-size:90%;">(  )</span></h4>
+          </li>
+          <li>
+            <a name="errorCode"/>
+            <h4><span class="label public">public</span>errorCode<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="errorInfo"/>
+            <h4><span class="label public">public</span>errorInfo<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritDoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="execute"/>
+            <h4><span class="label public">public</span>execute<span style="font-size:90%;">( <span class="param-type"/><strong> $params</strong> )</span></h4>
+          </li>
+          <li>
+            <a name="fetch"/>
+            <h4><span class="label public">public</span>fetch<span style="font-size:90%;">( <span class="param-type"/><strong> $fetchMode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="fetchAll"/>
+            <h4><span class="label public">public</span>fetchAll<span style="font-size:90%;">( <span class="param-type"/><strong> $fetchMode</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="fetchColumn"/>
+            <h4><span class="label public">public</span>fetchColumn<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $columnIndex</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="getIterator"/>
+            <h4><span class="label public">public</span>getIterator<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="rowCount"/>
+            <h4><span class="label public">public</span>rowCount<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>{@inheritdoc}</li>
+            </p>
+          </li>
+          <li>
+            <a name="setFetchMode"/>
+            <h4><span class="label public">public</span>setFetchMode<span style="font-size:90%;">( <span class="param-type"/><strong> $fetchMode</strong>, <span class="param-type"/><strong> $arg2</strong>, <span class="param-type"/><strong> $arg3</strong> )</span></h4>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>

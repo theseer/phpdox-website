@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "html" "">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Symfony2 - Twig_Token - API Documentation</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="topbar clearfix">
+        <h1>
+          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
+        </h1>
+        <ul class="nav">
+          <li class="active">
+            <a href="../index.xhtml">Overview</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navigation">
+        <h3>Constants</h3>
+        <ul>
+          <li>
+            <a href="#EOF_TYPE">EOF_TYPE</a>
+          </li>
+          <li>
+            <a href="#TEXT_TYPE">TEXT_TYPE</a>
+          </li>
+          <li>
+            <a href="#BLOCK_START_TYPE">BLOCK_START_TYPE</a>
+          </li>
+          <li>
+            <a href="#VAR_START_TYPE">VAR_START_TYPE</a>
+          </li>
+          <li>
+            <a href="#BLOCK_END_TYPE">BLOCK_END_TYPE</a>
+          </li>
+          <li>
+            <a href="#VAR_END_TYPE">VAR_END_TYPE</a>
+          </li>
+          <li>
+            <a href="#NAME_TYPE">NAME_TYPE</a>
+          </li>
+          <li>
+            <a href="#NUMBER_TYPE">NUMBER_TYPE</a>
+          </li>
+          <li>
+            <a href="#STRING_TYPE">STRING_TYPE</a>
+          </li>
+          <li>
+            <a href="#OPERATOR_TYPE">OPERATOR_TYPE</a>
+          </li>
+          <li>
+            <a href="#PUNCTUATION_TYPE">PUNCTUATION_TYPE</a>
+          </li>
+          <li>
+            <a href="#INTERPOLATION_START_TYPE">INTERPOLATION_START_TYPE</a>
+          </li>
+          <li>
+            <a href="#INTERPOLATION_END_TYPE">INTERPOLATION_END_TYPE</a>
+          </li>
+        </ul>
+        <h3>Members</h3>
+        <ul>
+          <li>
+            <a href="#value">$value</a>
+          </li>
+          <li>
+            <a href="#type">$type</a>
+          </li>
+          <li>
+            <a href="#lineno">$lineno</a>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul>
+          <li>
+            <a href="#__construct">__construct</a>
+          </li>
+          <li>
+            <a href="#__toString">__toString</a>
+          </li>
+          <li>
+            <a href="#getLine">getLine</a>
+          </li>
+          <li>
+            <a href="#getType">getType</a>
+          </li>
+          <li>
+            <a href="#getValue">getValue</a>
+          </li>
+          <li>
+            <a href="#test">test</a>
+          </li>
+          <li>
+            <a href="#typeToEnglish">typeToEnglish</a>
+          </li>
+          <li>
+            <a href="#typeToString">typeToString</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2><span style="font-size:60%">\</span>Twig_Token</h2>
+        <div class="file-notice">
+          <p>Represents a Token.</p>
+        </div>
+        <ul class="fileinfos">
+          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
+        </ul>
+        <h3>Constants</h3>
+        <ul class="varlist">
+          <li><a name="EOF_TYPE"/>EOF_TYPE = 1<hr/></li>
+          <li><a name="TEXT_TYPE"/>TEXT_TYPE = 0<hr/></li>
+          <li><a name="BLOCK_START_TYPE"/>BLOCK_START_TYPE = 1<hr/></li>
+          <li><a name="VAR_START_TYPE"/>VAR_START_TYPE = 2<hr/></li>
+          <li><a name="BLOCK_END_TYPE"/>BLOCK_END_TYPE = 3<hr/></li>
+          <li><a name="VAR_END_TYPE"/>VAR_END_TYPE = 4<hr/></li>
+          <li><a name="NAME_TYPE"/>NAME_TYPE = 5<hr/></li>
+          <li><a name="NUMBER_TYPE"/>NUMBER_TYPE = 6<hr/></li>
+          <li><a name="STRING_TYPE"/>STRING_TYPE = 7<hr/></li>
+          <li><a name="OPERATOR_TYPE"/>OPERATOR_TYPE = 8<hr/></li>
+          <li><a name="PUNCTUATION_TYPE"/>PUNCTUATION_TYPE = 9<hr/></li>
+          <li><a name="INTERPOLATION_START_TYPE"/>INTERPOLATION_START_TYPE = 10<hr/></li>
+          <li><a name="INTERPOLATION_END_TYPE"/>INTERPOLATION_END_TYPE = 11<hr/></li>
+        </ul>
+        <h3>Members</h3>
+        <ul class="varlist">
+          <li>
+            <a name="value"/>
+            <h4><span class="label protected">protected</span>
+                $value</h4>
+          </li>
+          <li>
+            <a name="type"/>
+            <h4><span class="label protected">protected</span>
+                $type</h4>
+          </li>
+          <li>
+            <a name="lineno"/>
+            <h4><span class="label protected">protected</span>
+                $lineno</h4>
+          </li>
+        </ul>
+        <h3>Constructor</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__construct"/>
+            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $type</strong>, <span class="param-type">string</span><strong> $value</strong>, <span class="param-type">integer</span><strong> $lineno</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Constructor.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$type</code> - The type of the token</li>
+                <li><code>$value</code> - The token value</li>
+                <li><code>$lineno</code> - The line position in the source</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <h3>Methods</h3>
+        <ul class="varlist">
+          <li>
+            <a name="__toString"/>
+            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns a string representation of the token.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>A string representation of the token</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getLine"/>
+            <h4><span class="label public">public</span>getLine<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the line.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The source line</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getType"/>
+            <h4><span class="label public">public</span>getType<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the token type.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The token type</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="getValue"/>
+            <h4><span class="label public">public</span>getValue<span style="font-size:90%;">(  )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Gets the token value.</li>
+            </p>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The token value</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="test"/>
+            <h4><span class="label public">public</span>test<span style="font-size:90%;">( <span class="param-type"><span title="array|integer">array|integer</span></span><strong> $type</strong>, <span class="param-type"><span title="array|string|null">array|string|null</span></span><strong> $values</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Tests the current token for a type and/or a value.<pre>Parameters may be:
+* just type
+* type and value (or array of possible values)
+* just value (or array of possible values) (NAME_TYPE is used as type)</pre></li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$type</code> - The type to test</li>
+                <li><code>$values</code> - The token value</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li/>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="typeToEnglish"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>typeToEnglish<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $type</strong>, <span class="param-type">integer</span><strong> $line</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the english representation of a given type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$type</code> - The type as an integer</li>
+                <li><code>$line</code> - The code line</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The string representation</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <a name="typeToString"/>
+            <h4><span class="label true">true</span><span class="label public">public</span>typeToString<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $type</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $short</strong>, <span class="param-type">integer</span><strong> $line</strong> )</span></h4>
+            <p style="font-size:110%; padding-top:5px;">
+              <li>Returns the constant representation (internal) of a given type.</li>
+            </p>
+            <ul>
+              <h4 class="param">Parameters:</h4>
+              <ul class="param">
+                <li><code>$type</code> - The type as an integer</li>
+                <li><code>$short</code> - Whether to return a short representation or not</li>
+                <li><code>$line</code> - The code line</li>
+              </ul>
+            </ul>
+            <ul>
+              <h4 class="return">Returns:</h4>
+              <ul class="return">
+                <li>The string representation</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
+      </div>
+    </div>
+  </body>
+</html>
