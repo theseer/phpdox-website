@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head>
+    <title>phpDox - Test Method</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml#Symfony_Component_Translation_Loader">Symfony\Component\Translation\Loader</a>
+          </li>
+          <li class="separator">
+            <a title="Symfony\Component\Translation\Loader\PoFileLoader" href="../../classes/Symfony_Component_Translation_Loader_PoFileLoader.xhtml">PoFileLoader</a>
+          </li>
+          <li class="separator">parse</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#parameter">Parameter</a>
+          </li>
+          <li>
+            <a href="#return">Return</a>
+          </li>
+          <li>
+            <a href="../../source/symfony/symfony/src/Symfony/Component/Translation/Loader/PoFileLoader.php.xhtml#line97">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1><small>Symfony\Component\Translation\Loader\PoFileLoader::</small>parse</h1>
+        <h4>Parses portable object (PO) format.</h4>
+        <p>From http://www.gnu.org/software/gettext/manual/gettext.html#PO-Files
+we should be able to parse files having:
+
+white-space
+#  translator-comments
+#. extracted-comments
+#: reference...
+#, flag...
+#| msgid previous-untranslated-string
+msgid untranslated-string
+msgstr translated-string
+
+extra or different lines are:
+
+#| msgctxt previous-context
+#| msgid previous-untranslated-string
+msgctxt context
+
+#| msgid previous-untranslated-string-singular
+#| msgid_plural previous-untranslated-string-plural
+msgid untranslated-string-singular
+msgid_plural untranslated-string-plural
+msgstr[0] translated-string-case-0
+...
+msgstr[N] translated-string-case-n
+
+The definition states:
+- white-space and comments are optional.
+- msgid "" that an empty singleline defines a header.
+
+This parser sacrifices some features of the reference implementation the
+differences to that implementation are as follows.
+- No support for comments spanning multiple lines.
+- Translator and extracted comments are treated as being the same type.
+- Message IDs are allowed to have other encodings as just US-ASCII.
+
+Items with an empty id are ignored.</p>
+        <ul/>
+        <h2 id="signature">Signature</h2>
+        <div class="styled synopsis">
+          <code>private function parse(resource
+        $resource )
+            </code>
+        </div>
+        <h2 id="parameterlist">Parameters</h2>
+        <dl class="styled">
+          <dt><code>$resource</code>
+                —
+                resource</dt>
+          <dd/>
+        </dl>
+        <h2 id="return">Returns</h2>
+        <dl class="styled">
+          <dt>array</dt>
+          <dd/>
+        </dl>
+      </section>
+    </div>
+    <footer>
+      <span/>
+    </footer>
+  </body>
+</html>

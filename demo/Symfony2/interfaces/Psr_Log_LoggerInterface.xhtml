@@ -1,263 +1,148 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Psr\Log\LoggerInterface - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Psr\Log\LoggerInterface</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../interfaces.xhtml">Interfaces</a>
+          </li>
+          <li class="separator">
+            <a href="../interfaces.xhtml#Psr_Log">Psr\Log</a>
+          </li>
+          <li class="separator">LoggerInterface</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Methods</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#alert">alert</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#critical">critical</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#debug">debug</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#emergency">emergency</a>
+            <a href="#violations">Violations</a>
           </li>
           <li>
-            <a href="#error">error</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#info">info</a>
-          </li>
-          <li>
-            <a href="#log">log</a>
-          </li>
-          <li>
-            <a href="#notice">notice</a>
-          </li>
-          <li>
-            <a href="#warning">warning</a>
+            <a href="../source/psr/log/Psr/Log/LoggerInterface.php.xhtml#line20">Source</a>
           </li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Psr\Log\</span>LoggerInterface</h2>
-        <div class="file-notice">
-          <p>Describes a logger instance</p>
-          <p>
-            <pre>The message MUST be a string or object implementing __toString().
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Psr\Log\</small>LoggerInterface</h1>
+        <h4>Describes a logger instance</h4>
+        <p>The message MUST be a string or object implementing __toString().<br/><br/>The message MAY contain placeholders in the form: {foo} where foo<br/>will be replaced by the context data in key "foo".<br/><br/>The context array can contain arbitrary data, the only assumption that<br/>can be made by implementors is that if an Exception instance is given<br/>to produce a stack trace, it MUST be in a key named "exception".<br/><br/>See https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md<br/>for the full interface specification.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">interface LoggerInterface
+            {<br/><ul class="none"><li>// methods</li><li>public null <a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/emergency.xhtml">emergency</a>()
+                    </li><li>public null <a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/alert.xhtml">alert</a>()
+                    </li><li>public null <a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/critical.xhtml">critical</a>()
+                    </li><li>public null <a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/error.xhtml">error</a>()
+                    </li><li>public null <a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/warning.xhtml">warning</a>()
+                    </li><li>public null <a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/notice.xhtml">notice</a>()
+                    </li><li>public null <a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/info.xhtml">info</a>()
+                    </li><li>public null <a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/debug.xhtml">debug</a>()
+                    </li><li>public null <a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/log.xhtml">log</a>()
+                    </li></ul>
 
-The message MAY contain placeholders in the form: {foo} where foo
-will be replaced by the context data in key "foo".
-
-The context array can contain arbitrary data, the only assumption that
-can be made by implementors is that if an Exception instance is given
-to produce a stack trace, it MUST be in a key named "exception".
-
-See https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md
-for the full interface specification.</pre>
-          </p>
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extended by</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Symfony_Component_HttpKernel_Log_LoggerInterface.xhtml">Symfony\Component\HttpKernel\Log\LoggerInterface</a>
+            </li>
+          </ul>
+          <h4>Implemented by</h4>
+          <ul>
+            <li>
+              <a href="../classes/Symfony_Component_HttpKernel_Log_NullLogger.xhtml">Symfony\Component\HttpKernel\Log\NullLogger</a>
+            </li>
+            <li>
+              <a href="../classes/Symfony_Bridge_Monolog_Logger.xhtml">Symfony\Bridge\Monolog\Logger</a>
+            </li>
+            <li>
+              <a href="../classes/Psr_Log_NullLogger.xhtml">Psr\Log\NullLogger</a>
+            </li>
+            <li>
+              <a href="../classes/Psr_Log_AbstractLogger.xhtml">Psr\Log\AbstractLogger</a>
+            </li>
+            <li>
+              <a href="../classes/Monolog_Logger.xhtml">Monolog\Logger</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="alert"/>
-            <h4><span class="label public">public</span>alert<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $context</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Action must be taken immediately.<pre>Example: Entire website down, database unavailable, etc. This should
-trigger the SMS alerts and wake you up.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$context</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="critical"/>
-            <h4><span class="label public">public</span>critical<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $context</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Critical conditions.<pre>Example: Application component unavailable, unexpected exception.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$context</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="debug"/>
-            <h4><span class="label public">public</span>debug<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $context</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Detailed debug information.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$context</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="emergency"/>
-            <h4><span class="label public">public</span>emergency<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $context</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>System is unusable.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$context</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="error"/>
-            <h4><span class="label public">public</span>error<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $context</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Runtime errors that do not require immediate action but should typically be logged and monitored.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$context</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="info"/>
-            <h4><span class="label public">public</span>info<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $context</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Interesting events.<pre>Example: User logs in, SQL logs.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$context</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="log"/>
-            <h4><span class="label public">public</span>log<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $level</strong>, <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $context</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Logs with an arbitrary level.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$level</code> - </li>
-                <li><code>$message</code> - </li>
-                <li><code>$context</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="notice"/>
-            <h4><span class="label public">public</span>notice<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $context</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Normal but significant events.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$context</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="warning"/>
-            <h4><span class="label public">public</span>warning<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $context</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Exceptional occurrences that are not errors.<pre>Example: Use of deprecated APIs, poor use of an API, undesirable things
-that are not necessarily wrong.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$context</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="alert"><a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/alert.xhtml">alert()</a>
+                — Action must be taken immediately.</li>
+            <li id="critical"><a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/critical.xhtml">critical()</a>
+                — Critical conditions.</li>
+            <li id="debug"><a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/debug.xhtml">debug()</a>
+                — Detailed debug information.</li>
+            <li id="emergency"><a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/emergency.xhtml">emergency()</a>
+                — System is unusable.</li>
+            <li id="error"><a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/error.xhtml">error()</a>
+                — Runtime errors that do not require immediate action but should typically be logged and monitored.</li>
+            <li id="info"><a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/info.xhtml">info()</a>
+                — Interesting events.</li>
+            <li id="log"><a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/log.xhtml">log()</a>
+                — Logs with an arbitrary level.</li>
+            <li id="notice"><a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/notice.xhtml">notice()</a>
+                — Normal but significant events.</li>
+            <li id="warning"><a title="Psr\Log\LoggerInterface" href="../interfaces/Psr_Log_LoggerInterface/warning.xhtml">warning()</a>
+                — Exceptional occurrences that are not errors.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

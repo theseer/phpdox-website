@@ -1,249 +1,355 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>phpDox - TheSeer\phpDox\BootstrapApi - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - TheSeer\phpDox\BootstrapApi</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">phpDox - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#TheSeer_phpDox">TheSeer\phpDox</a>
+          </li>
+          <li class="separator">BootstrapApi</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#backendFactory">$backendFactory</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#engineFactory">$engineFactory</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#parserFactory">$parserFactory</a>
+            <a href="#violations">Violations</a>
           </li>
           <li>
-            <a href="#enricherFactory">$enricherFactory</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#engines">$engines</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#backends">$backends</a>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/bootstrap/BootstrapApi.php.xhtml#line56">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>TheSeer\phpDox\</small>BootstrapApi</h1>
+        <h4>Bootstrapping API for registering backends, generator engines and parsers</h4>
+        <p>This class provides the API for use within the bootstrap process to register<br/>collecting backends, additional parsers for annotations, generator engines for<br/>additional output formats as well as enrichment plugins</p>
         <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#getBackends">getBackends</a>
-          </li>
-          <li>
-            <a href="#getEngines">getEngines</a>
-          </li>
-          <li>
-            <a href="#registerBackend">registerBackend</a>
-          </li>
-          <li>
-            <a href="#registerEngine">registerEngine</a>
-          </li>
-          <li>
-            <a href="#registerEnricher">registerEnricher</a>
-          </li>
-          <li>
-            <a href="#registerParser">registerParser</a>
-          </li>
+          <li>Author: Arne Blankerts &lt;arne@blankerts.de&gt;</li>
+          <li>Copyright: Arne Blankerts &lt;arne@blankerts.de&gt;, All rights reserved.</li>
+          <li>License: BSD License</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">TheSeer\phpDox\</span>BootstrapApi</h2>
-        <div class="file-notice">
-          <p>Bootstrapping API for registering backends, generator engines and parsers</p>
-          <p>
-            <pre>This class provides the API for use within the bootstrap process to register
-collecting backends, additional parsers for annotations, generator engines for
-additional output formats as well as enrichment plugins</pre>
-          </p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class BootstrapApi
+            {<br/><ul class="none"><li>// members</li><li>private <span title="TheSeer\phpDox\Collector\Backend\Factory">Factory</span> <a href="#members">$backendFactory</a>;
+                    </li><li>private <span title="TheSeer\phpDox\Generator\Engine\Factory">Factory</span> <a href="#members">$engineFactory</a>;
+                    </li><li>private <span title="TheSeer\phpDox\DocBlock\Factory">Factory</span> <a href="#members">$parserFactory</a>;
+                    </li><li>private <span title="TheSeer\phpDox\Generator\Enricher\Factory">Factory</span> <a href="#members">$enricherFactory</a>;
+                    </li><li>private array <a href="#members">$engines</a>;
+                    </li><li>private array <a href="#members">$enrichers</a>;
+                    </li><li>private array <a href="#members">$backends</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/__construct.xhtml">__construct</a>()
+                    </li><li>public array <a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/getEngines.xhtml">getEngines</a>()
+                    </li><li>public array <a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/getEnrichers.xhtml">getEnrichers</a>()
+                    </li><li>public array <a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/getBackends.xhtml">getBackends</a>()
+                    </li><li>public BackendBootstrapApi <a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/registerBackend.xhtml">registerBackend</a>()
+                    </li><li>public EngineBootstrapApi <a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/registerEngine.xhtml">registerEngine</a>()
+                    </li><li>public ParserBootstrapApi <a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/registerParser.xhtml">registerParser</a>()
+                    </li><li>public EnricherBootstrapApi <a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/registerEnricher.xhtml">registerEnricher</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="violations">Violations</h2>
+        <div class="styled">
+          <h3>PHPMessDetector</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Rule</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">109</td>
+              <td>
+                <a href="http://phpmd.org/rules/naming.html#shortvariable" target="_blank" title="Naming Rules">ShortVariable</a>
+              </td>
+              <td>Avoid variables with short names like $bf. Configured minimum length is 3.</td>
+            </tr>
+            <tr>
+              <td class="line">109</td>
+              <td>
+                <a href="http://phpmd.org/rules/naming.html#shortvariable" target="_blank" title="Naming Rules">ShortVariable</a>
+              </td>
+              <td>Avoid variables with short names like $df. Configured minimum length is 3.</td>
+            </tr>
+          </table>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Members</h3>
-        <ul class="varlist">
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="backendFactory"><strong>$backendFactory</strong>
+                —
+                <a href="#">TheSeer\phpDox\Collector\Backend\Factory</a><br/><span class="indent">Reference to the BackendFactory instance</span></li>
+            <li id="backends"><strong>$backends</strong>
+                —
+                array<br/><span class="indent">Array of registered backends</span></li>
+            <li id="engineFactory"><strong>$engineFactory</strong>
+                —
+                <a href="#">TheSeer\phpDox\Generator\Engine\Factory</a><br/><span class="indent">Reference to the EngineFactory instance</span></li>
+            <li id="engines"><strong>$engines</strong>
+                —
+                array<br/><span class="indent">Array of registered engines</span></li>
+            <li id="enricherFactory"><strong>$enricherFactory</strong>
+                —
+                <a href="#">TheSeer\phpDox\Generator\Enricher\Factory</a></li>
+            <li id="enrichers"><strong>$enrichers</strong>
+                —
+                array<br/><span class="indent">Array of registered enrichers</span></li>
+            <li id="parserFactory"><strong>$parserFactory</strong>
+                —
+                <a href="#">TheSeer\phpDox\DocBlock\Factory</a><br/><span class="indent">Reference to the DocblockParserFactory instance</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/__construct.xhtml">__construct()</a>
+                — Constructor</li>
+            <li id="getBackends"><a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/getBackends.xhtml">getBackends()</a>
+                — Get list of all registered collector backends</li>
+            <li id="getEngines"><a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/getEngines.xhtml">getEngines()</a>
+                — Get list of all registered generator engines</li>
+            <li id="getEnrichers"><a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/getEnrichers.xhtml">getEnrichers()</a>
+                — Get list of all registered enrichers</li>
+            <li id="registerBackend"><a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/registerBackend.xhtml">registerBackend()</a>
+                — Register a new backend</li>
+            <li id="registerEngine"><a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/registerEngine.xhtml">registerEngine()</a>
+                — Register a new generator enginge</li>
+            <li id="registerEnricher"><a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/registerEnricher.xhtml">registerEnricher()</a>
+                — Register a new enricher</li>
+            <li id="registerParser">
+              <a title="TheSeer\phpDox\BootstrapApi" href="../classes/TheSeer_phpDox_BootstrapApi/registerParser.xhtml">registerParser()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
           <li>
-            <a name="backendFactory"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $backendFactory</h4>
-            <ul class="varlist">
-              <li>Reference to the BackendFactory instance</li>
-            </ul>
+            <h3>2014-04-20T19:11:34+02:00 (commit #<span title="aaf8a9134aa00be665ebdec1e7738123076f2819">aaf8a91</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">More Cleanup</pre>
+            </div>
           </li>
           <li>
-            <a name="engineFactory"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $engineFactory</h4>
-            <ul class="varlist">
-              <li>Reference to the EngineFactory instance</li>
-            </ul>
+            <h3>2014-02-05T01:36:10+01:00 (commit #<span title="84b92e575f359c293676d89340de9944f8c7ad82">84b92e5</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Bump Copyright year, some cleanups</pre>
+            </div>
           </li>
           <li>
-            <a name="parserFactory"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $parserFactory</h4>
-            <ul class="varlist">
-              <li>Reference to the DocblockParserFactory instance</li>
-            </ul>
+            <h3>2013-11-10T20:59:30+01:00 (commit #<span title="12d57684af533b11e9515ef6ede8d81690ef9652">12d5768</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Make things private, cleanup docblocks</pre>
+            </div>
           </li>
           <li>
-            <a name="enricherFactory"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $enricherFactory</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
+            <h3>2013-10-27T01:43:22+02:00 (commit #<span title="6ae5e5d9a24fdedd7c3bf39e44b8e1a35c934bac">6ae5e5d</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Added list of available enrichers to CLI</pre>
+            </div>
           </li>
           <li>
-            <a name="engines"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $engines</h4>
-            <ul class="varlist">
-              <li>Array of registered engines</li>
-            </ul>
+            <h3>2013-08-07T02:45:04+02:00 (commit #<span title="05a7c944929c800c0aa02efe17f19f1202c475c1">05a7c94</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Bump Copyright to 2013 ;)</pre>
+            </div>
           </li>
           <li>
-            <a name="backends"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $backends</h4>
-            <ul class="varlist">
-              <li>Array of registered backends</li>
-            </ul>
+            <h3>2013-07-05T09:51:30+02:00 (commit #<span title="48a49b7f23f85352a8031be87aa06b3bc86a783f">48a49b7</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Foundations for enriching support implementend</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-03-31T15:41:00+02:00 (commit #<span title="d6eda9b38fe22c9f7c171c187d699988cc78afb6">d6eda9b</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Inheritance resolving - WIP</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-10-04T14:25:18+02:00 (commit #<span title="b746ee14d52b8fdce93eb2fc383e5dd501cdf4bd">b746ee1</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Added basic docblock</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-07-21T12:30:35+02:00 (commit #<span title="c36cbad40bbb8c49ab6ea9390642046a2f207371">c36cbad</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Refactoring in progress</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-07T21:35:02+01:00 (commit #<span title="3bb10b35cbe395e4a16d08126aa85d5b5f6ddb2c">3bb10b3</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Bump Copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-31T11:55:17+01:00 (commit #<span title="5a7bbe6415ae3febde249b4eaf115576dea2c6d8">5a7bbe6</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">- Major refactoring:
+  - Switched from CLI params to XML based config file
+  - Lots of rewrites of internal parameter passing and logic
+  - Renamed"builder" to "engine"</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-08-17T19:37:51+02:00 (commit #<span title="48edbb7a413cfc734d46c55d5a028097b7984705">48edbb7</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">change filenames to camel case</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-05-11T16:33:14+02:00 (commit #<span title="dfeb7bbc104f4c003982fa194d430c6b31046cb8">dfeb7bb</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Refactor: Use container class in favor of passing around the same DOMDocuments all the time</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-05-11T00:40:04+02:00 (commit #<span title="5ef28858b60aa09cb0ca3d1b8476d37c62fc09a9">5ef2885</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">refactor to have automagic bootstrapping for builder</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-05-02T00:28:17+02:00 (commit #<span title="5fd3a2edf59afd2248d7afd0651139a60fabe9df">5fd3a2e</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Remove var_dump ;)</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-05-02T00:15:35+02:00 (commit #<span title="b4e8c7dc1226f1fe8679fe772ac8845822673953">b4e8c7d</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">- Rewrote Generator to use Events
+- Build up first generic (html) renderer
+- Added process logging output
+- Reworked Parameters
+- Enhanced Parsing logic
+- Moved some files around ;)</pre>
+            </div>
           </li>
         </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/TheSeer_phpDox_Collector_Backend_Factory.xhtml">TheSeer\phpDox\Collector\Backend\Factory</a></span><strong> $bf</strong>, <span class="param-type"><a href="../classes/TheSeer_phpDox_DocBlock_Factory.xhtml">TheSeer\phpDox\DocBlock\Factory</a></span><strong> $df</strong>, <span class="param-type"><a href="../classes/TheSeer_phpDox_Generator_Enricher_Factory.xhtml">TheSeer\phpDox\Generator\Enricher\Factory</a></span><strong> $erf</strong>, <span class="param-type"><a href="../classes/TheSeer_phpDox_Generator_Engine_Factory.xhtml">TheSeer\phpDox\Generator\Engine\Factory</a></span><strong> $enf</strong>, <span class="param-type"><a href="../classes/TheSeer_phpDox_ProgressLogger.xhtml">TheSeer\phpDox\ProgressLogger</a></span><strong> $logger</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$factory</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="getBackends"/>
-            <h4><span class="label public">public</span>getBackends<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getEngines"/>
-            <h4><span class="label public">public</span>getEngines<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="registerBackend"/>
-            <h4><span class="label public">public</span>registerBackend<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">string</span><strong> $description</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - Name of the collector backend</li>
-                <li><code>$description</code> - A describing text</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="registerEngine"/>
-            <h4><span class="label public">public</span>registerEngine<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $description</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-                <li><code>$description</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="registerEnricher"/>
-            <h4><span class="label public">public</span>registerEnricher<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong>, <span class="param-type"/><strong> $description</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="registerParser"/>
-            <h4><span class="label public">public</span>registerParser<span style="font-size:90%;">( <span class="param-type"/><strong> $annotation</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$annotation</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+      </section>
     </div>
+    <footer>
+      <span>Generated using phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
   </body>
 </html>

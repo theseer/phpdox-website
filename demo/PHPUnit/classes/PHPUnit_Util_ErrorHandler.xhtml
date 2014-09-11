@@ -1,101 +1,815 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>PHPUnit - PHPUnit_Util_ErrorHandler - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - PHPUnit_Util_ErrorHandler</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">PHPUnit - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">PHPUnit_Util_ErrorHandler</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#errorStack">$errorStack</a>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#violations">Violations</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/Util/ErrorHandler.php.xhtml#line64">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>PHPUnit_Util_ErrorHandler</h1>
+        <h4>Error handler that converts PHP errors and warnings to exceptions.</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#getErrorStack">getErrorStack</a>
-          </li>
-          <li>
-            <a href="#handleError">handleError</a>
-          </li>
+          <li>Author: Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>Copyright: 2001-2014 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>License: http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">\</span>PHPUnit_Util_ErrorHandler</h2>
-        <div class="file-notice">
-          <p>Error handler that converts PHP errors and warnings to exceptions.</p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PHPUnit_Util_ErrorHandler
+            {<br/><ul class="none"><li>// members</li><li>protected array <a href="#members">$errorStack</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public static array <a title="PHPUnit_Util_ErrorHandler" href="../classes/PHPUnit_Util_ErrorHandler/getErrorStack.xhtml">getErrorStack</a>()
+                    </li><li>public static void <a title="PHPUnit_Util_ErrorHandler" href="../classes/PHPUnit_Util_ErrorHandler/handleError.xhtml">handleError</a>()
+                    </li><li>public static void <a title="PHPUnit_Util_ErrorHandler" href="../classes/PHPUnit_Util_ErrorHandler/handleErrorOnce.xhtml">handleErrorOnce</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="violations">Violations</h2>
+        <div class="styled">
+          <h3>PHPMessDetector</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Rule</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">85 - 125</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method handleError() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">144</td>
+              <td>
+                <a href="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" target="_blank" title="Unused Code Rules">UnusedLocalVariable</a>
+              </td>
+              <td>Avoid unused local variables such as '$errstr'.</td>
+            </tr>
+          </table>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>Copyright: </b>2001-2013 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>License: </b>http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="errorStack">
+              <strong>$errorStack</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="getErrorStack"><a title="PHPUnit_Util_ErrorHandler" href="../classes/PHPUnit_Util_ErrorHandler/getErrorStack.xhtml">getErrorStack()</a>
+                — Returns the error stack.</li>
+            <li id="handleError">
+              <a title="PHPUnit_Util_ErrorHandler" href="../classes/PHPUnit_Util_ErrorHandler/handleError.xhtml">handleError()</a>
+            </li>
+            <li id="handleErrorOnce"><a title="PHPUnit_Util_ErrorHandler" href="../classes/PHPUnit_Util_ErrorHandler/handleErrorOnce.xhtml">handleErrorOnce()</a>
+                — Registers a one time self-destructing error handler</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
           <li>
-            <a name="errorStack"/>
-            <h4><span class="label protected">protected</span>
-                $errorStack</h4>
+            <h3>2014-05-27T07:09:17+02:00 (commit #<span title="f8f76b0f5031f5ccd8903a898dfe9e0e9ac9cfc8">f8f76b0</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Formatting.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-05-23T04:03:54+02:00 (commit #<span title="f8826506baf9ec673aaf56887a6682093bccffb1">f882650</span>)</h3>
+            <div>
+              <p>
+                        Author: Márcio Almada (marcio3w@gmail.com) /
+                        Commiter: Márcio Almada (marcio3w@gmail.com)
+                    </p>
+              <pre class="wrapped">move temporary error handler generator to Util\ErrorHandler::handleErrorOnce()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-22T19:43:07+01:00 (commit #<span title="02b42d7e912186a17d56fa803ae4682d16f1ff79">02b42d7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on formatting code according to PSR-2</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-20T17:21:13+01:00 (commit #<span title="3a5808fbca4ee832c27f13a544fdf8809eec62ec">3a5808f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-09T08:11:47+01:00 (commit #<span title="205e00844d1d9cf4cd4545c4cc45f1121a6b0824">205e008</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-05-12T08:33:11+02:00 (commit #<span title="a3dcfcb1347be04957d38bdb292b0ffb0e3c6cb6">a3dcfcb</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Fixes #908
+
+Don't rely on composer to set up the `include_path` for `ErrorHandler.php`.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-01-07T11:37:52+01:00 (commit #<span title="c517984099c588d7cbe04bea9fb756a764769f5f">c517984</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-24T06:47:44+02:00 (commit #<span title="81ab540c8718a37315962b8242c7f1b4ee031ed4">81ab540</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Do not perform string replacement for @package_version@ anymore.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-04-30T12:02:38+02:00 (commit #<span title="5786e50b3878cba88932b10e6a48c75723950707">5786e50</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">List The BSD 3-Clause License correctly and consistently. Thanks to Christian Aistleitner &lt;christian@quelltextlich.at&gt; for bringing this issue to my attention.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-03-29T20:44:46+02:00 (commit #<span title="e9801e52bd61c07fece49303c5df0cd5dc87a6f7">e9801e5</span>)</h3>
+            <div>
+              <p>
+                        Author: Przemysław Nowak (psemuu@gmail.com) /
+                        Commiter: Przemysław Nowak (psemuu@gmail.com)
+                    </p>
+              <pre class="wrapped">Added support for nested exceptions (#470, #471)
+
+Requires PHP 5.3</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-01T11:21:16+01:00 (commit #<span title="aae6c3808b9c4bee416657298fa90865d6898d60">aae6c38</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-08T09:52:35+01:00 (commit #<span title="9c9bdcbbe07e3433a68e5c05d00378da6e1cb15f">9c9bdcb</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Eliminate version_compare() calls.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-04-20T22:44:42+02:00 (commit #<span title="1bb03f9a9d130baf580796ab1beffc948eb2b773">1bb03f9</span>)</h3>
+            <div>
+              <p>
+                        Author: Christer Edvartsen (cogo@starzinger.net) /
+                        Commiter: Christer Edvartsen (cogo@starzinger.net)
+                    </p>
+              <pre class="wrapped">Made code safe for php &lt; 5.3</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-04-20T22:44:42+02:00 (commit #<span title="a7b8788f06d0c1cca1b198ef36ecf21da611eae2">a7b8788</span>)</h3>
+            <div>
+              <p>
+                        Author: Christer Edvartsen (cogo@starzinger.net) /
+                        Commiter: Christer Edvartsen (cogo@starzinger.net)
+                    </p>
+              <pre class="wrapped">Added support for E_DEPRECATED and E_USER_DEPRECATED errors</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-19T18:06:32+01:00 (commit #<span title="9e1a4311b1a5456aaaa35a6db4c9d339f35f63f8">9e1a431</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix order of inclusion.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-19T18:00:44+01:00 (commit #<span title="fbcba1364abc7a7f96e6c4a254970bfcffb8583d">fbcba13</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Close #125.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-12-31T11:45:34+01:00 (commit #<span title="bee33449535dd656c2c0a94946eb0086d1214e1f">bee3344</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-11-11T06:07:54+01:00 (commit #<span title="1dba1f2160e9ed349e1b52602dc8df3a5206c51e">1dba1f2</span>)</h3>
+            <div>
+              <p>
+                        Author: ktomk (tklingenberg@lastflood.net) /
+                        Commiter: ktomk (tklingenberg@lastflood.net)
+                    </p>
+              <pre class="wrapped">Support E_USER_WARNING and E_USER_NOTICE error numbers.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-07T12:42:23+02:00 (commit #<span title="f0d9cdd35d83fd081c218fdec17edaf9e4f868f7">f0d9cdd</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Change email address.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-12T20:25:54+02:00 (commit #<span title="d19a7378115e5de11b694ac40531ab662d074055">d19a737</span>)</h3>
+            <div>
+              <p>
+                        Author: Mark Story (mark@mark-story.com) /
+                        Commiter: Mark Story (mark@mark-story.com)
+                    </p>
+              <pre class="wrapped">Removing trailing whitespace from files. Refs #1063</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-04-05T17:41:26+02:00 (commit #<span title="471d69e2573822a6d9dd28159085a480e97dc734">471d69e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add @subpackage annotation.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-02-02T14:14:29+01:00 (commit #<span title="bc1aaaaacfa98ab64d1eb54ac5b87279023bab59">bc1aaaa</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove closing PHP tags.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-01-22T10:04:21+01:00 (commit #<span title="3426f50bd9502774958c457d88b8d500e8e682dd">3426f50</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Require PHP 5.2.7.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-01-19T09:39:03+01:00 (commit #<span title="fb48a69ea606a4740ba1f0e4ddcfe60fcd2a8301">fb48a69</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on autoloading.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:26:09+01:00 (commit #<span title="37f75ffdc651e3359c5683335851f6c5d6576c34">37f75ff</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:25:53+01:00 (commit #<span title="bddcc5f10872f9f53029aa8aeab27e2a95fbe2e5">bddcc5f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:23:37+01:00 (commit #<span title="7a7d0b7a54abfe58cd411a3b199133a8cb46351e">7a7d0b7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:32:26+01:00 (commit #<span title="60e7125941b239eeb6cfc016a2a2e8c238f3bea4">60e7125</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:30:57+01:00 (commit #<span title="42294addddde87f7b8064156ded58be18ad7aac4">42294ad</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:26:35+01:00 (commit #<span title="8617133a88b4c149adef21bc581a0bdf896f130e">8617133</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-30T14:21:29+01:00 (commit #<span title="89035bc2f2da6af17665d04b5e9988168993f9bc">89035bc</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5402].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-30T14:20:08+01:00 (commit #<span title="9409e762e2bb932bddff0c2c548e85af7c3d83c7">9409e76</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5402].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-30T14:17:21+01:00 (commit #<span title="adadf85d6f48732c85111a7703cf7c30caa0db02">adadf85</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix #954.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-23T09:39:24+01:00 (commit #<span title="150341273801b55392d0bde99fc7be60f5a5c15d">1503412</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5389].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-23T09:29:23+01:00 (commit #<span title="4c9cf4e6879b29001f9b1d38cee68a8dfb9c01cc">4c9cf4e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on PHP_CodeCoverage migration.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-08-18T17:25:30+02:00 (commit #<span title="5629d77b81905bf1d1e6b148d0eb07516f26978f">5629d77</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Revert [5056].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-08-01T15:36:29+02:00 (commit #<span title="fc96f2197154cc3819eca0aa3db39bd6b7db6136">fc96f21</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Require PHP 5.2.10.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-12-31T10:26:51+01:00 (commit #<span title="a899cb2a6cf988f15e38ad358c9813a82557a2b8">a899cb2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [4402].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-12-31T10:25:57+01:00 (commit #<span title="4b26cea6b551535438e0deee8f1120f29fe931a6">4b26cea</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-11-22T18:21:09+01:00 (commit #<span title="8d5163336867255ebd84ae5fca8664f038e1fcbc">8d51633</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove deprecated functionality: --log-graphviz, --log-metrics, --log-pmd.
+Require PHP 5.3.0 (or later) and remove compatibility workarounds for older
+  versions of PHP.
+Rename PHPUnit_Util_Class::getClassesInFile() and
+  PHPUnit_Util_Class::getFunctionsInFile() to
+  PHPUnit_Util_File::getClassesInFile() and
+  PHPUnit_Util_File::getFunctionsInFile(), respectively.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-11-18T22:20:39+01:00 (commit #<span title="10e469af9fefe4c04d46e24ff3c89a811a328492">10e469a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix #613.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-11-04T20:27:47+01:00 (commit #<span title="770d4d9c47c115c5ca61b1223ff17466bc1ff480">770d4d9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Reduce cost of debug_backtrace() call.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-07-09T20:30:08+02:00 (commit #<span title="ec7fbb17af2689bb90cb72f738080266cabda441">ec7fbb1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [3398] and [3399].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-07-09T20:18:02+02:00 (commit #<span title="607abedfa26cc2c9c6c2ad9f7c6d8b07dbcbb1e5">607abed</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add support for disabling the warning-to-exception conversion.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-06-08T14:22:29+02:00 (commit #<span title="191a5d574eae7b91df10216ce26c4bb7b9580556">191a5d5</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [3160].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-06-08T14:03:37+02:00 (commit #<span title="9d9b5e3d982450f03fd7e0619824578bea586bc8">9d9b5e3</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Drop superfluous annotations.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-03-28T11:04:39+01:00 (commit #<span title="e7b6cb1e9b4181457e950433317ebcb73ab8c742">e7b6cb1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [2667].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-03-28T11:03:59+01:00 (commit #<span title="4919cbebe5e022e2730ee8c9b5821831c6f81d64">4919cbe</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Implement error stack for #433.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-02-14T09:18:27+01:00 (commit #<span title="435f44619362626e81497a5c58a26c7fdb2eede4">435f446</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [2437].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-02-14T09:18:23+01:00 (commit #<span title="7d6c6968498488202469baa78ae517ec9031be57">7d6c696</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix #388.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-12-26T19:11:55+01:00 (commit #<span title="1bba1cc3d24ec82a85eb4e9b9015b7ef7bc26328">1bba1cc</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-12-26T19:11:04+01:00 (commit #<span title="58121cf06bddae103474b9f621d88ae722a5a932">58121cf</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-08-22T10:28:53+02:00 (commit #<span title="fdc585389f2c55a01b8066188fae8844b2c3321c">fdc5853</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [1151].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-08-22T10:22:19+02:00 (commit #<span title="456a8902711b1e510e26aabb72611e02ec46bde5">456a890</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [1149].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-03-01T18:04:17+01:00 (commit #<span title="1d3ec2653743db882c474868e0a435dc343f547c">1d3ec26</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix #102.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-03-01T18:04:17+01:00 (commit #<span title="972233f880c23de7a222c9c6123e6baca699d8ba">972233f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix #102.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-02-24T07:58:18+01:00 (commit #<span title="203ee10ff51aa07f1d4ae6da26ebe42561831a26">203ee10</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fugbix typo.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-02-24T07:58:18+01:00 (commit #<span title="ae2a7c250ba74ab403a80cd048168488c800be15">ae2a7c2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fugbix typo.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-02-02T10:01:13+01:00 (commit #<span title="05c5fa7d768a252a6adc148e044aa4b00b15a318">05c5fa7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Also handle E_NOTICE and E_STRICT.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-12-24T18:50:40+01:00 (commit #<span title="0189be1537414d2901de0626a8cff464428e288d">0189be1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-09-11T09:20:41+02:00 (commit #<span title="75e12fb327d4b9427e0f9f33e9763070958b7ed3">75e12fb</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">No longer needed.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-08-13T10:57:58+02:00 (commit #<span title="3cd6a25b9bc956ef1aadab5f71d666dd7d939c91">3cd6a25</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Whitespace fixes.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-07-06T11:50:42+02:00 (commit #<span title="dacd2f1b95f9f3e22769cfa8243d039e3850f3f0">dacd2f1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Leftover: PHPUnit2 -&gt; PHPUnit.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-06-30T10:38:41+02:00 (commit #<span title="210b6211303c41da33bc0f894fb0e289892b5685">210b621</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Make it easier to use a checkout of the trunk.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-06-29T20:56:08+02:00 (commit #<span title="6b0d2d5a14b08c86c62c3888777b7f2b0c1aeff8">6b0d2d5</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Post-PEAR cleanup, phase one: PHPUnit2_* -&gt; PHPUnit_*, pear.php.net -&gt; phpunit.de, etc.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-06-29T16:58:01+02:00 (commit #<span title="8b8c705ce7dd77b02ba768d39224dddfeb34fb62">8b8c705</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Recreate trunk.</pre>
+            </div>
           </li>
         </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="getErrorStack"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getErrorStack<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the error stack.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="handleError"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>handleError<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $errno</strong>, <span class="param-type">string</span><strong> $errstr</strong>, <span class="param-type">string</span><strong> $errfile</strong>, <span class="param-type">integer</span><strong> $errline</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$errno</code> - </li>
-                <li><code>$errstr</code> - </li>
-                <li><code>$errfile</code> - </li>
-                <li><code>$errline</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>PHPUnit_Framework_Error</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+      </section>
     </div>
+    <footer>
+      <span>Generated using phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
   </body>
 </html>

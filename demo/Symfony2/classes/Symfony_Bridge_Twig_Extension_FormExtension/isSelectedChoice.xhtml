@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head>
+    <title>phpDox - Test Method</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml#Symfony_Bridge_Twig_Extension">Symfony\Bridge\Twig\Extension</a>
+          </li>
+          <li class="separator">
+            <a title="Symfony\Bridge\Twig\Extension\FormExtension" href="../../classes/Symfony_Bridge_Twig_Extension_FormExtension.xhtml">FormExtension</a>
+          </li>
+          <li class="separator">isSelectedChoice</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#parameter">Parameter</a>
+          </li>
+          <li>
+            <a href="#return">Return</a>
+          </li>
+          <li>
+            <a href="../../source/symfony/symfony/src/Symfony/Bridge/Twig/Extension/FormExtension.php.xhtml#line120">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1><small>Symfony\Bridge\Twig\Extension\FormExtension::</small>isSelectedChoice</h1>
+        <h4>Returns whether a choice is selected for a given form value.</h4>
+        <p>Unfortunately Twig does not support an efficient way to execute the
+"is_selected" closure passed to the template by ChoiceType. It is faster
+to implement the logic here (around 65ms for a specific form).
+
+Directly implementing the logic here is also faster than doing so in
+ChoiceView (around 30ms).
+
+The worst option tested so far is to implement the logic in ChoiceView
+and access the ChoiceView method directly in the template. Doing so is
+around 220ms slower than doing the method call here in the filter. Twig
+seems to be much more efficient at executing filters than at executing
+methods of an object.</p>
+        <ul/>
+        <h2 id="signature">Signature</h2>
+        <div class="styled synopsis">
+          <code>public function isSelectedChoice(<a title="Symfony\Component\Form\Extension\Core\View\ChoiceView" href="../../classes/Symfony_Component_Form_Extension_Core_View_ChoiceView.xhtml">ChoiceView</a>
+        $choice,
+            <a title="Symfony\Bridge\Twig\Extension\string|array" href="../../classes/Symfony_Bridge_Twig_Extension_string|array.xhtml">string|array</a>
+        $selectedValue )
+            </code>
+        </div>
+        <h2 id="parameterlist">Parameters</h2>
+        <dl class="styled">
+          <dt><code>$choice</code>
+                —
+                <a href="#">Symfony\Component\Form\Extension\Core\View\ChoiceView</a></dt>
+          <dd>The choice to check.<br/><br/><br/>      </dd>
+          <dt><code>$selectedValue</code>
+                —
+                object</dt>
+          <dd>The selected value to compare.<br/><br/><br/>      </dd>
+        </dl>
+        <h2 id="return">Returns</h2>
+        <dl class="styled">
+          <dt>Boolean</dt>
+          <dd>Whether the choice is selected.<br/>
+        </dd>
+        </dl>
+      </section>
+    </div>
+    <footer>
+      <span/>
+    </footer>
+  </body>
+</html>

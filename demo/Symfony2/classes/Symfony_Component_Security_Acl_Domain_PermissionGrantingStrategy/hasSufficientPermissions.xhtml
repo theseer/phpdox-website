@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head>
+    <title>phpDox - Test Method</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml#Symfony_Component_Security_Acl_Domain">Symfony\Component\Security\Acl\Domain</a>
+          </li>
+          <li class="separator">
+            <a title="Symfony\Component\Security\Acl\Domain\PermissionGrantingStrategy" href="../../classes/Symfony_Component_Security_Acl_Domain_PermissionGrantingStrategy.xhtml">PermissionGrantingStrategy</a>
+          </li>
+          <li class="separator">hasSufficientPermissions</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#parameter">Parameter</a>
+          </li>
+          <li>
+            <a href="#return">Return</a>
+          </li>
+          <li>
+            <a href="#throws">Throws</a>
+          </li>
+          <li>
+            <a href="../../source/symfony/symfony/src/Symfony/Component/Security/Acl/Domain/PermissionGrantingStrategy.php.xhtml#line137">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1><small>Symfony\Component\Security\Acl\Domain\PermissionGrantingStrategy::</small>hasSufficientPermissions</h1>
+        <h4>Makes an authorization decision.</h4>
+        <p>The order of ACEs, and SIDs is significant; the order of permission masks
+not so much. It is important to note that the more specific security
+identities should be at the beginning of the SIDs array in order for this
+strategy to produce intuitive authorization decisions.
+
+First, we will iterate over permissions, then over security identities.
+For each combination of permission, and identity we will test the
+available ACEs until we find one which is applicable.
+
+The first applicable ACE will make the ultimate decision for the
+permission/identity combination. If it is granting, this method will return
+true, if it is denying, the method will continue to check the next
+permission/identity combination.
+
+This process is repeated until either a granting ACE is found, or no
+permission/identity combinations are left. Finally, we will either throw
+an NoAceFoundException, or deny access.</p>
+        <ul/>
+        <h2 id="signature">Signature</h2>
+        <div class="styled synopsis">
+          <code>private function hasSufficientPermissions(<a title="Symfony\Component\Security\Acl\Model\AclInterface" href="../../classes/Symfony_Component_Security_Acl_Model_AclInterface.xhtml">AclInterface</a>
+        $acl,
+            array
+        $aces,
+            array
+        $masks,
+            array
+        $sids,
+            <a title="Symfony\Component\Security\Acl\Domain\Boolean" href="../../classes/Symfony_Component_Security_Acl_Domain_Boolean.xhtml">Boolean</a>
+        $administrativeMode )
+            </code>
+        </div>
+        <h2 id="parameterlist">Parameters</h2>
+        <dl class="styled">
+          <dt><code>$acl</code>
+                —
+                <a href="#">Symfony\Component\Security\Acl\Model\AclInterface</a></dt>
+          <dd><br/><br/><br/>      </dd>
+          <dt><code>$aces</code>
+                —
+                array</dt>
+          <dd>An array of ACE to check against<br/><br/><br/>      </dd>
+          <dt><code>$masks</code>
+                —
+                array</dt>
+          <dd>An array of permission masks</dd>
+          <dt><code>$sids</code>
+                —
+                array</dt>
+          <dd>An array of SecurityIdentityInterface implementations<br/><br/><br/>      </dd>
+          <dt><code>$administrativeMode</code>
+                —
+                object</dt>
+          <dd>True turns off audit logging<br/><br/><br/>      </dd>
+        </dl>
+        <h2 id="return">Returns</h2>
+        <dl class="styled">
+          <dt>Boolean</dt>
+          <dd>true, or false; either granting, or denying access respectively.<br/>
+        </dd>
+        </dl>
+        <h2 id="throws">Errors/Exceptions</h2>
+        <dl class="styled">
+          <dt>
+            <code>
+              <a title="Symfony\Component\Security\Acl\Exception\NoAceFoundException" href="../../classes/Symfony_Component_Security_Acl_Exception_NoAceFoundException.xhtml">NoAceFoundException</a>
+            </code>
+          </dt>
+          <dd/>
+        </dl>
+      </section>
+    </div>
+    <footer>
+      <span/>
+    </footer>
+  </body>
+</html>

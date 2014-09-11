@@ -1,469 +1,200 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Memory\MemoryManager - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Memory\MemoryManager</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Memory">Zend\Memory</a>
+          </li>
+          <li class="separator">MemoryManager</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#cache">$cache</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#memoryLimit">$memoryLimit</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#minSize">$minSize</a>
+            <a href="#tasks">Tasks</a>
           </li>
           <li>
-            <a href="#memorySize">$memorySize</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#nextId">$nextId</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#unloadCandidates">$unloadCandidates</a>
-          </li>
-          <li>
-            <a href="#sizes">$sizes</a>
-          </li>
-          <li>
-            <a href="#lastModified">$lastModified</a>
-          </li>
-          <li>
-            <a href="#managerId">$managerId</a>
+            <a href="../source/Memory/MemoryManager.php.xhtml#line22">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#__destruct">__destruct</a>
-          </li>
-          <li>
-            <a href="#_commit">_commit</a>
-          </li>
-          <li>
-            <a href="#_create">_create</a>
-          </li>
-          <li>
-            <a href="#_generateMemManagerId">_generateMemManagerId</a>
-          </li>
-          <li>
-            <a href="#_swap">_swap</a>
-          </li>
-          <li>
-            <a href="#_swapCheck">_swapCheck</a>
-          </li>
-          <li>
-            <a href="#create">create</a>
-          </li>
-          <li>
-            <a href="#createLocked">createLocked</a>
-          </li>
-          <li>
-            <a href="#getMemoryLimit">getMemoryLimit</a>
-          </li>
-          <li>
-            <a href="#getMinSize">getMinSize</a>
-          </li>
-          <li>
-            <a href="#load">load</a>
-          </li>
-          <li>
-            <a href="#processUpdate">processUpdate</a>
-          </li>
-          <li>
-            <a href="#setMemoryLimit">setMemoryLimit</a>
-          </li>
-          <li>
-            <a href="#setMinSize">setMinSize</a>
-          </li>
-          <li>
-            <a href="#unlink">unlink</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Memory\</span>MemoryManager</h2>
-        <div class="file-notice">
-          <p>Memory manager</p>
-          <p>
-            <pre>This class encapsulates memory menagement operations, when PHP works
-in limited memory mode.</pre>
-          </p>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Memory\</small>MemoryManager</h1>
+        <h4>Memory manager</h4>
+        <p>This class encapsulates memory menagement operations, when PHP works<br/>in limited memory mode.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class MemoryManager
+            {<br/><ul class="none"><li>// members</li><li>private <span title="Zend\Cache\Storage\StorageInterface">StorageInterface</span> <a href="#members">$cache</a>;
+                    </li><li>private integer <a href="#members">$memoryLimit</a>;
+                    </li><li>private integer <a href="#members">$minSize</a>;
+                    </li><li>private integer <a href="#members">$memorySize</a>;
+                    </li><li>private integer <a href="#members">$nextId</a>;
+                    </li><li>private array <a href="#members">$unloadCandidates</a>;
+                    </li><li>private array <a href="#members">$sizes</a>;
+                    </li><li>private <span title="\Zend\Memory\Container\Movable">Movable</span> <a href="#members">$lastModified</a>;
+                    </li><li>private int <a href="#members">$managerId</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>private void <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/generateMemManagerId.xhtml">generateMemManagerId</a>()
+                    </li><li>public void <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/__destruct.xhtml">__destruct</a>()
+                    </li><li>public void <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/setMemoryLimit.xhtml">setMemoryLimit</a>()
+                    </li><li>public int <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/getMemoryLimit.xhtml">getMemoryLimit</a>()
+                    </li><li>public void <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/setMinSize.xhtml">setMinSize</a>()
+                    </li><li>public int <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/getMinSize.xhtml">getMinSize</a>()
+                    </li><li>public ContainerInterface <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/create.xhtml">create</a>()
+                    </li><li>public ContainerInterface <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/createLocked.xhtml">createLocked</a>()
+                    </li><li>private ContainerInterface <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/_create.xhtml">_create</a>()
+                    </li><li>public null <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/unlink.xhtml">unlink</a>()
+                    </li><li>public void <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/processUpdate.xhtml">processUpdate</a>()
+                    </li><li>private void <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/commit.xhtml">commit</a>()
+                    </li><li>private void <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/swapCheck.xhtml">swapCheck</a>()
+                    </li><li>private void <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/swap.xhtml">swap</a>()
+                    </li><li>public void <a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/load.xhtml">load</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">112</td>
+            <td>!!!</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="cache"><strong>$cache</strong>
+                —
+                <a href="#">Zend\Cache\Storage\StorageInterface</a><br/><span class="indent">Storage cache object</span></li>
+            <li id="lastModified"><strong>$lastModified</strong>
+                —
+                <a href="#">\Zend\Memory\Container\Movable</a><br/><span class="indent">Last modified object</span></li>
+            <li id="managerId"><strong>$managerId</strong>
+                —
+                int<br/><span class="indent">Unique memory manager id</span></li>
+            <li id="memoryLimit"><strong>$memoryLimit</strong>
+                —
+                int<br/><span class="indent">Memory grow limit.</span></li>
+            <li id="memorySize"><strong>$memorySize</strong>
+                —
+                int<br/><span class="indent">Overall size of memory, used by values</span></li>
+            <li id="minSize"><strong>$minSize</strong>
+                —
+                int<br/><span class="indent">Minimum value size to be swapped.</span></li>
+            <li id="nextId"><strong>$nextId</strong>
+                —
+                int<br/><span class="indent">Id for next Zend\Memory object</span></li>
+            <li id="sizes"><strong>$sizes</strong>
+                —
+                array<br/><span class="indent">List of object sizes.</span></li>
+            <li id="unloadCandidates"><strong>$unloadCandidates</strong>
+                —
+                array<br/><span class="indent">List of candidates to unload</span></li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="cache"/>
-            <h4><span class="label private">private</span>object 
-                
-                $cache</h4>
-            <ul class="varlist">
-              <li>Storage cache object</li>
-            </ul>
-          </li>
-          <li>
-            <a name="memoryLimit"/>
-            <h4><span class="label private">private</span>integer 
-                
-                $memoryLimit</h4>
-            <ul class="varlist">
-              <li>Memory grow limit.<pre>Default value is 2/3 of memory_limit php.ini variable
-Negative value means no limit</pre></li>
-            </ul>
-          </li>
-          <li>
-            <a name="minSize"/>
-            <h4><span class="label private">private</span>integer 
-                
-                $minSize</h4>
-            <ul class="varlist">
-              <li>Minimum value size to be swapped.<pre>Default value is 16K
-Negative value means that memory objects are never swapped</pre></li>
-            </ul>
-          </li>
-          <li>
-            <a name="memorySize"/>
-            <h4><span class="label private">private</span>integer 
-                
-                $memorySize</h4>
-            <ul class="varlist">
-              <li>Overall size of memory, used by values</li>
-            </ul>
-          </li>
-          <li>
-            <a name="nextId"/>
-            <h4><span class="label private">private</span>integer 
-                
-                $nextId</h4>
-            <ul class="varlist">
-              <li>Id for next Zend_Memory object</li>
-            </ul>
-          </li>
-          <li>
-            <a name="unloadCandidates"/>
-            <h4><span class="label private">private</span>array 
-                
-                $unloadCandidates</h4>
-            <ul class="varlist">
-              <li>List of candidates to unload<pre>It also represents objects access history. Last accessed objects are moved to the end of array
-
-array(
-    &lt;id&gt; =&gt; &lt;memory container object&gt;,
-    ...
-     )</pre></li>
-            </ul>
-          </li>
-          <li>
-            <a name="sizes"/>
-            <h4><span class="label private">private</span>array 
-                
-                $sizes</h4>
-            <ul class="varlist">
-              <li>List of object sizes.<pre>This list is used to calculate modification of object sizes
-
-array( &lt;id&gt; =&gt; &lt;size&gt;, ...)</pre></li>
-            </ul>
-          </li>
-          <li>
-            <a name="lastModified"/>
-            <h4><span class="label private">private</span>object 
-                
-                $lastModified</h4>
-            <ul class="varlist">
-              <li>Last modified object<pre>It's used to reduce number of calls necessary to trace objects' modifications
-Modification is not processed by memory manager until we do not switch to another
-object.
-So we have to trace only _first_ object modification and do nothing for others</pre></li>
-            </ul>
-          </li>
-          <li>
-            <a name="managerId"/>
-            <h4><span class="label private">private</span>integer 
-                
-                $managerId</h4>
-            <ul class="varlist">
-              <li>Unique memory manager id</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Cache_Storage_StorageInterface.xhtml">Zend\Cache\Storage\StorageInterface</a></span><strong> $cache</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Memory manager constructor<pre>If cache is not specified, then memory objects are never swapped</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$cache</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Destructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__destruct"/>
-            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Object destructor<pre>Clean up cache storage</pre></li>
-            </p>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="create"/>
-            <h4><span class="label public">public</span>create<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Create new Zend_Memory value container</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="createLocked"/>
-            <h4><span class="label public">public</span>createLocked<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Create new Zend_Memory value container, which has value always locked in memory</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMemoryLimit"/>
-            <h4><span class="label public">public</span>getMemoryLimit<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get memory grow limit</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMinSize"/>
-            <h4><span class="label public">public</span>getMinSize<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get minimum size of values, which may be swapped</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="load"/>
-            <h4><span class="label public">public</span>load<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Memory_Container_Movable.xhtml">Zend\Memory\Container\Movable</a></span><strong> $container</strong>, <span class="param-type">integer</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load value from swap file.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$container</code> - </li>
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="processUpdate"/>
-            <h4><span class="label public">public</span>processUpdate<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Memory_Container_Movable.xhtml">Zend\Memory\Container\Movable</a></span><strong> $container</strong>, <span class="param-type">integer</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Process value update</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$container</code> - </li>
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setMemoryLimit"/>
-            <h4><span class="label public">public</span>setMemoryLimit<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $newLimit</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set memory grow limit</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$newLimit</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setMinSize"/>
-            <h4><span class="label public">public</span>setMinSize<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $newSize</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set minimum size of values, which may be swapped</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$newSize</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="unlink"/>
-            <h4><span class="label public">public</span>unlink<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Memory_Container_Movable.xhtml">Zend\Memory\Container\Movable</a></span><strong> $container</strong>, <span class="param-type">integer</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Unlink value container from memory manager<pre>Used by Memory container destroy() method</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$container</code> - </li>
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_commit"/>
-            <h4><span class="label private">private</span>_commit<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Commit modified object and put it back to the loaded objects list</li>
-            </p>
-          </li>
-          <li>
-            <a name="_create"/>
-            <h4><span class="label private">private</span>_create<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong>, <span class="param-type">boolean</span><strong> $locked</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Create new Zend_Memory object</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-                <li><code>$locked</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Memory\Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_generateMemManagerId"/>
-            <h4><span class="label private">private</span>_generateMemManagerId<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>This function is intended to generate unique id, used by memory manager</li>
-            </p>
-          </li>
-          <li>
-            <a name="_swap"/>
-            <h4><span class="label private">private</span>_swap<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Memory_Container_Movable.xhtml">Zend\Memory\Container\Movable</a></span><strong> $container</strong>, <span class="param-type">integer</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Swap object data to disk Actually swaps data or only unloads it from memory, if object is not changed since last swap</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$container</code> - </li>
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_swapCheck"/>
-            <h4><span class="label private">private</span>_swapCheck<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check and swap objects if necessary</li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="_create"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/_create.xhtml">_create()</a>
+                — Create new Zend\Memory object</li>
+            <li id="commit"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/commit.xhtml">commit()</a>
+                — Commit modified object and put it back to the loaded objects list</li>
+            <li id="generateMemManagerId"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/generateMemManagerId.xhtml">generateMemManagerId()</a>
+                — This function is intended to generate unique id, used by memory manager</li>
+            <li id="swap"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/swap.xhtml">swap()</a>
+                — Swap object data to disk Actually swaps data or only unloads it from memory, if object is not changed since last swap</li>
+            <li id="swapCheck"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/swapCheck.xhtml">swapCheck()</a>
+                — Check and swap objects if necessary</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/__construct.xhtml">__construct()</a>
+                — Memory manager constructor</li>
+            <li id="__destruct"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/__destruct.xhtml">__destruct()</a>
+                — Object destructor</li>
+            <li id="create"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/create.xhtml">create()</a>
+                — Create new Zend\Memory value container</li>
+            <li id="createLocked"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/createLocked.xhtml">createLocked()</a>
+                — Create new Zend\Memory value container, which has value always locked in memory</li>
+            <li id="getMemoryLimit"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/getMemoryLimit.xhtml">getMemoryLimit()</a>
+                — Get memory grow limit</li>
+            <li id="getMinSize"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/getMinSize.xhtml">getMinSize()</a>
+                — Get minimum size of values, which may be swapped</li>
+            <li id="load"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/load.xhtml">load()</a>
+                — Load value from swap file.</li>
+            <li id="processUpdate"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/processUpdate.xhtml">processUpdate()</a>
+                — Process value update</li>
+            <li id="setMemoryLimit"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/setMemoryLimit.xhtml">setMemoryLimit()</a>
+                — Set memory grow limit</li>
+            <li id="setMinSize"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/setMinSize.xhtml">setMinSize()</a>
+                — Set minimum size of values, which may be swapped</li>
+            <li id="unlink"><a title="Zend\Memory\MemoryManager" href="../classes/Zend_Memory_MemoryManager/unlink.xhtml">unlink()</a>
+                — Unlink value container from memory manager</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

@@ -1,637 +1,285 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Log\Logger - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Log\Logger</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Log">Zend\Log</a>
+          </li>
+          <li class="separator">Logger</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#EMERG">EMERG</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#ALERT">ALERT</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#CRIT">CRIT</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#ERR">ERR</a>
+            <a href="#constants">Constants</a>
           </li>
           <li>
-            <a href="#WARN">WARN</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#NOTICE">NOTICE</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#INFO">INFO</a>
-          </li>
-          <li>
-            <a href="#DEBUG">DEBUG</a>
+            <a href="../source/Log/Logger.php.xhtml#line22">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
-        <ul>
-          <li>
-            <a href="#priorities">$priorities</a>
-          </li>
-          <li>
-            <a href="#writers">$writers</a>
-          </li>
-          <li>
-            <a href="#writerPlugins">$writerPlugins</a>
-          </li>
-          <li>
-            <a href="#registeredErrorHandler">$registeredErrorHandler</a>
-          </li>
-          <li>
-            <a href="#registeredExceptionHandler">$registeredExceptionHandler</a>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#__destruct">__destruct</a>
-          </li>
-          <li>
-            <a href="#addWriter">addWriter</a>
-          </li>
-          <li>
-            <a href="#alert">alert</a>
-          </li>
-          <li>
-            <a href="#crit">crit</a>
-          </li>
-          <li>
-            <a href="#debug">debug</a>
-          </li>
-          <li>
-            <a href="#emerg">emerg</a>
-          </li>
-          <li>
-            <a href="#err">err</a>
-          </li>
-          <li>
-            <a href="#getWriterPluginManager">getWriterPluginManager</a>
-          </li>
-          <li>
-            <a href="#getWriters">getWriters</a>
-          </li>
-          <li>
-            <a href="#info">info</a>
-          </li>
-          <li>
-            <a href="#log">log</a>
-          </li>
-          <li>
-            <a href="#notice">notice</a>
-          </li>
-          <li>
-            <a href="#registerErrorHandler">registerErrorHandler</a>
-          </li>
-          <li>
-            <a href="#registerExceptionHandler">registerExceptionHandler</a>
-          </li>
-          <li>
-            <a href="#setWriterPluginManager">setWriterPluginManager</a>
-          </li>
-          <li>
-            <a href="#setWriters">setWriters</a>
-          </li>
-          <li>
-            <a href="#unregisterErrorHandler">unregisterErrorHandler</a>
-          </li>
-          <li>
-            <a href="#unregisterExceptionHandler">unregisterExceptionHandler</a>
-          </li>
-          <li>
-            <a href="#warn">warn</a>
-          </li>
-          <li>
-            <a href="#writerPlugin">writerPlugin</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Log\</span>Logger</h2>
-        <div class="file-notice">
-          <p>Logging messages with a stack of backends</p>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Log\</small>Logger</h1>
+        <h4>Logging messages with a stack of backends</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Logger
+                implements
+                <a title="Zend\Log\LoggerInterface" href="../interfaces/Zend_Log_LoggerInterface.xhtml">LoggerInterface</a>
+            {<br/><ul class="none"><li>// constants</li><li>const EMERG = 0;</li><li>const ALERT = 1;</li><li>const CRIT = 2;</li><li>const ERR = 3;</li><li>const WARN = 4;</li><li>const NOTICE = 5;</li><li>const INFO = 6;</li><li>const DEBUG = 7;</li></ul><ul class="none"><li>// members</li><li>public array <a href="#members">$errorPriorityMap</a>;
+                    </li><li>protected <span title="Zend\Log\bool">bool</span> <a href="#members">$registeredErrorHandler</a>;
+                    </li><li>protected <span title="Zend\Log\bool">bool</span> <a href="#members">$registeredFatalErrorShutdownFunction</a>;
+                    </li><li>protected <span title="Zend\Log\bool">bool</span> <a href="#members">$registeredExceptionHandler</a>;
+                    </li><li>protected array <a href="#members">$priorities</a>;
+                    </li><li>protected <span title="Zend\Stdlib\SplPriorityQueue">SplPriorityQueue</span> <a href="#members">$writers</a>;
+                    </li><li>protected <span title="Zend\Stdlib\SplPriorityQueue">SplPriorityQueue</span> <a href="#members">$processors</a>;
+                    </li><li>protected <span title="Zend\Log\WriterPluginManager">WriterPluginManager</span> <a href="#members">$writerPlugins</a>;
+                    </li><li>protected <span title="Zend\Log\ProcessorPluginManager">ProcessorPluginManager</span> <a href="#members">$processorPlugins</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/__destruct.xhtml">__destruct</a>()
+                    </li><li>public WriterPluginManager <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/getWriterPluginManager.xhtml">getWriterPluginManager</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/setWriterPluginManager.xhtml">setWriterPluginManager</a>()
+                    </li><li>public WriterInterface <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/writerPlugin.xhtml">writerPlugin</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/addWriter.xhtml">addWriter</a>()
+                    </li><li>public SplPriorityQueue <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/getWriters.xhtml">getWriters</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/setWriters.xhtml">setWriters</a>()
+                    </li><li>public ProcessorPluginManager <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/getProcessorPluginManager.xhtml">getProcessorPluginManager</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/setProcessorPluginManager.xhtml">setProcessorPluginManager</a>()
+                    </li><li>public ProcessorInterface <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/processorPlugin.xhtml">processorPlugin</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/addProcessor.xhtml">addProcessor</a>()
+                    </li><li>public SplPriorityQueue <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/getProcessors.xhtml">getProcessors</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/log.xhtml">log</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/emerg.xhtml">emerg</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/alert.xhtml">alert</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/crit.xhtml">crit</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/err.xhtml">err</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/warn.xhtml">warn</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/notice.xhtml">notice</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/info.xhtml">info</a>()
+                    </li><li>public Logger <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/debug.xhtml">debug</a>()
+                    </li><li>public static mixed <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/registerErrorHandler.xhtml">registerErrorHandler</a>()
+                    </li><li>public static void <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/unregisterErrorHandler.xhtml">unregisterErrorHandler</a>()
+                    </li><li>public static bool <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/registerFatalErrorShutdownFunction.xhtml">registerFatalErrorShutdownFunction</a>()
+                    </li><li>public static bool <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/registerExceptionHandler.xhtml">registerExceptionHandler</a>()
+                    </li><li>public static void <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/unregisterExceptionHandler.xhtml">unregisterExceptionHandler</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Zend_Log_LoggerInterface.xhtml">Zend\Log\LoggerInterface</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Zend_Log_LoggerInterface.xhtml">Zend\Log\LoggerInterface</a>
-          </li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="EMERG"/>EMERG = 0<em> </em><p><li/></p><hr/></li>
-          <li><a name="ALERT"/>ALERT = 1<hr/></li>
-          <li><a name="CRIT"/>CRIT = 2<hr/></li>
-          <li><a name="ERR"/>ERR = 3<hr/></li>
-          <li><a name="WARN"/>WARN = 4<hr/></li>
-          <li><a name="NOTICE"/>NOTICE = 5<hr/></li>
-          <li><a name="INFO"/>INFO = 6<hr/></li>
-          <li><a name="DEBUG"/>DEBUG = 7<hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="priorities"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $priorities</h4>
-            <ul class="varlist">
-              <li>List of priority code =&gt; priority (short) name</li>
-            </ul>
-          </li>
-          <li>
-            <a name="writers"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $writers</h4>
-            <ul class="varlist">
-              <li>Writers</li>
-            </ul>
-          </li>
-          <li>
-            <a name="writerPlugins"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $writerPlugins</h4>
-            <ul class="varlist">
-              <li>Writer plugins</li>
-            </ul>
-          </li>
-          <li>
-            <a name="registeredErrorHandler"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $registeredErrorHandler</h4>
-            <ul class="varlist">
-              <li>Registered error handler</li>
-            </ul>
-          </li>
-          <li>
-            <a name="registeredExceptionHandler"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $registeredExceptionHandler</h4>
-            <ul class="varlist">
-              <li>Registered exception handler</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Destructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__destruct"/>
-            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Shutdown all writers</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="addWriter"/>
-            <h4><span class="label public">public</span>addWriter<span style="font-size:90%;">( <span class="param-type"><span title="string|Writer\WriterInterface">WriterInterface</span></span><strong> $writer</strong>, <span class="param-type">integer</span><strong> $priority</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add a writer to a logger</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$writer</code> - </li>
-                <li><code>$priority</code> - </li>
-                <li><code>$options</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="alert"/>
-            <h4><span class="label public">public</span>alert<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$extra</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="crit"/>
-            <h4><span class="label public">public</span>crit<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$extra</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="debug"/>
-            <h4><span class="label public">public</span>debug<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$extra</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="emerg"/>
-            <h4><span class="label public">public</span>emerg<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$extra</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="err"/>
-            <h4><span class="label public">public</span>err<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$extra</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getWriterPluginManager"/>
-            <h4><span class="label public">public</span>getWriterPluginManager<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get writer plugin manager</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getWriters"/>
-            <h4><span class="label public">public</span>getWriters<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get writers</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="info"/>
-            <h4><span class="label public">public</span>info<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$extra</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="log"/>
-            <h4><span class="label public">public</span>log<span style="font-size:90%;">( <span class="param-type">int</span><strong> $priority</strong>, <span class="param-type">mixed</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add a message as a log entry</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$priority</code> - </li>
-                <li><code>$message</code> - </li>
-                <li><code>$extra</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException if message can't be cast to string</code>
-                </li>
-                <li>
-                  <code>Exception\InvalidArgumentException if extra can't be iterated over</code>
-                </li>
-                <li>
-                  <code>Exception\RuntimeException if no log writer specified</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="notice"/>
-            <h4><span class="label public">public</span>notice<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$extra</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="registerErrorHandler"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>registerErrorHandler<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Log_Logger.xhtml">Zend\Log\Logger</a></span><strong> $logger</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Register logging system as an error handler to log PHP errors</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$logger</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException if logger is null</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="registerExceptionHandler"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>registerExceptionHandler<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Log_Logger.xhtml">Zend\Log\Logger</a></span><strong> $logger</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Register logging system as an exception handler to log PHP exceptions</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$logger</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException if logger is null</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setWriterPluginManager"/>
-            <h4><span class="label public">public</span>setWriterPluginManager<span style="font-size:90%;">( <span class="param-type"><span title="string|WriterPluginManager">string|WriterPluginManager</span></span><strong> $plugins</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set writer plugin manager</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$plugins</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setWriters"/>
-            <h4><span class="label public">public</span>setWriters<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Stdlib_SplPriorityQueue.xhtml">Zend\Stdlib\SplPriorityQueue</a></span><strong> $writers</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the writers</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$writers</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="unregisterErrorHandler"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>unregisterErrorHandler<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Unregister error handler</li>
-            </p>
-          </li>
-          <li>
-            <a name="unregisterExceptionHandler"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>unregisterExceptionHandler<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Unregister exception handler</li>
-            </p>
-          </li>
-          <li>
-            <a name="warn"/>
-            <h4><span class="label public">public</span>warn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $extra</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$extra</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writerPlugin"/>
-            <h4><span class="label public">public</span>writerPlugin<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get writer instance</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-                <li><code>$options</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="EMERG">EMERG</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="ALERT">ALERT</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="CRIT">CRIT</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="ERR">ERR</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="WARN">WARN</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="NOTICE">NOTICE</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td id="INFO">INFO</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td id="DEBUG">DEBUG</td>
+              <td>7</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="priorities"><strong>$priorities</strong>
+                —
+                array<br/><span class="indent">List of priority code =&gt; priority (short) name</span></li>
+            <li id="processorPlugins"><strong>$processorPlugins</strong>
+                —
+                <a href="#">Zend\Log\ProcessorPluginManager</a><br/><span class="indent">Processor plugins</span></li>
+            <li id="processors"><strong>$processors</strong>
+                —
+                <a href="#">Zend\Stdlib\SplPriorityQueue</a><br/><span class="indent">Processors</span></li>
+            <li id="registeredErrorHandler"><strong>$registeredErrorHandler</strong>
+                —
+                <a href="#">Zend\Log\bool</a><br/><span class="indent">Registered error handler</span></li>
+            <li id="registeredExceptionHandler"><strong>$registeredExceptionHandler</strong>
+                —
+                <a href="#">Zend\Log\bool</a><br/><span class="indent">Registered exception handler</span></li>
+            <li id="registeredFatalErrorShutdownFunction"><strong>$registeredFatalErrorShutdownFunction</strong>
+                —
+                <a href="#">Zend\Log\bool</a><br/><span class="indent">Registered shutdown error handler</span></li>
+            <li id="writerPlugins"><strong>$writerPlugins</strong>
+                —
+                <a href="#">Zend\Log\WriterPluginManager</a><br/><span class="indent">Writer plugins</span></li>
+            <li id="writers"><strong>$writers</strong>
+                —
+                <a href="#">Zend\Stdlib\SplPriorityQueue</a><br/><span class="indent">Writers</span></li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="errorPriorityMap"><strong>$errorPriorityMap</strong>
+                —
+                array<br/><span class="indent">Map native PHP errors to priority</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/__construct.xhtml">__construct()</a>
+                — Constructor</li>
+            <li id="__destruct"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/__destruct.xhtml">__destruct()</a>
+                — Shutdown all writers</li>
+            <li id="addProcessor"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/addProcessor.xhtml">addProcessor()</a>
+                — Add a processor to a logger</li>
+            <li id="addWriter"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/addWriter.xhtml">addWriter()</a>
+                — Add a writer to a logger</li>
+            <li id="alert">
+              <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/alert.xhtml">alert()</a>
+            </li>
+            <li id="crit">
+              <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/crit.xhtml">crit()</a>
+            </li>
+            <li id="debug">
+              <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/debug.xhtml">debug()</a>
+            </li>
+            <li id="emerg">
+              <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/emerg.xhtml">emerg()</a>
+            </li>
+            <li id="err">
+              <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/err.xhtml">err()</a>
+            </li>
+            <li id="getProcessorPluginManager"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/getProcessorPluginManager.xhtml">getProcessorPluginManager()</a>
+                — Get processor plugin manager</li>
+            <li id="getProcessors"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/getProcessors.xhtml">getProcessors()</a>
+                — Get processors</li>
+            <li id="getWriterPluginManager"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/getWriterPluginManager.xhtml">getWriterPluginManager()</a>
+                — Get writer plugin manager</li>
+            <li id="getWriters"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/getWriters.xhtml">getWriters()</a>
+                — Get writers</li>
+            <li id="info">
+              <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/info.xhtml">info()</a>
+            </li>
+            <li id="log"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/log.xhtml">log()</a>
+                — Add a message as a log entry</li>
+            <li id="notice">
+              <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/notice.xhtml">notice()</a>
+            </li>
+            <li id="processorPlugin"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/processorPlugin.xhtml">processorPlugin()</a>
+                — Get processor instance</li>
+            <li id="registerErrorHandler"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/registerErrorHandler.xhtml">registerErrorHandler()</a>
+                — Register logging system as an error handler to log PHP errors</li>
+            <li id="registerExceptionHandler"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/registerExceptionHandler.xhtml">registerExceptionHandler()</a>
+                — Register logging system as an exception handler to log PHP exceptions</li>
+            <li id="registerFatalErrorShutdownFunction"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/registerFatalErrorShutdownFunction.xhtml">registerFatalErrorShutdownFunction()</a>
+                — Register a shutdown handler to log fatal errors</li>
+            <li id="setProcessorPluginManager"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/setProcessorPluginManager.xhtml">setProcessorPluginManager()</a>
+                — Set processor plugin manager</li>
+            <li id="setWriterPluginManager"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/setWriterPluginManager.xhtml">setWriterPluginManager()</a>
+                — Set writer plugin manager</li>
+            <li id="setWriters"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/setWriters.xhtml">setWriters()</a>
+                — Set the writers</li>
+            <li id="unregisterErrorHandler"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/unregisterErrorHandler.xhtml">unregisterErrorHandler()</a>
+                — Unregister error handler</li>
+            <li id="unregisterExceptionHandler"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/unregisterExceptionHandler.xhtml">unregisterExceptionHandler()</a>
+                — Unregister exception handler</li>
+            <li id="warn">
+              <a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/warn.xhtml">warn()</a>
+            </li>
+            <li id="writerPlugin"><a title="Zend\Log\Logger" href="../classes/Zend_Log_Logger/writerPlugin.xhtml">writerPlugin()</a>
+                — Get writer instance</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

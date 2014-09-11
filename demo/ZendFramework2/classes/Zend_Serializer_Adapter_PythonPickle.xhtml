@@ -1,1436 +1,613 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Serializer\Adapter\PythonPickle - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Serializer\Adapter\PythonPickle</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Serializer_Adapter">Zend\Serializer\Adapter</a>
+          </li>
+          <li class="separator">PythonPickle</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#OP_MARK">OP_MARK</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#OP_STOP">OP_STOP</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#OP_POP">OP_POP</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#OP_POP_MARK">OP_POP_MARK</a>
+            <a href="#constants">Constants</a>
           </li>
           <li>
-            <a href="#OP_DUP">OP_DUP</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#OP_FLOAT">OP_FLOAT</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#OP_INT">OP_INT</a>
-          </li>
-          <li>
-            <a href="#OP_BININT">OP_BININT</a>
-          </li>
-          <li>
-            <a href="#OP_BININT1">OP_BININT1</a>
-          </li>
-          <li>
-            <a href="#OP_LONG">OP_LONG</a>
-          </li>
-          <li>
-            <a href="#OP_BININT2">OP_BININT2</a>
-          </li>
-          <li>
-            <a href="#OP_NONE">OP_NONE</a>
-          </li>
-          <li>
-            <a href="#OP_PERSID">OP_PERSID</a>
-          </li>
-          <li>
-            <a href="#OP_BINPERSID">OP_BINPERSID</a>
-          </li>
-          <li>
-            <a href="#OP_REDUCE">OP_REDUCE</a>
-          </li>
-          <li>
-            <a href="#OP_STRING">OP_STRING</a>
-          </li>
-          <li>
-            <a href="#OP_BINSTRING">OP_BINSTRING</a>
-          </li>
-          <li>
-            <a href="#OP_SHORT_BINSTRING">OP_SHORT_BINSTRING</a>
-          </li>
-          <li>
-            <a href="#OP_UNICODE">OP_UNICODE</a>
-          </li>
-          <li>
-            <a href="#OP_BINUNICODE">OP_BINUNICODE</a>
-          </li>
-          <li>
-            <a href="#OP_APPEND">OP_APPEND</a>
-          </li>
-          <li>
-            <a href="#OP_BUILD">OP_BUILD</a>
-          </li>
-          <li>
-            <a href="#OP_GLOBAL">OP_GLOBAL</a>
-          </li>
-          <li>
-            <a href="#OP_DICT">OP_DICT</a>
-          </li>
-          <li>
-            <a href="#OP_EMPTY_DICT">OP_EMPTY_DICT</a>
-          </li>
-          <li>
-            <a href="#OP_APPENDS">OP_APPENDS</a>
-          </li>
-          <li>
-            <a href="#OP_GET">OP_GET</a>
-          </li>
-          <li>
-            <a href="#OP_BINGET">OP_BINGET</a>
-          </li>
-          <li>
-            <a href="#OP_INST">OP_INST</a>
-          </li>
-          <li>
-            <a href="#OP_LONG_BINGET">OP_LONG_BINGET</a>
-          </li>
-          <li>
-            <a href="#OP_LIST">OP_LIST</a>
-          </li>
-          <li>
-            <a href="#OP_EMPTY_LIST">OP_EMPTY_LIST</a>
-          </li>
-          <li>
-            <a href="#OP_OBJ">OP_OBJ</a>
-          </li>
-          <li>
-            <a href="#OP_PUT">OP_PUT</a>
-          </li>
-          <li>
-            <a href="#OP_BINPUT">OP_BINPUT</a>
-          </li>
-          <li>
-            <a href="#OP_LONG_BINPUT">OP_LONG_BINPUT</a>
-          </li>
-          <li>
-            <a href="#OP_SETITEM">OP_SETITEM</a>
-          </li>
-          <li>
-            <a href="#OP_TUPLE">OP_TUPLE</a>
-          </li>
-          <li>
-            <a href="#OP_EMPTY_TUPLE">OP_EMPTY_TUPLE</a>
-          </li>
-          <li>
-            <a href="#OP_SETITEMS">OP_SETITEMS</a>
-          </li>
-          <li>
-            <a href="#OP_BINFLOAT">OP_BINFLOAT</a>
-          </li>
-          <li>
-            <a href="#OP_PROTO">OP_PROTO</a>
-          </li>
-          <li>
-            <a href="#OP_NEWOBJ">OP_NEWOBJ</a>
-          </li>
-          <li>
-            <a href="#OP_EXT1">OP_EXT1</a>
-          </li>
-          <li>
-            <a href="#OP_EXT2">OP_EXT2</a>
-          </li>
-          <li>
-            <a href="#OP_EXT4">OP_EXT4</a>
-          </li>
-          <li>
-            <a href="#OP_TUPLE1">OP_TUPLE1</a>
-          </li>
-          <li>
-            <a href="#OP_TUPLE2">OP_TUPLE2</a>
-          </li>
-          <li>
-            <a href="#OP_TUPLE3">OP_TUPLE3</a>
-          </li>
-          <li>
-            <a href="#OP_NEWTRUE">OP_NEWTRUE</a>
-          </li>
-          <li>
-            <a href="#OP_NEWFALSE">OP_NEWFALSE</a>
-          </li>
-          <li>
-            <a href="#OP_LONG1">OP_LONG1</a>
-          </li>
-          <li>
-            <a href="#OP_LONG4">OP_LONG4</a>
-          </li>
-          <li>
-            <a href="#OP_BINBYTES">OP_BINBYTES</a>
-          </li>
-          <li>
-            <a href="#OP_SHORT_BINBYTES">OP_SHORT_BINBYTES</a>
+            <a href="../source/Serializer/Adapter/PythonPickle.php.xhtml#line24">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
-        <ul>
-          <li>
-            <a href="#isLittleEndian">$isLittleEndian</a>
-          </li>
-          <li>
-            <a href="#quoteString">$quoteString</a>
-          </li>
-          <li>
-            <a href="#protocol">$protocol</a>
-          </li>
-          <li>
-            <a href="#memo">$memo</a>
-          </li>
-          <li>
-            <a href="#pickle">$pickle</a>
-          </li>
-          <li>
-            <a href="#pickleLen">$pickleLen</a>
-          </li>
-          <li>
-            <a href="#pos">$pos</a>
-          </li>
-          <li>
-            <a href="#stack">$stack</a>
-          </li>
-          <li>
-            <a href="#marker">$marker</a>
-          </li>
-          <li>
-            <a href="#bigIntegerAdapter">$bigIntegerAdapter</a>
-          </li>
-          <li>
-            <a href="#options">$options</a>
-          </li>
-          <li>
-            <a href="#options">$options</a>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#_convertMatchingUnicodeSequence2Utf8">_convertMatchingUnicodeSequence2Utf8</a>
-          </li>
-          <li>
-            <a href="#_loadEmptyDict">_loadEmptyDict</a>
-          </li>
-          <li>
-            <a href="#clearProcessVars">clearProcessVars</a>
-          </li>
-          <li>
-            <a href="#decodeBinLong">decodeBinLong</a>
-          </li>
-          <li>
-            <a href="#getOptions">getOptions</a>
-          </li>
-          <li>
-            <a href="#getOptions">getOptions</a>
-          </li>
-          <li>
-            <a href="#hex2Utf8">hex2Utf8</a>
-          </li>
-          <li>
-            <a href="#lastMarker">lastMarker</a>
-          </li>
-          <li>
-            <a href="#load">load</a>
-          </li>
-          <li>
-            <a href="#loadAppend">loadAppend</a>
-          </li>
-          <li>
-            <a href="#loadAppends">loadAppends</a>
-          </li>
-          <li>
-            <a href="#loadBinBytes">loadBinBytes</a>
-          </li>
-          <li>
-            <a href="#loadBinFloat">loadBinFloat</a>
-          </li>
-          <li>
-            <a href="#loadBinGet">loadBinGet</a>
-          </li>
-          <li>
-            <a href="#loadBinInt">loadBinInt</a>
-          </li>
-          <li>
-            <a href="#loadBinInt1">loadBinInt1</a>
-          </li>
-          <li>
-            <a href="#loadBinInt2">loadBinInt2</a>
-          </li>
-          <li>
-            <a href="#loadBinPut">loadBinPut</a>
-          </li>
-          <li>
-            <a href="#loadBinString">loadBinString</a>
-          </li>
-          <li>
-            <a href="#loadBinUnicode">loadBinUnicode</a>
-          </li>
-          <li>
-            <a href="#loadDict">loadDict</a>
-          </li>
-          <li>
-            <a href="#loadEmptyList">loadEmptyList</a>
-          </li>
-          <li>
-            <a href="#loadFloat">loadFloat</a>
-          </li>
-          <li>
-            <a href="#loadGet">loadGet</a>
-          </li>
-          <li>
-            <a href="#loadInt">loadInt</a>
-          </li>
-          <li>
-            <a href="#loadList">loadList</a>
-          </li>
-          <li>
-            <a href="#loadLong">loadLong</a>
-          </li>
-          <li>
-            <a href="#loadLong1">loadLong1</a>
-          </li>
-          <li>
-            <a href="#loadLong4">loadLong4</a>
-          </li>
-          <li>
-            <a href="#loadLongBinGet">loadLongBinGet</a>
-          </li>
-          <li>
-            <a href="#loadLongBinPut">loadLongBinPut</a>
-          </li>
-          <li>
-            <a href="#loadMark">loadMark</a>
-          </li>
-          <li>
-            <a href="#loadNewFalse">loadNewFalse</a>
-          </li>
-          <li>
-            <a href="#loadNewTrue">loadNewTrue</a>
-          </li>
-          <li>
-            <a href="#loadNone">loadNone</a>
-          </li>
-          <li>
-            <a href="#loadProto">loadProto</a>
-          </li>
-          <li>
-            <a href="#loadPut">loadPut</a>
-          </li>
-          <li>
-            <a href="#loadSetItem">loadSetItem</a>
-          </li>
-          <li>
-            <a href="#loadSetItems">loadSetItems</a>
-          </li>
-          <li>
-            <a href="#loadShortBinBytes">loadShortBinBytes</a>
-          </li>
-          <li>
-            <a href="#loadShortBinString">loadShortBinString</a>
-          </li>
-          <li>
-            <a href="#loadString">loadString</a>
-          </li>
-          <li>
-            <a href="#loadTuple">loadTuple</a>
-          </li>
-          <li>
-            <a href="#loadTuple1">loadTuple1</a>
-          </li>
-          <li>
-            <a href="#loadTuple2">loadTuple2</a>
-          </li>
-          <li>
-            <a href="#loadTuple3">loadTuple3</a>
-          </li>
-          <li>
-            <a href="#loadUnicode">loadUnicode</a>
-          </li>
-          <li>
-            <a href="#memorize">memorize</a>
-          </li>
-          <li>
-            <a href="#quoteString">quoteString</a>
-          </li>
-          <li>
-            <a href="#read">read</a>
-          </li>
-          <li>
-            <a href="#readline">readline</a>
-          </li>
-          <li>
-            <a href="#searchMemo">searchMemo</a>
-          </li>
-          <li>
-            <a href="#serialize">serialize</a>
-          </li>
-          <li>
-            <a href="#setOptions">setOptions</a>
-          </li>
-          <li>
-            <a href="#setOptions">setOptions</a>
-          </li>
-          <li>
-            <a href="#unquoteString">unquoteString</a>
-          </li>
-          <li>
-            <a href="#unserialize">unserialize</a>
-          </li>
-          <li>
-            <a href="#write">write</a>
-          </li>
-          <li>
-            <a href="#writeArrayDict">writeArrayDict</a>
-          </li>
-          <li>
-            <a href="#writeArrayList">writeArrayList</a>
-          </li>
-          <li>
-            <a href="#writeBool">writeBool</a>
-          </li>
-          <li>
-            <a href="#writeFloat">writeFloat</a>
-          </li>
-          <li>
-            <a href="#writeGet">writeGet</a>
-          </li>
-          <li>
-            <a href="#writeInt">writeInt</a>
-          </li>
-          <li>
-            <a href="#writeNull">writeNull</a>
-          </li>
-          <li>
-            <a href="#writeObject">writeObject</a>
-          </li>
-          <li>
-            <a href="#writeProto">writeProto</a>
-          </li>
-          <li>
-            <a href="#writePut">writePut</a>
-          </li>
-          <li>
-            <a href="#writeStop">writeStop</a>
-          </li>
-          <li>
-            <a href="#writeString">writeString</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Serializer\Adapter\</span>PythonPickle</h2>
-        <div class="file-notice">
-          <p/>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Serializer\Adapter\</small>PythonPickle</h1>
+        <h4/>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PythonPickle
+                extends <a title="Zend\Serializer\Adapter\AbstractAdapter" href="../classes/Zend_Serializer_Adapter_AbstractAdapter.xhtml">AbstractAdapter</a>
+            {<br/><ul class="none"><li>// constants</li><li>const OP_MARK = '(';</li><li>const OP_STOP = '.';</li><li>const OP_POP = '0';</li><li>const OP_POP_MARK = '1';</li><li>const OP_DUP = '2';</li><li>const OP_FLOAT = 'F';</li><li>const OP_INT = 'I';</li><li>const OP_BININT = 'J';</li><li>const OP_BININT1 = 'K';</li><li>const OP_LONG = 'L';</li><li>const OP_BININT2 = 'M';</li><li>const OP_NONE = 'N';</li><li>const OP_PERSID = 'P';</li><li>const OP_BINPERSID = 'Q';</li><li>const OP_REDUCE = 'R';</li><li>const OP_STRING = 'S';</li><li>const OP_BINSTRING = 'T';</li><li>const OP_SHORT_BINSTRING = 'U';</li><li>const OP_UNICODE = 'V';</li><li>const OP_BINUNICODE = 'X';</li><li>const OP_APPEND = 'a';</li><li>const OP_BUILD = 'b';</li><li>const OP_GLOBAL = 'c';</li><li>const OP_DICT = 'd';</li><li>const OP_EMPTY_DICT = '}';</li><li>const OP_APPENDS = 'e';</li><li>const OP_GET = 'g';</li><li>const OP_BINGET = 'h';</li><li>const OP_INST = 'i';</li><li>const OP_LONG_BINGET = 'j';</li><li>const OP_LIST = 'l';</li><li>const OP_EMPTY_LIST = ']';</li><li>const OP_OBJ = 'o';</li><li>const OP_PUT = 'p';</li><li>const OP_BINPUT = 'q';</li><li>const OP_LONG_BINPUT = 'r';</li><li>const OP_SETITEM = 's';</li><li>const OP_TUPLE = 't';</li><li>const OP_EMPTY_TUPLE = ')';</li><li>const OP_SETITEMS = 'u';</li><li>const OP_BINFLOAT = 'G';</li><li>const OP_PROTO = "\x80";</li><li>const OP_NEWOBJ = "\x81";</li><li>const OP_EXT1 = "\x82";</li><li>const OP_EXT2 = "\x83";</li><li>const OP_EXT4 = "\x84";</li><li>const OP_TUPLE1 = "\x85";</li><li>const OP_TUPLE2 = "\x86";</li><li>const OP_TUPLE3 = "\x87";</li><li>const OP_NEWTRUE = "\x88";</li><li>const OP_NEWFALSE = "\x89";</li><li>const OP_LONG1 = "\x8a";</li><li>const OP_LONG4 = "\x8b";</li><li>const OP_BINBYTES = 'B';</li><li>const OP_SHORT_BINBYTES = 'C';</li></ul><ul class="none"><li>// members</li><li>protected <span title="Zend\Serializer\Adapter\bool">bool</span> <a href="#members">$isLittleEndian</a>;
+                    </li><li>protected array <a href="#members">$quoteString</a>;
+                    </li><li>protected <a href="#members">$protocol</a>;
+                    </li><li>protected array <a href="#members">$memo</a>;
+                    </li><li>protected string <a href="#members">$pickle</a>;
+                    </li><li>protected integer <a href="#members">$pickleLen</a>;
+                    </li><li>protected integer <a href="#members">$pos</a>;
+                    </li><li>protected array <a href="#members">$stack</a>;
+                    </li><li>protected <a href="#members">$marker</a>;
+                    </li><li>protected <span title="Zend\Serializer\Adapter\BigInteger\Adapter\AdapterInterface">AdapterInterface</span> <a href="#members">$bigIntegerAdapter</a>;
+                    </li><li>protected <span title="Zend\Serializer\Adapter\PythonPickleOptions">PythonPickleOptions</span> <a href="#members">$options</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Zend\Serializer\Adapter\AbstractAdapter">AbstractAdapter</span></li><li>protected <span title="Zend\Serializer\Adapter\AdapterOptions">AdapterOptions</span> <a href="#members">$options</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/__construct.xhtml">__construct</a>()
+                    </li><li>public PythonPickle <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/setOptions.xhtml">setOptions</a>()
+                    </li><li>public PythonPickleOptions <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/getOptions.xhtml">getOptions</a>()
+                    </li><li>public string <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/serialize.xhtml">serialize</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/write.xhtml">write</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeProto.xhtml">writeProto</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeGet.xhtml">writeGet</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writePut.xhtml">writePut</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeNull.xhtml">writeNull</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeBool.xhtml">writeBool</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeInt.xhtml">writeInt</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeFloat.xhtml">writeFloat</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeString.xhtml">writeString</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeArrayDict.xhtml">writeArrayDict</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeArrayList.xhtml">writeArrayList</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeObject.xhtml">writeObject</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeStop.xhtml">writeStop</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/memorize.xhtml">memorize</a>()
+                    </li><li>protected int|bool <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/searchMemo.xhtml">searchMemo</a>()
+                    </li><li>protected string <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/quoteString.xhtml">quoteString</a>()
+                    </li><li>public mixed <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/unserialize.xhtml">unserialize</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/clearProcessVars.xhtml">clearProcessVars</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/load.xhtml">load</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadPut.xhtml">loadPut</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinPut.xhtml">loadBinPut</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadLongBinPut.xhtml">loadLongBinPut</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadGet.xhtml">loadGet</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinGet.xhtml">loadBinGet</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadLongBinGet.xhtml">loadLongBinGet</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadNone.xhtml">loadNone</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadNewTrue.xhtml">loadNewTrue</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadNewFalse.xhtml">loadNewFalse</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadInt.xhtml">loadInt</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinInt.xhtml">loadBinInt</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinInt1.xhtml">loadBinInt1</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinInt2.xhtml">loadBinInt2</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadLong.xhtml">loadLong</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadLong1.xhtml">loadLong1</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadLong4.xhtml">loadLong4</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadFloat.xhtml">loadFloat</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinFloat.xhtml">loadBinFloat</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadString.xhtml">loadString</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinString.xhtml">loadBinString</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadShortBinString.xhtml">loadShortBinString</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinBytes.xhtml">loadBinBytes</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadShortBinBytes.xhtml">loadShortBinBytes</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadUnicode.xhtml">loadUnicode</a>()
+                    </li><li>protected string <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/_convertMatchingUnicodeSequence2Utf8.xhtml">_convertMatchingUnicodeSequence2Utf8</a>()
+                    </li><li>protected string <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/hex2Utf8.xhtml">hex2Utf8</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinUnicode.xhtml">loadBinUnicode</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadMark.xhtml">loadMark</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadList.xhtml">loadList</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadAppend.xhtml">loadAppend</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadEmptyList.xhtml">loadEmptyList</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadAppends.xhtml">loadAppends</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadDict.xhtml">loadDict</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadSetItem.xhtml">loadSetItem</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/_loadEmptyDict.xhtml">_loadEmptyDict</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadSetItems.xhtml">loadSetItems</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadTuple.xhtml">loadTuple</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadTuple1.xhtml">loadTuple1</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadTuple2.xhtml">loadTuple2</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadTuple3.xhtml">loadTuple3</a>()
+                    </li><li>protected void <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadProto.xhtml">loadProto</a>()
+                    </li><li>protected string <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/read.xhtml">read</a>()
+                    </li><li>protected string <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/readline.xhtml">readline</a>()
+                    </li><li>protected string <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/unquoteString.xhtml">unquoteString</a>()
+                    </li><li>protected int <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/lastMarker.xhtml">lastMarker</a>()
+                    </li><li>protected int|float|string <a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/decodeBinLong.xhtml">decodeBinLong</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Zend\Serializer\Adapter\AbstractAdapter">AbstractAdapter</span></li><li>public void <a title="Zend\Serializer\Adapter\AbstractAdapter" href="../classes/Zend_Serializer_Adapter_AbstractAdapter/__construct.xhtml">__construct</a>()
+                        </li><li>public AbstractAdapter <a title="Zend\Serializer\Adapter\AbstractAdapter" href="../classes/Zend_Serializer_Adapter_AbstractAdapter/setOptions.xhtml">setOptions</a>()
+                        </li><li>public AdapterOptions <a title="Zend\Serializer\Adapter\AbstractAdapter" href="../classes/Zend_Serializer_Adapter_AbstractAdapter/getOptions.xhtml">getOptions</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Zend_Serializer_Adapter_AbstractAdapter.xhtml">Zend\Serializer\Adapter\AbstractAdapter</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="OP_MARK"/>OP_MARK = '('<em> </em><p><li>Pickle opcodes. See pickletools.py for extensive docs.</li></p><hr/></li>
-          <li><a name="OP_STOP"/>OP_STOP = '.'<hr/></li>
-          <li><a name="OP_POP"/>OP_POP = '0'<hr/></li>
-          <li><a name="OP_POP_MARK"/>OP_POP_MARK = '1'<hr/></li>
-          <li><a name="OP_DUP"/>OP_DUP = '2'<hr/></li>
-          <li><a name="OP_FLOAT"/>OP_FLOAT = 'F'<hr/></li>
-          <li><a name="OP_INT"/>OP_INT = 'I'<hr/></li>
-          <li><a name="OP_BININT"/>OP_BININT = 'J'<hr/></li>
-          <li><a name="OP_BININT1"/>OP_BININT1 = 'K'<hr/></li>
-          <li><a name="OP_LONG"/>OP_LONG = 'L'<hr/></li>
-          <li><a name="OP_BININT2"/>OP_BININT2 = 'M'<hr/></li>
-          <li><a name="OP_NONE"/>OP_NONE = 'N'<hr/></li>
-          <li><a name="OP_PERSID"/>OP_PERSID = 'P'<hr/></li>
-          <li><a name="OP_BINPERSID"/>OP_BINPERSID = 'Q'<hr/></li>
-          <li><a name="OP_REDUCE"/>OP_REDUCE = 'R'<hr/></li>
-          <li><a name="OP_STRING"/>OP_STRING = 'S'<hr/></li>
-          <li><a name="OP_BINSTRING"/>OP_BINSTRING = 'T'<hr/></li>
-          <li><a name="OP_SHORT_BINSTRING"/>OP_SHORT_BINSTRING = 'U'<hr/></li>
-          <li><a name="OP_UNICODE"/>OP_UNICODE = 'V'<hr/></li>
-          <li><a name="OP_BINUNICODE"/>OP_BINUNICODE = 'X'<hr/></li>
-          <li><a name="OP_APPEND"/>OP_APPEND = 'a'<hr/></li>
-          <li><a name="OP_BUILD"/>OP_BUILD = 'b'<hr/></li>
-          <li><a name="OP_GLOBAL"/>OP_GLOBAL = 'c'<hr/></li>
-          <li><a name="OP_DICT"/>OP_DICT = 'd'<hr/></li>
-          <li><a name="OP_EMPTY_DICT"/>OP_EMPTY_DICT = '}'<hr/></li>
-          <li><a name="OP_APPENDS"/>OP_APPENDS = 'e'<hr/></li>
-          <li><a name="OP_GET"/>OP_GET = 'g'<hr/></li>
-          <li><a name="OP_BINGET"/>OP_BINGET = 'h'<hr/></li>
-          <li><a name="OP_INST"/>OP_INST = 'i'<hr/></li>
-          <li><a name="OP_LONG_BINGET"/>OP_LONG_BINGET = 'j'<hr/></li>
-          <li><a name="OP_LIST"/>OP_LIST = 'l'<hr/></li>
-          <li><a name="OP_EMPTY_LIST"/>OP_EMPTY_LIST = ']'<hr/></li>
-          <li><a name="OP_OBJ"/>OP_OBJ = 'o'<hr/></li>
-          <li><a name="OP_PUT"/>OP_PUT = 'p'<hr/></li>
-          <li><a name="OP_BINPUT"/>OP_BINPUT = 'q'<hr/></li>
-          <li><a name="OP_LONG_BINPUT"/>OP_LONG_BINPUT = 'r'<hr/></li>
-          <li><a name="OP_SETITEM"/>OP_SETITEM = 's'<hr/></li>
-          <li><a name="OP_TUPLE"/>OP_TUPLE = 't'<hr/></li>
-          <li><a name="OP_EMPTY_TUPLE"/>OP_EMPTY_TUPLE = ')'<hr/></li>
-          <li><a name="OP_SETITEMS"/>OP_SETITEMS = 'u'<hr/></li>
-          <li><a name="OP_BINFLOAT"/>OP_BINFLOAT = 'G'<hr/></li>
-          <li><a name="OP_PROTO"/>OP_PROTO = "\x80"<hr/></li>
-          <li><a name="OP_NEWOBJ"/>OP_NEWOBJ = "\x81"<hr/></li>
-          <li><a name="OP_EXT1"/>OP_EXT1 = "\x82"<hr/></li>
-          <li><a name="OP_EXT2"/>OP_EXT2 = "\x83"<hr/></li>
-          <li><a name="OP_EXT4"/>OP_EXT4 = "\x84"<hr/></li>
-          <li><a name="OP_TUPLE1"/>OP_TUPLE1 = "\x85"<hr/></li>
-          <li><a name="OP_TUPLE2"/>OP_TUPLE2 = "\x86"<hr/></li>
-          <li><a name="OP_TUPLE3"/>OP_TUPLE3 = "\x87"<hr/></li>
-          <li><a name="OP_NEWTRUE"/>OP_NEWTRUE = "\x88"<hr/></li>
-          <li><a name="OP_NEWFALSE"/>OP_NEWFALSE = "\x89"<hr/></li>
-          <li><a name="OP_LONG1"/>OP_LONG1 = "\x8a"<hr/></li>
-          <li><a name="OP_LONG4"/>OP_LONG4 = "\x8b"<hr/></li>
-          <li><a name="OP_BINBYTES"/>OP_BINBYTES = 'B'<hr/></li>
-          <li><a name="OP_SHORT_BINBYTES"/>OP_SHORT_BINBYTES = 'C'<hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="isLittleEndian"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $isLittleEndian</h4>
-            <ul class="varlist">
-              <li>Whether or not the system is little-endian</li>
-            </ul>
-          </li>
-          <li>
-            <a name="quoteString"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $quoteString</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="protocol"/>
-            <h4><span class="label protected">protected</span>
-                $protocol</h4>
-          </li>
-          <li>
-            <a name="memo"/>
-            <h4><span class="label protected">protected</span>
-                $memo</h4>
-          </li>
-          <li>
-            <a name="pickle"/>
-            <h4><span class="label protected">protected</span>
-                $pickle</h4>
-          </li>
-          <li>
-            <a name="pickleLen"/>
-            <h4><span class="label protected">protected</span>
-                $pickleLen</h4>
-          </li>
-          <li>
-            <a name="pos"/>
-            <h4><span class="label protected">protected</span>
-                $pos</h4>
-          </li>
-          <li>
-            <a name="stack"/>
-            <h4><span class="label protected">protected</span>
-                $stack</h4>
-          </li>
-          <li>
-            <a name="marker"/>
-            <h4><span class="label protected">protected</span>
-                $marker</h4>
-          </li>
-          <li>
-            <a name="bigIntegerAdapter"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $bigIntegerAdapter</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="options"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $options</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="array|\Traversable|PythonPickleOptions">Traversable|PythonPickleOptions</span></span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$options</code> - Optional</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="getOptions"/>
-            <h4><span class="label public">public</span>getOptions<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get options</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getOptions"/>
-            <h4><span class="label public">public</span>getOptions<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get adapter options</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="serialize"/>
-            <h4><span class="label public">public</span>serialize<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Serialize PHP to PythonPickle format</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setOptions"/>
-            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type"><span title="array|\Traversable|PythonPickleOptions">Traversable|PythonPickleOptions</span></span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set options</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$options</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setOptions"/>
-            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type"><span title="array|\Traversable|AdapterOptions">Traversable|AdapterOptions</span></span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set adapter options</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$options</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="unserialize"/>
-            <h4><span class="label public">public</span>unserialize<span style="font-size:90%;">( <span class="param-type">string</span><strong> $pickle</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Unserialize from Python Pickle format to PHP</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$pickle</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException on invalid Pickle string</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_convertMatchingUnicodeSequence2Utf8"/>
-            <h4><span class="label protected">protected</span>_convertMatchingUnicodeSequence2Utf8<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $match</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Convert a unicode sequence to UTF-8</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$match</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_loadEmptyDict"/>
-            <h4><span class="label protected">protected</span>_loadEmptyDict<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load an empty dictionary</li>
-            </p>
-          </li>
-          <li>
-            <a name="clearProcessVars"/>
-            <h4><span class="label protected">protected</span>clearProcessVars<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Clear temp variables needed for processing</li>
-            </p>
-          </li>
-          <li>
-            <a name="decodeBinLong"/>
-            <h4><span class="label protected">protected</span>decodeBinLong<span style="font-size:90%;">( <span class="param-type">string</span><strong> $data</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Decode a binary long sequence</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$data</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hex2Utf8"/>
-            <h4><span class="label protected">protected</span>hex2Utf8<span style="font-size:90%;">( <span class="param-type">string</span><strong> $hex</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Convert a hex string to a UTF-8 string</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$hex</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException on unmatched unicode sequence</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="lastMarker"/>
-            <h4><span class="label protected">protected</span>lastMarker<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return last marker position in stack</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="load"/>
-            <h4><span class="label protected">protected</span>load<span style="font-size:90%;">( <span class="param-type">string</span><strong> $op</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a pickle opcode</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$op</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException on invalid opcode</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadAppend"/>
-            <h4><span class="label protected">protected</span>loadAppend<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load an append (to list) sequence</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadAppends"/>
-            <h4><span class="label protected">protected</span>loadAppends<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load multiple append (to list) sequences at once</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadBinBytes"/>
-            <h4><span class="label protected">protected</span>loadBinBytes<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load arbitrary binary bytes</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadBinFloat"/>
-            <h4><span class="label protected">protected</span>loadBinFloat<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a binary float value</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadBinGet"/>
-            <h4><span class="label protected">protected</span>loadBinGet<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a binary GET operation</li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException on missing GET identifier</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadBinInt"/>
-            <h4><span class="label protected">protected</span>loadBinInt<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a binary integer operator</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadBinInt1"/>
-            <h4><span class="label protected">protected</span>loadBinInt1<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load the first byte of a binary integer</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadBinInt2"/>
-            <h4><span class="label protected">protected</span>loadBinInt2<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load the second byte of a binary integer</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadBinPut"/>
-            <h4><span class="label protected">protected</span>loadBinPut<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a binary PUT</li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException on missing stack</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadBinString"/>
-            <h4><span class="label protected">protected</span>loadBinString<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a binary string</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadBinUnicode"/>
-            <h4><span class="label protected">protected</span>loadBinUnicode<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load binary unicode sequence</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadDict"/>
-            <h4><span class="label protected">protected</span>loadDict<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load an associative array (Python dictionary)</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadEmptyList"/>
-            <h4><span class="label protected">protected</span>loadEmptyList<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load an empty list sequence</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadFloat"/>
-            <h4><span class="label protected">protected</span>loadFloat<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a float value</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadGet"/>
-            <h4><span class="label protected">protected</span>loadGet<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a GET operation</li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException on missing GET identifier</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadInt"/>
-            <h4><span class="label protected">protected</span>loadInt<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load an integer operator</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadList"/>
-            <h4><span class="label protected">protected</span>loadList<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load an array (list)</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadLong"/>
-            <h4><span class="label protected">protected</span>loadLong<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a long (float) operator</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadLong1"/>
-            <h4><span class="label protected">protected</span>loadLong1<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a one byte long integer</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadLong4"/>
-            <h4><span class="label protected">protected</span>loadLong4<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a 4 byte long integer</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadLongBinGet"/>
-            <h4><span class="label protected">protected</span>loadLongBinGet<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a long binary GET operation</li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException on missing GET identifier</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadLongBinPut"/>
-            <h4><span class="label protected">protected</span>loadLongBinPut<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a long binary PUT</li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException on missing stack</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadMark"/>
-            <h4><span class="label protected">protected</span>loadMark<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a marker sequence</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadNewFalse"/>
-            <h4><span class="label protected">protected</span>loadNewFalse<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a boolean FALSE operator</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadNewTrue"/>
-            <h4><span class="label protected">protected</span>loadNewTrue<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a boolean TRUE operator</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadNone"/>
-            <h4><span class="label protected">protected</span>loadNone<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a NONE operator</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadProto"/>
-            <h4><span class="label protected">protected</span>loadProto<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a proto value</li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException if Pickle version does not support this feature</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadPut"/>
-            <h4><span class="label protected">protected</span>loadPut<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a PUT opcode</li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException on missing stack</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadSetItem"/>
-            <h4><span class="label protected">protected</span>loadSetItem<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load an item from a set</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadSetItems"/>
-            <h4><span class="label protected">protected</span>loadSetItems<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load set items</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadShortBinBytes"/>
-            <h4><span class="label protected">protected</span>loadShortBinBytes<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a single binary byte</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadShortBinString"/>
-            <h4><span class="label protected">protected</span>loadShortBinString<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a short binary string</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadString"/>
-            <h4><span class="label protected">protected</span>loadString<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a string</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadTuple"/>
-            <h4><span class="label protected">protected</span>loadTuple<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a tuple</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadTuple1"/>
-            <h4><span class="label protected">protected</span>loadTuple1<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load single item tuple</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadTuple2"/>
-            <h4><span class="label protected">protected</span>loadTuple2<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load two item tuple</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadTuple3"/>
-            <h4><span class="label protected">protected</span>loadTuple3<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load three item tuple</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadUnicode"/>
-            <h4><span class="label protected">protected</span>loadUnicode<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load a unicode string</li>
-            </p>
-          </li>
-          <li>
-            <a name="memorize"/>
-            <h4><span class="label protected">protected</span>memorize<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add a value to the memo and write the id</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="quoteString"/>
-            <h4><span class="label protected">protected</span>quoteString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Quote/Escape a string</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$str</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>quoted string</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="read"/>
-            <h4><span class="label protected">protected</span>read<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $len</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Read a segment of the pickle</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$len</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException if position matches end of data</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="readline"/>
-            <h4><span class="label protected">protected</span>readline<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Read a line of the pickle at once</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException if no EOL character found</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="searchMemo"/>
-            <h4><span class="label protected">protected</span>searchMemo<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Search a value in the memo and return  the id</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The id or false</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="unquoteString"/>
-            <h4><span class="label protected">protected</span>unquoteString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Unquote/Unescape a quoted string</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$str</code> - quoted string</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>unquoted string</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="write"/>
-            <h4><span class="label protected">protected</span>write<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write a value</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException on invalid or unrecognized value type</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeArrayDict"/>
-            <h4><span class="label protected">protected</span>writeArrayDict<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write an associative array value as dictionary</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeArrayList"/>
-            <h4><span class="label protected">protected</span>writeArrayList<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write a simple array value as list</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeBool"/>
-            <h4><span class="label protected">protected</span>writeBool<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write boolean value</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeFloat"/>
-            <h4><span class="label protected">protected</span>writeFloat<span style="font-size:90%;">( <span class="param-type">float</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write a float value</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeGet"/>
-            <h4><span class="label protected">protected</span>writeGet<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write a get</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - Id of memo</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeInt"/>
-            <h4><span class="label protected">protected</span>writeInt<span style="font-size:90%;">( <span class="param-type">int</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write an integer value</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeNull"/>
-            <h4><span class="label protected">protected</span>writeNull<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write a null as None</li>
-            </p>
-          </li>
-          <li>
-            <a name="writeObject"/>
-            <h4><span class="label protected">protected</span>writeObject<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write an object as an dictionary</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeProto"/>
-            <h4><span class="label protected">protected</span>writeProto<span style="font-size:90%;">( <span class="param-type">int</span><strong> $protocol</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write pickle protocol</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$protocol</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writePut"/>
-            <h4><span class="label protected">protected</span>writePut<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write a put</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - Id of memo</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeStop"/>
-            <h4><span class="label protected">protected</span>writeStop<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write stop</li>
-            </p>
-          </li>
-          <li>
-            <a name="writeString"/>
-            <h4><span class="label protected">protected</span>writeString<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write a string value</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="OP_MARK">OP_MARK</td>
+              <td>'('</td>
+            </tr>
+            <tr>
+              <td id="OP_STOP">OP_STOP</td>
+              <td>'.'</td>
+            </tr>
+            <tr>
+              <td id="OP_POP">OP_POP</td>
+              <td>'0'</td>
+            </tr>
+            <tr>
+              <td id="OP_POP_MARK">OP_POP_MARK</td>
+              <td>'1'</td>
+            </tr>
+            <tr>
+              <td id="OP_DUP">OP_DUP</td>
+              <td>'2'</td>
+            </tr>
+            <tr>
+              <td id="OP_FLOAT">OP_FLOAT</td>
+              <td>'F'</td>
+            </tr>
+            <tr>
+              <td id="OP_INT">OP_INT</td>
+              <td>'I'</td>
+            </tr>
+            <tr>
+              <td id="OP_BININT">OP_BININT</td>
+              <td>'J'</td>
+            </tr>
+            <tr>
+              <td id="OP_BININT1">OP_BININT1</td>
+              <td>'K'</td>
+            </tr>
+            <tr>
+              <td id="OP_LONG">OP_LONG</td>
+              <td>'L'</td>
+            </tr>
+            <tr>
+              <td id="OP_BININT2">OP_BININT2</td>
+              <td>'M'</td>
+            </tr>
+            <tr>
+              <td id="OP_NONE">OP_NONE</td>
+              <td>'N'</td>
+            </tr>
+            <tr>
+              <td id="OP_PERSID">OP_PERSID</td>
+              <td>'P'</td>
+            </tr>
+            <tr>
+              <td id="OP_BINPERSID">OP_BINPERSID</td>
+              <td>'Q'</td>
+            </tr>
+            <tr>
+              <td id="OP_REDUCE">OP_REDUCE</td>
+              <td>'R'</td>
+            </tr>
+            <tr>
+              <td id="OP_STRING">OP_STRING</td>
+              <td>'S'</td>
+            </tr>
+            <tr>
+              <td id="OP_BINSTRING">OP_BINSTRING</td>
+              <td>'T'</td>
+            </tr>
+            <tr>
+              <td id="OP_SHORT_BINSTRING">OP_SHORT_BINSTRING</td>
+              <td>'U'</td>
+            </tr>
+            <tr>
+              <td id="OP_UNICODE">OP_UNICODE</td>
+              <td>'V'</td>
+            </tr>
+            <tr>
+              <td id="OP_BINUNICODE">OP_BINUNICODE</td>
+              <td>'X'</td>
+            </tr>
+            <tr>
+              <td id="OP_APPEND">OP_APPEND</td>
+              <td>'a'</td>
+            </tr>
+            <tr>
+              <td id="OP_BUILD">OP_BUILD</td>
+              <td>'b'</td>
+            </tr>
+            <tr>
+              <td id="OP_GLOBAL">OP_GLOBAL</td>
+              <td>'c'</td>
+            </tr>
+            <tr>
+              <td id="OP_DICT">OP_DICT</td>
+              <td>'d'</td>
+            </tr>
+            <tr>
+              <td id="OP_EMPTY_DICT">OP_EMPTY_DICT</td>
+              <td>'}'</td>
+            </tr>
+            <tr>
+              <td id="OP_APPENDS">OP_APPENDS</td>
+              <td>'e'</td>
+            </tr>
+            <tr>
+              <td id="OP_GET">OP_GET</td>
+              <td>'g'</td>
+            </tr>
+            <tr>
+              <td id="OP_BINGET">OP_BINGET</td>
+              <td>'h'</td>
+            </tr>
+            <tr>
+              <td id="OP_INST">OP_INST</td>
+              <td>'i'</td>
+            </tr>
+            <tr>
+              <td id="OP_LONG_BINGET">OP_LONG_BINGET</td>
+              <td>'j'</td>
+            </tr>
+            <tr>
+              <td id="OP_LIST">OP_LIST</td>
+              <td>'l'</td>
+            </tr>
+            <tr>
+              <td id="OP_EMPTY_LIST">OP_EMPTY_LIST</td>
+              <td>']'</td>
+            </tr>
+            <tr>
+              <td id="OP_OBJ">OP_OBJ</td>
+              <td>'o'</td>
+            </tr>
+            <tr>
+              <td id="OP_PUT">OP_PUT</td>
+              <td>'p'</td>
+            </tr>
+            <tr>
+              <td id="OP_BINPUT">OP_BINPUT</td>
+              <td>'q'</td>
+            </tr>
+            <tr>
+              <td id="OP_LONG_BINPUT">OP_LONG_BINPUT</td>
+              <td>'r'</td>
+            </tr>
+            <tr>
+              <td id="OP_SETITEM">OP_SETITEM</td>
+              <td>'s'</td>
+            </tr>
+            <tr>
+              <td id="OP_TUPLE">OP_TUPLE</td>
+              <td>'t'</td>
+            </tr>
+            <tr>
+              <td id="OP_EMPTY_TUPLE">OP_EMPTY_TUPLE</td>
+              <td>')'</td>
+            </tr>
+            <tr>
+              <td id="OP_SETITEMS">OP_SETITEMS</td>
+              <td>'u'</td>
+            </tr>
+            <tr>
+              <td id="OP_BINFLOAT">OP_BINFLOAT</td>
+              <td>'G'</td>
+            </tr>
+            <tr>
+              <td id="OP_PROTO">OP_PROTO</td>
+              <td>"\x80"</td>
+            </tr>
+            <tr>
+              <td id="OP_NEWOBJ">OP_NEWOBJ</td>
+              <td>"\x81"</td>
+            </tr>
+            <tr>
+              <td id="OP_EXT1">OP_EXT1</td>
+              <td>"\x82"</td>
+            </tr>
+            <tr>
+              <td id="OP_EXT2">OP_EXT2</td>
+              <td>"\x83"</td>
+            </tr>
+            <tr>
+              <td id="OP_EXT4">OP_EXT4</td>
+              <td>"\x84"</td>
+            </tr>
+            <tr>
+              <td id="OP_TUPLE1">OP_TUPLE1</td>
+              <td>"\x85"</td>
+            </tr>
+            <tr>
+              <td id="OP_TUPLE2">OP_TUPLE2</td>
+              <td>"\x86"</td>
+            </tr>
+            <tr>
+              <td id="OP_TUPLE3">OP_TUPLE3</td>
+              <td>"\x87"</td>
+            </tr>
+            <tr>
+              <td id="OP_NEWTRUE">OP_NEWTRUE</td>
+              <td>"\x88"</td>
+            </tr>
+            <tr>
+              <td id="OP_NEWFALSE">OP_NEWFALSE</td>
+              <td>"\x89"</td>
+            </tr>
+            <tr>
+              <td id="OP_LONG1">OP_LONG1</td>
+              <td>"\x8a"</td>
+            </tr>
+            <tr>
+              <td id="OP_LONG4">OP_LONG4</td>
+              <td>"\x8b"</td>
+            </tr>
+            <tr>
+              <td id="OP_BINBYTES">OP_BINBYTES</td>
+              <td>'B'</td>
+            </tr>
+            <tr>
+              <td id="OP_SHORT_BINBYTES">OP_SHORT_BINBYTES</td>
+              <td>'C'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="bigIntegerAdapter"><strong>$bigIntegerAdapter</strong>
+                —
+                <a href="#">Zend\Serializer\Adapter\BigInteger\Adapter\AdapterInterface</a></li>
+            <li id="isLittleEndian"><strong>$isLittleEndian</strong>
+                —
+                <a href="#">Zend\Serializer\Adapter\bool</a><br/><span class="indent">Whether or not the system is little-endian</span></li>
+            <li id="marker">
+              <strong>$marker</strong>
+            </li>
+            <li id="memo">
+              <strong>$memo</strong>
+            </li>
+            <li id="options"><strong>$options</strong>
+                —
+                <a href="#">Zend\Serializer\Adapter\PythonPickleOptions</a></li>
+            <li id="options"><strong>$options</strong>
+                —
+                <a href="#">Zend\Serializer\Adapter\AdapterOptions</a></li>
+            <li id="pickle">
+              <strong>$pickle</strong>
+            </li>
+            <li id="pickleLen">
+              <strong>$pickleLen</strong>
+            </li>
+            <li id="pos">
+              <strong>$pos</strong>
+            </li>
+            <li id="protocol">
+              <strong>$protocol</strong>
+            </li>
+            <li id="quoteString"><strong>$quoteString</strong>
+                —
+                array</li>
+            <li id="stack">
+              <strong>$stack</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_convertMatchingUnicodeSequence2Utf8"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/_convertMatchingUnicodeSequence2Utf8.xhtml">_convertMatchingUnicodeSequence2Utf8()</a>
+                — Convert a unicode sequence to UTF-8</li>
+            <li id="_loadEmptyDict"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/_loadEmptyDict.xhtml">_loadEmptyDict()</a>
+                — Load an empty dictionary</li>
+            <li id="clearProcessVars"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/clearProcessVars.xhtml">clearProcessVars()</a>
+                — Clear temp variables needed for processing</li>
+            <li id="decodeBinLong"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/decodeBinLong.xhtml">decodeBinLong()</a>
+                — Decode a binary long sequence</li>
+            <li id="hex2Utf8"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/hex2Utf8.xhtml">hex2Utf8()</a>
+                — Convert a hex string to a UTF-8 string</li>
+            <li id="lastMarker"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/lastMarker.xhtml">lastMarker()</a>
+                — Return last marker position in stack</li>
+            <li id="load"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/load.xhtml">load()</a>
+                — Load a pickle opcode</li>
+            <li id="loadAppend"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadAppend.xhtml">loadAppend()</a>
+                — Load an append (to list) sequence</li>
+            <li id="loadAppends"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadAppends.xhtml">loadAppends()</a>
+                — Load multiple append (to list) sequences at once</li>
+            <li id="loadBinBytes"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinBytes.xhtml">loadBinBytes()</a>
+                — Load arbitrary binary bytes</li>
+            <li id="loadBinFloat"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinFloat.xhtml">loadBinFloat()</a>
+                — Load a binary float value</li>
+            <li id="loadBinGet"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinGet.xhtml">loadBinGet()</a>
+                — Load a binary GET operation</li>
+            <li id="loadBinInt"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinInt.xhtml">loadBinInt()</a>
+                — Load a binary integer operator</li>
+            <li id="loadBinInt1"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinInt1.xhtml">loadBinInt1()</a>
+                — Load the first byte of a binary integer</li>
+            <li id="loadBinInt2"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinInt2.xhtml">loadBinInt2()</a>
+                — Load the second byte of a binary integer</li>
+            <li id="loadBinPut"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinPut.xhtml">loadBinPut()</a>
+                — Load a binary PUT</li>
+            <li id="loadBinString"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinString.xhtml">loadBinString()</a>
+                — Load a binary string</li>
+            <li id="loadBinUnicode"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadBinUnicode.xhtml">loadBinUnicode()</a>
+                — Load binary unicode sequence</li>
+            <li id="loadDict"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadDict.xhtml">loadDict()</a>
+                — Load an associative array (Python dictionary)</li>
+            <li id="loadEmptyList"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadEmptyList.xhtml">loadEmptyList()</a>
+                — Load an empty list sequence</li>
+            <li id="loadFloat"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadFloat.xhtml">loadFloat()</a>
+                — Load a float value</li>
+            <li id="loadGet"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadGet.xhtml">loadGet()</a>
+                — Load a GET operation</li>
+            <li id="loadInt"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadInt.xhtml">loadInt()</a>
+                — Load an integer operator</li>
+            <li id="loadList"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadList.xhtml">loadList()</a>
+                — Load an array (list)</li>
+            <li id="loadLong"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadLong.xhtml">loadLong()</a>
+                — Load a long (float) operator</li>
+            <li id="loadLong1"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadLong1.xhtml">loadLong1()</a>
+                — Load a one byte long integer</li>
+            <li id="loadLong4"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadLong4.xhtml">loadLong4()</a>
+                — Load a 4 byte long integer</li>
+            <li id="loadLongBinGet"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadLongBinGet.xhtml">loadLongBinGet()</a>
+                — Load a long binary GET operation</li>
+            <li id="loadLongBinPut"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadLongBinPut.xhtml">loadLongBinPut()</a>
+                — Load a long binary PUT</li>
+            <li id="loadMark"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadMark.xhtml">loadMark()</a>
+                — Load a marker sequence</li>
+            <li id="loadNewFalse"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadNewFalse.xhtml">loadNewFalse()</a>
+                — Load a boolean FALSE operator</li>
+            <li id="loadNewTrue"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadNewTrue.xhtml">loadNewTrue()</a>
+                — Load a boolean TRUE operator</li>
+            <li id="loadNone"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadNone.xhtml">loadNone()</a>
+                — Load a NONE operator</li>
+            <li id="loadProto"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadProto.xhtml">loadProto()</a>
+                — Load a proto value</li>
+            <li id="loadPut"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadPut.xhtml">loadPut()</a>
+                — Load a PUT opcode</li>
+            <li id="loadSetItem"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadSetItem.xhtml">loadSetItem()</a>
+                — Load an item from a set</li>
+            <li id="loadSetItems"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadSetItems.xhtml">loadSetItems()</a>
+                — Load set items</li>
+            <li id="loadShortBinBytes"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadShortBinBytes.xhtml">loadShortBinBytes()</a>
+                — Load a single binary byte</li>
+            <li id="loadShortBinString"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadShortBinString.xhtml">loadShortBinString()</a>
+                — Load a short binary string</li>
+            <li id="loadString"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadString.xhtml">loadString()</a>
+                — Load a string</li>
+            <li id="loadTuple"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadTuple.xhtml">loadTuple()</a>
+                — Load a tuple</li>
+            <li id="loadTuple1"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadTuple1.xhtml">loadTuple1()</a>
+                — Load single item tuple</li>
+            <li id="loadTuple2"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadTuple2.xhtml">loadTuple2()</a>
+                — Load two item tuple</li>
+            <li id="loadTuple3"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadTuple3.xhtml">loadTuple3()</a>
+                — Load three item tuple</li>
+            <li id="loadUnicode"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/loadUnicode.xhtml">loadUnicode()</a>
+                — Load a unicode string</li>
+            <li id="memorize"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/memorize.xhtml">memorize()</a>
+                — Add a value to the memo and write the id</li>
+            <li id="quoteString"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/quoteString.xhtml">quoteString()</a>
+                — Quote/Escape a string</li>
+            <li id="read"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/read.xhtml">read()</a>
+                — Read a segment of the pickle</li>
+            <li id="readline"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/readline.xhtml">readline()</a>
+                — Read a line of the pickle at once</li>
+            <li id="searchMemo"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/searchMemo.xhtml">searchMemo()</a>
+                — Search a value in the memo and return  the id</li>
+            <li id="unquoteString"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/unquoteString.xhtml">unquoteString()</a>
+                — Unquote/Unescape a quoted string</li>
+            <li id="write"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/write.xhtml">write()</a>
+                — Write a value</li>
+            <li id="writeArrayDict"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeArrayDict.xhtml">writeArrayDict()</a>
+                — Write an associative array value as dictionary</li>
+            <li id="writeArrayList"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeArrayList.xhtml">writeArrayList()</a>
+                — Write a simple array value as list</li>
+            <li id="writeBool"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeBool.xhtml">writeBool()</a>
+                — Write boolean value</li>
+            <li id="writeFloat"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeFloat.xhtml">writeFloat()</a>
+                — Write a float value</li>
+            <li id="writeGet"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeGet.xhtml">writeGet()</a>
+                — Write a get</li>
+            <li id="writeInt"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeInt.xhtml">writeInt()</a>
+                — Write an integer value</li>
+            <li id="writeNull"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeNull.xhtml">writeNull()</a>
+                — Write a null as None</li>
+            <li id="writeObject"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeObject.xhtml">writeObject()</a>
+                — Write an object as a dictionary</li>
+            <li id="writeProto"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeProto.xhtml">writeProto()</a>
+                — Write pickle protocol</li>
+            <li id="writePut"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writePut.xhtml">writePut()</a>
+                — Write a put</li>
+            <li id="writeStop"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeStop.xhtml">writeStop()</a>
+                — Write stop</li>
+            <li id="writeString"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/writeString.xhtml">writeString()</a>
+                — Write a string value</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/__construct.xhtml">__construct()</a>
+                — Constructor.</li>
+            <li id="getOptions"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/getOptions.xhtml">getOptions()</a>
+                — Get options</li>
+            <li id="serialize"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/serialize.xhtml">serialize()</a>
+                — Serialize PHP to PythonPickle format</li>
+            <li id="setOptions"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/setOptions.xhtml">setOptions()</a>
+                — Set options</li>
+            <li id="unserialize"><a title="Zend\Serializer\Adapter\PythonPickle" href="../classes/Zend_Serializer_Adapter_PythonPickle/unserialize.xhtml">unserialize()</a>
+                — Unserialize from Python Pickle format to PHP</li>
+          </ul>
+          <h3>Inherited from <a title="Zend\Serializer\Adapter\AbstractAdapter" href="../classes/Zend_Serializer_Adapter_AbstractAdapter.xhtml">Zend\Serializer\Adapter\AbstractAdapter</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="getOptions"><a title="Zend\Serializer\Adapter\AbstractAdapter" href="../classes/Zend_Serializer_Adapter_AbstractAdapter/getOptions.xhtml">getOptions()</a>
+                — Get adapter options</li>
+            <li id="setOptions"><a title="Zend\Serializer\Adapter\AbstractAdapter" href="../classes/Zend_Serializer_Adapter_AbstractAdapter/setOptions.xhtml">setOptions()</a>
+                — Set adapter options</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

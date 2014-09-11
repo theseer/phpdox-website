@@ -1,1359 +1,430 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Symfony\Component\Process\Process - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Symfony\Component\Process\Process</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Symfony_Component_Process">Symfony\Component\Process</a>
+          </li>
+          <li class="separator">Process</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#ERR">ERR</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#OUT">OUT</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#STATUS_READY">STATUS_READY</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#STATUS_STARTED">STATUS_STARTED</a>
+            <a href="#constants">Constants</a>
           </li>
           <li>
-            <a href="#STATUS_TERMINATED">STATUS_TERMINATED</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#STDIN">STDIN</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#STDOUT">STDOUT</a>
-          </li>
-          <li>
-            <a href="#STDERR">STDERR</a>
-          </li>
-          <li>
-            <a href="#TIMEOUT_PRECISION">TIMEOUT_PRECISION</a>
+            <a href="../source/symfony/symfony/src/Symfony/Component/Process/Process.php.xhtml#line26">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Symfony\Component\Process\</small>Process</h1>
+        <h4>Process is a thin wrapper around proc_* functions to ease start independent PHP processes.</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#commandline">$commandline</a>
-          </li>
-          <li>
-            <a href="#cwd">$cwd</a>
-          </li>
-          <li>
-            <a href="#env">$env</a>
-          </li>
-          <li>
-            <a href="#stdin">$stdin</a>
-          </li>
-          <li>
-            <a href="#starttime">$starttime</a>
-          </li>
-          <li>
-            <a href="#timeout">$timeout</a>
-          </li>
-          <li>
-            <a href="#options">$options</a>
-          </li>
-          <li>
-            <a href="#exitcode">$exitcode</a>
-          </li>
-          <li>
-            <a href="#fallbackExitcode">$fallbackExitcode</a>
-          </li>
-          <li>
-            <a href="#processInformation">$processInformation</a>
-          </li>
-          <li>
-            <a href="#stdout">$stdout</a>
-          </li>
-          <li>
-            <a href="#stderr">$stderr</a>
-          </li>
-          <li>
-            <a href="#enhanceWindowsCompatibility">$enhanceWindowsCompatibility</a>
-          </li>
-          <li>
-            <a href="#enhanceSigchildCompatibility">$enhanceSigchildCompatibility</a>
-          </li>
-          <li>
-            <a href="#pipes">$pipes</a>
-          </li>
-          <li>
-            <a href="#process">$process</a>
-          </li>
-          <li>
-            <a href="#status">$status</a>
-          </li>
-          <li>
-            <a href="#incrementalOutputOffset">$incrementalOutputOffset</a>
-          </li>
-          <li>
-            <a href="#incrementalErrorOutputOffset">$incrementalErrorOutputOffset</a>
-          </li>
-          <li>
-            <a href="#tty">$tty</a>
-          </li>
-          <li>
-            <a href="#fileHandles">$fileHandles</a>
-          </li>
-          <li>
-            <a href="#readBytes">$readBytes</a>
-          </li>
-          <li>
-            <a href="#sigchild">$sigchild</a>
-          </li>
-          <li>
-            <a href="#exitCodes">$exitCodes</a>
-          </li>
+          <li>Author: Fabien Potencier &lt;fabien@symfony.com&gt;</li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__clone">__clone</a>
-          </li>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#__destruct">__destruct</a>
-          </li>
-          <li>
-            <a href="#addErrorOutput">addErrorOutput</a>
-          </li>
-          <li>
-            <a href="#addOutput">addOutput</a>
-          </li>
-          <li>
-            <a href="#buildCallback">buildCallback</a>
-          </li>
-          <li>
-            <a href="#checkTimeout">checkTimeout</a>
-          </li>
-          <li>
-            <a href="#getCommandLine">getCommandLine</a>
-          </li>
-          <li>
-            <a href="#getDescriptors">getDescriptors</a>
-          </li>
-          <li>
-            <a href="#getEnhanceSigchildCompatibility">getEnhanceSigchildCompatibility</a>
-          </li>
-          <li>
-            <a href="#getEnhanceWindowsCompatibility">getEnhanceWindowsCompatibility</a>
-          </li>
-          <li>
-            <a href="#getEnv">getEnv</a>
-          </li>
-          <li>
-            <a href="#getErrorOutput">getErrorOutput</a>
-          </li>
-          <li>
-            <a href="#getExitCode">getExitCode</a>
-          </li>
-          <li>
-            <a href="#getExitCodeText">getExitCodeText</a>
-          </li>
-          <li>
-            <a href="#getIncrementalErrorOutput">getIncrementalErrorOutput</a>
-          </li>
-          <li>
-            <a href="#getIncrementalOutput">getIncrementalOutput</a>
-          </li>
-          <li>
-            <a href="#getOptions">getOptions</a>
-          </li>
-          <li>
-            <a href="#getOutput">getOutput</a>
-          </li>
-          <li>
-            <a href="#getPid">getPid</a>
-          </li>
-          <li>
-            <a href="#getStatus">getStatus</a>
-          </li>
-          <li>
-            <a href="#getStdin">getStdin</a>
-          </li>
-          <li>
-            <a href="#getStopSignal">getStopSignal</a>
-          </li>
-          <li>
-            <a href="#getTermSignal">getTermSignal</a>
-          </li>
-          <li>
-            <a href="#getTimeout">getTimeout</a>
-          </li>
-          <li>
-            <a href="#getWorkingDirectory">getWorkingDirectory</a>
-          </li>
-          <li>
-            <a href="#hasBeenSignaled">hasBeenSignaled</a>
-          </li>
-          <li>
-            <a href="#hasBeenStopped">hasBeenStopped</a>
-          </li>
-          <li>
-            <a href="#hasSystemCallBeenInterrupted">hasSystemCallBeenInterrupted</a>
-          </li>
-          <li>
-            <a href="#isRunning">isRunning</a>
-          </li>
-          <li>
-            <a href="#isSigchildEnabled">isSigchildEnabled</a>
-          </li>
-          <li>
-            <a href="#isStarted">isStarted</a>
-          </li>
-          <li>
-            <a href="#isSuccessful">isSuccessful</a>
-          </li>
-          <li>
-            <a href="#isTerminated">isTerminated</a>
-          </li>
-          <li>
-            <a href="#isTty">isTty</a>
-          </li>
-          <li>
-            <a href="#processFileHandles">processFileHandles</a>
-          </li>
-          <li>
-            <a href="#restart">restart</a>
-          </li>
-          <li>
-            <a href="#run">run</a>
-          </li>
-          <li>
-            <a href="#setCommandLine">setCommandLine</a>
-          </li>
-          <li>
-            <a href="#setEnhanceSigchildCompatibility">setEnhanceSigchildCompatibility</a>
-          </li>
-          <li>
-            <a href="#setEnhanceWindowsCompatibility">setEnhanceWindowsCompatibility</a>
-          </li>
-          <li>
-            <a href="#setEnv">setEnv</a>
-          </li>
-          <li>
-            <a href="#setOptions">setOptions</a>
-          </li>
-          <li>
-            <a href="#setStdin">setStdin</a>
-          </li>
-          <li>
-            <a href="#setTimeout">setTimeout</a>
-          </li>
-          <li>
-            <a href="#setTty">setTty</a>
-          </li>
-          <li>
-            <a href="#setWorkingDirectory">setWorkingDirectory</a>
-          </li>
-          <li>
-            <a href="#signal">signal</a>
-          </li>
-          <li>
-            <a href="#start">start</a>
-          </li>
-          <li>
-            <a href="#stop">stop</a>
-          </li>
-          <li>
-            <a href="#updateErrorOutput">updateErrorOutput</a>
-          </li>
-          <li>
-            <a href="#updateOutput">updateOutput</a>
-          </li>
-          <li>
-            <a href="#updateStatus">updateStatus</a>
-          </li>
-          <li>
-            <a href="#wait">wait</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Symfony\Component\Process\</span>Process</h2>
-        <div class="file-notice">
-          <p>Process is a thin wrapper around proc_* functions to ease start independent PHP processes.</p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Process
+            {<br/><ul class="none"><li>// constants</li><li>const ERR = 'err';</li><li>const OUT = 'out';</li><li>const STATUS_READY = 'ready';</li><li>const STATUS_STARTED = 'started';</li><li>const STATUS_TERMINATED = 'terminated';</li><li>const STDIN = 0;</li><li>const STDOUT = 1;</li><li>const STDERR = 2;</li><li>const TIMEOUT_PRECISION = 0.2;</li></ul><ul class="none"><li>// members</li><li>private <a href="#members">$commandline</a>;
+                    </li><li>private <a href="#members">$cwd</a>;
+                    </li><li>private <a href="#members">$env</a>;
+                    </li><li>private <a href="#members">$stdin</a>;
+                    </li><li>private <a href="#members">$starttime</a>;
+                    </li><li>private <a href="#members">$timeout</a>;
+                    </li><li>private <a href="#members">$options</a>;
+                    </li><li>private <a href="#members">$exitcode</a>;
+                    </li><li>private <a href="#members">$fallbackExitcode</a>;
+                    </li><li>private <a href="#members">$processInformation</a>;
+                    </li><li>private <a href="#members">$stdout</a>;
+                    </li><li>private <a href="#members">$stderr</a>;
+                    </li><li>private <a href="#members">$enhanceWindowsCompatibility</a>;
+                    </li><li>private <a href="#members">$enhanceSigchildCompatibility</a>;
+                    </li><li>private <a href="#members">$pipes</a>;
+                    </li><li>private <a href="#members">$process</a>;
+                    </li><li>private <a href="#members">$status</a>;
+                    </li><li>private <a href="#members">$incrementalOutputOffset</a>;
+                    </li><li>private <a href="#members">$incrementalErrorOutputOffset</a>;
+                    </li><li>private <a href="#members">$tty</a>;
+                    </li><li>private <a href="#members">$fileHandles</a>;
+                    </li><li>private <a href="#members">$readBytes</a>;
+                    </li><li>private <a href="#members">$sigchild</a>;
+                    </li><li>public array <a href="#members">$exitCodes</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/__destruct.xhtml">__destruct</a>()
+                    </li><li>public void <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/__clone.xhtml">__clone</a>()
+                    </li><li>public integer <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/run.xhtml">run</a>()
+                    </li><li>public void <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/start.xhtml">start</a>()
+                    </li><li>public Process <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/restart.xhtml">restart</a>()
+                    </li><li>public integer <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/wait.xhtml">wait</a>()
+                    </li><li>public integer|null <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getPid.xhtml">getPid</a>()
+                    </li><li>public Process <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/signal.xhtml">signal</a>()
+                    </li><li>public string <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getOutput.xhtml">getOutput</a>()
+                    </li><li>public string <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getIncrementalOutput.xhtml">getIncrementalOutput</a>()
+                    </li><li>public string <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getErrorOutput.xhtml">getErrorOutput</a>()
+                    </li><li>public string <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getIncrementalErrorOutput.xhtml">getIncrementalErrorOutput</a>()
+                    </li><li>public integer <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getExitCode.xhtml">getExitCode</a>()
+                    </li><li>public string <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getExitCodeText.xhtml">getExitCodeText</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/isSuccessful.xhtml">isSuccessful</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/hasBeenSignaled.xhtml">hasBeenSignaled</a>()
+                    </li><li>public integer <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getTermSignal.xhtml">getTermSignal</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/hasBeenStopped.xhtml">hasBeenStopped</a>()
+                    </li><li>public integer <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getStopSignal.xhtml">getStopSignal</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/isRunning.xhtml">isRunning</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/isStarted.xhtml">isStarted</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/isTerminated.xhtml">isTerminated</a>()
+                    </li><li>public string <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getStatus.xhtml">getStatus</a>()
+                    </li><li>public integer <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/stop.xhtml">stop</a>()
+                    </li><li>public void <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/addOutput.xhtml">addOutput</a>()
+                    </li><li>public void <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/addErrorOutput.xhtml">addErrorOutput</a>()
+                    </li><li>public string <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getCommandLine.xhtml">getCommandLine</a>()
+                    </li><li>public self <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setCommandLine.xhtml">setCommandLine</a>()
+                    </li><li>public integer|null <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getTimeout.xhtml">getTimeout</a>()
+                    </li><li>public self <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setTimeout.xhtml">setTimeout</a>()
+                    </li><li>public self <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setTty.xhtml">setTty</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/isTty.xhtml">isTty</a>()
+                    </li><li>public string <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getWorkingDirectory.xhtml">getWorkingDirectory</a>()
+                    </li><li>public self <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setWorkingDirectory.xhtml">setWorkingDirectory</a>()
+                    </li><li>public array <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getEnv.xhtml">getEnv</a>()
+                    </li><li>public self <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setEnv.xhtml">setEnv</a>()
+                    </li><li>public string <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getStdin.xhtml">getStdin</a>()
+                    </li><li>public self <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setStdin.xhtml">setStdin</a>()
+                    </li><li>public array <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getOptions.xhtml">getOptions</a>()
+                    </li><li>public self <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setOptions.xhtml">setOptions</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getEnhanceWindowsCompatibility.xhtml">getEnhanceWindowsCompatibility</a>()
+                    </li><li>public self <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setEnhanceWindowsCompatibility.xhtml">setEnhanceWindowsCompatibility</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getEnhanceSigchildCompatibility.xhtml">getEnhanceSigchildCompatibility</a>()
+                    </li><li>public self <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setEnhanceSigchildCompatibility.xhtml">setEnhanceSigchildCompatibility</a>()
+                    </li><li>public void <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/checkTimeout.xhtml">checkTimeout</a>()
+                    </li><li>private array <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getDescriptors.xhtml">getDescriptors</a>()
+                    </li><li>protected callback <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/buildCallback.xhtml">buildCallback</a>()
+                    </li><li>protected void <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/updateStatus.xhtml">updateStatus</a>()
+                    </li><li>protected void <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/updateErrorOutput.xhtml">updateErrorOutput</a>()
+                    </li><li>protected void <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/updateOutput.xhtml">updateOutput</a>()
+                    </li><li>protected Boolean <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/isSigchildEnabled.xhtml">isSigchildEnabled</a>()
+                    </li><li>private void <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/processFileHandles.xhtml">processFileHandles</a>()
+                    </li><li>private Boolean <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/hasSystemCallBeenInterrupted.xhtml">hasSystemCallBeenInterrupted</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extended by</h4>
+          <ul>
+            <li>
+              <a href="../classes/Symfony_Component_Process_PhpProcess.xhtml">Symfony\Component\Process\PhpProcess</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="ERR"/>ERR = 'err'<hr/></li>
-          <li><a name="OUT"/>OUT = 'out'<hr/></li>
-          <li><a name="STATUS_READY"/>STATUS_READY = 'ready'<hr/></li>
-          <li><a name="STATUS_STARTED"/>STATUS_STARTED = 'started'<hr/></li>
-          <li><a name="STATUS_TERMINATED"/>STATUS_TERMINATED = 'terminated'<hr/></li>
-          <li><a name="STDIN"/>STDIN = 0<hr/></li>
-          <li><a name="STDOUT"/>STDOUT = 1<hr/></li>
-          <li><a name="STDERR"/>STDERR = 2<hr/></li>
-          <li><a name="TIMEOUT_PRECISION"/>TIMEOUT_PRECISION = 0.2<hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="commandline"/>
-            <h4><span class="label private">private</span>
-                $commandline</h4>
-          </li>
-          <li>
-            <a name="cwd"/>
-            <h4><span class="label private">private</span>
-                $cwd</h4>
-          </li>
-          <li>
-            <a name="env"/>
-            <h4><span class="label private">private</span>
-                $env</h4>
-          </li>
-          <li>
-            <a name="stdin"/>
-            <h4><span class="label private">private</span>
-                $stdin</h4>
-          </li>
-          <li>
-            <a name="starttime"/>
-            <h4><span class="label private">private</span>
-                $starttime</h4>
-          </li>
-          <li>
-            <a name="timeout"/>
-            <h4><span class="label private">private</span>
-                $timeout</h4>
-          </li>
-          <li>
-            <a name="options"/>
-            <h4><span class="label private">private</span>
-                $options</h4>
-          </li>
-          <li>
-            <a name="exitcode"/>
-            <h4><span class="label private">private</span>
-                $exitcode</h4>
-          </li>
-          <li>
-            <a name="fallbackExitcode"/>
-            <h4><span class="label private">private</span>
-                $fallbackExitcode</h4>
-          </li>
-          <li>
-            <a name="processInformation"/>
-            <h4><span class="label private">private</span>
-                $processInformation</h4>
-          </li>
-          <li>
-            <a name="stdout"/>
-            <h4><span class="label private">private</span>
-                $stdout</h4>
-          </li>
-          <li>
-            <a name="stderr"/>
-            <h4><span class="label private">private</span>
-                $stderr</h4>
-          </li>
-          <li>
-            <a name="enhanceWindowsCompatibility"/>
-            <h4><span class="label private">private</span>
-                $enhanceWindowsCompatibility</h4>
-          </li>
-          <li>
-            <a name="enhanceSigchildCompatibility"/>
-            <h4><span class="label private">private</span>
-                $enhanceSigchildCompatibility</h4>
-          </li>
-          <li>
-            <a name="pipes"/>
-            <h4><span class="label private">private</span>
-                $pipes</h4>
-          </li>
-          <li>
-            <a name="process"/>
-            <h4><span class="label private">private</span>
-                $process</h4>
-          </li>
-          <li>
-            <a name="status"/>
-            <h4><span class="label private">private</span>
-                $status</h4>
-          </li>
-          <li>
-            <a name="incrementalOutputOffset"/>
-            <h4><span class="label private">private</span>
-                $incrementalOutputOffset</h4>
-          </li>
-          <li>
-            <a name="incrementalErrorOutputOffset"/>
-            <h4><span class="label private">private</span>
-                $incrementalErrorOutputOffset</h4>
-          </li>
-          <li>
-            <a name="tty"/>
-            <h4><span class="label private">private</span>
-                $tty</h4>
-          </li>
-          <li>
-            <a name="fileHandles"/>
-            <h4><span class="label private">private</span>
-                $fileHandles</h4>
-          </li>
-          <li>
-            <a name="readBytes"/>
-            <h4><span class="label private">private</span>
-                $readBytes</h4>
-          </li>
-          <li>
-            <a name="sigchild"/>
-            <h4><span class="label private">private</span>
-                $sigchild</h4>
-          </li>
-          <li>
-            <a name="exitCodes"/>
-            <h4><span class="label public">public</span>array 
-                
-                $exitCodes</h4>
-            <ul class="varlist">
-              <li>Exit codes translation table.<pre>User-defined errors must use exit codes in the 64-113 range.</pre></li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $commandline</strong>, <span class="param-type">string</span><strong> $cwd</strong>, <span class="param-type">Array</span><strong> $env</strong>, <span class="param-type">string</span><strong> $stdin</strong>, <span class="param-type">integer</span><strong> $timeout</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$commandline</code> - The command line to run</li>
-                <li><code>$cwd</code> - The working directory</li>
-                <li><code>$env</code> - The environment variables or null to inherit</li>
-                <li><code>$stdin</code> - The STDIN content</li>
-                <li><code>$timeout</code> - The timeout in seconds</li>
-                <li><code>$options</code> - An array of options for proc_open</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException When proc_open is not installed</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Destructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__destruct"/>
-            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__clone"/>
-            <h4><span class="label public">public</span>__clone<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="addErrorOutput"/>
-            <h4><span class="label public">public</span>addErrorOutput<span style="font-size:90%;">( <span class="param-type">string</span><strong> $line</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a line to the STDERR stream.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$line</code> - The line to append</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addOutput"/>
-            <h4><span class="label public">public</span>addOutput<span style="font-size:90%;">( <span class="param-type">string</span><strong> $line</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a line to the STDOUT stream.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$line</code> - The line to append</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="checkTimeout"/>
-            <h4><span class="label public">public</span>checkTimeout<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Performs a check between the timeout definition and the time the process started.<pre>In case you run a background process (with the start method), you should
-trigger this method regularly to ensure the process timeout</pre></li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException In case the timeout was reached</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCommandLine"/>
-            <h4><span class="label public">public</span>getCommandLine<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the command line to be executed.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The command to execute</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getEnhanceSigchildCompatibility"/>
-            <h4><span class="label public">public</span>getEnhanceSigchildCompatibility<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns whether sigchild compatibility mode is activated or not.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getEnhanceWindowsCompatibility"/>
-            <h4><span class="label public">public</span>getEnhanceWindowsCompatibility<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets whether or not Windows compatibility is enabled.<pre>This is true by default.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getEnv"/>
-            <h4><span class="label public">public</span>getEnv<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the environment variables.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current environment variables</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getErrorOutput"/>
-            <h4><span class="label public">public</span>getErrorOutput<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the current error output of the process (STDERR).</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The process error output</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getExitCode"/>
-            <h4><span class="label public">public</span>getExitCode<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the exit code returned by the process.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The exit status code</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException In case --enable-sigchild is activated and the sigchild compatibility mode is disabled</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getExitCodeText"/>
-            <h4><span class="label public">public</span>getExitCodeText<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns a string representation for the exit code returned by the process.<pre>This method relies on the Unix exit code status standardization
-and might not be relevant for other operating systems.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>A string representation for the exit status code</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getIncrementalErrorOutput"/>
-            <h4><span class="label public">public</span>getIncrementalErrorOutput<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the errorOutput incrementally.<pre>In comparison with the getErrorOutput method which always return the
-whole error output, this one returns the new error output since the last
-call.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The process error output since the last call</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getIncrementalOutput"/>
-            <h4><span class="label public">public</span>getIncrementalOutput<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the output incrementally.<pre>In comparison with the getOutput method which always return the whole
-output, this one returns the new output since the last call.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The process output since the last call</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getOptions"/>
-            <h4><span class="label public">public</span>getOptions<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the options for proc_open.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current options</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getOutput"/>
-            <h4><span class="label public">public</span>getOutput<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the current output of the process (STDOUT).</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The process output</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPid"/>
-            <h4><span class="label public">public</span>getPid<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the Pid (process identifier), if applicable.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The process id if running, null otherwise</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException In case --enable-sigchild is activated</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getStatus"/>
-            <h4><span class="label public">public</span>getStatus<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the process status.<pre>The status is one of: ready, started, terminated.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current process status</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getStdin"/>
-            <h4><span class="label public">public</span>getStdin<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the contents of STDIN.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current contents</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getStopSignal"/>
-            <h4><span class="label public">public</span>getStopSignal<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the number of the signal that caused the child process to stop its execution.<pre>It is only meaningful if hasBeenStopped() returns true.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTermSignal"/>
-            <h4><span class="label public">public</span>getTermSignal<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the number of the signal that caused the child process to terminate its execution.<pre>It is only meaningful if hasBeenSignaled() returns true.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException In case --enable-sigchild is activated</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTimeout"/>
-            <h4><span class="label public">public</span>getTimeout<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the process timeout.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The timeout in seconds or null if it's disabled</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getWorkingDirectory"/>
-            <h4><span class="label public">public</span>getWorkingDirectory<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the working directory.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current working directory</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasBeenSignaled"/>
-            <h4><span class="label public">public</span>hasBeenSignaled<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns true if the child process has been terminated by an uncaught signal.<pre>It always returns false on Windows.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException In case --enable-sigchild is activated</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasBeenStopped"/>
-            <h4><span class="label public">public</span>hasBeenStopped<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns true if the child process has been stopped by a signal.<pre>It always returns false on Windows.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isRunning"/>
-            <h4><span class="label public">public</span>isRunning<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks if the process is currently running.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>true if the process is currently running, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isStarted"/>
-            <h4><span class="label public">public</span>isStarted<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks if the process has been started with no regard to the current state.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>true if status is ready, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isSuccessful"/>
-            <h4><span class="label public">public</span>isSuccessful<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks if the process ended successfully.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>true if the process ended successfully, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isTerminated"/>
-            <h4><span class="label public">public</span>isTerminated<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks if the process is terminated.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>true if process is terminated, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isTty"/>
-            <h4><span class="label public">public</span>isTty<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks if  the TTY mode is enabled.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>true if the TTY mode is enabled, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="restart"/>
-            <h4><span class="label public">public</span>restart<span style="font-size:90%;">( <span class="param-type"><span title="callable">callable</span></span><strong> $callback</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Restarts the process.<pre>Be warned that the process is cloned before being started.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$callback</code> - A PHP callback to run whenever there is some</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The new process</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\RuntimeException When process can't be launch or is stopped</code>
-                </li>
-                <li>
-                  <code>\RuntimeException When process is already running</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="run"/>
-            <h4><span class="label public">public</span>run<span style="font-size:90%;">( <span class="param-type"><span title="callback|null">callback|null</span></span><strong> $callback</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Runs the process.<pre>The callback receives the type of output (out or err) and
-some bytes from the output in real-time. It allows to have feedback
-from the independent process during execution.
-
-The STDOUT and STDERR are also available after the process is finished
-via the getOutput() and getErrorOutput() methods.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$callback</code> - A PHP callback to run whenever there is some</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The exit status code</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException When process can't be launch or is stopped</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setCommandLine"/>
-            <h4><span class="label public">public</span>setCommandLine<span style="font-size:90%;">( <span class="param-type">string</span><strong> $commandline</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the command line to be executed.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$commandline</code> - The command to execute</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current Process instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setEnhanceSigchildCompatibility"/>
-            <h4><span class="label public">public</span>setEnhanceSigchildCompatibility<span style="font-size:90%;">( <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $enhance</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Activates sigchild compatibility mode.<pre>Sigchild compatibility mode is required to get the exit code and
-determine the success of a process when PHP has been compiled with
-the --enable-sigchild option</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$enhance</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current Process instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setEnhanceWindowsCompatibility"/>
-            <h4><span class="label public">public</span>setEnhanceWindowsCompatibility<span style="font-size:90%;">( <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $enhance</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets whether or not Windows compatibility is enabled.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$enhance</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current Process instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setEnv"/>
-            <h4><span class="label public">public</span>setEnv<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $env</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the environment variables.<pre>An environment variable value should be a string.
-If it is an array, the variable is ignored.
-
-That happens in PHP when 'argv' is registered into
-the $_ENV array for instance.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$env</code> - The new environment variables</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current Process instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setOptions"/>
-            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the options for proc_open.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$options</code> - The new options</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current Process instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setStdin"/>
-            <h4><span class="label public">public</span>setStdin<span style="font-size:90%;">( <span class="param-type">string</span><strong> $stdin</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the contents of STDIN.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$stdin</code> - The new contents</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current Process instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setTimeout"/>
-            <h4><span class="label public">public</span>setTimeout<span style="font-size:90%;">( <span class="param-type"><span title="float|null">float|null</span></span><strong> $timeout</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the process timeout.<pre>To disable the timeout, set this value to null.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$timeout</code> - The timeout in seconds</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current Process instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InvalidArgumentException if the timeout is negative</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setTty"/>
-            <h4><span class="label public">public</span>setTty<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $tty</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Enables or disables the TTY mode.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$tty</code> - True to enabled and false to disable</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current Process instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setWorkingDirectory"/>
-            <h4><span class="label public">public</span>setWorkingDirectory<span style="font-size:90%;">( <span class="param-type">string</span><strong> $cwd</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the current working directory.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$cwd</code> - The new working directory</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current Process instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="signal"/>
-            <h4><span class="label public">public</span>signal<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $signal</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sends a posix signal to the process.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$signal</code> - A valid posix signal (see http://www.php.net/manual/en/pcntl.constants.php)</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>LogicException   In case the process is not running</code>
-                </li>
-                <li>
-                  <code>RuntimeException In case --enable-sigchild is activated</code>
-                </li>
-                <li>
-                  <code>RuntimeException In case of failure</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="start"/>
-            <h4><span class="label public">public</span>start<span style="font-size:90%;">( <span class="param-type"><span title="callback|null">callback|null</span></span><strong> $callback</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Starts the process and returns after sending the STDIN.<pre>This method blocks until all STDIN data is sent to the process then it
-returns while the process runs in the background.
-
-The termination of the process can be awaited with wait().
-
-The callback receives the type of output (out or err) and some bytes from
-the output in real-time while writing the standard input to the process.
-It allows to have feedback from the independent process during execution.
-If there is no callback passed, the wait() method can be called
-with true as a second parameter then the callback will get all data occurred
-in (and since) the start call.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$callback</code> - A PHP callback to run whenever there is some</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException When process can't be launch or is stopped</code>
-                </li>
-                <li>
-                  <code>RuntimeException When process is already running</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="stop"/>
-            <h4><span class="label public">public</span>stop<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $timeout</strong>, <span class="param-type">integer</span><strong> $signal</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Stops the process.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$timeout</code> - The timeout in seconds</li>
-                <li><code>$signal</code> - A posix signal to send in case the process has not stop at timeout, default is SIGKILL</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The exit-code of the process</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException if the process got signaled</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="wait"/>
-            <h4><span class="label public">public</span>wait<span style="font-size:90%;">( <span class="param-type"><span title="callback|null">callback|null</span></span><strong> $callback</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Waits for the process to terminate.<pre>The callback receives the type of output (out or err) and some bytes
-from the output in real-time while writing the standard input to the process.
-It allows to have feedback from the independent process during execution.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$callback</code> - A valid PHP callback</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The exitcode of the process</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\RuntimeException When process timed out</code>
-                </li>
-                <li>
-                  <code>\RuntimeException When process stopped after receiving signal</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="buildCallback"/>
-            <h4><span class="label protected">protected</span>buildCallback<span style="font-size:90%;">( <span class="param-type"><span title="callback|null">callback|null</span></span><strong> $callback</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Builds up the callback used by wait().<pre>The callbacks adds all occurred output to the specific buffer and calls
-the user callback (if present) with the received output.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$callback</code> - The user defined PHP callback</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>A PHP callable</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isSigchildEnabled"/>
-            <h4><span class="label protected">protected</span>isSigchildEnabled<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns whether PHP has been compiled with the '--enable-sigchild' option or not.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="updateErrorOutput"/>
-            <h4><span class="label protected">protected</span>updateErrorOutput<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Updates the current error output of the process (STDERR).</li>
-            </p>
-          </li>
-          <li>
-            <a name="updateOutput"/>
-            <h4><span class="label protected">protected</span>updateOutput<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Updates the current output of the process (STDOUT).</li>
-            </p>
-          </li>
-          <li>
-            <a name="updateStatus"/>
-            <h4><span class="label protected">protected</span>updateStatus<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Updates the status of the process.</li>
-            </p>
-          </li>
-          <li>
-            <a name="getDescriptors"/>
-            <h4><span class="label private">private</span>getDescriptors<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Creates the descriptors needed by the proc_open.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasSystemCallBeenInterrupted"/>
-            <h4><span class="label private">private</span>hasSystemCallBeenInterrupted<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns true if a system call has been interrupted.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="processFileHandles"/>
-            <h4><span class="label private">private</span>processFileHandles<span style="font-size:90%;">( <span class="param-type"><span title="callable">callable</span></span><strong> $callback</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $closeEmptyHandles</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Handles the windows file handles fallbacks.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$callback</code> - A valid PHP callback</li>
-                <li><code>$closeEmptyHandles</code> - if true, handles that are empty will be assumed closed</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="ERR">ERR</td>
+              <td>'err'</td>
+            </tr>
+            <tr>
+              <td id="OUT">OUT</td>
+              <td>'out'</td>
+            </tr>
+            <tr>
+              <td id="STATUS_READY">STATUS_READY</td>
+              <td>'ready'</td>
+            </tr>
+            <tr>
+              <td id="STATUS_STARTED">STATUS_STARTED</td>
+              <td>'started'</td>
+            </tr>
+            <tr>
+              <td id="STATUS_TERMINATED">STATUS_TERMINATED</td>
+              <td>'terminated'</td>
+            </tr>
+            <tr>
+              <td id="STDIN">STDIN</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="STDOUT">STDOUT</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="STDERR">STDERR</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="TIMEOUT_PRECISION">TIMEOUT_PRECISION</td>
+              <td>0.2</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="commandline">
+              <strong>$commandline</strong>
+            </li>
+            <li id="cwd">
+              <strong>$cwd</strong>
+            </li>
+            <li id="enhanceSigchildCompatibility">
+              <strong>$enhanceSigchildCompatibility</strong>
+            </li>
+            <li id="enhanceWindowsCompatibility">
+              <strong>$enhanceWindowsCompatibility</strong>
+            </li>
+            <li id="env">
+              <strong>$env</strong>
+            </li>
+            <li id="exitcode">
+              <strong>$exitcode</strong>
+            </li>
+            <li id="fallbackExitcode">
+              <strong>$fallbackExitcode</strong>
+            </li>
+            <li id="fileHandles">
+              <strong>$fileHandles</strong>
+            </li>
+            <li id="incrementalErrorOutputOffset">
+              <strong>$incrementalErrorOutputOffset</strong>
+            </li>
+            <li id="incrementalOutputOffset">
+              <strong>$incrementalOutputOffset</strong>
+            </li>
+            <li id="options">
+              <strong>$options</strong>
+            </li>
+            <li id="pipes">
+              <strong>$pipes</strong>
+            </li>
+            <li id="process">
+              <strong>$process</strong>
+            </li>
+            <li id="processInformation">
+              <strong>$processInformation</strong>
+            </li>
+            <li id="readBytes">
+              <strong>$readBytes</strong>
+            </li>
+            <li id="sigchild">
+              <strong>$sigchild</strong>
+            </li>
+            <li id="starttime">
+              <strong>$starttime</strong>
+            </li>
+            <li id="status">
+              <strong>$status</strong>
+            </li>
+            <li id="stderr">
+              <strong>$stderr</strong>
+            </li>
+            <li id="stdin">
+              <strong>$stdin</strong>
+            </li>
+            <li id="stdout">
+              <strong>$stdout</strong>
+            </li>
+            <li id="timeout">
+              <strong>$timeout</strong>
+            </li>
+            <li id="tty">
+              <strong>$tty</strong>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="exitCodes"><strong>$exitCodes</strong>
+                —
+                array<br/><span class="indent">Exit codes translation table.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="getDescriptors"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getDescriptors.xhtml">getDescriptors()</a>
+                — Creates the descriptors needed by the proc_open.</li>
+            <li id="hasSystemCallBeenInterrupted"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/hasSystemCallBeenInterrupted.xhtml">hasSystemCallBeenInterrupted()</a>
+                — Returns true if a system call has been interrupted.</li>
+            <li id="processFileHandles"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/processFileHandles.xhtml">processFileHandles()</a>
+                — Handles the windows file handles fallbacks.</li>
+          </ul>
+          <h4>protected</h4>
+          <ul>
+            <li id="buildCallback"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/buildCallback.xhtml">buildCallback()</a>
+                — Builds up the callback used by wait().</li>
+            <li id="isSigchildEnabled"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/isSigchildEnabled.xhtml">isSigchildEnabled()</a>
+                — Returns whether PHP has been compiled with the '--enable-sigchild' option or not.</li>
+            <li id="updateErrorOutput"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/updateErrorOutput.xhtml">updateErrorOutput()</a>
+                — Updates the current error output of the process (STDERR).</li>
+            <li id="updateOutput"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/updateOutput.xhtml">updateOutput()</a>
+                — Updates the current output of the process (STDOUT).</li>
+            <li id="updateStatus"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/updateStatus.xhtml">updateStatus()</a>
+                — Updates the status of the process.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/__construct.xhtml">__construct()</a>
+                — Constructor.</li>
+            <li id="__destruct">
+              <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/__destruct.xhtml">__destruct()</a>
+            </li>
+            <li id="__clone">
+              <a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/__clone.xhtml">__clone()</a>
+            </li>
+            <li id="addErrorOutput"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/addErrorOutput.xhtml">addErrorOutput()</a>
+                — Adds a line to the STDERR stream.</li>
+            <li id="addOutput"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/addOutput.xhtml">addOutput()</a>
+                — Adds a line to the STDOUT stream.</li>
+            <li id="checkTimeout"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/checkTimeout.xhtml">checkTimeout()</a>
+                — Performs a check between the timeout definition and the time the process started.</li>
+            <li id="getCommandLine"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getCommandLine.xhtml">getCommandLine()</a>
+                — Gets the command line to be executed.</li>
+            <li id="getEnhanceSigchildCompatibility"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getEnhanceSigchildCompatibility.xhtml">getEnhanceSigchildCompatibility()</a>
+                — Returns whether sigchild compatibility mode is activated or not.</li>
+            <li id="getEnhanceWindowsCompatibility"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getEnhanceWindowsCompatibility.xhtml">getEnhanceWindowsCompatibility()</a>
+                — Gets whether or not Windows compatibility is enabled.</li>
+            <li id="getEnv"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getEnv.xhtml">getEnv()</a>
+                — Gets the environment variables.</li>
+            <li id="getErrorOutput"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getErrorOutput.xhtml">getErrorOutput()</a>
+                — Returns the current error output of the process (STDERR).</li>
+            <li id="getExitCode"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getExitCode.xhtml">getExitCode()</a>
+                — Returns the exit code returned by the process.</li>
+            <li id="getExitCodeText"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getExitCodeText.xhtml">getExitCodeText()</a>
+                — Returns a string representation for the exit code returned by the process.</li>
+            <li id="getIncrementalErrorOutput"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getIncrementalErrorOutput.xhtml">getIncrementalErrorOutput()</a>
+                — Returns the errorOutput incrementally.</li>
+            <li id="getIncrementalOutput"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getIncrementalOutput.xhtml">getIncrementalOutput()</a>
+                — Returns the output incrementally.</li>
+            <li id="getOptions"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getOptions.xhtml">getOptions()</a>
+                — Gets the options for proc_open.</li>
+            <li id="getOutput"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getOutput.xhtml">getOutput()</a>
+                — Returns the current output of the process (STDOUT).</li>
+            <li id="getPid"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getPid.xhtml">getPid()</a>
+                — Returns the Pid (process identifier), if applicable.</li>
+            <li id="getStatus"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getStatus.xhtml">getStatus()</a>
+                — Gets the process status.</li>
+            <li id="getStdin"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getStdin.xhtml">getStdin()</a>
+                — Gets the contents of STDIN.</li>
+            <li id="getStopSignal"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getStopSignal.xhtml">getStopSignal()</a>
+                — Returns the number of the signal that caused the child process to stop its execution.</li>
+            <li id="getTermSignal"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getTermSignal.xhtml">getTermSignal()</a>
+                — Returns the number of the signal that caused the child process to terminate its execution.</li>
+            <li id="getTimeout"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getTimeout.xhtml">getTimeout()</a>
+                — Gets the process timeout.</li>
+            <li id="getWorkingDirectory"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/getWorkingDirectory.xhtml">getWorkingDirectory()</a>
+                — Gets the working directory.</li>
+            <li id="hasBeenSignaled"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/hasBeenSignaled.xhtml">hasBeenSignaled()</a>
+                — Returns true if the child process has been terminated by an uncaught signal.</li>
+            <li id="hasBeenStopped"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/hasBeenStopped.xhtml">hasBeenStopped()</a>
+                — Returns true if the child process has been stopped by a signal.</li>
+            <li id="isRunning"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/isRunning.xhtml">isRunning()</a>
+                — Checks if the process is currently running.</li>
+            <li id="isStarted"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/isStarted.xhtml">isStarted()</a>
+                — Checks if the process has been started with no regard to the current state.</li>
+            <li id="isSuccessful"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/isSuccessful.xhtml">isSuccessful()</a>
+                — Checks if the process ended successfully.</li>
+            <li id="isTerminated"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/isTerminated.xhtml">isTerminated()</a>
+                — Checks if the process is terminated.</li>
+            <li id="isTty"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/isTty.xhtml">isTty()</a>
+                — Checks if  the TTY mode is enabled.</li>
+            <li id="restart"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/restart.xhtml">restart()</a>
+                — Restarts the process.</li>
+            <li id="run"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/run.xhtml">run()</a>
+                — Runs the process.</li>
+            <li id="setCommandLine"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setCommandLine.xhtml">setCommandLine()</a>
+                — Sets the command line to be executed.</li>
+            <li id="setEnhanceSigchildCompatibility"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setEnhanceSigchildCompatibility.xhtml">setEnhanceSigchildCompatibility()</a>
+                — Activates sigchild compatibility mode.</li>
+            <li id="setEnhanceWindowsCompatibility"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setEnhanceWindowsCompatibility.xhtml">setEnhanceWindowsCompatibility()</a>
+                — Sets whether or not Windows compatibility is enabled.</li>
+            <li id="setEnv"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setEnv.xhtml">setEnv()</a>
+                — Sets the environment variables.</li>
+            <li id="setOptions"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setOptions.xhtml">setOptions()</a>
+                — Sets the options for proc_open.</li>
+            <li id="setStdin"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setStdin.xhtml">setStdin()</a>
+                — Sets the contents of STDIN.</li>
+            <li id="setTimeout"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setTimeout.xhtml">setTimeout()</a>
+                — Sets the process timeout.</li>
+            <li id="setTty"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setTty.xhtml">setTty()</a>
+                — Enables or disables the TTY mode.</li>
+            <li id="setWorkingDirectory"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/setWorkingDirectory.xhtml">setWorkingDirectory()</a>
+                — Sets the current working directory.</li>
+            <li id="signal"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/signal.xhtml">signal()</a>
+                — Sends a posix signal to the process.</li>
+            <li id="start"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/start.xhtml">start()</a>
+                — Starts the process and returns after sending the STDIN.</li>
+            <li id="stop"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/stop.xhtml">stop()</a>
+                — Stops the process.</li>
+            <li id="wait"><a title="Symfony\Component\Process\Process" href="../classes/Symfony_Component_Process_Process/wait.xhtml">wait()</a>
+                — Waits for the process to terminate.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

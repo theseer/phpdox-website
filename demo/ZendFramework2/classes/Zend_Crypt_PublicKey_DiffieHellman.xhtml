@@ -1,590 +1,216 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Crypt\PublicKey\DiffieHellman - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Crypt\PublicKey\DiffieHellman</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Crypt_PublicKey">Zend\Crypt\PublicKey</a>
+          </li>
+          <li class="separator">DiffieHellman</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#DEFAULT_KEY_SIZE">DEFAULT_KEY_SIZE</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#FORMAT_BINARY">FORMAT_BINARY</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#FORMAT_NUMBER">FORMAT_NUMBER</a>
+            <a href="#constants">Constants</a>
           </li>
           <li>
-            <a href="#FORMAT_BTWOC">FORMAT_BTWOC</a>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul>
-          <li>
-            <a href="#useOpenssl">$useOpenssl</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#prime">$prime</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#generator">$generator</a>
-          </li>
-          <li>
-            <a href="#privateKey">$privateKey</a>
-          </li>
-          <li>
-            <a href="#math">$math</a>
-          </li>
-          <li>
-            <a href="#publicKey">$publicKey</a>
-          </li>
-          <li>
-            <a href="#secretKey">$secretKey</a>
-          </li>
-          <li>
-            <a href="#opensslKeyResource">$opensslKeyResource</a>
+            <a href="../source/Crypt/PublicKey/DiffieHellman.php.xhtml#line20">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#computeSecretKey">computeSecretKey</a>
-          </li>
-          <li>
-            <a href="#convert">convert</a>
-          </li>
-          <li>
-            <a href="#generateKeys">generateKeys</a>
-          </li>
-          <li>
-            <a href="#generatePrivateKey">generatePrivateKey</a>
-          </li>
-          <li>
-            <a href="#getGenerator">getGenerator</a>
-          </li>
-          <li>
-            <a href="#getPrime">getPrime</a>
-          </li>
-          <li>
-            <a href="#getPrivateKey">getPrivateKey</a>
-          </li>
-          <li>
-            <a href="#getPublicKey">getPublicKey</a>
-          </li>
-          <li>
-            <a href="#getSharedSecretKey">getSharedSecretKey</a>
-          </li>
-          <li>
-            <a href="#hasPrivateKey">hasPrivateKey</a>
-          </li>
-          <li>
-            <a href="#setGenerator">setGenerator</a>
-          </li>
-          <li>
-            <a href="#setPrime">setPrime</a>
-          </li>
-          <li>
-            <a href="#setPrivateKey">setPrivateKey</a>
-          </li>
-          <li>
-            <a href="#setPublicKey">setPublicKey</a>
-          </li>
-          <li>
-            <a href="#useOpensslExtension">useOpensslExtension</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Crypt\PublicKey\</span>DiffieHellman</h2>
-        <div class="file-notice">
-          <p>PHP implementation of the Diffie-Hellman public key encryption algorithm.</p>
-          <p>
-            <pre>Allows two unassociated parties to establish a joint shared secret key
-to be used in encrypting subsequent communications.</pre>
-          </p>
-        </div>
-        <ul class="fileinfos"/>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="DEFAULT_KEY_SIZE"/>DEFAULT_KEY_SIZE = 2048<hr/></li>
-          <li><a name="FORMAT_BINARY"/>FORMAT_BINARY = 'binary'<em> </em><p><li>Key formats</li></p><hr/></li>
-          <li><a name="FORMAT_NUMBER"/>FORMAT_NUMBER = 'number'<hr/></li>
-          <li><a name="FORMAT_BTWOC"/>FORMAT_BTWOC = 'btwoc'<hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="useOpenssl"/>
-            <h4><span class="label public">public</span>boolean 
-                
-                $useOpenssl</h4>
-            <ul class="varlist">
-              <li>Static flag to select whether to use PHP5.3's openssl extension if available.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="prime"/>
-            <h4><span class="label private">private</span>string 
-                
-                $prime</h4>
-            <ul class="varlist">
-              <li>Default large prime number; required by the algorithm.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="generator"/>
-            <h4><span class="label private">private</span>string 
-                
-                $generator</h4>
-            <ul class="varlist">
-              <li>The default generator number. This number must be greater than 0 but less than the prime number set.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="privateKey"/>
-            <h4><span class="label private">private</span>string 
-                
-                $privateKey</h4>
-            <ul class="varlist">
-              <li>A private number set by the local user. It's optional and will be generated if not set.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="math"/>
-            <h4><span class="label private">private</span>object 
-                
-                $math</h4>
-            <ul class="varlist">
-              <li>BigInteger support object courtesy of Zend\Math</li>
-            </ul>
-          </li>
-          <li>
-            <a name="publicKey"/>
-            <h4><span class="label private">private</span>string 
-                
-                $publicKey</h4>
-            <ul class="varlist">
-              <li>The public key generated by this instance after calling generateKeys().</li>
-            </ul>
-          </li>
-          <li>
-            <a name="secretKey"/>
-            <h4><span class="label private">private</span>string 
-                
-                $secretKey</h4>
-            <ul class="varlist">
-              <li>The shared secret key resulting from a completed Diffie Hellman exchange</li>
-            </ul>
-          </li>
-          <li>
-            <a name="opensslKeyResource"/>
-            <h4><span class="label protected">protected</span>resource 
-                
-                $opensslKeyResource</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $prime</strong>, <span class="param-type">string</span><strong> $generator</strong>, <span class="param-type">string</span><strong> $privateKey</strong>, <span class="param-type">string</span><strong> $privateKeyFormat</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor; if set construct the object using the parameter array to set values for Prime, Generator and Private.<pre>If a Private Key is not set, one will be generated at random.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$prime</code> - </li>
-                <li><code>$generator</code> - </li>
-                <li><code>$privateKey</code> - </li>
-                <li><code>$privateKeyFormat</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="computeSecretKey"/>
-            <h4><span class="label public">public</span>computeSecretKey<span style="font-size:90%;">( <span class="param-type">string</span><strong> $publicKey</strong>, <span class="param-type">string</span><strong> $publicKeyFormat</strong>, <span class="param-type">string</span><strong> $secretKeyFormat</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Compute the shared secret key based on the public key received from the the second party to this transaction. This should agree to the secret key the second party computes on our own public key.<pre>Once in agreement, the key is known to only to both parties.
-By default, the function expects the public key to be in binary form
-which is the typical format when being transmitted.
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Crypt\PublicKey\</small>DiffieHellman</h1>
+        <h4>PHP implementation of the Diffie-Hellman public key encryption algorithm.</h4>
+        <p>Allows two unassociated parties to establish a joint shared secret key<br/>to be used in encrypting subsequent communications.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class DiffieHellman
+            {<br/><ul class="none"><li>// constants</li><li>const DEFAULT_KEY_SIZE = 2048;</li><li>const FORMAT_BINARY = 'binary';</li><li>const FORMAT_NUMBER = 'number';</li><li>const FORMAT_BTWOC = 'btwoc';</li></ul><ul class="none"><li>// members</li><li>public <span title="Zend\Crypt\PublicKey\bool">bool</span> <a href="#members">$useOpenssl</a>;
+                    </li><li>private string <a href="#members">$prime</a>;
+                    </li><li>private string <a href="#members">$generator</a>;
+                    </li><li>private string <a href="#members">$privateKey</a>;
+                    </li><li>private <span title="\Zend\Math\BigInteger\Adapter\AdapterInterface">AdapterInterface</span> <a href="#members">$math</a>;
+                    </li><li>private string <a href="#members">$publicKey</a>;
+                    </li><li>private string <a href="#members">$secretKey</a>;
+                    </li><li>protected resource <a href="#members">$opensslKeyResource</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/__construct.xhtml">__construct</a>()
+                    </li><li>public static void <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/useOpensslExtension.xhtml">useOpensslExtension</a>()
+                    </li><li>public DiffieHellman <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/generateKeys.xhtml">generateKeys</a>()
+                    </li><li>public DiffieHellman <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/setPublicKey.xhtml">setPublicKey</a>()
+                    </li><li>public string <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/getPublicKey.xhtml">getPublicKey</a>()
+                    </li><li>public string <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/computeSecretKey.xhtml">computeSecretKey</a>()
+                    </li><li>public string <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/getSharedSecretKey.xhtml">getSharedSecretKey</a>()
+                    </li><li>public DiffieHellman <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/setPrime.xhtml">setPrime</a>()
+                    </li><li>public string <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/getPrime.xhtml">getPrime</a>()
+                    </li><li>public DiffieHellman <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/setGenerator.xhtml">setGenerator</a>()
+                    </li><li>public string <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/getGenerator.xhtml">getGenerator</a>()
+                    </li><li>public DiffieHellman <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/setPrivateKey.xhtml">setPrivateKey</a>()
+                    </li><li>public string <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/getPrivateKey.xhtml">getPrivateKey</a>()
+                    </li><li>public bool <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/hasPrivateKey.xhtml">hasPrivateKey</a>()
+                    </li><li>protected string <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/convert.xhtml">convert</a>()
+                    </li><li>protected string <a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/generatePrivateKey.xhtml">generatePrivateKey</a>()
+                    </li></ul>
 
-If you need the binary form of the shared secret key, call
-getSharedSecretKey() with the optional parameter for Binary output.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$publicKey</code> - </li>
-                <li><code>$publicKeyFormat</code> - </li>
-                <li><code>$secretKeyFormat</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Crypt\Exception\InvalidArgumentException</code>
-                </li>
-                <li>
-                  <code>\Zend\Crypt\Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="generateKeys"/>
-            <h4><span class="label public">public</span>generateKeys<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Generate own public key. If a private number has not already been set, one will be generated at this stage.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Crypt\Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getGenerator"/>
-            <h4><span class="label public">public</span>getGenerator<span style="font-size:90%;">( <span class="param-type">string</span><strong> $format</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Getter for the value of the generator number</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$format</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Crypt\Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPrime"/>
-            <h4><span class="label public">public</span>getPrime<span style="font-size:90%;">( <span class="param-type">string</span><strong> $format</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Getter for the value of the prime number</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$format</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Crypt\Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPrivateKey"/>
-            <h4><span class="label public">public</span>getPrivateKey<span style="font-size:90%;">( <span class="param-type">string</span><strong> $format</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Getter for the value of the private number</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$format</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPublicKey"/>
-            <h4><span class="label public">public</span>getPublicKey<span style="font-size:90%;">( <span class="param-type">string</span><strong> $format</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns own public key for communication to the second party to this transaction</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$format</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Crypt\Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSharedSecretKey"/>
-            <h4><span class="label public">public</span>getSharedSecretKey<span style="font-size:90%;">( <span class="param-type">string</span><strong> $format</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return the computed shared secret key from the DiffieHellman transaction</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$format</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Crypt\Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasPrivateKey"/>
-            <h4><span class="label public">public</span>hasPrivateKey<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check whether a private key currently exists.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setGenerator"/>
-            <h4><span class="label public">public</span>setGenerator<span style="font-size:90%;">( <span class="param-type">string</span><strong> $number</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Setter for the value of the generator number</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$number</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Crypt\Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setPrime"/>
-            <h4><span class="label public">public</span>setPrime<span style="font-size:90%;">( <span class="param-type">string</span><strong> $number</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Setter for the value of the prime number</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$number</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Crypt\Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setPrivateKey"/>
-            <h4><span class="label public">public</span>setPrivateKey<span style="font-size:90%;">( <span class="param-type">string</span><strong> $number</strong>, <span class="param-type">string</span><strong> $format</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Setter for the value of the private number</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$number</code> - </li>
-                <li><code>$format</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Crypt\Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setPublicKey"/>
-            <h4><span class="label public">public</span>setPublicKey<span style="font-size:90%;">( <span class="param-type">string</span><strong> $number</strong>, <span class="param-type">string</span><strong> $format</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Setter for the value of the public number</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$number</code> - </li>
-                <li><code>$format</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Crypt\Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="useOpensslExtension"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>useOpensslExtension<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $flag</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set whether to use openssl extension</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$flag</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="convert"/>
-            <h4><span class="label protected">protected</span>convert<span style="font-size:90%;">( <span class="param-type"/><strong> $number</strong>, <span class="param-type">string</span><strong> $inputFormat</strong>, <span class="param-type">string</span><strong> $outputFormat</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Convert number between formats</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$number</code> - </li>
-                <li><code>$inputFormat</code> - </li>
-                <li><code>$outputFormat</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="generatePrivateKey"/>
-            <h4><span class="label protected">protected</span>generatePrivateKey<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>In the event a private number/key has not been set by the user, or generated by ext/openssl, a best attempt will be made to generate a random key. Having a random number generator installed on linux/bsd is highly recommended! The alternative is not recommended for production unless without any other option.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+            }<br/></div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="DEFAULT_KEY_SIZE">DEFAULT_KEY_SIZE</td>
+              <td>2048</td>
+            </tr>
+            <tr>
+              <td id="FORMAT_BINARY">FORMAT_BINARY</td>
+              <td>'binary'</td>
+            </tr>
+            <tr>
+              <td id="FORMAT_NUMBER">FORMAT_NUMBER</td>
+              <td>'number'</td>
+            </tr>
+            <tr>
+              <td id="FORMAT_BTWOC">FORMAT_BTWOC</td>
+              <td>'btwoc'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="generator"><strong>$generator</strong>
+                —
+                string<br/><span class="indent">The default generator number. This number must be greater than 0 but less than the prime number set.</span></li>
+            <li id="math"><strong>$math</strong>
+                —
+                <a href="#">\Zend\Math\BigInteger\Adapter\AdapterInterface</a><br/><span class="indent">BigInteger support object courtesy of Zend\Math</span></li>
+            <li id="prime"><strong>$prime</strong>
+                —
+                string<br/><span class="indent">Default large prime number; required by the algorithm.</span></li>
+            <li id="privateKey"><strong>$privateKey</strong>
+                —
+                string<br/><span class="indent">A private number set by the local user. It's optional and will be generated if not set.</span></li>
+            <li id="publicKey"><strong>$publicKey</strong>
+                —
+                string<br/><span class="indent">The public key generated by this instance after calling generateKeys().</span></li>
+            <li id="secretKey"><strong>$secretKey</strong>
+                —
+                string<br/><span class="indent">The shared secret key resulting from a completed Diffie Hellman exchange</span></li>
+          </ul>
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="opensslKeyResource"><strong>$opensslKeyResource</strong>
+                —
+                resource</li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="useOpenssl"><strong>$useOpenssl</strong>
+                —
+                <a href="#">Zend\Crypt\PublicKey\bool</a><br/><span class="indent">Static flag to select whether to use PHP5.3's openssl extension if available.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="convert"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/convert.xhtml">convert()</a>
+                — Convert number between formats</li>
+            <li id="generatePrivateKey"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/generatePrivateKey.xhtml">generatePrivateKey()</a>
+                — In the event a private number/key has not been set by the user, or generated by ext/openssl, a best attempt will be made to generate a random key. Having a random number generator installed on linux/bsd is highly recommended! The alternative is not recommended for production unless without any other option.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/__construct.xhtml">__construct()</a>
+                — Constructor; if set construct the object using the parameter array to set values for Prime, Generator and Private.</li>
+            <li id="computeSecretKey"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/computeSecretKey.xhtml">computeSecretKey()</a>
+                — Compute the shared secret key based on the public key received from the the second party to this transaction. This should agree to the secret key the second party computes on our own public key.</li>
+            <li id="generateKeys"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/generateKeys.xhtml">generateKeys()</a>
+                — Generate own public key. If a private number has not already been set, one will be generated at this stage.</li>
+            <li id="getGenerator"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/getGenerator.xhtml">getGenerator()</a>
+                — Getter for the value of the generator number</li>
+            <li id="getPrime"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/getPrime.xhtml">getPrime()</a>
+                — Getter for the value of the prime number</li>
+            <li id="getPrivateKey"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/getPrivateKey.xhtml">getPrivateKey()</a>
+                — Getter for the value of the private number</li>
+            <li id="getPublicKey"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/getPublicKey.xhtml">getPublicKey()</a>
+                — Returns own public key for communication to the second party to this transaction</li>
+            <li id="getSharedSecretKey"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/getSharedSecretKey.xhtml">getSharedSecretKey()</a>
+                — Return the computed shared secret key from the DiffieHellman transaction</li>
+            <li id="hasPrivateKey"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/hasPrivateKey.xhtml">hasPrivateKey()</a>
+                — Check whether a private key currently exists.</li>
+            <li id="setGenerator"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/setGenerator.xhtml">setGenerator()</a>
+                — Setter for the value of the generator number</li>
+            <li id="setPrime"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/setPrime.xhtml">setPrime()</a>
+                — Setter for the value of the prime number</li>
+            <li id="setPrivateKey"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/setPrivateKey.xhtml">setPrivateKey()</a>
+                — Setter for the value of the private number</li>
+            <li id="setPublicKey"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/setPublicKey.xhtml">setPublicKey()</a>
+                — Setter for the value of the public number</li>
+            <li id="useOpensslExtension"><a title="Zend\Crypt\PublicKey\DiffieHellman" href="../classes/Zend_Crypt_PublicKey_DiffieHellman/useOpensslExtension.xhtml">useOpensslExtension()</a>
+                — Set whether to use openssl extension</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

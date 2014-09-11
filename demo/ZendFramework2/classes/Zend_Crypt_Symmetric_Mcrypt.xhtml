@@ -1,623 +1,230 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Crypt\Symmetric\Mcrypt - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Crypt\Symmetric\Mcrypt</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Crypt_Symmetric">Zend\Crypt\Symmetric</a>
+          </li>
+          <li class="separator">Mcrypt</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#DEFAULT_PADDING">DEFAULT_PADDING</a>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Crypt/Symmetric/Mcrypt.php.xhtml#line22">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
-        <ul>
-          <li>
-            <a href="#key">$key</a>
-          </li>
-          <li>
-            <a href="#iv">$iv</a>
-          </li>
-          <li>
-            <a href="#algo">$algo</a>
-          </li>
-          <li>
-            <a href="#mode">$mode</a>
-          </li>
-          <li>
-            <a href="#padding">$padding</a>
-          </li>
-          <li>
-            <a href="#paddingPlugins">$paddingPlugins</a>
-          </li>
-          <li>
-            <a href="#supportedAlgos">$supportedAlgos</a>
-          </li>
-          <li>
-            <a href="#supportedModes">$supportedModes</a>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#decrypt">decrypt</a>
-          </li>
-          <li>
-            <a href="#encrypt">encrypt</a>
-          </li>
-          <li>
-            <a href="#getAlgorithm">getAlgorithm</a>
-          </li>
-          <li>
-            <a href="#getBlockSize">getBlockSize</a>
-          </li>
-          <li>
-            <a href="#getKey">getKey</a>
-          </li>
-          <li>
-            <a href="#getKeySize">getKeySize</a>
-          </li>
-          <li>
-            <a href="#getMode">getMode</a>
-          </li>
-          <li>
-            <a href="#getPadding">getPadding</a>
-          </li>
-          <li>
-            <a href="#getPaddingPluginManager">getPaddingPluginManager</a>
-          </li>
-          <li>
-            <a href="#getSalt">getSalt</a>
-          </li>
-          <li>
-            <a href="#getSaltSize">getSaltSize</a>
-          </li>
-          <li>
-            <a href="#getSupportedAlgorithms">getSupportedAlgorithms</a>
-          </li>
-          <li>
-            <a href="#getSupportedModes">getSupportedModes</a>
-          </li>
-          <li>
-            <a href="#setAlgorithm">setAlgorithm</a>
-          </li>
-          <li>
-            <a href="#setDefaultOptions">setDefaultOptions</a>
-          </li>
-          <li>
-            <a href="#setKey">setKey</a>
-          </li>
-          <li>
-            <a href="#setMode">setMode</a>
-          </li>
-          <li>
-            <a href="#setPadding">setPadding</a>
-          </li>
-          <li>
-            <a href="#setPaddingPluginManager">setPaddingPluginManager</a>
-          </li>
-          <li>
-            <a href="#setSalt">setSalt</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Crypt\Symmetric\</span>Mcrypt</h2>
-        <div class="file-notice">
-          <p>Symmetric encryption using the Mcrypt extension</p>
-          <p>
-            <pre>NOTE: DO NOT USE only this class to encrypt data.
-This class doesn't provide authentication and integrity check over the data.
-PLEASE USE Zend\Crypt\BlockCipher instead!</pre>
-          </p>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Crypt\Symmetric\</small>Mcrypt</h1>
+        <h4>Symmetric encryption using the Mcrypt extension</h4>
+        <p>NOTE: DO NOT USE only this class to encrypt data.<br/>This class doesn't provide authentication and integrity check over the data.<br/>PLEASE USE Zend\Crypt\BlockCipher instead!</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Mcrypt
+                implements
+                <a title="Zend\Crypt\Symmetric\SymmetricInterface" href="../interfaces/Zend_Crypt_Symmetric_SymmetricInterface.xhtml">SymmetricInterface</a>
+            {<br/><ul class="none"><li>// constants</li><li>const DEFAULT_PADDING = 'pkcs7';</li></ul><ul class="none"><li>// members</li><li>protected string <a href="#members">$key</a>;
+                    </li><li>protected string <a href="#members">$iv</a>;
+                    </li><li>protected string <a href="#members">$algo</a>;
+                    </li><li>protected string <a href="#members">$mode</a>;
+                    </li><li>protected <span title="Zend\Crypt\Symmetric\Padding\PaddingInterface">PaddingInterface</span> <a href="#members">$padding</a>;
+                    </li><li>protected <span title="Zend\Crypt\Symmetric\PaddingPluginManager">PaddingPluginManager</span> <a href="#members">$paddingPlugins</a>;
+                    </li><li>protected array <a href="#members">$supportedAlgos</a>;
+                    </li><li>protected array <a href="#members">$supportedModes</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/__construct.xhtml">__construct</a>()
+                    </li><li>protected void <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setDefaultOptions.xhtml">setDefaultOptions</a>()
+                    </li><li>public static PaddingPluginManager <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getPaddingPluginManager.xhtml">getPaddingPluginManager</a>()
+                    </li><li>public static void <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setPaddingPluginManager.xhtml">setPaddingPluginManager</a>()
+                    </li><li>public int <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getKeySize.xhtml">getKeySize</a>()
+                    </li><li>public Mcrypt <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setKey.xhtml">setKey</a>()
+                    </li><li>public string <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getKey.xhtml">getKey</a>()
+                    </li><li>public Mcrypt <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setAlgorithm.xhtml">setAlgorithm</a>()
+                    </li><li>public string <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getAlgorithm.xhtml">getAlgorithm</a>()
+                    </li><li>public Mcrypt <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setPadding.xhtml">setPadding</a>()
+                    </li><li>public PaddingInterface <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getPadding.xhtml">getPadding</a>()
+                    </li><li>public string <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/encrypt.xhtml">encrypt</a>()
+                    </li><li>public string <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/decrypt.xhtml">decrypt</a>()
+                    </li><li>public int <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getSaltSize.xhtml">getSaltSize</a>()
+                    </li><li>public array <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getSupportedAlgorithms.xhtml">getSupportedAlgorithms</a>()
+                    </li><li>public Mcrypt <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setSalt.xhtml">setSalt</a>()
+                    </li><li>public string <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getSalt.xhtml">getSalt</a>()
+                    </li><li>public string <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getOriginalSalt.xhtml">getOriginalSalt</a>()
+                    </li><li>public Mcrypt <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setMode.xhtml">setMode</a>()
+                    </li><li>public string <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getMode.xhtml">getMode</a>()
+                    </li><li>public array <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getSupportedModes.xhtml">getSupportedModes</a>()
+                    </li><li>public int <a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getBlockSize.xhtml">getBlockSize</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Zend_Crypt_Symmetric_SymmetricInterface.xhtml">Zend\Crypt\Symmetric\SymmetricInterface</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Zend_Crypt_Symmetric_SymmetricInterface.xhtml">Zend\Crypt\Symmetric\SymmetricInterface</a>
-          </li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="DEFAULT_PADDING"/>DEFAULT_PADDING = 'pkcs7'<hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="key"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $key</h4>
-            <ul class="varlist">
-              <li>Key</li>
-            </ul>
-          </li>
-          <li>
-            <a name="iv"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $iv</h4>
-            <ul class="varlist">
-              <li>IV</li>
-            </ul>
-          </li>
-          <li>
-            <a name="algo"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $algo</h4>
-            <ul class="varlist">
-              <li>Encryption algorithm</li>
-            </ul>
-          </li>
-          <li>
-            <a name="mode"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $mode</h4>
-            <ul class="varlist">
-              <li>Encryption mode</li>
-            </ul>
-          </li>
-          <li>
-            <a name="padding"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $padding</h4>
-            <ul class="varlist">
-              <li>Padding</li>
-            </ul>
-          </li>
-          <li>
-            <a name="paddingPlugins"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $paddingPlugins</h4>
-            <ul class="varlist">
-              <li>Padding plugins</li>
-            </ul>
-          </li>
-          <li>
-            <a name="supportedAlgos"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $supportedAlgos</h4>
-            <ul class="varlist">
-              <li>Supported cipher algorithms</li>
-            </ul>
-          </li>
-          <li>
-            <a name="supportedModes"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $supportedModes</h4>
-            <ul class="varlist">
-              <li>Supported encryption modes</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$options</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException</code>
-                </li>
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="decrypt"/>
-            <h4><span class="label public">public</span>decrypt<span style="font-size:90%;">( <span class="param-type">string</span><strong> $data</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Decrypt</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$data</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="encrypt"/>
-            <h4><span class="label public">public</span>encrypt<span style="font-size:90%;">( <span class="param-type">string</span><strong> $data</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Encrypt</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$data</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAlgorithm"/>
-            <h4><span class="label public">public</span>getAlgorithm<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the encryption algorithm</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getBlockSize"/>
-            <h4><span class="label public">public</span>getBlockSize<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the block size</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getKey"/>
-            <h4><span class="label public">public</span>getKey<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the encryption key</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getKeySize"/>
-            <h4><span class="label public">public</span>getKeySize<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the maximum key size for the selected cipher and mode of operation</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMode"/>
-            <h4><span class="label public">public</span>getMode<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the cipher mode</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPadding"/>
-            <h4><span class="label public">public</span>getPadding<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the padding object</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPaddingPluginManager"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getPaddingPluginManager<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the padding plugin manager.  If it doesn't exist it's created.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSalt"/>
-            <h4><span class="label public">public</span>getSalt<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the salt (IV)</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSaltSize"/>
-            <h4><span class="label public">public</span>getSaltSize<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the salt (IV) size</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSupportedAlgorithms"/>
-            <h4><span class="label public">public</span>getSupportedAlgorithms<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the supported algorithms</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSupportedModes"/>
-            <h4><span class="label public">public</span>getSupportedModes<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get all supported encryption modes</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setAlgorithm"/>
-            <h4><span class="label public">public</span>setAlgorithm<span style="font-size:90%;">( <span class="param-type">string</span><strong> $algo</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the encryption algorithm (cipher)</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$algo</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setKey"/>
-            <h4><span class="label public">public</span>setKey<span style="font-size:90%;">( <span class="param-type">string</span><strong> $key</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the encryption key</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$key</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setMode"/>
-            <h4><span class="label public">public</span>setMode<span style="font-size:90%;">( <span class="param-type">string</span><strong> $mode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the cipher mode</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mode</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setPadding"/>
-            <h4><span class="label public">public</span>setPadding<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Crypt_Symmetric_Padding_PaddingInterface.xhtml">Zend\Crypt\Symmetric\Padding\PaddingInterface</a></span><strong> $padding</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the padding object</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$padding</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setPaddingPluginManager"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>setPaddingPluginManager<span style="font-size:90%;">( <span class="param-type"><span title="string|PaddingPluginManager">string|PaddingPluginManager</span></span><strong> $plugins</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the padding plugin manager</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$plugins</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setSalt"/>
-            <h4><span class="label public">public</span>setSalt<span style="font-size:90%;">( <span class="param-type">string</span><strong> $salt</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the salt (IV)</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$salt</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setDefaultOptions"/>
-            <h4><span class="label protected">protected</span>setDefaultOptions<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set default options</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$options</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="DEFAULT_PADDING">DEFAULT_PADDING</td>
+              <td>'pkcs7'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="algo"><strong>$algo</strong>
+                —
+                string<br/><span class="indent">Encryption algorithm</span></li>
+            <li id="iv"><strong>$iv</strong>
+                —
+                string<br/><span class="indent">IV</span></li>
+            <li id="key"><strong>$key</strong>
+                —
+                string<br/><span class="indent">Key</span></li>
+            <li id="mode"><strong>$mode</strong>
+                —
+                string<br/><span class="indent">Encryption mode</span></li>
+            <li id="padding"><strong>$padding</strong>
+                —
+                <a href="#">Zend\Crypt\Symmetric\Padding\PaddingInterface</a><br/><span class="indent">Padding</span></li>
+            <li id="paddingPlugins"><strong>$paddingPlugins</strong>
+                —
+                <a href="#">Zend\Crypt\Symmetric\PaddingPluginManager</a><br/><span class="indent">Padding plugins</span></li>
+            <li id="supportedAlgos"><strong>$supportedAlgos</strong>
+                —
+                array<br/><span class="indent">Supported cipher algorithms</span></li>
+            <li id="supportedModes"><strong>$supportedModes</strong>
+                —
+                array<br/><span class="indent">Supported encryption modes</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="setDefaultOptions"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setDefaultOptions.xhtml">setDefaultOptions()</a>
+                — Set default options</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/__construct.xhtml">__construct()</a>
+                — Constructor</li>
+            <li id="decrypt"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/decrypt.xhtml">decrypt()</a>
+                — Decrypt</li>
+            <li id="encrypt"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/encrypt.xhtml">encrypt()</a>
+                — Encrypt</li>
+            <li id="getAlgorithm"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getAlgorithm.xhtml">getAlgorithm()</a>
+                — Get the encryption algorithm</li>
+            <li id="getBlockSize"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getBlockSize.xhtml">getBlockSize()</a>
+                — Get the block size</li>
+            <li id="getKey"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getKey.xhtml">getKey()</a>
+                — Get the encryption key</li>
+            <li id="getKeySize"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getKeySize.xhtml">getKeySize()</a>
+                — Get the maximum key size for the selected cipher and mode of operation</li>
+            <li id="getMode"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getMode.xhtml">getMode()</a>
+                — Get the cipher mode</li>
+            <li id="getOriginalSalt"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getOriginalSalt.xhtml">getOriginalSalt()</a>
+                — Get the original salt value</li>
+            <li id="getPadding"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getPadding.xhtml">getPadding()</a>
+                — Get the padding object</li>
+            <li id="getPaddingPluginManager"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getPaddingPluginManager.xhtml">getPaddingPluginManager()</a>
+                — Returns the padding plugin manager.  If it doesn't exist it's created.</li>
+            <li id="getSalt"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getSalt.xhtml">getSalt()</a>
+                — Get the salt (IV) according to the size requested by the algorithm</li>
+            <li id="getSaltSize"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getSaltSize.xhtml">getSaltSize()</a>
+                — Get the salt (IV) size</li>
+            <li id="getSupportedAlgorithms"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getSupportedAlgorithms.xhtml">getSupportedAlgorithms()</a>
+                — Get the supported algorithms</li>
+            <li id="getSupportedModes"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/getSupportedModes.xhtml">getSupportedModes()</a>
+                — Get all supported encryption modes</li>
+            <li id="setAlgorithm"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setAlgorithm.xhtml">setAlgorithm()</a>
+                — Set the encryption algorithm (cipher)</li>
+            <li id="setKey"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setKey.xhtml">setKey()</a>
+                — Set the encryption key If the key is longer than maximum supported, it will be truncated by getKey().</li>
+            <li id="setMode"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setMode.xhtml">setMode()</a>
+                — Set the cipher mode</li>
+            <li id="setPadding"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setPadding.xhtml">setPadding()</a>
+                — Set the padding object</li>
+            <li id="setPaddingPluginManager"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setPaddingPluginManager.xhtml">setPaddingPluginManager()</a>
+                — Set the padding plugin manager</li>
+            <li id="setSalt"><a title="Zend\Crypt\Symmetric\Mcrypt" href="../classes/Zend_Crypt_Symmetric_Mcrypt/setSalt.xhtml">setSalt()</a>
+                — Set the salt (IV)</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

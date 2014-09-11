@@ -1,1027 +1,293 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\ORM\Configuration - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\ORM\Configuration</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_ORM">Doctrine\ORM</a>
+          </li>
+          <li class="separator">Configuration</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Methods</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#addCustomDatetimeFunction">addCustomDatetimeFunction</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#addCustomHydrationMode">addCustomHydrationMode</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#addCustomNumericFunction">addCustomNumericFunction</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#addCustomStringFunction">addCustomStringFunction</a>
+            <a href="#tasks">Tasks</a>
           </li>
           <li>
-            <a href="#addEntityNamespace">addEntityNamespace</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#addFilter">addFilter</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#addNamedNativeQuery">addNamedNativeQuery</a>
-          </li>
-          <li>
-            <a href="#addNamedQuery">addNamedQuery</a>
-          </li>
-          <li>
-            <a href="#ensureProductionSettings">ensureProductionSettings</a>
-          </li>
-          <li>
-            <a href="#getAutoGenerateProxyClasses">getAutoGenerateProxyClasses</a>
-          </li>
-          <li>
-            <a href="#getClassMetadataFactoryName">getClassMetadataFactoryName</a>
-          </li>
-          <li>
-            <a href="#getCustomDatetimeFunction">getCustomDatetimeFunction</a>
-          </li>
-          <li>
-            <a href="#getCustomHydrationMode">getCustomHydrationMode</a>
-          </li>
-          <li>
-            <a href="#getCustomNumericFunction">getCustomNumericFunction</a>
-          </li>
-          <li>
-            <a href="#getCustomStringFunction">getCustomStringFunction</a>
-          </li>
-          <li>
-            <a href="#getDefaultRepositoryClassName">getDefaultRepositoryClassName</a>
-          </li>
-          <li>
-            <a href="#getEntityNamespace">getEntityNamespace</a>
-          </li>
-          <li>
-            <a href="#getEntityNamespaces">getEntityNamespaces</a>
-          </li>
-          <li>
-            <a href="#getFilterClassName">getFilterClassName</a>
-          </li>
-          <li>
-            <a href="#getFilterSchemaAssetsExpression">getFilterSchemaAssetsExpression</a>
-          </li>
-          <li>
-            <a href="#getHydrationCacheImpl">getHydrationCacheImpl</a>
-          </li>
-          <li>
-            <a href="#getMetadataCacheImpl">getMetadataCacheImpl</a>
-          </li>
-          <li>
-            <a href="#getMetadataDriverImpl">getMetadataDriverImpl</a>
-          </li>
-          <li>
-            <a href="#getNamedNativeQuery">getNamedNativeQuery</a>
-          </li>
-          <li>
-            <a href="#getNamedQuery">getNamedQuery</a>
-          </li>
-          <li>
-            <a href="#getNamingStrategy">getNamingStrategy</a>
-          </li>
-          <li>
-            <a href="#getProxyDir">getProxyDir</a>
-          </li>
-          <li>
-            <a href="#getProxyNamespace">getProxyNamespace</a>
-          </li>
-          <li>
-            <a href="#getQueryCacheImpl">getQueryCacheImpl</a>
-          </li>
-          <li>
-            <a href="#getQuoteStrategy">getQuoteStrategy</a>
-          </li>
-          <li>
-            <a href="#getResultCacheImpl">getResultCacheImpl</a>
-          </li>
-          <li>
-            <a href="#getSQLLogger">getSQLLogger</a>
-          </li>
-          <li>
-            <a href="#newDefaultAnnotationDriver">newDefaultAnnotationDriver</a>
-          </li>
-          <li>
-            <a href="#setAutoGenerateProxyClasses">setAutoGenerateProxyClasses</a>
-          </li>
-          <li>
-            <a href="#setClassMetadataFactoryName">setClassMetadataFactoryName</a>
-          </li>
-          <li>
-            <a href="#setCustomDatetimeFunctions">setCustomDatetimeFunctions</a>
-          </li>
-          <li>
-            <a href="#setCustomHydrationModes">setCustomHydrationModes</a>
-          </li>
-          <li>
-            <a href="#setCustomNumericFunctions">setCustomNumericFunctions</a>
-          </li>
-          <li>
-            <a href="#setCustomStringFunctions">setCustomStringFunctions</a>
-          </li>
-          <li>
-            <a href="#setDefaultRepositoryClassName">setDefaultRepositoryClassName</a>
-          </li>
-          <li>
-            <a href="#setEntityNamespaces">setEntityNamespaces</a>
-          </li>
-          <li>
-            <a href="#setFilterSchemaAssetsExpression">setFilterSchemaAssetsExpression</a>
-          </li>
-          <li>
-            <a href="#setHydrationCacheImpl">setHydrationCacheImpl</a>
-          </li>
-          <li>
-            <a href="#setMetadataCacheImpl">setMetadataCacheImpl</a>
-          </li>
-          <li>
-            <a href="#setMetadataDriverImpl">setMetadataDriverImpl</a>
-          </li>
-          <li>
-            <a href="#setNamingStrategy">setNamingStrategy</a>
-          </li>
-          <li>
-            <a href="#setProxyDir">setProxyDir</a>
-          </li>
-          <li>
-            <a href="#setProxyNamespace">setProxyNamespace</a>
-          </li>
-          <li>
-            <a href="#setQueryCacheImpl">setQueryCacheImpl</a>
-          </li>
-          <li>
-            <a href="#setQuoteStrategy">setQuoteStrategy</a>
-          </li>
-          <li>
-            <a href="#setResultCacheImpl">setResultCacheImpl</a>
-          </li>
-          <li>
-            <a href="#setSQLLogger">setSQLLogger</a>
+            <a href="../source/doctrine/orm/lib/Doctrine/ORM/Configuration.php.xhtml#line46">Source</a>
           </li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\ORM\</span>Configuration</h2>
-        <div class="file-notice">
-          <p>Configuration container for all configuration options of Doctrine.</p>
-          <p>
-            <pre>It combines all configuration options from DBAL &amp; ORM.</pre>
-          </p>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\ORM\</small>Configuration</h1>
+        <h4>Configuration container for all configuration options of Doctrine.</h4>
+        <p>It combines all configuration options from DBAL &amp; ORM.</p>
+        <ul>
+          <li>Author: Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Configuration
+                extends <a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration.xhtml">Configuration</a>
+            {<br/><ul class="none"><li>// Inherited members from <span title="Doctrine\DBAL\Configuration">Configuration</span></li><li>protected array <a href="#members">$_attributes</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setProxyDir.xhtml">setProxyDir</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getProxyDir.xhtml">getProxyDir</a>()
+                    </li><li>public boolean <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getAutoGenerateProxyClasses.xhtml">getAutoGenerateProxyClasses</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setAutoGenerateProxyClasses.xhtml">setAutoGenerateProxyClasses</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getProxyNamespace.xhtml">getProxyNamespace</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setProxyNamespace.xhtml">setProxyNamespace</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setMetadataDriverImpl.xhtml">setMetadataDriverImpl</a>()
+                    </li><li>public AnnotationDriver <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/newDefaultAnnotationDriver.xhtml">newDefaultAnnotationDriver</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addEntityNamespace.xhtml">addEntityNamespace</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getEntityNamespace.xhtml">getEntityNamespace</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setEntityNamespaces.xhtml">setEntityNamespaces</a>()
+                    </li><li>public array <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getEntityNamespaces.xhtml">getEntityNamespaces</a>()
+                    </li><li>public MappingDriver <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getMetadataDriverImpl.xhtml">getMetadataDriverImpl</a>()
+                    </li><li>public Cache <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getQueryCacheImpl.xhtml">getQueryCacheImpl</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setQueryCacheImpl.xhtml">setQueryCacheImpl</a>()
+                    </li><li>public Cache <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getHydrationCacheImpl.xhtml">getHydrationCacheImpl</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setHydrationCacheImpl.xhtml">setHydrationCacheImpl</a>()
+                    </li><li>public Cache <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getMetadataCacheImpl.xhtml">getMetadataCacheImpl</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setMetadataCacheImpl.xhtml">setMetadataCacheImpl</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addNamedQuery.xhtml">addNamedQuery</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getNamedQuery.xhtml">getNamedQuery</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addNamedNativeQuery.xhtml">addNamedNativeQuery</a>()
+                    </li><li>public array <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getNamedNativeQuery.xhtml">getNamedNativeQuery</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/ensureProductionSettings.xhtml">ensureProductionSettings</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addCustomStringFunction.xhtml">addCustomStringFunction</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getCustomStringFunction.xhtml">getCustomStringFunction</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setCustomStringFunctions.xhtml">setCustomStringFunctions</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addCustomNumericFunction.xhtml">addCustomNumericFunction</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getCustomNumericFunction.xhtml">getCustomNumericFunction</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setCustomNumericFunctions.xhtml">setCustomNumericFunctions</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addCustomDatetimeFunction.xhtml">addCustomDatetimeFunction</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getCustomDatetimeFunction.xhtml">getCustomDatetimeFunction</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setCustomDatetimeFunctions.xhtml">setCustomDatetimeFunctions</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setCustomHydrationModes.xhtml">setCustomHydrationModes</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getCustomHydrationMode.xhtml">getCustomHydrationMode</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addCustomHydrationMode.xhtml">addCustomHydrationMode</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setClassMetadataFactoryName.xhtml">setClassMetadataFactoryName</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getClassMetadataFactoryName.xhtml">getClassMetadataFactoryName</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addFilter.xhtml">addFilter</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getFilterClassName.xhtml">getFilterClassName</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setDefaultRepositoryClassName.xhtml">setDefaultRepositoryClassName</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getDefaultRepositoryClassName.xhtml">getDefaultRepositoryClassName</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setNamingStrategy.xhtml">setNamingStrategy</a>()
+                    </li><li>public NamingStrategy <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getNamingStrategy.xhtml">getNamingStrategy</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setQuoteStrategy.xhtml">setQuoteStrategy</a>()
+                    </li><li>public QuoteStrategy <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getQuoteStrategy.xhtml">getQuoteStrategy</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Doctrine\DBAL\Configuration">Configuration</span></li><li>public void <a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration/setSQLLogger.xhtml">setSQLLogger</a>()
+                        </li><li>public SQLLogger <a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration/getSQLLogger.xhtml">getSQLLogger</a>()
+                        </li><li>public Cache <a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration/getResultCacheImpl.xhtml">getResultCacheImpl</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration/setResultCacheImpl.xhtml">setResultCacheImpl</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration/setFilterSchemaAssetsExpression.xhtml">setFilterSchemaAssetsExpression</a>()
+                        </li><li>public string|null <a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration/getFilterSchemaAssetsExpression.xhtml">getFilterSchemaAssetsExpression</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Doctrine_DBAL_Configuration.xhtml">Doctrine\DBAL\Configuration</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"><li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li><li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li><li><b>Author: </b>Jonathan Wage &lt;jonwage@gmail.com&gt;</li><li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>When adding a new configuration option just write a getter/setter pair.</ul>
-        <h3>Members</h3>
-        <ul class="varlist"/>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="addCustomDatetimeFunction"/>
-            <h4><span class="label public">public</span>addCustomDatetimeFunction<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">string</span><strong> $className</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Registers a custom DQL function that produces a date/time value.<pre>Such a function can then be used in any DQL statement in any place where date/time
-functions are allowed.
-
-DQL function names are case-insensitive.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-                <li><code>$className</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ORMException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addCustomHydrationMode"/>
-            <h4><span class="label public">public</span>addCustomHydrationMode<span style="font-size:90%;">( <span class="param-type">string</span><strong> $modeName</strong>, <span class="param-type">string</span><strong> $hydrator</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add a custom hydration mode.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$modeName</code> - The hydration mode name.</li>
-                <li><code>$hydrator</code> - The hydrator class name.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addCustomNumericFunction"/>
-            <h4><span class="label public">public</span>addCustomNumericFunction<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">string</span><strong> $className</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Registers a custom DQL function that produces a numeric value.<pre>Such a function can then be used in any DQL statement in any place where numeric
-functions are allowed.
-
-DQL function names are case-insensitive.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-                <li><code>$className</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ORMException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addCustomStringFunction"/>
-            <h4><span class="label public">public</span>addCustomStringFunction<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">string</span><strong> $className</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Registers a custom DQL function that produces a string value.<pre>Such a function can then be used in any DQL statement in any place where string
-functions are allowed.
-
-DQL function names are case-insensitive.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-                <li><code>$className</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ORMException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addEntityNamespace"/>
-            <h4><span class="label public">public</span>addEntityNamespace<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $namespace</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a namespace under a certain alias.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - </li>
-                <li><code>$namespace</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addFilter"/>
-            <h4><span class="label public">public</span>addFilter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">string</span><strong> $className</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add a filter to the list of possible filters.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the filter.</li>
-                <li><code>$className</code> - The class name of the filter.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addNamedNativeQuery"/>
-            <h4><span class="label public">public</span>addNamedNativeQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">string</span><strong> $sql</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_Query_ResultSetMapping.xhtml">Doctrine\ORM\Query\ResultSetMapping</a></span><strong> $rsm</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a named native query to the configuration.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the query.</li>
-                <li><code>$sql</code> - The native SQL query string.</li>
-                <li><code>$rsm</code> - The ResultSetMapping used for the results of the SQL query.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addNamedQuery"/>
-            <h4><span class="label public">public</span>addNamedQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">string</span><strong> $dql</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a named DQL query to the configuration.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the query.</li>
-                <li><code>$dql</code> - The DQL query string.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ensureProductionSettings"/>
-            <h4><span class="label public">public</span>ensureProductionSettings<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Ensures that this Configuration instance contains settings that are suitable for a production environment.</li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ORMException If a configuration setting has a value that is not</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAutoGenerateProxyClasses"/>
-            <h4><span class="label public">public</span>getAutoGenerateProxyClasses<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets a boolean flag that indicates whether proxy classes should always be regenerated during each script execution.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getClassMetadataFactoryName"/>
-            <h4><span class="label public">public</span>getClassMetadataFactoryName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCustomDatetimeFunction"/>
-            <h4><span class="label public">public</span>getCustomDatetimeFunction<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the implementation class name of a registered custom date/time DQL function.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCustomHydrationMode"/>
-            <h4><span class="label public">public</span>getCustomHydrationMode<span style="font-size:90%;">( <span class="param-type">string</span><strong> $modeName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the hydrator class for the given hydration mode name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$modeName</code> - The hydration mode name.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>$hydrator The hydrator class name.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCustomNumericFunction"/>
-            <h4><span class="label public">public</span>getCustomNumericFunction<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the implementation class name of a registered custom numeric DQL function.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCustomStringFunction"/>
-            <h4><span class="label public">public</span>getCustomStringFunction<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the implementation class name of a registered custom string DQL function.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getDefaultRepositoryClassName"/>
-            <h4><span class="label public">public</span>getDefaultRepositoryClassName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get default repository class.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getEntityNamespace"/>
-            <h4><span class="label public">public</span>getEntityNamespace<span style="font-size:90%;">( <span class="param-type">string</span><strong> $entityNamespaceAlias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Resolves a registered namespace alias to the full namespace.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entityNamespaceAlias</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ORMException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getEntityNamespaces"/>
-            <h4><span class="label public">public</span>getEntityNamespaces<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieves the list of registered entity namespace aliases.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFilterClassName"/>
-            <h4><span class="label public">public</span>getFilterClassName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the class name for a given filter name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the filter.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The class name of the filter, or null of it is not</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFilterSchemaAssetsExpression"/>
-            <h4><span class="label public">public</span>getFilterSchemaAssetsExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return filter schema assets expression.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getHydrationCacheImpl"/>
-            <h4><span class="label public">public</span>getHydrationCacheImpl<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the cache driver implementation that is used for the hydration cache (SQL cache).</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMetadataCacheImpl"/>
-            <h4><span class="label public">public</span>getMetadataCacheImpl<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the cache driver implementation that is used for metadata caching.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMetadataDriverImpl"/>
-            <h4><span class="label public">public</span>getMetadataDriverImpl<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the cache driver implementation that is used for the mapping metadata.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ORMException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getNamedNativeQuery"/>
-            <h4><span class="label public">public</span>getNamedNativeQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the components of a previously registered named native query.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the query.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>A tuple with the first element being the SQL string and the second</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ORMException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getNamedQuery"/>
-            <h4><span class="label public">public</span>getNamedQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets a previously registered named DQL query.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the query.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The DQL query.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ORMException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getNamingStrategy"/>
-            <h4><span class="label public">public</span>getNamingStrategy<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get naming strategy..</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getProxyDir"/>
-            <h4><span class="label public">public</span>getProxyDir<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the directory where Doctrine generates any necessary proxy class files.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getProxyNamespace"/>
-            <h4><span class="label public">public</span>getProxyNamespace<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the namespace where proxy classes reside.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getQueryCacheImpl"/>
-            <h4><span class="label public">public</span>getQueryCacheImpl<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the cache driver implementation that is used for the query cache (SQL cache).</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getQuoteStrategy"/>
-            <h4><span class="label public">public</span>getQuoteStrategy<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get quote strategy.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getResultCacheImpl"/>
-            <h4><span class="label public">public</span>getResultCacheImpl<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the cache driver implementation that is used for query result caching.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSQLLogger"/>
-            <h4><span class="label public">public</span>getSQLLogger<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the SQL logger that is used.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="newDefaultAnnotationDriver"/>
-            <h4><span class="label public">public</span>newDefaultAnnotationDriver<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $paths</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $useSimpleAnnotationReader</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add a new default annotation driver with a correctly configured annotation reader. If $useSimpleAnnotationReader is true, the notation `@Entity` will work, otherwise, the notation `@ORM\Entity` will be supported.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$paths</code> - </li>
-                <li><code>$useSimpleAnnotationReader</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setAutoGenerateProxyClasses"/>
-            <h4><span class="label public">public</span>setAutoGenerateProxyClasses<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $bool</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a boolean flag that indicates whether proxy classes should always be regenerated during each script execution.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$bool</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setClassMetadataFactoryName"/>
-            <h4><span class="label public">public</span>setClassMetadataFactoryName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $cmfName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set a class metadata factory.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$cmfName</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setCustomDatetimeFunctions"/>
-            <h4><span class="label public">public</span>setCustomDatetimeFunctions<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $functions</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a map of custom DQL date/time functions.<pre>Keys must be function names and values the FQCN of the implementing class.
-The function names will be case-insensitive in DQL.
-
-Any previously added date/time functions are discarded.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$functions</code> - The map of custom DQL date/time functions.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setCustomHydrationModes"/>
-            <h4><span class="label public">public</span>setCustomHydrationModes<span style="font-size:90%;">( <span class="param-type"/><strong> $modes</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the custom hydrator modes in one pass.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>An</code> - array of ($modeName =&gt; $hydrator)</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setCustomNumericFunctions"/>
-            <h4><span class="label public">public</span>setCustomNumericFunctions<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $functions</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a map of custom DQL numeric functions.<pre>Keys must be function names and values the FQCN of the implementing class.
-The function names will be case-insensitive in DQL.
-
-Any previously added numeric functions are discarded.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$functions</code> - The map of custom DQL numeric functions.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setCustomStringFunctions"/>
-            <h4><span class="label public">public</span>setCustomStringFunctions<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $functions</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a map of custom DQL string functions.<pre>Keys must be function names and values the FQCN of the implementing class.
-The function names will be case-insensitive in DQL.
-
-Any previously added string functions are discarded.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$functions</code> - The map of custom DQL string functions.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setDefaultRepositoryClassName"/>
-            <h4><span class="label public">public</span>setDefaultRepositoryClassName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set default repository class.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$className</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ORMException If not is a \Doctrine\Common\Persistence\ObjectRepository</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setEntityNamespaces"/>
-            <h4><span class="label public">public</span>setEntityNamespaces<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $entityNamespaces</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the entity alias map</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entityNamespaces</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setFilterSchemaAssetsExpression"/>
-            <h4><span class="label public">public</span>setFilterSchemaAssetsExpression<span style="font-size:90%;">( <span class="param-type">string</span><strong> $filterExpression</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Filter schema assets expression.<pre>Only include tables/sequences matching the filter expression regexp in
-schema instances generated for the active connection when calling
-{AbstractSchemaManager#createSchema()}.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$filterExpression</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setHydrationCacheImpl"/>
-            <h4><span class="label public">public</span>setHydrationCacheImpl<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Cache_Cache.xhtml">Doctrine\Common\Cache\Cache</a></span><strong> $cacheImpl</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the cache driver implementation that is used for the hydration cache (SQL cache).</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$cacheImpl</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setMetadataCacheImpl"/>
-            <h4><span class="label public">public</span>setMetadataCacheImpl<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Cache_Cache.xhtml">Doctrine\Common\Cache\Cache</a></span><strong> $cacheImpl</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the cache driver implementation that is used for metadata caching.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$cacheImpl</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setMetadataDriverImpl"/>
-            <h4><span class="label public">public</span>setMetadataDriverImpl<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Persistence_Mapping_Driver_MappingDriver.xhtml">Doctrine\Common\Persistence\Mapping\Driver\MappingDriver</a></span><strong> $driverImpl</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the cache driver implementation that is used for metadata caching.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$driverImpl</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setNamingStrategy"/>
-            <h4><span class="label public">public</span>setNamingStrategy<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_ORM_Mapping_NamingStrategy.xhtml">Doctrine\ORM\Mapping\NamingStrategy</a></span><strong> $namingStrategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set naming strategy.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$namingStrategy</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setProxyDir"/>
-            <h4><span class="label public">public</span>setProxyDir<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dir</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the directory where Doctrine generates any necessary proxy class files.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$dir</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setProxyNamespace"/>
-            <h4><span class="label public">public</span>setProxyNamespace<span style="font-size:90%;">( <span class="param-type">string</span><strong> $ns</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the namespace where proxy classes reside.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$ns</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setQueryCacheImpl"/>
-            <h4><span class="label public">public</span>setQueryCacheImpl<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Cache_Cache.xhtml">Doctrine\Common\Cache\Cache</a></span><strong> $cacheImpl</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the cache driver implementation that is used for the query cache (SQL cache).</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$cacheImpl</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setQuoteStrategy"/>
-            <h4><span class="label public">public</span>setQuoteStrategy<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_ORM_Mapping_QuoteStrategy.xhtml">Doctrine\ORM\Mapping\QuoteStrategy</a></span><strong> $quoteStrategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set quote strategy.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$quoteStrategy</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setResultCacheImpl"/>
-            <h4><span class="label public">public</span>setResultCacheImpl<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Cache_Cache.xhtml">Doctrine\Common\Cache\Cache</a></span><strong> $cacheImpl</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the cache driver implementation that is used for query result caching.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$cacheImpl</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setSQLLogger"/>
-            <h4><span class="label public">public</span>setSQLLogger<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_DBAL_Logging_SQLLogger.xhtml">Doctrine\DBAL\Logging\SQLLogger</a></span><strong> $logger</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the SQL logger to use. Defaults to NULL which means SQL logging is disabled.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$logger</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">123+</td>
+            <td>Force parameter to be a Closure to ensure lazy evaluation</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="_attributes"><strong>$_attributes</strong>
+                —
+                array<br/><span class="indent">The attributes that are contained in the configuration.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="addCustomDatetimeFunction"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addCustomDatetimeFunction.xhtml">addCustomDatetimeFunction()</a>
+                — Registers a custom DQL function that produces a date/time value.</li>
+            <li id="addCustomHydrationMode"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addCustomHydrationMode.xhtml">addCustomHydrationMode()</a>
+                — Add a custom hydration mode.</li>
+            <li id="addCustomNumericFunction"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addCustomNumericFunction.xhtml">addCustomNumericFunction()</a>
+                — Registers a custom DQL function that produces a numeric value.</li>
+            <li id="addCustomStringFunction"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addCustomStringFunction.xhtml">addCustomStringFunction()</a>
+                — Registers a custom DQL function that produces a string value.</li>
+            <li id="addEntityNamespace"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addEntityNamespace.xhtml">addEntityNamespace()</a>
+                — Adds a namespace under a certain alias.</li>
+            <li id="addFilter"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addFilter.xhtml">addFilter()</a>
+                — Add a filter to the list of possible filters.</li>
+            <li id="addNamedNativeQuery"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addNamedNativeQuery.xhtml">addNamedNativeQuery()</a>
+                — Adds a named native query to the configuration.</li>
+            <li id="addNamedQuery"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/addNamedQuery.xhtml">addNamedQuery()</a>
+                — Adds a named DQL query to the configuration.</li>
+            <li id="ensureProductionSettings"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/ensureProductionSettings.xhtml">ensureProductionSettings()</a>
+                — Ensures that this Configuration instance contains settings that are suitable for a production environment.</li>
+            <li id="getAutoGenerateProxyClasses"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getAutoGenerateProxyClasses.xhtml">getAutoGenerateProxyClasses()</a>
+                — Gets a boolean flag that indicates whether proxy classes should always be regenerated during each script execution.</li>
+            <li id="getClassMetadataFactoryName">
+              <a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getClassMetadataFactoryName.xhtml">getClassMetadataFactoryName()</a>
+            </li>
+            <li id="getCustomDatetimeFunction"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getCustomDatetimeFunction.xhtml">getCustomDatetimeFunction()</a>
+                — Gets the implementation class name of a registered custom date/time DQL function.</li>
+            <li id="getCustomHydrationMode"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getCustomHydrationMode.xhtml">getCustomHydrationMode()</a>
+                — Get the hydrator class for the given hydration mode name.</li>
+            <li id="getCustomNumericFunction"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getCustomNumericFunction.xhtml">getCustomNumericFunction()</a>
+                — Gets the implementation class name of a registered custom numeric DQL function.</li>
+            <li id="getCustomStringFunction"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getCustomStringFunction.xhtml">getCustomStringFunction()</a>
+                — Gets the implementation class name of a registered custom string DQL function.</li>
+            <li id="getDefaultRepositoryClassName"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getDefaultRepositoryClassName.xhtml">getDefaultRepositoryClassName()</a>
+                — Get default repository class.</li>
+            <li id="getEntityNamespace"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getEntityNamespace.xhtml">getEntityNamespace()</a>
+                — Resolves a registered namespace alias to the full namespace.</li>
+            <li id="getEntityNamespaces"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getEntityNamespaces.xhtml">getEntityNamespaces()</a>
+                — Retrieves the list of registered entity namespace aliases.</li>
+            <li id="getFilterClassName"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getFilterClassName.xhtml">getFilterClassName()</a>
+                — Gets the class name for a given filter name.</li>
+            <li id="getHydrationCacheImpl"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getHydrationCacheImpl.xhtml">getHydrationCacheImpl()</a>
+                — Gets the cache driver implementation that is used for the hydration cache (SQL cache).</li>
+            <li id="getMetadataCacheImpl"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getMetadataCacheImpl.xhtml">getMetadataCacheImpl()</a>
+                — Gets the cache driver implementation that is used for metadata caching.</li>
+            <li id="getMetadataDriverImpl"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getMetadataDriverImpl.xhtml">getMetadataDriverImpl()</a>
+                — Gets the cache driver implementation that is used for the mapping metadata.</li>
+            <li id="getNamedNativeQuery"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getNamedNativeQuery.xhtml">getNamedNativeQuery()</a>
+                — Gets the components of a previously registered named native query.</li>
+            <li id="getNamedQuery"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getNamedQuery.xhtml">getNamedQuery()</a>
+                — Gets a previously registered named DQL query.</li>
+            <li id="getNamingStrategy"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getNamingStrategy.xhtml">getNamingStrategy()</a>
+                — Get naming strategy..</li>
+            <li id="getProxyDir"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getProxyDir.xhtml">getProxyDir()</a>
+                — Gets the directory where Doctrine generates any necessary proxy class files.</li>
+            <li id="getProxyNamespace"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getProxyNamespace.xhtml">getProxyNamespace()</a>
+                — Gets the namespace where proxy classes reside.</li>
+            <li id="getQueryCacheImpl"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getQueryCacheImpl.xhtml">getQueryCacheImpl()</a>
+                — Gets the cache driver implementation that is used for the query cache (SQL cache).</li>
+            <li id="getQuoteStrategy"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/getQuoteStrategy.xhtml">getQuoteStrategy()</a>
+                — Get quote strategy.</li>
+            <li id="newDefaultAnnotationDriver"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/newDefaultAnnotationDriver.xhtml">newDefaultAnnotationDriver()</a>
+                — Add a new default annotation driver with a correctly configured annotation reader. If $useSimpleAnnotationReader is true, the notation `@Entity` will work, otherwise, the notation `@ORM\Entity` will be supported.</li>
+            <li id="setAutoGenerateProxyClasses"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setAutoGenerateProxyClasses.xhtml">setAutoGenerateProxyClasses()</a>
+                — Sets a boolean flag that indicates whether proxy classes should always be regenerated during each script execution.</li>
+            <li id="setClassMetadataFactoryName"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setClassMetadataFactoryName.xhtml">setClassMetadataFactoryName()</a>
+                — Set a class metadata factory.</li>
+            <li id="setCustomDatetimeFunctions"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setCustomDatetimeFunctions.xhtml">setCustomDatetimeFunctions()</a>
+                — Sets a map of custom DQL date/time functions.</li>
+            <li id="setCustomHydrationModes"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setCustomHydrationModes.xhtml">setCustomHydrationModes()</a>
+                — Set the custom hydrator modes in one pass.</li>
+            <li id="setCustomNumericFunctions"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setCustomNumericFunctions.xhtml">setCustomNumericFunctions()</a>
+                — Sets a map of custom DQL numeric functions.</li>
+            <li id="setCustomStringFunctions"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setCustomStringFunctions.xhtml">setCustomStringFunctions()</a>
+                — Sets a map of custom DQL string functions.</li>
+            <li id="setDefaultRepositoryClassName"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setDefaultRepositoryClassName.xhtml">setDefaultRepositoryClassName()</a>
+                — Set default repository class.</li>
+            <li id="setEntityNamespaces"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setEntityNamespaces.xhtml">setEntityNamespaces()</a>
+                — Set the entity alias map</li>
+            <li id="setHydrationCacheImpl"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setHydrationCacheImpl.xhtml">setHydrationCacheImpl()</a>
+                — Sets the cache driver implementation that is used for the hydration cache (SQL cache).</li>
+            <li id="setMetadataCacheImpl"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setMetadataCacheImpl.xhtml">setMetadataCacheImpl()</a>
+                — Sets the cache driver implementation that is used for metadata caching.</li>
+            <li id="setMetadataDriverImpl"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setMetadataDriverImpl.xhtml">setMetadataDriverImpl()</a>
+                — Sets the cache driver implementation that is used for metadata caching.</li>
+            <li id="setNamingStrategy"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setNamingStrategy.xhtml">setNamingStrategy()</a>
+                — Set naming strategy.</li>
+            <li id="setProxyDir"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setProxyDir.xhtml">setProxyDir()</a>
+                — Sets the directory where Doctrine generates any necessary proxy class files.</li>
+            <li id="setProxyNamespace"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setProxyNamespace.xhtml">setProxyNamespace()</a>
+                — Sets the namespace where proxy classes reside.</li>
+            <li id="setQueryCacheImpl"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setQueryCacheImpl.xhtml">setQueryCacheImpl()</a>
+                — Sets the cache driver implementation that is used for the query cache (SQL cache).</li>
+            <li id="setQuoteStrategy"><a title="Doctrine\ORM\Configuration" href="../classes/Doctrine_ORM_Configuration/setQuoteStrategy.xhtml">setQuoteStrategy()</a>
+                — Set quote strategy.</li>
+          </ul>
+          <h3>Inherited from <a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration.xhtml">Doctrine\DBAL\Configuration</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="getFilterSchemaAssetsExpression"><a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration/getFilterSchemaAssetsExpression.xhtml">getFilterSchemaAssetsExpression()</a>
+                — Return filter schema assets expression.</li>
+            <li id="getResultCacheImpl"><a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration/getResultCacheImpl.xhtml">getResultCacheImpl()</a>
+                — Gets the cache driver implementation that is used for query result caching.</li>
+            <li id="getSQLLogger"><a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration/getSQLLogger.xhtml">getSQLLogger()</a>
+                — Gets the SQL logger that is used.</li>
+            <li id="setFilterSchemaAssetsExpression"><a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration/setFilterSchemaAssetsExpression.xhtml">setFilterSchemaAssetsExpression()</a>
+                — Filter schema assets expression.</li>
+            <li id="setResultCacheImpl"><a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration/setResultCacheImpl.xhtml">setResultCacheImpl()</a>
+                — Sets the cache driver implementation that is used for query result caching.</li>
+            <li id="setSQLLogger"><a title="Doctrine\DBAL\Configuration" href="../classes/Doctrine_DBAL_Configuration/setSQLLogger.xhtml">setSQLLogger()</a>
+                — Sets the SQL logger to use. Defaults to NULL which means SQL logging is disabled.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

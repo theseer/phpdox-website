@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head>
+    <title>phpDox - Test Method</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml#Doctrine_ORM">Doctrine\ORM</a>
+          </li>
+          <li class="separator">
+            <a title="Doctrine\ORM\UnitOfWork" href="../../classes/Doctrine_ORM_UnitOfWork.xhtml">UnitOfWork</a>
+          </li>
+          <li class="separator">computeChangeSet</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#parameter">Parameter</a>
+          </li>
+          <li>
+            <a href="../../source/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php.xhtml#line503">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1><small>Doctrine\ORM\UnitOfWork::</small>computeChangeSet</h1>
+        <h4>Computes the changes that happened to a single entity.</h4>
+        <p>Modifies/populates the following properties:
+
+{@link _originalEntityData}
+If the entity is NEW or MANAGED but not yet fully persisted (only has an id)
+then it was not fetched from the database and therefore we have no original
+entity data yet. All of the current entity data is stored as the original entity data.
+
+{@link _entityChangeSets}
+The changes detected on all properties of the entity are stored there.
+A change is a tuple array where the first entry is the old value and the second
+entry is the new value of the property. Changesets are used by persisters
+to INSERT/UPDATE the persistent entity state.
+
+{@link _entityUpdates}
+If the entity is already fully MANAGED (has been fetched from the database before)
+and any changes to its properties are detected, then a reference to the entity is stored
+there to mark it for an update.
+
+{@link _collectionDeletions}
+If a PersistentCollection has been de-referenced in a fully MANAGED entity,
+then this collection is marked for deletion.</p>
+        <ul/>
+        <h2 id="signature">Signature</h2>
+        <div class="styled synopsis">
+          <code>public function computeChangeSet(<a title="Doctrine\ORM\Mapping\ClassMetadata" href="../../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">ClassMetadata</a>
+        $class,
+            <a title="" href="../../classes/.xhtml"/>
+        $entity )
+            </code>
+        </div>
+        <h2 id="parameterlist">Parameters</h2>
+        <dl class="styled">
+          <dt><code>$class</code>
+                —
+                <a href="#">Doctrine\ORM\Mapping\ClassMetadata</a></dt>
+          <dd>The class descriptor of the entity.<br/><br/><br/>      </dd>
+          <dt><code>$entity</code>
+                —
+                object</dt>
+          <dd>The entity for which to compute the changes.</dd>
+        </dl>
+      </section>
+    </div>
+    <footer>
+      <span/>
+    </footer>
+  </body>
+</html>

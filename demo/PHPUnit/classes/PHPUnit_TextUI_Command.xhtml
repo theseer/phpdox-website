@@ -1,296 +1,1779 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>PHPUnit - PHPUnit_TextUI_Command - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - PHPUnit_TextUI_Command</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">PHPUnit - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">PHPUnit_TextUI_Command</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#arguments">$arguments</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#options">$options</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#longOptions">$longOptions</a>
+            <a href="#violations">Violations</a>
           </li>
           <li>
-            <a href="#missingExtensions">$missingExtensions</a>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/TextUI/Command.php.xhtml#line58">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>PHPUnit_TextUI_Command</h1>
+        <h4>A TestRunner for the Command Line Interface (CLI) PHP SAPI Module.</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#createRunner">createRunner</a>
-          </li>
-          <li>
-            <a href="#handleArguments">handleArguments</a>
-          </li>
-          <li>
-            <a href="#handleBootstrap">handleBootstrap</a>
-          </li>
-          <li>
-            <a href="#handleCustomTestSuite">handleCustomTestSuite</a>
-          </li>
-          <li>
-            <a href="#handleLoader">handleLoader</a>
-          </li>
-          <li>
-            <a href="#handlePrinter">handlePrinter</a>
-          </li>
-          <li>
-            <a href="#main">main</a>
-          </li>
-          <li>
-            <a href="#run">run</a>
-          </li>
-          <li>
-            <a href="#showExtensionNotLoadedMessage">showExtensionNotLoadedMessage</a>
-          </li>
-          <li>
-            <a href="#showHelp">showHelp</a>
-          </li>
-          <li>
-            <a href="#showMessage">showMessage</a>
-          </li>
+          <li>Author: Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>Copyright: 2001-2014 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>License: http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">\</span>PHPUnit_TextUI_Command</h2>
-        <div class="file-notice">
-          <p>A TestRunner for the Command Line Interface (CLI) PHP SAPI Module.</p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PHPUnit_TextUI_Command
+            {<br/><ul class="none"><li>// members</li><li>protected array <a href="#members">$arguments</a>;
+                    </li><li>protected array <a href="#members">$options</a>;
+                    </li><li>protected array <a href="#members">$longOptions</a>;
+                    </li><li>private boolean <a href="#members">$versionStringPrinted</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public static void <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/main.xhtml">main</a>()
+                    </li><li>public integer <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/run.xhtml">run</a>()
+                    </li><li>protected PHPUnit_TextUI_TestRunner <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/createRunner.xhtml">createRunner</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/handleArguments.xhtml">handleArguments</a>()
+                    </li><li>protected PHPUnit_Runner_TestSuiteLoader <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/handleLoader.xhtml">handleLoader</a>()
+                    </li><li>protected PHPUnit_Util_Printer <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/handlePrinter.xhtml">handlePrinter</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/handleBootstrap.xhtml">handleBootstrap</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/handleSelfUpdate.xhtml">handleSelfUpdate</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/showHelp.xhtml">showHelp</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/handleCustomTestSuite.xhtml">handleCustomTestSuite</a>()
+                    </li><li>private void <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/printVersionString.xhtml">printVersionString</a>()
+                    </li><li>private void <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/showError.xhtml">showError</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="violations">Violations</h2>
+        <div class="styled">
+          <h3>PHPMessDetector</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Rule</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">146 - 204</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method run() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">146 - 204</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#npathcomplexity" target="_blank" title="Code Size Rules">NPathComplexity</a>
+              </td>
+              <td>The method run() has an NPath complexity of 300. The configured NPath complexity threshold is 200.</td>
+            </tr>
+            <tr>
+              <td class="line">176</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method run() contains an exit expression.</td>
+            </tr>
+            <tr>
+              <td class="line">200</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method run() contains an exit expression.</td>
+            </tr>
+            <tr>
+              <td class="line">262 - 718</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method handleArguments() has a Cyclomatic Complexity of 105. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">262 - 718</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#npathcomplexity" target="_blank" title="Code Size Rules">NPathComplexity</a>
+              </td>
+              <td>The method handleArguments() has an NPath complexity of 190577387520. The configured NPath complexity threshold is 200.</td>
+            </tr>
+            <tr>
+              <td class="line">262 - 718</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#excessivemethodlength" target="_blank" title="Code Size Rules">ExcessiveMethodLength</a>
+              </td>
+              <td>The method handleArguments() has 457 lines of code. Current threshold is set to 100. Avoid really long methods.</td>
+            </tr>
+            <tr>
+              <td class="line">354</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method handleArguments() contains an exit expression.</td>
+            </tr>
+            <tr>
+              <td class="line">505</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method handleArguments() contains an exit expression.</td>
+            </tr>
+            <tr>
+              <td class="line">638</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method handleArguments() contains an exit expression.</td>
+            </tr>
+            <tr>
+              <td class="line">716</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method handleArguments() contains an exit expression.</td>
+            </tr>
+            <tr>
+              <td class="line">832</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method handleSelfUpdate() contains an exit expression.</td>
+            </tr>
+            <tr>
+              <td class="line">882</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method handleSelfUpdate() contains an exit expression.</td>
+            </tr>
+            <tr>
+              <td class="line">886</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method handleSelfUpdate() contains an exit expression.</td>
+            </tr>
+            <tr>
+              <td class="line">1003</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method showError() contains an exit expression.</td>
+            </tr>
+          </table>
+          <h3>Checkstyle</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Column</th>
+                <th>Severity</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">281</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">286</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">292</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">297</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">302</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">307</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">312</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">317</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">328</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">333</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">346</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">352</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">358</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">363</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">368</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">373</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">375</td>
+              <td>30</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">380</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">382</td>
+              <td>30</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">387</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">392</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">397</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">402</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">407</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">412</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">417</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">422</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">427</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">432</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">437</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">442</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">447</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">452</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">457</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">462</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">467</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">472</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">477</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">482</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">487</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">492</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">498</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">503</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">509</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">514</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">519</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">524</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">529</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">534</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">544</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">549</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenerdefault">error</span>
+              </td>
+              <td>DEFAULT statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">582</td>
+              <td>124</td>
+              <td>
+                <span title="Generic.Files.LineLength.TooLong">warning</span>
+              </td>
+              <td>Line exceeds 120 characters; contains 123 characters</td>
+            </tr>
+            <tr>
+              <td class="line">672</td>
+              <td>47</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">684</td>
+              <td>55</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">696</td>
+              <td>149</td>
+              <td>
+                <span title="Generic.Files.LineLength.TooLong">warning</span>
+              </td>
+              <td>Line exceeds 120 characters; contains 148 characters</td>
+            </tr>
+            <tr>
+              <td class="line">706</td>
+              <td>140</td>
+              <td>
+                <span title="Generic.Files.LineLength.TooLong">warning</span>
+              </td>
+              <td>Line exceeds 120 characters; contains 139 characters</td>
+            </tr>
+          </table>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>Copyright: </b>2001-2013 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>License: </b>http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="versionStringPrinted"><strong>$versionStringPrinted</strong>
+                —
+                boolean</li>
+          </ul>
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="arguments"><strong>$arguments</strong>
+                —
+                array</li>
+            <li id="longOptions"><strong>$longOptions</strong>
+                —
+                array</li>
+            <li id="options"><strong>$options</strong>
+                —
+                array</li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="printVersionString">
+              <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/printVersionString.xhtml">printVersionString()</a>
+            </li>
+            <li id="showError">
+              <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/showError.xhtml">showError()</a>
+            </li>
+          </ul>
+          <h4>protected</h4>
+          <ul>
+            <li id="createRunner"><a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/createRunner.xhtml">createRunner()</a>
+                — Create a TestRunner, override in subclasses.</li>
+            <li id="handleArguments"><a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/handleArguments.xhtml">handleArguments()</a>
+                — Handles the command-line arguments.</li>
+            <li id="handleBootstrap"><a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/handleBootstrap.xhtml">handleBootstrap()</a>
+                — Loads a bootstrap file.</li>
+            <li id="handleCustomTestSuite"><a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/handleCustomTestSuite.xhtml">handleCustomTestSuite()</a>
+                — Custom callback for test suite discovery.</li>
+            <li id="handleLoader"><a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/handleLoader.xhtml">handleLoader()</a>
+                — Handles the loading of the PHPUnit_Runner_TestSuiteLoader implementation.</li>
+            <li id="handlePrinter"><a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/handlePrinter.xhtml">handlePrinter()</a>
+                — Handles the loading of the PHPUnit_Util_Printer implementation.</li>
+            <li id="handleSelfUpdate">
+              <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/handleSelfUpdate.xhtml">handleSelfUpdate()</a>
+            </li>
+            <li id="showHelp"><a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/showHelp.xhtml">showHelp()</a>
+                — Show the help message.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="main">
+              <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/main.xhtml">main()</a>
+            </li>
+            <li id="run">
+              <a title="PHPUnit_TextUI_Command" href="../classes/PHPUnit_TextUI_Command/run.xhtml">run()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
           <li>
-            <a name="arguments"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $arguments</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
+            <h3>2014-08-19T06:56:05+02:00 (commit #<span title="7c44e353712dd9a3cc2574c55a3745b2cc44c89c">7c44e35</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Closes #1403</pre>
+            </div>
           </li>
           <li>
-            <a name="options"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $options</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
+            <h3>2014-08-17T21:12:03+02:00 (commit #<span title="29de7e92c674925d0067a96cdaa4285e7c9428e8">29de7e9</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Printers implement the `TestListener` interface (via @fiunchinho).</pre>
+            </div>
           </li>
           <li>
-            <a name="longOptions"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $longOptions</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
+            <h3>2014-08-17T10:18:07+02:00 (commit #<span title="fd5ef8a8bd4a7a50a10d18b8f247ebc50226e61f">fd5ef8a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">phpcbf --standard=PSR2 src tests</pre>
+            </div>
           </li>
           <li>
-            <a name="missingExtensions"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $missingExtensions</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="main"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>main<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $exit</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$exit</code> - </li>
-              </ul>
-            </ul>
+            <h3>2014-08-12T06:43:31+02:00 (commit #<span title="50dfaba6477d3b1a0c650d4f70a0d9f478ff6092">50dfaba</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">phpcbf --standard=PSR2 src tests</pre>
+            </div>
           </li>
           <li>
-            <a name="run"/>
-            <h4><span class="label public">public</span>run<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $argv</strong>, <span class="param-type">boolean</span><strong> $exit</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$argv</code> - </li>
-                <li><code>$exit</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="createRunner"/>
-            <h4><span class="label protected">protected</span>createRunner<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Create a TestRunner, override in subclasses.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="handleArguments"/>
-            <h4><span class="label protected">protected</span>handleArguments<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $argv</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Handles the command-line arguments.<pre>A child class of PHPUnit_TextUI_Command can hook into the argument
-parsing by adding the switch(es) to the $longOptions array and point to a
-callback method that handles the switch(es) in the child class like this
+            <h3>2014-07-06T17:39:38+02:00 (commit #<span title="9edd5181cbaf27544bcf0ea70ca920b1fc2853b1">9edd518</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Fixes #1265
 
-&lt;code&gt;
-&lt;?php
-class MyCommand extends PHPUnit_TextUI_Command
-{
-    public function __construct()
-    {
-        $this-&gt;longOptions['--my-switch'] = 'myHandler';
-    }
+Don't fail on `testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"`.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-06-16T06:54:22+02:00 (commit #<span title="0d0fd4733de057db0fc83953c99dc77996d025ca">0d0fd47</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Formatting.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-05-17T17:02:40+02:00 (commit #<span title="e5014cbb4d2566729f929c4db7d803aaf988c542">e5014cb</span>)</h3>
+            <div>
+              <p>
+                        Author: nikoms (nikoms@gmail.com) /
+                        Commiter: nikoms (nikoms@gmail.com)
+                    </p>
+              <pre class="wrapped">If no "configuration file" is set, the bootstrap should be taken from "--bootstrap" command line option</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-05-03T19:14:23+02:00 (commit #<span title="8d2e6ea00333badc2785b54ede56a1ed9337e7ce">8d2e6ea</span>)</h3>
+            <div>
+              <p>
+                        Author: Vagrant (vagrant@php55) /
+                        Commiter: nikoms (vagrant@php55)
+                    </p>
+              <pre class="wrapped">Issue #1216 with unit test</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-05-02T15:42:23+02:00 (commit #<span title="7bd874fee52bdf95178e58ce8bda50586865e37d">7bd874f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix syntax error introduced in 18e658bcaf63cfee8248f877249b19c1d99cdf6d</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-05-02T15:33:35+02:00 (commit #<span title="18e658bcaf63cfee8248f877249b19c1d99cdf6d">18e658b</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add --selfupdate alias for --self-update</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-30T15:01:04+02:00 (commit #<span title="e16678d1756fafcb4870dca688b46a24803d43cb">e16678d</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Closes #1242</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-30T14:57:53+02:00 (commit #<span title="4ce28b2d053db0a41d9a3ffd50b3347f976441af">4ce28b2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Closes #1242</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-23T08:42:20+02:00 (commit #<span title="d93b7c5989e261cd9a5266d60321ae610411bd47">d93b7c5</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refactor</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-23T08:41:59+02:00 (commit #<span title="75e46c9dce256aba7f4a7d2c9329975438512a28">75e46c9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refactor</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-23T08:38:06+02:00 (commit #<span title="b228f862d168f8f1a44b8a6aa26093493f9b66c0">b228f86</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix docblock</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-23T08:36:53+02:00 (commit #<span title="85f1084622ffdfe48c8d88e4aa45908fbf8e334c">85f1084</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refactor printVersionString() and friends</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-21T10:25:54+02:00 (commit #<span title="5797b06d1797dc1061b34545404723af61242ffb">5797b06</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Closes #1218</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-20T10:46:01+02:00 (commit #<span title="38baa9670711adedfe44ef24a33b568f61f3f045">38baa96</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix handling of --report-useless-tests, --strict-coverage, --disallow-test-output, and --enforce-time-limit options</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-20T10:44:50+02:00 (commit #<span title="a8aa89eeb140839a76059d4186465152babc57cf">a8aa89e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refinement of 560c99abb8b7db7f5d7ca72653126134c97b3ac1</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-03-24T09:24:58+01:00 (commit #<span title="6479694856e8437fdb3177527f6316c3f5daff08">6479694</span>)</h3>
+            <div>
+              <p>
+                        Author: Ilya Bulah (ilya.bulah@gmail.com) /
+                        Commiter: Ilya Bulah (ilya.bulah@gmail.com)
+                    </p>
+              <pre class="wrapped">Issue #657: stderr in xml configuration</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-02-14T18:31:32+01:00 (commit #<span title="e5b50bc60abbc96ae53aa0efd4291345fe4128ff">e5b50bc</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Next version will be 4.0</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-31T16:13:49+01:00 (commit #<span title="0517bfc6d2658b9ce1e68f3b3250bbfe610efce7">0517bfc</span>)</h3>
+            <div>
+              <p>
+                        Author: Matt Parker (matt@lamplightdb.co.uk) /
+                        Commiter: Matt Parker (matt@lamplightdb.co.uk)
+                    </p>
+              <pre class="wrapped">Clarifies documentation around extending TextUI_Command to add command line options</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-22T19:43:07+01:00 (commit #<span title="02b42d7e912186a17d56fa803ae4682d16f1ff79">02b42d7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on formatting code according to PSR-2</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-20T17:21:13+01:00 (commit #<span title="3a5808fbca4ee832c27f13a544fdf8809eec62ec">3a5808f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-09T08:11:47+01:00 (commit #<span title="205e00844d1d9cf4cd4545c4cc45f1121a6b0824">205e008</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-07T14:37:15+01:00 (commit #<span title="991bf009467dfa2c8f2762e25fc4aac51b2ba802">991bf00</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Revert "Next stable release will be PHPUnit 4"
 
-    // --my-switch foo -&gt; myHandler('foo')
-    protected function myHandler($value)
-    {
-    }
-}
-&lt;/code&gt;</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$argv</code> - </li>
-              </ul>
-            </ul>
+This reverts commit f4ee7815d1bb1664786fe95b226a3def20f24aa9.</pre>
+            </div>
           </li>
           <li>
-            <a name="handleBootstrap"/>
-            <h4><span class="label protected">protected</span>handleBootstrap<span style="font-size:90%;">( <span class="param-type">string</span><strong> $filename</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Loads a bootstrap file.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$filename</code> - </li>
-              </ul>
-            </ul>
+            <h3>2014-01-06T09:10:08+01:00 (commit #<span title="1b318d5492808a10927f9f0e30beef527a2f531e">1b318d5</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Make --self-update aware of release channels (alpha, beta, stable)</pre>
+            </div>
           </li>
           <li>
-            <a name="handleCustomTestSuite"/>
-            <h4><span class="label protected">protected</span>handleCustomTestSuite<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Custom callback for test suite discovery.</li>
-            </p>
+            <h3>2014-01-06T09:05:08+01:00 (commit #<span title="f4ee7815d1bb1664786fe95b226a3def20f24aa9">f4ee781</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Next stable release will be PHPUnit 4</pre>
+            </div>
           </li>
           <li>
-            <a name="handleLoader"/>
-            <h4><span class="label protected">protected</span>handleLoader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $loaderClass</strong>, <span class="param-type">string</span><strong> $loaderFile</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Handles the loading of the PHPUnit_Runner_TestSuiteLoader implementation.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$loaderClass</code> - </li>
-                <li><code>$loaderFile</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
+            <h3>2014-01-05T12:03:59+01:00 (commit #<span title="9101f51cad93f97bea7b277007127635653eadbf">9101f51</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Closes #914</pre>
+            </div>
           </li>
           <li>
-            <a name="handlePrinter"/>
-            <h4><span class="label protected">protected</span>handlePrinter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $printerClass</strong>, <span class="param-type">string</span><strong> $printerFile</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Handles the loading of the PHPUnit_Util_Printer implementation.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$printerClass</code> - </li>
-                <li><code>$printerFile</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
+            <h3>2014-01-05T11:24:11+01:00 (commit #<span title="08eb627699458dc47d933e3d9a466d023a748126">08eb627</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Attempt to improve the --help output</pre>
+            </div>
           </li>
           <li>
-            <a name="showExtensionNotLoadedMessage"/>
-            <h4><span class="label protected">protected</span>showExtensionNotLoadedMessage<span style="font-size:90%;">( <span class="param-type"/><strong> $extension</strong>, <span class="param-type">string</span><strong> $message</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-              </ul>
-            </ul>
+            <h3>2014-01-03T10:56:51+01:00 (commit #<span title="5fa672603c1fd992ae606dfeb2fccef28c9dfdcf">5fa6726</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Introduce new test classification: risky test</pre>
+            </div>
           </li>
           <li>
-            <a name="showHelp"/>
-            <h4><span class="label protected">protected</span>showHelp<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Show the help message.</li>
-            </p>
+            <h3>2013-11-18T18:48:04+01:00 (commit #<span title="3e7dd67620e2dacc4114cf848f384d446fe156f7">3e7dd67</span>)</h3>
+            <div>
+              <p>
+                        Author: Evgeniy Makhrov (emakhrov@gmail.com) /
+                        Commiter: Evgeniy Makhrov (emakhrov@gmail.com)
+                    </p>
+              <pre class="wrapped">Allow to specify custom printer with custom autoload</pre>
+            </div>
           </li>
           <li>
-            <a name="showMessage"/>
-            <h4><span class="label protected">protected</span>showMessage<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">boolean</span><strong> $exit</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Shows a message.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-                <li><code>$exit</code> - </li>
-              </ul>
-            </ul>
+            <h3>2013-11-13T09:49:57+01:00 (commit #<span title="648b096d023b5c4e35fba62450771bfff4cc8b4f">648b096</span>)</h3>
+            <div>
+              <p>
+                        Author: Evgeniy Makhrov (emakhrov@gmail.com) /
+                        Commiter: Evgeniy Makhrov (emakhrov@gmail.com)
+                    </p>
+              <pre class="wrapped">Allow extending phpunit classes</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-26T19:44:24+02:00 (commit #<span title="d927ffecdd467765cf58cf38b47223f28ff07eb7">d927ffe</span>)</h3>
+            <div>
+              <p>
+                        Author: uyga (iamuyga@gmail.com) /
+                        Commiter: uyga (iamuyga@gmail.com)
+                    </p>
+              <pre class="wrapped">Changed doc due to no more serialize on export</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-26T13:54:26+02:00 (commit #<span title="6496520c4ec2bf7955051e4f46935ded37683a9e">6496520</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Closes #847</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-03T08:56:18+02:00 (commit #<span title="c3898aa0fd8723e3a60e8252e187f21ae78bf748">c3898aa</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Implement --coverage-xml option to generate code coverage report in PHPUnit's own XML format</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-03T08:53:28+02:00 (commit #<span title="8a2e4cb2d7177028b56240ef900d3e0e67e7916c">8a2e4cb</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-05-21T11:52:11+02:00 (commit #<span title="e186c42538eae0cfe0f021c45e91a9fd8a36f1f5">e186c42</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Reorder code coverage options in help output</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-05-20T23:08:36+02:00 (commit #<span title="3235ac0fa1be02c2bd0708f0bccd7018d5077a3b">3235ac0</span>)</h3>
+            <div>
+              <p>
+                        Author: Zsolt Takács (zsolt@takacs.cc) /
+                        Commiter: Zsolt Takács (zsolt@takacs.cc)
+                    </p>
+              <pre class="wrapped">Add support for crap4j coverage report</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-02-24T22:03:37+01:00 (commit #<span title="3900fc85b2d598115947c7fa625f377c9f134792">3900fc8</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Fixes #835
+
+ * Custom printers that extend `PHPUnit_TextUI_ResultPrinter` now have access to `verbose`, `debug`, etc.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-02-02T10:46:21+01:00 (commit #<span title="bb8c2c8f5d59d4bf6dc9f4722349427fe3b4725e">bb8c2c8</span>)</h3>
+            <div>
+              <p>
+                        Author: Tobias Zander (tobias.zander@sitewards.com) /
+                        Commiter: Tobias Zander (tobias.zander@sitewards.com)
+                    </p>
+              <pre class="wrapped">always use realpath of file</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-01-07T11:37:52+01:00 (commit #<span title="c517984099c588d7cbe04bea9fb756a764769f5f">c517984</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-11-24T15:07:18+01:00 (commit #<span title="ba0239096ad8526824dc4d0b8bb116d2f522e9c8">ba02390</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix CS/WS</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-11-24T14:24:37+01:00 (commit #<span title="302b46519ad1c1de761d2bb846968201d6b9d61c">302b465</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Fixes #719</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-11-08T23:54:52+01:00 (commit #<span title="1cf63a982842bf22ccc75edddbf062b66c4b59e6">1cf63a9</span>)</h3>
+            <div>
+              <p>
+                        Author: jakoch (jakoch@web.de) /
+                        Commiter: jakoch (jakoch@web.de)
+                    </p>
+              <pre class="wrapped">added coverage-text argument "showOnlySummary"</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-24T17:35:08+02:00 (commit #<span title="cd92dd4ab9d8e231edac9b32e8f7003fcbf02077">cd92dd4</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Closes #655. BC issue in 3.7 fixed by: Revert "Positional argument count check introduced"
+
+This reverts commit 6ac554ede32330e3775c231cabe0f7b513770e6c.
+
+Conflicts:
+
+	PHPUnit/TextUI/Command.php</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-24T06:47:44+02:00 (commit #<span title="81ab540c8718a37315962b8242c7f1b4ee031ed4">81ab540</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Do not perform string replacement for @package_version@ anymore.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-07-01T23:30:06+02:00 (commit #<span title="ba9bb8d52639c10d4854d9b6379f98783a6dde01">ba9bb8d</span>)</h3>
+            <div>
+              <p>
+                        Author: Jon Cave (jon@lionsgoroar.co.uk) /
+                        Commiter: Jon Cave (jon@lionsgoroar.co.uk)
+                    </p>
+              <pre class="wrapped">Remove duplicate description of --debug flag</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-04-30T12:02:38+02:00 (commit #<span title="5786e50b3878cba88932b10e6a48c75723950707">5786e50</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">List The BSD 3-Clause License correctly and consistently. Thanks to Christian Aistleitner &lt;christian@quelltextlich.at&gt; for bringing this issue to my attention.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-04-10T22:47:35+02:00 (commit #<span title="fbf368b835c8d60fa3afe2e97f9fbb9181a7f375">fbf368b</span>)</h3>
+            <div>
+              <p>
+                        Author: Anthon Pang (apang@softwaredevelopment.ca) /
+                        Commiter: Anthon Pang (apang@softwaredevelopment.ca)
+                    </p>
+              <pre class="wrapped">Fix typo</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-03-31T21:56:06+02:00 (commit #<span title="5d4f4f67d43d5e926a06573e9ef37d5120fdcdea">5d4f4f6</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Cleanup after merging #208</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-03-31T21:20:51+02:00 (commit #<span title="588ef890ee0d9e90c67ffc696aad7ede5171539d">588ef89</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Introduce --test-suffix option to enable run tests from a given directory with a specific extension(s)
+
+Conflicts:
+
+	PHPUnit/Runner/BaseTestRunner.php
+	PHPUnit/Runner/IncludePathTestCollector.php
+	PHPUnit/TextUI/Command.php</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-02-12T16:50:25+01:00 (commit #<span title="9a30713b102bd4025a89a96cd56bcaad48387866">9a30713</span>)</h3>
+            <div>
+              <p>
+                        Author: jpic (jamespic@gmail.com) /
+                        Commiter: jpic (jamespic@gmail.com)
+                    </p>
+              <pre class="wrapped">Documented --testsuite option in --help</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-02-09T18:21:19+01:00 (commit #<span title="47c5f6d127fe6cffc7d82274ba425e745cb7b4bd">47c5f6d</span>)</h3>
+            <div>
+              <p>
+                        Author: jpic (jamespic@gmail.com) /
+                        Commiter: jpic (jamespic@gmail.com)
+                    </p>
+              <pre class="wrapped">Added --testsuite option to filter directory/files based on the name attribute of their parent testsuite node</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-24T15:21:04+01:00 (commit #<span title="42457c96e481e67a624c762875fcb2c0e56b19a3">42457c9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Do not show message that Xdebug is not loaded multipe times when multiple code coverage report formats are requested.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-09T16:31:34+01:00 (commit #<span title="82c33f8db53bd7de41c24a4ff8f91039a480e3e4">82c33f8</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Deprecate the skeleton generator.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-03T08:32:53+01:00 (commit #<span title="dc9e909ac81cc89bb406620a0bdfcf987b9b25fd">dc9e909</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove skeleton generator functionality.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-01T11:21:16+01:00 (commit #<span title="aae6c3808b9c4bee416657298fa90865d6898d60">aae6c38</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-27T10:21:52+01:00 (commit #<span title="37cacc915e512f640fefa9c6422d503f3c59455e">37cacc9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">PHPUnit no longer throws exceptions that do not extend PHPUnit_Framework_Exception.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-16T17:33:30+01:00 (commit #<span title="d368bf82160eced48e8a56ee44fd437cba3cfe87">d368bf8</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Fix phpcs</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-16T15:41:53+01:00 (commit #<span title="6ac554ede32330e3775c231cabe0f7b513770e6c">6ac554e</span>)</h3>
+            <div>
+              <p>
+                        Author: Oliver Gondža (324706@mail.muni.cz) /
+                        Commiter: Volker Dusch (324706@mail.muni.cz)
+                    </p>
+              <pre class="wrapped">Positional argument count check introduced</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-16T11:04:05+01:00 (commit #<span title="ebdcfc40fb85963f5209be66e1918c80541b9648">ebdcfc4</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fixes #442.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-11T15:34:11+01:00 (commit #<span title="6ab18a4531c3b77c050230473bf840a636bc4e76">6ab18a4</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Fixed phpcs warnings</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-30T13:55:04+01:00 (commit #<span title="d127b0ab4e921451a9908fdb5f596a02b16ddaa1">d127b0a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix whitespace.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-26T16:49:59+01:00 (commit #<span title="750b9384de14ef811c0ea899b078fd0f486bfb85">750b938</span>)</h3>
+            <div>
+              <p>
+                        Author: Renan Gonçalves (renan.saddam@gmail.com) /
+                        Commiter: Renan Gonçalves (renan.saddam@gmail.com)
+                    </p>
+              <pre class="wrapped">Loading bootstrap file configured in the xml before attempting to load the tests loader. Fixes #204.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-15T13:58:58+01:00 (commit #<span title="8121679ed1ff11c651e42d8199a8cec534e12507">8121679</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Closes #408 by making the need for an equals sign for --coverage-text more explicit</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-08T11:19:40+01:00 (commit #<span title="7fff85e3e0df56e444b19cf50dc798c5bf510edf">7fff85e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove leftover from syntax check functionality.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-08T09:49:26+01:00 (commit #<span title="6852c80cc6444f9b453fe72463e9e36a3f3d381c">6852c80</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Eliminate PHPUnit_Util_Filesystem::fileExistsInIncludePath().</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-26T12:19:28+02:00 (commit #<span title="bfc351cdf4b4bcb00e81235789d188643ebea147">bfc351c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix whitespace issues.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-24T21:51:05+02:00 (commit #<span title="a29aeebcf0d8478455cdcebd117e0bd7eef89119">a29aeeb</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Closes issue #383.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-11T20:33:20+02:00 (commit #<span title="29b350d8edf8444dae85b032415e9383951938aa">29b350d</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix whitespace.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-11T20:19:32+02:00 (commit #<span title="f42ab1ea2f9b41a7d6f13dc5ee88c080977103a4">f42ab1e</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Coverage text defaults to stdout output for ease of use</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-07T10:51:16+02:00 (commit #<span title="70e0629405405cd5336af046adb865be65df2b47">70e0629</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add support for PHP_CodeCoverage_Report_PHP.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-07T10:44:15+02:00 (commit #<span title="950dcf7580612bc603a1fdd2d81a283eb222d47c">950dcf7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refactor.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-30T12:00:09+02:00 (commit #<span title="4c9cd2ad91687af8008929fdce1271438de1d9c5">4c9cd2a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial cleanup.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-28T12:54:27+02:00 (commit #<span title="dcb1382bc10b8d7fc8345296d8f7b018edcf6fb4">dcb1382</span>)</h3>
+            <div>
+              <p>
+                        Author: Pedro Mata-Mouros (pedro.matamouros@gmail.com) /
+                        Commiter: Pedro Mata-Mouros (pedro.matamouros@gmail.com)
+                    </p>
+              <pre class="wrapped">Honouring the $exit parameter and returning the run status when this is false.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-24T09:49:09+02:00 (commit #<span title="f5b74aa210e66225281d4bc5b796335baf927bf7">f5b74aa</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Strict mode is more strict now.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-23T10:48:06+02:00 (commit #<span title="79e9e7f042aeb96e564a8d3332e9312dbb961087">79e9e7f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix executing PHPT files from the CLI.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-06T10:38:07+02:00 (commit #<span title="ed6317684a5f6b783f9a533ff977d601338b5bb4">ed63176</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Move PHPUnit_Util_Log_DBUS and PHPUnit_Util_Log_XHProf to separate packages.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-04T14:30:16+02:00 (commit #<span title="f7e1d94d596f34d054f92abb7157ef360fa60b12">f7e1d94</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Refactored cli output. It's now possible to write to the cli or to a file</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-03T15:03:31+02:00 (commit #<span title="b3d843f141395b9c42526c552061ed7f6d04c687">b3d843f</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">First draft of CLI coverage output. Work in progress. Just to see if it could work out like that</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-08-24T12:01:36+02:00 (commit #<span title="a0276a96fb21310c42c7cd48cd54fc9a493459d9">a0276a9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove the `--wait` functionality.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-03-07T17:21:52+01:00 (commit #<span title="6e5fc18fbae082d14f6db6b24ea449422991b2aa">6e5fc18</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Tweak message.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-03-07T17:21:42+01:00 (commit #<span title="105370385e26099407e4d8ad609335fc336194f3">1053703</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix logic.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-03-07T17:13:57+01:00 (commit #<span title="924b4b20dc5849b81542b2eb1b345e3e4ee259f8">924b4b2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix CS/WS issues.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-03-07T17:12:53+01:00 (commit #<span title="7611215b8c1293382c61ff0e878f408fe637d81b">7611215</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refactor.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-03-07T15:19:03+01:00 (commit #<span title="16aab255ba8de2bc654007307e460f0b06ee5dbd">16aab25</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Fixes #174 - PHPUnit now will show a warning (but not die) when coverage-html or coverage-clover is specified in the phpunit.xml file but xdebug is not loaded</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-03-07T12:41:51+01:00 (commit #<span title="056ae02abd515ee126efa3a58cd245c6beaef39b">056ae02</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Make --debug switch "public".</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-02-14T19:53:21+01:00 (commit #<span title="4f7584ad0374b53426552e9be127064b4fe85974">4f7584a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix help output.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-02-14T19:50:38+01:00 (commit #<span title="33bc4c17a5b8b9d96e6cd33729275e88e30f61c8">33bc4c1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Close #169.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-02-14T07:56:19+01:00 (commit #<span title="a82ffda23c7506d2e0fa13ecf1cd98b45f4981c9">a82ffda</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add @since annotation.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-02-13T19:54:28+01:00 (commit #<span title="5f2aa47379e2b6052ddef85e7371baf96a3123c2">5f2aa47</span>)</h3>
+            <div>
+              <p>
+                        Author: Mark Story (mark@mark-story.com) /
+                        Commiter: Mark Story (mark@mark-story.com)
+                    </p>
+              <pre class="wrapped">Creating a factory method for runner creation.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-02-12T21:23:01+01:00 (commit #<span title="a8a475a21442019a1f1964c7cd88176496d5bfe9">a8a475a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Tweak help output.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-30T03:27:41+01:00 (commit #<span title="44c90c2bfbd9ce56f8bc0ce8162aac48ab27b723">44c90c2</span>)</h3>
+            <div>
+              <p>
+                        Author: Oleg Pudeyev (oleg@bsdpower.com) /
+                        Commiter: Oleg Pudeyev (oleg@bsdpower.com)
+                    </p>
+              <pre class="wrapped">Added -h and -v short options for --help and --verbose, respectively</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-30T03:27:36+01:00 (commit #<span title="a82d37ae05ca46a06e12f2366de41575df2eb068">a82d37a</span>)</h3>
+            <div>
+              <p>
+                        Author: Oleg Pudeyev (oleg@bsdpower.com) /
+                        Commiter: Oleg Pudeyev (oleg@bsdpower.com)
+                    </p>
+              <pre class="wrapped">Documented -c short option</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-21T08:03:59+01:00 (commit #<span title="83f8fecfb913e1b7c2a0f69eee44eb6b572466a1">83f8fec</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Fixes #127.
+
+ * An error message is now printed for errors while parsing the phpunit.xml file.
+ * Fixed a bug where XML errors were not being collected correctly.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-19T11:45:41+01:00 (commit #<span title="92547e695a6613331ddc413701d426819b9cbb12">92547e6</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Implement configuration of printer.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-12-31T11:45:34+01:00 (commit #<span title="bee33449535dd656c2c0a94946eb0086d1214e1f">bee3344</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-12-03T09:09:04+01:00 (commit #<span title="6093aa8f6c50f2a5b809fe8574264922f82b34b7">6093aa8</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix bad merge.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-10-17T06:20:43+02:00 (commit #<span title="59fa7676d9774a057bd61f6a97dc461001d1fdad">59fa767</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Whitespace fix.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-10-17T06:09:54+02:00 (commit #<span title="465880bf7918d5d053cc61cce159c4585e72d22c">465880b</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Including bootstrap files is now handled by `PHPUnit_Util_Fileloader::checkAndLoad` so that users
+get an informative message if the bootstrap file is not readable.  This refs issue_34.</pre>
+            </div>
           </li>
         </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+      </section>
     </div>
+    <footer>
+      <span>Generated using phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
   </body>
 </html>

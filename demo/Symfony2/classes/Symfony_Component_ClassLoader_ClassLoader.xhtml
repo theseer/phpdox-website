@@ -1,261 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Symfony\Component\ClassLoader\ClassLoader - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Symfony\Component\ClassLoader\ClassLoader</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Symfony_Component_ClassLoader">Symfony\Component\ClassLoader</a>
+          </li>
+          <li class="separator">ClassLoader</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#prefixes">$prefixes</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#fallbackDirs">$fallbackDirs</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#useIncludePath">$useIncludePath</a>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/symfony/symfony/src/Symfony/Component/ClassLoader/ClassLoader.php.xhtml#line40">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Symfony\Component\ClassLoader\</small>ClassLoader</h1>
+        <h4>ClassLoader implements an PSR-0 class loader</h4>
+        <p>See https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md<br/><br/>$loader = new ClassLoader();<br/><br/>// register classes with namespaces<br/>$loader-&gt;addPrefix('Symfony\Component', __DIR__.'/component');<br/>$loader-&gt;addPrefix('Symfony', __DIR__.'/framework');<br/><br/>// activate the autoloader<br/>$loader-&gt;register();<br/><br/>// to enable searching the include path (e.g. for PEAR packages)<br/>$loader-&gt;setUseIncludePath(true);<br/><br/>In this example, if you try to use a class in the Symfony\Component<br/>namespace or one of its children (Symfony\Component\Console for instance),<br/>the autoloader will first look for the class under the component/<br/>directory, and it will then fallback to the framework/ directory if not<br/>found before giving up.</p>
         <ul>
-          <li>
-            <a href="#addPrefix">addPrefix</a>
-          </li>
-          <li>
-            <a href="#addPrefixes">addPrefixes</a>
-          </li>
-          <li>
-            <a href="#findFile">findFile</a>
-          </li>
-          <li>
-            <a href="#getFallbackDirs">getFallbackDirs</a>
-          </li>
-          <li>
-            <a href="#getPrefixes">getPrefixes</a>
-          </li>
-          <li>
-            <a href="#getUseIncludePath">getUseIncludePath</a>
-          </li>
-          <li>
-            <a href="#loadClass">loadClass</a>
-          </li>
-          <li>
-            <a href="#register">register</a>
-          </li>
-          <li>
-            <a href="#setUseIncludePath">setUseIncludePath</a>
-          </li>
-          <li>
-            <a href="#unregister">unregister</a>
-          </li>
+          <li>Author: Fabien Potencier &lt;fabien@symfony.com&gt;</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Symfony\Component\ClassLoader\</span>ClassLoader</h2>
-        <div class="file-notice">
-          <p>ClassLoader implements an PSR-0 class loader</p>
-          <p>
-            <pre>See https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ClassLoader
+            {<br/><ul class="none"><li>// members</li><li>private array <a href="#members">$prefixes</a>;
+                    </li><li>private array <a href="#members">$fallbackDirs</a>;
+                    </li><li>private <a href="#members">$useIncludePath</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public array <a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/getPrefixes.xhtml">getPrefixes</a>()
+                    </li><li>public array <a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/getFallbackDirs.xhtml">getFallbackDirs</a>()
+                    </li><li>public void <a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/addPrefixes.xhtml">addPrefixes</a>()
+                    </li><li>public void <a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/addPrefix.xhtml">addPrefix</a>()
+                    </li><li>public void <a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/setUseIncludePath.xhtml">setUseIncludePath</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/getUseIncludePath.xhtml">getUseIncludePath</a>()
+                    </li><li>public void <a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/register.xhtml">register</a>()
+                    </li><li>public void <a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/unregister.xhtml">unregister</a>()
+                    </li><li>public Boolean|null <a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/loadClass.xhtml">loadClass</a>()
+                    </li><li>public string|null <a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/findFile.xhtml">findFile</a>()
+                    </li></ul>
 
-    $loader = new ClassLoader();
-
-    // register classes with namespaces
-    $loader-&gt;addPrefix('Symfony\Component', __DIR__.'/component');
-    $loader-&gt;addPrefix('Symfony',           __DIR__.'/framework');
-
-    // activate the autoloader
-    $loader-&gt;register();
-
-    // to enable searching the include path (e.g. for PEAR packages)
-    $loader-&gt;setUseIncludePath(true);
-
-In this example, if you try to use a class in the Symfony\Component
-namespace or one of its children (Symfony\Component\Console for instance),
-the autoloader will first look for the class under the component/
-directory, and it will then fallback to the framework/ directory if not
-found before giving up.</pre>
-          </p>
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="fallbackDirs">
+              <strong>$fallbackDirs</strong>
+            </li>
+            <li id="prefixes">
+              <strong>$prefixes</strong>
+            </li>
+            <li id="useIncludePath">
+              <strong>$useIncludePath</strong>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
-          <li><b>Author: </b>Jordi Boggiano &lt;j.boggiano@seld.be&gt;</li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="prefixes"/>
-            <h4><span class="label private">private</span>
-                $prefixes</h4>
-          </li>
-          <li>
-            <a name="fallbackDirs"/>
-            <h4><span class="label private">private</span>
-                $fallbackDirs</h4>
-          </li>
-          <li>
-            <a name="useIncludePath"/>
-            <h4><span class="label private">private</span>
-                $useIncludePath</h4>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="addPrefix"/>
-            <h4><span class="label public">public</span>addPrefix<span style="font-size:90%;">( <span class="param-type">string</span><strong> $prefix</strong>, <span class="param-type"><span title="array|string">array|string</span></span><strong> $paths</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Registers a set of classes</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$prefix</code> - The classes prefix</li>
-                <li><code>$paths</code> - The location(s) of the classes</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addPrefixes"/>
-            <h4><span class="label public">public</span>addPrefixes<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $prefixes</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds prefixes.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$prefixes</code> - Prefixes to add</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="findFile"/>
-            <h4><span class="label public">public</span>findFile<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Finds the path to the file where the class is defined.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$class</code> - The name of the class</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The path, if found</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFallbackDirs"/>
-            <h4><span class="label public">public</span>getFallbackDirs<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns fallback directories.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPrefixes"/>
-            <h4><span class="label public">public</span>getPrefixes<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns prefixes.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getUseIncludePath"/>
-            <h4><span class="label public">public</span>getUseIncludePath<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Can be used to check if the autoloader uses the include path to check for classes.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadClass"/>
-            <h4><span class="label public">public</span>loadClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Loads the given class or interface.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$class</code> - The name of the class</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>True, if loaded</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="register"/>
-            <h4><span class="label public">public</span>register<span style="font-size:90%;">( <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $prepend</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Registers this instance as an autoloader.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$prepend</code> - Whether to prepend the autoloader or not</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setUseIncludePath"/>
-            <h4><span class="label public">public</span>setUseIncludePath<span style="font-size:90%;">( <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $useIncludePath</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Turns on searching the include for class files.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$useIncludePath</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="unregister"/>
-            <h4><span class="label public">public</span>unregister<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Unregisters this instance as an autoloader.</li>
-            </p>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="addPrefix"><a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/addPrefix.xhtml">addPrefix()</a>
+                — Registers a set of classes</li>
+            <li id="addPrefixes"><a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/addPrefixes.xhtml">addPrefixes()</a>
+                — Adds prefixes.</li>
+            <li id="findFile"><a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/findFile.xhtml">findFile()</a>
+                — Finds the path to the file where the class is defined.</li>
+            <li id="getFallbackDirs"><a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/getFallbackDirs.xhtml">getFallbackDirs()</a>
+                — Returns fallback directories.</li>
+            <li id="getPrefixes"><a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/getPrefixes.xhtml">getPrefixes()</a>
+                — Returns prefixes.</li>
+            <li id="getUseIncludePath"><a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/getUseIncludePath.xhtml">getUseIncludePath()</a>
+                — Can be used to check if the autoloader uses the include path to check for classes.</li>
+            <li id="loadClass"><a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/loadClass.xhtml">loadClass()</a>
+                — Loads the given class or interface.</li>
+            <li id="register"><a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/register.xhtml">register()</a>
+                — Registers this instance as an autoloader.</li>
+            <li id="setUseIncludePath"><a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/setUseIncludePath.xhtml">setUseIncludePath()</a>
+                — Turns on searching the include for class files.</li>
+            <li id="unregister"><a title="Symfony\Component\ClassLoader\ClassLoader" href="../classes/Symfony_Component_ClassLoader_ClassLoader/unregister.xhtml">unregister()</a>
+                — Unregisters this instance as an autoloader.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

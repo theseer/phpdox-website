@@ -1,196 +1,881 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>PHPUnit - PHPUnit_Util_Printer - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - PHPUnit_Util_Printer</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">PHPUnit - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">PHPUnit_Util_Printer</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#autoFlush">$autoFlush</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#out">$out</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#outTarget">$outTarget</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#printsHTML">$printsHTML</a>
+            <a href="#violations">Violations</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/Util/Printer.php.xhtml#line57">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>PHPUnit_Util_Printer</h1>
+        <h4>Utility class that can print to STDOUT or write to a file.</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#flush">flush</a>
-          </li>
-          <li>
-            <a href="#getAutoFlush">getAutoFlush</a>
-          </li>
-          <li>
-            <a href="#incrementalFlush">incrementalFlush</a>
-          </li>
-          <li>
-            <a href="#setAutoFlush">setAutoFlush</a>
-          </li>
-          <li>
-            <a href="#write">write</a>
-          </li>
+          <li>Author: Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>Copyright: 2001-2014 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>License: http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">\</span>PHPUnit_Util_Printer</h2>
-        <div class="file-notice">
-          <p>Utility class that can print to STDOUT or write to a file.</p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PHPUnit_Util_Printer
+            {<br/><ul class="none"><li>// members</li><li>protected boolean <a href="#members">$autoFlush</a>;
+                    </li><li>protected resource <a href="#members">$out</a>;
+                    </li><li>protected string <a href="#members">$outTarget</a>;
+                    </li><li>protected boolean <a href="#members">$printsHTML</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/flush.xhtml">flush</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/incrementalFlush.xhtml">incrementalFlush</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/write.xhtml">write</a>()
+                    </li><li>public boolean <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/getAutoFlush.xhtml">getAutoFlush</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/setAutoFlush.xhtml">setAutoFlush</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extended by</h4>
+          <ul>
+            <li>
+              <a href="../classes/PHPUnit_Util_Log_JUnit.xhtml">PHPUnit_Util_Log_JUnit</a>
+            </li>
+            <li>
+              <a href="../classes/PHPUnit_Util_Log_JSON.xhtml">PHPUnit_Util_Log_JSON</a>
+            </li>
+            <li>
+              <a href="../classes/PHPUnit_Util_Log_TAP.xhtml">PHPUnit_Util_Log_TAP</a>
+            </li>
+            <li>
+              <a href="../classes/PHPUnit_Util_TestDox_ResultPrinter_Text.xhtml">PHPUnit_Util_TestDox_ResultPrinter_Text</a>
+            </li>
+            <li>
+              <a href="../classes/PHPUnit_Util_TestDox_ResultPrinter_HTML.xhtml">PHPUnit_Util_TestDox_ResultPrinter_HTML</a>
+            </li>
+            <li>
+              <a href="../classes/PHPUnit_Util_TestDox_ResultPrinter.xhtml">PHPUnit_Util_TestDox_ResultPrinter</a>
+            </li>
+            <li>
+              <a href="../classes/PHPUnit_TextUI_ResultPrinter.xhtml">PHPUnit_TextUI_ResultPrinter</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>Copyright: </b>2001-2013 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>License: </b>http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
+        <h2 id="violations">Violations</h2>
+        <div class="styled">
+          <h3>Checkstyle</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Column</th>
+                <th>Severity</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">132</td>
+              <td>39</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">132</td>
+              <td>77</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+          </table>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="autoFlush"><strong>$autoFlush</strong>
+                —
+                boolean<br/><span class="indent">If true, flush output after every write.</span></li>
+            <li id="out"><strong>$out</strong>
+                —
+                resource</li>
+            <li id="outTarget"><strong>$outTarget</strong>
+                —
+                string</li>
+            <li id="printsHTML"><strong>$printsHTML</strong>
+                —
+                boolean</li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/__construct.xhtml">__construct()</a>
+                — Constructor.</li>
+            <li id="flush"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/flush.xhtml">flush()</a>
+                — Flush buffer, optionally tidy up HTML, and close output if it's not to a php stream</li>
+            <li id="getAutoFlush"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/getAutoFlush.xhtml">getAutoFlush()</a>
+                — Check auto-flush mode.</li>
+            <li id="incrementalFlush"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/incrementalFlush.xhtml">incrementalFlush()</a>
+                — Performs a safe, incremental flush.</li>
+            <li id="setAutoFlush"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/setAutoFlush.xhtml">setAutoFlush()</a>
+                — Set auto-flushing mode.</li>
+            <li id="write">
+              <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/write.xhtml">write()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
+          <li>
+            <h3>2014-08-12T06:43:31+02:00 (commit #<span title="50dfaba6477d3b1a0c650d4f70a0d9f478ff6092">50dfaba</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">phpcbf --standard=PSR2 src tests</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-22T19:43:07+01:00 (commit #<span title="02b42d7e912186a17d56fa803ae4682d16f1ff79">02b42d7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on formatting code according to PSR-2</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-20T17:21:13+01:00 (commit #<span title="3a5808fbca4ee832c27f13a544fdf8809eec62ec">3a5808f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-09T08:11:47+01:00 (commit #<span title="205e00844d1d9cf4cd4545c4cc45f1121a6b0824">205e008</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-01-07T11:37:52+01:00 (commit #<span title="c517984099c588d7cbe04bea9fb756a764769f5f">c517984</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-24T06:47:44+02:00 (commit #<span title="81ab540c8718a37315962b8242c7f1b4ee031ed4">81ab540</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Do not perform string replacement for @package_version@ anymore.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-04-30T12:02:38+02:00 (commit #<span title="5786e50b3878cba88932b10e6a48c75723950707">5786e50</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">List The BSD 3-Clause License correctly and consistently. Thanks to Christian Aistleitner &lt;christian@quelltextlich.at&gt; for bringing this issue to my attention.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-01T11:21:16+01:00 (commit #<span title="aae6c3808b9c4bee416657298fa90865d6898d60">aae6c38</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-27T10:21:52+01:00 (commit #<span title="37cacc915e512f640fefa9c6422d503f3c59455e">37cacc9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">PHPUnit no longer throws exceptions that do not extend PHPUnit_Framework_Exception.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-11T18:38:51+01:00 (commit #<span title="4a08b936e5b54e4e512b35df95d2202078f87de8">4a08b93</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Never close any php streams. Closes #341</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-26T12:19:28+02:00 (commit #<span title="bfc351cdf4b4bcb00e81235789d188643ebea147">bfc351c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix whitespace issues.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-04T14:30:16+02:00 (commit #<span title="f7e1d94d596f34d054f92abb7157ef360fa60b12">f7e1d94</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Refactored cli output. It's now possible to write to the cli or to a file</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-19T11:51:23+01:00 (commit #<span title="ba1341cbeacea2ec705de68572f0080b221ba16d">ba1341c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-19T11:47:14+01:00 (commit #<span title="87dbed1a1b62dba77fcce17a0254f5d79b6dfb61">87dbed1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Use correct default value for second argument of mkdir().</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-17T13:25:52+01:00 (commit #<span title="fdb756a4823d48b168ff4f916969efce0161d4c1">fdb756a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Close #120.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-17T13:22:02+01:00 (commit #<span title="61f952a1a32e22da804d3defcf34a264405e3598">61f952a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Create directory when it does not exist.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-12-31T11:45:34+01:00 (commit #<span title="bee33449535dd656c2c0a94946eb0086d1214e1f">bee3344</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-07T12:42:23+02:00 (commit #<span title="f0d9cdd35d83fd081c218fdec17edaf9e4f868f7">f0d9cdd</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Change email address.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-12T20:25:54+02:00 (commit #<span title="d19a7378115e5de11b694ac40531ab662d074055">d19a737</span>)</h3>
+            <div>
+              <p>
+                        Author: Mark Story (mark@mark-story.com) /
+                        Commiter: Mark Story (mark@mark-story.com)
+                    </p>
+              <pre class="wrapped">Removing trailing whitespace from files. Refs #1063</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-05-18T16:13:08+02:00 (commit #<span title="0f2b39e72cdd2d94fcde147be749ecd88de5ceb6">0f2b39e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove superfluous @abstract annotation.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-04-06T16:01:40+02:00 (commit #<span title="e766ca4c56b9638a175a5c228c12b7b1c3b64859">e766ca4</span>)</h3>
+            <div>
+              <p>
+                        Author: Fabien Potencier (fabien.potencier@gmail.com) /
+                        Commiter: Fabien Potencier (fabien.potencier@gmail.com)
+                    </p>
+              <pre class="wrapped">Revert "Create output directory when it does not exist"
+
+This reverts commit 909e849ac18b11afa7637a7b173ab918d270fb98.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-04-06T15:04:18+02:00 (commit #<span title="909e849ac18b11afa7637a7b173ab918d270fb98">909e849</span>)</h3>
+            <div>
+              <p>
+                        Author: Fabien Potencier (fabien.potencier@gmail.com) /
+                        Commiter: Fabien Potencier (fabien.potencier@gmail.com)
+                    </p>
+              <pre class="wrapped">Create output directory when it does not exist</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-04-05T17:41:26+02:00 (commit #<span title="471d69e2573822a6d9dd28159085a480e97dc734">471d69e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add @subpackage annotation.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-02-02T14:14:29+01:00 (commit #<span title="bc1aaaaacfa98ab64d1eb54ac5b87279023bab59">bc1aaaa</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove closing PHP tags.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-01-19T09:39:03+01:00 (commit #<span title="fb48a69ea606a4740ba1f0e4ddcfe60fcd2a8301">fb48a69</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on autoloading.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:26:09+01:00 (commit #<span title="37f75ffdc651e3359c5683335851f6c5d6576c34">37f75ff</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:25:53+01:00 (commit #<span title="bddcc5f10872f9f53029aa8aeab27e2a95fbe2e5">bddcc5f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:23:37+01:00 (commit #<span title="7a7d0b7a54abfe58cd411a3b199133a8cb46351e">7a7d0b7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:32:26+01:00 (commit #<span title="60e7125941b239eeb6cfc016a2a2e8c238f3bea4">60e7125</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:30:57+01:00 (commit #<span title="42294addddde87f7b8064156ded58be18ad7aac4">42294ad</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:26:35+01:00 (commit #<span title="8617133a88b4c149adef21bc581a0bdf896f130e">8617133</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-23T09:39:24+01:00 (commit #<span title="150341273801b55392d0bde99fc7be60f5a5c15d">1503412</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5389].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-23T09:29:23+01:00 (commit #<span title="4c9cf4e6879b29001f9b1d38cee68a8dfb9c01cc">4c9cf4e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on PHP_CodeCoverage migration.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-08-18T08:38:02+02:00 (commit #<span title="9f181153f8394bbb97f04f7756f96ac4e019e249">9f18115</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5115:5117] to close #672.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-08-18T08:30:01+02:00 (commit #<span title="68e37b23854d37ddbbb0f9e9b1635d5a0a72bcab">68e37b2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Do not call fclose() on php://stderr.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-04-12T11:53:14+02:00 (commit #<span title="62a3dbadd5c815078942357a31d1b82ccdb5cd50">62a3dba</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [4800], [4801], and [4802].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-04-12T10:32:30+02:00 (commit #<span title="7ee5265835c5fe291094f6ee96df66063ac1293e">7ee5265</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Only tidy HTML when it is written to a file.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-04-11T16:21:17+02:00 (commit #<span title="2eeb62225861acd02633ddf8529587fd9de44946">2eeb622</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [4796].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-04-11T16:20:45+02:00 (commit #<span title="40a492f3e807d22a747a54d6a3be555cebd4d02d">40a492f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Configure tidy.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-12-31T10:26:51+01:00 (commit #<span title="a899cb2a6cf988f15e38ad358c9813a82557a2b8">a899cb2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [4402].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-12-31T10:25:57+01:00 (commit #<span title="4b26cea6b551535438e0deee8f1120f29fe931a6">4b26cea</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-12-17T10:18:04+01:00 (commit #<span title="a9e0e0c02622752a43c1c37aeda91a254ccbe5b5">a9e0e0c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [4297].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-12-17T10:16:43+01:00 (commit #<span title="e1c3568ada29b118a47ee76c51d7e4c30d0a5f26">e1c3568</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Improve error messages for invalid arguments.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-11-20T19:19:33+01:00 (commit #<span title="79256d387ac7dd8c76893ef6ed03aa26481c67e1">79256d3</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Use constant instead of function call.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-10-05T19:18:41+02:00 (commit #<span title="d0e3d1504d3a4a40ff8f74838dda77c38dd0bc58">d0e3d15</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix #568.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-06-08T14:22:29+02:00 (commit #<span title="191a5d574eae7b91df10216ce26c4bb7b9580556">191a5d5</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [3160].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-06-08T14:03:37+02:00 (commit #<span title="9d9b5e3d982450f03fd7e0619824578bea586bc8">9d9b5e3</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Drop superfluous annotations.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-06-07T12:44:02+02:00 (commit #<span title="ff7f4edc103c27f7f80e97ede81e367b71aa7919">ff7f4ed</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [3130].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-06-07T12:41:20+02:00 (commit #<span title="c30918db0db5d46406a90e2e08416690cec79ce1">c30918d</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Close #496 (for #75).</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-04-24T10:34:46+02:00 (commit #<span title="70a9887f53f533169e604ae7d9848312fd9f29b5">70a9887</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [2850].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-04-24T10:33:16+02:00 (commit #<span title="2617379933ba35da8752dbbf7a791053cf55c829">2617379</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix whitespace issues reported by PHP_CodeSniffer.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-01-17T11:49:39+01:00 (commit #<span title="a15ebfbd951d2e1525ef37d9ac232179b3bd15d0">a15ebfb</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [2140].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-01-17T11:49:29+01:00 (commit #<span title="57e87927fcda48d852d5a60b69386a3ed0a0626e">57e8792</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Optionally tidy up HTML.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-12-26T19:11:55+01:00 (commit #<span title="1bba1cc3d24ec82a85eb4e9b9015b7ef7bc26328">1bba1cc</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-12-26T19:11:04+01:00 (commit #<span title="58121cf06bddae103474b9f621d88ae722a5a932">58121cf</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-09-29T12:56:13+02:00 (commit #<span title="8feea899fe433f90a18d86f1879621e14a556b94">8feea89</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [1361].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-02-24T07:58:18+01:00 (commit #<span title="203ee10ff51aa07f1d4ae6da26ebe42561831a26">203ee10</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fugbix typo.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-02-24T07:58:18+01:00 (commit #<span title="ae2a7c250ba74ab403a80cd048168488c800be15">ae2a7c2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fugbix typo.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-01-13T10:30:14+01:00 (commit #<span title="cbb012f3883ac08ce8b53f677df9a9f107826887">cbb012f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Make TextUI_TestRunner output readable in browser. Closes #82.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-12-24T18:50:40+01:00 (commit #<span title="0189be1537414d2901de0626a8cff464428e288d">0189be1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-11-07T09:08:40+01:00 (commit #<span title="648131bf1cc81801f0c6a4d0015a6a2df886c6a5">648131b</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Generic socket support for PHPUnit_Util_Printer.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-11-04T20:59:10+01:00 (commit #<span title="86f5f695a55f8e99e35f11d6b6b36932b28384bc">86f5f69</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">fputs() -&gt; fwrite()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-09-11T09:20:41+02:00 (commit #<span title="75e12fb327d4b9427e0f9f33e9763070958b7ed3">75e12fb</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">No longer needed.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-08-13T10:57:58+02:00 (commit #<span title="3cd6a25b9bc956ef1aadab5f71d666dd7d939c91">3cd6a25</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Whitespace fixes.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-07-06T11:50:42+02:00 (commit #<span title="dacd2f1b95f9f3e22769cfa8243d039e3850f3f0">dacd2f1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Leftover: PHPUnit2 -&gt; PHPUnit.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-06-30T10:38:41+02:00 (commit #<span title="210b6211303c41da33bc0f894fb0e289892b5685">210b621</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Make it easier to use a checkout of the trunk.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-06-29T20:56:08+02:00 (commit #<span title="6b0d2d5a14b08c86c62c3888777b7f2b0c1aeff8">6b0d2d5</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Post-PEAR cleanup, phase one: PHPUnit2_* -&gt; PHPUnit_*, pear.php.net -&gt; phpunit.de, etc.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-06-29T16:58:01+02:00 (commit #<span title="8b8c705ce7dd77b02ba768d39224dddfeb34fb62">8b8c705</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Recreate trunk.</pre>
+            </div>
+          </li>
         </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="autoFlush"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $autoFlush</h4>
-            <ul class="varlist">
-              <li>If TRUE, flush output after every write.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="out"/>
-            <h4><span class="label protected">protected</span>resource 
-                
-                $out</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="outTarget"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $outTarget</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="printsHTML"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $printsHTML</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $out</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$out</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>PHPUnit_Framework_Exception</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="flush"/>
-            <h4><span class="label public">public</span>flush<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Flush buffer, optionally tidy up HTML, and close output if it's not to a php stream</li>
-            </p>
-          </li>
-          <li>
-            <a name="getAutoFlush"/>
-            <h4><span class="label public">public</span>getAutoFlush<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check auto-flush mode.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="incrementalFlush"/>
-            <h4><span class="label public">public</span>incrementalFlush<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Performs a safe, incremental flush.<pre>Do not confuse this function with the flush() function of this class,
-since the flush() function may close the file being written to, rendering
-the current object no longer usable.</pre></li>
-            </p>
-          </li>
-          <li>
-            <a name="setAutoFlush"/>
-            <h4><span class="label public">public</span>setAutoFlush<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $autoFlush</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set auto-flushing mode.<pre>If set, *incremental* flushes will be done after each write. This should
-not be confused with the different effects of this class' flush() method.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$autoFlush</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="write"/>
-            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">string</span><strong> $buffer</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$buffer</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+      </section>
     </div>
+    <footer>
+      <span>Generated using phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
   </body>
 </html>

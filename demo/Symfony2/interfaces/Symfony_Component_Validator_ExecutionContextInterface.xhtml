@@ -1,393 +1,132 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Symfony\Component\Validator\ExecutionContextInterface - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Symfony\Component\Validator\ExecutionContextInterface</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../interfaces.xhtml">Interfaces</a>
+          </li>
+          <li class="separator">
+            <a href="../interfaces.xhtml#Symfony_Component_Validator">Symfony\Component\Validator</a>
+          </li>
+          <li class="separator">ExecutionContextInterface</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Methods</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#addViolation">addViolation</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#addViolationAt">addViolationAt</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#getClassName">getClassName</a>
+            <a href="#violations">Violations</a>
           </li>
           <li>
-            <a href="#getGroup">getGroup</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#getMetadata">getMetadata</a>
-          </li>
-          <li>
-            <a href="#getMetadataFactory">getMetadataFactory</a>
-          </li>
-          <li>
-            <a href="#getPropertyName">getPropertyName</a>
-          </li>
-          <li>
-            <a href="#getPropertyPath">getPropertyPath</a>
-          </li>
-          <li>
-            <a href="#getRoot">getRoot</a>
-          </li>
-          <li>
-            <a href="#getValue">getValue</a>
-          </li>
-          <li>
-            <a href="#getViolations">getViolations</a>
-          </li>
-          <li>
-            <a href="#validate">validate</a>
-          </li>
-          <li>
-            <a href="#validateValue">validateValue</a>
+            <a href="../source/symfony/symfony/src/Symfony/Component/Validator/ExecutionContextInterface.php.xhtml#line86">Source</a>
           </li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Symfony\Component\Validator\</span>ExecutionContextInterface</h2>
-        <div class="file-notice">
-          <p>Stores the validator's state during validation.</p>
-          <p>
-            <pre>For example, let's validate the following object graph:
-&lt;pre&gt;
-(Person)---($firstName: string)
-     \
-  ($address: Address)---($street: string)
-&lt;/pre&gt;
-We validate the &lt;tt&gt;Person&lt;/tt&gt; instance, which becomes the "root" of the
-validation run (see ). The state of the context after the
-first step will be like this:
-&lt;pre&gt;
-(Person)---($firstName: string)
-   ^ \
-  ($address: Address)---($street: string)
-&lt;/pre&gt;
-The validator is stopped at the &lt;tt&gt;Person&lt;/tt&gt; node, both the root and the
-value (see ) of the context point to the &lt;tt&gt;Person&lt;/tt&gt;
-instance. The property path is empty at this point (see ).
-The metadata of the context is the metadata of the &lt;tt&gt;Person&lt;/tt&gt; node
-(see ).
-After advancing to the property &lt;tt&gt;$firstName&lt;/tt&gt; of the &lt;tt&gt;Person&lt;/tt&gt;
-instance, the state of the context looks like this:
-&lt;pre&gt;
-(Person)---($firstName: string)
-     \              ^
-  ($address: Address)---($street: string)
-&lt;/pre&gt;
-The validator is stopped at the property &lt;tt&gt;$firstName&lt;/tt&gt;. The root still
-points to the &lt;tt&gt;Person&lt;/tt&gt; instance, because this is where the validation
-started. The property path is now "firstName" and the current value is the
-value of that property.
-After advancing to the &lt;tt&gt;$address&lt;/tt&gt; property and then to the
-&lt;tt&gt;$street&lt;/tt&gt; property of the &lt;tt&gt;Address&lt;/tt&gt; instance, the context state
-looks like this:
-&lt;pre&gt;
-(Person)---($firstName: string)
-     \
-  ($address: Address)---($street: string)
-                              ^
-&lt;/pre&gt;
-The validator is stopped at the property &lt;tt&gt;$street&lt;/tt&gt;. The root still
-points to the &lt;tt&gt;Person&lt;/tt&gt; instance, but the property path is now
-"address.street" and the validated value is the value of that property.
-Apart from the root, the property path and the currently validated value,
-the execution context also knows the metadata of the current node (see
-) which for example returns a or a  object. he context also contains the
-validation group that is currently being validated (see ) and
-the violations that happened up until now (see ).
-Apart from reading the execution context, you can also use
- or  to add new violations and
- or  to validate values that the
-validator otherwise would not reach.
-</pre>
-          </p>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Symfony\Component\Validator\</small>ExecutionContextInterface</h1>
+        <h4>Stores the validator's state during validation.</h4>
+        <p>For example, let's validate the following object graph:<br/>&lt;pre&gt;<br/>(Person)---($firstName: string)<br/>\<br/>($address: Address)---($street: string)<br/>&lt;/pre&gt;<br/>We validate the &lt;tt&gt;Person&lt;/tt&gt; instance, which becomes the "root" of the<br/>validation run (see ). The state of the context after the<br/>first step will be like this:<br/>&lt;pre&gt;<br/>(Person)---($firstName: string)<br/>^ \<br/>($address: Address)---($street: string)<br/>&lt;/pre&gt;<br/>The validator is stopped at the &lt;tt&gt;Person&lt;/tt&gt; node, both the root and the<br/>value (see ) of the context point to the &lt;tt&gt;Person&lt;/tt&gt;<br/>instance. The property path is empty at this point (see ).<br/>The metadata of the context is the metadata of the &lt;tt&gt;Person&lt;/tt&gt; node<br/>(see ).<br/>After advancing to the property &lt;tt&gt;$firstName&lt;/tt&gt; of the &lt;tt&gt;Person&lt;/tt&gt;<br/>instance, the state of the context looks like this:<br/>&lt;pre&gt;<br/>(Person)---($firstName: string)<br/>\ ^<br/>($address: Address)---($street: string)<br/>&lt;/pre&gt;<br/>The validator is stopped at the property &lt;tt&gt;$firstName&lt;/tt&gt;. The root still<br/>points to the &lt;tt&gt;Person&lt;/tt&gt; instance, because this is where the validation<br/>started. The property path is now "firstName" and the current value is the<br/>value of that property.<br/>After advancing to the &lt;tt&gt;$address&lt;/tt&gt; property and then to the<br/>&lt;tt&gt;$street&lt;/tt&gt; property of the &lt;tt&gt;Address&lt;/tt&gt; instance, the context state<br/>looks like this:<br/>&lt;pre&gt;<br/>(Person)---($firstName: string)<br/>\<br/>($address: Address)---($street: string)<br/>^<br/>&lt;/pre&gt;<br/>The validator is stopped at the property &lt;tt&gt;$street&lt;/tt&gt;. The root still<br/>points to the &lt;tt&gt;Person&lt;/tt&gt; instance, but the property path is now<br/>"address.street" and the validated value is the value of that property.<br/>Apart from the root, the property path and the currently validated value,<br/>the execution context also knows the metadata of the current node (see<br/>) which for example returns a or a object. he context also contains the<br/>validation group that is currently being validated (see ) and<br/>the violations that happened up until now (see ).<br/>Apart from reading the execution context, you can also use<br/>or to add new violations and<br/>or to validate values that the<br/>validator otherwise would not reach.<br/></p>
+        <ul>
+          <li>Author: Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">interface ExecutionContextInterface
+            {<br/><ul class="none"><li>// methods</li><li>public void <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/addViolation.xhtml">addViolation</a>()
+                    </li><li>public void <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/addViolationAt.xhtml">addViolationAt</a>()
+                    </li><li>public void <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/validate.xhtml">validate</a>()
+                    </li><li>public void <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/validateValue.xhtml">validateValue</a>()
+                    </li><li>public ConstraintViolationListInterface <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getViolations.xhtml">getViolations</a>()
+                    </li><li>public mixed <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getRoot.xhtml">getRoot</a>()
+                    </li><li>public mixed <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getValue.xhtml">getValue</a>()
+                    </li><li>public MetadataInterface|null <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getMetadata.xhtml">getMetadata</a>()
+                    </li><li>public MetadataFactoryInterface <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getMetadataFactory.xhtml">getMetadataFactory</a>()
+                    </li><li>public string <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getGroup.xhtml">getGroup</a>()
+                    </li><li>public string|null <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getClassName.xhtml">getClassName</a>()
+                    </li><li>public string|null <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getPropertyName.xhtml">getPropertyName</a>()
+                    </li><li>public string <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getPropertyPath.xhtml">getPropertyPath</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="addViolation"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/addViolation.xhtml">addViolation()</a>
+                — Adds a violation at the current node of the validation graph.</li>
+            <li id="addViolationAt"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/addViolationAt.xhtml">addViolationAt()</a>
+                — Adds a violation at the validation graph node with the given property path relative to the current property path.</li>
+            <li id="getClassName"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getClassName.xhtml">getClassName()</a>
+                — Returns the class name of the current node.</li>
+            <li id="getGroup"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getGroup.xhtml">getGroup()</a>
+                — Returns the validation group that is currently being validated.</li>
+            <li id="getMetadata"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getMetadata.xhtml">getMetadata()</a>
+                — Returns the metadata for the currently validated value.</li>
+            <li id="getMetadataFactory"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getMetadataFactory.xhtml">getMetadataFactory()</a>
+                — Returns the used metadata factory.</li>
+            <li id="getPropertyName"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getPropertyName.xhtml">getPropertyName()</a>
+                — Returns the property name of the current node.</li>
+            <li id="getPropertyPath"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getPropertyPath.xhtml">getPropertyPath()</a>
+                — Returns the property path to the value that the validator is currently validating.</li>
+            <li id="getRoot"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getRoot.xhtml">getRoot()</a>
+                — Returns the value at which validation was started in the object graph.</li>
+            <li id="getValue"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getValue.xhtml">getValue()</a>
+                — Returns the value that the validator is currently validating.</li>
+            <li id="getViolations"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/getViolations.xhtml">getViolations()</a>
+                — Returns the violations generated by the validator so far.</li>
+            <li id="validate"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/validate.xhtml">validate()</a>
+                — Validates the given value within the scope of the current validation.</li>
+            <li id="validateValue"><a title="Symfony\Component\Validator\ExecutionContextInterface" href="../interfaces/Symfony_Component_Validator_ExecutionContextInterface/validateValue.xhtml">validateValue()</a>
+                — Validates a value against a constraint.</li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="addViolation"/>
-            <h4><span class="label public">public</span>addViolation<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">mixed</span><strong> $invalidValue</strong>, <span class="param-type"><span title="integer|null">integer|null</span></span><strong> $pluralization</strong>, <span class="param-type"><span title="integer|null">integer|null</span></span><strong> $code</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a violation at the current node of the validation graph.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - The error message.</li>
-                <li><code>$params</code> - The parameters substituted in the error message.</li>
-                <li><code>$invalidValue</code> - The invalid, validated value.</li>
-                <li><code>$pluralization</code> - The number to use to pluralize of the message.</li>
-                <li><code>$code</code> - The violation code.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addViolationAt"/>
-            <h4><span class="label public">public</span>addViolationAt<span style="font-size:90%;">( <span class="param-type">string</span><strong> $subPath</strong>, <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">mixed</span><strong> $invalidValue</strong>, <span class="param-type"><span title="integer|null">integer|null</span></span><strong> $pluralization</strong>, <span class="param-type"><span title="integer|null">integer|null</span></span><strong> $code</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a violation at the validation graph node with the given property path relative to the current property path.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$subPath</code> - The relative property path for the violation.</li>
-                <li><code>$message</code> - The error message.</li>
-                <li><code>$params</code> - The parameters substituted in the error message.</li>
-                <li><code>$invalidValue</code> - The invalid, validated value.</li>
-                <li><code>$pluralization</code> - The number to use to pluralize of the message.</li>
-                <li><code>$code</code> - The violation code.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getClassName"/>
-            <h4><span class="label public">public</span>getClassName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the class name of the current node.<pre>If the metadata of the current node does not implement
-{@link ClassBasedInterface} or if no metadata is available for the
-current node, this method returns null.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The class name or null, if no class name could be found.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getGroup"/>
-            <h4><span class="label public">public</span>getGroup<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the validation group that is currently being validated.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current validation group.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMetadata"/>
-            <h4><span class="label public">public</span>getMetadata<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the metadata for the currently validated value.<pre>With the core implementation, this method returns a
- instance if the current value is an object,
-a  instance if the current value is
-the value of a property and a  instance if
-the validated value is the result of a getter method.
-If the validated value is neither of these, for example if the validator
-has been called with a plain value and constraint, this method returns
-null.
-</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The metadata of the currently validated</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMetadataFactory"/>
-            <h4><span class="label public">public</span>getMetadataFactory<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the used metadata factory.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The metadata factory.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPropertyName"/>
-            <h4><span class="label public">public</span>getPropertyName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the property name of the current node.<pre>If the metadata of the current node does not implement
-{@link PropertyMetadataInterface} or if no metadata is available for the
-current node, this method returns null.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The property name or null, if no property name could be found.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPropertyPath"/>
-            <h4><span class="label public">public</span>getPropertyPath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $subPath</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the property path to the value that the validator is currently validating.<pre>For example, take the following object graph:
-&lt;pre&gt;
-(Person)---($address: Address)---($street: string)
-&lt;/pre&gt;
-When the &lt;tt&gt;Person&lt;/tt&gt; instance is passed to the validator, the
-property path is initially empty. When the &lt;tt&gt;$address&lt;/tt&gt; property
-of that person is validated, the property path is "address". When
-the &lt;tt&gt;$street&lt;/tt&gt; property of the related &lt;tt&gt;Address&lt;/tt&gt; instance
-is validated, the property path is "address.street".
-Properties of objects are prefixed with a dot in the property path.
-Indices of arrays or objects implementing the interface are enclosed in brackets. For example, if the property in
-the previous example is &lt;tt&gt;$addresses&lt;/tt&gt; and contains an array
-of &lt;tt&gt;Address&lt;/tt&gt; instance, the property path generated for the
-&lt;tt&gt;$street&lt;/tt&gt; property of one of these addresses is for example
-"addresses[0].street".
-</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$subPath</code> - Optional. The suffix appended to the current</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current property path. The result may be an empty</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getRoot"/>
-            <h4><span class="label public">public</span>getRoot<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the value at which validation was started in the object graph.<pre>The validator, when given an object, traverses the properties and
-related objects and their properties. The root of the validation is the
-object from which the traversal started.
-The current value is returned by .
-</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The root value of the validation.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getValue"/>
-            <h4><span class="label public">public</span>getValue<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the value that the validator is currently validating.<pre>If you want to retrieve the object that was originally passed to the
-validator, use .
-</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The currently validated value.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getViolations"/>
-            <h4><span class="label public">public</span>getViolations<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the violations generated by the validator so far.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The constraint violation list.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="validate"/>
-            <h4><span class="label public">public</span>validate<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">string</span><strong> $subPath</strong>, <span class="param-type">array</span><strong> $groups</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $traverse</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $deep</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validates the given value within the scope of the current validation.<pre>The value may be any value recognized by the used metadata factory
-(see ), or an array or a
-traversable object of such values.
-Usually you validate a value that is not the current node of the
-execution context. For this case, you can pass the argument which is appended to the current property path when a violation
-is created. For example, take the following object graph:
-&lt;pre&gt;
-(Person)---($address: Address)---($phoneNumber: PhoneNumber)
-                    ^
-&lt;/pre&gt;
-When the execution context stops at the &lt;tt&gt;Person&lt;/tt&gt; instance, the
-property path is "address". When you validate the &lt;tt&gt;PhoneNumber&lt;/tt&gt;
-instance now, pass "phoneNumber" as sub path to correct the property path
-to "address.phoneNumber":
-&lt;pre&gt;
-$context-&gt;validate($address-&gt;phoneNumber, 'phoneNumber');
-&lt;/pre&gt;
-Any violations generated during the validation will be added to the
-violation list that you can access with .
-</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - The value to validate.</li>
-                <li><code>$subPath</code> - The path to append to the context's property path.</li>
-                <li><code>$groups</code> - The groups to validate in. If you don't pass any</li>
-                <li><code>$traverse</code> - Whether to traverse the value if it is an array</li>
-                <li><code>$deep</code> - Whether to traverse the value recursively if</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="validateValue"/>
-            <h4><span class="label public">public</span>validateValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">array</span><strong> $constraints</strong>, <span class="param-type">string</span><strong> $subPath</strong>, <span class="param-type">array</span><strong> $groups</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validates a value against a constraint.<pre>Use the parameter &lt;tt&gt;$subPath&lt;/tt&gt; to adapt the property path for the
-validated value. For example, take the following object graph:
-
-&lt;pre&gt;
-(Person)---($address: Address)---($street: string)
-                    ^
-&lt;/pre&gt;
-
-When the validator validates the &lt;tt&gt;Address&lt;/tt&gt; instance, the
-property path stored in the execution context is "address". When you
-manually validate the property &lt;tt&gt;$street&lt;/tt&gt; now, pass the sub path
-"street" to adapt the full property path to "address.street":
-
-&lt;pre&gt;
-$context-&gt;validate($address-&gt;street, new NotNull(), 'street');
-&lt;/pre&gt;</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - The value to validate.</li>
-                <li><code>$constraints</code> - The constraint(s) to validate against.</li>
-                <li><code>$subPath</code> - The path to append to the context's property path.</li>
-                <li><code>$groups</code> - The groups to validate in. If you don't pass any</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

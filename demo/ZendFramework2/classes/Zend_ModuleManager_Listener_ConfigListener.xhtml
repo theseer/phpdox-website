@@ -1,628 +1,251 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\ModuleManager\Listener\ConfigListener - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\ModuleManager\Listener\ConfigListener</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_ModuleManager_Listener">Zend\ModuleManager\Listener</a>
+          </li>
+          <li class="separator">ConfigListener</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#STATIC_PATH">STATIC_PATH</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#GLOB_PATH">GLOB_PATH</a>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/ModuleManager/Listener/ConfigListener.php.xhtml#line25">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
-        <ul>
-          <li>
-            <a href="#listeners">$listeners</a>
-          </li>
-          <li>
-            <a href="#configs">$configs</a>
-          </li>
-          <li>
-            <a href="#mergedConfig">$mergedConfig</a>
-          </li>
-          <li>
-            <a href="#mergedConfigObject">$mergedConfigObject</a>
-          </li>
-          <li>
-            <a href="#skipConfig">$skipConfig</a>
-          </li>
-          <li>
-            <a href="#paths">$paths</a>
-          </li>
-          <li>
-            <a href="#options">$options</a>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#__invoke">__invoke</a>
-          </li>
-          <li>
-            <a href="#addConfig">addConfig</a>
-          </li>
-          <li>
-            <a href="#addConfigByPath">addConfigByPath</a>
-          </li>
-          <li>
-            <a href="#addConfigGlobPath">addConfigGlobPath</a>
-          </li>
-          <li>
-            <a href="#addConfigGlobPaths">addConfigGlobPaths</a>
-          </li>
-          <li>
-            <a href="#addConfigPath">addConfigPath</a>
-          </li>
-          <li>
-            <a href="#addConfigPaths">addConfigPaths</a>
-          </li>
-          <li>
-            <a href="#addConfigStaticPath">addConfigStaticPath</a>
-          </li>
-          <li>
-            <a href="#addConfigStaticPaths">addConfigStaticPaths</a>
-          </li>
-          <li>
-            <a href="#attach">attach</a>
-          </li>
-          <li>
-            <a href="#detach">detach</a>
-          </li>
-          <li>
-            <a href="#getCachedConfig">getCachedConfig</a>
-          </li>
-          <li>
-            <a href="#getMergedConfig">getMergedConfig</a>
-          </li>
-          <li>
-            <a href="#getOptions">getOptions</a>
-          </li>
-          <li>
-            <a href="#hasCachedConfig">hasCachedConfig</a>
-          </li>
-          <li>
-            <a href="#onLoadModule">onLoadModule</a>
-          </li>
-          <li>
-            <a href="#onLoadModulesPost">onLoadModulesPost</a>
-          </li>
-          <li>
-            <a href="#onloadModulesPre">onloadModulesPre</a>
-          </li>
-          <li>
-            <a href="#setMergedConfig">setMergedConfig</a>
-          </li>
-          <li>
-            <a href="#setOptions">setOptions</a>
-          </li>
-          <li>
-            <a href="#updateCache">updateCache</a>
-          </li>
-          <li>
-            <a href="#writeArrayToFile">writeArrayToFile</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\ModuleManager\Listener\</span>ConfigListener</h2>
-        <div class="file-notice">
-          <p>Config listener</p>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\ModuleManager\Listener\</small>ConfigListener</h1>
+        <h4>Config listener</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ConfigListener
+                extends <a title="Zend\ModuleManager\Listener\AbstractListener" href="../classes/Zend_ModuleManager_Listener_AbstractListener.xhtml">AbstractListener</a>
+                implements
+                <a title="Zend\ModuleManager\Listener\ConfigMergerInterface" href="../interfaces/Zend_ModuleManager_Listener_ConfigMergerInterface.xhtml">ConfigMergerInterface</a>,<a title="Zend\EventManager\ListenerAggregateInterface" href="../interfaces/Zend_EventManager_ListenerAggregateInterface.xhtml">ListenerAggregateInterface</a>
+            {<br/><ul class="none"><li>// constants</li><li>const STATIC_PATH = 'static_path';</li><li>const GLOB_PATH = 'glob_path';</li></ul><ul class="none"><li>// members</li><li>protected array <a href="#members">$callbacks</a>;
+                    </li><li>protected array <a href="#members">$configs</a>;
+                    </li><li>protected array <a href="#members">$mergedConfig</a>;
+                    </li><li>protected <span title="Zend\Config\Config">Config</span> <a href="#members">$mergedConfigObject</a>;
+                    </li><li>protected <span title="Zend\ModuleManager\Listener\bool">bool</span> <a href="#members">$skipConfig</a>;
+                    </li><li>protected array <a href="#members">$paths</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Zend\ModuleManager\Listener\AbstractListener">AbstractListener</span></li><li>protected <span title="Zend\ModuleManager\Listener\ListenerOptions">ListenerOptions</span> <a href="#members">$options</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/attach.xhtml">attach</a>()
+                    </li><li>public ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/onloadModulesPre.xhtml">onloadModulesPre</a>()
+                    </li><li>public ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/onLoadModule.xhtml">onLoadModule</a>()
+                    </li><li>public ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/onMergeConfig.xhtml">onMergeConfig</a>()
+                    </li><li>public ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/onLoadModules.xhtml">onLoadModules</a>()
+                    </li><li>public void <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/detach.xhtml">detach</a>()
+                    </li><li>public mixed <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/getMergedConfig.xhtml">getMergedConfig</a>()
+                    </li><li>public ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/setMergedConfig.xhtml">setMergedConfig</a>()
+                    </li><li>public ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigGlobPaths.xhtml">addConfigGlobPaths</a>()
+                    </li><li>public ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigGlobPath.xhtml">addConfigGlobPath</a>()
+                    </li><li>public ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigStaticPaths.xhtml">addConfigStaticPaths</a>()
+                    </li><li>public ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigStaticPath.xhtml">addConfigStaticPath</a>()
+                    </li><li>protected ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigPaths.xhtml">addConfigPaths</a>()
+                    </li><li>protected ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigPath.xhtml">addConfigPath</a>()
+                    </li><li>protected ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfig.xhtml">addConfig</a>()
+                    </li><li>protected ConfigListener <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigByPath.xhtml">addConfigByPath</a>()
+                    </li><li>protected bool <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/hasCachedConfig.xhtml">hasCachedConfig</a>()
+                    </li><li>protected mixed <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/getCachedConfig.xhtml">getCachedConfig</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Zend\ModuleManager\Listener\AbstractListener">AbstractListener</span></li><li>public void <a title="Zend\ModuleManager\Listener\AbstractListener" href="../classes/Zend_ModuleManager_Listener_AbstractListener/__construct.xhtml">__construct</a>()
+                        </li><li>public ListenerOptions <a title="Zend\ModuleManager\Listener\AbstractListener" href="../classes/Zend_ModuleManager_Listener_AbstractListener/getOptions.xhtml">getOptions</a>()
+                        </li><li>public AbstractListener <a title="Zend\ModuleManager\Listener\AbstractListener" href="../classes/Zend_ModuleManager_Listener_AbstractListener/setOptions.xhtml">setOptions</a>()
+                        </li><li>protected AbstractListener <a title="Zend\ModuleManager\Listener\AbstractListener" href="../classes/Zend_ModuleManager_Listener_AbstractListener/writeArrayToFile.xhtml">writeArrayToFile</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Zend_ModuleManager_Listener_AbstractListener.xhtml">Zend\ModuleManager\Listener\AbstractListener</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Zend_ModuleManager_Listener_ConfigMergerInterface.xhtml">Zend\ModuleManager\Listener\ConfigMergerInterface</a>
+            </li>
+            <li>
+              <a href="../interfaces/Zend_EventManager_ListenerAggregateInterface.xhtml">Zend\EventManager\ListenerAggregateInterface</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Zend_ModuleManager_Listener_ConfigMergerInterface.xhtml">Zend\ModuleManager\Listener\ConfigMergerInterface</a>
-          </li>
-          <li>
-            <a href="../interfaces/Zend_EventManager_ListenerAggregateInterface.xhtml">Zend\EventManager\ListenerAggregateInterface</a>
-          </li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="STATIC_PATH"/>STATIC_PATH = 'static_path'<hr/></li>
-          <li><a name="GLOB_PATH"/>GLOB_PATH = 'glob_path'<hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="listeners"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $listeners</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="configs"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $configs</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="mergedConfig"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $mergedConfig</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="mergedConfigObject"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $mergedConfigObject</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="skipConfig"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $skipConfig</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="paths"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $paths</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_ModuleManager_Listener_ListenerOptions.xhtml">Zend\ModuleManager\Listener\ListenerOptions</a></span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>__construct</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$options</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__invoke"/>
-            <h4><span class="label public">public</span>__invoke<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_ModuleManager_ModuleEvent.xhtml">Zend\ModuleManager\ModuleEvent</a></span><strong> $e</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>__invoke proxy to loadModule for easier attaching</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$e</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addConfigGlobPath"/>
-            <h4><span class="label public">public</span>addConfigGlobPath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $globPath</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add a glob path of config files to merge after loading modules</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$globPath</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addConfigGlobPaths"/>
-            <h4><span class="label public">public</span>addConfigGlobPaths<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $globPaths</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add an array of glob paths of config files to merge after loading modules</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$globPaths</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addConfigStaticPath"/>
-            <h4><span class="label public">public</span>addConfigStaticPath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $staticPath</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add a static path of config files to merge after loading modules</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$staticPath</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addConfigStaticPaths"/>
-            <h4><span class="label public">public</span>addConfigStaticPaths<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $staticPaths</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add an array of static paths of config files to merge after loading modules</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$staticPaths</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="attach"/>
-            <h4><span class="label public">public</span>attach<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_EventManager_EventManagerInterface.xhtml">Zend\EventManager\EventManagerInterface</a></span><strong> $events</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Attach one or more listeners</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$events</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="detach"/>
-            <h4><span class="label public">public</span>detach<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_EventManager_EventManagerInterface.xhtml">Zend\EventManager\EventManagerInterface</a></span><strong> $events</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Detach all previously attached listeners</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$events</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMergedConfig"/>
-            <h4><span class="label public">public</span>getMergedConfig<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $returnConfigAsObject</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>getMergedConfig</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$returnConfigAsObject</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getOptions"/>
-            <h4><span class="label public">public</span>getOptions<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get options.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="onLoadModule"/>
-            <h4><span class="label public">public</span>onLoadModule<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_ModuleManager_ModuleEvent.xhtml">Zend\ModuleManager\ModuleEvent</a></span><strong> $e</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Merge the config for each module</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$e</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="onLoadModulesPost"/>
-            <h4><span class="label public">public</span>onLoadModulesPost<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_ModuleManager_ModuleEvent.xhtml">Zend\ModuleManager\ModuleEvent</a></span><strong> $e</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Merge all config files matched by the given glob()s<pre>This is only attached if config is not cached.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$e</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="onloadModulesPre"/>
-            <h4><span class="label public">public</span>onloadModulesPre<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_ModuleManager_ModuleEvent.xhtml">Zend\ModuleManager\ModuleEvent</a></span><strong> $e</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Pass self to the ModuleEvent object early so everyone has access.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$e</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setMergedConfig"/>
-            <h4><span class="label public">public</span>setMergedConfig<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $config</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>setMergedConfig</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$config</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setOptions"/>
-            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_ModuleManager_Listener_ListenerOptions.xhtml">Zend\ModuleManager\Listener\ListenerOptions</a></span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set options.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$options</code> - the value to be set</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addConfig"/>
-            <h4><span class="label protected">protected</span>addConfig<span style="font-size:90%;">( <span class="param-type"/><strong> $key</strong>, <span class="param-type"/><strong> $config</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="addConfigByPath"/>
-            <h4><span class="label protected">protected</span>addConfigByPath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $path</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Given a path (glob or static), fetch the config and add it to the array of configs to merge.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$path</code> - </li>
-                <li><code>$type</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addConfigPath"/>
-            <h4><span class="label protected">protected</span>addConfigPath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $path</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add a path of config files to load and merge after loading modules</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$path</code> - </li>
-                <li><code>$type</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addConfigPaths"/>
-            <h4><span class="label protected">protected</span>addConfigPaths<span style="font-size:90%;">( <span class="param-type"><span title="Traversable|array">Traversable|array</span></span><strong> $paths</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add an array of paths of config files to merge after loading modules</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$paths</code> - </li>
-                <li><code>$type</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCachedConfig"/>
-            <h4><span class="label protected">protected</span>getCachedConfig<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasCachedConfig"/>
-            <h4><span class="label protected">protected</span>hasCachedConfig<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="updateCache"/>
-            <h4><span class="label protected">protected</span>updateCache<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeArrayToFile"/>
-            <h4><span class="label protected">protected</span>writeArrayToFile<span style="font-size:90%;">( <span class="param-type">string</span><strong> $filePath</strong>, <span class="param-type">array</span><strong> $array</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Write a simple array of scalars to a file</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$filePath</code> - </li>
-                <li><code>$array</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="STATIC_PATH">STATIC_PATH</td>
+              <td>'static_path'</td>
+            </tr>
+            <tr>
+              <td id="GLOB_PATH">GLOB_PATH</td>
+              <td>'glob_path'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="callbacks"><strong>$callbacks</strong>
+                —
+                array</li>
+            <li id="configs"><strong>$configs</strong>
+                —
+                array</li>
+            <li id="mergedConfig"><strong>$mergedConfig</strong>
+                —
+                array</li>
+            <li id="mergedConfigObject"><strong>$mergedConfigObject</strong>
+                —
+                <a href="#">Zend\Config\Config</a></li>
+            <li id="options"><strong>$options</strong>
+                —
+                <a href="#">Zend\ModuleManager\Listener\ListenerOptions</a></li>
+            <li id="paths"><strong>$paths</strong>
+                —
+                array</li>
+            <li id="skipConfig"><strong>$skipConfig</strong>
+                —
+                <a href="#">Zend\ModuleManager\Listener\bool</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="addConfig">
+              <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfig.xhtml">addConfig()</a>
+            </li>
+            <li id="addConfigByPath"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigByPath.xhtml">addConfigByPath()</a>
+                — Given a path (glob or static), fetch the config and add it to the array of configs to merge.</li>
+            <li id="addConfigPath"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigPath.xhtml">addConfigPath()</a>
+                — Add a path of config files to load and merge after loading modules</li>
+            <li id="addConfigPaths"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigPaths.xhtml">addConfigPaths()</a>
+                — Add an array of paths of config files to merge after loading modules</li>
+            <li id="getCachedConfig">
+              <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/getCachedConfig.xhtml">getCachedConfig()</a>
+            </li>
+            <li id="hasCachedConfig">
+              <a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/hasCachedConfig.xhtml">hasCachedConfig()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/__construct.xhtml">__construct()</a>
+                — __construct</li>
+            <li id="addConfigGlobPath"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigGlobPath.xhtml">addConfigGlobPath()</a>
+                — Add a glob path of config files to merge after loading modules</li>
+            <li id="addConfigGlobPaths"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigGlobPaths.xhtml">addConfigGlobPaths()</a>
+                — Add an array of glob paths of config files to merge after loading modules</li>
+            <li id="addConfigStaticPath"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigStaticPath.xhtml">addConfigStaticPath()</a>
+                — Add a static path of config files to merge after loading modules</li>
+            <li id="addConfigStaticPaths"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/addConfigStaticPaths.xhtml">addConfigStaticPaths()</a>
+                — Add an array of static paths of config files to merge after loading modules</li>
+            <li id="attach"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/attach.xhtml">attach()</a>
+                — {@inheritDoc}</li>
+            <li id="detach"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/detach.xhtml">detach()</a>
+                — {@inheritDoc}</li>
+            <li id="getMergedConfig"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/getMergedConfig.xhtml">getMergedConfig()</a>
+                — getMergedConfig</li>
+            <li id="onLoadModule"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/onLoadModule.xhtml">onLoadModule()</a>
+                — Merge the config for each module</li>
+            <li id="onLoadModules"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/onLoadModules.xhtml">onLoadModules()</a>
+                — Optionally cache merged config</li>
+            <li id="onMergeConfig"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/onMergeConfig.xhtml">onMergeConfig()</a>
+                — Merge all config files matched by the given glob()s</li>
+            <li id="onloadModulesPre"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/onloadModulesPre.xhtml">onloadModulesPre()</a>
+                — Pass self to the ModuleEvent object early so everyone has access.</li>
+            <li id="setMergedConfig"><a title="Zend\ModuleManager\Listener\ConfigListener" href="../classes/Zend_ModuleManager_Listener_ConfigListener/setMergedConfig.xhtml">setMergedConfig()</a>
+                — setMergedConfig</li>
+          </ul>
+          <h3>Inherited from <a title="Zend\ModuleManager\Listener\AbstractListener" href="../classes/Zend_ModuleManager_Listener_AbstractListener.xhtml">Zend\ModuleManager\Listener\AbstractListener</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="writeArrayToFile"><a title="Zend\ModuleManager\Listener\AbstractListener" href="../classes/Zend_ModuleManager_Listener_AbstractListener/writeArrayToFile.xhtml">writeArrayToFile()</a>
+                — Write a simple array of scalars to a file</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getOptions"><a title="Zend\ModuleManager\Listener\AbstractListener" href="../classes/Zend_ModuleManager_Listener_AbstractListener/getOptions.xhtml">getOptions()</a>
+                — Get options.</li>
+            <li id="setOptions"><a title="Zend\ModuleManager\Listener\AbstractListener" href="../classes/Zend_ModuleManager_Listener_AbstractListener/setOptions.xhtml">setOptions()</a>
+                — Set options.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

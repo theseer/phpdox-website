@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head>
+    <title>phpDox - Test Method</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml#Symfony_Component_Validator">Symfony\Component\Validator</a>
+          </li>
+          <li class="separator">
+            <a title="Symfony\Component\Validator\ExecutionContextInterface" href="../../interfaces/Symfony_Component_Validator_ExecutionContextInterface.xhtml">ExecutionContextInterface</a>
+          </li>
+          <li class="separator">getPropertyPath</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#parameter">Parameter</a>
+          </li>
+          <li>
+            <a href="#return">Return</a>
+          </li>
+          <li>
+            <a href="../../source/symfony/symfony/src/Symfony/Component/Validator/ExecutionContextInterface.php.xhtml#line303">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1><small>Symfony\Component\Validator\ExecutionContextInterface::</small>getPropertyPath</h1>
+        <h4>Returns the property path to the value that the validator is currently validating.</h4>
+        <p>For example, take the following object graph:
+&lt;pre&gt;
+(Person)---($address: Address)---($street: string)
+&lt;/pre&gt;
+When the &lt;tt&gt;Person&lt;/tt&gt; instance is passed to the validator, the
+property path is initially empty. When the &lt;tt&gt;$address&lt;/tt&gt; property
+of that person is validated, the property path is "address". When
+the &lt;tt&gt;$street&lt;/tt&gt; property of the related &lt;tt&gt;Address&lt;/tt&gt; instance
+is validated, the property path is "address.street".
+Properties of objects are prefixed with a dot in the property path.
+Indices of arrays or objects implementing the interface are enclosed in brackets. For example, if the property in
+the previous example is &lt;tt&gt;$addresses&lt;/tt&gt; and contains an array
+of &lt;tt&gt;Address&lt;/tt&gt; instance, the property path generated for the
+&lt;tt&gt;$street&lt;/tt&gt; property of one of these addresses is for example
+"addresses[0].street".
+</p>
+        <ul/>
+        <h2 id="signature">Signature</h2>
+        <div class="styled synopsis">
+          <code>public function getPropertyPath([string
+        $subPath = ''] )
+            </code>
+        </div>
+        <h2 id="parameterlist">Parameters</h2>
+        <dl class="styled">
+          <dt><code>$subPath</code>
+                —
+                string</dt>
+          <dd>Optional. The suffix appended to the current<br/>property path.</dd>
+        </dl>
+        <h2 id="return">Returns</h2>
+        <dl class="styled">
+          <dt>string</dt>
+          <dd>The current property path. The result may be an empty<br/>string if the validator is currently validating the
+               root value of the validation graph.</dd>
+        </dl>
+      </section>
+    </div>
+    <footer>
+      <span/>
+    </footer>
+  </body>
+</html>

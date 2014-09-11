@@ -1,1968 +1,524 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\ORM\Query\Parser - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\ORM\Query\Parser</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_ORM_Query">Doctrine\ORM\Query</a>
+          </li>
+          <li class="separator">Parser</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#_STRING_FUNCTIONS">$_STRING_FUNCTIONS</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#_NUMERIC_FUNCTIONS">$_NUMERIC_FUNCTIONS</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#_DATETIME_FUNCTIONS">$_DATETIME_FUNCTIONS</a>
+            <a href="#tasks">Tasks</a>
           </li>
           <li>
-            <a href="#_deferredIdentificationVariables">$_deferredIdentificationVariables</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#_deferredPartialObjectExpressions">$_deferredPartialObjectExpressions</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#_deferredPathExpressions">$_deferredPathExpressions</a>
-          </li>
-          <li>
-            <a href="#_deferredResultVariables">$_deferredResultVariables</a>
-          </li>
-          <li>
-            <a href="#_lexer">$_lexer</a>
-          </li>
-          <li>
-            <a href="#_parserResult">$_parserResult</a>
-          </li>
-          <li>
-            <a href="#_em">$_em</a>
-          </li>
-          <li>
-            <a href="#_query">$_query</a>
-          </li>
-          <li>
-            <a href="#_queryComponents">$_queryComponents</a>
-          </li>
-          <li>
-            <a href="#_nestingLevel">$_nestingLevel</a>
-          </li>
-          <li>
-            <a href="#_customTreeWalkers">$_customTreeWalkers</a>
-          </li>
-          <li>
-            <a href="#_customOutputWalker">$_customOutputWalker</a>
-          </li>
-          <li>
-            <a href="#_identVariableExpressions">$_identVariableExpressions</a>
+            <a href="../source/doctrine/orm/lib/Doctrine/ORM/Query/Parser.php.xhtml#line35">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\ORM\Query\</small>Parser</h1>
+        <h4>An LL(*) recursive-descent parser for the context-free grammar of the Doctrine Query Language.</h4>
+        <p>Parses a DQL query, reports any errors in it, and generates an AST.</p>
         <ul>
-          <li>
-            <a href="#AbstractSchemaName">AbstractSchemaName</a>
-          </li>
-          <li>
-            <a href="#AggregateExpression">AggregateExpression</a>
-          </li>
-          <li>
-            <a href="#AliasIdentificationVariable">AliasIdentificationVariable</a>
-          </li>
-          <li>
-            <a href="#AliasResultVariable">AliasResultVariable</a>
-          </li>
-          <li>
-            <a href="#ArithmeticExpression">ArithmeticExpression</a>
-          </li>
-          <li>
-            <a href="#ArithmeticFactor">ArithmeticFactor</a>
-          </li>
-          <li>
-            <a href="#ArithmeticPrimary">ArithmeticPrimary</a>
-          </li>
-          <li>
-            <a href="#ArithmeticTerm">ArithmeticTerm</a>
-          </li>
-          <li>
-            <a href="#AssociationPathExpression">AssociationPathExpression</a>
-          </li>
-          <li>
-            <a href="#BetweenExpression">BetweenExpression</a>
-          </li>
-          <li>
-            <a href="#CaseExpression">CaseExpression</a>
-          </li>
-          <li>
-            <a href="#CoalesceExpression">CoalesceExpression</a>
-          </li>
-          <li>
-            <a href="#CollectionMemberExpression">CollectionMemberExpression</a>
-          </li>
-          <li>
-            <a href="#CollectionValuedPathExpression">CollectionValuedPathExpression</a>
-          </li>
-          <li>
-            <a href="#ComparisonExpression">ComparisonExpression</a>
-          </li>
-          <li>
-            <a href="#ComparisonOperator">ComparisonOperator</a>
-          </li>
-          <li>
-            <a href="#ConditionalExpression">ConditionalExpression</a>
-          </li>
-          <li>
-            <a href="#ConditionalFactor">ConditionalFactor</a>
-          </li>
-          <li>
-            <a href="#ConditionalPrimary">ConditionalPrimary</a>
-          </li>
-          <li>
-            <a href="#ConditionalTerm">ConditionalTerm</a>
-          </li>
-          <li>
-            <a href="#CustomFunctionDeclaration">CustomFunctionDeclaration</a>
-          </li>
-          <li>
-            <a href="#CustomFunctionsReturningDatetime">CustomFunctionsReturningDatetime</a>
-          </li>
-          <li>
-            <a href="#CustomFunctionsReturningNumerics">CustomFunctionsReturningNumerics</a>
-          </li>
-          <li>
-            <a href="#CustomFunctionsReturningStrings">CustomFunctionsReturningStrings</a>
-          </li>
-          <li>
-            <a href="#DeleteClause">DeleteClause</a>
-          </li>
-          <li>
-            <a href="#DeleteStatement">DeleteStatement</a>
-          </li>
-          <li>
-            <a href="#EmptyCollectionComparisonExpression">EmptyCollectionComparisonExpression</a>
-          </li>
-          <li>
-            <a href="#EntityExpression">EntityExpression</a>
-          </li>
-          <li>
-            <a href="#ExistsExpression">ExistsExpression</a>
-          </li>
-          <li>
-            <a href="#FromClause">FromClause</a>
-          </li>
-          <li>
-            <a href="#FunctionDeclaration">FunctionDeclaration</a>
-          </li>
-          <li>
-            <a href="#FunctionsReturningDatetime">FunctionsReturningDatetime</a>
-          </li>
-          <li>
-            <a href="#FunctionsReturningNumerics">FunctionsReturningNumerics</a>
-          </li>
-          <li>
-            <a href="#FunctionsReturningStrings">FunctionsReturningStrings</a>
-          </li>
-          <li>
-            <a href="#GeneralCaseExpression">GeneralCaseExpression</a>
-          </li>
-          <li>
-            <a href="#GroupByClause">GroupByClause</a>
-          </li>
-          <li>
-            <a href="#GroupByItem">GroupByItem</a>
-          </li>
-          <li>
-            <a href="#HavingClause">HavingClause</a>
-          </li>
-          <li>
-            <a href="#IdentificationVariable">IdentificationVariable</a>
-          </li>
-          <li>
-            <a href="#IdentificationVariableDeclaration">IdentificationVariableDeclaration</a>
-          </li>
-          <li>
-            <a href="#InExpression">InExpression</a>
-          </li>
-          <li>
-            <a href="#InParameter">InParameter</a>
-          </li>
-          <li>
-            <a href="#IndexBy">IndexBy</a>
-          </li>
-          <li>
-            <a href="#InputParameter">InputParameter</a>
-          </li>
-          <li>
-            <a href="#InstanceOfExpression">InstanceOfExpression</a>
-          </li>
-          <li>
-            <a href="#InstanceOfParameter">InstanceOfParameter</a>
-          </li>
-          <li>
-            <a href="#Join">Join</a>
-          </li>
-          <li>
-            <a href="#JoinAssociationDeclaration">JoinAssociationDeclaration</a>
-          </li>
-          <li>
-            <a href="#JoinAssociationPathExpression">JoinAssociationPathExpression</a>
-          </li>
-          <li>
-            <a href="#LikeExpression">LikeExpression</a>
-          </li>
-          <li>
-            <a href="#Literal">Literal</a>
-          </li>
-          <li>
-            <a href="#NewValue">NewValue</a>
-          </li>
-          <li>
-            <a href="#NullComparisonExpression">NullComparisonExpression</a>
-          </li>
-          <li>
-            <a href="#NullIfExpression">NullIfExpression</a>
-          </li>
-          <li>
-            <a href="#OrderByClause">OrderByClause</a>
-          </li>
-          <li>
-            <a href="#OrderByItem">OrderByItem</a>
-          </li>
-          <li>
-            <a href="#PartialObjectExpression">PartialObjectExpression</a>
-          </li>
-          <li>
-            <a href="#PathExpression">PathExpression</a>
-          </li>
-          <li>
-            <a href="#QuantifiedExpression">QuantifiedExpression</a>
-          </li>
-          <li>
-            <a href="#QueryLanguage">QueryLanguage</a>
-          </li>
-          <li>
-            <a href="#RangeVariableDeclaration">RangeVariableDeclaration</a>
-          </li>
-          <li>
-            <a href="#ResultVariable">ResultVariable</a>
-          </li>
-          <li>
-            <a href="#ScalarExpression">ScalarExpression</a>
-          </li>
-          <li>
-            <a href="#SelectClause">SelectClause</a>
-          </li>
-          <li>
-            <a href="#SelectExpression">SelectExpression</a>
-          </li>
-          <li>
-            <a href="#SelectStatement">SelectStatement</a>
-          </li>
-          <li>
-            <a href="#SimpleArithmeticExpression">SimpleArithmeticExpression</a>
-          </li>
-          <li>
-            <a href="#SimpleCaseExpression">SimpleCaseExpression</a>
-          </li>
-          <li>
-            <a href="#SimpleConditionalExpression">SimpleConditionalExpression</a>
-          </li>
-          <li>
-            <a href="#SimpleEntityExpression">SimpleEntityExpression</a>
-          </li>
-          <li>
-            <a href="#SimpleSelectClause">SimpleSelectClause</a>
-          </li>
-          <li>
-            <a href="#SimpleSelectExpression">SimpleSelectExpression</a>
-          </li>
-          <li>
-            <a href="#SimpleWhenClause">SimpleWhenClause</a>
-          </li>
-          <li>
-            <a href="#SingleValuedAssociationPathExpression">SingleValuedAssociationPathExpression</a>
-          </li>
-          <li>
-            <a href="#SingleValuedPathExpression">SingleValuedPathExpression</a>
-          </li>
-          <li>
-            <a href="#StateFieldPathExpression">StateFieldPathExpression</a>
-          </li>
-          <li>
-            <a href="#StringExpression">StringExpression</a>
-          </li>
-          <li>
-            <a href="#StringPrimary">StringPrimary</a>
-          </li>
-          <li>
-            <a href="#Subselect">Subselect</a>
-          </li>
-          <li>
-            <a href="#SubselectFromClause">SubselectFromClause</a>
-          </li>
-          <li>
-            <a href="#SubselectIdentificationVariableDeclaration">SubselectIdentificationVariableDeclaration</a>
-          </li>
-          <li>
-            <a href="#UpdateClause">UpdateClause</a>
-          </li>
-          <li>
-            <a href="#UpdateItem">UpdateItem</a>
-          </li>
-          <li>
-            <a href="#UpdateStatement">UpdateStatement</a>
-          </li>
-          <li>
-            <a href="#WhenClause">WhenClause</a>
-          </li>
-          <li>
-            <a href="#WhereClause">WhereClause</a>
-          </li>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#_isAggregateFunction">_isAggregateFunction</a>
-          </li>
-          <li>
-            <a href="#_isFunction">_isFunction</a>
-          </li>
-          <li>
-            <a href="#_isMathOperator">_isMathOperator</a>
-          </li>
-          <li>
-            <a href="#_isNextAllAnySome">_isNextAllAnySome</a>
-          </li>
-          <li>
-            <a href="#_peekBeyondClosingParenthesis">_peekBeyondClosingParenthesis</a>
-          </li>
-          <li>
-            <a href="#_processDeferredIdentificationVariables">_processDeferredIdentificationVariables</a>
-          </li>
-          <li>
-            <a href="#_processDeferredPartialObjectExpressions">_processDeferredPartialObjectExpressions</a>
-          </li>
-          <li>
-            <a href="#_processDeferredPathExpressions">_processDeferredPathExpressions</a>
-          </li>
-          <li>
-            <a href="#_processDeferredResultVariables">_processDeferredResultVariables</a>
-          </li>
-          <li>
-            <a href="#_processRootEntityAliasSelected">_processRootEntityAliasSelected</a>
-          </li>
-          <li>
-            <a href="#addCustomTreeWalker">addCustomTreeWalker</a>
-          </li>
-          <li>
-            <a href="#fixIdentificationVariableOrder">fixIdentificationVariableOrder</a>
-          </li>
-          <li>
-            <a href="#free">free</a>
-          </li>
-          <li>
-            <a href="#getAST">getAST</a>
-          </li>
-          <li>
-            <a href="#getEntityManager">getEntityManager</a>
-          </li>
-          <li>
-            <a href="#getLexer">getLexer</a>
-          </li>
-          <li>
-            <a href="#getParserResult">getParserResult</a>
-          </li>
-          <li>
-            <a href="#isInternalFunction">isInternalFunction</a>
-          </li>
-          <li>
-            <a href="#match">match</a>
-          </li>
-          <li>
-            <a href="#parse">parse</a>
-          </li>
-          <li>
-            <a href="#semanticalError">semanticalError</a>
-          </li>
-          <li>
-            <a href="#setCustomOutputTreeWalker">setCustomOutputTreeWalker</a>
-          </li>
-          <li>
-            <a href="#syntaxError">syntaxError</a>
-          </li>
+          <li>Author: Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\ORM\Query\</span>Parser</h2>
-        <div class="file-notice">
-          <p>An LL(*) recursive-descent parser for the context-free grammar of the Doctrine Query Language.</p>
-          <p>
-            <pre>Parses a DQL query, reports any errors in it, and generates an AST.</pre>
-          </p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Parser
+            {<br/><ul class="none"><li>// members</li><li>private array <a href="#members">$_STRING_FUNCTIONS</a>;
+                    </li><li>private array <a href="#members">$_NUMERIC_FUNCTIONS</a>;
+                    </li><li>private array <a href="#members">$_DATETIME_FUNCTIONS</a>;
+                    </li><li>private array <a href="#members">$_deferredIdentificationVariables</a>;
+                    </li><li>private array <a href="#members">$_deferredPartialObjectExpressions</a>;
+                    </li><li>private array <a href="#members">$_deferredPathExpressions</a>;
+                    </li><li>private array <a href="#members">$_deferredResultVariables</a>;
+                    </li><li>private <span title="\Doctrine\ORM\Query\Lexer">Lexer</span> <a href="#members">$_lexer</a>;
+                    </li><li>private <span title="\Doctrine\ORM\Query\ParserResult">ParserResult</span> <a href="#members">$_parserResult</a>;
+                    </li><li>private <span title="Doctrine\ORM\Query\EnityManager">EnityManager</span> <a href="#members">$_em</a>;
+                    </li><li>private <span title="Doctrine\ORM\Query">Query</span> <a href="#members">$_query</a>;
+                    </li><li>private array <a href="#members">$_queryComponents</a>;
+                    </li><li>private integer <a href="#members">$_nestingLevel</a>;
+                    </li><li>private array <a href="#members">$_customTreeWalkers</a>;
+                    </li><li>private <span title="Doctrine\ORM\Query\TreeWalker">TreeWalker</span> <a href="#members">$_customOutputWalker</a>;
+                    </li><li>private array <a href="#members">$_identVariableExpressions</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public static bool <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/isInternalFunction.xhtml">isInternalFunction</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/setCustomOutputTreeWalker.xhtml">setCustomOutputTreeWalker</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/addCustomTreeWalker.xhtml">addCustomTreeWalker</a>()
+                    </li><li>public Lexer <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/getLexer.xhtml">getLexer</a>()
+                    </li><li>public ParserResult <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/getParserResult.xhtml">getParserResult</a>()
+                    </li><li>public EntityManager <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/getEntityManager.xhtml">getEntityManager</a>()
+                    </li><li>public SelectStatement <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/getAST.xhtml">getAST</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/match.xhtml">match</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/free.xhtml">free</a>()
+                    </li><li>public ParserResult <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/parse.xhtml">parse</a>()
+                    </li><li>private void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/fixIdentificationVariableOrder.xhtml">fixIdentificationVariableOrder</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/syntaxError.xhtml">syntaxError</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/semanticalError.xhtml">semanticalError</a>()
+                    </li><li>private array <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_peekBeyondClosingParenthesis.xhtml">_peekBeyondClosingParenthesis</a>()
+                    </li><li>private boolean <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_isMathOperator.xhtml">_isMathOperator</a>()
+                    </li><li>private boolean <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_isFunction.xhtml">_isFunction</a>()
+                    </li><li>private boolean <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_isAggregateFunction.xhtml">_isAggregateFunction</a>()
+                    </li><li>private boolean <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_isNextAllAnySome.xhtml">_isNextAllAnySome</a>()
+                    </li><li>private void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_processDeferredIdentificationVariables.xhtml">_processDeferredIdentificationVariables</a>()
+                    </li><li>private void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_processDeferredPartialObjectExpressions.xhtml">_processDeferredPartialObjectExpressions</a>()
+                    </li><li>private void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_processDeferredResultVariables.xhtml">_processDeferredResultVariables</a>()
+                    </li><li>private void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_processDeferredPathExpressions.xhtml">_processDeferredPathExpressions</a>()
+                    </li><li>private void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_processRootEntityAliasSelected.xhtml">_processRootEntityAliasSelected</a>()
+                    </li><li>public SelectStatement <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/QueryLanguage.xhtml">QueryLanguage</a>()
+                    </li><li>public SelectStatement <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SelectStatement.xhtml">SelectStatement</a>()
+                    </li><li>public UpdateStatement <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/UpdateStatement.xhtml">UpdateStatement</a>()
+                    </li><li>public DeleteStatement <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/DeleteStatement.xhtml">DeleteStatement</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/IdentificationVariable.xhtml">IdentificationVariable</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/AliasIdentificationVariable.xhtml">AliasIdentificationVariable</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/AbstractSchemaName.xhtml">AbstractSchemaName</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/AliasResultVariable.xhtml">AliasResultVariable</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ResultVariable.xhtml">ResultVariable</a>()
+                    </li><li>public JoinAssociationPathExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/JoinAssociationPathExpression.xhtml">JoinAssociationPathExpression</a>()
+                    </li><li>public PathExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/PathExpression.xhtml">PathExpression</a>()
+                    </li><li>public PathExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/AssociationPathExpression.xhtml">AssociationPathExpression</a>()
+                    </li><li>public PathExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SingleValuedPathExpression.xhtml">SingleValuedPathExpression</a>()
+                    </li><li>public PathExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/StateFieldPathExpression.xhtml">StateFieldPathExpression</a>()
+                    </li><li>public PathExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SingleValuedAssociationPathExpression.xhtml">SingleValuedAssociationPathExpression</a>()
+                    </li><li>public PathExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CollectionValuedPathExpression.xhtml">CollectionValuedPathExpression</a>()
+                    </li><li>public SelectClause <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SelectClause.xhtml">SelectClause</a>()
+                    </li><li>public SimpleSelectClause <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleSelectClause.xhtml">SimpleSelectClause</a>()
+                    </li><li>public UpdateClause <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/UpdateClause.xhtml">UpdateClause</a>()
+                    </li><li>public DeleteClause <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/DeleteClause.xhtml">DeleteClause</a>()
+                    </li><li>public FromClause <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/FromClause.xhtml">FromClause</a>()
+                    </li><li>public SubselectFromClause <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SubselectFromClause.xhtml">SubselectFromClause</a>()
+                    </li><li>public WhereClause <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/WhereClause.xhtml">WhereClause</a>()
+                    </li><li>public HavingClause <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/HavingClause.xhtml">HavingClause</a>()
+                    </li><li>public GroupByClause <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/GroupByClause.xhtml">GroupByClause</a>()
+                    </li><li>public OrderByClause <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/OrderByClause.xhtml">OrderByClause</a>()
+                    </li><li>public Subselect <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/Subselect.xhtml">Subselect</a>()
+                    </li><li>public UpdateItem <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/UpdateItem.xhtml">UpdateItem</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/GroupByItem.xhtml">GroupByItem</a>()
+                    </li><li>public OrderByItem <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/OrderByItem.xhtml">OrderByItem</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/NewValue.xhtml">NewValue</a>()
+                    </li><li>public IdentificationVariableDeclaration <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/IdentificationVariableDeclaration.xhtml">IdentificationVariableDeclaration</a>()
+                    </li><li>public SubselectIdentificationVariableDeclaration <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SubselectIdentificationVariableDeclaration.xhtml">SubselectIdentificationVariableDeclaration</a>()
+                    </li><li>public Join <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/Join.xhtml">Join</a>()
+                    </li><li>public RangeVariableDeclaration <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/RangeVariableDeclaration.xhtml">RangeVariableDeclaration</a>()
+                    </li><li>public JoinAssociationPathExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/JoinAssociationDeclaration.xhtml">JoinAssociationDeclaration</a>()
+                    </li><li>public array <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/PartialObjectExpression.xhtml">PartialObjectExpression</a>()
+                    </li><li>public IndexBy <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/IndexBy.xhtml">IndexBy</a>()
+                    </li><li>public mixed <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ScalarExpression.xhtml">ScalarExpression</a>()
+                    </li><li>public mixed <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CaseExpression.xhtml">CaseExpression</a>()
+                    </li><li>public CoalesceExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CoalesceExpression.xhtml">CoalesceExpression</a>()
+                    </li><li>public NullIfExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/NullIfExpression.xhtml">NullIfExpression</a>()
+                    </li><li>public GeneralExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/GeneralCaseExpression.xhtml">GeneralCaseExpression</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleCaseExpression.xhtml">SimpleCaseExpression</a>()
+                    </li><li>public WhenExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/WhenClause.xhtml">WhenClause</a>()
+                    </li><li>public SimpleWhenExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleWhenClause.xhtml">SimpleWhenClause</a>()
+                    </li><li>public SelectExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SelectExpression.xhtml">SelectExpression</a>()
+                    </li><li>public SimpleSelectExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleSelectExpression.xhtml">SimpleSelectExpression</a>()
+                    </li><li>public ConditionalExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ConditionalExpression.xhtml">ConditionalExpression</a>()
+                    </li><li>public ConditionalTerm <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ConditionalTerm.xhtml">ConditionalTerm</a>()
+                    </li><li>public ConditionalFactor <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ConditionalFactor.xhtml">ConditionalFactor</a>()
+                    </li><li>public ConditionalPrimary <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ConditionalPrimary.xhtml">ConditionalPrimary</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleConditionalExpression.xhtml">SimpleConditionalExpression</a>()
+                    </li><li>public EmptyCollectionComparisonExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/EmptyCollectionComparisonExpression.xhtml">EmptyCollectionComparisonExpression</a>()
+                    </li><li>public CollectionMemberExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CollectionMemberExpression.xhtml">CollectionMemberExpression</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/Literal.xhtml">Literal</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/InParameter.xhtml">InParameter</a>()
+                    </li><li>public InputParameter <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/InputParameter.xhtml">InputParameter</a>()
+                    </li><li>public ArithmeticExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ArithmeticExpression.xhtml">ArithmeticExpression</a>()
+                    </li><li>public SimpleArithmeticExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleArithmeticExpression.xhtml">SimpleArithmeticExpression</a>()
+                    </li><li>public ArithmeticTerm <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ArithmeticTerm.xhtml">ArithmeticTerm</a>()
+                    </li><li>public ArithmeticFactor <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ArithmeticFactor.xhtml">ArithmeticFactor</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ArithmeticPrimary.xhtml">ArithmeticPrimary</a>()
+                    </li><li>public StringPrimary <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/StringExpression.xhtml">StringExpression</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/StringPrimary.xhtml">StringPrimary</a>()
+                    </li><li>public SingleValuedAssociationPathExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/EntityExpression.xhtml">EntityExpression</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleEntityExpression.xhtml">SimpleEntityExpression</a>()
+                    </li><li>public AggregateExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/AggregateExpression.xhtml">AggregateExpression</a>()
+                    </li><li>public QuantifiedExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/QuantifiedExpression.xhtml">QuantifiedExpression</a>()
+                    </li><li>public BetweenExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/BetweenExpression.xhtml">BetweenExpression</a>()
+                    </li><li>public ComparisonExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ComparisonExpression.xhtml">ComparisonExpression</a>()
+                    </li><li>public InExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/InExpression.xhtml">InExpression</a>()
+                    </li><li>public InstanceOfExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/InstanceOfExpression.xhtml">InstanceOfExpression</a>()
+                    </li><li>public mixed <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/InstanceOfParameter.xhtml">InstanceOfParameter</a>()
+                    </li><li>public LikeExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/LikeExpression.xhtml">LikeExpression</a>()
+                    </li><li>public NullComparisonExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/NullComparisonExpression.xhtml">NullComparisonExpression</a>()
+                    </li><li>public ExistsExpression <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ExistsExpression.xhtml">ExistsExpression</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ComparisonOperator.xhtml">ComparisonOperator</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/FunctionDeclaration.xhtml">FunctionDeclaration</a>()
+                    </li><li>private void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CustomFunctionDeclaration.xhtml">CustomFunctionDeclaration</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/FunctionsReturningNumerics.xhtml">FunctionsReturningNumerics</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CustomFunctionsReturningNumerics.xhtml">CustomFunctionsReturningNumerics</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/FunctionsReturningDatetime.xhtml">FunctionsReturningDatetime</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CustomFunctionsReturningDatetime.xhtml">CustomFunctionsReturningDatetime</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/FunctionsReturningStrings.xhtml">FunctionsReturningStrings</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CustomFunctionsReturningStrings.xhtml">CustomFunctionsReturningStrings</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">249</td>
+            <td>Is there a way to remove this? It may impact the mixed hydration resultset a lot!</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="_DATETIME_FUNCTIONS">
+              <strong>$_DATETIME_FUNCTIONS</strong>
+              <br/>
+              <span class="indent">READ-ONLY: Maps BUILT-IN datetime function names to AST class names.</span>
+            </li>
+            <li id="_NUMERIC_FUNCTIONS">
+              <strong>$_NUMERIC_FUNCTIONS</strong>
+              <br/>
+              <span class="indent">READ-ONLY: Maps BUILT-IN numeric function names to AST class names.</span>
+            </li>
+            <li id="_STRING_FUNCTIONS">
+              <strong>$_STRING_FUNCTIONS</strong>
+              <br/>
+              <span class="indent">READ-ONLY: Maps BUILT-IN string function names to AST class names.</span>
+            </li>
+            <li id="_customOutputWalker"><strong>$_customOutputWalker</strong>
+                —
+                <a href="#">Doctrine\ORM\Query\TreeWalker</a><br/><span class="indent">The custom last tree walker, if any, that is responsible for producing the output.</span></li>
+            <li id="_customTreeWalkers"><strong>$_customTreeWalkers</strong>
+                —
+                array<br/><span class="indent">Any additional custom tree walkers that modify the AST.</span></li>
+            <li id="_deferredIdentificationVariables">
+              <strong>$_deferredIdentificationVariables</strong>
+              <br/>
+              <span class="indent">Expressions that were encountered during parsing of identifiers and expressions and still need to be validated.</span>
+            </li>
+            <li id="_deferredPartialObjectExpressions">
+              <strong>$_deferredPartialObjectExpressions</strong>
+            </li>
+            <li id="_deferredPathExpressions">
+              <strong>$_deferredPathExpressions</strong>
+            </li>
+            <li id="_deferredResultVariables">
+              <strong>$_deferredResultVariables</strong>
+            </li>
+            <li id="_em"><strong>$_em</strong>
+                —
+                <a href="#">Doctrine\ORM\Query\EnityManager</a><br/><span class="indent">The EntityManager.</span></li>
+            <li id="_identVariableExpressions"><strong>$_identVariableExpressions</strong>
+                —
+                array</li>
+            <li id="_lexer"><strong>$_lexer</strong>
+                —
+                <a href="#">\Doctrine\ORM\Query\Lexer</a><br/><span class="indent">The lexer.</span></li>
+            <li id="_nestingLevel"><strong>$_nestingLevel</strong>
+                —
+                integer<br/><span class="indent">Keeps the nesting level of defined ResultVariables</span></li>
+            <li id="_parserResult"><strong>$_parserResult</strong>
+                —
+                <a href="#">\Doctrine\ORM\Query\ParserResult</a><br/><span class="indent">The parser result.</span></li>
+            <li id="_query"><strong>$_query</strong>
+                —
+                <a href="#">Doctrine\ORM\Query</a><br/><span class="indent">The Query to parse.</span></li>
+            <li id="_queryComponents"><strong>$_queryComponents</strong>
+                —
+                array<br/><span class="indent">Map of declared query components in the parsed query.</span></li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
-          <li><b>Author: </b>Jonathan Wage &lt;jonwage@gmail.com&gt;</li>
-          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
-          <li><b>Author: </b>Janne Vanhala &lt;jpvanhal@cc.hut.fi&gt;</li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="_STRING_FUNCTIONS"/>
-            <h4><span class="label private">private</span>
-                $_STRING_FUNCTIONS</h4>
-            <ul class="varlist">
-              <li>READ-ONLY: Maps BUILT-IN string function names to AST class names.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="_NUMERIC_FUNCTIONS"/>
-            <h4><span class="label private">private</span>
-                $_NUMERIC_FUNCTIONS</h4>
-            <ul class="varlist">
-              <li>READ-ONLY: Maps BUILT-IN numeric function names to AST class names.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="_DATETIME_FUNCTIONS"/>
-            <h4><span class="label private">private</span>
-                $_DATETIME_FUNCTIONS</h4>
-            <ul class="varlist">
-              <li>READ-ONLY: Maps BUILT-IN datetime function names to AST class names.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="_deferredIdentificationVariables"/>
-            <h4><span class="label private">private</span>
-                $_deferredIdentificationVariables</h4>
-            <ul class="varlist">
-              <li>Expressions that were encountered during parsing of identifiers and expressions and still need to be validated.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="_deferredPartialObjectExpressions"/>
-            <h4><span class="label private">private</span>
-                $_deferredPartialObjectExpressions</h4>
-          </li>
-          <li>
-            <a name="_deferredPathExpressions"/>
-            <h4><span class="label private">private</span>
-                $_deferredPathExpressions</h4>
-          </li>
-          <li>
-            <a name="_deferredResultVariables"/>
-            <h4><span class="label private">private</span>
-                $_deferredResultVariables</h4>
-          </li>
-          <li>
-            <a name="_lexer"/>
-            <h4><span class="label private">private</span>object 
-                
-                $_lexer</h4>
-            <ul class="varlist">
-              <li>The lexer.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="_parserResult"/>
-            <h4><span class="label private">private</span>object 
-                
-                $_parserResult</h4>
-            <ul class="varlist">
-              <li>The parser result.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="_em"/>
-            <h4><span class="label private">private</span>object 
-                
-                $_em</h4>
-            <ul class="varlist">
-              <li>The EntityManager.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="_query"/>
-            <h4><span class="label private">private</span>object 
-                
-                $_query</h4>
-            <ul class="varlist">
-              <li>The Query to parse.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="_queryComponents"/>
-            <h4><span class="label private">private</span>array 
-                
-                $_queryComponents</h4>
-            <ul class="varlist">
-              <li>Map of declared query components in the parsed query.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="_nestingLevel"/>
-            <h4><span class="label private">private</span>integer 
-                
-                $_nestingLevel</h4>
-            <ul class="varlist">
-              <li>Keeps the nesting level of defined ResultVariables</li>
-            </ul>
-          </li>
-          <li>
-            <a name="_customTreeWalkers"/>
-            <h4><span class="label private">private</span>array 
-                
-                $_customTreeWalkers</h4>
-            <ul class="varlist">
-              <li>Any additional custom tree walkers that modify the AST.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="_customOutputWalker"/>
-            <h4><span class="label private">private</span>object 
-                
-                $_customOutputWalker</h4>
-            <ul class="varlist">
-              <li>The custom last tree walker, if any, that is responsible for producing the output.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="_identVariableExpressions"/>
-            <h4><span class="label private">private</span>array 
-                
-                $_identVariableExpressions</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Query.xhtml">Doctrine\ORM\Query</a></span><strong> $query</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Creates a new query parser object.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$query</code> - The Query to parse.</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="AbstractSchemaName"/>
-            <h4><span class="label public">public</span>AbstractSchemaName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>AbstractSchemaName ::= identifier</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="AggregateExpression"/>
-            <h4><span class="label public">public</span>AggregateExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>AggregateExpression ::=  ("AVG" | "MAX" | "MIN" | "SUM") "(" ["DISTINCT"] StateFieldPathExpression ")" |  "COUNT" "(" ["DISTINCT"] (IdentificationVariable | SingleValuedPathExpression) ")"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="AliasIdentificationVariable"/>
-            <h4><span class="label public">public</span>AliasIdentificationVariable<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>AliasIdentificationVariable = identifier</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="AliasResultVariable"/>
-            <h4><span class="label public">public</span>AliasResultVariable<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>AliasResultVariable ::= identifier</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ArithmeticExpression"/>
-            <h4><span class="label public">public</span>ArithmeticExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ArithmeticExpression ::= SimpleArithmeticExpression | "(" Subselect ")"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ArithmeticFactor"/>
-            <h4><span class="label public">public</span>ArithmeticFactor<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ArithmeticFactor ::= [("+" | "-")] ArithmeticPrimary</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ArithmeticPrimary"/>
-            <h4><span class="label public">public</span>ArithmeticPrimary<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ArithmeticPrimary ::= SingleValuedPathExpression | Literal | "(" SimpleArithmeticExpression ")"          | FunctionsReturningNumerics | AggregateExpression | FunctionsReturningStrings          | FunctionsReturningDatetime | IdentificationVariable | ResultVariable          | InputParameter | CaseExpression</li>
-            </p>
-          </li>
-          <li>
-            <a name="ArithmeticTerm"/>
-            <h4><span class="label public">public</span>ArithmeticTerm<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ArithmeticTerm ::= ArithmeticFactor {("*" | "/") ArithmeticFactor}</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="AssociationPathExpression"/>
-            <h4><span class="label public">public</span>AssociationPathExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>AssociationPathExpression ::= CollectionValuedPathExpression | SingleValuedAssociationPathExpression</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="BetweenExpression"/>
-            <h4><span class="label public">public</span>BetweenExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>BetweenExpression ::= ArithmeticExpression ["NOT"] "BETWEEN" ArithmeticExpression "AND" ArithmeticExpression</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="CaseExpression"/>
-            <h4><span class="label public">public</span>CaseExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>CaseExpression ::= GeneralCaseExpression | SimpleCaseExpression | CoalesceExpression | NullifExpression GeneralCaseExpression ::= "CASE" WhenClause {WhenClause}* "ELSE" ScalarExpression "END" WhenClause ::= "WHEN" ConditionalExpression "THEN" ScalarExpression SimpleCaseExpression ::= "CASE" CaseOperand SimpleWhenClause {SimpleWhenClause}* "ELSE" ScalarExpression "END" CaseOperand ::= StateFieldPathExpression | TypeDiscriminator SimpleWhenClause ::= "WHEN" ScalarExpression "THEN" ScalarExpression CoalesceExpression ::= "COALESCE" "(" ScalarExpression {"," ScalarExpression}* ")" NullifExpression ::= "NULLIF" "(" ScalarExpression "," ScalarExpression ")"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>One of the possible expressions or subexpressions.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="CoalesceExpression"/>
-            <h4><span class="label public">public</span>CoalesceExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>CoalesceExpression ::= "COALESCE" "(" ScalarExpression {"," ScalarExpression}* ")"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="CollectionMemberExpression"/>
-            <h4><span class="label public">public</span>CollectionMemberExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>CollectionMemberExpression ::= EntityExpression ["NOT"] "MEMBER" ["OF"] CollectionValuedPathExpression<pre>EntityExpression ::= SingleValuedAssociationPathExpression | SimpleEntityExpression
-SimpleEntityExpression ::= IdentificationVariable | InputParameter</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="CollectionValuedPathExpression"/>
-            <h4><span class="label public">public</span>CollectionValuedPathExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>CollectionValuedPathExpression ::= IdentificationVariable "." CollectionValuedAssociationField</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ComparisonExpression"/>
-            <h4><span class="label public">public</span>ComparisonExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ComparisonExpression ::= ArithmeticExpression ComparisonOperator ( QuantifiedExpression | ArithmeticExpression )</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ComparisonOperator"/>
-            <h4><span class="label public">public</span>ComparisonOperator<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ComparisonOperator ::= "=" | "&lt;" | "&lt;=" | "&lt;&gt;" | "&gt;" | "&gt;=" | "!="</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ConditionalExpression"/>
-            <h4><span class="label public">public</span>ConditionalExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ConditionalExpression ::= ConditionalTerm {"OR" ConditionalTerm}</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ConditionalFactor"/>
-            <h4><span class="label public">public</span>ConditionalFactor<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ConditionalFactor ::= ["NOT"] ConditionalPrimary</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ConditionalPrimary"/>
-            <h4><span class="label public">public</span>ConditionalPrimary<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ConditionalPrimary ::= SimpleConditionalExpression | "(" ConditionalExpression ")"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ConditionalTerm"/>
-            <h4><span class="label public">public</span>ConditionalTerm<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ConditionalTerm ::= ConditionalFactor {"AND" ConditionalFactor}</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="CustomFunctionsReturningDatetime"/>
-            <h4><span class="label public">public</span>CustomFunctionsReturningDatetime<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="CustomFunctionsReturningNumerics"/>
-            <h4><span class="label public">public</span>CustomFunctionsReturningNumerics<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="CustomFunctionsReturningStrings"/>
-            <h4><span class="label public">public</span>CustomFunctionsReturningStrings<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="DeleteClause"/>
-            <h4><span class="label public">public</span>DeleteClause<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>DeleteClause ::= "DELETE" ["FROM"] AbstractSchemaName ["AS"] AliasIdentificationVariable</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="DeleteStatement"/>
-            <h4><span class="label public">public</span>DeleteStatement<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>DeleteStatement ::= DeleteClause [WhereClause]</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="EmptyCollectionComparisonExpression"/>
-            <h4><span class="label public">public</span>EmptyCollectionComparisonExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>EmptyCollectionComparisonExpression ::= CollectionValuedPathExpression "IS" ["NOT"] "EMPTY"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="EntityExpression"/>
-            <h4><span class="label public">public</span>EntityExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>EntityExpression ::= SingleValuedAssociationPathExpression | SimpleEntityExpression</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>|</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ExistsExpression"/>
-            <h4><span class="label public">public</span>ExistsExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ExistsExpression ::= ["NOT"] "EXISTS" "(" Subselect ")"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="FromClause"/>
-            <h4><span class="label public">public</span>FromClause<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>FromClause ::= "FROM" IdentificationVariableDeclaration {"," IdentificationVariableDeclaration}</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="FunctionDeclaration"/>
-            <h4><span class="label public">public</span>FunctionDeclaration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>FunctionDeclaration ::= FunctionsReturningStrings | FunctionsReturningNumerics | FunctionsReturningDatetime</li>
-            </p>
-          </li>
-          <li>
-            <a name="FunctionsReturningDatetime"/>
-            <h4><span class="label public">public</span>FunctionsReturningDatetime<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>FunctionsReturningDateTime ::= "CURRENT_DATE" | "CURRENT_TIME" | "CURRENT_TIMESTAMP"</li>
-            </p>
-          </li>
-          <li>
-            <a name="FunctionsReturningNumerics"/>
-            <h4><span class="label public">public</span>FunctionsReturningNumerics<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>FunctionsReturningNumerics ::=      "LENGTH" "(" StringPrimary ")" |      "LOCATE" "(" StringPrimary "," StringPrimary ["," SimpleArithmeticExpression]")" |      "ABS" "(" SimpleArithmeticExpression ")" |      "SQRT" "(" SimpleArithmeticExpression ")" |      "MOD" "(" SimpleArithmeticExpression "," SimpleArithmeticExpression ")" |      "SIZE" "(" CollectionValuedPathExpression ")"</li>
-            </p>
-          </li>
-          <li>
-            <a name="FunctionsReturningStrings"/>
-            <h4><span class="label public">public</span>FunctionsReturningStrings<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>FunctionsReturningStrings ::=   "CONCAT" "(" StringPrimary "," StringPrimary ")" |   "SUBSTRING" "(" StringPrimary "," SimpleArithmeticExpression "," SimpleArithmeticExpression ")" |   "TRIM" "(" [["LEADING" | "TRAILING" | "BOTH"] [char] "FROM"] StringPrimary ")" |   "LOWER" "(" StringPrimary ")" |   "UPPER" "(" StringPrimary ")"</li>
-            </p>
-          </li>
-          <li>
-            <a name="GeneralCaseExpression"/>
-            <h4><span class="label public">public</span>GeneralCaseExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>GeneralCaseExpression ::= "CASE" WhenClause {WhenClause}* "ELSE" ScalarExpression "END"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="GroupByClause"/>
-            <h4><span class="label public">public</span>GroupByClause<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>GroupByClause ::= "GROUP" "BY" GroupByItem {"," GroupByItem}</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="GroupByItem"/>
-            <h4><span class="label public">public</span>GroupByItem<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>GroupByItem ::= IdentificationVariable | ResultVariable | SingleValuedPathExpression</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>| \Doctrine\ORM\Query\AST\PathExpression</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="HavingClause"/>
-            <h4><span class="label public">public</span>HavingClause<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>HavingClause ::= "HAVING" ConditionalExpression</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="IdentificationVariable"/>
-            <h4><span class="label public">public</span>IdentificationVariable<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>IdentificationVariable ::= identifier</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="IdentificationVariableDeclaration"/>
-            <h4><span class="label public">public</span>IdentificationVariableDeclaration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>IdentificationVariableDeclaration ::= RangeVariableDeclaration [IndexBy] {Join}</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="InExpression"/>
-            <h4><span class="label public">public</span>InExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>InExpression ::= SingleValuedPathExpression ["NOT"] "IN" "(" (InParameter {"," InParameter}* | Subselect) ")"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="InParameter"/>
-            <h4><span class="label public">public</span>InParameter<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>InParameter ::= Literal | InputParameter</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>| \Doctrine\ORM\Query\AST\InputParameter</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="IndexBy"/>
-            <h4><span class="label public">public</span>IndexBy<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>IndexBy ::= "INDEX" "BY" StateFieldPathExpression</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="InputParameter"/>
-            <h4><span class="label public">public</span>InputParameter<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>InputParameter ::= PositionalParameter | NamedParameter</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="InstanceOfExpression"/>
-            <h4><span class="label public">public</span>InstanceOfExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>InstanceOfExpression ::= IdentificationVariable ["NOT"] "INSTANCE" ["OF"] (InstanceOfParameter | "(" InstanceOfParameter {"," InstanceOfParameter}* ")")</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="InstanceOfParameter"/>
-            <h4><span class="label public">public</span>InstanceOfParameter<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>InstanceOfParameter ::= AbstractSchemaName | InputParameter</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="Join"/>
-            <h4><span class="label public">public</span>Join<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Join ::= ["LEFT" ["OUTER"] | "INNER"] "JOIN"          (JoinAssociationDeclaration | RangeVariableDeclaration)          ["WITH" ConditionalExpression]</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="JoinAssociationDeclaration"/>
-            <h4><span class="label public">public</span>JoinAssociationDeclaration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>JoinAssociationDeclaration ::= JoinAssociationPathExpression ["AS"] AliasIdentificationVariable [IndexBy]</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="JoinAssociationPathExpression"/>
-            <h4><span class="label public">public</span>JoinAssociationPathExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>JoinAssociationPathExpression ::= IdentificationVariable "." (CollectionValuedAssociationField | SingleValuedAssociationField)</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="LikeExpression"/>
-            <h4><span class="label public">public</span>LikeExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>LikeExpression ::= StringExpression ["NOT"] "LIKE" StringPrimary ["ESCAPE" char]</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="Literal"/>
-            <h4><span class="label public">public</span>Literal<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Literal ::= string | char | integer | float | boolean</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="NewValue"/>
-            <h4><span class="label public">public</span>NewValue<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>NewValue ::= SimpleArithmeticExpression | StringPrimary | DatetimePrimary | BooleanPrimary |      EnumPrimary | SimpleEntityExpression | "NULL"<pre>NOTE: Since it is not possible to correctly recognize individual types, here is the full
-grammar that needs to be supported:
-
-NewValue ::= SimpleArithmeticExpression | "NULL"
-
-SimpleArithmeticExpression covers all *Primary grammar rules and also SimpleEntityExpression</pre></li>
-            </p>
-          </li>
-          <li>
-            <a name="NullComparisonExpression"/>
-            <h4><span class="label public">public</span>NullComparisonExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>NullComparisonExpression ::= (SingleValuedPathExpression | InputParameter) "IS" ["NOT"] "NULL"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="NullIfExpression"/>
-            <h4><span class="label public">public</span>NullIfExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>NullIfExpression ::= "NULLIF" "(" ScalarExpression "," ScalarExpression ")"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="OrderByClause"/>
-            <h4><span class="label public">public</span>OrderByClause<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>OrderByClause ::= "ORDER" "BY" OrderByItem {"," OrderByItem}</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="OrderByItem"/>
-            <h4><span class="label public">public</span>OrderByItem<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>OrderByItem ::= (      SimpleArithmeticExpression | SingleValuedPathExpression |      ScalarExpression | ResultVariable ) ["ASC" | "DESC"]</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="PartialObjectExpression"/>
-            <h4><span class="label public">public</span>PartialObjectExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>PartialObjectExpression ::= "PARTIAL" IdentificationVariable "." PartialFieldSet PartialFieldSet ::= "{" SimpleStateField {"," SimpleStateField}* "}"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="PathExpression"/>
-            <h4><span class="label public">public</span>PathExpression<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $expectedTypes</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Parses an arbitrary path expression and defers semantical validation based on expected types.<pre>PathExpression ::= IdentificationVariable "." identifier</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$expectedTypes</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="QuantifiedExpression"/>
-            <h4><span class="label public">public</span>QuantifiedExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>QuantifiedExpression ::= ("ALL" | "ANY" | "SOME") "(" Subselect ")"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="QueryLanguage"/>
-            <h4><span class="label public">public</span>QueryLanguage<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>QueryLanguage ::= SelectStatement | UpdateStatement | DeleteStatement</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>|</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="RangeVariableDeclaration"/>
-            <h4><span class="label public">public</span>RangeVariableDeclaration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>RangeVariableDeclaration ::= AbstractSchemaName ["AS"] AliasIdentificationVariable</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ResultVariable"/>
-            <h4><span class="label public">public</span>ResultVariable<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ResultVariable ::= identifier</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ScalarExpression"/>
-            <h4><span class="label public">public</span>ScalarExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ScalarExpression ::= SimpleArithmeticExpression | StringPrimary | DateTimePrimary |                      StateFieldPathExpression | BooleanPrimary | CaseExpression |                      InstanceOfExpression</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>One of the possible expressions or subexpressions.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="SelectClause"/>
-            <h4><span class="label public">public</span>SelectClause<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SelectClause ::= "SELECT" ["DISTINCT"] SelectExpression {"," SelectExpression}</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="SelectExpression"/>
-            <h4><span class="label public">public</span>SelectExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SelectExpression ::= (     IdentificationVariable | ScalarExpression | AggregateExpression | FunctionDeclaration |     PartialObjectExpression | "(" Subselect ")" | CaseExpression ) [["AS"] ["HIDDEN"] AliasResultVariable]</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="SelectStatement"/>
-            <h4><span class="label public">public</span>SelectStatement<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SelectStatement ::= SelectClause FromClause [WhereClause] [GroupByClause] [HavingClause] [OrderByClause]</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="SimpleArithmeticExpression"/>
-            <h4><span class="label public">public</span>SimpleArithmeticExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SimpleArithmeticExpression ::= ArithmeticTerm {("+" | "-") ArithmeticTerm}</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="SimpleCaseExpression"/>
-            <h4><span class="label public">public</span>SimpleCaseExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SimpleCaseExpression ::= "CASE" CaseOperand SimpleWhenClause {SimpleWhenClause}* "ELSE" ScalarExpression "END" CaseOperand ::= StateFieldPathExpression | TypeDiscriminator</li>
-            </p>
-          </li>
-          <li>
-            <a name="SimpleConditionalExpression"/>
-            <h4><span class="label public">public</span>SimpleConditionalExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SimpleConditionalExpression ::=      ComparisonExpression | BetweenExpression | LikeExpression |      InExpression | NullComparisonExpression | ExistsExpression |      EmptyCollectionComparisonExpression | CollectionMemberExpression |      InstanceOfExpression</li>
-            </p>
-          </li>
-          <li>
-            <a name="SimpleEntityExpression"/>
-            <h4><span class="label public">public</span>SimpleEntityExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SimpleEntityExpression ::= IdentificationVariable | InputParameter</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>| \Doctrine\ORM\Query\AST\InputParameter</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="SimpleSelectClause"/>
-            <h4><span class="label public">public</span>SimpleSelectClause<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SimpleSelectClause ::= "SELECT" ["DISTINCT"] SimpleSelectExpression</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="SimpleSelectExpression"/>
-            <h4><span class="label public">public</span>SimpleSelectExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SimpleSelectExpression ::= (      StateFieldPathExpression | IdentificationVariable | FunctionDeclaration |      AggregateExpression | "(" Subselect ")" | ScalarExpression ) [["AS"] AliasResultVariable]</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="SimpleWhenClause"/>
-            <h4><span class="label public">public</span>SimpleWhenClause<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SimpleWhenClause ::= "WHEN" ScalarExpression "THEN" ScalarExpression</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="SingleValuedAssociationPathExpression"/>
-            <h4><span class="label public">public</span>SingleValuedAssociationPathExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SingleValuedAssociationPathExpression ::= IdentificationVariable "." SingleValuedAssociationField</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="SingleValuedPathExpression"/>
-            <h4><span class="label public">public</span>SingleValuedPathExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SingleValuedPathExpression ::= StateFieldPathExpression | SingleValuedAssociationPathExpression</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="StateFieldPathExpression"/>
-            <h4><span class="label public">public</span>StateFieldPathExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>StateFieldPathExpression ::= IdentificationVariable "." StateField</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="StringExpression"/>
-            <h4><span class="label public">public</span>StringExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>StringExpression ::= StringPrimary | "(" Subselect ")"</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>|</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="StringPrimary"/>
-            <h4><span class="label public">public</span>StringPrimary<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>StringPrimary ::= StateFieldPathExpression | string | InputParameter | FunctionsReturningStrings | AggregateExpression | CaseExpression</li>
-            </p>
-          </li>
-          <li>
-            <a name="Subselect"/>
-            <h4><span class="label public">public</span>Subselect<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Subselect ::= SimpleSelectClause SubselectFromClause [WhereClause] [GroupByClause] [HavingClause] [OrderByClause]</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="SubselectFromClause"/>
-            <h4><span class="label public">public</span>SubselectFromClause<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SubselectFromClause ::= "FROM" SubselectIdentificationVariableDeclaration {"," SubselectIdentificationVariableDeclaration}</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="SubselectIdentificationVariableDeclaration"/>
-            <h4><span class="label public">public</span>SubselectIdentificationVariableDeclaration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SubselectIdentificationVariableDeclaration ::= IdentificationVariableDeclaration | (AssociationPathExpression ["AS"] AliasIdentificationVariable)</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>|</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="UpdateClause"/>
-            <h4><span class="label public">public</span>UpdateClause<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>UpdateClause ::= "UPDATE" AbstractSchemaName ["AS"] AliasIdentificationVariable "SET" UpdateItem {"," UpdateItem}</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="UpdateItem"/>
-            <h4><span class="label public">public</span>UpdateItem<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>UpdateItem ::= SingleValuedPathExpression "=" NewValue</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="UpdateStatement"/>
-            <h4><span class="label public">public</span>UpdateStatement<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>UpdateStatement ::= UpdateClause [WhereClause]</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="WhenClause"/>
-            <h4><span class="label public">public</span>WhenClause<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>WhenClause ::= "WHEN" ConditionalExpression "THEN" ScalarExpression</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="WhereClause"/>
-            <h4><span class="label public">public</span>WhereClause<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>WhereClause ::= "WHERE" ConditionalExpression</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addCustomTreeWalker"/>
-            <h4><span class="label public">public</span>addCustomTreeWalker<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a custom tree walker for modifying the AST.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$className</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="free"/>
-            <h4><span class="label public">public</span>free<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $deep</strong>, <span class="param-type">integer</span><strong> $position</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Free this parser enabling it to be reused</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$deep</code> - Whether to clean peek and reset errors</li>
-                <li><code>$position</code> - Position to reset</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAST"/>
-            <h4><span class="label public">public</span>getAST<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Parse and build AST for the given Query.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>|</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getEntityManager"/>
-            <h4><span class="label public">public</span>getEntityManager<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the EntityManager used by the parser.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getLexer"/>
-            <h4><span class="label public">public</span>getLexer<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the lexer used by the parser.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getParserResult"/>
-            <h4><span class="label public">public</span>getParserResult<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the ParserResult that is being filled with information during parsing.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isInternalFunction"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>isInternalFunction<span style="font-size:90%;">( <span class="param-type">string</span><strong> $functionName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check if a function is internally defined. Used to prevent overwriting of built-in functions through user-defined functions.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$functionName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="match"/>
-            <h4><span class="label public">public</span>match<span style="font-size:90%;">( <span class="param-type"/><strong> $token</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Attempts to match the given token with the current lookahead token.<pre>If they match, updates the lookahead token; otherwise raises a syntax
-error.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>token</code> - type</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>QueryException If the tokens dont match.</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="parse"/>
-            <h4><span class="label public">public</span>parse<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Parses a query string.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="semanticalError"/>
-            <h4><span class="label public">public</span>semanticalError<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">array</span><strong> $token</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Generates a new semantical error.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - Optional message.</li>
-                <li><code>$token</code> - Optional token.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Doctrine\ORM\Query\QueryException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setCustomOutputTreeWalker"/>
-            <h4><span class="label public">public</span>setCustomOutputTreeWalker<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a custom tree walker that produces output.<pre>This tree walker will be run last over the AST, after any other walkers.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$className</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="syntaxError"/>
-            <h4><span class="label public">public</span>syntaxError<span style="font-size:90%;">( <span class="param-type">string</span><strong> $expected</strong>, <span class="param-type">array</span><strong> $token</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Generates a new syntax error.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$expected</code> - Expected string.</li>
-                <li><code>$token</code> - Got token.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Doctrine\ORM\Query\QueryException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="CustomFunctionDeclaration"/>
-            <h4><span class="label private">private</span>CustomFunctionDeclaration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Helper function for FunctionDeclaration grammar rule</li>
-            </p>
-          </li>
-          <li>
-            <a name="_isAggregateFunction"/>
-            <h4><span class="label private">private</span>_isAggregateFunction<span style="font-size:90%;">( <span class="param-type"/><strong> $tokenType</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the given token type indicates an aggregate function.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the token type is an aggregate function, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_isFunction"/>
-            <h4><span class="label private">private</span>_isFunction<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks if the next-next (after lookahead) token starts a function.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the next-next tokens start a function, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_isMathOperator"/>
-            <h4><span class="label private">private</span>_isMathOperator<span style="font-size:90%;">( <span class="param-type"/><strong> $token</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks if the given token indicates a mathematical operator.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the token is a mathematical operator, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_isNextAllAnySome"/>
-            <h4><span class="label private">private</span>_isNextAllAnySome<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the current lookahead token of the lexer has the type T_ALL, T_ANY or T_SOME.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_peekBeyondClosingParenthesis"/>
-            <h4><span class="label private">private</span>_peekBeyondClosingParenthesis<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $resetPeek</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Peek beyond the matched closing parenthesis and return the first token after that one.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$resetPeek</code> - Reset peek after finding the closing parenthesis</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_processDeferredIdentificationVariables"/>
-            <h4><span class="label private">private</span>_processDeferredIdentificationVariables<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validates that the given &lt;tt&gt;IdentificationVariable&lt;/tt&gt; is semantically correct.<pre>It must exist in query components list.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_processDeferredPartialObjectExpressions"/>
-            <h4><span class="label private">private</span>_processDeferredPartialObjectExpressions<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validates that the given &lt;tt&gt;PartialObjectExpression&lt;/tt&gt; is semantically correct.<pre>It must exist in query components list.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_processDeferredPathExpressions"/>
-            <h4><span class="label private">private</span>_processDeferredPathExpressions<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $AST</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validates that the given &lt;tt&gt;PathExpression&lt;/tt&gt; is semantically correct for grammar rules:<pre>AssociationPathExpression             ::= CollectionValuedPathExpression | SingleValuedAssociationPathExpression
-SingleValuedPathExpression            ::= StateFieldPathExpression | SingleValuedAssociationPathExpression
-StateFieldPathExpression              ::= IdentificationVariable "." StateField
-SingleValuedAssociationPathExpression ::= IdentificationVariable "." SingleValuedAssociationField
-CollectionValuedPathExpression        ::= IdentificationVariable "." CollectionValuedAssociationField</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$deferredItem</code> - </li>
-                <li><code>$AST</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_processDeferredResultVariables"/>
-            <h4><span class="label private">private</span>_processDeferredResultVariables<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validates that the given &lt;tt&gt;ResultVariable&lt;/tt&gt; is semantically correct.<pre>It must exist in query components list.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_processRootEntityAliasSelected"/>
-            <h4><span class="label private">private</span>_processRootEntityAliasSelected<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="fixIdentificationVariableOrder"/>
-            <h4><span class="label private">private</span>fixIdentificationVariableOrder<span style="font-size:90%;">( <span class="param-type"><span title="AST\SelectStatement|AST\DeleteStatement|AST\UpdateStatement">UpdateStatement</span></span><strong> $AST</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Fix order of identification variables.<pre>They have to appear in the select clause in the same order as the
-declarations (from ... x join ... y join ... z ...) appear in the query
-as the hydration process relies on that order for proper operation.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$AST</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="CustomFunctionDeclaration"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CustomFunctionDeclaration.xhtml">CustomFunctionDeclaration()</a>
+                — Helper function for FunctionDeclaration grammar rule</li>
+            <li id="_isAggregateFunction"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_isAggregateFunction.xhtml">_isAggregateFunction()</a>
+                — Checks whether the given token type indicates an aggregate function.</li>
+            <li id="_isFunction"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_isFunction.xhtml">_isFunction()</a>
+                — Checks if the next-next (after lookahead) token starts a function.</li>
+            <li id="_isMathOperator"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_isMathOperator.xhtml">_isMathOperator()</a>
+                — Checks if the given token indicates a mathematical operator.</li>
+            <li id="_isNextAllAnySome"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_isNextAllAnySome.xhtml">_isNextAllAnySome()</a>
+                — Checks whether the current lookahead token of the lexer has the type T_ALL, T_ANY or T_SOME.</li>
+            <li id="_peekBeyondClosingParenthesis"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_peekBeyondClosingParenthesis.xhtml">_peekBeyondClosingParenthesis()</a>
+                — Peek beyond the matched closing parenthesis and return the first token after that one.</li>
+            <li id="_processDeferredIdentificationVariables"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_processDeferredIdentificationVariables.xhtml">_processDeferredIdentificationVariables()</a>
+                — Validates that the given &lt;tt&gt;IdentificationVariable&lt;/tt&gt; is semantically correct.</li>
+            <li id="_processDeferredPartialObjectExpressions"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_processDeferredPartialObjectExpressions.xhtml">_processDeferredPartialObjectExpressions()</a>
+                — Validates that the given &lt;tt&gt;PartialObjectExpression&lt;/tt&gt; is semantically correct.</li>
+            <li id="_processDeferredPathExpressions"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_processDeferredPathExpressions.xhtml">_processDeferredPathExpressions()</a>
+                — Validates that the given &lt;tt&gt;PathExpression&lt;/tt&gt; is semantically correct for grammar rules:</li>
+            <li id="_processDeferredResultVariables"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_processDeferredResultVariables.xhtml">_processDeferredResultVariables()</a>
+                — Validates that the given &lt;tt&gt;ResultVariable&lt;/tt&gt; is semantically correct.</li>
+            <li id="_processRootEntityAliasSelected">
+              <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/_processRootEntityAliasSelected.xhtml">_processRootEntityAliasSelected()</a>
+            </li>
+            <li id="fixIdentificationVariableOrder"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/fixIdentificationVariableOrder.xhtml">fixIdentificationVariableOrder()</a>
+                — Fix order of identification variables.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/__construct.xhtml">__construct()</a>
+                — Creates a new query parser object.</li>
+            <li id="AbstractSchemaName"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/AbstractSchemaName.xhtml">AbstractSchemaName()</a>
+                — AbstractSchemaName ::= identifier</li>
+            <li id="AggregateExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/AggregateExpression.xhtml">AggregateExpression()</a>
+                — AggregateExpression ::=  ("AVG" | "MAX" | "MIN" | "SUM") "(" ["DISTINCT"] StateFieldPathExpression ")" |  "COUNT" "(" ["DISTINCT"] (IdentificationVariable | SingleValuedPathExpression) ")"</li>
+            <li id="AliasIdentificationVariable"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/AliasIdentificationVariable.xhtml">AliasIdentificationVariable()</a>
+                — AliasIdentificationVariable = identifier</li>
+            <li id="AliasResultVariable"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/AliasResultVariable.xhtml">AliasResultVariable()</a>
+                — AliasResultVariable ::= identifier</li>
+            <li id="ArithmeticExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ArithmeticExpression.xhtml">ArithmeticExpression()</a>
+                — ArithmeticExpression ::= SimpleArithmeticExpression | "(" Subselect ")"</li>
+            <li id="ArithmeticFactor"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ArithmeticFactor.xhtml">ArithmeticFactor()</a>
+                — ArithmeticFactor ::= [("+" | "-")] ArithmeticPrimary</li>
+            <li id="ArithmeticPrimary"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ArithmeticPrimary.xhtml">ArithmeticPrimary()</a>
+                — ArithmeticPrimary ::= SingleValuedPathExpression | Literal | "(" SimpleArithmeticExpression ")"          | FunctionsReturningNumerics | AggregateExpression | FunctionsReturningStrings          | FunctionsReturningDatetime | IdentificationVariable | ResultVariable          | InputParameter | CaseExpression</li>
+            <li id="ArithmeticTerm"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ArithmeticTerm.xhtml">ArithmeticTerm()</a>
+                — ArithmeticTerm ::= ArithmeticFactor {("*" | "/") ArithmeticFactor}</li>
+            <li id="AssociationPathExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/AssociationPathExpression.xhtml">AssociationPathExpression()</a>
+                — AssociationPathExpression ::= CollectionValuedPathExpression | SingleValuedAssociationPathExpression</li>
+            <li id="BetweenExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/BetweenExpression.xhtml">BetweenExpression()</a>
+                — BetweenExpression ::= ArithmeticExpression ["NOT"] "BETWEEN" ArithmeticExpression "AND" ArithmeticExpression</li>
+            <li id="CaseExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CaseExpression.xhtml">CaseExpression()</a>
+                — CaseExpression ::= GeneralCaseExpression | SimpleCaseExpression | CoalesceExpression | NullifExpression GeneralCaseExpression ::= "CASE" WhenClause {WhenClause}* "ELSE" ScalarExpression "END" WhenClause ::= "WHEN" ConditionalExpression "THEN" ScalarExpression SimpleCaseExpression ::= "CASE" CaseOperand SimpleWhenClause {SimpleWhenClause}* "ELSE" ScalarExpression "END" CaseOperand ::= StateFieldPathExpression | TypeDiscriminator SimpleWhenClause ::= "WHEN" ScalarExpression "THEN" ScalarExpression CoalesceExpression ::= "COALESCE" "(" ScalarExpression {"," ScalarExpression}* ")" NullifExpression ::= "NULLIF" "(" ScalarExpression "," ScalarExpression ")"</li>
+            <li id="CoalesceExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CoalesceExpression.xhtml">CoalesceExpression()</a>
+                — CoalesceExpression ::= "COALESCE" "(" ScalarExpression {"," ScalarExpression}* ")"</li>
+            <li id="CollectionMemberExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CollectionMemberExpression.xhtml">CollectionMemberExpression()</a>
+                — CollectionMemberExpression ::= EntityExpression ["NOT"] "MEMBER" ["OF"] CollectionValuedPathExpression</li>
+            <li id="CollectionValuedPathExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CollectionValuedPathExpression.xhtml">CollectionValuedPathExpression()</a>
+                — CollectionValuedPathExpression ::= IdentificationVariable "." CollectionValuedAssociationField</li>
+            <li id="ComparisonExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ComparisonExpression.xhtml">ComparisonExpression()</a>
+                — ComparisonExpression ::= ArithmeticExpression ComparisonOperator ( QuantifiedExpression | ArithmeticExpression )</li>
+            <li id="ComparisonOperator"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ComparisonOperator.xhtml">ComparisonOperator()</a>
+                — ComparisonOperator ::= "=" | "&lt;" | "&lt;=" | "&lt;&gt;" | "&gt;" | "&gt;=" | "!="</li>
+            <li id="ConditionalExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ConditionalExpression.xhtml">ConditionalExpression()</a>
+                — ConditionalExpression ::= ConditionalTerm {"OR" ConditionalTerm}</li>
+            <li id="ConditionalFactor"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ConditionalFactor.xhtml">ConditionalFactor()</a>
+                — ConditionalFactor ::= ["NOT"] ConditionalPrimary</li>
+            <li id="ConditionalPrimary"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ConditionalPrimary.xhtml">ConditionalPrimary()</a>
+                — ConditionalPrimary ::= SimpleConditionalExpression | "(" ConditionalExpression ")"</li>
+            <li id="ConditionalTerm"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ConditionalTerm.xhtml">ConditionalTerm()</a>
+                — ConditionalTerm ::= ConditionalFactor {"AND" ConditionalFactor}</li>
+            <li id="CustomFunctionsReturningDatetime">
+              <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CustomFunctionsReturningDatetime.xhtml">CustomFunctionsReturningDatetime()</a>
+            </li>
+            <li id="CustomFunctionsReturningNumerics">
+              <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CustomFunctionsReturningNumerics.xhtml">CustomFunctionsReturningNumerics()</a>
+            </li>
+            <li id="CustomFunctionsReturningStrings">
+              <a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/CustomFunctionsReturningStrings.xhtml">CustomFunctionsReturningStrings()</a>
+            </li>
+            <li id="DeleteClause"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/DeleteClause.xhtml">DeleteClause()</a>
+                — DeleteClause ::= "DELETE" ["FROM"] AbstractSchemaName ["AS"] AliasIdentificationVariable</li>
+            <li id="DeleteStatement"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/DeleteStatement.xhtml">DeleteStatement()</a>
+                — DeleteStatement ::= DeleteClause [WhereClause]</li>
+            <li id="EmptyCollectionComparisonExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/EmptyCollectionComparisonExpression.xhtml">EmptyCollectionComparisonExpression()</a>
+                — EmptyCollectionComparisonExpression ::= CollectionValuedPathExpression "IS" ["NOT"] "EMPTY"</li>
+            <li id="EntityExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/EntityExpression.xhtml">EntityExpression()</a>
+                — EntityExpression ::= SingleValuedAssociationPathExpression | SimpleEntityExpression</li>
+            <li id="ExistsExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ExistsExpression.xhtml">ExistsExpression()</a>
+                — ExistsExpression ::= ["NOT"] "EXISTS" "(" Subselect ")"</li>
+            <li id="FromClause"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/FromClause.xhtml">FromClause()</a>
+                — FromClause ::= "FROM" IdentificationVariableDeclaration {"," IdentificationVariableDeclaration}</li>
+            <li id="FunctionDeclaration"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/FunctionDeclaration.xhtml">FunctionDeclaration()</a>
+                — FunctionDeclaration ::= FunctionsReturningStrings | FunctionsReturningNumerics | FunctionsReturningDatetime</li>
+            <li id="FunctionsReturningDatetime"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/FunctionsReturningDatetime.xhtml">FunctionsReturningDatetime()</a>
+                — FunctionsReturningDateTime ::= "CURRENT_DATE" | "CURRENT_TIME" | "CURRENT_TIMESTAMP"</li>
+            <li id="FunctionsReturningNumerics"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/FunctionsReturningNumerics.xhtml">FunctionsReturningNumerics()</a>
+                — FunctionsReturningNumerics ::=      "LENGTH" "(" StringPrimary ")" |      "LOCATE" "(" StringPrimary "," StringPrimary ["," SimpleArithmeticExpression]")" |      "ABS" "(" SimpleArithmeticExpression ")" |      "SQRT" "(" SimpleArithmeticExpression ")" |      "MOD" "(" SimpleArithmeticExpression "," SimpleArithmeticExpression ")" |      "SIZE" "(" CollectionValuedPathExpression ")"</li>
+            <li id="FunctionsReturningStrings"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/FunctionsReturningStrings.xhtml">FunctionsReturningStrings()</a>
+                — FunctionsReturningStrings ::=   "CONCAT" "(" StringPrimary "," StringPrimary ")" |   "SUBSTRING" "(" StringPrimary "," SimpleArithmeticExpression "," SimpleArithmeticExpression ")" |   "TRIM" "(" [["LEADING" | "TRAILING" | "BOTH"] [char] "FROM"] StringPrimary ")" |   "LOWER" "(" StringPrimary ")" |   "UPPER" "(" StringPrimary ")"</li>
+            <li id="GeneralCaseExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/GeneralCaseExpression.xhtml">GeneralCaseExpression()</a>
+                — GeneralCaseExpression ::= "CASE" WhenClause {WhenClause}* "ELSE" ScalarExpression "END"</li>
+            <li id="GroupByClause"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/GroupByClause.xhtml">GroupByClause()</a>
+                — GroupByClause ::= "GROUP" "BY" GroupByItem {"," GroupByItem}</li>
+            <li id="GroupByItem"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/GroupByItem.xhtml">GroupByItem()</a>
+                — GroupByItem ::= IdentificationVariable | ResultVariable | SingleValuedPathExpression</li>
+            <li id="HavingClause"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/HavingClause.xhtml">HavingClause()</a>
+                — HavingClause ::= "HAVING" ConditionalExpression</li>
+            <li id="IdentificationVariable"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/IdentificationVariable.xhtml">IdentificationVariable()</a>
+                — IdentificationVariable ::= identifier</li>
+            <li id="IdentificationVariableDeclaration"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/IdentificationVariableDeclaration.xhtml">IdentificationVariableDeclaration()</a>
+                — IdentificationVariableDeclaration ::= RangeVariableDeclaration [IndexBy] {Join}</li>
+            <li id="InExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/InExpression.xhtml">InExpression()</a>
+                — InExpression ::= SingleValuedPathExpression ["NOT"] "IN" "(" (InParameter {"," InParameter}* | Subselect) ")"</li>
+            <li id="InParameter"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/InParameter.xhtml">InParameter()</a>
+                — InParameter ::= Literal | InputParameter</li>
+            <li id="IndexBy"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/IndexBy.xhtml">IndexBy()</a>
+                — IndexBy ::= "INDEX" "BY" StateFieldPathExpression</li>
+            <li id="InputParameter"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/InputParameter.xhtml">InputParameter()</a>
+                — InputParameter ::= PositionalParameter | NamedParameter</li>
+            <li id="InstanceOfExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/InstanceOfExpression.xhtml">InstanceOfExpression()</a>
+                — InstanceOfExpression ::= IdentificationVariable ["NOT"] "INSTANCE" ["OF"] (InstanceOfParameter | "(" InstanceOfParameter {"," InstanceOfParameter}* ")")</li>
+            <li id="InstanceOfParameter"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/InstanceOfParameter.xhtml">InstanceOfParameter()</a>
+                — InstanceOfParameter ::= AbstractSchemaName | InputParameter</li>
+            <li id="Join"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/Join.xhtml">Join()</a>
+                — Join ::= ["LEFT" ["OUTER"] | "INNER"] "JOIN"          (JoinAssociationDeclaration | RangeVariableDeclaration)          ["WITH" ConditionalExpression]</li>
+            <li id="JoinAssociationDeclaration"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/JoinAssociationDeclaration.xhtml">JoinAssociationDeclaration()</a>
+                — JoinAssociationDeclaration ::= JoinAssociationPathExpression ["AS"] AliasIdentificationVariable [IndexBy]</li>
+            <li id="JoinAssociationPathExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/JoinAssociationPathExpression.xhtml">JoinAssociationPathExpression()</a>
+                — JoinAssociationPathExpression ::= IdentificationVariable "." (CollectionValuedAssociationField | SingleValuedAssociationField)</li>
+            <li id="LikeExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/LikeExpression.xhtml">LikeExpression()</a>
+                — LikeExpression ::= StringExpression ["NOT"] "LIKE" StringPrimary ["ESCAPE" char]</li>
+            <li id="Literal"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/Literal.xhtml">Literal()</a>
+                — Literal ::= string | char | integer | float | boolean</li>
+            <li id="NewValue"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/NewValue.xhtml">NewValue()</a>
+                — NewValue ::= SimpleArithmeticExpression | StringPrimary | DatetimePrimary | BooleanPrimary |      EnumPrimary | SimpleEntityExpression | "NULL"</li>
+            <li id="NullComparisonExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/NullComparisonExpression.xhtml">NullComparisonExpression()</a>
+                — NullComparisonExpression ::= (SingleValuedPathExpression | InputParameter) "IS" ["NOT"] "NULL"</li>
+            <li id="NullIfExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/NullIfExpression.xhtml">NullIfExpression()</a>
+                — NullIfExpression ::= "NULLIF" "(" ScalarExpression "," ScalarExpression ")"</li>
+            <li id="OrderByClause"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/OrderByClause.xhtml">OrderByClause()</a>
+                — OrderByClause ::= "ORDER" "BY" OrderByItem {"," OrderByItem}</li>
+            <li id="OrderByItem"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/OrderByItem.xhtml">OrderByItem()</a>
+                — OrderByItem ::= (      SimpleArithmeticExpression | SingleValuedPathExpression |      ScalarExpression | ResultVariable ) ["ASC" | "DESC"]</li>
+            <li id="PartialObjectExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/PartialObjectExpression.xhtml">PartialObjectExpression()</a>
+                — PartialObjectExpression ::= "PARTIAL" IdentificationVariable "." PartialFieldSet PartialFieldSet ::= "{" SimpleStateField {"," SimpleStateField}* "}"</li>
+            <li id="PathExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/PathExpression.xhtml">PathExpression()</a>
+                — Parses an arbitrary path expression and defers semantical validation based on expected types.</li>
+            <li id="QuantifiedExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/QuantifiedExpression.xhtml">QuantifiedExpression()</a>
+                — QuantifiedExpression ::= ("ALL" | "ANY" | "SOME") "(" Subselect ")"</li>
+            <li id="QueryLanguage"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/QueryLanguage.xhtml">QueryLanguage()</a>
+                — QueryLanguage ::= SelectStatement | UpdateStatement | DeleteStatement</li>
+            <li id="RangeVariableDeclaration"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/RangeVariableDeclaration.xhtml">RangeVariableDeclaration()</a>
+                — RangeVariableDeclaration ::= AbstractSchemaName ["AS"] AliasIdentificationVariable</li>
+            <li id="ResultVariable"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ResultVariable.xhtml">ResultVariable()</a>
+                — ResultVariable ::= identifier</li>
+            <li id="ScalarExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/ScalarExpression.xhtml">ScalarExpression()</a>
+                — ScalarExpression ::= SimpleArithmeticExpression | StringPrimary | DateTimePrimary |                      StateFieldPathExpression | BooleanPrimary | CaseExpression |                      InstanceOfExpression</li>
+            <li id="SelectClause"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SelectClause.xhtml">SelectClause()</a>
+                — SelectClause ::= "SELECT" ["DISTINCT"] SelectExpression {"," SelectExpression}</li>
+            <li id="SelectExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SelectExpression.xhtml">SelectExpression()</a>
+                — SelectExpression ::= (     IdentificationVariable | ScalarExpression | AggregateExpression | FunctionDeclaration |     PartialObjectExpression | "(" Subselect ")" | CaseExpression ) [["AS"] ["HIDDEN"] AliasResultVariable]</li>
+            <li id="SelectStatement"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SelectStatement.xhtml">SelectStatement()</a>
+                — SelectStatement ::= SelectClause FromClause [WhereClause] [GroupByClause] [HavingClause] [OrderByClause]</li>
+            <li id="SimpleArithmeticExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleArithmeticExpression.xhtml">SimpleArithmeticExpression()</a>
+                — SimpleArithmeticExpression ::= ArithmeticTerm {("+" | "-") ArithmeticTerm}</li>
+            <li id="SimpleCaseExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleCaseExpression.xhtml">SimpleCaseExpression()</a>
+                — SimpleCaseExpression ::= "CASE" CaseOperand SimpleWhenClause {SimpleWhenClause}* "ELSE" ScalarExpression "END" CaseOperand ::= StateFieldPathExpression | TypeDiscriminator</li>
+            <li id="SimpleConditionalExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleConditionalExpression.xhtml">SimpleConditionalExpression()</a>
+                — SimpleConditionalExpression ::=      ComparisonExpression | BetweenExpression | LikeExpression |      InExpression | NullComparisonExpression | ExistsExpression |      EmptyCollectionComparisonExpression | CollectionMemberExpression |      InstanceOfExpression</li>
+            <li id="SimpleEntityExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleEntityExpression.xhtml">SimpleEntityExpression()</a>
+                — SimpleEntityExpression ::= IdentificationVariable | InputParameter</li>
+            <li id="SimpleSelectClause"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleSelectClause.xhtml">SimpleSelectClause()</a>
+                — SimpleSelectClause ::= "SELECT" ["DISTINCT"] SimpleSelectExpression</li>
+            <li id="SimpleSelectExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleSelectExpression.xhtml">SimpleSelectExpression()</a>
+                — SimpleSelectExpression ::= (      StateFieldPathExpression | IdentificationVariable | FunctionDeclaration |      AggregateExpression | "(" Subselect ")" | ScalarExpression ) [["AS"] AliasResultVariable]</li>
+            <li id="SimpleWhenClause"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SimpleWhenClause.xhtml">SimpleWhenClause()</a>
+                — SimpleWhenClause ::= "WHEN" ScalarExpression "THEN" ScalarExpression</li>
+            <li id="SingleValuedAssociationPathExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SingleValuedAssociationPathExpression.xhtml">SingleValuedAssociationPathExpression()</a>
+                — SingleValuedAssociationPathExpression ::= IdentificationVariable "." SingleValuedAssociationField</li>
+            <li id="SingleValuedPathExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SingleValuedPathExpression.xhtml">SingleValuedPathExpression()</a>
+                — SingleValuedPathExpression ::= StateFieldPathExpression | SingleValuedAssociationPathExpression</li>
+            <li id="StateFieldPathExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/StateFieldPathExpression.xhtml">StateFieldPathExpression()</a>
+                — StateFieldPathExpression ::= IdentificationVariable "." StateField</li>
+            <li id="StringExpression"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/StringExpression.xhtml">StringExpression()</a>
+                — StringExpression ::= StringPrimary | "(" Subselect ")"</li>
+            <li id="StringPrimary"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/StringPrimary.xhtml">StringPrimary()</a>
+                — StringPrimary ::= StateFieldPathExpression | string | InputParameter | FunctionsReturningStrings | AggregateExpression | CaseExpression</li>
+            <li id="Subselect"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/Subselect.xhtml">Subselect()</a>
+                — Subselect ::= SimpleSelectClause SubselectFromClause [WhereClause] [GroupByClause] [HavingClause] [OrderByClause]</li>
+            <li id="SubselectFromClause"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SubselectFromClause.xhtml">SubselectFromClause()</a>
+                — SubselectFromClause ::= "FROM" SubselectIdentificationVariableDeclaration {"," SubselectIdentificationVariableDeclaration}</li>
+            <li id="SubselectIdentificationVariableDeclaration"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/SubselectIdentificationVariableDeclaration.xhtml">SubselectIdentificationVariableDeclaration()</a>
+                — SubselectIdentificationVariableDeclaration ::= IdentificationVariableDeclaration | (AssociationPathExpression ["AS"] AliasIdentificationVariable)</li>
+            <li id="UpdateClause"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/UpdateClause.xhtml">UpdateClause()</a>
+                — UpdateClause ::= "UPDATE" AbstractSchemaName ["AS"] AliasIdentificationVariable "SET" UpdateItem {"," UpdateItem}</li>
+            <li id="UpdateItem"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/UpdateItem.xhtml">UpdateItem()</a>
+                — UpdateItem ::= SingleValuedPathExpression "=" NewValue</li>
+            <li id="UpdateStatement"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/UpdateStatement.xhtml">UpdateStatement()</a>
+                — UpdateStatement ::= UpdateClause [WhereClause]</li>
+            <li id="WhenClause"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/WhenClause.xhtml">WhenClause()</a>
+                — WhenClause ::= "WHEN" ConditionalExpression "THEN" ScalarExpression</li>
+            <li id="WhereClause"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/WhereClause.xhtml">WhereClause()</a>
+                — WhereClause ::= "WHERE" ConditionalExpression</li>
+            <li id="addCustomTreeWalker"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/addCustomTreeWalker.xhtml">addCustomTreeWalker()</a>
+                — Adds a custom tree walker for modifying the AST.</li>
+            <li id="free"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/free.xhtml">free()</a>
+                — Free this parser enabling it to be reused</li>
+            <li id="getAST"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/getAST.xhtml">getAST()</a>
+                — Parse and build AST for the given Query.</li>
+            <li id="getEntityManager"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/getEntityManager.xhtml">getEntityManager()</a>
+                — Gets the EntityManager used by the parser.</li>
+            <li id="getLexer"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/getLexer.xhtml">getLexer()</a>
+                — Gets the lexer used by the parser.</li>
+            <li id="getParserResult"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/getParserResult.xhtml">getParserResult()</a>
+                — Gets the ParserResult that is being filled with information during parsing.</li>
+            <li id="isInternalFunction"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/isInternalFunction.xhtml">isInternalFunction()</a>
+                — Check if a function is internally defined. Used to prevent overwriting of built-in functions through user-defined functions.</li>
+            <li id="match"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/match.xhtml">match()</a>
+                — Attempts to match the given token with the current lookahead token.</li>
+            <li id="parse"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/parse.xhtml">parse()</a>
+                — Parses a query string.</li>
+            <li id="semanticalError"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/semanticalError.xhtml">semanticalError()</a>
+                — Generates a new semantical error.</li>
+            <li id="setCustomOutputTreeWalker"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/setCustomOutputTreeWalker.xhtml">setCustomOutputTreeWalker()</a>
+                — Sets a custom tree walker that produces output.</li>
+            <li id="syntaxError"><a title="Doctrine\ORM\Query\Parser" href="../classes/Doctrine_ORM_Query_Parser/syntaxError.xhtml">syntaxError()</a>
+                — Generates a new syntax error.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

@@ -1,337 +1,154 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\Common\ClassLoader - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\Common\ClassLoader</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_Common">Doctrine\Common</a>
+          </li>
+          <li class="separator">ClassLoader</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#fileExtension">$fileExtension</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#namespace">$namespace</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#includePath">$includePath</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#namespaceSeparator">$namespaceSeparator</a>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/doctrine/common/lib/Doctrine/Common/ClassLoader.php.xhtml#line34">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\Common\</small>ClassLoader</h1>
+        <h4>A &lt;tt&gt;ClassLoader&lt;/tt&gt; is an autoloader for class files that can be installed on the SPL autoload stack. It is a class loader that either loads only classes of a specific namespace or all namespaces and it is suitable for working together with other autoloaders in the SPL autoload stack.</h4>
+        <p>If no include path is configured through the constructor or , a ClassLoader<br/>relies on the PHP &lt;code&gt;include_path&lt;/code&gt;.<br/></p>
         <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#canLoadClass">canLoadClass</a>
-          </li>
-          <li>
-            <a href="#classExists">classExists</a>
-          </li>
-          <li>
-            <a href="#getClassLoader">getClassLoader</a>
-          </li>
-          <li>
-            <a href="#getFileExtension">getFileExtension</a>
-          </li>
-          <li>
-            <a href="#getIncludePath">getIncludePath</a>
-          </li>
-          <li>
-            <a href="#getNamespaceSeparator">getNamespaceSeparator</a>
-          </li>
-          <li>
-            <a href="#loadClass">loadClass</a>
-          </li>
-          <li>
-            <a href="#register">register</a>
-          </li>
-          <li>
-            <a href="#setFileExtension">setFileExtension</a>
-          </li>
-          <li>
-            <a href="#setIncludePath">setIncludePath</a>
-          </li>
-          <li>
-            <a href="#setNamespaceSeparator">setNamespaceSeparator</a>
-          </li>
-          <li>
-            <a href="#unregister">unregister</a>
-          </li>
+          <li>Author: Roman Borschel &lt;roman@code-factory.org&gt;</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\Common\</span>ClassLoader</h2>
-        <div class="file-notice">
-          <p>A &lt;tt&gt;ClassLoader&lt;/tt&gt; is an autoloader for class files that can be installed on the SPL autoload stack. It is a class loader that either loads only classes of a specific namespace or all namespaces and it is suitable for working together with other autoloaders in the SPL autoload stack.</p>
-          <p>
-            <pre>If no include path is configured through the constructor or , a ClassLoader
-relies on the PHP &lt;code&gt;include_path&lt;/code&gt;.
-</pre>
-          </p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ClassLoader
+            {<br/><ul class="none"><li>// members</li><li>protected string <a href="#members">$fileExtension</a>;
+                    </li><li>protected string <a href="#members">$namespace</a>;
+                    </li><li>protected string <a href="#members">$includePath</a>;
+                    </li><li>protected string <a href="#members">$namespaceSeparator</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/setNamespaceSeparator.xhtml">setNamespaceSeparator</a>()
+                    </li><li>public string <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/getNamespaceSeparator.xhtml">getNamespaceSeparator</a>()
+                    </li><li>public void <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/setIncludePath.xhtml">setIncludePath</a>()
+                    </li><li>public string <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/getIncludePath.xhtml">getIncludePath</a>()
+                    </li><li>public void <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/setFileExtension.xhtml">setFileExtension</a>()
+                    </li><li>public string <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/getFileExtension.xhtml">getFileExtension</a>()
+                    </li><li>public void <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/register.xhtml">register</a>()
+                    </li><li>public void <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/unregister.xhtml">unregister</a>()
+                    </li><li>public boolean <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/loadClass.xhtml">loadClass</a>()
+                    </li><li>public boolean <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/canLoadClass.xhtml">canLoadClass</a>()
+                    </li><li>public static boolean <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/classExists.xhtml">classExists</a>()
+                    </li><li>public static ClassLoader <a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/getClassLoader.xhtml">getClassLoader</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="fileExtension"><strong>$fileExtension</strong>
+                —
+                string</li>
+            <li id="includePath"><strong>$includePath</strong>
+                —
+                string</li>
+            <li id="namespace"><strong>$namespace</strong>
+                —
+                string</li>
+            <li id="namespaceSeparator"><strong>$namespaceSeparator</strong>
+                —
+                string</li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="fileExtension"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $fileExtension</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="namespace"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $namespace</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="includePath"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $includePath</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="namespaceSeparator"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $namespaceSeparator</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $ns</strong>, <span class="param-type">string</span><strong> $includePath</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Creates a new &lt;tt&gt;ClassLoader&lt;/tt&gt; that loads classes of the specified namespace from the specified include path.<pre>If no include path is given, the ClassLoader relies on the PHP include_path.
-If neither a namespace nor an include path is given, the ClassLoader will
-be responsible for loading all classes, thereby relying on the PHP include_path.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$ns</code> - The namespace of the classes to load.</li>
-                <li><code>$includePath</code> - The base include path to use.</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="canLoadClass"/>
-            <h4><span class="label public">public</span>canLoadClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Asks this ClassLoader whether it can potentially load the class (file) with the given name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$className</code> - The fully-qualified name of the class.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if this ClassLoader can load the class, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="classExists"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>classExists<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether a class with a given name exists. A class "exists" if it is either already defined in the current request or if there is an autoloader on the SPL autoload stack that is a) responsible for the class in question and b) is able to load a class file in which the class definition resides.<pre>If the class is not already defined, each autoloader in the SPL autoload stack
-is asked whether it is able to tell if the class exists. If the autoloader is
-a &lt;tt&gt;ClassLoader&lt;/tt&gt;,  is used, otherwise the autoload
-function of the autoloader is invoked and expected to return a value that
-evaluates to TRUE if the class (file) exists. As soon as one autoloader reports
-that the class exists, TRUE is returned.
-Note that, depending on what kinds of autoloaders are installed on the SPL
-autoload stack, the class (file) might already be loaded as a result of checking
-for its existence. This is not the case with a &lt;tt&gt;ClassLoader&lt;/tt&gt;, who separates
-these responsibilities.
-</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$className</code> - The fully-qualified name of the class.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the class exists as per the definition given above, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getClassLoader"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getClassLoader<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the &lt;tt&gt;ClassLoader&lt;/tt&gt; from the SPL autoload stack that is responsible for (and is able to load) the class with the given name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$className</code> - The name of the class.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The &lt;tt&gt;ClassLoader&lt;/tt&gt; for the class or NULL if no such &lt;tt&gt;ClassLoader&lt;/tt&gt; exists.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFileExtension"/>
-            <h4><span class="label public">public</span>getFileExtension<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the file extension of class files in the namespace of this ClassLoader.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getIncludePath"/>
-            <h4><span class="label public">public</span>getIncludePath<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the base include path for all class files in the namespace of this ClassLoader.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getNamespaceSeparator"/>
-            <h4><span class="label public">public</span>getNamespaceSeparator<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the namespace separator used by classes in the namespace of this ClassLoader.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadClass"/>
-            <h4><span class="label public">public</span>loadClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Loads the given class or interface.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$className</code> - The name of the class to load.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the class has been successfully loaded, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="register"/>
-            <h4><span class="label public">public</span>register<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Registers this ClassLoader on the SPL autoload stack.</li>
-            </p>
-          </li>
-          <li>
-            <a name="setFileExtension"/>
-            <h4><span class="label public">public</span>setFileExtension<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fileExtension</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the file extension of class files in the namespace of this ClassLoader.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fileExtension</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setIncludePath"/>
-            <h4><span class="label public">public</span>setIncludePath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $includePath</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the base include path for all class files in the namespace of this ClassLoader.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$includePath</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setNamespaceSeparator"/>
-            <h4><span class="label public">public</span>setNamespaceSeparator<span style="font-size:90%;">( <span class="param-type">string</span><strong> $sep</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the namespace separator used by classes in the namespace of this ClassLoader.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$sep</code> - The separator to use.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="unregister"/>
-            <h4><span class="label public">public</span>unregister<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Removes this ClassLoader from the SPL autoload stack.</li>
-            </p>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/__construct.xhtml">__construct()</a>
+                — Creates a new &lt;tt&gt;ClassLoader&lt;/tt&gt; that loads classes of the specified namespace from the specified include path.</li>
+            <li id="canLoadClass"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/canLoadClass.xhtml">canLoadClass()</a>
+                — Asks this ClassLoader whether it can potentially load the class (file) with the given name.</li>
+            <li id="classExists"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/classExists.xhtml">classExists()</a>
+                — Checks whether a class with a given name exists. A class "exists" if it is either already defined in the current request or if there is an autoloader on the SPL autoload stack that is a) responsible for the class in question and b) is able to load a class file in which the class definition resides.</li>
+            <li id="getClassLoader"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/getClassLoader.xhtml">getClassLoader()</a>
+                — Gets the &lt;tt&gt;ClassLoader&lt;/tt&gt; from the SPL autoload stack that is responsible for (and is able to load) the class with the given name.</li>
+            <li id="getFileExtension"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/getFileExtension.xhtml">getFileExtension()</a>
+                — Gets the file extension of class files in the namespace of this ClassLoader.</li>
+            <li id="getIncludePath"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/getIncludePath.xhtml">getIncludePath()</a>
+                — Gets the base include path for all class files in the namespace of this ClassLoader.</li>
+            <li id="getNamespaceSeparator"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/getNamespaceSeparator.xhtml">getNamespaceSeparator()</a>
+                — Gets the namespace separator used by classes in the namespace of this ClassLoader.</li>
+            <li id="loadClass"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/loadClass.xhtml">loadClass()</a>
+                — Loads the given class or interface.</li>
+            <li id="register"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/register.xhtml">register()</a>
+                — Registers this ClassLoader on the SPL autoload stack.</li>
+            <li id="setFileExtension"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/setFileExtension.xhtml">setFileExtension()</a>
+                — Sets the file extension of class files in the namespace of this ClassLoader.</li>
+            <li id="setIncludePath"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/setIncludePath.xhtml">setIncludePath()</a>
+                — Sets the base include path for all class files in the namespace of this ClassLoader.</li>
+            <li id="setNamespaceSeparator"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/setNamespaceSeparator.xhtml">setNamespaceSeparator()</a>
+                — Sets the namespace separator used by classes in the namespace of this ClassLoader.</li>
+            <li id="unregister"><a title="Doctrine\Common\ClassLoader" href="../classes/Doctrine_Common_ClassLoader/unregister.xhtml">unregister()</a>
+                — Removes this ClassLoader from the SPL autoload stack.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

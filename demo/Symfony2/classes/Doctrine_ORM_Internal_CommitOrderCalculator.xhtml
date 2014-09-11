@@ -1,160 +1,166 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\ORM\Internal\CommitOrderCalculator - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\ORM\Internal\CommitOrderCalculator</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_ORM_Internal">Doctrine\ORM\Internal</a>
+          </li>
+          <li class="separator">CommitOrderCalculator</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#NOT_VISITED">NOT_VISITED</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#IN_PROGRESS">IN_PROGRESS</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#VISITED">VISITED</a>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/doctrine/orm/lib/Doctrine/ORM/Internal/CommitOrderCalculator.php.xhtml#line30">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\ORM\Internal\</small>CommitOrderCalculator</h1>
+        <h4>The CommitOrderCalculator is used by the UnitOfWork to sort out the correct order in which changes to entities need to be persisted.</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#_nodeStates">$_nodeStates</a>
-          </li>
-          <li>
-            <a href="#_classes">$_classes</a>
-          </li>
-          <li>
-            <a href="#_relatedClasses">$_relatedClasses</a>
-          </li>
-          <li>
-            <a href="#_sorted">$_sorted</a>
-          </li>
+          <li>Author: Roman Borschel &lt;roman@code-factory.org&gt;</li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#_visitNode">_visitNode</a>
-          </li>
-          <li>
-            <a href="#addClass">addClass</a>
-          </li>
-          <li>
-            <a href="#addDependency">addDependency</a>
-          </li>
-          <li>
-            <a href="#clear">clear</a>
-          </li>
-          <li>
-            <a href="#getCommitOrder">getCommitOrder</a>
-          </li>
-          <li>
-            <a href="#hasClass">hasClass</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\ORM\Internal\</span>CommitOrderCalculator</h2>
-        <div class="file-notice">
-          <p>The CommitOrderCalculator is used by the UnitOfWork to sort out the correct order in which changes to entities need to be persisted.</p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class CommitOrderCalculator
+            {<br/><ul class="none"><li>// constants</li><li>const NOT_VISITED = 1;</li><li>const IN_PROGRESS = 2;</li><li>const VISITED = 3;</li></ul><ul class="none"><li>// members</li><li>private array <a href="#members">$_nodeStates</a>;
+                    </li><li>private array <a href="#members">$_classes</a>;
+                    </li><li>private array <a href="#members">$_relatedClasses</a>;
+                    </li><li>private array <a href="#members">$_sorted</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Doctrine\ORM\Internal\CommitOrderCalculator" href="../classes/Doctrine_ORM_Internal_CommitOrderCalculator/clear.xhtml">clear</a>()
+                    </li><li>public array <a title="Doctrine\ORM\Internal\CommitOrderCalculator" href="../classes/Doctrine_ORM_Internal_CommitOrderCalculator/getCommitOrder.xhtml">getCommitOrder</a>()
+                    </li><li>private void <a title="Doctrine\ORM\Internal\CommitOrderCalculator" href="../classes/Doctrine_ORM_Internal_CommitOrderCalculator/_visitNode.xhtml">_visitNode</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Internal\CommitOrderCalculator" href="../classes/Doctrine_ORM_Internal_CommitOrderCalculator/addDependency.xhtml">addDependency</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Internal\CommitOrderCalculator" href="../classes/Doctrine_ORM_Internal_CommitOrderCalculator/hasClass.xhtml">hasClass</a>()
+                    </li><li>public void <a title="Doctrine\ORM\Internal\CommitOrderCalculator" href="../classes/Doctrine_ORM_Internal_CommitOrderCalculator/addClass.xhtml">addClass</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="NOT_VISITED">NOT_VISITED</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="IN_PROGRESS">IN_PROGRESS</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="VISITED">VISITED</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="_classes">
+              <strong>$_classes</strong>
+            </li>
+            <li id="_nodeStates">
+              <strong>$_nodeStates</strong>
+            </li>
+            <li id="_relatedClasses">
+              <strong>$_relatedClasses</strong>
+            </li>
+            <li id="_sorted">
+              <strong>$_sorted</strong>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
-          <li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="NOT_VISITED"/>NOT_VISITED = 1<hr/></li>
-          <li><a name="IN_PROGRESS"/>IN_PROGRESS = 2<hr/></li>
-          <li><a name="VISITED"/>VISITED = 3<hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="_nodeStates"/>
-            <h4><span class="label private">private</span>
-                $_nodeStates</h4>
-          </li>
-          <li>
-            <a name="_classes"/>
-            <h4><span class="label private">private</span>
-                $_classes</h4>
-          </li>
-          <li>
-            <a name="_relatedClasses"/>
-            <h4><span class="label private">private</span>
-                $_relatedClasses</h4>
-          </li>
-          <li>
-            <a name="_sorted"/>
-            <h4><span class="label private">private</span>
-                $_sorted</h4>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="addClass"/>
-            <h4><span class="label public">public</span>addClass<span style="font-size:90%;">( <span class="param-type"/><strong> $class</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="addDependency"/>
-            <h4><span class="label public">public</span>addDependency<span style="font-size:90%;">( <span class="param-type"/><strong> $fromClass</strong>, <span class="param-type"/><strong> $toClass</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="clear"/>
-            <h4><span class="label public">public</span>clear<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Clears the current graph.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCommitOrder"/>
-            <h4><span class="label public">public</span>getCommitOrder<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets a valid commit order for all current nodes.<pre>Uses a depth-first search (DFS) to traverse the graph.
-The desired topological sorting is the reverse postorder of these searches.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The list of ordered classes.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasClass"/>
-            <h4><span class="label public">public</span>hasClass<span style="font-size:90%;">( <span class="param-type"/><strong> $className</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="_visitNode"/>
-            <h4><span class="label private">private</span>_visitNode<span style="font-size:90%;">( <span class="param-type"/><strong> $node</strong> )</span></h4>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="_visitNode">
+              <a title="Doctrine\ORM\Internal\CommitOrderCalculator" href="../classes/Doctrine_ORM_Internal_CommitOrderCalculator/_visitNode.xhtml">_visitNode()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="addClass">
+              <a title="Doctrine\ORM\Internal\CommitOrderCalculator" href="../classes/Doctrine_ORM_Internal_CommitOrderCalculator/addClass.xhtml">addClass()</a>
+            </li>
+            <li id="addDependency">
+              <a title="Doctrine\ORM\Internal\CommitOrderCalculator" href="../classes/Doctrine_ORM_Internal_CommitOrderCalculator/addDependency.xhtml">addDependency()</a>
+            </li>
+            <li id="clear"><a title="Doctrine\ORM\Internal\CommitOrderCalculator" href="../classes/Doctrine_ORM_Internal_CommitOrderCalculator/clear.xhtml">clear()</a>
+                — Clears the current graph.</li>
+            <li id="getCommitOrder"><a title="Doctrine\ORM\Internal\CommitOrderCalculator" href="../classes/Doctrine_ORM_Internal_CommitOrderCalculator/getCommitOrder.xhtml">getCommitOrder()</a>
+                — Gets a valid commit order for all current nodes.</li>
+            <li id="hasClass">
+              <a title="Doctrine\ORM\Internal\CommitOrderCalculator" href="../classes/Doctrine_ORM_Internal_CommitOrderCalculator/hasClass.xhtml">hasClass()</a>
+            </li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

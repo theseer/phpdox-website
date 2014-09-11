@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head>
+    <title>phpDox - Test Method</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml#"/>
+          </li>
+          <li class="separator">
+            <a title="PHPUnit_TextUI_Command" href="../../classes/PHPUnit_TextUI_Command.xhtml">PHPUnit_TextUI_Command</a>
+          </li>
+          <li class="separator">handleArguments</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#parameter">Parameter</a>
+          </li>
+          <li>
+            <a href="../../source/TextUI/Command.php.xhtml#line262">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1><small>PHPUnit_TextUI_Command::</small>handleArguments</h1>
+        <h4>Handles the command-line arguments.</h4>
+        <p>A child class of PHPUnit_TextUI_Command can hook into the argument
+parsing by adding the switch(es) to the $longOptions array and point to a
+callback method that handles the switch(es) in the child class like this
+
+&lt;code&gt;
+&lt;?php
+class MyCommand extends PHPUnit_TextUI_Command
+{
+    public function __construct()
+    {
+        // my-switch won't accept a value, it's an on/off
+        $this-&gt;longOptions['my-switch'] = 'myHandler';
+        // my-secondswitch will accept a value - note the equals sign
+        $this-&gt;longOptions['my-secondswitch='] = 'myOtherHandler';
+    }
+
+    // --my-switch  -&gt; myHandler()
+    protected function myHandler()
+    {
+    }
+
+    // --my-secondswitch foo -&gt; myOtherHandler('foo')
+    protected function myOtherHandler ($value)
+    {
+    }
+
+    // You will also need this - the static keyword in the
+    // PHPUnit_TextUI_Command will mean that it'll be
+    // PHPUnit_TextUI_Command that gets instantiated,
+    // not MyCommand
+    public static function main($exit = true)
+    {
+        $command = new static;
+
+        return $command-&gt;run($_SERVER['argv'], $exit);
+    }
+
+}
+&lt;/code&gt;</p>
+        <ul/>
+        <h2 id="signature">Signature</h2>
+        <div class="styled synopsis">
+          <code>protected function handleArguments(array
+        $argv )
+            </code>
+        </div>
+        <h2 id="parameterlist">Parameters</h2>
+        <dl class="styled">
+          <dt><code>$argv</code>
+                —
+                array</dt>
+          <dd/>
+        </dl>
+        <h2 id="violations">Violations</h2>
+        <div class="styled">
+          <h3>PHPMessDetector</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Rule</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">262 - 718</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method handleArguments() has a Cyclomatic Complexity of 105. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">262 - 718</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#npathcomplexity" target="_blank" title="Code Size Rules">NPathComplexity</a>
+              </td>
+              <td>The method handleArguments() has an NPath complexity of 190577387520. The configured NPath complexity threshold is 200.</td>
+            </tr>
+            <tr>
+              <td class="line">262 - 718</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#excessivemethodlength" target="_blank" title="Code Size Rules">ExcessiveMethodLength</a>
+              </td>
+              <td>The method handleArguments() has 457 lines of code. Current threshold is set to 100. Avoid really long methods.</td>
+            </tr>
+            <tr>
+              <td class="line">354</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method handleArguments() contains an exit expression.</td>
+            </tr>
+            <tr>
+              <td class="line">505</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method handleArguments() contains an exit expression.</td>
+            </tr>
+            <tr>
+              <td class="line">638</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method handleArguments() contains an exit expression.</td>
+            </tr>
+            <tr>
+              <td class="line">716</td>
+              <td>
+                <a href="http://phpmd.org/rules/design.html#exitexpression" target="_blank" title="Design Rules">ExitExpression</a>
+              </td>
+              <td>The method handleArguments() contains an exit expression.</td>
+            </tr>
+          </table>
+          <h3>Checkstyle</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Column</th>
+                <th>Severity</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">281</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">286</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">292</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">297</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">302</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">307</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">312</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">317</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">328</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">333</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">346</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">352</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">358</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">363</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">368</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">373</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">375</td>
+              <td>30</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">380</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">382</td>
+              <td>30</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">387</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">392</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">397</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">402</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">407</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">412</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">417</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">422</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">427</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">432</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">437</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">442</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">447</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">452</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">457</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">462</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">467</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">472</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">477</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">482</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">487</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">492</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">498</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">503</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">509</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">514</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">519</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">524</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">529</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">534</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">544</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">error</span>
+              </td>
+              <td>CASE statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">549</td>
+              <td>17</td>
+              <td>
+                <span title="PSR2.ControlStructures.SwitchDeclaration.WrongOpenerdefault">error</span>
+              </td>
+              <td>DEFAULT statements must not be defined using curly braces</td>
+            </tr>
+            <tr>
+              <td class="line">582</td>
+              <td>124</td>
+              <td>
+                <span title="Generic.Files.LineLength.TooLong">warning</span>
+              </td>
+              <td>Line exceeds 120 characters; contains 123 characters</td>
+            </tr>
+            <tr>
+              <td class="line">672</td>
+              <td>47</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">684</td>
+              <td>55</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">696</td>
+              <td>149</td>
+              <td>
+                <span title="Generic.Files.LineLength.TooLong">warning</span>
+              </td>
+              <td>Line exceeds 120 characters; contains 148 characters</td>
+            </tr>
+            <tr>
+              <td class="line">706</td>
+              <td>140</td>
+              <td>
+                <span title="Generic.Files.LineLength.TooLong">warning</span>
+              </td>
+              <td>Line exceeds 120 characters; contains 139 characters</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

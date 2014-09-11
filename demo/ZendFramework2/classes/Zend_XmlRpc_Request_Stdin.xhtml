@@ -1,387 +1,198 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\XmlRpc\Request\Stdin - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\XmlRpc\Request\Stdin</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_XmlRpc_Request">Zend\XmlRpc\Request</a>
+          </li>
+          <li class="separator">Stdin</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#xml">$xml</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#encoding">$encoding</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#method">$method</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#xml">$xml</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#params">$params</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#fault">$fault</a>
-          </li>
-          <li>
-            <a href="#types">$types</a>
-          </li>
-          <li>
-            <a href="#xmlRpcParams">$xmlRpcParams</a>
+            <a href="../source/XmlRpc/Request/Stdin.php.xhtml#line22">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#__toString">__toString</a>
-          </li>
-          <li>
-            <a href="#_getXmlRpcParams">_getXmlRpcParams</a>
-          </li>
-          <li>
-            <a href="#addParam">addParam</a>
-          </li>
-          <li>
-            <a href="#getEncoding">getEncoding</a>
-          </li>
-          <li>
-            <a href="#getFault">getFault</a>
-          </li>
-          <li>
-            <a href="#getMethod">getMethod</a>
-          </li>
-          <li>
-            <a href="#getParams">getParams</a>
-          </li>
-          <li>
-            <a href="#getRawRequest">getRawRequest</a>
-          </li>
-          <li>
-            <a href="#getTypes">getTypes</a>
-          </li>
-          <li>
-            <a href="#isFault">isFault</a>
-          </li>
-          <li>
-            <a href="#loadXml">loadXml</a>
-          </li>
-          <li>
-            <a href="#saveXml">saveXml</a>
-          </li>
-          <li>
-            <a href="#setEncoding">setEncoding</a>
-          </li>
-          <li>
-            <a href="#setMethod">setMethod</a>
-          </li>
-          <li>
-            <a href="#setParams">setParams</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\XmlRpc\Request\</span>Stdin</h2>
-        <div class="file-notice">
-          <p>XmlRpc Request object -- Request via STDIN</p>
-          <p>
-            <pre>Extends  to accept a request via STDIN. Request is
-built at construction time using data from STDIN; if no data is available, the
-request is declared a fault.
-</pre>
-          </p>
-        </div>
-        <ul class="fileinfos"/>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="xml"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $xml</h4>
-            <ul class="varlist">
-              <li>Raw XML as received via request</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor<pre>Attempts to read from php://stdin to get raw POST request; if an error
-occurs in doing so, or if the XML is invalid, the request is declared a
-fault.</pre></li>
-            </p>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__toString"/>
-            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return XML request</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addParam"/>
-            <h4><span class="label public">public</span>addParam<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add a parameter to the parameter stack<pre>Adds a parameter to the parameter stack, associating it with the type
-$type if provided</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-                <li><code>$type</code> - Optional; type hinting</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getEncoding"/>
-            <h4><span class="label public">public</span>getEncoding<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieve current request encoding</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFault"/>
-            <h4><span class="label public">public</span>getFault<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieve the fault response, if any</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMethod"/>
-            <h4><span class="label public">public</span>getMethod<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieve call method</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getParams"/>
-            <h4><span class="label public">public</span>getParams<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieve the array of parameters</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getRawRequest"/>
-            <h4><span class="label public">public</span>getRawRequest<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieve the raw XML request</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTypes"/>
-            <h4><span class="label public">public</span>getTypes<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return parameter types</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isFault"/>
-            <h4><span class="label public">public</span>isFault<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Does the current request contain errors and should it return a fault response?</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadXml"/>
-            <h4><span class="label public">public</span>loadXml<span style="font-size:90%;">( <span class="param-type">string</span><strong> $request</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load XML and parse into request components</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$request</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>True on success, false if an error occurred.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\ValueException if invalid XML</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="saveXml"/>
-            <h4><span class="label public">public</span>saveXml<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Create XML request</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setEncoding"/>
-            <h4><span class="label public">public</span>setEncoding<span style="font-size:90%;">( <span class="param-type">string</span><strong> $encoding</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set encoding to use in request</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$encoding</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setMethod"/>
-            <h4><span class="label public">public</span>setMethod<span style="font-size:90%;">( <span class="param-type">string</span><strong> $method</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set method to call</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$method</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Returns true on success, false if method name is invalid</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setParams"/>
-            <h4><span class="label public">public</span>setParams<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the parameters array<pre>If called with a single, array value, that array is used to set the
-parameters stack. If called with multiple values or a single non-array
-value, the arguments are used to set the parameters stack.
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\XmlRpc\Request\</small>Stdin</h1>
+        <h4>XmlRpc Request object -- Request via STDIN</h4>
+        <p>Extends to accept a request via STDIN. Request is<br/>built at construction time using data from STDIN; if no data is available, the<br/>request is declared a fault.<br/></p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Stdin
+                extends <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request.xhtml">Request</a>
+            {<br/><ul class="none"><li>// members</li><li>protected string <a href="#members">$xml</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Zend\XmlRpc\Request">Request</span></li><li>protected string <a href="#members">$encoding</a>;
+                        </li><li>protected string <a href="#members">$method</a>;
+                        </li><li>protected string <a href="#members">$xml</a>;
+                        </li><li>protected array <a href="#members">$params</a>;
+                        </li><li>protected <span title="\Zend\XmlRpc\Fault">Fault</span> <a href="#members">$fault</a>;
+                        </li><li>protected array <a href="#members">$types</a>;
+                        </li><li>protected array <a href="#members">$xmlRpcParams</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Zend\XmlRpc\Request\Stdin" href="../classes/Zend_XmlRpc_Request_Stdin/__construct.xhtml">__construct</a>()
+                    </li><li>public string <a title="Zend\XmlRpc\Request\Stdin" href="../classes/Zend_XmlRpc_Request_Stdin/getRawRequest.xhtml">getRawRequest</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Zend\XmlRpc\Request">Request</span></li><li>public void <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/__construct.xhtml">__construct</a>()
+                        </li><li>public Request <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/setEncoding.xhtml">setEncoding</a>()
+                        </li><li>public string <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/getEncoding.xhtml">getEncoding</a>()
+                        </li><li>public bool <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/setMethod.xhtml">setMethod</a>()
+                        </li><li>public string <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/getMethod.xhtml">getMethod</a>()
+                        </li><li>public void <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/addParam.xhtml">addParam</a>()
+                        </li><li>public void <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/setParams.xhtml">setParams</a>()
+                        </li><li>public array <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/getParams.xhtml">getParams</a>()
+                        </li><li>public array <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/getTypes.xhtml">getTypes</a>()
+                        </li><li>public bool <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/loadXml.xhtml">loadXml</a>()
+                        </li><li>public bool <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/isFault.xhtml">isFault</a>()
+                        </li><li>public Fault <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/getFault.xhtml">getFault</a>()
+                        </li><li>protected array <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/_getXmlRpcParams.xhtml">_getXmlRpcParams</a>()
+                        </li><li>public string <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/saveXml.xhtml">saveXml</a>()
+                        </li><li>public string <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/__toString.xhtml">__toString</a>()
+                        </li></ul>
 
-Best is to call with array of the format, in order to allow type hinting
-when creating the XMLRPC values for each parameter:
-&lt;code&gt;
-$array = array(
-    array(
-        'value' =&gt; $value,
-        'type'  =&gt; $type
-    )[, ... ]
-);
-&lt;/code&gt;</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getXmlRpcParams"/>
-            <h4><span class="label protected">protected</span>_getXmlRpcParams<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieve method parameters as XMLRPC values</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Zend_XmlRpc_Request.xhtml">Zend\XmlRpc\Request</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="encoding"><strong>$encoding</strong>
+                —
+                string<br/><span class="indent">Request character encoding</span></li>
+            <li id="fault"><strong>$fault</strong>
+                —
+                <a href="#">\Zend\XmlRpc\Fault</a><br/><span class="indent">Fault object, if any</span></li>
+            <li id="method"><strong>$method</strong>
+                —
+                string<br/><span class="indent">Method to call</span></li>
+            <li id="params"><strong>$params</strong>
+                —
+                array<br/><span class="indent">Method parameters</span></li>
+            <li id="types"><strong>$types</strong>
+                —
+                array<br/><span class="indent">XML-RPC type for each param</span></li>
+            <li id="xml"><strong>$xml</strong>
+                —
+                string<br/><span class="indent">Raw XML as received via request</span></li>
+            <li id="xml"><strong>$xml</strong>
+                —
+                string<br/><span class="indent">XML request</span></li>
+            <li id="xmlRpcParams"><strong>$xmlRpcParams</strong>
+                —
+                array<br/><span class="indent">XML-RPC request params</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\XmlRpc\Request\Stdin" href="../classes/Zend_XmlRpc_Request_Stdin/__construct.xhtml">__construct()</a>
+                — Constructor</li>
+            <li id="getRawRequest"><a title="Zend\XmlRpc\Request\Stdin" href="../classes/Zend_XmlRpc_Request_Stdin/getRawRequest.xhtml">getRawRequest()</a>
+                — Retrieve the raw XML request</li>
+          </ul>
+          <h3>Inherited from <a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request.xhtml">Zend\XmlRpc\Request</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="_getXmlRpcParams"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/_getXmlRpcParams.xhtml">_getXmlRpcParams()</a>
+                — Retrieve method parameters as XMLRPC values</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__toString"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/__toString.xhtml">__toString()</a>
+                — Return XML request</li>
+            <li id="addParam"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/addParam.xhtml">addParam()</a>
+                — Add a parameter to the parameter stack</li>
+            <li id="getEncoding"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/getEncoding.xhtml">getEncoding()</a>
+                — Retrieve current request encoding</li>
+            <li id="getFault"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/getFault.xhtml">getFault()</a>
+                — Retrieve the fault response, if any</li>
+            <li id="getMethod"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/getMethod.xhtml">getMethod()</a>
+                — Retrieve call method</li>
+            <li id="getParams"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/getParams.xhtml">getParams()</a>
+                — Retrieve the array of parameters</li>
+            <li id="getTypes"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/getTypes.xhtml">getTypes()</a>
+                — Return parameter types</li>
+            <li id="isFault"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/isFault.xhtml">isFault()</a>
+                — Does the current request contain errors and should it return a fault response?</li>
+            <li id="loadXml"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/loadXml.xhtml">loadXml()</a>
+                — Load XML and parse into request components</li>
+            <li id="saveXml"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/saveXml.xhtml">saveXml()</a>
+                — Create XML request</li>
+            <li id="setEncoding"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/setEncoding.xhtml">setEncoding()</a>
+                — Set encoding to use in request</li>
+            <li id="setMethod"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/setMethod.xhtml">setMethod()</a>
+                — Set method to call</li>
+            <li id="setParams"><a title="Zend\XmlRpc\Request" href="../classes/Zend_XmlRpc_Request/setParams.xhtml">setParams()</a>
+                — Set the parameters array</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

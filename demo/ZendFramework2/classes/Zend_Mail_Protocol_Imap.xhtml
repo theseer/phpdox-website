@@ -1,815 +1,239 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Mail\Protocol\Imap - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Mail\Protocol\Imap</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Mail_Protocol">Zend\Mail\Protocol</a>
+          </li>
+          <li class="separator">Imap</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#TIMEOUT_CONNECTION">TIMEOUT_CONNECTION</a>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Mail/Protocol/Imap.php.xhtml#line14">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
-        <ul>
-          <li>
-            <a href="#socket">$socket</a>
-          </li>
-          <li>
-            <a href="#tagCount">$tagCount</a>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#__destruct">__destruct</a>
-          </li>
-          <li>
-            <a href="#_assumedNextLine">_assumedNextLine</a>
-          </li>
-          <li>
-            <a href="#_decodeLine">_decodeLine</a>
-          </li>
-          <li>
-            <a href="#_nextLine">_nextLine</a>
-          </li>
-          <li>
-            <a href="#_nextTaggedLine">_nextTaggedLine</a>
-          </li>
-          <li>
-            <a href="#append">append</a>
-          </li>
-          <li>
-            <a href="#capability">capability</a>
-          </li>
-          <li>
-            <a href="#connect">connect</a>
-          </li>
-          <li>
-            <a href="#copy">copy</a>
-          </li>
-          <li>
-            <a href="#create">create</a>
-          </li>
-          <li>
-            <a href="#delete">delete</a>
-          </li>
-          <li>
-            <a href="#escapeList">escapeList</a>
-          </li>
-          <li>
-            <a href="#escapeString">escapeString</a>
-          </li>
-          <li>
-            <a href="#examine">examine</a>
-          </li>
-          <li>
-            <a href="#examineOrSelect">examineOrSelect</a>
-          </li>
-          <li>
-            <a href="#expunge">expunge</a>
-          </li>
-          <li>
-            <a href="#fetch">fetch</a>
-          </li>
-          <li>
-            <a href="#listMailbox">listMailbox</a>
-          </li>
-          <li>
-            <a href="#login">login</a>
-          </li>
-          <li>
-            <a href="#logout">logout</a>
-          </li>
-          <li>
-            <a href="#noop">noop</a>
-          </li>
-          <li>
-            <a href="#readLine">readLine</a>
-          </li>
-          <li>
-            <a href="#readResponse">readResponse</a>
-          </li>
-          <li>
-            <a href="#rename">rename</a>
-          </li>
-          <li>
-            <a href="#requestAndResponse">requestAndResponse</a>
-          </li>
-          <li>
-            <a href="#search">search</a>
-          </li>
-          <li>
-            <a href="#select">select</a>
-          </li>
-          <li>
-            <a href="#sendRequest">sendRequest</a>
-          </li>
-          <li>
-            <a href="#store">store</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Mail\Protocol\</span>Imap</h2>
-        <div class="file-notice">
-          <p/>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Mail\Protocol\</small>Imap</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Imap
+            {<br/><ul class="none"><li>// constants</li><li>const TIMEOUT_CONNECTION = 30;</li></ul><ul class="none"><li>// members</li><li>protected <span title="Zend\Mail\Protocol\resource|null">resource|null</span> <a href="#members">$socket</a>;
+                    </li><li>protected integer <a href="#members">$tagCount</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/__destruct.xhtml">__destruct</a>()
+                    </li><li>public string <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/connect.xhtml">connect</a>()
+                    </li><li>protected string <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/_nextLine.xhtml">_nextLine</a>()
+                    </li><li>protected bool <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/_assumedNextLine.xhtml">_assumedNextLine</a>()
+                    </li><li>protected string <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/_nextTaggedLine.xhtml">_nextTaggedLine</a>()
+                    </li><li>protected array <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/_decodeLine.xhtml">_decodeLine</a>()
+                    </li><li>public bool <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/readLine.xhtml">readLine</a>()
+                    </li><li>public null|bool|array <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/readResponse.xhtml">readResponse</a>()
+                    </li><li>public void <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/sendRequest.xhtml">sendRequest</a>()
+                    </li><li>public mixed <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/requestAndResponse.xhtml">requestAndResponse</a>()
+                    </li><li>public string|array <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/escapeString.xhtml">escapeString</a>()
+                    </li><li>public string <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/escapeList.xhtml">escapeList</a>()
+                    </li><li>public bool <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/login.xhtml">login</a>()
+                    </li><li>public bool <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/logout.xhtml">logout</a>()
+                    </li><li>public array <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/capability.xhtml">capability</a>()
+                    </li><li>public bool|array <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/examineOrSelect.xhtml">examineOrSelect</a>()
+                    </li><li>public bool|array <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/select.xhtml">select</a>()
+                    </li><li>public bool|array <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/examine.xhtml">examine</a>()
+                    </li><li>public string|array <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/fetch.xhtml">fetch</a>()
+                    </li><li>public array <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/listMailbox.xhtml">listMailbox</a>()
+                    </li><li>public bool|array <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/store.xhtml">store</a>()
+                    </li><li>public bool <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/append.xhtml">append</a>()
+                    </li><li>public bool <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/copy.xhtml">copy</a>()
+                    </li><li>public bool <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/create.xhtml">create</a>()
+                    </li><li>public bool <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/rename.xhtml">rename</a>()
+                    </li><li>public bool <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/delete.xhtml">delete</a>()
+                    </li><li>public bool <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/expunge.xhtml">expunge</a>()
+                    </li><li>public bool <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/noop.xhtml">noop</a>()
+                    </li><li>public array <a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/search.xhtml">search</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">178</td>
+            <td>add handling of '[' and ']' to parser for easier handling of response text</td>
+          </tr>
+          <tr>
+            <td class="nummeric">762</td>
+            <td>parse response?</td>
+          </tr>
+          <tr>
+            <td class="nummeric">773</td>
+            <td>parse response</td>
+          </tr>
+        </table>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="TIMEOUT_CONNECTION">TIMEOUT_CONNECTION</td>
+              <td>30</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="socket"><strong>$socket</strong>
+                —
+                <a href="#">Zend\Mail\Protocol\resource|null</a><br/><span class="indent">socket to imap server</span></li>
+            <li id="tagCount"><strong>$tagCount</strong>
+                —
+                int<br/><span class="indent">counter for request tag</span></li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="TIMEOUT_CONNECTION"/>TIMEOUT_CONNECTION = 30<em> </em><p><li>Default timeout in seconds for initiating session</li></p><hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="socket"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $socket</h4>
-            <ul class="varlist">
-              <li>socket to imap server</li>
-            </ul>
-          </li>
-          <li>
-            <a name="tagCount"/>
-            <h4><span class="label protected">protected</span>int 
-                
-                $tagCount</h4>
-            <ul class="varlist">
-              <li>counter for request tag</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $port</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $ssl</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Public constructor</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$host</code> - hostname or IP address of IMAP server, if given connect() is called</li>
-                <li><code>$port</code> - port of IMAP server, null for default (143 or 993 for ssl)</li>
-                <li><code>$ssl</code> - use ssl? 'SSL', 'TLS' or false</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Protocol\Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Destructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__destruct"/>
-            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Public destructor</li>
-            </p>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="append"/>
-            <h4><span class="label public">public</span>append<span style="font-size:90%;">( <span class="param-type">string</span><strong> $folder</strong>, <span class="param-type">string</span><strong> $message</strong>, <span class="param-type">array</span><strong> $flags</strong>, <span class="param-type">string</span><strong> $date</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>append a new message to given folder</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$folder</code> - name of target folder</li>
-                <li><code>$message</code> - full message content</li>
-                <li><code>$flags</code> - flags for new message</li>
-                <li><code>$date</code> - date for new message</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>success</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Protocol\Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="capability"/>
-            <h4><span class="label public">public</span>capability<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get capabilities from IMAP server</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>list of capabilities</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Protocol\Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="connect"/>
-            <h4><span class="label public">public</span>connect<span style="font-size:90%;">( <span class="param-type">string</span><strong> $host</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $port</strong>, <span class="param-type"><span title="string|bool">string|bool</span></span><strong> $ssl</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Open connection to IMAP server</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$host</code> - hostname or IP address of IMAP server</li>
-                <li><code>$port</code> - of IMAP server, default is 143 (993 for ssl)</li>
-                <li><code>$ssl</code> - use 'SSL', 'TLS' or false</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>welcome message</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="copy"/>
-            <h4><span class="label public">public</span>copy<span style="font-size:90%;">( <span class="param-type">string</span><strong> $folder</strong>, <span class="param-type"/><strong> $from</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $to</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>copy message set from current folder to other folder</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$folder</code> - destination folder</li>
-                <li><code>$from</code> - </li>
-                <li><code>$to</code> - if null only one message ($from) is fetched, else it's the</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>success</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="create"/>
-            <h4><span class="label public">public</span>create<span style="font-size:90%;">( <span class="param-type">string</span><strong> $folder</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>create a new folder (and parent folders if needed)</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$folder</code> - folder name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>success</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="delete"/>
-            <h4><span class="label public">public</span>delete<span style="font-size:90%;">( <span class="param-type">string</span><strong> $folder</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>remove a folder</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$folder</code> - folder name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>success</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="escapeList"/>
-            <h4><span class="label public">public</span>escapeList<span style="font-size:90%;">( <span class="param-type">array</span><strong> $list</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>escape a list with literals or lists</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$list</code> - list with literals or lists as PHP array</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>escaped list for imap</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="escapeString"/>
-            <h4><span class="label public">public</span>escapeString<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $string</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>escape one or more literals i.e. for sendRequest</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$string</code> - the literal/-s</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>escape literals, literals with newline ar returned</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="examine"/>
-            <h4><span class="label public">public</span>examine<span style="font-size:90%;">( <span class="param-type">string</span><strong> $box</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>examine folder</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$box</code> - examine this folder</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>see examineOrselect()</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Protocol\Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="examineOrSelect"/>
-            <h4><span class="label public">public</span>examineOrSelect<span style="font-size:90%;">( <span class="param-type">string</span><strong> $command</strong>, <span class="param-type">string</span><strong> $box</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Examine and select have the same response. The common code for both is in this method</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$command</code> - can be 'EXAMINE' or 'SELECT' and this is used as command</li>
-                <li><code>$box</code> - which folder to change to or examine</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>false if error, array with returned information</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Protocol\Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="expunge"/>
-            <h4><span class="label public">public</span>expunge<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>permanently remove messages</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>success</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="fetch"/>
-            <h4><span class="label public">public</span>fetch<span style="font-size:90%;">( <span class="param-type"><span title="string|array">string|array</span></span><strong> $items</strong>, <span class="param-type"><span title="int|array">int|array</span></span><strong> $from</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $to</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>fetch one or more items of one or more messages</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$items</code> - items to fetch from message(s) as string (if only one item)</li>
-                <li><code>$from</code> - message for items or start message if $to !== null</li>
-                <li><code>$to</code> - if null only one message ($from) is fetched, else it's the</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>if only one item of one message is fetched it's returned as string</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="listMailbox"/>
-            <h4><span class="label public">public</span>listMailbox<span style="font-size:90%;">( <span class="param-type">string</span><strong> $reference</strong>, <span class="param-type">string</span><strong> $mailbox</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>get mailbox list<pre>this method can't be named after the IMAP command 'LIST', as list is a reserved keyword</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$reference</code> - mailbox reference for list</li>
-                <li><code>$mailbox</code> - mailbox name match with wildcards</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>mailboxes that matched $mailbox as array(globalName =&gt; array('delim' =&gt; .., 'flags' =&gt; ..))</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Protocol\Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="login"/>
-            <h4><span class="label public">public</span>login<span style="font-size:90%;">( <span class="param-type">string</span><strong> $user</strong>, <span class="param-type">string</span><strong> $password</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Login to IMAP server.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$user</code> - username</li>
-                <li><code>$password</code> - password</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>success</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="logout"/>
-            <h4><span class="label public">public</span>logout<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>logout of imap server</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>success</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="noop"/>
-            <h4><span class="label public">public</span>noop<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>send noop</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>success</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="readLine"/>
-            <h4><span class="label public">public</span>readLine<span style="font-size:90%;">( <span class="param-type">Array</span><strong> &amp;$tokens</strong>, <span class="param-type">string</span><strong> $wantedTag</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $dontParse</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>read a response "line" (could also be more than one real line if response has {..}&lt;NL&gt;) and do a simple decode</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$tokens</code> - decoded tokens are returned by reference, if $dontParse</li>
-                <li><code>$wantedTag</code> - check for this tag for response code. Default '*' is</li>
-                <li><code>$dontParse</code> - if true only the unparsed line is returned $tokens</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>if returned tag matches wanted tag</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="readResponse"/>
-            <h4><span class="label public">public</span>readResponse<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tag</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $dontParse</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>read all lines of response until given tag is found (last line of response)</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$tag</code> - the tag of your request</li>
-                <li><code>$dontParse</code> - if true every line is returned unparsed instead of</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>tokens if success, false if error, null if bad request</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="rename"/>
-            <h4><span class="label public">public</span>rename<span style="font-size:90%;">( <span class="param-type">string</span><strong> $old</strong>, <span class="param-type">string</span><strong> $new</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>rename an existing folder</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$old</code> - old name</li>
-                <li><code>$new</code> - new name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>success</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="requestAndResponse"/>
-            <h4><span class="label public">public</span>requestAndResponse<span style="font-size:90%;">( <span class="param-type">string</span><strong> $command</strong>, <span class="param-type">Array</span><strong> $tokens</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $dontParse</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>send a request and get response at once</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$command</code> - command as in sendRequest()</li>
-                <li><code>$tokens</code> - parameters as in sendRequest()</li>
-                <li><code>$dontParse</code> - if true unparsed lines are returned instead of tokens</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>response as in readResponse()</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="search"/>
-            <h4><span class="label public">public</span>search<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>do a search request<pre>This method is currently marked as internal as the API might change and is not
-safe if you don't take precautions.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$params</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>message ids</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="select"/>
-            <h4><span class="label public">public</span>select<span style="font-size:90%;">( <span class="param-type">string</span><strong> $box</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>change folder</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$box</code> - change to this folder</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>see examineOrselect()</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Protocol\Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="sendRequest"/>
-            <h4><span class="label public">public</span>sendRequest<span style="font-size:90%;">( <span class="param-type">string</span><strong> $command</strong>, <span class="param-type">Array</span><strong> $tokens</strong>, <span class="param-type">string</span><strong> &amp;$tag</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>send a request</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$command</code> - your request command</li>
-                <li><code>$tokens</code> - additional parameters to command, use escapeString() to prepare</li>
-                <li><code>$tag</code> - provide a tag otherwise an autogenerated is returned</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="store"/>
-            <h4><span class="label public">public</span>store<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $flags</strong>, <span class="param-type">int</span><strong> $from</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $to</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $mode</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $silent</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>set flags</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$flags</code> - flags to set, add or remove - see $mode</li>
-                <li><code>$from</code> - message for items or start message if $to !== null</li>
-                <li><code>$to</code> - if null only one message ($from) is fetched, else it's the</li>
-                <li><code>$mode</code> - '+' to add flags, '-' to remove flags, everything else sets the flags as given</li>
-                <li><code>$silent</code> - if false the return values are the new flags for the wanted messages</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>new flags if $silent is false, else true or false depending on success</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Protocol\Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_assumedNextLine"/>
-            <h4><span class="label protected">protected</span>_assumedNextLine<span style="font-size:90%;">( <span class="param-type">string</span><strong> $start</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>get next line and assume it starts with $start. some requests give a simple feedback so we can quickly check if we can go on.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$start</code> - the first bytes we assume to be in the next line</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>line starts with $start</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_decodeLine"/>
-            <h4><span class="label protected">protected</span>_decodeLine<span style="font-size:90%;">( <span class="param-type">string</span><strong> $line</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>split a given line in tokens. a token is literal of any form or a list</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$line</code> - line to decode</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>tokens, literals are returned as string, lists as array</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_nextLine"/>
-            <h4><span class="label protected">protected</span>_nextLine<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>get the next line from socket with error checking, but nothing else</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>next line</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_nextTaggedLine"/>
-            <h4><span class="label protected">protected</span>_nextTaggedLine<span style="font-size:90%;">( <span class="param-type">string</span><strong> &amp;$tag</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>get next line and split the tag. that's the normal case for a response line</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$tag</code> - tag of line is returned by reference</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>next line</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_assumedNextLine"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/_assumedNextLine.xhtml">_assumedNextLine()</a>
+                — get next line and assume it starts with $start. some requests give a simple feedback so we can quickly check if we can go on.</li>
+            <li id="_decodeLine"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/_decodeLine.xhtml">_decodeLine()</a>
+                — split a given line in tokens. a token is literal of any form or a list</li>
+            <li id="_nextLine"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/_nextLine.xhtml">_nextLine()</a>
+                — get the next line from socket with error checking, but nothing else</li>
+            <li id="_nextTaggedLine"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/_nextTaggedLine.xhtml">_nextTaggedLine()</a>
+                — get next line and split the tag. that's the normal case for a response line</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/__construct.xhtml">__construct()</a>
+                — Public constructor</li>
+            <li id="__destruct"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/__destruct.xhtml">__destruct()</a>
+                — Public destructor</li>
+            <li id="append"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/append.xhtml">append()</a>
+                — append a new message to given folder</li>
+            <li id="capability"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/capability.xhtml">capability()</a>
+                — Get capabilities from IMAP server</li>
+            <li id="connect"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/connect.xhtml">connect()</a>
+                — Open connection to IMAP server</li>
+            <li id="copy"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/copy.xhtml">copy()</a>
+                — copy message set from current folder to other folder</li>
+            <li id="create"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/create.xhtml">create()</a>
+                — create a new folder (and parent folders if needed)</li>
+            <li id="delete"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/delete.xhtml">delete()</a>
+                — remove a folder</li>
+            <li id="escapeList"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/escapeList.xhtml">escapeList()</a>
+                — escape a list with literals or lists</li>
+            <li id="escapeString"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/escapeString.xhtml">escapeString()</a>
+                — escape one or more literals i.e. for sendRequest</li>
+            <li id="examine"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/examine.xhtml">examine()</a>
+                — examine folder</li>
+            <li id="examineOrSelect"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/examineOrSelect.xhtml">examineOrSelect()</a>
+                — Examine and select have the same response. The common code for both is in this method</li>
+            <li id="expunge"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/expunge.xhtml">expunge()</a>
+                — permanently remove messages</li>
+            <li id="fetch"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/fetch.xhtml">fetch()</a>
+                — fetch one or more items of one or more messages</li>
+            <li id="listMailbox"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/listMailbox.xhtml">listMailbox()</a>
+                — get mailbox list</li>
+            <li id="login"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/login.xhtml">login()</a>
+                — Login to IMAP server.</li>
+            <li id="logout"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/logout.xhtml">logout()</a>
+                — logout of imap server</li>
+            <li id="noop"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/noop.xhtml">noop()</a>
+                — send noop</li>
+            <li id="readLine"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/readLine.xhtml">readLine()</a>
+                — read a response "line" (could also be more than one real line if response has {..}&lt;NL&gt;) and do a simple decode</li>
+            <li id="readResponse"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/readResponse.xhtml">readResponse()</a>
+                — read all lines of response until given tag is found (last line of response)</li>
+            <li id="rename"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/rename.xhtml">rename()</a>
+                — rename an existing folder</li>
+            <li id="requestAndResponse"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/requestAndResponse.xhtml">requestAndResponse()</a>
+                — send a request and get response at once</li>
+            <li id="search"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/search.xhtml">search()</a>
+                — do a search request</li>
+            <li id="select"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/select.xhtml">select()</a>
+                — change folder</li>
+            <li id="sendRequest"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/sendRequest.xhtml">sendRequest()</a>
+                — send a request</li>
+            <li id="store"><a title="Zend\Mail\Protocol\Imap" href="../classes/Zend_Mail_Protocol_Imap/store.xhtml">store()</a>
+                — set flags</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

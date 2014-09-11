@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Zend\Code\Scanner\PropertyScanner</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Code_Scanner">Zend\Code\Scanner</a>
+          </li>
+          <li class="separator">PropertyScanner</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Code/Scanner/PropertyScanner.php.xhtml#line16">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Code\Scanner\</small>PropertyScanner</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PropertyScanner
+                implements
+                <a title="Zend\Code\Scanner\ScannerInterface" href="../interfaces/Zend_Code_Scanner_ScannerInterface.xhtml">ScannerInterface</a>
+            {<br/><ul class="none"><li>// constants</li><li>const T_BOOLEAN = "boolean";</li><li>const T_INTEGER = "int";</li><li>const T_STRING = "string";</li><li>const T_ARRAY = "array";</li><li>const T_UNKNOWN = "unknown";</li></ul><ul class="none"><li>// members</li><li>protected <span title="Zend\Code\Scanner\bool">bool</span> <a href="#members">$isScanned</a>;
+                    </li><li>protected array <a href="#members">$tokens</a>;
+                    </li><li>protected <span title="Zend\Code\NameInformation">NameInformation</span> <a href="#members">$nameInformation</a>;
+                    </li><li>protected string <a href="#members">$class</a>;
+                    </li><li>protected <span title="Zend\Code\Scanner\ClassScanner">ClassScanner</span> <a href="#members">$scannerClass</a>;
+                    </li><li>protected int <a href="#members">$lineStart</a>;
+                    </li><li>protected <span title="Zend\Code\Scanner\bool">bool</span> <a href="#members">$isProtected</a>;
+                    </li><li>protected <span title="Zend\Code\Scanner\bool">bool</span> <a href="#members">$isPublic</a>;
+                    </li><li>protected <span title="Zend\Code\Scanner\bool">bool</span> <a href="#members">$isPrivate</a>;
+                    </li><li>protected <span title="Zend\Code\Scanner\bool">bool</span> <a href="#members">$isStatic</a>;
+                    </li><li>protected string <a href="#members">$docComment</a>;
+                    </li><li>protected string <a href="#members">$name</a>;
+                    </li><li>protected string <a href="#members">$value</a>;
+                    </li><li>protected string <a href="#members">$valueType</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/setClass.xhtml">setClass</a>()
+                    </li><li>public void <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/setScannerClass.xhtml">setScannerClass</a>()
+                    </li><li>public ClassScanner <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/getClassScanner.xhtml">getClassScanner</a>()
+                    </li><li>public string <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/getName.xhtml">getName</a>()
+                    </li><li>public string <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/getValueType.xhtml">getValueType</a>()
+                    </li><li>public bool <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/isPublic.xhtml">isPublic</a>()
+                    </li><li>public bool <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/isPrivate.xhtml">isPrivate</a>()
+                    </li><li>public bool <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/isProtected.xhtml">isProtected</a>()
+                    </li><li>public bool <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/isStatic.xhtml">isStatic</a>()
+                    </li><li>public string <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/getValue.xhtml">getValue</a>()
+                    </li><li>public string <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/getDocComment.xhtml">getDocComment</a>()
+                    </li><li>public AnnotationScanner <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/getAnnotations.xhtml">getAnnotations</a>()
+                    </li><li>public string <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/__toString.xhtml">__toString</a>()
+                    </li><li>protected void <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/scan.xhtml">scan</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Zend_Code_Scanner_ScannerInterface.xhtml">Zend\Code\Scanner\ScannerInterface</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="T_BOOLEAN">T_BOOLEAN</td>
+              <td>"boolean"</td>
+            </tr>
+            <tr>
+              <td id="T_INTEGER">T_INTEGER</td>
+              <td>"int"</td>
+            </tr>
+            <tr>
+              <td id="T_STRING">T_STRING</td>
+              <td>"string"</td>
+            </tr>
+            <tr>
+              <td id="T_ARRAY">T_ARRAY</td>
+              <td>"array"</td>
+            </tr>
+            <tr>
+              <td id="T_UNKNOWN">T_UNKNOWN</td>
+              <td>"unknown"</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="class"><strong>$class</strong>
+                —
+                string</li>
+            <li id="docComment"><strong>$docComment</strong>
+                —
+                string</li>
+            <li id="isPrivate"><strong>$isPrivate</strong>
+                —
+                <a href="#">Zend\Code\Scanner\bool</a></li>
+            <li id="isProtected"><strong>$isProtected</strong>
+                —
+                <a href="#">Zend\Code\Scanner\bool</a></li>
+            <li id="isPublic"><strong>$isPublic</strong>
+                —
+                <a href="#">Zend\Code\Scanner\bool</a></li>
+            <li id="isScanned"><strong>$isScanned</strong>
+                —
+                <a href="#">Zend\Code\Scanner\bool</a></li>
+            <li id="isStatic"><strong>$isStatic</strong>
+                —
+                <a href="#">Zend\Code\Scanner\bool</a></li>
+            <li id="lineStart"><strong>$lineStart</strong>
+                —
+                int</li>
+            <li id="name"><strong>$name</strong>
+                —
+                string</li>
+            <li id="nameInformation"><strong>$nameInformation</strong>
+                —
+                <a href="#">Zend\Code\NameInformation</a></li>
+            <li id="scannerClass"><strong>$scannerClass</strong>
+                —
+                <a href="#">Zend\Code\Scanner\ClassScanner</a></li>
+            <li id="tokens"><strong>$tokens</strong>
+                —
+                array</li>
+            <li id="value"><strong>$value</strong>
+                —
+                string</li>
+            <li id="valueType"><strong>$valueType</strong>
+                —
+                string</li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="scan"><a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/scan.xhtml">scan()</a>
+                — Scan tokens</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/__construct.xhtml">__construct()</a>
+                — Constructor</li>
+            <li id="__toString">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/__toString.xhtml">__toString()</a>
+            </li>
+            <li id="getAnnotations">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/getAnnotations.xhtml">getAnnotations()</a>
+            </li>
+            <li id="getClassScanner">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/getClassScanner.xhtml">getClassScanner()</a>
+            </li>
+            <li id="getDocComment">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/getDocComment.xhtml">getDocComment()</a>
+            </li>
+            <li id="getName">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/getName.xhtml">getName()</a>
+            </li>
+            <li id="getValue">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/getValue.xhtml">getValue()</a>
+            </li>
+            <li id="getValueType">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/getValueType.xhtml">getValueType()</a>
+            </li>
+            <li id="isPrivate">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/isPrivate.xhtml">isPrivate()</a>
+            </li>
+            <li id="isProtected">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/isProtected.xhtml">isProtected()</a>
+            </li>
+            <li id="isPublic">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/isPublic.xhtml">isPublic()</a>
+            </li>
+            <li id="isStatic">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/isStatic.xhtml">isStatic()</a>
+            </li>
+            <li id="setClass">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/setClass.xhtml">setClass()</a>
+            </li>
+            <li id="setScannerClass">
+              <a title="Zend\Code\Scanner\PropertyScanner" href="../classes/Zend_Code_Scanner_PropertyScanner/setScannerClass.xhtml">setScannerClass()</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span/>
+    </footer>
+  </body>
+</html>

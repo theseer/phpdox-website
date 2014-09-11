@@ -1,1716 +1,415 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Symfony\Component\DependencyInjection\ContainerBuilder - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Symfony\Component\DependencyInjection\ContainerBuilder</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Symfony_Component_DependencyInjection">Symfony\Component\DependencyInjection</a>
+          </li>
+          <li class="separator">ContainerBuilder</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#extensions">$extensions</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#extensionsByNs">$extensionsByNs</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#definitions">$definitions</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#obsoleteDefinitions">$obsoleteDefinitions</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#aliasDefinitions">$aliasDefinitions</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#resources">$resources</a>
-          </li>
-          <li>
-            <a href="#extensionConfigs">$extensionConfigs</a>
-          </li>
-          <li>
-            <a href="#compiler">$compiler</a>
-          </li>
-          <li>
-            <a href="#trackResources">$trackResources</a>
-          </li>
-          <li>
-            <a href="#proxyInstantiator">$proxyInstantiator</a>
-          </li>
-          <li>
-            <a href="#parameterBag">$parameterBag</a>
-          </li>
-          <li>
-            <a href="#services">$services</a>
-          </li>
-          <li>
-            <a href="#methodMap">$methodMap</a>
-          </li>
-          <li>
-            <a href="#aliases">$aliases</a>
-          </li>
-          <li>
-            <a href="#scopes">$scopes</a>
-          </li>
-          <li>
-            <a href="#scopeChildren">$scopeChildren</a>
-          </li>
-          <li>
-            <a href="#scopedServices">$scopedServices</a>
-          </li>
-          <li>
-            <a href="#scopeStacks">$scopeStacks</a>
-          </li>
-          <li>
-            <a href="#loading">$loading</a>
+            <a href="../source/symfony/symfony/src/Symfony/Component/DependencyInjection/ContainerBuilder.php.xhtml#line35">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Symfony\Component\DependencyInjection\</small>ContainerBuilder</h1>
+        <h4>ContainerBuilder is a DI container that provides an API to easily describe services.</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#addAliases">addAliases</a>
-          </li>
-          <li>
-            <a href="#addClassResource">addClassResource</a>
-          </li>
-          <li>
-            <a href="#addCompilerPass">addCompilerPass</a>
-          </li>
-          <li>
-            <a href="#addDefinitions">addDefinitions</a>
-          </li>
-          <li>
-            <a href="#addObjectResource">addObjectResource</a>
-          </li>
-          <li>
-            <a href="#addResource">addResource</a>
-          </li>
-          <li>
-            <a href="#addScope">addScope</a>
-          </li>
-          <li>
-            <a href="#callMethod">callMethod</a>
-          </li>
-          <li>
-            <a href="#camelize">camelize</a>
-          </li>
-          <li>
-            <a href="#compile">compile</a>
-          </li>
-          <li>
-            <a href="#compile">compile</a>
-          </li>
-          <li>
-            <a href="#createService">createService</a>
-          </li>
-          <li>
-            <a href="#enterScope">enterScope</a>
-          </li>
-          <li>
-            <a href="#findDefinition">findDefinition</a>
-          </li>
-          <li>
-            <a href="#findTaggedServiceIds">findTaggedServiceIds</a>
-          </li>
-          <li>
-            <a href="#findTags">findTags</a>
-          </li>
-          <li>
-            <a href="#get">get</a>
-          </li>
-          <li>
-            <a href="#get">get</a>
-          </li>
-          <li>
-            <a href="#getAlias">getAlias</a>
-          </li>
-          <li>
-            <a href="#getAliases">getAliases</a>
-          </li>
-          <li>
-            <a href="#getCompiler">getCompiler</a>
-          </li>
-          <li>
-            <a href="#getCompilerPassConfig">getCompilerPassConfig</a>
-          </li>
-          <li>
-            <a href="#getDefinition">getDefinition</a>
-          </li>
-          <li>
-            <a href="#getDefinitions">getDefinitions</a>
-          </li>
-          <li>
-            <a href="#getExtension">getExtension</a>
-          </li>
-          <li>
-            <a href="#getExtensionConfig">getExtensionConfig</a>
-          </li>
-          <li>
-            <a href="#getExtensions">getExtensions</a>
-          </li>
-          <li>
-            <a href="#getParameter">getParameter</a>
-          </li>
-          <li>
-            <a href="#getParameterBag">getParameterBag</a>
-          </li>
-          <li>
-            <a href="#getProxyInstantiator">getProxyInstantiator</a>
-          </li>
-          <li>
-            <a href="#getResources">getResources</a>
-          </li>
-          <li>
-            <a href="#getScopeChildren">getScopeChildren</a>
-          </li>
-          <li>
-            <a href="#getScopes">getScopes</a>
-          </li>
-          <li>
-            <a href="#getServiceConditionals">getServiceConditionals</a>
-          </li>
-          <li>
-            <a href="#getServiceIds">getServiceIds</a>
-          </li>
-          <li>
-            <a href="#getServiceIds">getServiceIds</a>
-          </li>
-          <li>
-            <a href="#has">has</a>
-          </li>
-          <li>
-            <a href="#has">has</a>
-          </li>
-          <li>
-            <a href="#hasAlias">hasAlias</a>
-          </li>
-          <li>
-            <a href="#hasDefinition">hasDefinition</a>
-          </li>
-          <li>
-            <a href="#hasExtension">hasExtension</a>
-          </li>
-          <li>
-            <a href="#hasParameter">hasParameter</a>
-          </li>
-          <li>
-            <a href="#hasScope">hasScope</a>
-          </li>
-          <li>
-            <a href="#initialized">initialized</a>
-          </li>
-          <li>
-            <a href="#isFrozen">isFrozen</a>
-          </li>
-          <li>
-            <a href="#isScopeActive">isScopeActive</a>
-          </li>
-          <li>
-            <a href="#isTrackingResources">isTrackingResources</a>
-          </li>
-          <li>
-            <a href="#leaveScope">leaveScope</a>
-          </li>
-          <li>
-            <a href="#loadFromExtension">loadFromExtension</a>
-          </li>
-          <li>
-            <a href="#merge">merge</a>
-          </li>
-          <li>
-            <a href="#prependExtensionConfig">prependExtensionConfig</a>
-          </li>
-          <li>
-            <a href="#register">register</a>
-          </li>
-          <li>
-            <a href="#registerExtension">registerExtension</a>
-          </li>
-          <li>
-            <a href="#removeAlias">removeAlias</a>
-          </li>
-          <li>
-            <a href="#removeDefinition">removeDefinition</a>
-          </li>
-          <li>
-            <a href="#resolveServices">resolveServices</a>
-          </li>
-          <li>
-            <a href="#set">set</a>
-          </li>
-          <li>
-            <a href="#set">set</a>
-          </li>
-          <li>
-            <a href="#setAlias">setAlias</a>
-          </li>
-          <li>
-            <a href="#setAliases">setAliases</a>
-          </li>
-          <li>
-            <a href="#setDefinition">setDefinition</a>
-          </li>
-          <li>
-            <a href="#setDefinitions">setDefinitions</a>
-          </li>
-          <li>
-            <a href="#setParameter">setParameter</a>
-          </li>
-          <li>
-            <a href="#setProxyInstantiator">setProxyInstantiator</a>
-          </li>
-          <li>
-            <a href="#setResourceTracking">setResourceTracking</a>
-          </li>
-          <li>
-            <a href="#setResources">setResources</a>
-          </li>
-          <li>
-            <a href="#shareService">shareService</a>
-          </li>
-          <li>
-            <a href="#synchronize">synchronize</a>
-          </li>
-          <li>
-            <a href="#underscore">underscore</a>
-          </li>
+          <li>Author: Fabien Potencier &lt;fabien@symfony.com&gt;</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Symfony\Component\DependencyInjection\</span>ContainerBuilder</h2>
-        <div class="file-notice">
-          <p>ContainerBuilder is a DI container that provides an API to easily describe services.</p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ContainerBuilder
+                extends <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container.xhtml">Container</a>
+                implements
+                <a title="Symfony\Component\DependencyInjection\TaggedContainerInterface" href="../interfaces/Symfony_Component_DependencyInjection_TaggedContainerInterface.xhtml">TaggedContainerInterface</a>
+            {<br/><ul class="none"><li>// members</li><li>private array <a href="#members">$extensions</a>;
+                    </li><li>private array <a href="#members">$extensionsByNs</a>;
+                    </li><li>private array <a href="#members">$definitions</a>;
+                    </li><li>private array <a href="#members">$obsoleteDefinitions</a>;
+                    </li><li>private array <a href="#members">$aliasDefinitions</a>;
+                    </li><li>private array <a href="#members">$resources</a>;
+                    </li><li>private array <a href="#members">$extensionConfigs</a>;
+                    </li><li>private <span title="Symfony\Component\DependencyInjection\Compiler\Compiler">Compiler</span> <a href="#members">$compiler</a>;
+                    </li><li>private <a href="#members">$trackResources</a>;
+                    </li><li>private <span title="Symfony\Component\DependencyInjection\InstantiatorInterface|null">InstantiatorInterface|null</span> <a href="#members">$proxyInstantiator</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Symfony\Component\DependencyInjection\Container">Container</span></li><li>protected <span title="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface">ParameterBagInterface</span> <a href="#members">$parameterBag</a>;
+                        </li><li>protected <a href="#members">$services</a>;
+                        </li><li>protected <a href="#members">$methodMap</a>;
+                        </li><li>protected <a href="#members">$aliases</a>;
+                        </li><li>protected <a href="#members">$scopes</a>;
+                        </li><li>protected <a href="#members">$scopeChildren</a>;
+                        </li><li>protected <a href="#members">$scopedServices</a>;
+                        </li><li>protected <a href="#members">$scopeStacks</a>;
+                        </li><li>protected array <a href="#members">$loading</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setResourceTracking.xhtml">setResourceTracking</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/isTrackingResources.xhtml">isTrackingResources</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setProxyInstantiator.xhtml">setProxyInstantiator</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/registerExtension.xhtml">registerExtension</a>()
+                    </li><li>public ExtensionInterface <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getExtension.xhtml">getExtension</a>()
+                    </li><li>public array <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getExtensions.xhtml">getExtensions</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/hasExtension.xhtml">hasExtension</a>()
+                    </li><li>public array <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getResources.xhtml">getResources</a>()
+                    </li><li>public ContainerBuilder <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/addResource.xhtml">addResource</a>()
+                    </li><li>public ContainerBuilder <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setResources.xhtml">setResources</a>()
+                    </li><li>public ContainerBuilder <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/addObjectResource.xhtml">addObjectResource</a>()
+                    </li><li>public ContainerBuilder <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/addClassResource.xhtml">addClassResource</a>()
+                    </li><li>public ContainerBuilder <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/loadFromExtension.xhtml">loadFromExtension</a>()
+                    </li><li>public ContainerBuilder <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/addCompilerPass.xhtml">addCompilerPass</a>()
+                    </li><li>public PassConfig <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getCompilerPassConfig.xhtml">getCompilerPassConfig</a>()
+                    </li><li>public Compiler <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getCompiler.xhtml">getCompiler</a>()
+                    </li><li>public array <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getScopes.xhtml">getScopes</a>()
+                    </li><li>public array <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getScopeChildren.xhtml">getScopeChildren</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/set.xhtml">set</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/removeDefinition.xhtml">removeDefinition</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/has.xhtml">has</a>()
+                    </li><li>public  <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/get.xhtml">get</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/merge.xhtml">merge</a>()
+                    </li><li>public array <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getExtensionConfig.xhtml">getExtensionConfig</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/prependExtensionConfig.xhtml">prependExtensionConfig</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/compile.xhtml">compile</a>()
+                    </li><li>public array <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getServiceIds.xhtml">getServiceIds</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/addAliases.xhtml">addAliases</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setAliases.xhtml">setAliases</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setAlias.xhtml">setAlias</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/removeAlias.xhtml">removeAlias</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/hasAlias.xhtml">hasAlias</a>()
+                    </li><li>public array <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getAliases.xhtml">getAliases</a>()
+                    </li><li>public Alias <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getAlias.xhtml">getAlias</a>()
+                    </li><li>public Definition <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/register.xhtml">register</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/addDefinitions.xhtml">addDefinitions</a>()
+                    </li><li>public void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setDefinitions.xhtml">setDefinitions</a>()
+                    </li><li>public array <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getDefinitions.xhtml">getDefinitions</a>()
+                    </li><li>public Definition <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setDefinition.xhtml">setDefinition</a>()
+                    </li><li>public Boolean <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/hasDefinition.xhtml">hasDefinition</a>()
+                    </li><li>public Definition <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getDefinition.xhtml">getDefinition</a>()
+                    </li><li>public Definition <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/findDefinition.xhtml">findDefinition</a>()
+                    </li><li>public  <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/createService.xhtml">createService</a>()
+                    </li><li>public mixed <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/resolveServices.xhtml">resolveServices</a>()
+                    </li><li>public array <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/findTaggedServiceIds.xhtml">findTaggedServiceIds</a>()
+                    </li><li>public array <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/findTags.xhtml">findTags</a>()
+                    </li><li>public static array <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getServiceConditionals.xhtml">getServiceConditionals</a>()
+                    </li><li>private InstantiatorInterface <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getProxyInstantiator.xhtml">getProxyInstantiator</a>()
+                    </li><li>private void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/synchronize.xhtml">synchronize</a>()
+                    </li><li>private void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/callMethod.xhtml">callMethod</a>()
+                    </li><li>private void <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/shareService.xhtml">shareService</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Symfony\Component\DependencyInjection\Container">Container</span></li><li>public void <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/__construct.xhtml">__construct</a>()
+                        </li><li>public void <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/compile.xhtml">compile</a>()
+                        </li><li>public Boolean <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/isFrozen.xhtml">isFrozen</a>()
+                        </li><li>public ParameterBagInterface <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/getParameterBag.xhtml">getParameterBag</a>()
+                        </li><li>public mixed <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/getParameter.xhtml">getParameter</a>()
+                        </li><li>public Boolean <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/hasParameter.xhtml">hasParameter</a>()
+                        </li><li>public void <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/setParameter.xhtml">setParameter</a>()
+                        </li><li>public void <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/set.xhtml">set</a>()
+                        </li><li>public Boolean <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/has.xhtml">has</a>()
+                        </li><li>public  <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/get.xhtml">get</a>()
+                        </li><li>public Boolean <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/initialized.xhtml">initialized</a>()
+                        </li><li>public array <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/getServiceIds.xhtml">getServiceIds</a>()
+                        </li><li>public void <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/enterScope.xhtml">enterScope</a>()
+                        </li><li>public void <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/leaveScope.xhtml">leaveScope</a>()
+                        </li><li>public void <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/addScope.xhtml">addScope</a>()
+                        </li><li>public Boolean <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/hasScope.xhtml">hasScope</a>()
+                        </li><li>public Boolean <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/isScopeActive.xhtml">isScopeActive</a>()
+                        </li><li>public static string <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/camelize.xhtml">camelize</a>()
+                        </li><li>public static string <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/underscore.xhtml">underscore</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Symfony_Component_DependencyInjection_Container.xhtml">Symfony\Component\DependencyInjection\Container</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Symfony_Component_DependencyInjection_TaggedContainerInterface.xhtml">Symfony\Component\DependencyInjection\TaggedContainerInterface</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
-        </ul>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Symfony_Component_DependencyInjection_TaggedContainerInterface.xhtml">Symfony\Component\DependencyInjection\TaggedContainerInterface</a>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="extensions"/>
-            <h4><span class="label private">private</span>array 
-                
-                $extensions</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="extensionsByNs"/>
-            <h4><span class="label private">private</span>array 
-                
-                $extensionsByNs</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="definitions"/>
-            <h4><span class="label private">private</span>array 
-                
-                $definitions</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="obsoleteDefinitions"/>
-            <h4><span class="label private">private</span>array 
-                
-                $obsoleteDefinitions</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="aliasDefinitions"/>
-            <h4><span class="label private">private</span>array 
-                
-                $aliasDefinitions</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="resources"/>
-            <h4><span class="label private">private</span>array 
-                
-                $resources</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="extensionConfigs"/>
-            <h4><span class="label private">private</span>
-                $extensionConfigs</h4>
-          </li>
-          <li>
-            <a name="compiler"/>
-            <h4><span class="label private">private</span>object 
-                
-                $compiler</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="trackResources"/>
-            <h4><span class="label private">private</span>
-                $trackResources</h4>
-          </li>
-          <li>
-            <a name="proxyInstantiator"/>
-            <h4><span class="label private">private</span>object 
-                
-                $proxyInstantiator</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_DependencyInjection_ParameterBag_ParameterBagInterface.xhtml">Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface</a></span><strong> $parameterBag</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$parameterBag</code> - A ParameterBagInterface instance</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="addAliases"/>
-            <h4><span class="label public">public</span>addAliases<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $aliases</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds the service aliases.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$aliases</code> - An array of aliases</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addClassResource"/>
-            <h4><span class="label public">public</span>addClassResource<span style="font-size:90%;">( <span class="param-type"><a href="../classes/ReflectionClass.xhtml">ReflectionClass</a></span><strong> $class</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds the given class hierarchy as resources.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$class</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addCompilerPass"/>
-            <h4><span class="label public">public</span>addCompilerPass<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_DependencyInjection_Compiler_CompilerPassInterface.xhtml">Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface</a></span><strong> $pass</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a compiler pass.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$pass</code> - A compiler pass</li>
-                <li><code>$type</code> - The type of compiler pass</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addDefinitions"/>
-            <h4><span class="label public">public</span>addDefinitions<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $definitions</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds the service definitions.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$definitions</code> - An array of service definitions</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addObjectResource"/>
-            <h4><span class="label public">public</span>addObjectResource<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $object</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds the object class hierarchy as resources.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$object</code> - An object instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addResource"/>
-            <h4><span class="label public">public</span>addResource<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Config_Resource_ResourceInterface.xhtml">Symfony\Component\Config\Resource\ResourceInterface</a></span><strong> $resource</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a resource for this configuration.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$resource</code> - A resource instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addScope"/>
-            <h4><span class="label public">public</span>addScope<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_DependencyInjection_ScopeInterface.xhtml">Symfony\Component\DependencyInjection\ScopeInterface</a></span><strong> $scope</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a scope to the container.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$scope</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="camelize"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>camelize<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Camelizes a string.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - A string to camelize</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The camelized string</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="compile"/>
-            <h4><span class="label public">public</span>compile<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Compiles the container.<pre>This method passes the container to compiler
-passes whose job is to manipulate and optimize
-the container.
-
-The main compiler passes roughly do four things:
-
- * The extension configurations are merged;
- * Parameter values are resolved;
- * The parameter bag is frozen;
- * Extension loading is disabled.</pre></li>
-            </p>
-          </li>
-          <li>
-            <a name="compile"/>
-            <h4><span class="label public">public</span>compile<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Compiles the container.<pre>This method does two things:
-
- * Parameter values are resolved;
- * The parameter bag is frozen.</pre></li>
-            </p>
-          </li>
-          <li>
-            <a name="createService"/>
-            <h4><span class="label public">public</span>createService<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong>, <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $tryProxy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Creates a service for a service definition.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$definition</code> - A service definition instance</li>
-                <li><code>$id</code> - The service identifier</li>
-                <li><code>$tryProxy</code> - Whether to try proxying the service with a lazy proxy</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The service described by the service definition</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException When the scope is inactive</code>
-                </li>
-                <li>
-                  <code>RuntimeException When the factory definition is incomplete</code>
-                </li>
-                <li>
-                  <code>RuntimeException When the service is a synthetic service</code>
-                </li>
-                <li>
-                  <code>InvalidArgumentException When configure callable is not callable</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="enterScope"/>
-            <h4><span class="label public">public</span>enterScope<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>This is called when you enter a scope</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException         When the parent scope is inactive</code>
-                </li>
-                <li>
-                  <code>InvalidArgumentException When the scope does not exist</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="findDefinition"/>
-            <h4><span class="label public">public</span>findDefinition<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets a service definition by id or alias.<pre>The method "unaliases" recursively to return a Definition instance.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier or alias</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>A Definition instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InvalidArgumentException if the service definition does not exist</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="findTaggedServiceIds"/>
-            <h4><span class="label public">public</span>findTaggedServiceIds<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns service ids for a given tag.<pre>Example:
-
-$container-&gt;register('foo')-&gt;addTag('my.tag', array('hello' =&gt; 'world'));
-
-$serviceIds = $container-&gt;findTaggedServiceIds('my.tag');
-foreach ($serviceIds as $serviceId =&gt; $tags) {
-    foreach ($tags as $tag) {
-        echo $tag['hello'];
-    }
-}</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The tag name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of tags with the tagged service as key, holding a list of attribute arrays.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="findTags"/>
-            <h4><span class="label public">public</span>findTags<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns all tags the defined services use.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of tags</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="get"/>
-            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type">integer</span><strong> $invalidBehavior</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets a service.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-                <li><code>$invalidBehavior</code> - The behavior when the service does not exist</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The associated service</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InvalidArgumentException when no definitions are available</code>
-                </li>
-                <li>
-                  <code>InactiveScopeException   when the current scope is not active</code>
-                </li>
-                <li>
-                  <code>LogicException           when a circular dependency is detected</code>
-                </li>
-                <li>
-                  <code>\Exception</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="get"/>
-            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type">integer</span><strong> $invalidBehavior</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets a service.<pre>If a service is defined both through a set() method and
-with a get{$id}Service() method, the former has always precedence.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-                <li><code>$invalidBehavior</code> - The behavior when the service does not exist</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The associated service</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InvalidArgumentException if the service is not defined</code>
-                </li>
-                <li>
-                  <code>ServiceCircularReferenceException When a circular reference is detected</code>
-                </li>
-                <li>
-                  <code>ServiceNotFoundException When the service is not defined</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAlias"/>
-            <h4><span class="label public">public</span>getAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets an alias.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An Alias instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InvalidArgumentException if the alias does not exist</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAliases"/>
-            <h4><span class="label public">public</span>getAliases<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets all defined aliases.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of aliases</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCompiler"/>
-            <h4><span class="label public">public</span>getCompiler<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the compiler.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The compiler</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCompilerPassConfig"/>
-            <h4><span class="label public">public</span>getCompilerPassConfig<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the compiler pass config which can then be modified.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The compiler pass config</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getDefinition"/>
-            <h4><span class="label public">public</span>getDefinition<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets a service definition.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>A Definition instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InvalidArgumentException if the service definition does not exist</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getDefinitions"/>
-            <h4><span class="label public">public</span>getDefinitions<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets all service definitions.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of Definition instances</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getExtension"/>
-            <h4><span class="label public">public</span>getExtension<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns an extension by alias or namespace.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - An alias or a namespace</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An extension instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>LogicException if the extension is not registered</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getExtensionConfig"/>
-            <h4><span class="label public">public</span>getExtensionConfig<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the configuration array for the given extension.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the extension</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of configuration</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getExtensions"/>
-            <h4><span class="label public">public</span>getExtensions<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns all registered extensions.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of ExtensionInterface</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getParameter"/>
-            <h4><span class="label public">public</span>getParameter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets a parameter.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The parameter name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The parameter value</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InvalidArgumentException if the parameter is not defined</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getParameterBag"/>
-            <h4><span class="label public">public</span>getParameterBag<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the service container parameter bag.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>A ParameterBagInterface instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getResources"/>
-            <h4><span class="label public">public</span>getResources<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns an array of resources loaded to build this configuration.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of resources</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getScopeChildren"/>
-            <h4><span class="label public">public</span>getScopeChildren<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns all Scope children.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of scope children.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getScopes"/>
-            <h4><span class="label public">public</span>getScopes<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns all Scopes.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of scopes</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getServiceConditionals"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getServiceConditionals<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the Service Conditionals.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - An array of conditionals to return.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of Service conditionals</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getServiceIds"/>
-            <h4><span class="label public">public</span>getServiceIds<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets all service ids.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of all defined service ids</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getServiceIds"/>
-            <h4><span class="label public">public</span>getServiceIds<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets all service ids.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of all defined service ids</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="has"/>
-            <h4><span class="label public">public</span>has<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns true if the given service is defined.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>true if the service is defined, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="has"/>
-            <h4><span class="label public">public</span>has<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns true if the given service is defined.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>true if the service is defined, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasAlias"/>
-            <h4><span class="label public">public</span>hasAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns true if an alias exists under the given identifier.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>true if the alias exists, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasDefinition"/>
-            <h4><span class="label public">public</span>hasDefinition<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns true if a service definition exists under the given identifier.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>true if the service definition exists, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasExtension"/>
-            <h4><span class="label public">public</span>hasExtension<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks if we have an extension.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the extension</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>If the extension exists</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasParameter"/>
-            <h4><span class="label public">public</span>hasParameter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks if a parameter exists.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The parameter name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The presence of parameter in container</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasScope"/>
-            <h4><span class="label public">public</span>hasScope<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns whether this container has a certain scope</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the scope</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="initialized"/>
-            <h4><span class="label public">public</span>initialized<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns true if the given service has actually been initialized</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>true if service has already been initialized, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isFrozen"/>
-            <h4><span class="label public">public</span>isFrozen<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns true if the container parameter bag are frozen.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>true if the container parameter bag are frozen, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isScopeActive"/>
-            <h4><span class="label public">public</span>isScopeActive<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns whether this scope is currently active<pre>This does not actually check if the passed scope actually exists.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isTrackingResources"/>
-            <h4><span class="label public">public</span>isTrackingResources<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks if resources are tracked.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>true if resources are tracked, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="leaveScope"/>
-            <h4><span class="label public">public</span>leaveScope<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>This is called to leave the current scope, and move back to the parent scope.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the scope to leave</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InvalidArgumentException if the scope is not active</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadFromExtension"/>
-            <h4><span class="label public">public</span>loadFromExtension<span style="font-size:90%;">( <span class="param-type">string</span><strong> $extension</strong>, <span class="param-type">Array</span><strong> $values</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Loads the configuration for an extension.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$extension</code> - The extension alias or namespace</li>
-                <li><code>$values</code> - An array of values that customizes the extension</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>BadMethodCallException When this ContainerBuilder is frozen</code>
-                </li>
-                <li>
-                  <code>\LogicException if the container is frozen</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="merge"/>
-            <h4><span class="label public">public</span>merge<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder.xhtml">Symfony\Component\DependencyInjection\ContainerBuilder</a></span><strong> $container</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Merges a ContainerBuilder with the current ContainerBuilder configuration.<pre>Service definitions overrides the current defined ones.
-
-But for parameters, they are overridden by the current ones. It allows
-the parameters passed to the container constructor to have precedence
-over the loaded ones.
-
-$container = new ContainerBuilder(array('foo' =&gt; 'bar'));
-$loader = new LoaderXXX($container);
-$loader-&gt;load('resource_name');
-$container-&gt;register('foo', new stdClass());
-
-In the above example, even if the loaded resource defines a foo
-parameter, the value will still be 'bar' as defined in the ContainerBuilder
-constructor.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$container</code> - The ContainerBuilder instance to merge.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>BadMethodCallException When this ContainerBuilder is frozen</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="prependExtensionConfig"/>
-            <h4><span class="label public">public</span>prependExtensionConfig<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $config</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Prepends a config array to the configs of the given extension.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the extension</li>
-                <li><code>$config</code> - The config to set</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="register"/>
-            <h4><span class="label public">public</span>register<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type">string</span><strong> $class</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Registers a service definition.<pre>This methods allows for simple registration of service definition
-with a fluid interface.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-                <li><code>$class</code> - The service class</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>A Definition instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="registerExtension"/>
-            <h4><span class="label public">public</span>registerExtension<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_DependencyInjection_Extension_ExtensionInterface.xhtml">Symfony\Component\DependencyInjection\Extension\ExtensionInterface</a></span><strong> $extension</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Registers an extension.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$extension</code> - An extension instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="removeAlias"/>
-            <h4><span class="label public">public</span>removeAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Removes an alias.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - The alias to remove</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="removeDefinition"/>
-            <h4><span class="label public">public</span>removeDefinition<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Removes a service definition.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="resolveServices"/>
-            <h4><span class="label public">public</span>resolveServices<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Replaces service references by the real service instance.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - A value</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The same value with all service references replaced by the real service instances</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="set"/>
-            <h4><span class="label public">public</span>set<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type">invalid method call</span><strong> $service</strong>, <span class="param-type">string</span><strong> $scope</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a service.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-                <li><code>$service</code> - The service instance</li>
-                <li><code>$scope</code> - The scope</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>BadMethodCallException When this ContainerBuilder is frozen</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="set"/>
-            <h4><span class="label public">public</span>set<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type">invalid method call</span><strong> $service</strong>, <span class="param-type">string</span><strong> $scope</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a service.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-                <li><code>$service</code> - The service instance</li>
-                <li><code>$scope</code> - The scope of the service</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException When trying to set a service in an inactive scope</code>
-                </li>
-                <li>
-                  <code>InvalidArgumentException When trying to set a service in the prototype scope</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setAlias"/>
-            <h4><span class="label public">public</span>setAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type"><span title="string|Alias">string|Alias</span></span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets an alias for an existing service.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - The alias to create</li>
-                <li><code>$id</code> - The service to alias</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InvalidArgumentException if the id is not a string or an Alias</code>
-                </li>
-                <li>
-                  <code>InvalidArgumentException if the alias is for itself</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setAliases"/>
-            <h4><span class="label public">public</span>setAliases<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $aliases</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the service aliases.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$aliases</code> - An array of aliases</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setDefinition"/>
-            <h4><span class="label public">public</span>setDefinition<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong>, <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a service definition.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The service identifier</li>
-                <li><code>$definition</code> - A Definition instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>the service definition</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>BadMethodCallException When this ContainerBuilder is frozen</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setDefinitions"/>
-            <h4><span class="label public">public</span>setDefinitions<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $definitions</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the service definitions.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$definitions</code> - An array of service definitions</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setParameter"/>
-            <h4><span class="label public">public</span>setParameter<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a parameter.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The parameter name</li>
-                <li><code>$value</code> - The parameter value</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setProxyInstantiator"/>
-            <h4><span class="label public">public</span>setProxyInstantiator<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_DependencyInjection_LazyProxy_Instantiator_InstantiatorInterface.xhtml">Symfony\Component\DependencyInjection\LazyProxy\Instantiator\InstantiatorInterface</a></span><strong> $proxyInstantiator</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the instantiator to be used when fetching proxies.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$proxyInstantiator</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setResourceTracking"/>
-            <h4><span class="label public">public</span>setResourceTracking<span style="font-size:90%;">( <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $track</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the track resources flag.<pre>If you are not using the loaders and therefore don't want
-to depend on the Config component, set this flag to false.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$track</code> - true if you want to track resources, false otherwise</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setResources"/>
-            <h4><span class="label public">public</span>setResources<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $resources</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the resources for this configuration.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$resources</code> - An array of resources</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current instance</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="underscore"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>underscore<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>A string to underscore.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The string to underscore</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The underscored string</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="callMethod"/>
-            <h4><span class="label private">private</span>callMethod<span style="font-size:90%;">( <span class="param-type"/><strong> $service</strong>, <span class="param-type"/><strong> $call</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="getProxyInstantiator"/>
-            <h4><span class="label private">private</span>getProxyInstantiator<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieves the currently set proxy instantiator or instantiates one.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="shareService"/>
-            <h4><span class="label private">private</span>shareService<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_DependencyInjection_Definition.xhtml">Symfony\Component\DependencyInjection\Definition</a></span><strong> $definition</strong>, <span class="param-type">mixed</span><strong> $service</strong>, <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Shares a given service in the container</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$definition</code> - </li>
-                <li><code>$service</code> - </li>
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InactiveScopeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="synchronize"/>
-            <h4><span class="label private">private</span>synchronize<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Synchronizes a service change.<pre>This method updates all services that depend on the given
-service by calling all methods referencing it.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - A service id</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="aliasDefinitions"><strong>$aliasDefinitions</strong>
+                —
+                array</li>
+            <li id="compiler"><strong>$compiler</strong>
+                —
+                <a href="#">Symfony\Component\DependencyInjection\Compiler\Compiler</a></li>
+            <li id="definitions"><strong>$definitions</strong>
+                —
+                array</li>
+            <li id="extensionConfigs">
+              <strong>$extensionConfigs</strong>
+            </li>
+            <li id="extensions"><strong>$extensions</strong>
+                —
+                array</li>
+            <li id="extensionsByNs"><strong>$extensionsByNs</strong>
+                —
+                array</li>
+            <li id="obsoleteDefinitions"><strong>$obsoleteDefinitions</strong>
+                —
+                array</li>
+            <li id="proxyInstantiator"><strong>$proxyInstantiator</strong>
+                —
+                <a href="#">Symfony\Component\DependencyInjection\InstantiatorInterface|null</a></li>
+            <li id="resources"><strong>$resources</strong>
+                —
+                array</li>
+            <li id="trackResources">
+              <strong>$trackResources</strong>
+            </li>
+          </ul>
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="aliases">
+              <strong>$aliases</strong>
+            </li>
+            <li id="loading">
+              <strong>$loading</strong>
+            </li>
+            <li id="methodMap">
+              <strong>$methodMap</strong>
+            </li>
+            <li id="parameterBag"><strong>$parameterBag</strong>
+                —
+                <a href="#">Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface</a></li>
+            <li id="scopeChildren">
+              <strong>$scopeChildren</strong>
+            </li>
+            <li id="scopeStacks">
+              <strong>$scopeStacks</strong>
+            </li>
+            <li id="scopedServices">
+              <strong>$scopedServices</strong>
+            </li>
+            <li id="scopes">
+              <strong>$scopes</strong>
+            </li>
+            <li id="services">
+              <strong>$services</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="callMethod">
+              <a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/callMethod.xhtml">callMethod()</a>
+            </li>
+            <li id="getProxyInstantiator"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getProxyInstantiator.xhtml">getProxyInstantiator()</a>
+                — Retrieves the currently set proxy instantiator or instantiates one.</li>
+            <li id="shareService"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/shareService.xhtml">shareService()</a>
+                — Shares a given service in the container</li>
+            <li id="synchronize"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/synchronize.xhtml">synchronize()</a>
+                — Synchronizes a service change.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="addAliases"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/addAliases.xhtml">addAliases()</a>
+                — Adds the service aliases.</li>
+            <li id="addClassResource"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/addClassResource.xhtml">addClassResource()</a>
+                — Adds the given class hierarchy as resources.</li>
+            <li id="addCompilerPass"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/addCompilerPass.xhtml">addCompilerPass()</a>
+                — Adds a compiler pass.</li>
+            <li id="addDefinitions"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/addDefinitions.xhtml">addDefinitions()</a>
+                — Adds the service definitions.</li>
+            <li id="addObjectResource"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/addObjectResource.xhtml">addObjectResource()</a>
+                — Adds the object class hierarchy as resources.</li>
+            <li id="addResource"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/addResource.xhtml">addResource()</a>
+                — Adds a resource for this configuration.</li>
+            <li id="compile"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/compile.xhtml">compile()</a>
+                — Compiles the container.</li>
+            <li id="createService"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/createService.xhtml">createService()</a>
+                — Creates a service for a service definition.</li>
+            <li id="findDefinition"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/findDefinition.xhtml">findDefinition()</a>
+                — Gets a service definition by id or alias.</li>
+            <li id="findTaggedServiceIds"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/findTaggedServiceIds.xhtml">findTaggedServiceIds()</a>
+                — Returns service ids for a given tag.</li>
+            <li id="findTags"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/findTags.xhtml">findTags()</a>
+                — Returns all tags the defined services use.</li>
+            <li id="get"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/get.xhtml">get()</a>
+                — Gets a service.</li>
+            <li id="getAlias"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getAlias.xhtml">getAlias()</a>
+                — Gets an alias.</li>
+            <li id="getAliases"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getAliases.xhtml">getAliases()</a>
+                — Gets all defined aliases.</li>
+            <li id="getCompiler"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getCompiler.xhtml">getCompiler()</a>
+                — Returns the compiler.</li>
+            <li id="getCompilerPassConfig"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getCompilerPassConfig.xhtml">getCompilerPassConfig()</a>
+                — Returns the compiler pass config which can then be modified.</li>
+            <li id="getDefinition"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getDefinition.xhtml">getDefinition()</a>
+                — Gets a service definition.</li>
+            <li id="getDefinitions"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getDefinitions.xhtml">getDefinitions()</a>
+                — Gets all service definitions.</li>
+            <li id="getExtension"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getExtension.xhtml">getExtension()</a>
+                — Returns an extension by alias or namespace.</li>
+            <li id="getExtensionConfig"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getExtensionConfig.xhtml">getExtensionConfig()</a>
+                — Returns the configuration array for the given extension.</li>
+            <li id="getExtensions"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getExtensions.xhtml">getExtensions()</a>
+                — Returns all registered extensions.</li>
+            <li id="getResources"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getResources.xhtml">getResources()</a>
+                — Returns an array of resources loaded to build this configuration.</li>
+            <li id="getScopeChildren"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getScopeChildren.xhtml">getScopeChildren()</a>
+                — Returns all Scope children.</li>
+            <li id="getScopes"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getScopes.xhtml">getScopes()</a>
+                — Returns all Scopes.</li>
+            <li id="getServiceConditionals"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getServiceConditionals.xhtml">getServiceConditionals()</a>
+                — Returns the Service Conditionals.</li>
+            <li id="getServiceIds"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/getServiceIds.xhtml">getServiceIds()</a>
+                — Gets all service ids.</li>
+            <li id="has"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/has.xhtml">has()</a>
+                — Returns true if the given service is defined.</li>
+            <li id="hasAlias"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/hasAlias.xhtml">hasAlias()</a>
+                — Returns true if an alias exists under the given identifier.</li>
+            <li id="hasDefinition"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/hasDefinition.xhtml">hasDefinition()</a>
+                — Returns true if a service definition exists under the given identifier.</li>
+            <li id="hasExtension"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/hasExtension.xhtml">hasExtension()</a>
+                — Checks if we have an extension.</li>
+            <li id="isTrackingResources"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/isTrackingResources.xhtml">isTrackingResources()</a>
+                — Checks if resources are tracked.</li>
+            <li id="loadFromExtension"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/loadFromExtension.xhtml">loadFromExtension()</a>
+                — Loads the configuration for an extension.</li>
+            <li id="merge"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/merge.xhtml">merge()</a>
+                — Merges a ContainerBuilder with the current ContainerBuilder configuration.</li>
+            <li id="prependExtensionConfig"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/prependExtensionConfig.xhtml">prependExtensionConfig()</a>
+                — Prepends a config array to the configs of the given extension.</li>
+            <li id="register"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/register.xhtml">register()</a>
+                — Registers a service definition.</li>
+            <li id="registerExtension"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/registerExtension.xhtml">registerExtension()</a>
+                — Registers an extension.</li>
+            <li id="removeAlias"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/removeAlias.xhtml">removeAlias()</a>
+                — Removes an alias.</li>
+            <li id="removeDefinition"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/removeDefinition.xhtml">removeDefinition()</a>
+                — Removes a service definition.</li>
+            <li id="resolveServices"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/resolveServices.xhtml">resolveServices()</a>
+                — Replaces service references by the real service instance.</li>
+            <li id="set"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/set.xhtml">set()</a>
+                — Sets a service.</li>
+            <li id="setAlias"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setAlias.xhtml">setAlias()</a>
+                — Sets an alias for an existing service.</li>
+            <li id="setAliases"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setAliases.xhtml">setAliases()</a>
+                — Sets the service aliases.</li>
+            <li id="setDefinition"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setDefinition.xhtml">setDefinition()</a>
+                — Sets a service definition.</li>
+            <li id="setDefinitions"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setDefinitions.xhtml">setDefinitions()</a>
+                — Sets the service definitions.</li>
+            <li id="setProxyInstantiator"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setProxyInstantiator.xhtml">setProxyInstantiator()</a>
+                — Sets the instantiator to be used when fetching proxies.</li>
+            <li id="setResourceTracking"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setResourceTracking.xhtml">setResourceTracking()</a>
+                — Sets the track resources flag.</li>
+            <li id="setResources"><a title="Symfony\Component\DependencyInjection\ContainerBuilder" href="../classes/Symfony_Component_DependencyInjection_ContainerBuilder/setResources.xhtml">setResources()</a>
+                — Sets the resources for this configuration.</li>
+          </ul>
+          <h3>Inherited from <a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container.xhtml">Symfony\Component\DependencyInjection\Container</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="addScope"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/addScope.xhtml">addScope()</a>
+                — Adds a scope to the container.</li>
+            <li id="camelize"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/camelize.xhtml">camelize()</a>
+                — Camelizes a string.</li>
+            <li id="compile"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/compile.xhtml">compile()</a>
+                — Compiles the container.</li>
+            <li id="enterScope"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/enterScope.xhtml">enterScope()</a>
+                — This is called when you enter a scope</li>
+            <li id="get"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/get.xhtml">get()</a>
+                — Gets a service.</li>
+            <li id="getParameter"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/getParameter.xhtml">getParameter()</a>
+                — Gets a parameter.</li>
+            <li id="getParameterBag"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/getParameterBag.xhtml">getParameterBag()</a>
+                — Gets the service container parameter bag.</li>
+            <li id="getServiceIds"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/getServiceIds.xhtml">getServiceIds()</a>
+                — Gets all service ids.</li>
+            <li id="has"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/has.xhtml">has()</a>
+                — Returns true if the given service is defined.</li>
+            <li id="hasParameter"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/hasParameter.xhtml">hasParameter()</a>
+                — Checks if a parameter exists.</li>
+            <li id="hasScope"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/hasScope.xhtml">hasScope()</a>
+                — Returns whether this container has a certain scope</li>
+            <li id="initialized"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/initialized.xhtml">initialized()</a>
+                — Returns true if the given service has actually been initialized</li>
+            <li id="isFrozen"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/isFrozen.xhtml">isFrozen()</a>
+                — Returns true if the container parameter bag are frozen.</li>
+            <li id="isScopeActive"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/isScopeActive.xhtml">isScopeActive()</a>
+                — Returns whether this scope is currently active</li>
+            <li id="leaveScope"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/leaveScope.xhtml">leaveScope()</a>
+                — This is called to leave the current scope, and move back to the parent scope.</li>
+            <li id="set"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/set.xhtml">set()</a>
+                — Sets a service.</li>
+            <li id="setParameter"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/setParameter.xhtml">setParameter()</a>
+                — Sets a parameter.</li>
+            <li id="underscore"><a title="Symfony\Component\DependencyInjection\Container" href="../classes/Symfony_Component_DependencyInjection_Container/underscore.xhtml">underscore()</a>
+                — A string to underscore.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

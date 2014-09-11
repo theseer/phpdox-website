@@ -1,442 +1,212 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Filter\FilterChain - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Filter\FilterChain</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Filter">Zend\Filter</a>
+          </li>
+          <li class="separator">FilterChain</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#DEFAULT_PRIORITY">DEFAULT_PRIORITY</a>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Filter/FilterChain.php.xhtml#line15">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
-        <ul>
-          <li>
-            <a href="#plugins">$plugins</a>
-          </li>
-          <li>
-            <a href="#filters">$filters</a>
-          </li>
-          <li>
-            <a href="#options">$options</a>
-          </li>
-          <li>
-            <a href="#hasPcreUnicodeSupport">$hasPcreUnicodeSupport</a>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__clone">__clone</a>
-          </li>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#__invoke">__invoke</a>
-          </li>
-          <li>
-            <a href="#__sleep">__sleep</a>
-          </li>
-          <li>
-            <a href="#attach">attach</a>
-          </li>
-          <li>
-            <a href="#attachByName">attachByName</a>
-          </li>
-          <li>
-            <a href="#count">count</a>
-          </li>
-          <li>
-            <a href="#filter">filter</a>
-          </li>
-          <li>
-            <a href="#getFilters">getFilters</a>
-          </li>
-          <li>
-            <a href="#getOptions">getOptions</a>
-          </li>
-          <li>
-            <a href="#getPluginManager">getPluginManager</a>
-          </li>
-          <li>
-            <a href="#hasPcreUnicodeSupport">hasPcreUnicodeSupport</a>
-          </li>
-          <li>
-            <a href="#isOptions">isOptions</a>
-          </li>
-          <li>
-            <a href="#merge">merge</a>
-          </li>
-          <li>
-            <a href="#plugin">plugin</a>
-          </li>
-          <li>
-            <a href="#setOptions">setOptions</a>
-          </li>
-          <li>
-            <a href="#setOptions">setOptions</a>
-          </li>
-          <li>
-            <a href="#setPluginManager">setPluginManager</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Filter\</span>FilterChain</h2>
-        <div class="file-notice">
-          <p/>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Filter\</small>FilterChain</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class FilterChain
+                extends <a title="Zend\Filter\AbstractFilter" href="../classes/Zend_Filter_AbstractFilter.xhtml">AbstractFilter</a>
+                implements
+                <a title="Countable" href="../interfaces/Countable.xhtml">Countable</a>
+            {<br/><ul class="none"><li>// constants</li><li>const DEFAULT_PRIORITY = 1000;</li></ul><ul class="none"><li>// members</li><li>protected <span title="Zend\Filter\FilterPluginManager">FilterPluginManager</span> <a href="#members">$plugins</a>;
+                    </li><li>protected <span title="Zend\Stdlib\PriorityQueue">PriorityQueue</span> <a href="#members">$filters</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Zend\Filter\AbstractFilter">AbstractFilter</span></li><li>protected array <a href="#members">$options</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/__construct.xhtml">__construct</a>()
+                    </li><li>public self <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/setOptions.xhtml">setOptions</a>()
+                    </li><li>public int <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/count.xhtml">count</a>()
+                    </li><li>public FilterPluginManager <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/getPluginManager.xhtml">getPluginManager</a>()
+                    </li><li>public self <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/setPluginManager.xhtml">setPluginManager</a>()
+                    </li><li>public FilterInterface <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/plugin.xhtml">plugin</a>()
+                    </li><li>public self <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/attach.xhtml">attach</a>()
+                    </li><li>public self <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/attachByName.xhtml">attachByName</a>()
+                    </li><li>public self <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/merge.xhtml">merge</a>()
+                    </li><li>public PriorityQueue <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/getFilters.xhtml">getFilters</a>()
+                    </li><li>public mixed <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/filter.xhtml">filter</a>()
+                    </li><li>public void <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/__clone.xhtml">__clone</a>()
+                    </li><li>public void <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/__sleep.xhtml">__sleep</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Zend\Filter\AbstractFilter">AbstractFilter</span></li><li>public static bool <a title="Zend\Filter\AbstractFilter" href="../classes/Zend_Filter_AbstractFilter/hasPcreUnicodeSupport.xhtml">hasPcreUnicodeSupport</a>()
+                        </li><li>public self <a title="Zend\Filter\AbstractFilter" href="../classes/Zend_Filter_AbstractFilter/setOptions.xhtml">setOptions</a>()
+                        </li><li>public array <a title="Zend\Filter\AbstractFilter" href="../classes/Zend_Filter_AbstractFilter/getOptions.xhtml">getOptions</a>()
+                        </li><li>public mixed <a title="Zend\Filter\AbstractFilter" href="../classes/Zend_Filter_AbstractFilter/__invoke.xhtml">__invoke</a>()
+                        </li><li>protected static bool <a title="Zend\Filter\AbstractFilter" href="../classes/Zend_Filter_AbstractFilter/isOptions.xhtml">isOptions</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Zend_Filter_AbstractFilter.xhtml">Zend\Filter\AbstractFilter</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Countable.xhtml">Countable</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Countable.xhtml">Countable</a>
-          </li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="DEFAULT_PRIORITY"/>DEFAULT_PRIORITY = 1000<em> </em><p><li>Default priority at which filters are added</li></p><hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="plugins"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $plugins</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="filters"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $filters</h4>
-            <ul class="varlist">
-              <li>Filter chain</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"/><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Initialize filter chain</li>
-            </p>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__clone"/>
-            <h4><span class="label public">public</span>__clone<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Clone filters</li>
-            </p>
-          </li>
-          <li>
-            <a name="__invoke"/>
-            <h4><span class="label public">public</span>__invoke<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Invoke filter as a command<pre>Proxies to </pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\ExceptionInterface If filtering $value is impossible</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="__sleep"/>
-            <h4><span class="label public">public</span>__sleep<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Prepare filter chain for serialization<pre>Plugin manager (property 'plugins') cannot
-be serialized. On wakeup the property remains unset
-and next invokation to getPluginManager() sets
-the default plugin manager instance (FilterPluginManager).</pre></li>
-            </p>
-          </li>
-          <li>
-            <a name="attach"/>
-            <h4><span class="label public">public</span>attach<span style="font-size:90%;">( <span class="param-type"><span title="callable|FilterInterface">callable|FilterInterface</span></span><strong> $callback</strong>, <span class="param-type">int</span><strong> $priority</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Attach a filter to the chain</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$callback</code> - A Filter implementation or valid PHP callback</li>
-                <li><code>$priority</code> - Priority at which to enqueue filter; defaults to 1000 (higher executes earlier)</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="attachByName"/>
-            <h4><span class="label public">public</span>attachByName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $options</strong>, <span class="param-type">int</span><strong> $priority</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Attach a filter to the chain using a short name<pre>Retrieves the filter from the attached plugin broker, and then calls attach()
-with the retrieved instance.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-                <li><code>$options</code> - </li>
-                <li><code>$priority</code> - Priority at which to enqueue filter; defaults to 1000 (higher executes earlier)</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="count"/>
-            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return the count of attached filters</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="filter"/>
-            <h4><span class="label public">public</span>filter<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns $value filtered through each filter in the chain<pre>Filters are run in the order in which they were added to the chain (FIFO)</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFilters"/>
-            <h4><span class="label public">public</span>getFilters<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get all the filters</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getOptions"/>
-            <h4><span class="label public">public</span>getOptions<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieve options representing object state</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPluginManager"/>
-            <h4><span class="label public">public</span>getPluginManager<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get plugin manager instance</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasPcreUnicodeSupport"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>hasPcreUnicodeSupport<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="merge"/>
-            <h4><span class="label public">public</span>merge<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Filter_FilterChain.xhtml">Zend\Filter\FilterChain</a></span><strong> $filterChain</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Merge the filter chain with the one given in parameter</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$filterChain</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="plugin"/>
-            <h4><span class="label public">public</span>plugin<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $name</strong>, <span class="param-type">Array</span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieve a filter plugin by name</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-                <li><code>$options</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setOptions"/>
-            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type"/><strong> $options</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="setOptions"/>
-            <h4><span class="label public">public</span>setOptions<span style="font-size:90%;">( <span class="param-type"><span title="array|Traversable">array|Traversable</span></span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$options</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setPluginManager"/>
-            <h4><span class="label public">public</span>setPluginManager<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Filter_FilterPluginManager.xhtml">Zend\Filter\FilterPluginManager</a></span><strong> $plugins</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set plugin manager instance</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$plugins</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isOptions"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>isOptions<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $options</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$options</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="DEFAULT_PRIORITY">DEFAULT_PRIORITY</td>
+              <td>1000</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="filters"><strong>$filters</strong>
+                —
+                <a href="#">Zend\Stdlib\PriorityQueue</a><br/><span class="indent">Filter chain</span></li>
+            <li id="options"><strong>$options</strong>
+                —
+                array<br/><span class="indent">Filter options</span></li>
+            <li id="plugins"><strong>$plugins</strong>
+                —
+                <a href="#">Zend\Filter\FilterPluginManager</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/__construct.xhtml">__construct()</a>
+                — Initialize filter chain</li>
+            <li id="__clone"><a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/__clone.xhtml">__clone()</a>
+                — Clone filters</li>
+            <li id="__sleep"><a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/__sleep.xhtml">__sleep()</a>
+                — Prepare filter chain for serialization</li>
+            <li id="attach"><a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/attach.xhtml">attach()</a>
+                — Attach a filter to the chain</li>
+            <li id="attachByName"><a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/attachByName.xhtml">attachByName()</a>
+                — Attach a filter to the chain using a short name</li>
+            <li id="count"><a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/count.xhtml">count()</a>
+                — Return the count of attached filters</li>
+            <li id="filter"><a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/filter.xhtml">filter()</a>
+                — Returns $value filtered through each filter in the chain</li>
+            <li id="getFilters"><a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/getFilters.xhtml">getFilters()</a>
+                — Get all the filters</li>
+            <li id="getPluginManager"><a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/getPluginManager.xhtml">getPluginManager()</a>
+                — Get plugin manager instance</li>
+            <li id="merge"><a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/merge.xhtml">merge()</a>
+                — Merge the filter chain with the one given in parameter</li>
+            <li id="plugin"><a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/plugin.xhtml">plugin()</a>
+                — Retrieve a filter plugin by name</li>
+            <li id="setOptions">
+              <a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/setOptions.xhtml">setOptions()</a>
+            </li>
+            <li id="setPluginManager"><a title="Zend\Filter\FilterChain" href="../classes/Zend_Filter_FilterChain/setPluginManager.xhtml">setPluginManager()</a>
+                — Set plugin manager instance</li>
+          </ul>
+          <h3>Inherited from <a title="Zend\Filter\AbstractFilter" href="../classes/Zend_Filter_AbstractFilter.xhtml">Zend\Filter\AbstractFilter</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="isOptions">
+              <a title="Zend\Filter\AbstractFilter" href="../classes/Zend_Filter_AbstractFilter/isOptions.xhtml">isOptions()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__invoke"><a title="Zend\Filter\AbstractFilter" href="../classes/Zend_Filter_AbstractFilter/__invoke.xhtml">__invoke()</a>
+                — Invoke filter as a command</li>
+            <li id="getOptions"><a title="Zend\Filter\AbstractFilter" href="../classes/Zend_Filter_AbstractFilter/getOptions.xhtml">getOptions()</a>
+                — Retrieve options representing object state</li>
+            <li id="hasPcreUnicodeSupport">
+              <a title="Zend\Filter\AbstractFilter" href="../classes/Zend_Filter_AbstractFilter/hasPcreUnicodeSupport.xhtml">hasPcreUnicodeSupport()</a>
+            </li>
+            <li id="setOptions">
+              <a title="Zend\Filter\AbstractFilter" href="../classes/Zend_Filter_AbstractFilter/setOptions.xhtml">setOptions()</a>
+            </li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

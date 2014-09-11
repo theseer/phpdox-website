@@ -1,631 +1,256 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Authentication\Adapter\Http - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Authentication\Adapter\Http</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Authentication_Adapter">Zend\Authentication\Adapter</a>
+          </li>
+          <li class="separator">Http</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#request">$request</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#response">$response</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#basicResolver">$basicResolver</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#digestResolver">$digestResolver</a>
+            <a href="#tasks">Tasks</a>
           </li>
           <li>
-            <a href="#supportedSchemes">$supportedSchemes</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#acceptSchemes">$acceptSchemes</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#domains">$domains</a>
-          </li>
-          <li>
-            <a href="#realm">$realm</a>
-          </li>
-          <li>
-            <a href="#nonceTimeout">$nonceTimeout</a>
-          </li>
-          <li>
-            <a href="#useOpaque">$useOpaque</a>
-          </li>
-          <li>
-            <a href="#supportedAlgos">$supportedAlgos</a>
-          </li>
-          <li>
-            <a href="#algo">$algo</a>
-          </li>
-          <li>
-            <a href="#supportedQops">$supportedQops</a>
-          </li>
-          <li>
-            <a href="#imaProxy">$imaProxy</a>
-          </li>
-          <li>
-            <a href="#ieNoOpaque">$ieNoOpaque</a>
+            <a href="../source/Authentication/Adapter/Http.php.xhtml#line27">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#_basicAuth">_basicAuth</a>
-          </li>
-          <li>
-            <a href="#_basicHeader">_basicHeader</a>
-          </li>
-          <li>
-            <a href="#_calcNonce">_calcNonce</a>
-          </li>
-          <li>
-            <a href="#_calcOpaque">_calcOpaque</a>
-          </li>
-          <li>
-            <a href="#_challengeClient">_challengeClient</a>
-          </li>
-          <li>
-            <a href="#_digestAuth">_digestAuth</a>
-          </li>
-          <li>
-            <a href="#_digestHeader">_digestHeader</a>
-          </li>
-          <li>
-            <a href="#_parseDigestAuth">_parseDigestAuth</a>
-          </li>
-          <li>
-            <a href="#_secureStringCompare">_secureStringCompare</a>
-          </li>
-          <li>
-            <a href="#authenticate">authenticate</a>
-          </li>
-          <li>
-            <a href="#getBasicResolver">getBasicResolver</a>
-          </li>
-          <li>
-            <a href="#getDigestResolver">getDigestResolver</a>
-          </li>
-          <li>
-            <a href="#getRequest">getRequest</a>
-          </li>
-          <li>
-            <a href="#getResponse">getResponse</a>
-          </li>
-          <li>
-            <a href="#setBasicResolver">setBasicResolver</a>
-          </li>
-          <li>
-            <a href="#setDigestResolver">setDigestResolver</a>
-          </li>
-          <li>
-            <a href="#setRequest">setRequest</a>
-          </li>
-          <li>
-            <a href="#setResponse">setResponse</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Authentication\Adapter\</span>Http</h2>
-        <div class="file-notice">
-          <p>HTTP Authentication Adapter</p>
-          <p>
-            <pre>Implements a pretty good chunk of RFC 2617.</pre>
-          </p>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Authentication\Adapter\</small>Http</h1>
+        <h4>HTTP Authentication Adapter</h4>
+        <p>Implements a pretty good chunk of RFC 2617.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Http
+                implements
+                <a title="Zend\Authentication\Adapter\AdapterInterface" href="../interfaces/Zend_Authentication_Adapter_AdapterInterface.xhtml">AdapterInterface</a>
+            {<br/><ul class="none"><li>// members</li><li>protected <span title="Zend\Http\Request">Request</span> <a href="#members">$request</a>;
+                    </li><li>protected <span title="Zend\Http\Response">Response</span> <a href="#members">$response</a>;
+                    </li><li>protected <span title="Zend\Authentication\Adapter\Http\ResolverInterface">ResolverInterface</span> <a href="#members">$basicResolver</a>;
+                    </li><li>protected <span title="Zend\Authentication\Adapter\Http\ResolverInterface">ResolverInterface</span> <a href="#members">$digestResolver</a>;
+                    </li><li>protected array <a href="#members">$supportedSchemes</a>;
+                    </li><li>protected array <a href="#members">$acceptSchemes</a>;
+                    </li><li>protected string <a href="#members">$domains</a>;
+                    </li><li>protected string <a href="#members">$realm</a>;
+                    </li><li>protected int <a href="#members">$nonceTimeout</a>;
+                    </li><li>protected <span title="Zend\Authentication\Adapter\bool">bool</span> <a href="#members">$useOpaque</a>;
+                    </li><li>protected array <a href="#members">$supportedAlgos</a>;
+                    </li><li>protected string <a href="#members">$algo</a>;
+                    </li><li>protected array <a href="#members">$supportedQops</a>;
+                    </li><li>protected <span title="Zend\Authentication\Adapter\bool">bool</span> <a href="#members">$imaProxy</a>;
+                    </li><li>protected <span title="Zend\Authentication\Adapter\bool">bool</span> <a href="#members">$ieNoOpaque</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/__construct.xhtml">__construct</a>()
+                    </li><li>public Http <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/setBasicResolver.xhtml">setBasicResolver</a>()
+                    </li><li>public ResolverInterface <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/getBasicResolver.xhtml">getBasicResolver</a>()
+                    </li><li>public Http <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/setDigestResolver.xhtml">setDigestResolver</a>()
+                    </li><li>public ResolverInterface <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/getDigestResolver.xhtml">getDigestResolver</a>()
+                    </li><li>public Http <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/setRequest.xhtml">setRequest</a>()
+                    </li><li>public Request <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/getRequest.xhtml">getRequest</a>()
+                    </li><li>public Http <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/setResponse.xhtml">setResponse</a>()
+                    </li><li>public Response <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/getResponse.xhtml">getResponse</a>()
+                    </li><li>public Result <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/authenticate.xhtml">authenticate</a>()
+                    </li><li>protected Result <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_challengeClient.xhtml">_challengeClient</a>()
+                    </li><li>public Result <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/challengeClient.xhtml">challengeClient</a>()
+                    </li><li>protected string <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_basicHeader.xhtml">_basicHeader</a>()
+                    </li><li>protected string <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_digestHeader.xhtml">_digestHeader</a>()
+                    </li><li>protected Result <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_basicAuth.xhtml">_basicAuth</a>()
+                    </li><li>protected Result <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_digestAuth.xhtml">_digestAuth</a>()
+                    </li><li>protected string <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_calcNonce.xhtml">_calcNonce</a>()
+                    </li><li>protected string <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_calcOpaque.xhtml">_calcOpaque</a>()
+                    </li><li>protected array|bool <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_parseDigestAuth.xhtml">_parseDigestAuth</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Zend_Authentication_Adapter_AdapterInterface.xhtml">Zend\Authentication\Adapter\AdapterInterface</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Zend_Authentication_Adapter_AdapterInterface.xhtml">Zend\Authentication\Adapter\AdapterInterface</a>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="request"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $request</h4>
-            <ul class="varlist">
-              <li>Reference to the HTTP Request object</li>
-            </ul>
-          </li>
-          <li>
-            <a name="response"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $response</h4>
-            <ul class="varlist">
-              <li>Reference to the HTTP Response object</li>
-            </ul>
-          </li>
-          <li>
-            <a name="basicResolver"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $basicResolver</h4>
-            <ul class="varlist">
-              <li>Object that looks up user credentials for the Basic scheme</li>
-            </ul>
-          </li>
-          <li>
-            <a name="digestResolver"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $digestResolver</h4>
-            <ul class="varlist">
-              <li>Object that looks up user credentials for the Digest scheme</li>
-            </ul>
-          </li>
-          <li>
-            <a name="supportedSchemes"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $supportedSchemes</h4>
-            <ul class="varlist">
-              <li>List of authentication schemes supported by this class</li>
-            </ul>
-          </li>
-          <li>
-            <a name="acceptSchemes"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $acceptSchemes</h4>
-            <ul class="varlist">
-              <li>List of schemes this class will accept from the client</li>
-            </ul>
-          </li>
-          <li>
-            <a name="domains"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $domains</h4>
-            <ul class="varlist">
-              <li>Space-delimited list of protected domains for Digest Auth</li>
-            </ul>
-          </li>
-          <li>
-            <a name="realm"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $realm</h4>
-            <ul class="varlist">
-              <li>The protection realm to use</li>
-            </ul>
-          </li>
-          <li>
-            <a name="nonceTimeout"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $nonceTimeout</h4>
-            <ul class="varlist">
-              <li>Nonce timeout period</li>
-            </ul>
-          </li>
-          <li>
-            <a name="useOpaque"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $useOpaque</h4>
-            <ul class="varlist">
-              <li>Whether to send the opaque value in the header. True by default</li>
-            </ul>
-          </li>
-          <li>
-            <a name="supportedAlgos"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $supportedAlgos</h4>
-            <ul class="varlist">
-              <li>List of the supported digest algorithms. I want to support both MD5 and MD5-sess, but MD5-sess won't make it into the first version.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="algo"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $algo</h4>
-            <ul class="varlist">
-              <li>The actual algorithm to use. Defaults to MD5</li>
-            </ul>
-          </li>
-          <li>
-            <a name="supportedQops"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $supportedQops</h4>
-            <ul class="varlist">
-              <li>List of supported qop options. My intention is to support both 'auth' and 'auth-int', but 'auth-int' won't make it into the first version.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="imaProxy"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $imaProxy</h4>
-            <ul class="varlist">
-              <li>Whether or not to do Proxy Authentication instead of origin server authentication (send 407's instead of 401's). Off by default.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="ieNoOpaque"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $ieNoOpaque</h4>
-            <ul class="varlist">
-              <li>Flag indicating the client is IE and didn't bother to return the opaque string</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $config</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$config</code> - Configuration settings:</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="authenticate"/>
-            <h4><span class="label public">public</span>authenticate<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Authenticate</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getBasicResolver"/>
-            <h4><span class="label public">public</span>getBasicResolver<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Getter for the basicResolver property</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getDigestResolver"/>
-            <h4><span class="label public">public</span>getDigestResolver<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Getter for the digestResolver property</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getRequest"/>
-            <h4><span class="label public">public</span>getRequest<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Getter for the Request object</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getResponse"/>
-            <h4><span class="label public">public</span>getResponse<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Getter for the Response object</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setBasicResolver"/>
-            <h4><span class="label public">public</span>setBasicResolver<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Authentication_Adapter_Http_ResolverInterface.xhtml">Zend\Authentication\Adapter\Http\ResolverInterface</a></span><strong> $resolver</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Setter for the basicResolver property</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$resolver</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Provides a fluent interface</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setDigestResolver"/>
-            <h4><span class="label public">public</span>setDigestResolver<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Authentication_Adapter_Http_ResolverInterface.xhtml">Zend\Authentication\Adapter\Http\ResolverInterface</a></span><strong> $resolver</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Setter for the digestResolver property</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$resolver</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Provides a fluent interface</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setRequest"/>
-            <h4><span class="label public">public</span>setRequest<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Http_Request.xhtml">Zend\Http\Request</a></span><strong> $request</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Setter for the Request object</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$request</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Provides a fluent interface</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setResponse"/>
-            <h4><span class="label public">public</span>setResponse<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Zend_Http_Response.xhtml">Zend\Http\Response</a></span><strong> $response</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Setter for the Response object</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$response</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Provides a fluent interface</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_basicAuth"/>
-            <h4><span class="label protected">protected</span>_basicAuth<span style="font-size:90%;">( <span class="param-type">string</span><strong> $header</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Basic Authentication</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$header</code> - Client's Authorization header</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_basicHeader"/>
-            <h4><span class="label protected">protected</span>_basicHeader<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Basic Header<pre>Generates a Proxy- or WWW-Authenticate header value in the Basic
-authentication scheme.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Authenticate header value</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_calcNonce"/>
-            <h4><span class="label protected">protected</span>_calcNonce<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Calculate Nonce</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The nonce value</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_calcOpaque"/>
-            <h4><span class="label protected">protected</span>_calcOpaque<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Calculate Opaque<pre>The opaque string can be anything; the client must return it exactly as
-it was sent. It may be useful to store data in this string in some
-applications. Ideally, a new value for this would be generated each time
-a WWW-Authenticate header is sent (in order to reduce predictability),
-but we would have to be able to create the same exact value across at
-least two separate requests from the same client.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The opaque value</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_challengeClient"/>
-            <h4><span class="label protected">protected</span>_challengeClient<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Challenge Client<pre>Sets a 401 or 407 Unauthorized response code, and creates the
-appropriate Authenticate header(s) to prompt for credentials.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Always returns a non-identity Auth result</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_digestAuth"/>
-            <h4><span class="label protected">protected</span>_digestAuth<span style="font-size:90%;">( <span class="param-type">string</span><strong> $header</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Digest Authentication</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$header</code> - Client's Authorization header</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Valid auth result only on successful auth</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_digestHeader"/>
-            <h4><span class="label protected">protected</span>_digestHeader<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Digest Header<pre>Generates a Proxy- or WWW-Authenticate header value in the Digest
-authentication scheme.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Authenticate header value</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_parseDigestAuth"/>
-            <h4><span class="label protected">protected</span>_parseDigestAuth<span style="font-size:90%;">( <span class="param-type">string</span><strong> $header</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Parse Digest Authorization header</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$header</code> - Client's Authorization: HTTP header</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Data elements from header, or false if any part of</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_secureStringCompare"/>
-            <h4><span class="label protected">protected</span>_secureStringCompare<span style="font-size:90%;">( <span class="param-type">string</span><strong> $a</strong>, <span class="param-type">string</span><strong> $b</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Securely compare two strings for equality while avoided C level memcmp() optimisations capable of leaking timing information useful to an attacker attempting to iteratively guess the unknown string (e.g. password) being compared against.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$a</code> - </li>
-                <li><code>$b</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">27+</td>
+            <td>Support auth-int</td>
+          </tr>
+          <tr>
+            <td class="nummeric">27+</td>
+            <td>Track nonces, nonce-count, opaque for replay protection and stale support</td>
+          </tr>
+          <tr>
+            <td class="nummeric">27+</td>
+            <td>Support Authentication-Info header</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="acceptSchemes"><strong>$acceptSchemes</strong>
+                —
+                array<br/><span class="indent">List of schemes this class will accept from the client</span></li>
+            <li id="algo"><strong>$algo</strong>
+                —
+                string<br/><span class="indent">The actual algorithm to use. Defaults to MD5</span></li>
+            <li id="basicResolver"><strong>$basicResolver</strong>
+                —
+                <a href="#">Zend\Authentication\Adapter\Http\ResolverInterface</a><br/><span class="indent">Object that looks up user credentials for the Basic scheme</span></li>
+            <li id="digestResolver"><strong>$digestResolver</strong>
+                —
+                <a href="#">Zend\Authentication\Adapter\Http\ResolverInterface</a><br/><span class="indent">Object that looks up user credentials for the Digest scheme</span></li>
+            <li id="domains"><strong>$domains</strong>
+                —
+                string<br/><span class="indent">Space-delimited list of protected domains for Digest Auth</span></li>
+            <li id="ieNoOpaque"><strong>$ieNoOpaque</strong>
+                —
+                <a href="#">Zend\Authentication\Adapter\bool</a><br/><span class="indent">Flag indicating the client is IE and didn't bother to return the opaque string</span></li>
+            <li id="imaProxy"><strong>$imaProxy</strong>
+                —
+                <a href="#">Zend\Authentication\Adapter\bool</a><br/><span class="indent">Whether or not to do Proxy Authentication instead of origin server authentication (send 407's instead of 401's). Off by default.</span></li>
+            <li id="nonceTimeout"><strong>$nonceTimeout</strong>
+                —
+                int<br/><span class="indent">Nonce timeout period</span></li>
+            <li id="realm"><strong>$realm</strong>
+                —
+                string<br/><span class="indent">The protection realm to use</span></li>
+            <li id="request"><strong>$request</strong>
+                —
+                <a href="#">Zend\Http\Request</a><br/><span class="indent">Reference to the HTTP Request object</span></li>
+            <li id="response"><strong>$response</strong>
+                —
+                <a href="#">Zend\Http\Response</a><br/><span class="indent">Reference to the HTTP Response object</span></li>
+            <li id="supportedAlgos"><strong>$supportedAlgos</strong>
+                —
+                array<br/><span class="indent">List of the supported digest algorithms. I want to support both MD5 and MD5-sess, but MD5-sess won't make it into the first version.</span></li>
+            <li id="supportedQops"><strong>$supportedQops</strong>
+                —
+                array<br/><span class="indent">List of supported qop options. My intention is to support both 'auth' and 'auth-int', but 'auth-int' won't make it into the first version.</span></li>
+            <li id="supportedSchemes"><strong>$supportedSchemes</strong>
+                —
+                array<br/><span class="indent">List of authentication schemes supported by this class</span></li>
+            <li id="useOpaque"><strong>$useOpaque</strong>
+                —
+                <a href="#">Zend\Authentication\Adapter\bool</a><br/><span class="indent">Whether to send the opaque value in the header. True by default</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_basicAuth"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_basicAuth.xhtml">_basicAuth()</a>
+                — Basic Authentication</li>
+            <li id="_basicHeader"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_basicHeader.xhtml">_basicHeader()</a>
+                — Basic Header</li>
+            <li id="_calcNonce"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_calcNonce.xhtml">_calcNonce()</a>
+                — Calculate Nonce</li>
+            <li id="_calcOpaque"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_calcOpaque.xhtml">_calcOpaque()</a>
+                — Calculate Opaque</li>
+            <li id="_challengeClient">
+              <a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_challengeClient.xhtml">_challengeClient()</a>
+            </li>
+            <li id="_digestAuth"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_digestAuth.xhtml">_digestAuth()</a>
+                — Digest Authentication</li>
+            <li id="_digestHeader"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_digestHeader.xhtml">_digestHeader()</a>
+                — Digest Header</li>
+            <li id="_parseDigestAuth"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/_parseDigestAuth.xhtml">_parseDigestAuth()</a>
+                — Parse Digest Authorization header</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/__construct.xhtml">__construct()</a>
+                — Constructor</li>
+            <li id="authenticate"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/authenticate.xhtml">authenticate()</a>
+                — Authenticate</li>
+            <li id="challengeClient"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/challengeClient.xhtml">challengeClient()</a>
+                — Challenge Client</li>
+            <li id="getBasicResolver"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/getBasicResolver.xhtml">getBasicResolver()</a>
+                — Getter for the basicResolver property</li>
+            <li id="getDigestResolver"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/getDigestResolver.xhtml">getDigestResolver()</a>
+                — Getter for the digestResolver property</li>
+            <li id="getRequest"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/getRequest.xhtml">getRequest()</a>
+                — Getter for the Request object</li>
+            <li id="getResponse"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/getResponse.xhtml">getResponse()</a>
+                — Getter for the Response object</li>
+            <li id="setBasicResolver"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/setBasicResolver.xhtml">setBasicResolver()</a>
+                — Setter for the basicResolver property</li>
+            <li id="setDigestResolver"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/setDigestResolver.xhtml">setDigestResolver()</a>
+                — Setter for the digestResolver property</li>
+            <li id="setRequest"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/setRequest.xhtml">setRequest()</a>
+                — Setter for the Request object</li>
+            <li id="setResponse"><a title="Zend\Authentication\Adapter\Http" href="../classes/Zend_Authentication_Adapter_Http/setResponse.xhtml">setResponse()</a>
+                — Setter for the Response object</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

@@ -1,110 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Symfony\Component\Validator\MetadataInterface - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Symfony\Component\Validator\MetadataInterface</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../interfaces.xhtml">Interfaces</a>
+          </li>
+          <li class="separator">
+            <a href="../interfaces.xhtml#Symfony_Component_Validator">Symfony\Component\Validator</a>
+          </li>
+          <li class="separator">MetadataInterface</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Methods</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#accept">accept</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#findConstraints">findConstraints</a>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#violations">Violations</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/symfony/symfony/src/Symfony/Component/Validator/MetadataInterface.php.xhtml#line45">Source</a>
           </li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Symfony\Component\Validator\</span>MetadataInterface</h2>
-        <div class="file-notice">
-          <p>A container for validation metadata.</p>
-          <p>
-            <pre>The container contains constraints that may belong to different validation
-groups. Constraints for a specific group can be fetched by calling
-.
-Implement this interface to add validation metadata to your own metadata
-layer. Each metadata may have named properties. Each property can be
-represented by one or more  instances that
-are returned by . Since
-&lt;tt&gt;PropertyMetadataInterface&lt;/tt&gt; inherits from &lt;tt&gt;MetadataInterface&lt;/tt&gt;,
-each property may be divided into further properties.
-The  method of each metadata implements the Visitor pattern.
-The method should forward the call to the visitor's
- method and additionally call
-&lt;tt&gt;accept()&lt;/tt&gt; on all structurally related metadata instances.
-For example, to store constraints for PHP classes and their properties,
-create a class &lt;tt&gt;ClassMetadata&lt;/tt&gt; (implementing &lt;tt&gt;MetadataInterface&lt;/tt&gt;)
-and a class &lt;tt&gt;PropertyMetadata&lt;/tt&gt; (implementing &lt;tt&gt;PropertyMetadataInterface&lt;/tt&gt;).
-&lt;tt&gt;ClassMetadata::getPropertyMetadata($property)&lt;/tt&gt; returns all
-&lt;tt&gt;PropertyMetadata&lt;/tt&gt; instances for a property of that class. Its
-&lt;tt&gt;accept()&lt;/tt&gt;-method simply forwards to &lt;tt&gt;ValidationVisitorInterface::visit()&lt;/tt&gt;
-and calls &lt;tt&gt;accept()&lt;/tt&gt; on all contained &lt;tt&gt;PropertyMetadata&lt;/tt&gt;
-instances, which themselves call &lt;tt&gt;ValidationVisitorInterface::visit()&lt;/tt&gt;
-again.
-</pre>
-          </p>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Symfony\Component\Validator\</small>MetadataInterface</h1>
+        <h4>A container for validation metadata.</h4>
+        <p>The container contains constraints that may belong to different validation<br/>groups. Constraints for a specific group can be fetched by calling<br/>.<br/>Implement this interface to add validation metadata to your own metadata<br/>layer. Each metadata may have named properties. Each property can be<br/>represented by one or more instances that<br/>are returned by . Since<br/>&lt;tt&gt;PropertyMetadataInterface&lt;/tt&gt; inherits from &lt;tt&gt;MetadataInterface&lt;/tt&gt;,<br/>each property may be divided into further properties.<br/>The method of each metadata implements the Visitor pattern.<br/>The method should forward the call to the visitor's<br/>method and additionally call<br/>&lt;tt&gt;accept()&lt;/tt&gt; on all structurally related metadata instances.<br/>For example, to store constraints for PHP classes and their properties,<br/>create a class &lt;tt&gt;ClassMetadata&lt;/tt&gt; (implementing &lt;tt&gt;MetadataInterface&lt;/tt&gt;)<br/>and a class &lt;tt&gt;PropertyMetadata&lt;/tt&gt; (implementing &lt;tt&gt;PropertyMetadataInterface&lt;/tt&gt;).<br/>&lt;tt&gt;ClassMetadata::getPropertyMetadata($property)&lt;/tt&gt; returns all<br/>&lt;tt&gt;PropertyMetadata&lt;/tt&gt; instances for a property of that class. Its<br/>&lt;tt&gt;accept()&lt;/tt&gt;-method simply forwards to &lt;tt&gt;ValidationVisitorInterface::visit()&lt;/tt&gt;<br/>and calls &lt;tt&gt;accept()&lt;/tt&gt; on all contained &lt;tt&gt;PropertyMetadata&lt;/tt&gt;<br/>instances, which themselves call &lt;tt&gt;ValidationVisitorInterface::visit()&lt;/tt&gt;<br/>again.<br/></p>
+        <ul>
+          <li>Author: Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">interface MetadataInterface
+            {<br/><ul class="none"><li>// methods</li><li>public void <a title="Symfony\Component\Validator\MetadataInterface" href="../interfaces/Symfony_Component_Validator_MetadataInterface/accept.xhtml">accept</a>()
+                    </li><li>public array <a title="Symfony\Component\Validator\MetadataInterface" href="../interfaces/Symfony_Component_Validator_MetadataInterface/findConstraints.xhtml">findConstraints</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extended by</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Symfony_Component_Validator_PropertyMetadataInterface.xhtml">Symfony\Component\Validator\PropertyMetadataInterface</a>
+            </li>
+          </ul>
+          <h4>Implemented by</h4>
+          <ul>
+            <li>
+              <a href="../classes/Symfony_Component_Validator_Mapping_ClassMetadata.xhtml">Symfony\Component\Validator\Mapping\ClassMetadata</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="accept"/>
-            <h4><span class="label public">public</span>accept<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Validator_ValidationVisitorInterface.xhtml">Symfony\Component\Validator\ValidationVisitorInterface</a></span><strong> $visitor</strong>, <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">array</span><strong> $group</strong>, <span class="param-type">string</span><strong> $propertyPath</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Implementation of the Visitor design pattern.<pre>Calls  and then forwards the
-&lt;tt&gt;accept()&lt;/tt&gt;-call to all property metadata instances.
-</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$visitor</code> - The visitor implementing the validation logic.</li>
-                <li><code>$value</code> - The value to validate.</li>
-                <li><code>$group</code> - The validation group to validate in.</li>
-                <li><code>$propertyPath</code> - The current property path in the validation graph.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="findConstraints"/>
-            <h4><span class="label public">public</span>findConstraints<span style="font-size:90%;">( <span class="param-type">string</span><strong> $group</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns all constraints for a given validation group.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$group</code> - The validation group.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>A list of constraint instances.</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="accept"><a title="Symfony\Component\Validator\MetadataInterface" href="../interfaces/Symfony_Component_Validator_MetadataInterface/accept.xhtml">accept()</a>
+                — Implementation of the Visitor design pattern.</li>
+            <li id="findConstraints"><a title="Symfony\Component\Validator\MetadataInterface" href="../interfaces/Symfony_Component_Validator_MetadataInterface/findConstraints.xhtml">findConstraints()</a>
+                — Returns all constraints for a given validation group.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>
