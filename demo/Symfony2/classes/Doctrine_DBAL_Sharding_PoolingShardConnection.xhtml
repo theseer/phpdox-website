@@ -1,1314 +1,398 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\DBAL\Sharding\PoolingShardConnection - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\DBAL\Sharding\PoolingShardConnection</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_DBAL_Sharding">Doctrine\DBAL\Sharding</a>
+          </li>
+          <li class="separator">PoolingShardConnection</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#activeConnections">$activeConnections</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#activeShardId">$activeShardId</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#connections">$connections</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#shardManager">$shardManager</a>
+            <a href="#constants">Constants</a>
           </li>
           <li>
-            <a href="#_conn">$_conn</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#_config">$_config</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#_eventManager">$_eventManager</a>
-          </li>
-          <li>
-            <a href="#_expr">$_expr</a>
-          </li>
-          <li>
-            <a href="#_platform">$_platform</a>
-          </li>
-          <li>
-            <a href="#_schemaManager">$_schemaManager</a>
-          </li>
-          <li>
-            <a href="#_driver">$_driver</a>
+            <a href="../source/doctrine/dbal/lib/Doctrine/DBAL/Sharding/PoolingShardConnection.php.xhtml#line67">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\DBAL\Sharding\</small>PoolingShardConnection</h1>
+        <h4>Sharding implementation that pools many different connections internally and serves data from the currently active connection.</h4>
+        <p>The internals of this class are:<br/><br/>- All sharding clients are specified and given a shard-id during<br/>configuration.<br/>- By default, the global shard is selected. If no global shard is configured<br/>an exception is thrown on access.<br/>- Selecting a shard by distribution value delegates the mapping<br/>"distributionValue" =&gt; "client" to the ShardChooser interface.<br/>- An exception is thrown if trying to switch shards during an open<br/>transaction.<br/><br/>Instantiation through the DriverManager looks like:</p>
         <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#_getNestedTransactionSavePointName">_getNestedTransactionSavePointName</a>
-          </li>
-          <li>
-            <a href="#beginTransaction">beginTransaction</a>
-          </li>
-          <li>
-            <a href="#close">close</a>
-          </li>
-          <li>
-            <a href="#close">close</a>
-          </li>
-          <li>
-            <a href="#commit">commit</a>
-          </li>
-          <li>
-            <a href="#connect">connect</a>
-          </li>
-          <li>
-            <a href="#connect">connect</a>
-          </li>
-          <li>
-            <a href="#connectTo">connectTo</a>
-          </li>
-          <li>
-            <a href="#convertToDatabaseValue">convertToDatabaseValue</a>
-          </li>
-          <li>
-            <a href="#convertToPHPValue">convertToPHPValue</a>
-          </li>
-          <li>
-            <a href="#createQueryBuilder">createQueryBuilder</a>
-          </li>
-          <li>
-            <a href="#createSavepoint">createSavepoint</a>
-          </li>
-          <li>
-            <a href="#delete">delete</a>
-          </li>
-          <li>
-            <a href="#errorCode">errorCode</a>
-          </li>
-          <li>
-            <a href="#errorInfo">errorInfo</a>
-          </li>
-          <li>
-            <a href="#exec">exec</a>
-          </li>
-          <li>
-            <a href="#executeCacheQuery">executeCacheQuery</a>
-          </li>
-          <li>
-            <a href="#executeQuery">executeQuery</a>
-          </li>
-          <li>
-            <a href="#executeUpdate">executeUpdate</a>
-          </li>
-          <li>
-            <a href="#fetchAll">fetchAll</a>
-          </li>
-          <li>
-            <a href="#fetchArray">fetchArray</a>
-          </li>
-          <li>
-            <a href="#fetchAssoc">fetchAssoc</a>
-          </li>
-          <li>
-            <a href="#fetchColumn">fetchColumn</a>
-          </li>
-          <li>
-            <a href="#getConfiguration">getConfiguration</a>
-          </li>
-          <li>
-            <a href="#getDatabase">getDatabase</a>
-          </li>
-          <li>
-            <a href="#getDatabasePlatform">getDatabasePlatform</a>
-          </li>
-          <li>
-            <a href="#getDriver">getDriver</a>
-          </li>
-          <li>
-            <a href="#getEventManager">getEventManager</a>
-          </li>
-          <li>
-            <a href="#getExpressionBuilder">getExpressionBuilder</a>
-          </li>
-          <li>
-            <a href="#getHost">getHost</a>
-          </li>
-          <li>
-            <a href="#getNestTransactionsWithSavepoints">getNestTransactionsWithSavepoints</a>
-          </li>
-          <li>
-            <a href="#getParams">getParams</a>
-          </li>
-          <li>
-            <a href="#getPassword">getPassword</a>
-          </li>
-          <li>
-            <a href="#getPort">getPort</a>
-          </li>
-          <li>
-            <a href="#getSchemaManager">getSchemaManager</a>
-          </li>
-          <li>
-            <a href="#getTransactionIsolation">getTransactionIsolation</a>
-          </li>
-          <li>
-            <a href="#getTransactionNestingLevel">getTransactionNestingLevel</a>
-          </li>
-          <li>
-            <a href="#getUsername">getUsername</a>
-          </li>
-          <li>
-            <a href="#getWrappedConnection">getWrappedConnection</a>
-          </li>
-          <li>
-            <a href="#insert">insert</a>
-          </li>
-          <li>
-            <a href="#isConnected">isConnected</a>
-          </li>
-          <li>
-            <a href="#isConnected">isConnected</a>
-          </li>
-          <li>
-            <a href="#isRollbackOnly">isRollbackOnly</a>
-          </li>
-          <li>
-            <a href="#isTransactionActive">isTransactionActive</a>
-          </li>
-          <li>
-            <a href="#lastInsertId">lastInsertId</a>
-          </li>
-          <li>
-            <a href="#prepare">prepare</a>
-          </li>
-          <li>
-            <a href="#project">project</a>
-          </li>
-          <li>
-            <a href="#query">query</a>
-          </li>
-          <li>
-            <a href="#quote">quote</a>
-          </li>
-          <li>
-            <a href="#quoteIdentifier">quoteIdentifier</a>
-          </li>
-          <li>
-            <a href="#releaseSavepoint">releaseSavepoint</a>
-          </li>
-          <li>
-            <a href="#resolveParams">resolveParams</a>
-          </li>
-          <li>
-            <a href="#rollBack">rollBack</a>
-          </li>
-          <li>
-            <a href="#rollbackSavepoint">rollbackSavepoint</a>
-          </li>
-          <li>
-            <a href="#setFetchMode">setFetchMode</a>
-          </li>
-          <li>
-            <a href="#setNestTransactionsWithSavepoints">setNestTransactionsWithSavepoints</a>
-          </li>
-          <li>
-            <a href="#setRollbackOnly">setRollbackOnly</a>
-          </li>
-          <li>
-            <a href="#setTransactionIsolation">setTransactionIsolation</a>
-          </li>
-          <li>
-            <a href="#transactional">transactional</a>
-          </li>
-          <li>
-            <a href="#update">update</a>
-          </li>
+          <li>Author: Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\DBAL\Sharding\</span>PoolingShardConnection</h2>
-        <div class="file-notice">
-          <p>Sharding implementation that pools many different connections internally and serves data from the currently active connection.</p>
-          <p>
-            <pre>The internals of this class are:
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PoolingShardConnection
+                extends <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection.xhtml">Connection</a>
+            {<br/><ul class="none"><li>// Inherited constants from <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection.xhtml">Connection</a></li><li>const <a href="#TRANSACTION_READ_UNCOMMITTED">TRANSACTION_READ_UNCOMMITTED</a> = 1;</li><li>const <a href="#TRANSACTION_READ_COMMITTED">TRANSACTION_READ_COMMITTED</a> = 2;</li><li>const <a href="#TRANSACTION_REPEATABLE_READ">TRANSACTION_REPEATABLE_READ</a> = 3;</li><li>const <a href="#TRANSACTION_SERIALIZABLE">TRANSACTION_SERIALIZABLE</a> = 4;</li><li>const <a href="#PARAM_INT_ARRAY">PARAM_INT_ARRAY</a> = 101;</li><li>const <a href="#PARAM_STR_ARRAY">PARAM_STR_ARRAY</a> = 102;</li><li>const <a href="#ARRAY_PARAM_OFFSET">ARRAY_PARAM_OFFSET</a> = 100;</li></ul><ul class="none"><li>// members</li><li>private array <a href="#members">$activeConnections</a>;
+                    </li><li>private int <a href="#members">$activeShardId</a>;
+                    </li><li>private array <a href="#members">$connections</a>;
+                    </li><li>private <span title="Doctrine\DBAL\Sharding\ShardManager">ShardManager</span> <a href="#members">$shardManager</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Doctrine\DBAL\Connection">Connection</span></li><li>protected <span title="\Doctrine\DBAL\Driver\Connection">Connection</span> <a href="#members">$_conn</a>;
+                        </li><li>protected <span title="\Doctrine\DBAL\Configuration">Configuration</span> <a href="#members">$_config</a>;
+                        </li><li>protected <span title="\Doctrine\Common\EventManager">EventManager</span> <a href="#members">$_eventManager</a>;
+                        </li><li>protected <span title="\Doctrine\DBAL\Query\Expression\ExpressionBuilder">ExpressionBuilder</span> <a href="#members">$_expr</a>;
+                        </li><li>protected <span title="\Doctrine\DBAL\Platforms\AbstractPlatform">AbstractPlatform</span> <a href="#members">$_platform</a>;
+                        </li><li>protected <span title="\Doctrine\DBAL\Schema\AbstractSchemaManager">AbstractSchemaManager</span> <a href="#members">$_schemaManager</a>;
+                        </li><li>protected <span title="\Doctrine\DBAL\Driver">Driver</span> <a href="#members">$_driver</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Doctrine\DBAL\Sharding\PoolingShardConnection" href="../classes/Doctrine_DBAL_Sharding_PoolingShardConnection/__construct.xhtml">__construct</a>()
+                    </li><li>public bool <a title="Doctrine\DBAL\Sharding\PoolingShardConnection" href="../classes/Doctrine_DBAL_Sharding_PoolingShardConnection/connect.xhtml">connect</a>()
+                    </li><li>protected Driver <a title="Doctrine\DBAL\Sharding\PoolingShardConnection" href="../classes/Doctrine_DBAL_Sharding_PoolingShardConnection/connectTo.xhtml">connectTo</a>()
+                    </li><li>public void <a title="Doctrine\DBAL\Sharding\PoolingShardConnection" href="../classes/Doctrine_DBAL_Sharding_PoolingShardConnection/isConnected.xhtml">isConnected</a>()
+                    </li><li>public void <a title="Doctrine\DBAL\Sharding\PoolingShardConnection" href="../classes/Doctrine_DBAL_Sharding_PoolingShardConnection/close.xhtml">close</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Doctrine\DBAL\Connection">Connection</span></li><li>public void <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/__construct.xhtml">__construct</a>()
+                        </li><li>public array <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getParams.xhtml">getParams</a>()
+                        </li><li>public string <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getDatabase.xhtml">getDatabase</a>()
+                        </li><li>public string <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getHost.xhtml">getHost</a>()
+                        </li><li>public mixed <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getPort.xhtml">getPort</a>()
+                        </li><li>public string <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getUsername.xhtml">getUsername</a>()
+                        </li><li>public string <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getPassword.xhtml">getPassword</a>()
+                        </li><li>public Driver <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getDriver.xhtml">getDriver</a>()
+                        </li><li>public Configuration <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getConfiguration.xhtml">getConfiguration</a>()
+                        </li><li>public EventManager <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getEventManager.xhtml">getEventManager</a>()
+                        </li><li>public AbstractPlatform <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getDatabasePlatform.xhtml">getDatabasePlatform</a>()
+                        </li><li>public ExpressionBuilder <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getExpressionBuilder.xhtml">getExpressionBuilder</a>()
+                        </li><li>public boolean <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/connect.xhtml">connect</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/setFetchMode.xhtml">setFetchMode</a>()
+                        </li><li>public array <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/fetchAssoc.xhtml">fetchAssoc</a>()
+                        </li><li>public array <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/fetchArray.xhtml">fetchArray</a>()
+                        </li><li>public mixed <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/fetchColumn.xhtml">fetchColumn</a>()
+                        </li><li>public boolean <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/isConnected.xhtml">isConnected</a>()
+                        </li><li>public boolean <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/isTransactionActive.xhtml">isTransactionActive</a>()
+                        </li><li>public integer <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/delete.xhtml">delete</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/close.xhtml">close</a>()
+                        </li><li>public integer <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/setTransactionIsolation.xhtml">setTransactionIsolation</a>()
+                        </li><li>public integer <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getTransactionIsolation.xhtml">getTransactionIsolation</a>()
+                        </li><li>public integer <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/update.xhtml">update</a>()
+                        </li><li>public integer <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/insert.xhtml">insert</a>()
+                        </li><li>public string <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/quoteIdentifier.xhtml">quoteIdentifier</a>()
+                        </li><li>public string <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/quote.xhtml">quote</a>()
+                        </li><li>public array <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/fetchAll.xhtml">fetchAll</a>()
+                        </li><li>public Statement <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/prepare.xhtml">prepare</a>()
+                        </li><li>public Statement <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/executeQuery.xhtml">executeQuery</a>()
+                        </li><li>public ResultStatement <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/executeCacheQuery.xhtml">executeCacheQuery</a>()
+                        </li><li>public mixed <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/project.xhtml">project</a>()
+                        </li><li>public Statement <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/query.xhtml">query</a>()
+                        </li><li>public integer <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/executeUpdate.xhtml">executeUpdate</a>()
+                        </li><li>public integer <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/exec.xhtml">exec</a>()
+                        </li><li>public integer <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getTransactionNestingLevel.xhtml">getTransactionNestingLevel</a>()
+                        </li><li>public integer <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/errorCode.xhtml">errorCode</a>()
+                        </li><li>public array <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/errorInfo.xhtml">errorInfo</a>()
+                        </li><li>public string <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/lastInsertId.xhtml">lastInsertId</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/transactional.xhtml">transactional</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/setNestTransactionsWithSavepoints.xhtml">setNestTransactionsWithSavepoints</a>()
+                        </li><li>public boolean <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getNestTransactionsWithSavepoints.xhtml">getNestTransactionsWithSavepoints</a>()
+                        </li><li>protected mixed <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/_getNestedTransactionSavePointName.xhtml">_getNestedTransactionSavePointName</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/beginTransaction.xhtml">beginTransaction</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/commit.xhtml">commit</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/rollBack.xhtml">rollBack</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/createSavepoint.xhtml">createSavepoint</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/releaseSavepoint.xhtml">releaseSavepoint</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/rollbackSavepoint.xhtml">rollbackSavepoint</a>()
+                        </li><li>public Connection <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getWrappedConnection.xhtml">getWrappedConnection</a>()
+                        </li><li>public AbstractSchemaManager <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getSchemaManager.xhtml">getSchemaManager</a>()
+                        </li><li>public void <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/setRollbackOnly.xhtml">setRollbackOnly</a>()
+                        </li><li>public boolean <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/isRollbackOnly.xhtml">isRollbackOnly</a>()
+                        </li><li>public mixed <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/convertToDatabaseValue.xhtml">convertToDatabaseValue</a>()
+                        </li><li>public mixed <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/convertToPHPValue.xhtml">convertToPHPValue</a>()
+                        </li><li>public array <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/resolveParams.xhtml">resolveParams</a>()
+                        </li><li>public QueryBuilder <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/createQueryBuilder.xhtml">createQueryBuilder</a>()
+                        </li></ul>
 
-- All sharding clients are specified and given a shard-id during
-  configuration.
-- By default, the global shard is selected. If no global shard is configured
-  an exception is thrown on access.
-- Selecting a shard by distribution value delegates the mapping
-  "distributionValue" =&gt; "client" to the ShardChooser interface.
-- An exception is thrown if trying to switch shards during an open
-  transaction.
-
-Instantiation through the DriverManager looks like:</pre>
-          </p>
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Doctrine_DBAL_Connection.xhtml">Doctrine\DBAL\Connection</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"><li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>$conn = DriverManager::getConnection(array(
-   'wrapperClass' =&gt; 'Doctrine\DBAL\Sharding\PoolingShardConnection',
-   'driver' =&gt; 'pdo_mysql',
-   'global' =&gt; array('user' =&gt; '', 'password' =&gt; '', 'host' =&gt; '', 'dbname' =&gt; ''),
-   'shards' =&gt; array(
-       array('id' =&gt; 1, 'user' =&gt; 'slave1', 'password', 'host' =&gt; '', 'dbname' =&gt; ''),
-       array('id' =&gt; 2, 'user' =&gt; 'slave2', 'password', 'host' =&gt; '', 'dbname' =&gt; ''),
-   ),
-   'shardChoser' =&gt; 'Doctrine\DBAL\Sharding\ShardChoser\MultiTenantShardChoser',
-));
-$shardManager = $conn-&gt;getShardManager();
-$shardManager-&gt;selectGlobal();
-$shardManager-&gt;selectShard($value);</ul>
-        <h3>Constants</h3>
-        <ul class="varlist"/>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="activeConnections"/>
-            <h4><span class="label private">private</span>array 
-                
-                $activeConnections</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="activeShardId"/>
-            <h4><span class="label private">private</span>int 
-                
-                $activeShardId</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="connections"/>
-            <h4><span class="label private">private</span>array 
-                
-                $connections</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="shardManager"/>
-            <h4><span class="label private">private</span>object 
-                
-                $shardManager</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type"><a href="../interfaces/Doctrine_DBAL_Driver.xhtml">Doctrine\DBAL\Driver</a></span><strong> $driver</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Configuration.xhtml">Doctrine\DBAL\Configuration</a></span><strong> $config</strong>, <span class="param-type"><a href="../classes/Doctrine_Common_EventManager.xhtml">Doctrine\Common\EventManager</a></span><strong> $eventManager</strong> )</span></h4>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="beginTransaction"/>
-            <h4><span class="label public">public</span>beginTransaction<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Starts a transaction by suspending auto-commit mode.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="close"/>
-            <h4><span class="label public">public</span>close<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="close"/>
-            <h4><span class="label public">public</span>close<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Closes the connection.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="commit"/>
-            <h4><span class="label public">public</span>commit<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Commits the current transaction.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ConnectionException If the commit failed due to no active transaction or</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="connect"/>
-            <h4><span class="label public">public</span>connect<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $shardId</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Connect to a given shard</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$shardId</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="connect"/>
-            <h4><span class="label public">public</span>connect<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Establishes the connection with the database.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the connection was successfully established, FALSE if</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="convertToDatabaseValue"/>
-            <h4><span class="label public">public</span>convertToDatabaseValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Converts a given value to its database representation according to the conversion rules of a specific DBAL mapping type.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - The value to convert.</li>
-                <li><code>$type</code> - The name of the DBAL mapping type.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The converted value.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="convertToPHPValue"/>
-            <h4><span class="label public">public</span>convertToPHPValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Converts a given value to its PHP representation according to the conversion rules of a specific DBAL mapping type.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - The value to convert.</li>
-                <li><code>$type</code> - The name of the DBAL mapping type.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The converted type.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="createQueryBuilder"/>
-            <h4><span class="label public">public</span>createQueryBuilder<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Create a new instance of a SQL query builder.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="createSavepoint"/>
-            <h4><span class="label public">public</span>createSavepoint<span style="font-size:90%;">( <span class="param-type">string</span><strong> $savepoint</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>createSavepoint creates a new savepoint</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$savepoint</code> - name of a savepoint to set</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="delete"/>
-            <h4><span class="label public">public</span>delete<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong>, <span class="param-type">Array</span><strong> $identifier</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Executes an SQL DELETE statement on a table.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$tableName</code> - The name of the table on which to delete.</li>
-                <li><code>$identifier</code> - The deletion criteria. An associative array containing column-value pairs.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The number of affected rows.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="errorCode"/>
-            <h4><span class="label public">public</span>errorCode<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Fetch the SQLSTATE associated with the last database operation.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The last error code.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="errorInfo"/>
-            <h4><span class="label public">public</span>errorInfo<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Fetch extended error information associated with the last database operation.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The last error information.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="exec"/>
-            <h4><span class="label public">public</span>exec<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Execute an SQL statement and return the number of affected rows.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$statement</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The number of affected rows.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="executeCacheQuery"/>
-            <h4><span class="label public">public</span>executeCacheQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong>, <span class="param-type">array</span><strong> $params</strong>, <span class="param-type">array</span><strong> $types</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Cache_QueryCacheProfile.xhtml">Doctrine\DBAL\Cache\QueryCacheProfile</a></span><strong> $qcp</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Execute a caching query and</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$query</code> - </li>
-                <li><code>$params</code> - </li>
-                <li><code>$types</code> - </li>
-                <li><code>$qcp</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="executeQuery"/>
-            <h4><span class="label public">public</span>executeQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">Array</span><strong> $types</strong>, <span class="param-type"><a href="../classes/Doctrine_DBAL_Cache_QueryCacheProfile.xhtml">Doctrine\DBAL\Cache\QueryCacheProfile</a></span><strong> $qcp</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Executes an, optionally parameterized, SQL query.<pre>If the query is parameterized, a prepared statement is used.
-If an SQLLogger is configured, the execution is logged.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$query</code> - The SQL query to execute.</li>
-                <li><code>$params</code> - The parameters to bind to the query, if any.</li>
-                <li><code>$types</code> - The types the previous parameters are in.</li>
-                <li><code>$qcp</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The executed statement.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="executeUpdate"/>
-            <h4><span class="label public">public</span>executeUpdate<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">Array</span><strong> $types</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Executes an SQL INSERT/UPDATE/DELETE query with the given parameters and returns the number of affected rows.<pre>This method supports PDO binding types as well as DBAL mapping types.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$query</code> - The SQL query.</li>
-                <li><code>$params</code> - The query parameters.</li>
-                <li><code>$types</code> - The parameter types.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The number of affected rows.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="fetchAll"/>
-            <h4><span class="label public">public</span>fetchAll<span style="font-size:90%;">( <span class="param-type">string</span><strong> $sql</strong>, <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Prepares and executes an SQL query and returns the result as an associative array.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$sql</code> - The SQL query.</li>
-                <li><code>$params</code> - The query parameters.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="fetchArray"/>
-            <h4><span class="label public">public</span>fetchArray<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong>, <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Prepares and executes an SQL query and returns the first row of the result as a numerically indexed array.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$statement</code> - sql query to be executed</li>
-                <li><code>$params</code> - prepared statement params</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="fetchAssoc"/>
-            <h4><span class="label public">public</span>fetchAssoc<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong>, <span class="param-type">Array</span><strong> $params</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Prepares and executes an SQL query and returns the first row of the result as an associative array.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$statement</code> - The SQL query.</li>
-                <li><code>$params</code> - The query parameters.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="fetchColumn"/>
-            <h4><span class="label public">public</span>fetchColumn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">integer</span><strong> $colnum</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Prepares and executes an SQL query and returns the value of a single column of the first row of the result.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$statement</code> - sql query to be executed</li>
-                <li><code>$params</code> - prepared statement params</li>
-                <li><code>$colnum</code> - 0-indexed column number to retrieve</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getConfiguration"/>
-            <h4><span class="label public">public</span>getConfiguration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the Configuration used by the Connection.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getDatabase"/>
-            <h4><span class="label public">public</span>getDatabase<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the name of the database this Connection is connected to.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>$database</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getDatabasePlatform"/>
-            <h4><span class="label public">public</span>getDatabasePlatform<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the DatabasePlatform for the connection.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getDriver"/>
-            <h4><span class="label public">public</span>getDriver<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the DBAL driver instance.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getEventManager"/>
-            <h4><span class="label public">public</span>getEventManager<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the EventManager used by the Connection.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getExpressionBuilder"/>
-            <h4><span class="label public">public</span>getExpressionBuilder<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the ExpressionBuilder for the connection.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getHost"/>
-            <h4><span class="label public">public</span>getHost<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the hostname of the currently connected database.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getNestTransactionsWithSavepoints"/>
-            <h4><span class="label public">public</span>getNestTransactionsWithSavepoints<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get if nested transactions should use savepoints</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getParams"/>
-            <h4><span class="label public">public</span>getParams<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the parameters used during instantiation.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>$params</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPassword"/>
-            <h4><span class="label public">public</span>getPassword<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the password used by this connection.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPort"/>
-            <h4><span class="label public">public</span>getPort<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the port of the currently connected database.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSchemaManager"/>
-            <h4><span class="label public">public</span>getSchemaManager<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the SchemaManager that can be used to inspect or change the database schema through the connection.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTransactionIsolation"/>
-            <h4><span class="label public">public</span>getTransactionIsolation<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the currently active transaction isolation level.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The current transaction isolation level.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTransactionNestingLevel"/>
-            <h4><span class="label public">public</span>getTransactionNestingLevel<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the current transaction nesting level.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The nesting level. A value of 0 means there's no active transaction.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getUsername"/>
-            <h4><span class="label public">public</span>getUsername<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the username used by this connection.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getWrappedConnection"/>
-            <h4><span class="label public">public</span>getWrappedConnection<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the wrapped driver connection.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="insert"/>
-            <h4><span class="label public">public</span>insert<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong>, <span class="param-type">Array</span><strong> $data</strong>, <span class="param-type">Array</span><strong> $types</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Inserts a table row with specified data.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$tableName</code> - The name of the table to insert data into.</li>
-                <li><code>$data</code> - An associative array containing column-value pairs.</li>
-                <li><code>$types</code> - Types of the inserted data.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The number of affected rows.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isConnected"/>
-            <h4><span class="label public">public</span>isConnected<span style="font-size:90%;">( <span class="param-type"/><strong> $shardId</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="isConnected"/>
-            <h4><span class="label public">public</span>isConnected<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Whether an actual connection to the database is established.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isRollbackOnly"/>
-            <h4><span class="label public">public</span>isRollbackOnly<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check whether the current transaction is marked for rollback only.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ConnectionException If no transaction is active.</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isTransactionActive"/>
-            <h4><span class="label public">public</span>isTransactionActive<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether a transaction is currently active.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if a transaction is currently active, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="lastInsertId"/>
-            <h4><span class="label public">public</span>lastInsertId<span style="font-size:90%;">( <span class="param-type">string</span><strong> $seqName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the ID of the last inserted row, or the last value from a sequence object, depending on the underlying driver.<pre>Note: This method may not return a meaningful or consistent result across different drivers,
-because the underlying database may not even support the notion of AUTO_INCREMENT/IDENTITY
-columns or sequences.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$seqName</code> - Name of the sequence object from which the ID should be returned.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>A string representation of the last inserted ID.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="prepare"/>
-            <h4><span class="label public">public</span>prepare<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Prepares an SQL statement.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$statement</code> - The SQL statement to prepare.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The prepared statement.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="project"/>
-            <h4><span class="label public">public</span>project<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong>, <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type"><span title="Closure">Closure</span></span><strong> $function</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Executes an, optionally parameterized, SQL query and returns the result, applying a given projection/transformation function on each row of the result.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$query</code> - The SQL query to execute.</li>
-                <li><code>$params</code> - The parameters, if any.</li>
-                <li><code>$mapper</code> - The transformation function that is applied on each row.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The projected result of the query.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="query"/>
-            <h4><span class="label public">public</span>query<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Executes an SQL statement, returning a result set as a Statement object.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$statement</code> - </li>
-                <li><code>$fetchType</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="quote"/>
-            <h4><span class="label public">public</span>quote<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $input</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Quotes a given input parameter.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$input</code> - Parameter to be quoted.</li>
-                <li><code>$type</code> - Type of the parameter.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The quoted parameter.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="quoteIdentifier"/>
-            <h4><span class="label public">public</span>quoteIdentifier<span style="font-size:90%;">( <span class="param-type">string</span><strong> $str</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Quote a string so it can be safely used as a table or column name, even if it is a reserved name.<pre>Delimiting style depends on the underlying database platform that is being used.
-
-NOTE: Just because you CAN use quoted identifiers does not mean
-you SHOULD use them. In general, they end up causing way more
-problems than they solve.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$str</code> - The name to be quoted.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The quoted name.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="releaseSavepoint"/>
-            <h4><span class="label public">public</span>releaseSavepoint<span style="font-size:90%;">( <span class="param-type">string</span><strong> $savepoint</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>releaseSavePoint releases given savepoint</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$savepoint</code> - name of a savepoint to release</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="resolveParams"/>
-            <h4><span class="label public">public</span>resolveParams<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $params</strong>, <span class="param-type">Array</span><strong> $types</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Resolves the parameters to a format which can be displayed.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$params</code> - </li>
-                <li><code>$types</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="rollBack"/>
-            <h4><span class="label public">public</span>rollBack<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Cancel any database changes done during the current transaction.<pre>this method can be listened with onPreTransactionRollback and onTransactionRollback
-eventlistener methods</pre></li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ConnectionException If the rollback operation failed.</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="rollbackSavepoint"/>
-            <h4><span class="label public">public</span>rollbackSavepoint<span style="font-size:90%;">( <span class="param-type">string</span><strong> $savepoint</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>rollbackSavePoint releases given savepoint</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$savepoint</code> - name of a savepoint to rollback to</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setFetchMode"/>
-            <h4><span class="label public">public</span>setFetchMode<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $fetchMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>setFetchMode</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fetchMode</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setNestTransactionsWithSavepoints"/>
-            <h4><span class="label public">public</span>setNestTransactionsWithSavepoints<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $nestTransactionsWithSavepoints</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set if nested transactions should use savepoints</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$nestTransactionsWithSavepoints</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setRollbackOnly"/>
-            <h4><span class="label public">public</span>setRollbackOnly<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Marks the current transaction so that the only possible outcome for the transaction to be rolled back.</li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>ConnectionException If no transaction is active.</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setTransactionIsolation"/>
-            <h4><span class="label public">public</span>setTransactionIsolation<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $level</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the transaction isolation level.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$level</code> - The level to set.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="transactional"/>
-            <h4><span class="label public">public</span>transactional<span style="font-size:90%;">( <span class="param-type"><span title="Closure">Closure</span></span><strong> $func</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Executes a function in a transaction.<pre>The function gets passed this Connection instance as an (optional) parameter.
-
-If an exception occurs during execution of the function or transaction commit,
-the transaction is rolled back and the exception re-thrown.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$func</code> - The function to execute transactionally.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="update"/>
-            <h4><span class="label public">public</span>update<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong>, <span class="param-type">Array</span><strong> $data</strong>, <span class="param-type">Array</span><strong> $identifier</strong>, <span class="param-type">Array</span><strong> $types</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Executes an SQL UPDATE statement on a table.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$tableName</code> - The name of the table to update.</li>
-                <li><code>$data</code> - </li>
-                <li><code>$identifier</code> - The update criteria. An associative array containing column-value pairs.</li>
-                <li><code>$types</code> - Types of the merged $data and $identifier arrays in that order.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The number of affected rows.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getNestedTransactionSavePointName"/>
-            <h4><span class="label protected">protected</span>_getNestedTransactionSavePointName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the savepoint name to use for nested transactions are false if they are not supported "savepointFormat" parameter is not set</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>a string with the savepoint name or false</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="connectTo"/>
-            <h4><span class="label protected">protected</span>connectTo<span style="font-size:90%;">( <span class="param-type">string</span><strong> $shardId</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Connect to a specific connection</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$shardId</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="TRANSACTION_READ_UNCOMMITTED">TRANSACTION_READ_UNCOMMITTED</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="TRANSACTION_READ_COMMITTED">TRANSACTION_READ_COMMITTED</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="TRANSACTION_REPEATABLE_READ">TRANSACTION_REPEATABLE_READ</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="TRANSACTION_SERIALIZABLE">TRANSACTION_SERIALIZABLE</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="PARAM_INT_ARRAY">PARAM_INT_ARRAY</td>
+              <td>101</td>
+            </tr>
+            <tr>
+              <td id="PARAM_STR_ARRAY">PARAM_STR_ARRAY</td>
+              <td>102</td>
+            </tr>
+            <tr>
+              <td id="ARRAY_PARAM_OFFSET">ARRAY_PARAM_OFFSET</td>
+              <td>100</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="activeConnections"><strong>$activeConnections</strong>
+                —
+                array</li>
+            <li id="activeShardId"><strong>$activeShardId</strong>
+                —
+                int</li>
+            <li id="connections"><strong>$connections</strong>
+                —
+                array</li>
+            <li id="shardManager"><strong>$shardManager</strong>
+                —
+                <a href="#">Doctrine\DBAL\Sharding\ShardManager</a></li>
+          </ul>
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="_config"><strong>$_config</strong>
+                —
+                <a href="#">\Doctrine\DBAL\Configuration</a></li>
+            <li id="_conn"><strong>$_conn</strong>
+                —
+                <a href="#">\Doctrine\DBAL\Driver\Connection</a><br/><span class="indent">The wrapped driver connection.</span></li>
+            <li id="_driver"><strong>$_driver</strong>
+                —
+                <a href="#">\Doctrine\DBAL\Driver</a><br/><span class="indent">The used DBAL driver.</span></li>
+            <li id="_eventManager"><strong>$_eventManager</strong>
+                —
+                <a href="#">\Doctrine\Common\EventManager</a></li>
+            <li id="_expr"><strong>$_expr</strong>
+                —
+                <a href="#">\Doctrine\DBAL\Query\Expression\ExpressionBuilder</a></li>
+            <li id="_platform"><strong>$_platform</strong>
+                —
+                <a href="#">\Doctrine\DBAL\Platforms\AbstractPlatform</a><br/><span class="indent">The DatabasePlatform object that provides information about the database platform used by the connection.</span></li>
+            <li id="_schemaManager"><strong>$_schemaManager</strong>
+                —
+                <a href="#">\Doctrine\DBAL\Schema\AbstractSchemaManager</a><br/><span class="indent">The schema manager.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="connectTo"><a title="Doctrine\DBAL\Sharding\PoolingShardConnection" href="../classes/Doctrine_DBAL_Sharding_PoolingShardConnection/connectTo.xhtml">connectTo()</a>
+                — Connect to a specific connection</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="Doctrine\DBAL\Sharding\PoolingShardConnection" href="../classes/Doctrine_DBAL_Sharding_PoolingShardConnection/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="close">
+              <a title="Doctrine\DBAL\Sharding\PoolingShardConnection" href="../classes/Doctrine_DBAL_Sharding_PoolingShardConnection/close.xhtml">close()</a>
+            </li>
+            <li id="connect"><a title="Doctrine\DBAL\Sharding\PoolingShardConnection" href="../classes/Doctrine_DBAL_Sharding_PoolingShardConnection/connect.xhtml">connect()</a>
+                — Connect to a given shard</li>
+            <li id="isConnected">
+              <a title="Doctrine\DBAL\Sharding\PoolingShardConnection" href="../classes/Doctrine_DBAL_Sharding_PoolingShardConnection/isConnected.xhtml">isConnected()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection.xhtml">Doctrine\DBAL\Connection</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="_getNestedTransactionSavePointName"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/_getNestedTransactionSavePointName.xhtml">_getNestedTransactionSavePointName()</a>
+                — Returns the savepoint name to use for nested transactions are false if they are not supported "savepointFormat" parameter is not set</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="beginTransaction"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/beginTransaction.xhtml">beginTransaction()</a>
+                — Starts a transaction by suspending auto-commit mode.</li>
+            <li id="close"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/close.xhtml">close()</a>
+                — Closes the connection.</li>
+            <li id="commit"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/commit.xhtml">commit()</a>
+                — Commits the current transaction.</li>
+            <li id="connect"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/connect.xhtml">connect()</a>
+                — Establishes the connection with the database.</li>
+            <li id="convertToDatabaseValue"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/convertToDatabaseValue.xhtml">convertToDatabaseValue()</a>
+                — Converts a given value to its database representation according to the conversion rules of a specific DBAL mapping type.</li>
+            <li id="convertToPHPValue"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/convertToPHPValue.xhtml">convertToPHPValue()</a>
+                — Converts a given value to its PHP representation according to the conversion rules of a specific DBAL mapping type.</li>
+            <li id="createQueryBuilder"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/createQueryBuilder.xhtml">createQueryBuilder()</a>
+                — Create a new instance of a SQL query builder.</li>
+            <li id="createSavepoint"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/createSavepoint.xhtml">createSavepoint()</a>
+                — createSavepoint creates a new savepoint</li>
+            <li id="delete"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/delete.xhtml">delete()</a>
+                — Executes an SQL DELETE statement on a table.</li>
+            <li id="errorCode"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/errorCode.xhtml">errorCode()</a>
+                — Fetch the SQLSTATE associated with the last database operation.</li>
+            <li id="errorInfo"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/errorInfo.xhtml">errorInfo()</a>
+                — Fetch extended error information associated with the last database operation.</li>
+            <li id="exec"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/exec.xhtml">exec()</a>
+                — Execute an SQL statement and return the number of affected rows.</li>
+            <li id="executeCacheQuery"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/executeCacheQuery.xhtml">executeCacheQuery()</a>
+                — Execute a caching query and</li>
+            <li id="executeQuery"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/executeQuery.xhtml">executeQuery()</a>
+                — Executes an, optionally parameterized, SQL query.</li>
+            <li id="executeUpdate"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/executeUpdate.xhtml">executeUpdate()</a>
+                — Executes an SQL INSERT/UPDATE/DELETE query with the given parameters and returns the number of affected rows.</li>
+            <li id="fetchAll"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/fetchAll.xhtml">fetchAll()</a>
+                — Prepares and executes an SQL query and returns the result as an associative array.</li>
+            <li id="fetchArray"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/fetchArray.xhtml">fetchArray()</a>
+                — Prepares and executes an SQL query and returns the first row of the result as a numerically indexed array.</li>
+            <li id="fetchAssoc"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/fetchAssoc.xhtml">fetchAssoc()</a>
+                — Prepares and executes an SQL query and returns the first row of the result as an associative array.</li>
+            <li id="fetchColumn"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/fetchColumn.xhtml">fetchColumn()</a>
+                — Prepares and executes an SQL query and returns the value of a single column of the first row of the result.</li>
+            <li id="getConfiguration"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getConfiguration.xhtml">getConfiguration()</a>
+                — Gets the Configuration used by the Connection.</li>
+            <li id="getDatabase"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getDatabase.xhtml">getDatabase()</a>
+                — Gets the name of the database this Connection is connected to.</li>
+            <li id="getDatabasePlatform"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getDatabasePlatform.xhtml">getDatabasePlatform()</a>
+                — Gets the DatabasePlatform for the connection.</li>
+            <li id="getDriver"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getDriver.xhtml">getDriver()</a>
+                — Gets the DBAL driver instance.</li>
+            <li id="getEventManager"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getEventManager.xhtml">getEventManager()</a>
+                — Gets the EventManager used by the Connection.</li>
+            <li id="getExpressionBuilder"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getExpressionBuilder.xhtml">getExpressionBuilder()</a>
+                — Gets the ExpressionBuilder for the connection.</li>
+            <li id="getHost"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getHost.xhtml">getHost()</a>
+                — Gets the hostname of the currently connected database.</li>
+            <li id="getNestTransactionsWithSavepoints"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getNestTransactionsWithSavepoints.xhtml">getNestTransactionsWithSavepoints()</a>
+                — Get if nested transactions should use savepoints</li>
+            <li id="getParams"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getParams.xhtml">getParams()</a>
+                — Gets the parameters used during instantiation.</li>
+            <li id="getPassword"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getPassword.xhtml">getPassword()</a>
+                — Gets the password used by this connection.</li>
+            <li id="getPort"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getPort.xhtml">getPort()</a>
+                — Gets the port of the currently connected database.</li>
+            <li id="getSchemaManager"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getSchemaManager.xhtml">getSchemaManager()</a>
+                — Gets the SchemaManager that can be used to inspect or change the database schema through the connection.</li>
+            <li id="getTransactionIsolation"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getTransactionIsolation.xhtml">getTransactionIsolation()</a>
+                — Gets the currently active transaction isolation level.</li>
+            <li id="getTransactionNestingLevel"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getTransactionNestingLevel.xhtml">getTransactionNestingLevel()</a>
+                — Returns the current transaction nesting level.</li>
+            <li id="getUsername"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getUsername.xhtml">getUsername()</a>
+                — Gets the username used by this connection.</li>
+            <li id="getWrappedConnection"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/getWrappedConnection.xhtml">getWrappedConnection()</a>
+                — Gets the wrapped driver connection.</li>
+            <li id="insert"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/insert.xhtml">insert()</a>
+                — Inserts a table row with specified data.</li>
+            <li id="isConnected"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/isConnected.xhtml">isConnected()</a>
+                — Whether an actual connection to the database is established.</li>
+            <li id="isRollbackOnly"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/isRollbackOnly.xhtml">isRollbackOnly()</a>
+                — Check whether the current transaction is marked for rollback only.</li>
+            <li id="isTransactionActive"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/isTransactionActive.xhtml">isTransactionActive()</a>
+                — Checks whether a transaction is currently active.</li>
+            <li id="lastInsertId"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/lastInsertId.xhtml">lastInsertId()</a>
+                — Returns the ID of the last inserted row, or the last value from a sequence object, depending on the underlying driver.</li>
+            <li id="prepare"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/prepare.xhtml">prepare()</a>
+                — Prepares an SQL statement.</li>
+            <li id="project"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/project.xhtml">project()</a>
+                — Executes an, optionally parameterized, SQL query and returns the result, applying a given projection/transformation function on each row of the result.</li>
+            <li id="query"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/query.xhtml">query()</a>
+                — Executes an SQL statement, returning a result set as a Statement object.</li>
+            <li id="quote"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/quote.xhtml">quote()</a>
+                — Quotes a given input parameter.</li>
+            <li id="quoteIdentifier"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/quoteIdentifier.xhtml">quoteIdentifier()</a>
+                — Quote a string so it can be safely used as a table or column name, even if it is a reserved name.</li>
+            <li id="releaseSavepoint"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/releaseSavepoint.xhtml">releaseSavepoint()</a>
+                — releaseSavePoint releases given savepoint</li>
+            <li id="resolveParams"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/resolveParams.xhtml">resolveParams()</a>
+                — Resolves the parameters to a format which can be displayed.</li>
+            <li id="rollBack"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/rollBack.xhtml">rollBack()</a>
+                — Cancel any database changes done during the current transaction.</li>
+            <li id="rollbackSavepoint"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/rollbackSavepoint.xhtml">rollbackSavepoint()</a>
+                — rollbackSavePoint releases given savepoint</li>
+            <li id="setFetchMode"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/setFetchMode.xhtml">setFetchMode()</a>
+                — setFetchMode</li>
+            <li id="setNestTransactionsWithSavepoints"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/setNestTransactionsWithSavepoints.xhtml">setNestTransactionsWithSavepoints()</a>
+                — Set if nested transactions should use savepoints</li>
+            <li id="setRollbackOnly"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/setRollbackOnly.xhtml">setRollbackOnly()</a>
+                — Marks the current transaction so that the only possible outcome for the transaction to be rolled back.</li>
+            <li id="setTransactionIsolation"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/setTransactionIsolation.xhtml">setTransactionIsolation()</a>
+                — Sets the transaction isolation level.</li>
+            <li id="transactional"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/transactional.xhtml">transactional()</a>
+                — Executes a function in a transaction.</li>
+            <li id="update"><a title="Doctrine\DBAL\Connection" href="../classes/Doctrine_DBAL_Connection/update.xhtml">update()</a>
+                — Executes an SQL UPDATE statement on a table.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

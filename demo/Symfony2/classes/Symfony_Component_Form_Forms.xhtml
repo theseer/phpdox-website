@@ -1,221 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Symfony\Component\Form\Forms - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Symfony\Component\Form\Forms</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Symfony_Component_Form">Symfony\Component\Form</a>
+          </li>
+          <li class="separator">Forms</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Methods</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#__construct">__construct</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#createFormFactory">createFormFactory</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#createFormFactoryBuilder">createFormFactoryBuilder</a>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/symfony/symfony/src/Symfony/Component/Form/Forms.php.xhtml#line154">Source</a>
           </li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Symfony\Component\Form\</span>Forms</h2>
-        <div class="file-notice">
-          <p>Entry point of the Form component.</p>
-          <p>
-            <pre>Use this class to conveniently create new form factories:
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Symfony\Component\Form\</small>Forms</h1>
+        <h4>Entry point of the Form component.</h4>
+        <p>Use this class to conveniently create new form factories:<br/><br/>&lt;code&gt;<br/>use Symfony\Component\Form\Forms;<br/><br/>$formFactory = Forms::createFormFactory();<br/><br/>$form = $formFactory-&gt;createBuilder()<br/>-&gt;add('firstName', 'text')<br/>-&gt;add('lastName', 'text')<br/>-&gt;add('age', 'integer')<br/>-&gt;add('gender', 'choice', array(<br/>'choices' =&gt; array('m' =&gt; 'Male', 'f' =&gt; 'Female'),<br/>))<br/>-&gt;getForm();<br/>&lt;/code&gt;<br/><br/>You can also add custom extensions to the form factory:<br/><br/>&lt;code&gt;<br/>$formFactory = Forms::createFormFactoryBuilder()<br/>-&gt;addExtension(new AcmeExtension())<br/>-&gt;getFormFactory();<br/>&lt;/code&gt;<br/><br/>If you create custom form types or type extensions, it is<br/>generally recommended to create your own extensions that lazily<br/>load these types and type extensions. In projects where performance<br/>does not matter that much, you can also pass them directly to the<br/>form factory:<br/><br/>&lt;code&gt;<br/>$formFactory = Forms::createFormFactoryBuilder()<br/>-&gt;addType(new PersonType())<br/>-&gt;addType(new PhoneNumberType())<br/>-&gt;addTypeExtension(new FormTypeHelpTextExtension())<br/>-&gt;getFormFactory();<br/>&lt;/code&gt;<br/><br/>Support for CSRF protection is provided by the CsrfExtension.<br/>This extension needs a CSRF provider with a strong secret<br/>(e.g. a 20 character long random string). The default<br/>implementation for this is DefaultCsrfProvider:<br/><br/>&lt;code&gt;<br/>use Symfony\Component\Form\Extension\Csrf\CsrfExtension;<br/>use Symfony\Component\Form\Extension\Csrf\CsrfProvider\DefaultCsrfProvider;<br/><br/>$secret = 'V8a5Z97e...';<br/>$formFactory = Forms::createFormFactoryBuilder()<br/>-&gt;addExtension(new CsrfExtension(new DefaultCsrfProvider($secret)))<br/>-&gt;getFormFactory();<br/>&lt;/code&gt;<br/><br/>Support for the HttpFoundation is provided by the<br/>HttpFoundationExtension. You are also advised to load the CSRF<br/>extension with the driver for HttpFoundation's Session class:<br/><br/>&lt;code&gt;<br/>use Symfony\Component\HttpFoundation\Session\Session;<br/>use Symfony\Component\Form\Extension\HttpFoundation\HttpFoundationExtension;<br/>use Symfony\Component\Form\Extension\Csrf\CsrfExtension;<br/>use Symfony\Component\Form\Extension\Csrf\CsrfProvider\SessionCsrfProvider;<br/><br/>$session = new Session();<br/>$secret = 'V8a5Z97e...';<br/>$formFactory = Forms::createFormFactoryBuilder()<br/>-&gt;addExtension(new HttpFoundationExtension())<br/>-&gt;addExtension(new CsrfExtension(new SessionCsrfProvider($session, $secret)))<br/>-&gt;getFormFactory();<br/>&lt;/code&gt;<br/><br/>Support for the Validator component is provided by ValidatorExtension.<br/>This extension needs a validator object to function properly:<br/><br/>&lt;code&gt;<br/>use Symfony\Component\Validator\Validation;<br/>use Symfony\Component\Form\Extension\Validator\ValidatorExtension;<br/><br/>$validator = Validation::createValidator();<br/>$formFactory = Forms::createFormFactoryBuilder()<br/>-&gt;addExtension(new ValidatorExtension($validator))<br/>-&gt;getFormFactory();<br/>&lt;/code&gt;<br/><br/>Support for the Templating component is provided by TemplatingExtension.<br/>This extension needs a PhpEngine object for rendering forms. As second<br/>argument you should pass the names of the default themes. Here is an<br/>example for using the default layout with "&lt;div&gt;" tags:<br/><br/>&lt;code&gt;<br/>use Symfony\Component\Form\Extension\Templating\TemplatingExtension;<br/><br/>$formFactory = Forms::createFormFactoryBuilder()<br/>-&gt;addExtension(new TemplatingExtension($engine, null, array(<br/>'FrameworkBundle:Form',<br/>)))<br/>-&gt;getFormFactory();<br/>&lt;/code&gt;<br/><br/>The next example shows how to include the "&lt;table&gt;" layout:<br/><br/>&lt;code&gt;<br/>use Symfony\Component\Form\Extension\Templating\TemplatingExtension;<br/><br/>$formFactory = Forms::createFormFactoryBuilder()<br/>-&gt;addExtension(new TemplatingExtension($engine, null, array(<br/>'FrameworkBundle:Form',<br/>'FrameworkBundle:FormTable',<br/>)))<br/>-&gt;getFormFactory();<br/>&lt;/code&gt;<br/><br/>If you also loaded the CsrfExtension, you should pass the CSRF provider<br/>to the extension so that you can render CSRF tokens in your templates<br/>more easily:<br/><br/>&lt;code&gt;<br/>use Symfony\Component\Form\Extension\Csrf\CsrfExtension;<br/>use Symfony\Component\Form\Extension\Csrf\CsrfProvider\DefaultCsrfProvider;<br/>use Symfony\Component\Form\Extension\Templating\TemplatingExtension;<br/><br/><br/>$secret = 'V8a5Z97e...';<br/>$csrfProvider = new DefaultCsrfProvider($secret);<br/>$formFactory = Forms::createFormFactoryBuilder()<br/>-&gt;addExtension(new CsrfExtension($csrfProvider))<br/>-&gt;addExtension(new TemplatingExtension($engine, $csrfProvider, array(<br/>'FrameworkBundle:Form',<br/>)))<br/>-&gt;getFormFactory();<br/>&lt;/code&gt;</p>
+        <ul>
+          <li>Author: Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Forms
+            {<br/><ul class="none"><li>// methods</li><li>public static FormFactoryInterface <a title="Symfony\Component\Form\Forms" href="../classes/Symfony_Component_Form_Forms/createFormFactory.xhtml">createFormFactory</a>()
+                    </li><li>public static FormFactoryBuilderInterface <a title="Symfony\Component\Form\Forms" href="../classes/Symfony_Component_Form_Forms/createFormFactoryBuilder.xhtml">createFormFactoryBuilder</a>()
+                    </li><li>private void <a title="Symfony\Component\Form\Forms" href="../classes/Symfony_Component_Form_Forms/__construct.xhtml">__construct</a>()
+                    </li></ul>
 
-&lt;code&gt;
-use Symfony\Component\Form\Forms;
-
-$formFactory = Forms::createFormFactory();
-
-$form = $formFactory-&gt;createBuilder()
-    -&gt;add('firstName', 'text')
-    -&gt;add('lastName', 'text')
-    -&gt;add('age', 'integer')
-    -&gt;add('gender', 'choice', array(
-        'choices' =&gt; array('m' =&gt; 'Male', 'f' =&gt; 'Female'),
-    ))
-    -&gt;getForm();
-&lt;/code&gt;
-
-You can also add custom extensions to the form factory:
-
-&lt;code&gt;
-$formFactory = Forms::createFormFactoryBuilder()
-    -&gt;addExtension(new AcmeExtension())
-    -&gt;getFormFactory();
-&lt;/code&gt;
-
-If you create custom form types or type extensions, it is
-generally recommended to create your own extensions that lazily
-load these types and type extensions. In projects where performance
-does not matter that much, you can also pass them directly to the
-form factory:
-
-&lt;code&gt;
-$formFactory = Forms::createFormFactoryBuilder()
-    -&gt;addType(new PersonType())
-    -&gt;addType(new PhoneNumberType())
-    -&gt;addTypeExtension(new FormTypeHelpTextExtension())
-    -&gt;getFormFactory();
-&lt;/code&gt;
-
-Support for CSRF protection is provided by the CsrfExtension.
-This extension needs a CSRF provider with a strong secret
-(e.g. a 20 character long random string). The default
-implementation for this is DefaultCsrfProvider:
-
-&lt;code&gt;
-use Symfony\Component\Form\Extension\Csrf\CsrfExtension;
-use Symfony\Component\Form\Extension\Csrf\CsrfProvider\DefaultCsrfProvider;
-
-$secret = 'V8a5Z97e...';
-$formFactory = Forms::createFormFactoryBuilder()
-    -&gt;addExtension(new CsrfExtension(new DefaultCsrfProvider($secret)))
-    -&gt;getFormFactory();
-&lt;/code&gt;
-
-Support for the HttpFoundation is provided by the
-HttpFoundationExtension. You are also advised to load the CSRF
-extension with the driver for HttpFoundation's Session class:
-
-&lt;code&gt;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\Form\Extension\HttpFoundation\HttpFoundationExtension;
-use Symfony\Component\Form\Extension\Csrf\CsrfExtension;
-use Symfony\Component\Form\Extension\Csrf\CsrfProvider\SessionCsrfProvider;
-
-$session = new Session();
-$secret = 'V8a5Z97e...';
-$formFactory = Forms::createFormFactoryBuilder()
-    -&gt;addExtension(new HttpFoundationExtension())
-    -&gt;addExtension(new CsrfExtension(new SessionCsrfProvider($session, $secret)))
-    -&gt;getFormFactory();
-&lt;/code&gt;
-
-Support for the Validator component is provided by ValidatorExtension.
-This extension needs a validator object to function properly:
-
-&lt;code&gt;
-use Symfony\Component\Validator\Validation;
-use Symfony\Component\Form\Extension\Validator\ValidatorExtension;
-
-$validator = Validation::createValidator();
-$formFactory = Forms::createFormFactoryBuilder()
-    -&gt;addExtension(new ValidatorExtension($validator))
-    -&gt;getFormFactory();
-&lt;/code&gt;
-
-Support for the Templating component is provided by TemplatingExtension.
-This extension needs a PhpEngine object for rendering forms. As second
-argument you should pass the names of the default themes. Here is an
-example for using the default layout with "&lt;div&gt;" tags:
-
-&lt;code&gt;
-use Symfony\Component\Form\Extension\Templating\TemplatingExtension;
-
-$formFactory = Forms::createFormFactoryBuilder()
-    -&gt;addExtension(new TemplatingExtension($engine, null, array(
-        'FrameworkBundle:Form',
-    )))
-    -&gt;getFormFactory();
-&lt;/code&gt;
-
-The next example shows how to include the "&lt;table&gt;" layout:
-
-&lt;code&gt;
-use Symfony\Component\Form\Extension\Templating\TemplatingExtension;
-
-$formFactory = Forms::createFormFactoryBuilder()
-    -&gt;addExtension(new TemplatingExtension($engine, null, array(
-        'FrameworkBundle:Form',
-        'FrameworkBundle:FormTable',
-    )))
-    -&gt;getFormFactory();
-&lt;/code&gt;
-
-If you also loaded the CsrfExtension, you should pass the CSRF provider
-to the extension so that you can render CSRF tokens in your templates
-more easily:
-
-&lt;code&gt;
-use Symfony\Component\Form\Extension\Csrf\CsrfExtension;
-use Symfony\Component\Form\Extension\Csrf\CsrfProvider\DefaultCsrfProvider;
-use Symfony\Component\Form\Extension\Templating\TemplatingExtension;
-
-
-$secret = 'V8a5Z97e...';
-$csrfProvider = new DefaultCsrfProvider($secret);
-$formFactory = Forms::createFormFactoryBuilder()
-    -&gt;addExtension(new CsrfExtension($csrfProvider))
-    -&gt;addExtension(new TemplatingExtension($engine, $csrfProvider, array(
-        'FrameworkBundle:Form',
-    )))
-    -&gt;getFormFactory();
-&lt;/code&gt;</pre>
-          </p>
+            }<br/></div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="createFormFactory"><a title="Symfony\Component\Form\Forms" href="../classes/Symfony_Component_Form_Forms/createFormFactory.xhtml">createFormFactory()</a>
+                — Creates a form factory with the default configuration.</li>
+            <li id="createFormFactoryBuilder"><a title="Symfony\Component\Form\Forms" href="../classes/Symfony_Component_Form_Forms/createFormFactoryBuilder.xhtml">createFormFactoryBuilder()</a>
+                — Creates a form factory builder with the default configuration.</li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label private">private</span>__construct<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>This class cannot be instantiated.</li>
-            </p>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="createFormFactory"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>createFormFactory<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Creates a form factory with the default configuration.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The form factory.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="createFormFactoryBuilder"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>createFormFactoryBuilder<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Creates a form factory builder with the default configuration.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The form factory builder.</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

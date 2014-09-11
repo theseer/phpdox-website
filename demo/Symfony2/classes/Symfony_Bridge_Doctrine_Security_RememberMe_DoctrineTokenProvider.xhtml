@@ -1,136 +1,130 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Symfony_Bridge_Doctrine_Security_RememberMe">Symfony\Bridge\Doctrine\Security\RememberMe</a>
+          </li>
+          <li class="separator">DoctrineTokenProvider</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#conn">$conn</a>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/symfony/symfony/src/Symfony/Bridge/Doctrine/Security/RememberMe/DoctrineTokenProvider.php.xhtml#line39">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#createNewToken">createNewToken</a>
-          </li>
-          <li>
-            <a href="#deleteTokenBySeries">deleteTokenBySeries</a>
-          </li>
-          <li>
-            <a href="#loadTokenBySeries">loadTokenBySeries</a>
-          </li>
-          <li>
-            <a href="#updateToken">updateToken</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Symfony\Bridge\Doctrine\Security\RememberMe\</span>DoctrineTokenProvider</h2>
-        <div class="file-notice">
-          <p>This class provides storage for the tokens that is set in "remember me" cookies. This way no password secrets will be stored in the cookies on the client machine, and thus the security is improved.</p>
-          <p>
-            <pre>This depends only on doctrine in order to get a database connection
-and to do the conversion of the datetime column.
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Symfony\Bridge\Doctrine\Security\RememberMe\</small>DoctrineTokenProvider</h1>
+        <h4>This class provides storage for the tokens that is set in "remember me" cookies. This way no password secrets will be stored in the cookies on the client machine, and thus the security is improved.</h4>
+        <p>This depends only on doctrine in order to get a database connection<br/>and to do the conversion of the datetime column.<br/><br/>In order to use this class, you need the following table in your database:<br/>CREATE TABLE `rememberme_token` (<br/>`series` char(88) UNIQUE PRIMARY KEY NOT NULL,<br/>`value` char(88) NOT NULL,<br/>`lastUsed` datetime NOT NULL,<br/>`class` varchar(100) NOT NULL,<br/>`username` varchar(200) NOT NULL<br/>);</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class DoctrineTokenProvider
+                implements
+                <a title="Symfony\Component\Security\Core\Authentication\RememberMe\TokenProviderInterface" href="../interfaces/Symfony_Component_Security_Core_Authentication_RememberMe_TokenProviderInterface.xhtml">TokenProviderInterface</a>
+            {<br/><ul class="none"><li>// members</li><li>private <span title="\Doctrine\DBAL\Connection">Connection</span> <a href="#members">$conn</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider" href="../classes/Symfony_Bridge_Doctrine_Security_RememberMe_DoctrineTokenProvider/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider" href="../classes/Symfony_Bridge_Doctrine_Security_RememberMe_DoctrineTokenProvider/loadTokenBySeries.xhtml">loadTokenBySeries</a>()
+                    </li><li>public void <a title="Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider" href="../classes/Symfony_Bridge_Doctrine_Security_RememberMe_DoctrineTokenProvider/deleteTokenBySeries.xhtml">deleteTokenBySeries</a>()
+                    </li><li>public void <a title="Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider" href="../classes/Symfony_Bridge_Doctrine_Security_RememberMe_DoctrineTokenProvider/updateToken.xhtml">updateToken</a>()
+                    </li><li>public void <a title="Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider" href="../classes/Symfony_Bridge_Doctrine_Security_RememberMe_DoctrineTokenProvider/createNewToken.xhtml">createNewToken</a>()
+                    </li></ul>
 
-In order to use this class, you need the following table in your database:
-CREATE TABLE `rememberme_token` (
- `series`   char(88)     UNIQUE PRIMARY KEY NOT NULL,
- `value`    char(88)     NOT NULL,
- `lastUsed` datetime     NOT NULL,
- `class`    varchar(100) NOT NULL,
- `username` varchar(200) NOT NULL
-);</pre>
-          </p>
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Symfony_Component_Security_Core_Authentication_RememberMe_TokenProviderInterface.xhtml">Symfony\Component\Security\Core\Authentication\RememberMe\TokenProviderInterface</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Symfony_Component_Security_Core_Authentication_RememberMe_TokenProviderInterface.xhtml">Symfony\Component\Security\Core\Authentication\RememberMe\TokenProviderInterface</a>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="conn"/>
-            <h4><span class="label private">private</span>object 
-                
-                $conn</h4>
-            <ul class="varlist">
-              <li>Doctrine DBAL database connection F.ex. service id: doctrine.dbal.default_connection</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Connection.xhtml">Doctrine\DBAL\Connection</a></span><strong> $conn</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>new DoctrineTokenProvider for the RemembeMe authentication service</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$conn</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="createNewToken"/>
-            <h4><span class="label public">public</span>createNewToken<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Core_Authentication_RememberMe_PersistentTokenInterface.xhtml">Symfony\Component\Security\Core\Authentication\RememberMe\PersistentTokenInterface</a></span><strong> $token</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="deleteTokenBySeries"/>
-            <h4><span class="label public">public</span>deleteTokenBySeries<span style="font-size:90%;">( <span class="param-type"/><strong> $series</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="loadTokenBySeries"/>
-            <h4><span class="label public">public</span>loadTokenBySeries<span style="font-size:90%;">( <span class="param-type"/><strong> $series</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="updateToken"/>
-            <h4><span class="label public">public</span>updateToken<span style="font-size:90%;">( <span class="param-type"/><strong> $series</strong>, <span class="param-type"/><strong> $tokenValue</strong>, <span class="param-type"><span title="DateTime">DateTime</span></span><strong> $lastUsed</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="conn"><strong>$conn</strong>
+                —
+                <a href="#">\Doctrine\DBAL\Connection</a><br/><span class="indent">Doctrine DBAL database connection F.ex. service id: doctrine.dbal.default_connection</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider" href="../classes/Symfony_Bridge_Doctrine_Security_RememberMe_DoctrineTokenProvider/__construct.xhtml">__construct()</a>
+                — new DoctrineTokenProvider for the RemembeMe authentication service</li>
+            <li id="createNewToken"><a title="Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider" href="../classes/Symfony_Bridge_Doctrine_Security_RememberMe_DoctrineTokenProvider/createNewToken.xhtml">createNewToken()</a>
+                — {@inheritdoc}</li>
+            <li id="deleteTokenBySeries"><a title="Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider" href="../classes/Symfony_Bridge_Doctrine_Security_RememberMe_DoctrineTokenProvider/deleteTokenBySeries.xhtml">deleteTokenBySeries()</a>
+                — {@inheritdoc}</li>
+            <li id="loadTokenBySeries"><a title="Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider" href="../classes/Symfony_Bridge_Doctrine_Security_RememberMe_DoctrineTokenProvider/loadTokenBySeries.xhtml">loadTokenBySeries()</a>
+                — {@inheritdoc}</li>
+            <li id="updateToken"><a title="Symfony\Bridge\Doctrine\Security\RememberMe\DoctrineTokenProvider" href="../classes/Symfony_Bridge_Doctrine_Security_RememberMe_DoctrineTokenProvider/updateToken.xhtml">updateToken()</a>
+                — {@inheritdoc}</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

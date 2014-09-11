@@ -1,347 +1,203 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Memory\Container\Movable - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Memory\Container\Movable</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Memory_Container">Zend\Memory\Container</a>
+          </li>
+          <li class="separator">Movable</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#LOADED">LOADED</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#SWAPPED">SWAPPED</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#LOCKED">LOCKED</a>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Memory/Container/Movable.php.xhtml#line20">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
-        <ul>
-          <li>
-            <a href="#id">$id</a>
-          </li>
-          <li>
-            <a href="#memManager">$memManager</a>
-          </li>
-          <li>
-            <a href="#value">$value</a>
-          </li>
-          <li>
-            <a href="#state">$state</a>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#__get">__get</a>
-          </li>
-          <li>
-            <a href="#__set">__set</a>
-          </li>
-          <li>
-            <a href="#destroy">destroy</a>
-          </li>
-          <li>
-            <a href="#getId">getId</a>
-          </li>
-          <li>
-            <a href="#getRef">getRef</a>
-          </li>
-          <li>
-            <a href="#isLocked">isLocked</a>
-          </li>
-          <li>
-            <a href="#isSwapped">isSwapped</a>
-          </li>
-          <li>
-            <a href="#lock">lock</a>
-          </li>
-          <li>
-            <a href="#markAsSwapped">markAsSwapped</a>
-          </li>
-          <li>
-            <a href="#processUpdate">processUpdate</a>
-          </li>
-          <li>
-            <a href="#setValue">setValue</a>
-          </li>
-          <li>
-            <a href="#startTrace">startTrace</a>
-          </li>
-          <li>
-            <a href="#touch">touch</a>
-          </li>
-          <li>
-            <a href="#unloadValue">unloadValue</a>
-          </li>
-          <li>
-            <a href="#unlock">unlock</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Memory\Container\</span>Movable</h2>
-        <div class="file-notice">
-          <p>Memory value container</p>
-          <p>
-            <pre>Movable (may be swapped with specified backend and unloaded).</pre>
-          </p>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Memory\Container\</small>Movable</h1>
+        <h4>Memory value container</h4>
+        <p>Movable (may be swapped with specified backend and unloaded).</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Movable
+                extends <a title="Zend\Memory\Container\AbstractContainer" href="../classes/Zend_Memory_Container_AbstractContainer.xhtml">AbstractContainer</a>
+            {<br/><ul class="none"><li>// constants</li><li>const LOADED = 1;</li><li>const SWAPPED = 2;</li><li>const LOCKED = 4;</li></ul><ul class="none"><li>// members</li><li>protected int <a href="#members">$id</a>;
+                    </li><li>private <span title="\Zend\Memory\MemoryManager">MemoryManager</span> <a href="#members">$memManager</a>;
+                    </li><li>private <span title="\Zend\Memory\Value">Value</span> <a href="#members">$value</a>;
+                    </li><li>private int <a href="#members">$state</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/lock.xhtml">lock</a>()
+                    </li><li>public void <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/unlock.xhtml">unlock</a>()
+                    </li><li>public bool <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/isLocked.xhtml">isLocked</a>()
+                    </li><li>public string <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/__get.xhtml">__get</a>()
+                    </li><li>public void <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/__set.xhtml">__set</a>()
+                    </li><li>public &amp;string <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/getRef.xhtml">getRef</a>()
+                    </li><li>public void <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/touch.xhtml">touch</a>()
+                    </li><li>public void <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/processUpdate.xhtml">processUpdate</a>()
+                    </li><li>public void <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/startTrace.xhtml">startTrace</a>()
+                    </li><li>public void <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/setValue.xhtml">setValue</a>()
+                    </li><li>public void <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/unloadValue.xhtml">unloadValue</a>()
+                    </li><li>public void <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/markAsSwapped.xhtml">markAsSwapped</a>()
+                    </li><li>public bool <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/isSwapped.xhtml">isSwapped</a>()
+                    </li><li>public int <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/getId.xhtml">getId</a>()
+                    </li><li>public void <a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/destroy.xhtml">destroy</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Zend_Memory_Container_AbstractContainer.xhtml">Zend\Memory\Container\AbstractContainer</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="LOADED"/>LOADED = 1<em> </em><p><li>Value states</li></p><hr/></li>
-          <li><a name="SWAPPED"/>SWAPPED = 2<hr/></li>
-          <li><a name="LOCKED"/>LOCKED = 4<hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="id"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $id</h4>
-            <ul class="varlist">
-              <li>Internal object Id</li>
-            </ul>
-          </li>
-          <li>
-            <a name="memManager"/>
-            <h4><span class="label private">private</span>object 
-                
-                $memManager</h4>
-            <ul class="varlist">
-              <li>Memory manager reference</li>
-            </ul>
-          </li>
-          <li>
-            <a name="value"/>
-            <h4><span class="label private">private</span>object 
-                
-                $value</h4>
-            <ul class="varlist">
-              <li>Value object</li>
-            </ul>
-          </li>
-          <li>
-            <a name="state"/>
-            <h4><span class="label private">private</span>integer 
-                
-                $state</h4>
-            <ul class="varlist">
-              <li>Value state (LOADED/SWAPPED/LOCKED)</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Memory\Container\Memory\MemoryManager">MemoryManager</span></span><strong> $memoryManager</strong>, <span class="param-type">integer</span><strong> $id</strong>, <span class="param-type">string</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Object constructor</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$memoryManager</code> - </li>
-                <li><code>$id</code> - </li>
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__get"/>
-            <h4><span class="label public">public</span>__get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $property</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get handler<pre>Loads object if necessary and moves it to the top of loaded objects list.
-Swaps objects from the bottom of loaded objects list, if necessary.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$property</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="__set"/>
-            <h4><span class="label public">public</span>__set<span style="font-size:90%;">( <span class="param-type">string</span><strong> $property</strong>, <span class="param-type">string</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set handler</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$property</code> - </li>
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="destroy"/>
-            <h4><span class="label public">public</span>destroy<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Destroy memory container and remove it from memory manager list</li>
-            </p>
-          </li>
-          <li>
-            <a name="getId"/>
-            <h4><span class="label public">public</span>getId<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get object id</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getRef"/>
-            <h4><span class="label public">public</span>getRef<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get string value reference<pre>_Must_ be used for value access before PHP v 5.2
-or _may_ be used for performance considerations</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isLocked"/>
-            <h4><span class="label public">public</span>isLocked<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return true if object is locked</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isSwapped"/>
-            <h4><span class="label public">public</span>isSwapped<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check if object is marked as swapped</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="lock"/>
-            <h4><span class="label public">public</span>lock<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Lock object in memory.</li>
-            </p>
-          </li>
-          <li>
-            <a name="markAsSwapped"/>
-            <h4><span class="label public">public</span>markAsSwapped<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Mark, that object is swapped</li>
-            </p>
-          </li>
-          <li>
-            <a name="processUpdate"/>
-            <h4><span class="label public">public</span>processUpdate<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Process container value update.<pre>Must be called only by value object</pre></li>
-            </p>
-          </li>
-          <li>
-            <a name="setValue"/>
-            <h4><span class="label public">public</span>setValue<span style="font-size:90%;">( <span class="param-type"/><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set value (used by memory manager when value is loaded)</li>
-            </p>
-          </li>
-          <li>
-            <a name="startTrace"/>
-            <h4><span class="label public">public</span>startTrace<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Start modifications trace</li>
-            </p>
-          </li>
-          <li>
-            <a name="touch"/>
-            <h4><span class="label public">public</span>touch<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Signal, that value is updated by external code.<pre>Should be used together with getRef()</pre></li>
-            </p>
-          </li>
-          <li>
-            <a name="unloadValue"/>
-            <h4><span class="label public">public</span>unloadValue<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Clear value (used by memory manager when value is swapped)</li>
-            </p>
-          </li>
-          <li>
-            <a name="unlock"/>
-            <h4><span class="label public">public</span>unlock<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Unlock object</li>
-            </p>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="LOADED">LOADED</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="SWAPPED">SWAPPED</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="LOCKED">LOCKED</td>
+              <td>4</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="memManager"><strong>$memManager</strong>
+                —
+                <a href="#">\Zend\Memory\MemoryManager</a><br/><span class="indent">Memory manager reference</span></li>
+            <li id="state"><strong>$state</strong>
+                —
+                int<br/><span class="indent">Value state (LOADED/SWAPPED/LOCKED)</span></li>
+            <li id="value"><strong>$value</strong>
+                —
+                <a href="#">\Zend\Memory\Value</a><br/><span class="indent">Value object</span></li>
+          </ul>
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="id"><strong>$id</strong>
+                —
+                int<br/><span class="indent">Internal object Id</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/__construct.xhtml">__construct()</a>
+                — Object constructor</li>
+            <li id="__get"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/__get.xhtml">__get()</a>
+                — Get handler</li>
+            <li id="__set"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/__set.xhtml">__set()</a>
+                — Set handler</li>
+            <li id="destroy"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/destroy.xhtml">destroy()</a>
+                — Destroy memory container and remove it from memory manager list</li>
+            <li id="getId"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/getId.xhtml">getId()</a>
+                — Get object id</li>
+            <li id="getRef"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/getRef.xhtml">getRef()</a>
+                — Get string value reference</li>
+            <li id="isLocked"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/isLocked.xhtml">isLocked()</a>
+                — Return true if object is locked</li>
+            <li id="isSwapped"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/isSwapped.xhtml">isSwapped()</a>
+                — Check if object is marked as swapped</li>
+            <li id="lock"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/lock.xhtml">lock()</a>
+                — Lock object in memory.</li>
+            <li id="markAsSwapped"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/markAsSwapped.xhtml">markAsSwapped()</a>
+                — Mark, that object is swapped</li>
+            <li id="processUpdate"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/processUpdate.xhtml">processUpdate()</a>
+                — Process container value update.</li>
+            <li id="setValue"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/setValue.xhtml">setValue()</a>
+                — Set value (used by memory manager when value is loaded)</li>
+            <li id="startTrace"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/startTrace.xhtml">startTrace()</a>
+                — Start modifications trace</li>
+            <li id="touch"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/touch.xhtml">touch()</a>
+                — Signal, that value is updated by external code.</li>
+            <li id="unloadValue"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/unloadValue.xhtml">unloadValue()</a>
+                — Clear value (used by memory manager when value is swapped)</li>
+            <li id="unlock"><a title="Zend\Memory\Container\Movable" href="../classes/Zend_Memory_Container_Movable/unlock.xhtml">unlock()</a>
+                — Unlock object</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

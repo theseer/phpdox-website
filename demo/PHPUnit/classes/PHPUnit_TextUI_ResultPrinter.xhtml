@@ -1,744 +1,1455 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>PHPUnit - PHPUnit_TextUI_ResultPrinter - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - PHPUnit_TextUI_ResultPrinter</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">PHPUnit - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">PHPUnit_TextUI_ResultPrinter</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#EVENT_TEST_START">EVENT_TEST_START</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#EVENT_TEST_END">EVENT_TEST_END</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#EVENT_TESTSUITE_START">EVENT_TESTSUITE_START</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#EVENT_TESTSUITE_END">EVENT_TESTSUITE_END</a>
+            <a href="#violations">Violations</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/TextUI/ResultPrinter.php.xhtml#line57">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>PHPUnit_TextUI_ResultPrinter</h1>
+        <h4>Prints the result of a TextUI TestRunner run.</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#ansiCodes">$ansiCodes</a>
-          </li>
-          <li>
-            <a href="#column">$column</a>
-          </li>
-          <li>
-            <a href="#maxColumn">$maxColumn</a>
-          </li>
-          <li>
-            <a href="#lastTestFailed">$lastTestFailed</a>
-          </li>
-          <li>
-            <a href="#numAssertions">$numAssertions</a>
-          </li>
-          <li>
-            <a href="#numTests">$numTests</a>
-          </li>
-          <li>
-            <a href="#numTestsRun">$numTestsRun</a>
-          </li>
-          <li>
-            <a href="#numTestsWidth">$numTestsWidth</a>
-          </li>
-          <li>
-            <a href="#colors">$colors</a>
-          </li>
-          <li>
-            <a href="#debug">$debug</a>
-          </li>
-          <li>
-            <a href="#verbose">$verbose</a>
-          </li>
-          <li>
-            <a href="#autoFlush">$autoFlush</a>
-          </li>
-          <li>
-            <a href="#out">$out</a>
-          </li>
-          <li>
-            <a href="#outTarget">$outTarget</a>
-          </li>
-          <li>
-            <a href="#printsHTML">$printsHTML</a>
-          </li>
+          <li>Author: Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>Copyright: 2001-2014 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>License: http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#addError">addError</a>
-          </li>
-          <li>
-            <a href="#addFailure">addFailure</a>
-          </li>
-          <li>
-            <a href="#addIncompleteTest">addIncompleteTest</a>
-          </li>
-          <li>
-            <a href="#addSkippedTest">addSkippedTest</a>
-          </li>
-          <li>
-            <a href="#endTest">endTest</a>
-          </li>
-          <li>
-            <a href="#endTestSuite">endTestSuite</a>
-          </li>
-          <li>
-            <a href="#flush">flush</a>
-          </li>
-          <li>
-            <a href="#formatWithColor">formatWithColor</a>
-          </li>
-          <li>
-            <a href="#getAutoFlush">getAutoFlush</a>
-          </li>
-          <li>
-            <a href="#getCountString">getCountString</a>
-          </li>
-          <li>
-            <a href="#incrementalFlush">incrementalFlush</a>
-          </li>
-          <li>
-            <a href="#printDefect">printDefect</a>
-          </li>
-          <li>
-            <a href="#printDefectHeader">printDefectHeader</a>
-          </li>
-          <li>
-            <a href="#printDefectTrace">printDefectTrace</a>
-          </li>
-          <li>
-            <a href="#printDefects">printDefects</a>
-          </li>
-          <li>
-            <a href="#printErrors">printErrors</a>
-          </li>
-          <li>
-            <a href="#printFailures">printFailures</a>
-          </li>
-          <li>
-            <a href="#printFooter">printFooter</a>
-          </li>
-          <li>
-            <a href="#printHeader">printHeader</a>
-          </li>
-          <li>
-            <a href="#printIncompletes">printIncompletes</a>
-          </li>
-          <li>
-            <a href="#printResult">printResult</a>
-          </li>
-          <li>
-            <a href="#printSkipped">printSkipped</a>
-          </li>
-          <li>
-            <a href="#printWaitPrompt">printWaitPrompt</a>
-          </li>
-          <li>
-            <a href="#setAutoFlush">setAutoFlush</a>
-          </li>
-          <li>
-            <a href="#startTest">startTest</a>
-          </li>
-          <li>
-            <a href="#startTestSuite">startTestSuite</a>
-          </li>
-          <li>
-            <a href="#write">write</a>
-          </li>
-          <li>
-            <a href="#writeNewLine">writeNewLine</a>
-          </li>
-          <li>
-            <a href="#writeProgress">writeProgress</a>
-          </li>
-          <li>
-            <a href="#writeProgressWithColor">writeProgressWithColor</a>
-          </li>
-          <li>
-            <a href="#writeWithColor">writeWithColor</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">\</span>PHPUnit_TextUI_ResultPrinter</h2>
-        <div class="file-notice">
-          <p>Prints the result of a TextUI TestRunner run.</p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PHPUnit_TextUI_ResultPrinter
+                extends <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer.xhtml">PHPUnit_Util_Printer</a>
+                implements
+                <a title="PHPUnit_Framework_TestListener" href="../interfaces/PHPUnit_Framework_TestListener.xhtml">PHPUnit_Framework_TestListener</a>
+            {<br/><ul class="none"><li>// constants</li><li>const EVENT_TEST_START = 0;</li><li>const EVENT_TEST_END = 1;</li><li>const EVENT_TESTSUITE_START = 2;</li><li>const EVENT_TESTSUITE_END = 3;</li></ul><ul class="none"><li>// members</li><li>private array <a href="#members">$ansiCodes</a>;
+                    </li><li>protected integer <a href="#members">$column</a>;
+                    </li><li>protected integer <a href="#members">$maxColumn</a>;
+                    </li><li>protected boolean <a href="#members">$lastTestFailed</a>;
+                    </li><li>protected integer <a href="#members">$numAssertions</a>;
+                    </li><li>protected integer <a href="#members">$numTests</a>;
+                    </li><li>protected integer <a href="#members">$numTestsRun</a>;
+                    </li><li>protected integer <a href="#members">$numTestsWidth</a>;
+                    </li><li>protected boolean <a href="#members">$colors</a>;
+                    </li><li>protected boolean <a href="#members">$debug</a>;
+                    </li><li>protected boolean <a href="#members">$verbose</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="PHPUnit_Util_Printer">PHPUnit_Util_Printer</span></li><li>protected boolean <a href="#members">$autoFlush</a>;
+                        </li><li>protected resource <a href="#members">$out</a>;
+                        </li><li>protected string <a href="#members">$outTarget</a>;
+                        </li><li>protected boolean <a href="#members">$printsHTML</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printResult.xhtml">printResult</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printDefects.xhtml">printDefects</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printDefect.xhtml">printDefect</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printDefectHeader.xhtml">printDefectHeader</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printDefectTrace.xhtml">printDefectTrace</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printErrors.xhtml">printErrors</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printFailures.xhtml">printFailures</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printIncompletes.xhtml">printIncompletes</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printRisky.xhtml">printRisky</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printSkipped.xhtml">printSkipped</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printHeader.xhtml">printHeader</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printFooter.xhtml">printFooter</a>()
+                    </li><li>protected string <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/getCountString.xhtml">getCountString</a>()
+                    </li><li>public void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printWaitPrompt.xhtml">printWaitPrompt</a>()
+                    </li><li>public void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/addError.xhtml">addError</a>()
+                    </li><li>public void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/addFailure.xhtml">addFailure</a>()
+                    </li><li>public void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/addIncompleteTest.xhtml">addIncompleteTest</a>()
+                    </li><li>public void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/addRiskyTest.xhtml">addRiskyTest</a>()
+                    </li><li>public void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/addSkippedTest.xhtml">addSkippedTest</a>()
+                    </li><li>public void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/startTestSuite.xhtml">startTestSuite</a>()
+                    </li><li>public void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/endTestSuite.xhtml">endTestSuite</a>()
+                    </li><li>public void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/startTest.xhtml">startTest</a>()
+                    </li><li>public void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/endTest.xhtml">endTest</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/writeProgress.xhtml">writeProgress</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/writeNewLine.xhtml">writeNewLine</a>()
+                    </li><li>protected string <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/formatWithColor.xhtml">formatWithColor</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/writeWithColor.xhtml">writeWithColor</a>()
+                    </li><li>protected void <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/writeProgressWithColor.xhtml">writeProgressWithColor</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="PHPUnit_Util_Printer">PHPUnit_Util_Printer</span></li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/__construct.xhtml">__construct</a>()
+                        </li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/flush.xhtml">flush</a>()
+                        </li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/incrementalFlush.xhtml">incrementalFlush</a>()
+                        </li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/write.xhtml">write</a>()
+                        </li><li>public boolean <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/getAutoFlush.xhtml">getAutoFlush</a>()
+                        </li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/setAutoFlush.xhtml">setAutoFlush</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/PHPUnit_Util_Printer.xhtml">PHPUnit_Util_Printer</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/PHPUnit_Framework_TestListener.xhtml">PHPUnit_Framework_TestListener</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>Copyright: </b>2001-2013 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>License: </b>http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
-        </ul>
-        <h3>Implements</h3>
-        <ul class="varlist">
+        <h2 id="violations">Violations</h2>
+        <div class="styled">
+          <h3>PHPMessDetector</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Rule</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">165 - 206</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method printResult() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">325 - 386</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method printFooter() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+          </table>
+          <h3>Checkstyle</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Column</th>
+                <th>Severity</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">359</td>
+              <td>57</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">362</td>
+              <td>50</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">365</td>
+              <td>48</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">380</td>
+              <td>57</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">518</td>
+              <td>48</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+          </table>
+        </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="EVENT_TEST_START">EVENT_TEST_START</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="EVENT_TEST_END">EVENT_TEST_END</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="EVENT_TESTSUITE_START">EVENT_TESTSUITE_START</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="EVENT_TESTSUITE_END">EVENT_TESTSUITE_END</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="ansiCodes"><strong>$ansiCodes</strong>
+                —
+                array</li>
+          </ul>
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="autoFlush"><strong>$autoFlush</strong>
+                —
+                boolean<br/><span class="indent">If true, flush output after every write.</span></li>
+            <li id="colors"><strong>$colors</strong>
+                —
+                boolean</li>
+            <li id="column"><strong>$column</strong>
+                —
+                integer</li>
+            <li id="debug"><strong>$debug</strong>
+                —
+                boolean</li>
+            <li id="lastTestFailed"><strong>$lastTestFailed</strong>
+                —
+                boolean</li>
+            <li id="maxColumn"><strong>$maxColumn</strong>
+                —
+                integer</li>
+            <li id="numAssertions"><strong>$numAssertions</strong>
+                —
+                integer</li>
+            <li id="numTests"><strong>$numTests</strong>
+                —
+                integer</li>
+            <li id="numTestsRun"><strong>$numTestsRun</strong>
+                —
+                integer</li>
+            <li id="numTestsWidth"><strong>$numTestsWidth</strong>
+                —
+                integer</li>
+            <li id="out"><strong>$out</strong>
+                —
+                resource</li>
+            <li id="outTarget"><strong>$outTarget</strong>
+                —
+                string</li>
+            <li id="printsHTML"><strong>$printsHTML</strong>
+                —
+                boolean</li>
+            <li id="verbose"><strong>$verbose</strong>
+                —
+                boolean</li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="formatWithColor"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/formatWithColor.xhtml">formatWithColor()</a>
+                — Formats a buffer with a specified ANSI color sequence if colors are enabled.</li>
+            <li id="getCountString">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/getCountString.xhtml">getCountString()</a>
+            </li>
+            <li id="printDefect">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printDefect.xhtml">printDefect()</a>
+            </li>
+            <li id="printDefectHeader">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printDefectHeader.xhtml">printDefectHeader()</a>
+            </li>
+            <li id="printDefectTrace">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printDefectTrace.xhtml">printDefectTrace()</a>
+            </li>
+            <li id="printDefects">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printDefects.xhtml">printDefects()</a>
+            </li>
+            <li id="printErrors">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printErrors.xhtml">printErrors()</a>
+            </li>
+            <li id="printFailures">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printFailures.xhtml">printFailures()</a>
+            </li>
+            <li id="printFooter">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printFooter.xhtml">printFooter()</a>
+            </li>
+            <li id="printHeader">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printHeader.xhtml">printHeader()</a>
+            </li>
+            <li id="printIncompletes">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printIncompletes.xhtml">printIncompletes()</a>
+            </li>
+            <li id="printRisky">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printRisky.xhtml">printRisky()</a>
+            </li>
+            <li id="printSkipped">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printSkipped.xhtml">printSkipped()</a>
+            </li>
+            <li id="writeNewLine">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/writeNewLine.xhtml">writeNewLine()</a>
+            </li>
+            <li id="writeProgress">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/writeProgress.xhtml">writeProgress()</a>
+            </li>
+            <li id="writeProgressWithColor"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/writeProgressWithColor.xhtml">writeProgressWithColor()</a>
+                — Writes progress with a color sequence if colors are enabled.</li>
+            <li id="writeWithColor"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/writeWithColor.xhtml">writeWithColor()</a>
+                — Writes a buffer out with a color sequence if colors are enabled.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/__construct.xhtml">__construct()</a>
+                — Constructor.</li>
+            <li id="addError"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/addError.xhtml">addError()</a>
+                — An error occurred.</li>
+            <li id="addFailure"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/addFailure.xhtml">addFailure()</a>
+                — A failure occurred.</li>
+            <li id="addIncompleteTest"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/addIncompleteTest.xhtml">addIncompleteTest()</a>
+                — Incomplete test.</li>
+            <li id="addRiskyTest"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/addRiskyTest.xhtml">addRiskyTest()</a>
+                — Risky test.</li>
+            <li id="addSkippedTest"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/addSkippedTest.xhtml">addSkippedTest()</a>
+                — Skipped test.</li>
+            <li id="endTest"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/endTest.xhtml">endTest()</a>
+                — A test ended.</li>
+            <li id="endTestSuite"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/endTestSuite.xhtml">endTestSuite()</a>
+                — A testsuite ended.</li>
+            <li id="printResult">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printResult.xhtml">printResult()</a>
+            </li>
+            <li id="printWaitPrompt">
+              <a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/printWaitPrompt.xhtml">printWaitPrompt()</a>
+            </li>
+            <li id="startTest"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/startTest.xhtml">startTest()</a>
+                — A test started.</li>
+            <li id="startTestSuite"><a title="PHPUnit_TextUI_ResultPrinter" href="../classes/PHPUnit_TextUI_ResultPrinter/startTestSuite.xhtml">startTestSuite()</a>
+                — A testsuite started.</li>
+          </ul>
+          <h3>Inherited from <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer.xhtml">PHPUnit_Util_Printer</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="flush"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/flush.xhtml">flush()</a>
+                — Flush buffer, optionally tidy up HTML, and close output if it's not to a php stream</li>
+            <li id="getAutoFlush"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/getAutoFlush.xhtml">getAutoFlush()</a>
+                — Check auto-flush mode.</li>
+            <li id="incrementalFlush"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/incrementalFlush.xhtml">incrementalFlush()</a>
+                — Performs a safe, incremental flush.</li>
+            <li id="setAutoFlush"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/setAutoFlush.xhtml">setAutoFlush()</a>
+                — Set auto-flushing mode.</li>
+            <li id="write">
+              <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/write.xhtml">write()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
           <li>
-            <a href="../interfaces/PHPUnit_Framework_TestListener.xhtml">PHPUnit_Framework_TestListener</a>
+            <h3>2014-08-17T10:18:07+02:00 (commit #<span title="fd5ef8a8bd4a7a50a10d18b8f247ebc50226e61f">fd5ef8a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">phpcbf --standard=PSR2 src tests</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-08-12T06:43:31+02:00 (commit #<span title="50dfaba6477d3b1a0c650d4f70a0d9f478ff6092">50dfaba</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">phpcbf --standard=PSR2 src tests</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-07-26T23:04:49+02:00 (commit #<span title="6529e4030228d14e6e99c40b95d8478f5625134b">6529e40</span>)</h3>
+            <div>
+              <p>
+                        Author: sun (sun@unleashedmind.com) /
+                        Commiter: sun (sun@unleashedmind.com)
+                    </p>
+              <pre class="wrapped">Fix #1351: Isolated TestResult contains serialized test class upon failure.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-06-20T20:30:30+02:00 (commit #<span title="a4835d134439c02a9e648e82a2cdfddb22e26bde">a4835d1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Use trigger_error() to flag features as deprecated</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-02-14T18:31:32+01:00 (commit #<span title="e5b50bc60abbc96ae53aa0efd4291345fe4128ff">e5b50bc</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Next version will be 4.0</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-22T19:43:07+01:00 (commit #<span title="02b42d7e912186a17d56fa803ae4682d16f1ff79">02b42d7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on formatting code according to PSR-2</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-20T17:21:13+01:00 (commit #<span title="3a5808fbca4ee832c27f13a544fdf8809eec62ec">3a5808f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-09T08:11:47+01:00 (commit #<span title="205e00844d1d9cf4cd4545c4cc45f1121a6b0824">205e008</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-07T14:37:15+01:00 (commit #<span title="991bf009467dfa2c8f2762e25fc4aac51b2ba802">991bf00</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Revert "Next stable release will be PHPUnit 4"
+
+This reverts commit f4ee7815d1bb1664786fe95b226a3def20f24aa9.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-06T09:05:08+01:00 (commit #<span title="f4ee7815d1bb1664786fe95b226a3def20f24aa9">f4ee781</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Next stable release will be PHPUnit 4</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-03T10:56:51+01:00 (commit #<span title="5fa672603c1fd992ae606dfeb2fccef28c9dfdcf">5fa6726</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Introduce new test classification: risky test</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-11-07T07:23:24+01:00 (commit #<span title="a2d0f3e28eaf198d52905a1c9e445f2325e332cb">a2d0f3e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Leftover: Implement printing of deprecated feature usages</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-11-06T19:16:30+01:00 (commit #<span title="4ed5f706988225e3d09519b582548b8d79ce1603">4ed5f70</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Implement printing of deprecated feature usages</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-10-18T13:56:19+02:00 (commit #<span title="6121b59f6482794e59891f687147312472c63c54">6121b59</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Tweak</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-10-18T11:39:20+02:00 (commit #<span title="052a1ccf7152c94a585f9399badcc9c0c507f8b3">052a1cc</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Clean up result printer output</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-02T09:24:50+02:00 (commit #<span title="173c01b870e2e0ce86183b72f15b1fabf7b3a94e">173c01b</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Revert "Update PHP_Timer usage"
+
+This reverts commit 1739c6bf3fe709716ce90bdef0ea19ddea5ad857.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-07-02T05:07:48+02:00 (commit #<span title="26999e577866feba0753e7f186c6b927f1d86b11">26999e5</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Fixes #949
+
+ * Removed background color erase sequences.
+ * Made ANSI escape sequences a little more readable.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-02-08T21:40:04+01:00 (commit #<span title="37fd7829dff6361be20dc5ffc78411c7772b3d32">37fd782</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix WS issues</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-01-30T07:32:28+01:00 (commit #<span title="1739c6bf3fe709716ce90bdef0ea19ddea5ad857">1739c6b</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Update PHP_Timer usage</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-01-07T11:37:52+01:00 (commit #<span title="c517984099c588d7cbe04bea9fb756a764769f5f">c517984</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-12-27T12:30:34+01:00 (commit #<span title="911a4f1d5dff3e08be90133e984c8a39e510c348">911a4f1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Closes #762</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-24T06:47:44+02:00 (commit #<span title="81ab540c8718a37315962b8242c7f1b4ee031ed4">81ab540</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Do not perform string replacement for @package_version@ anymore.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-12T11:03:00+02:00 (commit #<span title="b960cd508416f04c74cde6480b31b34ae1888a7b">b960cd5</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Added a notice when no tests where executed so that PHPUnit doesn't report "OK (0 Tests)" when using --filter.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-10T07:01:18+02:00 (commit #<span title="ce545d27dedec7ececd458f8134560ac4ea49c4f">ce545d2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix whitespace.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-07-27T13:20:09+02:00 (commit #<span title="33a4042f63993738cb7dd9330b0be0474481bfcf">33a4042</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Added exception and message to previous exceptions and cleaned up #586</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-06-08T14:30:08+02:00 (commit #<span title="eea67103ab683d2111276bc8ea60600d9a7b577a">eea6710</span>)</h3>
+            <div>
+              <p>
+                        Author: Matheus Degiovani (matheus@gigatron.com.br) /
+                        Commiter: Matheus Degiovani (matheus@gigatron.com.br)
+                    </p>
+              <pre class="wrapped">removed check for php 5.3 when printing the cause of events</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-06-08T14:30:08+02:00 (commit #<span title="62981419cadfaf8d7d51c3c225ecf148824bc7f5">6298141</span>)</h3>
+            <div>
+              <p>
+                        Author: Matheus Degiovani (matheus@gigatron.com.br) /
+                        Commiter: Matheus Degiovani (matheus@gigatron.com.br)
+                    </p>
+              <pre class="wrapped">Printing cause of exception when present</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-05-27T14:12:42+02:00 (commit #<span title="76a561e48f092f51e7457e76294450e3dd980769">76a561e</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Revert "Merge pull request #572 from mgb/excluded_tests_testlistener"
+
+This reverts commit 3b5d59a5d341f9b851ea373a31beb1cdc4b10ccb, reversing
+changes made to 063359e67e2031ba2ab9afdeb1bd6855c90987e4.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-05-20T19:52:08+02:00 (commit #<span title="67876c2392cf2463423b8f57d60caf6145587a2a">67876c2</span>)</h3>
+            <div>
+              <p>
+                        Author: Ryan Murphy (git@minegoboom.com) /
+                        Commiter: Mine GO BOOM (git@minegoboom.com)
+                    </p>
+              <pre class="wrapped">Quick hack to make ResultPrinter.php include excluded tests in its output.
+
+I choose to use an underscore as the output as we would want to have the total percentage complete to end up with 100%. If instead we would call writeProgress(NULL) and not have it output anything nor increment $this-&gt;column, it would cause the total summary to continue to increment. That does have the side effect where if you hit a chunk of excluded tests, your counter may go from 122/1300 to 553/1300 on the following line with no real indication of why.
+
+Another option I thought of was to instead cause the total number of tests counter to decrement, but that also looks weird if you go from 120/1500 (8%) to 160/800 (20%). But in the case when you exclude large chunks, it would prevent lots of useless output.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-04-30T12:02:38+02:00 (commit #<span title="5786e50b3878cba88932b10e6a48c75723950707">5786e50</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">List The BSD 3-Clause License correctly and consistently. Thanks to Christian Aistleitner &lt;christian@quelltextlich.at&gt; for bringing this issue to my attention.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-01T11:21:16+01:00 (commit #<span title="aae6c3808b9c4bee416657298fa90865d6898d60">aae6c38</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-27T10:21:52+01:00 (commit #<span title="37cacc915e512f640fefa9c6422d503f3c59455e">37cacc9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">PHPUnit no longer throws exceptions that do not extend PHPUnit_Framework_Exception.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-20T17:47:06+01:00 (commit #<span title="6f3bcf877d835965a1fda77f1b3b2d376e0e97b8">6f3bcf8</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Add phpcs rule for concatination operator spacing and fixed the few issues it shows</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-12T17:24:27+01:00 (commit #<span title="e4fb303da950a6457f43e85054a3f574bcc17a67">e4fb303</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Fixes #433. Don't print generated output when expectations are performed on it</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-17T09:23:45+01:00 (commit #<span title="b4f383784d16c2ec3ad54d523bee03ec1a5f1d39">b4f3837</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Closes #411.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-03T09:49:17+01:00 (commit #<span title="75abcc6407d58b244ee0eb04fba30193b07663c3">75abcc6</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Closes #395.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-23T10:54:22+02:00 (commit #<span title="64647f634889231fd32193d8ee8d8b46eeef8643">64647f6</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Count one assertion per PHPT test.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-02-10T07:15:30+01:00 (commit #<span title="20bfe2adcd42d05373955b9ea9aaf1096de322a9">20bfe2a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Revert "Tweak output."
+
+This reverts commit 965d64afae87181d069b040915ea0789b81f35c2.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-02-07T08:12:52+01:00 (commit #<span title="965d64afae87181d069b040915ea0789b81f35c2">965d64a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Tweak output.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-27T08:45:14+01:00 (commit #<span title="99cd0d933ba8b885697205d896214dc4ca327fe6">99cd0d9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Use PHP_Timer autoloader.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-25T08:24:47+01:00 (commit #<span title="2b7f44f56496ccdc705e29497bfcaf142f4a9794">2b7f44f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Do not use PHP_CodeCoverage blacklist for PHPUnit stacktrace filtering.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-18T09:42:16+01:00 (commit #<span title="c403ad76897cb8ed3e3d73274a8da06b225e7bab">c403ad7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Accomodate larger test suites.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-08T14:01:05+01:00 (commit #<span title="27cf2809ff9f607a7f3b19efcbca462e00854c2c">27cf280</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Use the same progress output in verbose mode.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-08T13:58:41+01:00 (commit #<span title="bb1bb2b5e2aae16ee690ac19815a061536f9fca3">bb1bb2b</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Even more refactoring for the deprecated features feature.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-07T10:42:19+01:00 (commit #<span title="fb77f6d1868929fdd8c7d907894d87688c8d1bce">fb77f6d</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix CS/WS issues.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-07T10:37:17+01:00 (commit #<span title="07c4fdcf4e92d22076673c234a28ca1bae048506">07c4fdc</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Tweak coloured output of deprecated features warning.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-07T10:28:10+01:00 (commit #<span title="ce189a5d23ac56acf612ebd6b1046a7bddb8480d">ce189a5</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix CS/WS issues.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-07T09:58:38+01:00 (commit #<span title="c70c76ae4d5e3f387c4e691d0ad1529d78185bfe">c70c76a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refactor.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-04T15:46:32+01:00 (commit #<span title="2d2bd38607bf1ba76265ff9791aa697cba703599">2d2bd38</span>)</h3>
+            <div>
+              <p>
+                        Author: Ralph Schindler (ralphschindler@yahoo.com) /
+                        Commiter: Ralph Schindler (ralphschindler@yahoo.com)
+                    </p>
+              <pre class="wrapped">Added a system listener to handle deprecation of phpunit feature in a backwards compatible way
+Listener is on by default in PHPUnit_TextUI_TestRunner</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-12-31T11:45:34+01:00 (commit #<span title="bee33449535dd656c2c0a94946eb0086d1214e1f">bee3344</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-12-12T09:38:10+01:00 (commit #<span title="3f791882f1bc9f58afd79a0558600353b5f320c3">3f79188</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Simplify.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-12-07T05:11:05+01:00 (commit #<span title="c770eba620b9eda39f37c7e0aefaa88d290446d1">c770eba</span>)</h3>
+            <div>
+              <p>
+                        Author: Mark Story (mark@mark-story.com) /
+                        Commiter: Mark Story (mark@mark-story.com)
+                    </p>
+              <pre class="wrapped">Adding more colours to the output when colours are enabled.
+Errors, fails, Incomplete and Skipped tests now get coloured letters in
+the test progress.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-07T12:42:23+02:00 (commit #<span title="f0d9cdd35d83fd081c218fdec17edaf9e4f868f7">f0d9cdd</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Change email address.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-15T09:19:30+02:00 (commit #<span title="df26577ad6cd4b45c882cf1afa64bec04956b736">df26577</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">sed -i 's/[ \t]*$//' **/*.php</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-12T20:25:54+02:00 (commit #<span title="d19a7378115e5de11b694ac40531ab662d074055">d19a737</span>)</h3>
+            <div>
+              <p>
+                        Author: Mark Story (mark@mark-story.com) /
+                        Commiter: Mark Story (mark@mark-story.com)
+                    </p>
+              <pre class="wrapped">Removing trailing whitespace from files. Refs #1063</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-05-30T16:47:23+02:00 (commit #<span title="6e92411c172f8a109fb7d72112610f9a128d0b21">6e92411</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-05-08T16:48:15+02:00 (commit #<span title="68f778ba5e62b7a44c2e0550acbac0eabe5a7df0">68f778b</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Use PHP_Timer.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-05-08T12:50:23+02:00 (commit #<span title="fc6fe63d01350a47ab13caf34d044049f55ba61d">fc6fe63</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Use PHP_Timer.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-04-05T17:41:26+02:00 (commit #<span title="471d69e2573822a6d9dd28159085a480e97dc734">471d69e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add @subpackage annotation.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-02-04T04:49:11+01:00 (commit #<span title="5cf2a7988e082efc271565e6804286a8be562aa7">5cf2a79</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">memory_get_peak_usage() is always available in PHP &gt;= 5.2.7.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-02-02T14:14:29+01:00 (commit #<span title="bc1aaaaacfa98ab64d1eb54ac5b87279023bab59">bc1aaaa</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove closing PHP tags.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-01-19T09:39:03+01:00 (commit #<span title="fb48a69ea606a4740ba1f0e4ddcfe60fcd2a8301">fb48a69</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on autoloading.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:26:09+01:00 (commit #<span title="37f75ffdc651e3359c5683335851f6c5d6576c34">37f75ff</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:25:53+01:00 (commit #<span title="bddcc5f10872f9f53029aa8aeab27e2a95fbe2e5">bddcc5f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:23:37+01:00 (commit #<span title="7a7d0b7a54abfe58cd411a3b199133a8cb46351e">7a7d0b7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:32:26+01:00 (commit #<span title="60e7125941b239eeb6cfc016a2a2e8c238f3bea4">60e7125</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:30:57+01:00 (commit #<span title="42294addddde87f7b8064156ded58be18ad7aac4">42294ad</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:26:35+01:00 (commit #<span title="8617133a88b4c149adef21bc581a0bdf896f130e">8617133</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-09T15:32:17+01:00 (commit #<span title="1b563c9261b09b658d283498c8ccd341246ff92a">1b563c9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5418].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-09T15:30:33+01:00 (commit #<span title="f4661775d947bd547c854ed16c22e85f1b9753d9">f466177</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix WS.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-09T15:03:19+01:00 (commit #<span title="8b153c3d8b9f4959d6644eb107b3d8339b514d91">8b153c3</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5415].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-09T14:50:07+01:00 (commit #<span title="92c763ccc76e3e6b5341f02155e4959846404268">92c763c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5415].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-09T14:44:51+01:00 (commit #<span title="0c79b9e89ce738ee9cd82d82e6ac19f36cd01371">0c79b9e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Print memory usage.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-23T09:39:24+01:00 (commit #<span title="150341273801b55392d0bde99fc7be60f5a5c15d">1503412</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5389].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-23T09:29:23+01:00 (commit #<span title="4c9cf4e6879b29001f9b1d38cee68a8dfb9c01cc">4c9cf4e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on PHP_CodeCoverage migration.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-08-10T08:45:13+02:00 (commit #<span title="39453c113bb005bebc0c4fbea0191892ac257ce8">39453c1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5076].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-08-10T08:44:45+02:00 (commit #<span title="2b7fb8c34a9ad0fb930ded165e2a4aa19bc5fb69">2b7fb8c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-07-31T04:33:02+02:00 (commit #<span title="110abfeecaf6101c8ead202c52d69d974b9191b3">110abfe</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5044:5045].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-07-31T04:32:05+02:00 (commit #<span title="73f4dd9d48be564eabbfe3ea825d46b42f18ce55">73f4dd9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Print wall time.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-07-31T04:31:16+02:00 (commit #<span title="551334643bf3a0f19978c4c9c6329a5fb6de3709">5513346</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-07-30T12:14:54+02:00 (commit #<span title="5d521f294426d8972c1fa320ada9d735ff472788">5d521f2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5028:5031] and [5039:5040].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-07-30T12:10:52+02:00 (commit #<span title="b5a0b1fbb3a567213a175dfa8dc2becad016fd22">b5a0b1f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix verbose output for data provider tests.
+Remove EVENT_DATAPROVIDER_START and EVENT_DATAPROVIDER_END.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-07-30T11:59:35+02:00 (commit #<span title="f4c551a839bb4278607f7f383562dbe7391df8f7">f4c551a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Simplify.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-07-30T07:43:43+02:00 (commit #<span title="d3319a2784cbbcab29fcb5563ff8b945721dc74d">d3319a2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">CS/WS fixes.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-07-30T06:32:52+02:00 (commit #<span title="1d238e0863e1e3323a3a30304bbe78e1cbdeb010">1d238e0</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Introduce EVENT_DATAPROVIDER_START and EVENT_DATAPROVIDER_END.
+Clean up name of data provider test suite.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-07-16T18:32:18+02:00 (commit #<span title="f461ffdbcdcba0bf408772037cb13ff570646959">f461ffd</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5001].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-07-16T18:30:27+02:00 (commit #<span title="f7e090300a84d833c79b69378305924ca3accfb0">f7e0903</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Some long overdue cleanup/simplification.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-12-31T10:26:51+01:00 (commit #<span title="a899cb2a6cf988f15e38ad358c9813a82557a2b8">a899cb2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [4402].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-12-31T10:25:57+01:00 (commit #<span title="4b26cea6b551535438e0deee8f1120f29fe931a6">4b26cea</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-12-17T10:18:04+01:00 (commit #<span title="a9e0e0c02622752a43c1c37aeda91a254ccbe5b5">a9e0e0c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [4297].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-12-17T10:16:43+01:00 (commit #<span title="e1c3568ada29b118a47ee76c51d7e4c30d0a5f26">e1c3568</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Improve error messages for invalid arguments.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-11-13T12:16:42+01:00 (commit #<span title="fc66f86a2e63fbb14719456c4fecaeae99acc836">fc66f86</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix formatting.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-11-08T07:35:04+01:00 (commit #<span title="1a40171f23ab46e6df0d8010029e52fd33f0f126">1a40171</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add (intentionally undocumented) debug switch.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-10-26T10:57:19+01:00 (commit #<span title="563457a1d0c7ed067efe3fecfeb9e28933832941">563457a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix display of skipped test count.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-10-16T09:23:37+02:00 (commit #<span title="14408874996b0d5fc73492cee55688f0df3e3ae7">1440887</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Close #567.
+Rename --ansi to --colors.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-08-23T05:38:39+02:00 (commit #<span title="5f33f875e9463a415bb1bc6052406263b471500e">5f33f87</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix #519.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-06-09T11:21:47+02:00 (commit #<span title="3a04fdcf556a371e7fb605c61cf410dca524d71c">3a04fdc</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [3183].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-06-09T11:20:54+02:00 (commit #<span title="23b097c41a851f80c0b7275c4d56fd7d65e69eaf">23b097c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Restore exclamation mark.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-06-08T14:22:29+02:00 (commit #<span title="191a5d574eae7b91df10216ce26c4bb7b9580556">191a5d5</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [3160].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-06-08T14:03:37+02:00 (commit #<span title="9d9b5e3d982450f03fd7e0619824578bea586bc8">9d9b5e3</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Drop superfluous annotations.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-05-08T19:32:15+02:00 (commit #<span title="a95bc10fa8d83f4eb3e276e1fd709bfee1f1d1b8">a95bc10</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [2957].</pre>
+            </div>
           </li>
         </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="EVENT_TEST_START"/>EVENT_TEST_START = 0<hr/></li>
-          <li><a name="EVENT_TEST_END"/>EVENT_TEST_END = 1<hr/></li>
-          <li><a name="EVENT_TESTSUITE_START"/>EVENT_TESTSUITE_START = 2<hr/></li>
-          <li><a name="EVENT_TESTSUITE_END"/>EVENT_TESTSUITE_END = 3<hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="ansiCodes"/>
-            <h4><span class="label private">private</span>array 
-                
-                $ansiCodes</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="column"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $column</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="maxColumn"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $maxColumn</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="lastTestFailed"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $lastTestFailed</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="numAssertions"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $numAssertions</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="numTests"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $numTests</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="numTestsRun"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $numTestsRun</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="numTestsWidth"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $numTestsWidth</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="colors"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $colors</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="debug"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $debug</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="verbose"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $verbose</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $out</strong>, <span class="param-type">boolean</span><strong> $verbose</strong>, <span class="param-type">boolean</span><strong> $colors</strong>, <span class="param-type">boolean</span><strong> $debug</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$out</code> - </li>
-                <li><code>$verbose</code> - </li>
-                <li><code>$colors</code> - </li>
-                <li><code>$debug</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>PHPUnit_Framework_Exception</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="addError"/>
-            <h4><span class="label public">public</span>addError<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type"><span title="\\Exception">Exception</span></span><strong> $e</strong>, <span class="param-type">float</span><strong> $time</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>An error occurred.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-                <li><code>$e</code> - </li>
-                <li><code>$time</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addFailure"/>
-            <h4><span class="label public">public</span>addFailure<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type"><span title="\\PHPUnit_Framework_AssertionFailedError">PHPUnit_Framework_AssertionFailedError</span></span><strong> $e</strong>, <span class="param-type">float</span><strong> $time</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>A failure occurred.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-                <li><code>$e</code> - </li>
-                <li><code>$time</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addIncompleteTest"/>
-            <h4><span class="label public">public</span>addIncompleteTest<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type"><span title="\\Exception">Exception</span></span><strong> $e</strong>, <span class="param-type">float</span><strong> $time</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Incomplete test.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-                <li><code>$e</code> - </li>
-                <li><code>$time</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addSkippedTest"/>
-            <h4><span class="label public">public</span>addSkippedTest<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type"><span title="\\Exception">Exception</span></span><strong> $e</strong>, <span class="param-type">float</span><strong> $time</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Skipped test.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-                <li><code>$e</code> - </li>
-                <li><code>$time</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="endTest"/>
-            <h4><span class="label public">public</span>endTest<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type">float</span><strong> $time</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>A test ended.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-                <li><code>$time</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="endTestSuite"/>
-            <h4><span class="label public">public</span>endTestSuite<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestSuite">PHPUnit_Framework_TestSuite</span></span><strong> $suite</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>A testsuite ended.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$suite</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="flush"/>
-            <h4><span class="label public">public</span>flush<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Flush buffer, optionally tidy up HTML, and close output if it's not to a php stream</li>
-            </p>
-          </li>
-          <li>
-            <a name="getAutoFlush"/>
-            <h4><span class="label public">public</span>getAutoFlush<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check auto-flush mode.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="incrementalFlush"/>
-            <h4><span class="label public">public</span>incrementalFlush<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Performs a safe, incremental flush.<pre>Do not confuse this function with the flush() function of this class,
-since the flush() function may close the file being written to, rendering
-the current object no longer usable.</pre></li>
-            </p>
-          </li>
-          <li>
-            <a name="printResult"/>
-            <h4><span class="label public">public</span>printResult<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestResult">PHPUnit_Framework_TestResult</span></span><strong> $result</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$result</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="printWaitPrompt"/>
-            <h4><span class="label public">public</span>printWaitPrompt<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-          </li>
-          <li>
-            <a name="setAutoFlush"/>
-            <h4><span class="label public">public</span>setAutoFlush<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $autoFlush</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set auto-flushing mode.<pre>If set, *incremental* flushes will be done after each write. This should
-not be confused with the different effects of this class' flush() method.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$autoFlush</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="startTest"/>
-            <h4><span class="label public">public</span>startTest<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>A test started.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="startTestSuite"/>
-            <h4><span class="label public">public</span>startTestSuite<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestSuite">PHPUnit_Framework_TestSuite</span></span><strong> $suite</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>A testsuite started.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$suite</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="write"/>
-            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">string</span><strong> $buffer</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$buffer</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="formatWithColor"/>
-            <h4><span class="label protected">protected</span>formatWithColor<span style="font-size:90%;">( <span class="param-type">string</span><strong> $color</strong>, <span class="param-type">string</span><strong> $buffer</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Formats a buffer with a specified ANSI color sequence if colors are enabled.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$color</code> - </li>
-                <li><code>$buffer</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCountString"/>
-            <h4><span class="label protected">protected</span>getCountString<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $count</strong>, <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$count</code> - </li>
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="printDefect"/>
-            <h4><span class="label protected">protected</span>printDefect<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestFailure">PHPUnit_Framework_TestFailure</span></span><strong> $defect</strong>, <span class="param-type">integer</span><strong> $count</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$defect</code> - </li>
-                <li><code>$count</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="printDefectHeader"/>
-            <h4><span class="label protected">protected</span>printDefectHeader<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestFailure">PHPUnit_Framework_TestFailure</span></span><strong> $defect</strong>, <span class="param-type">integer</span><strong> $count</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$defect</code> - </li>
-                <li><code>$count</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="printDefectTrace"/>
-            <h4><span class="label protected">protected</span>printDefectTrace<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestFailure">PHPUnit_Framework_TestFailure</span></span><strong> $defect</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$defect</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="printDefects"/>
-            <h4><span class="label protected">protected</span>printDefects<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $defects</strong>, <span class="param-type">integer</span><strong> $count</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$defects</code> - </li>
-                <li><code>$count</code> - </li>
-                <li><code>$type</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="printErrors"/>
-            <h4><span class="label protected">protected</span>printErrors<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestResult">PHPUnit_Framework_TestResult</span></span><strong> $result</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$result</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="printFailures"/>
-            <h4><span class="label protected">protected</span>printFailures<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestResult">PHPUnit_Framework_TestResult</span></span><strong> $result</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$result</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="printFooter"/>
-            <h4><span class="label protected">protected</span>printFooter<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestResult">PHPUnit_Framework_TestResult</span></span><strong> $result</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$result</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="printHeader"/>
-            <h4><span class="label protected">protected</span>printHeader<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="printIncompletes"/>
-            <h4><span class="label protected">protected</span>printIncompletes<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestResult">PHPUnit_Framework_TestResult</span></span><strong> $result</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$result</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="printSkipped"/>
-            <h4><span class="label protected">protected</span>printSkipped<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestResult">PHPUnit_Framework_TestResult</span></span><strong> $result</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$result</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeNewLine"/>
-            <h4><span class="label protected">protected</span>writeNewLine<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="writeProgress"/>
-            <h4><span class="label protected">protected</span>writeProgress<span style="font-size:90%;">( <span class="param-type">string</span><strong> $progress</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$progress</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeProgressWithColor"/>
-            <h4><span class="label protected">protected</span>writeProgressWithColor<span style="font-size:90%;">( <span class="param-type">string</span><strong> $color</strong>, <span class="param-type">string</span><strong> $buffer</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Writes progress with a color sequence if colors are enabled.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$color</code> - </li>
-                <li><code>$buffer</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeWithColor"/>
-            <h4><span class="label protected">protected</span>writeWithColor<span style="font-size:90%;">( <span class="param-type">string</span><strong> $color</strong>, <span class="param-type">string</span><strong> $buffer</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Writes a buffer out with a color sequence if colors are enabled.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$color</code> - </li>
-                <li><code>$buffer</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+      </section>
     </div>
+    <footer>
+      <span>Generated using phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
   </body>
 </html>

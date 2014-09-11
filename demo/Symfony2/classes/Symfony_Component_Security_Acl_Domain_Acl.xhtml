@@ -1,753 +1,289 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Symfony\Component\Security\Acl\Domain\Acl - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Symfony\Component\Security\Acl\Domain\Acl</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Symfony_Component_Security_Acl_Domain">Symfony\Component\Security\Acl\Domain</a>
+          </li>
+          <li class="separator">Acl</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#parentAcl">$parentAcl</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#permissionGrantingStrategy">$permissionGrantingStrategy</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#objectIdentity">$objectIdentity</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#classAces">$classAces</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#classFieldAces">$classFieldAces</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#objectAces">$objectAces</a>
-          </li>
-          <li>
-            <a href="#objectFieldAces">$objectFieldAces</a>
-          </li>
-          <li>
-            <a href="#id">$id</a>
-          </li>
-          <li>
-            <a href="#loadedSids">$loadedSids</a>
-          </li>
-          <li>
-            <a href="#entriesInheriting">$entriesInheriting</a>
-          </li>
-          <li>
-            <a href="#listeners">$listeners</a>
+            <a href="../source/symfony/symfony/src/Symfony/Component/Security/Acl/Domain/Acl.php.xhtml#line35">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Symfony\Component\Security\Acl\Domain\</small>Acl</h1>
+        <h4>An ACL implementation.</h4>
+        <p>Each object identity has exactly one associated ACL. Each ACL can have four<br/>different types of ACEs (class ACEs, object ACEs, class field ACEs, object field<br/>ACEs).<br/><br/>You should not iterate over the ACEs yourself, but instead use isGranted(),<br/>or isFieldGranted(). These will utilize an implementation of PermissionGrantingStrategy<br/>internally.</p>
         <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#addPropertyChangedListener">addPropertyChangedListener</a>
-          </li>
-          <li>
-            <a href="#deleteAce">deleteAce</a>
-          </li>
-          <li>
-            <a href="#deleteClassAce">deleteClassAce</a>
-          </li>
-          <li>
-            <a href="#deleteClassFieldAce">deleteClassFieldAce</a>
-          </li>
-          <li>
-            <a href="#deleteFieldAce">deleteFieldAce</a>
-          </li>
-          <li>
-            <a href="#deleteObjectAce">deleteObjectAce</a>
-          </li>
-          <li>
-            <a href="#deleteObjectFieldAce">deleteObjectFieldAce</a>
-          </li>
-          <li>
-            <a href="#getClassAces">getClassAces</a>
-          </li>
-          <li>
-            <a href="#getClassFieldAces">getClassFieldAces</a>
-          </li>
-          <li>
-            <a href="#getId">getId</a>
-          </li>
-          <li>
-            <a href="#getObjectAces">getObjectAces</a>
-          </li>
-          <li>
-            <a href="#getObjectFieldAces">getObjectFieldAces</a>
-          </li>
-          <li>
-            <a href="#getObjectIdentity">getObjectIdentity</a>
-          </li>
-          <li>
-            <a href="#getParentAcl">getParentAcl</a>
-          </li>
-          <li>
-            <a href="#insertAce">insertAce</a>
-          </li>
-          <li>
-            <a href="#insertClassAce">insertClassAce</a>
-          </li>
-          <li>
-            <a href="#insertClassFieldAce">insertClassFieldAce</a>
-          </li>
-          <li>
-            <a href="#insertFieldAce">insertFieldAce</a>
-          </li>
-          <li>
-            <a href="#insertObjectAce">insertObjectAce</a>
-          </li>
-          <li>
-            <a href="#insertObjectFieldAce">insertObjectFieldAce</a>
-          </li>
-          <li>
-            <a href="#isEntriesInheriting">isEntriesInheriting</a>
-          </li>
-          <li>
-            <a href="#isFieldGranted">isFieldGranted</a>
-          </li>
-          <li>
-            <a href="#isGranted">isGranted</a>
-          </li>
-          <li>
-            <a href="#isSidLoaded">isSidLoaded</a>
-          </li>
-          <li>
-            <a href="#onEntryPropertyChanged">onEntryPropertyChanged</a>
-          </li>
-          <li>
-            <a href="#onPropertyChanged">onPropertyChanged</a>
-          </li>
-          <li>
-            <a href="#serialize">serialize</a>
-          </li>
-          <li>
-            <a href="#setEntriesInheriting">setEntriesInheriting</a>
-          </li>
-          <li>
-            <a href="#setParentAcl">setParentAcl</a>
-          </li>
-          <li>
-            <a href="#unserialize">unserialize</a>
-          </li>
-          <li>
-            <a href="#updateAce">updateAce</a>
-          </li>
-          <li>
-            <a href="#updateAuditing">updateAuditing</a>
-          </li>
-          <li>
-            <a href="#updateClassAce">updateClassAce</a>
-          </li>
-          <li>
-            <a href="#updateClassAuditing">updateClassAuditing</a>
-          </li>
-          <li>
-            <a href="#updateClassFieldAce">updateClassFieldAce</a>
-          </li>
-          <li>
-            <a href="#updateClassFieldAuditing">updateClassFieldAuditing</a>
-          </li>
-          <li>
-            <a href="#updateFieldAce">updateFieldAce</a>
-          </li>
-          <li>
-            <a href="#updateObjectAce">updateObjectAce</a>
-          </li>
-          <li>
-            <a href="#updateObjectAuditing">updateObjectAuditing</a>
-          </li>
-          <li>
-            <a href="#updateObjectFieldAce">updateObjectFieldAce</a>
-          </li>
-          <li>
-            <a href="#updateObjectFieldAuditing">updateObjectFieldAuditing</a>
-          </li>
+          <li>Author: Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Symfony\Component\Security\Acl\Domain\</span>Acl</h2>
-        <div class="file-notice">
-          <p>An ACL implementation.</p>
-          <p>
-            <pre>Each object identity has exactly one associated ACL. Each ACL can have four
-different types of ACEs (class ACEs, object ACEs, class field ACEs, object field
-ACEs).
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Acl
+                implements
+                <a title="Symfony\Component\Security\Acl\Model\AuditableAclInterface" href="../interfaces/Symfony_Component_Security_Acl_Model_AuditableAclInterface.xhtml">AuditableAclInterface</a>,<a title="Doctrine\Common\NotifyPropertyChanged" href="../interfaces/Doctrine_Common_NotifyPropertyChanged.xhtml">NotifyPropertyChanged</a>
+            {<br/><ul class="none"><li>// members</li><li>private <a href="#members">$parentAcl</a>;
+                    </li><li>private <a href="#members">$permissionGrantingStrategy</a>;
+                    </li><li>private <a href="#members">$objectIdentity</a>;
+                    </li><li>private <a href="#members">$classAces</a>;
+                    </li><li>private <a href="#members">$classFieldAces</a>;
+                    </li><li>private <a href="#members">$objectAces</a>;
+                    </li><li>private <a href="#members">$objectFieldAces</a>;
+                    </li><li>private <a href="#members">$id</a>;
+                    </li><li>private <a href="#members">$loadedSids</a>;
+                    </li><li>private <a href="#members">$entriesInheriting</a>;
+                    </li><li>private <a href="#members">$listeners</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/addPropertyChangedListener.xhtml">addPropertyChangedListener</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/deleteClassAce.xhtml">deleteClassAce</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/deleteClassFieldAce.xhtml">deleteClassFieldAce</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/deleteObjectAce.xhtml">deleteObjectAce</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/deleteObjectFieldAce.xhtml">deleteObjectFieldAce</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getClassAces.xhtml">getClassAces</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getClassFieldAces.xhtml">getClassFieldAces</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getObjectAces.xhtml">getObjectAces</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getObjectFieldAces.xhtml">getObjectFieldAces</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getId.xhtml">getId</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getObjectIdentity.xhtml">getObjectIdentity</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getParentAcl.xhtml">getParentAcl</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/insertClassAce.xhtml">insertClassAce</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/insertClassFieldAce.xhtml">insertClassFieldAce</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/insertObjectAce.xhtml">insertObjectAce</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/insertObjectFieldAce.xhtml">insertObjectFieldAce</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/isEntriesInheriting.xhtml">isEntriesInheriting</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/isFieldGranted.xhtml">isFieldGranted</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/isGranted.xhtml">isGranted</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/isSidLoaded.xhtml">isSidLoaded</a>()
+                    </li><li>public string <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/serialize.xhtml">serialize</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/unserialize.xhtml">unserialize</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/setEntriesInheriting.xhtml">setEntriesInheriting</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/setParentAcl.xhtml">setParentAcl</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateClassAce.xhtml">updateClassAce</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateClassFieldAce.xhtml">updateClassFieldAce</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateObjectAce.xhtml">updateObjectAce</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateObjectFieldAce.xhtml">updateObjectFieldAce</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateClassAuditing.xhtml">updateClassAuditing</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateClassFieldAuditing.xhtml">updateClassFieldAuditing</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateObjectAuditing.xhtml">updateObjectAuditing</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateObjectFieldAuditing.xhtml">updateObjectFieldAuditing</a>()
+                    </li><li>private void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/deleteAce.xhtml">deleteAce</a>()
+                    </li><li>private void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/deleteFieldAce.xhtml">deleteFieldAce</a>()
+                    </li><li>private void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/insertAce.xhtml">insertAce</a>()
+                    </li><li>private void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/insertFieldAce.xhtml">insertFieldAce</a>()
+                    </li><li>private void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateAce.xhtml">updateAce</a>()
+                    </li><li>private void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateAuditing.xhtml">updateAuditing</a>()
+                    </li><li>private void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateFieldAce.xhtml">updateFieldAce</a>()
+                    </li><li>private void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/onPropertyChanged.xhtml">onPropertyChanged</a>()
+                    </li><li>private void <a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/onEntryPropertyChanged.xhtml">onEntryPropertyChanged</a>()
+                    </li></ul>
 
-You should not iterate over the ACEs yourself, but instead use isGranted(),
-or isFieldGranted(). These will utilize an implementation of PermissionGrantingStrategy
-internally.</pre>
-          </p>
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Symfony_Component_Security_Acl_Model_AuditableAclInterface.xhtml">Symfony\Component\Security\Acl\Model\AuditableAclInterface</a>
+            </li>
+            <li>
+              <a href="../interfaces/Doctrine_Common_NotifyPropertyChanged.xhtml">Doctrine\Common\NotifyPropertyChanged</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
-        </ul>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Symfony_Component_Security_Acl_Model_AuditableAclInterface.xhtml">Symfony\Component\Security\Acl\Model\AuditableAclInterface</a>
-          </li>
-          <li>
-            <a href="../interfaces/Doctrine_Common_NotifyPropertyChanged.xhtml">Doctrine\Common\NotifyPropertyChanged</a>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="parentAcl"/>
-            <h4><span class="label private">private</span>
-                $parentAcl</h4>
-          </li>
-          <li>
-            <a name="permissionGrantingStrategy"/>
-            <h4><span class="label private">private</span>
-                $permissionGrantingStrategy</h4>
-          </li>
-          <li>
-            <a name="objectIdentity"/>
-            <h4><span class="label private">private</span>
-                $objectIdentity</h4>
-          </li>
-          <li>
-            <a name="classAces"/>
-            <h4><span class="label private">private</span>
-                $classAces</h4>
-          </li>
-          <li>
-            <a name="classFieldAces"/>
-            <h4><span class="label private">private</span>
-                $classFieldAces</h4>
-          </li>
-          <li>
-            <a name="objectAces"/>
-            <h4><span class="label private">private</span>
-                $objectAces</h4>
-          </li>
-          <li>
-            <a name="objectFieldAces"/>
-            <h4><span class="label private">private</span>
-                $objectFieldAces</h4>
-          </li>
-          <li>
-            <a name="id"/>
-            <h4><span class="label private">private</span>
-                $id</h4>
-          </li>
-          <li>
-            <a name="loadedSids"/>
-            <h4><span class="label private">private</span>
-                $loadedSids</h4>
-          </li>
-          <li>
-            <a name="entriesInheriting"/>
-            <h4><span class="label private">private</span>
-                $entriesInheriting</h4>
-          </li>
-          <li>
-            <a name="listeners"/>
-            <h4><span class="label private">private</span>
-                $listeners</h4>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $id</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_ObjectIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\ObjectIdentityInterface</a></span><strong> $objectIdentity</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_PermissionGrantingStrategyInterface.xhtml">Symfony\Component\Security\Acl\Model\PermissionGrantingStrategyInterface</a></span><strong> $permissionGrantingStrategy</strong>, <span class="param-type">Array</span><strong> $loadedSids</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $entriesInheriting</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - </li>
-                <li><code>$objectIdentity</code> - </li>
-                <li><code>$permissionGrantingStrategy</code> - </li>
-                <li><code>$loadedSids</code> - </li>
-                <li><code>$entriesInheriting</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="addPropertyChangedListener"/>
-            <h4><span class="label public">public</span>addPropertyChangedListener<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_PropertyChangedListener.xhtml">Doctrine\Common\PropertyChangedListener</a></span><strong> $listener</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a property changed listener</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$listener</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="deleteClassAce"/>
-            <h4><span class="label public">public</span>deleteClassAce<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="deleteClassFieldAce"/>
-            <h4><span class="label public">public</span>deleteClassFieldAce<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"/><strong> $field</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="deleteObjectAce"/>
-            <h4><span class="label public">public</span>deleteObjectAce<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="deleteObjectFieldAce"/>
-            <h4><span class="label public">public</span>deleteObjectFieldAce<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"/><strong> $field</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getClassAces"/>
-            <h4><span class="label public">public</span>getClassAces<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getClassFieldAces"/>
-            <h4><span class="label public">public</span>getClassFieldAces<span style="font-size:90%;">( <span class="param-type"/><strong> $field</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getId"/>
-            <h4><span class="label public">public</span>getId<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getObjectAces"/>
-            <h4><span class="label public">public</span>getObjectAces<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getObjectFieldAces"/>
-            <h4><span class="label public">public</span>getObjectFieldAces<span style="font-size:90%;">( <span class="param-type"/><strong> $field</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getObjectIdentity"/>
-            <h4><span class="label public">public</span>getObjectIdentity<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getParentAcl"/>
-            <h4><span class="label public">public</span>getParentAcl<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="insertClassAce"/>
-            <h4><span class="label public">public</span>insertClassAce<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_SecurityIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\SecurityIdentityInterface</a></span><strong> $sid</strong>, <span class="param-type"/><strong> $mask</strong>, <span class="param-type">integer</span><strong> $index</strong>, <span class="param-type"/><strong> $granting</strong>, <span class="param-type"/><strong> $strategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="insertClassFieldAce"/>
-            <h4><span class="label public">public</span>insertClassFieldAce<span style="font-size:90%;">( <span class="param-type"/><strong> $field</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_SecurityIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\SecurityIdentityInterface</a></span><strong> $sid</strong>, <span class="param-type"/><strong> $mask</strong>, <span class="param-type">integer</span><strong> $index</strong>, <span class="param-type"/><strong> $granting</strong>, <span class="param-type"/><strong> $strategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="insertObjectAce"/>
-            <h4><span class="label public">public</span>insertObjectAce<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_SecurityIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\SecurityIdentityInterface</a></span><strong> $sid</strong>, <span class="param-type"/><strong> $mask</strong>, <span class="param-type">integer</span><strong> $index</strong>, <span class="param-type"/><strong> $granting</strong>, <span class="param-type"/><strong> $strategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="insertObjectFieldAce"/>
-            <h4><span class="label public">public</span>insertObjectFieldAce<span style="font-size:90%;">( <span class="param-type"/><strong> $field</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_SecurityIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\SecurityIdentityInterface</a></span><strong> $sid</strong>, <span class="param-type"/><strong> $mask</strong>, <span class="param-type">integer</span><strong> $index</strong>, <span class="param-type"/><strong> $granting</strong>, <span class="param-type"/><strong> $strategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="isEntriesInheriting"/>
-            <h4><span class="label public">public</span>isEntriesInheriting<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="isFieldGranted"/>
-            <h4><span class="label public">public</span>isFieldGranted<span style="font-size:90%;">( <span class="param-type"/><strong> $field</strong>, <span class="param-type">Array</span><strong> $masks</strong>, <span class="param-type">Array</span><strong> $securityIdentities</strong>, <span class="param-type"/><strong> $administrativeMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="isGranted"/>
-            <h4><span class="label public">public</span>isGranted<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $masks</strong>, <span class="param-type">Array</span><strong> $securityIdentities</strong>, <span class="param-type"/><strong> $administrativeMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="isSidLoaded"/>
-            <h4><span class="label public">public</span>isSidLoaded<span style="font-size:90%;">( <span class="param-type"/><strong> $sids</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="serialize"/>
-            <h4><span class="label public">public</span>serialize<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Implementation for the \Serializable interface</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setEntriesInheriting"/>
-            <h4><span class="label public">public</span>setEntriesInheriting<span style="font-size:90%;">( <span class="param-type"/><strong> $boolean</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="setParentAcl"/>
-            <h4><span class="label public">public</span>setParentAcl<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_AclInterface.xhtml">Symfony\Component\Security\Acl\Model\AclInterface</a></span><strong> $acl</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="unserialize"/>
-            <h4><span class="label public">public</span>unserialize<span style="font-size:90%;">( <span class="param-type">string</span><strong> $serialized</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Implementation for the \Serializable interface</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$serialized</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="updateClassAce"/>
-            <h4><span class="label public">public</span>updateClassAce<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"/><strong> $mask</strong>, <span class="param-type"/><strong> $strategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="updateClassAuditing"/>
-            <h4><span class="label public">public</span>updateClassAuditing<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"/><strong> $auditSuccess</strong>, <span class="param-type"/><strong> $auditFailure</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="updateClassFieldAce"/>
-            <h4><span class="label public">public</span>updateClassFieldAce<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"/><strong> $field</strong>, <span class="param-type"/><strong> $mask</strong>, <span class="param-type"/><strong> $strategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="updateClassFieldAuditing"/>
-            <h4><span class="label public">public</span>updateClassFieldAuditing<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"/><strong> $field</strong>, <span class="param-type"/><strong> $auditSuccess</strong>, <span class="param-type"/><strong> $auditFailure</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="updateObjectAce"/>
-            <h4><span class="label public">public</span>updateObjectAce<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"/><strong> $mask</strong>, <span class="param-type"/><strong> $strategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="updateObjectAuditing"/>
-            <h4><span class="label public">public</span>updateObjectAuditing<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"/><strong> $auditSuccess</strong>, <span class="param-type"/><strong> $auditFailure</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="updateObjectFieldAce"/>
-            <h4><span class="label public">public</span>updateObjectFieldAce<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"/><strong> $field</strong>, <span class="param-type"/><strong> $mask</strong>, <span class="param-type"/><strong> $strategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="updateObjectFieldAuditing"/>
-            <h4><span class="label public">public</span>updateObjectFieldAuditing<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong>, <span class="param-type"/><strong> $field</strong>, <span class="param-type"/><strong> $auditSuccess</strong>, <span class="param-type"/><strong> $auditFailure</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="deleteAce"/>
-            <h4><span class="label private">private</span>deleteAce<span style="font-size:90%;">( <span class="param-type">string</span><strong> $property</strong>, <span class="param-type">integer</span><strong> $index</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Deletes an ACE</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$property</code> - </li>
-                <li><code>$index</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\OutOfBoundsException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="deleteFieldAce"/>
-            <h4><span class="label private">private</span>deleteFieldAce<span style="font-size:90%;">( <span class="param-type">string</span><strong> $property</strong>, <span class="param-type">integer</span><strong> $index</strong>, <span class="param-type">string</span><strong> $field</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Deletes a field-based ACE</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$property</code> - </li>
-                <li><code>$index</code> - </li>
-                <li><code>$field</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\OutOfBoundsException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="insertAce"/>
-            <h4><span class="label private">private</span>insertAce<span style="font-size:90%;">( <span class="param-type">string</span><strong> $property</strong>, <span class="param-type">integer</span><strong> $index</strong>, <span class="param-type">integer</span><strong> $mask</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_SecurityIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\SecurityIdentityInterface</a></span><strong> $sid</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $granting</strong>, <span class="param-type">string</span><strong> $strategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Inserts an ACE</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$property</code> - </li>
-                <li><code>$index</code> - </li>
-                <li><code>$mask</code> - </li>
-                <li><code>$sid</code> - </li>
-                <li><code>$granting</code> - </li>
-                <li><code>$strategy</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\OutOfBoundsException</code>
-                </li>
-                <li>
-                  <code>\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="insertFieldAce"/>
-            <h4><span class="label private">private</span>insertFieldAce<span style="font-size:90%;">( <span class="param-type">string</span><strong> $property</strong>, <span class="param-type">integer</span><strong> $index</strong>, <span class="param-type">string</span><strong> $field</strong>, <span class="param-type">integer</span><strong> $mask</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_SecurityIdentityInterface.xhtml">Symfony\Component\Security\Acl\Model\SecurityIdentityInterface</a></span><strong> $sid</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $granting</strong>, <span class="param-type">string</span><strong> $strategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Inserts a field-based ACE</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$property</code> - </li>
-                <li><code>$index</code> - </li>
-                <li><code>$field</code> - </li>
-                <li><code>$mask</code> - </li>
-                <li><code>$sid</code> - </li>
-                <li><code>$granting</code> - </li>
-                <li><code>$strategy</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\InvalidArgumentException</code>
-                </li>
-                <li>
-                  <code>\OutOfBoundsException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="onEntryPropertyChanged"/>
-            <h4><span class="label private">private</span>onEntryPropertyChanged<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Acl_Model_EntryInterface.xhtml">Symfony\Component\Security\Acl\Model\EntryInterface</a></span><strong> $entry</strong>, <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">mixed</span><strong> $oldValue</strong>, <span class="param-type">mixed</span><strong> $newValue</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Called when a property of an ACE associated with this ACL changes</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entry</code> - </li>
-                <li><code>$name</code> - </li>
-                <li><code>$oldValue</code> - </li>
-                <li><code>$newValue</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="onPropertyChanged"/>
-            <h4><span class="label private">private</span>onPropertyChanged<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">mixed</span><strong> $oldValue</strong>, <span class="param-type">mixed</span><strong> $newValue</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Called when a property of the ACL changes</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-                <li><code>$oldValue</code> - </li>
-                <li><code>$newValue</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="updateAce"/>
-            <h4><span class="label private">private</span>updateAce<span style="font-size:90%;">( <span class="param-type">string</span><strong> $property</strong>, <span class="param-type">integer</span><strong> $index</strong>, <span class="param-type">integer</span><strong> $mask</strong>, <span class="param-type">string</span><strong> $strategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Updates an ACE</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$property</code> - </li>
-                <li><code>$index</code> - </li>
-                <li><code>$mask</code> - </li>
-                <li><code>$strategy</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\OutOfBoundsException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="updateAuditing"/>
-            <h4><span class="label private">private</span>updateAuditing<span style="font-size:90%;">( <span class="param-type">Array</span><strong> &amp;$aces</strong>, <span class="param-type">integer</span><strong> $index</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $auditSuccess</strong>, <span class="param-type"><span title="Boolean">Boolean</span></span><strong> $auditFailure</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Updates auditing for an ACE</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>&amp;$aces</code> - </li>
-                <li><code>$index</code> - </li>
-                <li><code>$auditSuccess</code> - </li>
-                <li><code>$auditFailure</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\OutOfBoundsException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="updateFieldAce"/>
-            <h4><span class="label private">private</span>updateFieldAce<span style="font-size:90%;">( <span class="param-type">string</span><strong> $property</strong>, <span class="param-type">integer</span><strong> $index</strong>, <span class="param-type">string</span><strong> $field</strong>, <span class="param-type">integer</span><strong> $mask</strong>, <span class="param-type">string</span><strong> $strategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Updates a field-based ACE</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$property</code> - </li>
-                <li><code>$index</code> - </li>
-                <li><code>$field</code> - </li>
-                <li><code>$mask</code> - </li>
-                <li><code>$strategy</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\InvalidArgumentException</code>
-                </li>
-                <li>
-                  <code>\OutOfBoundsException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="classAces">
+              <strong>$classAces</strong>
+            </li>
+            <li id="classFieldAces">
+              <strong>$classFieldAces</strong>
+            </li>
+            <li id="entriesInheriting">
+              <strong>$entriesInheriting</strong>
+            </li>
+            <li id="id">
+              <strong>$id</strong>
+            </li>
+            <li id="listeners">
+              <strong>$listeners</strong>
+            </li>
+            <li id="loadedSids">
+              <strong>$loadedSids</strong>
+            </li>
+            <li id="objectAces">
+              <strong>$objectAces</strong>
+            </li>
+            <li id="objectFieldAces">
+              <strong>$objectFieldAces</strong>
+            </li>
+            <li id="objectIdentity">
+              <strong>$objectIdentity</strong>
+            </li>
+            <li id="parentAcl">
+              <strong>$parentAcl</strong>
+            </li>
+            <li id="permissionGrantingStrategy">
+              <strong>$permissionGrantingStrategy</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="deleteAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/deleteAce.xhtml">deleteAce()</a>
+                — Deletes an ACE</li>
+            <li id="deleteFieldAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/deleteFieldAce.xhtml">deleteFieldAce()</a>
+                — Deletes a field-based ACE</li>
+            <li id="insertAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/insertAce.xhtml">insertAce()</a>
+                — Inserts an ACE</li>
+            <li id="insertFieldAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/insertFieldAce.xhtml">insertFieldAce()</a>
+                — Inserts a field-based ACE</li>
+            <li id="onEntryPropertyChanged"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/onEntryPropertyChanged.xhtml">onEntryPropertyChanged()</a>
+                — Called when a property of an ACE associated with this ACL changes</li>
+            <li id="onPropertyChanged"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/onPropertyChanged.xhtml">onPropertyChanged()</a>
+                — Called when a property of the ACL changes</li>
+            <li id="updateAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateAce.xhtml">updateAce()</a>
+                — Updates an ACE</li>
+            <li id="updateAuditing"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateAuditing.xhtml">updateAuditing()</a>
+                — Updates auditing for an ACE</li>
+            <li id="updateFieldAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateFieldAce.xhtml">updateFieldAce()</a>
+                — Updates a field-based ACE</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/__construct.xhtml">__construct()</a>
+                — Constructor</li>
+            <li id="addPropertyChangedListener"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/addPropertyChangedListener.xhtml">addPropertyChangedListener()</a>
+                — Adds a property changed listener</li>
+            <li id="deleteClassAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/deleteClassAce.xhtml">deleteClassAce()</a>
+                — {@inheritDoc}</li>
+            <li id="deleteClassFieldAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/deleteClassFieldAce.xhtml">deleteClassFieldAce()</a>
+                — {@inheritDoc}</li>
+            <li id="deleteObjectAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/deleteObjectAce.xhtml">deleteObjectAce()</a>
+                — {@inheritDoc}</li>
+            <li id="deleteObjectFieldAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/deleteObjectFieldAce.xhtml">deleteObjectFieldAce()</a>
+                — {@inheritDoc}</li>
+            <li id="getClassAces"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getClassAces.xhtml">getClassAces()</a>
+                — {@inheritDoc}</li>
+            <li id="getClassFieldAces"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getClassFieldAces.xhtml">getClassFieldAces()</a>
+                — {@inheritDoc}</li>
+            <li id="getId"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getId.xhtml">getId()</a>
+                — {@inheritDoc}</li>
+            <li id="getObjectAces"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getObjectAces.xhtml">getObjectAces()</a>
+                — {@inheritDoc}</li>
+            <li id="getObjectFieldAces"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getObjectFieldAces.xhtml">getObjectFieldAces()</a>
+                — {@inheritDoc}</li>
+            <li id="getObjectIdentity"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getObjectIdentity.xhtml">getObjectIdentity()</a>
+                — {@inheritDoc}</li>
+            <li id="getParentAcl"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/getParentAcl.xhtml">getParentAcl()</a>
+                — {@inheritDoc}</li>
+            <li id="insertClassAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/insertClassAce.xhtml">insertClassAce()</a>
+                — {@inheritDoc}</li>
+            <li id="insertClassFieldAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/insertClassFieldAce.xhtml">insertClassFieldAce()</a>
+                — {@inheritDoc}</li>
+            <li id="insertObjectAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/insertObjectAce.xhtml">insertObjectAce()</a>
+                — {@inheritDoc}</li>
+            <li id="insertObjectFieldAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/insertObjectFieldAce.xhtml">insertObjectFieldAce()</a>
+                — {@inheritDoc}</li>
+            <li id="isEntriesInheriting"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/isEntriesInheriting.xhtml">isEntriesInheriting()</a>
+                — {@inheritDoc}</li>
+            <li id="isFieldGranted"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/isFieldGranted.xhtml">isFieldGranted()</a>
+                — {@inheritDoc}</li>
+            <li id="isGranted"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/isGranted.xhtml">isGranted()</a>
+                — {@inheritDoc}</li>
+            <li id="isSidLoaded"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/isSidLoaded.xhtml">isSidLoaded()</a>
+                — {@inheritDoc}</li>
+            <li id="serialize"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/serialize.xhtml">serialize()</a>
+                — Implementation for the \Serializable interface</li>
+            <li id="setEntriesInheriting"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/setEntriesInheriting.xhtml">setEntriesInheriting()</a>
+                — {@inheritDoc}</li>
+            <li id="setParentAcl"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/setParentAcl.xhtml">setParentAcl()</a>
+                — {@inheritDoc}</li>
+            <li id="unserialize"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/unserialize.xhtml">unserialize()</a>
+                — Implementation for the \Serializable interface</li>
+            <li id="updateClassAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateClassAce.xhtml">updateClassAce()</a>
+                — {@inheritDoc}</li>
+            <li id="updateClassAuditing"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateClassAuditing.xhtml">updateClassAuditing()</a>
+                — {@inheritDoc}</li>
+            <li id="updateClassFieldAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateClassFieldAce.xhtml">updateClassFieldAce()</a>
+                — {@inheritDoc}</li>
+            <li id="updateClassFieldAuditing"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateClassFieldAuditing.xhtml">updateClassFieldAuditing()</a>
+                — {@inheritDoc}</li>
+            <li id="updateObjectAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateObjectAce.xhtml">updateObjectAce()</a>
+                — {@inheritDoc}</li>
+            <li id="updateObjectAuditing"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateObjectAuditing.xhtml">updateObjectAuditing()</a>
+                — {@inheritDoc}</li>
+            <li id="updateObjectFieldAce"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateObjectFieldAce.xhtml">updateObjectFieldAce()</a>
+                — {@inheritDoc}</li>
+            <li id="updateObjectFieldAuditing"><a title="Symfony\Component\Security\Acl\Domain\Acl" href="../classes/Symfony_Component_Security_Acl_Domain_Acl/updateObjectFieldAuditing.xhtml">updateObjectFieldAuditing()</a>
+                — {@inheritDoc}</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

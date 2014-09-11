@@ -1,538 +1,196 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Config\Config - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Config\Config</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Config">Zend\Config</a>
+          </li>
+          <li class="separator">Config</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#allowModifications">$allowModifications</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#count">$count</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#data">$data</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#skipNextIteration">$skipNextIteration</a>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Config/Config.php.xhtml#line24">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__clone">__clone</a>
-          </li>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#__get">__get</a>
-          </li>
-          <li>
-            <a href="#__isset">__isset</a>
-          </li>
-          <li>
-            <a href="#__set">__set</a>
-          </li>
-          <li>
-            <a href="#__unset">__unset</a>
-          </li>
-          <li>
-            <a href="#count">count</a>
-          </li>
-          <li>
-            <a href="#current">current</a>
-          </li>
-          <li>
-            <a href="#get">get</a>
-          </li>
-          <li>
-            <a href="#isReadOnly">isReadOnly</a>
-          </li>
-          <li>
-            <a href="#key">key</a>
-          </li>
-          <li>
-            <a href="#merge">merge</a>
-          </li>
-          <li>
-            <a href="#next">next</a>
-          </li>
-          <li>
-            <a href="#offsetExists">offsetExists</a>
-          </li>
-          <li>
-            <a href="#offsetGet">offsetGet</a>
-          </li>
-          <li>
-            <a href="#offsetSet">offsetSet</a>
-          </li>
-          <li>
-            <a href="#offsetUnset">offsetUnset</a>
-          </li>
-          <li>
-            <a href="#rewind">rewind</a>
-          </li>
-          <li>
-            <a href="#setReadOnly">setReadOnly</a>
-          </li>
-          <li>
-            <a href="#toArray">toArray</a>
-          </li>
-          <li>
-            <a href="#valid">valid</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Config\</span>Config</h2>
-        <div class="file-notice">
-          <p>Provides a property based interface to an array.</p>
-          <p>
-            <pre>The data are read-only unless $allowModifications is set to true
-on construction.
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Config\</small>Config</h1>
+        <h4>Provides a property based interface to an array.</h4>
+        <p>The data are read-only unless $allowModifications is set to true<br/>on construction.<br/><br/>Implements Countable, Iterator and ArrayAccess<br/>to facilitate easy access to the data.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Config
+                implements
+                <a title="Countable" href="../interfaces/Countable.xhtml">Countable</a>,<a title="Iterator" href="../interfaces/Iterator.xhtml">Iterator</a>,<a title="ArrayAccess" href="../interfaces/ArrayAccess.xhtml">ArrayAccess</a>
+            {<br/><ul class="none"><li>// members</li><li>protected <span title="Zend\Config\bool">bool</span> <a href="#members">$allowModifications</a>;
+                    </li><li>protected int <a href="#members">$count</a>;
+                    </li><li>protected array <a href="#members">$data</a>;
+                    </li><li>protected <span title="Zend\Config\bool">bool</span> <a href="#members">$skipNextIteration</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/__construct.xhtml">__construct</a>()
+                    </li><li>public mixed <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/get.xhtml">get</a>()
+                    </li><li>public mixed <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/__get.xhtml">__get</a>()
+                    </li><li>public void <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/__set.xhtml">__set</a>()
+                    </li><li>public void <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/__clone.xhtml">__clone</a>()
+                    </li><li>public array <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/toArray.xhtml">toArray</a>()
+                    </li><li>public bool <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/__isset.xhtml">__isset</a>()
+                    </li><li>public void <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/__unset.xhtml">__unset</a>()
+                    </li><li>public int <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/count.xhtml">count</a>()
+                    </li><li>public mixed <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/current.xhtml">current</a>()
+                    </li><li>public mixed <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/key.xhtml">key</a>()
+                    </li><li>public void <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/next.xhtml">next</a>()
+                    </li><li>public void <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/rewind.xhtml">rewind</a>()
+                    </li><li>public bool <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/valid.xhtml">valid</a>()
+                    </li><li>public bool <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/offsetExists.xhtml">offsetExists</a>()
+                    </li><li>public mixed <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/offsetGet.xhtml">offsetGet</a>()
+                    </li><li>public void <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/offsetSet.xhtml">offsetSet</a>()
+                    </li><li>public void <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/offsetUnset.xhtml">offsetUnset</a>()
+                    </li><li>public Config <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/merge.xhtml">merge</a>()
+                    </li><li>public void <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/setReadOnly.xhtml">setReadOnly</a>()
+                    </li><li>public bool <a title="Zend\Config\Config" href="../classes/Zend_Config_Config/isReadOnly.xhtml">isReadOnly</a>()
+                    </li></ul>
 
-Implements Countable, Iterator and ArrayAccess
-to facilitate easy access to the data.</pre>
-          </p>
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Countable.xhtml">Countable</a>
+            </li>
+            <li>
+              <a href="../interfaces/Iterator.xhtml">Iterator</a>
+            </li>
+            <li>
+              <a href="../interfaces/ArrayAccess.xhtml">ArrayAccess</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Countable.xhtml">Countable</a>
-          </li>
-          <li>
-            <a href="../interfaces/Iterator.xhtml">Iterator</a>
-          </li>
-          <li>
-            <span title="ArrayAccess">ArrayAccess</span>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="allowModifications"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $allowModifications</h4>
-            <ul class="varlist">
-              <li>Whether modifications to configuration data are allowed.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="count"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $count</h4>
-            <ul class="varlist">
-              <li>Number of elements in configuration data.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="data"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $data</h4>
-            <ul class="varlist">
-              <li>Data withing the configuration.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="skipNextIteration"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $skipNextIteration</h4>
-            <ul class="varlist">
-              <li>Used when unsetting values during iteration to ensure we do not skip the next element.</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $array</strong>, <span class="param-type">boolean</span><strong> $allowModifications</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor.<pre>Data is read-only unless $allowModifications is set to true
-on construction.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$array</code> - </li>
-                <li><code>$allowModifications</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__clone"/>
-            <h4><span class="label public">public</span>__clone<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Deep clone of this instance to ensure that nested Zend\Configs are also cloned.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="__get"/>
-            <h4><span class="label public">public</span>__get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Magic function so that $obj-&gt;value will work.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="__isset"/>
-            <h4><span class="label public">public</span>__isset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>isset() overloading</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="__set"/>
-            <h4><span class="label public">public</span>__set<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set a value in the config.<pre>Only allow setting of a property if $allowModifications  was set to true
-on construction. Otherwise, throw an exception.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="__unset"/>
-            <h4><span class="label public">public</span>__unset<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>unset() overloading</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="count"/>
-            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>count(): defined by Countable interface.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="current"/>
-            <h4><span class="label public">public</span>current<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>current(): defined by Iterator interface.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="get"/>
-            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">mixed</span><strong> $default</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieve a value and return $default if there is no element set.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-                <li><code>$default</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isReadOnly"/>
-            <h4><span class="label public">public</span>isReadOnly<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns whether this Config object is read only or not.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="key"/>
-            <h4><span class="label public">public</span>key<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>key(): defined by Iterator interface.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="merge"/>
-            <h4><span class="label public">public</span>merge<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Config\self">self</span></span><strong> $merge</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Merge another Config with this one.<pre>For duplicate keys, the following will be performed:
-- Nested Configs will be recursively merged.
-- Items in $merge with INTEGER keys will be appended.
-- Items in $merge with STRING keys will overwrite current values.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$merge</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="next"/>
-            <h4><span class="label public">public</span>next<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>next(): defined by Iterator interface.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="offsetExists"/>
-            <h4><span class="label public">public</span>offsetExists<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $offset</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>offsetExists(): defined by ArrayAccess interface.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$offset</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="offsetGet"/>
-            <h4><span class="label public">public</span>offsetGet<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $offset</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>offsetGet(): defined by ArrayAccess interface.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$offset</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="offsetSet"/>
-            <h4><span class="label public">public</span>offsetSet<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $offset</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>offsetSet(): defined by ArrayAccess interface.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$offset</code> - </li>
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="offsetUnset"/>
-            <h4><span class="label public">public</span>offsetUnset<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $offset</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>offsetUnset(): defined by ArrayAccess interface.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$offset</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="rewind"/>
-            <h4><span class="label public">public</span>rewind<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>rewind(): defined by Iterator interface.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setReadOnly"/>
-            <h4><span class="label public">public</span>setReadOnly<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Prevent any more modifications being made to this instance.<pre>Useful after merge() has been used to merge multiple Config objects
-into one object which should then not be modified again.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="toArray"/>
-            <h4><span class="label public">public</span>toArray<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return an associative array of the stored data.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="valid"/>
-            <h4><span class="label public">public</span>valid<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>valid(): defined by Iterator interface.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="allowModifications"><strong>$allowModifications</strong>
+                —
+                <a href="#">Zend\Config\bool</a><br/><span class="indent">Whether modifications to configuration data are allowed.</span></li>
+            <li id="count"><strong>$count</strong>
+                —
+                int<br/><span class="indent">Number of elements in configuration data.</span></li>
+            <li id="data"><strong>$data</strong>
+                —
+                array<br/><span class="indent">Data within the configuration.</span></li>
+            <li id="skipNextIteration"><strong>$skipNextIteration</strong>
+                —
+                <a href="#">Zend\Config\bool</a><br/><span class="indent">Used when unsetting values during iteration to ensure we do not skip the next element.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/__construct.xhtml">__construct()</a>
+                — Constructor.</li>
+            <li id="__clone"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/__clone.xhtml">__clone()</a>
+                — Deep clone of this instance to ensure that nested Zend\Configs are also cloned.</li>
+            <li id="__get"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/__get.xhtml">__get()</a>
+                — Magic function so that $obj-&gt;value will work.</li>
+            <li id="__isset"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/__isset.xhtml">__isset()</a>
+                — isset() overloading</li>
+            <li id="__set"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/__set.xhtml">__set()</a>
+                — Set a value in the config.</li>
+            <li id="__unset"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/__unset.xhtml">__unset()</a>
+                — unset() overloading</li>
+            <li id="count"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/count.xhtml">count()</a>
+                — count(): defined by Countable interface.</li>
+            <li id="current"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/current.xhtml">current()</a>
+                — current(): defined by Iterator interface.</li>
+            <li id="get"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/get.xhtml">get()</a>
+                — Retrieve a value and return $default if there is no element set.</li>
+            <li id="isReadOnly"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/isReadOnly.xhtml">isReadOnly()</a>
+                — Returns whether this Config object is read only or not.</li>
+            <li id="key"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/key.xhtml">key()</a>
+                — key(): defined by Iterator interface.</li>
+            <li id="merge"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/merge.xhtml">merge()</a>
+                — Merge another Config with this one.</li>
+            <li id="next"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/next.xhtml">next()</a>
+                — next(): defined by Iterator interface.</li>
+            <li id="offsetExists"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/offsetExists.xhtml">offsetExists()</a>
+                — offsetExists(): defined by ArrayAccess interface.</li>
+            <li id="offsetGet"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/offsetGet.xhtml">offsetGet()</a>
+                — offsetGet(): defined by ArrayAccess interface.</li>
+            <li id="offsetSet"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/offsetSet.xhtml">offsetSet()</a>
+                — offsetSet(): defined by ArrayAccess interface.</li>
+            <li id="offsetUnset"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/offsetUnset.xhtml">offsetUnset()</a>
+                — offsetUnset(): defined by ArrayAccess interface.</li>
+            <li id="rewind"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/rewind.xhtml">rewind()</a>
+                — rewind(): defined by Iterator interface.</li>
+            <li id="setReadOnly"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/setReadOnly.xhtml">setReadOnly()</a>
+                — Prevent any more modifications being made to this instance.</li>
+            <li id="toArray"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/toArray.xhtml">toArray()</a>
+                — Return an associative array of the stored data.</li>
+            <li id="valid"><a title="Zend\Config\Config" href="../classes/Zend_Config_Config/valid.xhtml">valid()</a>
+                — valid(): defined by Iterator interface.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

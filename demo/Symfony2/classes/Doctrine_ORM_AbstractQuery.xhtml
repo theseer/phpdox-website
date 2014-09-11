@@ -1,994 +1,312 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\ORM\AbstractQuery - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\ORM\AbstractQuery</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_ORM">Doctrine\ORM</a>
+          </li>
+          <li class="separator">AbstractQuery</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#HYDRATE_OBJECT">HYDRATE_OBJECT</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#HYDRATE_ARRAY">HYDRATE_ARRAY</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#HYDRATE_SCALAR">HYDRATE_SCALAR</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#HYDRATE_SINGLE_SCALAR">HYDRATE_SINGLE_SCALAR</a>
+            <a href="#constants">Constants</a>
           </li>
           <li>
-            <a href="#HYDRATE_SIMPLEOBJECT">HYDRATE_SIMPLEOBJECT</a>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/doctrine/orm/lib/Doctrine/ORM/AbstractQuery.php.xhtml#line42">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\ORM\</small>AbstractQuery</h1>
+        <h4>Base contract for ORM queries. Base class for Query and NativeQuery.</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#parameters">$parameters</a>
-          </li>
-          <li>
-            <a href="#_resultSetMapping">$_resultSetMapping</a>
-          </li>
-          <li>
-            <a href="#_em">$_em</a>
-          </li>
-          <li>
-            <a href="#_hints">$_hints</a>
-          </li>
-          <li>
-            <a href="#_hydrationMode">$_hydrationMode</a>
-          </li>
-          <li>
-            <a href="#_queryCacheProfile">$_queryCacheProfile</a>
-          </li>
-          <li>
-            <a href="#_expireResultCache">$_expireResultCache</a>
-          </li>
-          <li>
-            <a href="#_hydrationCacheProfile">$_hydrationCacheProfile</a>
-          </li>
+          <li>Author: Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__clone">__clone</a>
-          </li>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#_doExecute">_doExecute</a>
-          </li>
-          <li>
-            <a href="#convertObjectParameterToScalarValue">convertObjectParameterToScalarValue</a>
-          </li>
-          <li>
-            <a href="#execute">execute</a>
-          </li>
-          <li>
-            <a href="#expireResultCache">expireResultCache</a>
-          </li>
-          <li>
-            <a href="#free">free</a>
-          </li>
-          <li>
-            <a href="#getArrayResult">getArrayResult</a>
-          </li>
-          <li>
-            <a href="#getEntityManager">getEntityManager</a>
-          </li>
-          <li>
-            <a href="#getExpireResultCache">getExpireResultCache</a>
-          </li>
-          <li>
-            <a href="#getHint">getHint</a>
-          </li>
-          <li>
-            <a href="#getHints">getHints</a>
-          </li>
-          <li>
-            <a href="#getHydrationCacheId">getHydrationCacheId</a>
-          </li>
-          <li>
-            <a href="#getHydrationCacheProfile">getHydrationCacheProfile</a>
-          </li>
-          <li>
-            <a href="#getHydrationMode">getHydrationMode</a>
-          </li>
-          <li>
-            <a href="#getOneOrNullResult">getOneOrNullResult</a>
-          </li>
-          <li>
-            <a href="#getParameter">getParameter</a>
-          </li>
-          <li>
-            <a href="#getParameters">getParameters</a>
-          </li>
-          <li>
-            <a href="#getQueryCacheProfile">getQueryCacheProfile</a>
-          </li>
-          <li>
-            <a href="#getResult">getResult</a>
-          </li>
-          <li>
-            <a href="#getResultCacheDriver">getResultCacheDriver</a>
-          </li>
-          <li>
-            <a href="#getResultCacheId">getResultCacheId</a>
-          </li>
-          <li>
-            <a href="#getResultCacheLifetime">getResultCacheLifetime</a>
-          </li>
-          <li>
-            <a href="#getSQL">getSQL</a>
-          </li>
-          <li>
-            <a href="#getScalarResult">getScalarResult</a>
-          </li>
-          <li>
-            <a href="#getSingleResult">getSingleResult</a>
-          </li>
-          <li>
-            <a href="#getSingleScalarResult">getSingleScalarResult</a>
-          </li>
-          <li>
-            <a href="#iterate">iterate</a>
-          </li>
-          <li>
-            <a href="#processParameterValue">processParameterValue</a>
-          </li>
-          <li>
-            <a href="#setFetchMode">setFetchMode</a>
-          </li>
-          <li>
-            <a href="#setHint">setHint</a>
-          </li>
-          <li>
-            <a href="#setHydrationCacheProfile">setHydrationCacheProfile</a>
-          </li>
-          <li>
-            <a href="#setHydrationMode">setHydrationMode</a>
-          </li>
-          <li>
-            <a href="#setParameter">setParameter</a>
-          </li>
-          <li>
-            <a href="#setParameters">setParameters</a>
-          </li>
-          <li>
-            <a href="#setResultCacheDriver">setResultCacheDriver</a>
-          </li>
-          <li>
-            <a href="#setResultCacheId">setResultCacheId</a>
-          </li>
-          <li>
-            <a href="#setResultCacheLifetime">setResultCacheLifetime</a>
-          </li>
-          <li>
-            <a href="#setResultCacheProfile">setResultCacheProfile</a>
-          </li>
-          <li>
-            <a href="#setResultSetMapping">setResultSetMapping</a>
-          </li>
-          <li>
-            <a href="#useResultCache">useResultCache</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\ORM\</span>AbstractQuery</h2>
-        <div class="file-notice">
-          <p>Base contract for ORM queries. Base class for Query and NativeQuery.</p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class AbstractQuery
+            {<br/><ul class="none"><li>// constants</li><li>const HYDRATE_OBJECT = 1;</li><li>const HYDRATE_ARRAY = 2;</li><li>const HYDRATE_SCALAR = 3;</li><li>const HYDRATE_SINGLE_SCALAR = 4;</li><li>const HYDRATE_SIMPLEOBJECT = 5;</li></ul><ul class="none"><li>// members</li><li>protected <span title="\Doctrine\Common\Collections\ArrayCollection">ArrayCollection</span> <a href="#members">$parameters</a>;
+                    </li><li>protected <span title="Doctrine\ORM\ResultSetMapping">ResultSetMapping</span> <a href="#members">$_resultSetMapping</a>;
+                    </li><li>protected <span title="\Doctrine\ORM\EntityManager">EntityManager</span> <a href="#members">$_em</a>;
+                    </li><li>protected array <a href="#members">$_hints</a>;
+                    </li><li>protected integer <a href="#members">$_hydrationMode</a>;
+                    </li><li>protected <a href="#members">$_queryCacheProfile</a>;
+                    </li><li>protected boolean <a href="#members">$_expireResultCache</a>;
+                    </li><li>protected <a href="#members">$_hydrationCacheProfile</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/__construct.xhtml">__construct</a>()
+                    </li><li>public abstract string <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getSQL.xhtml">getSQL</a>()
+                    </li><li>public EntityManager <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getEntityManager.xhtml">getEntityManager</a>()
+                    </li><li>public void <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/free.xhtml">free</a>()
+                    </li><li>public ArrayCollection <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getParameters.xhtml">getParameters</a>()
+                    </li><li>public mixed <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getParameter.xhtml">getParameter</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setParameters.xhtml">setParameters</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setParameter.xhtml">setParameter</a>()
+                    </li><li>public array <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/processParameterValue.xhtml">processParameterValue</a>()
+                    </li><li>private void <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/convertObjectParameterToScalarValue.xhtml">convertObjectParameterToScalarValue</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setResultSetMapping.xhtml">setResultSetMapping</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setHydrationCacheProfile.xhtml">setHydrationCacheProfile</a>()
+                    </li><li>public QueryCacheProfile <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getHydrationCacheProfile.xhtml">getHydrationCacheProfile</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setResultCacheProfile.xhtml">setResultCacheProfile</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setResultCacheDriver.xhtml">setResultCacheDriver</a>()
+                    </li><li>public Cache <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getResultCacheDriver.xhtml">getResultCacheDriver</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/useResultCache.xhtml">useResultCache</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setResultCacheLifetime.xhtml">setResultCacheLifetime</a>()
+                    </li><li>public integer <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getResultCacheLifetime.xhtml">getResultCacheLifetime</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/expireResultCache.xhtml">expireResultCache</a>()
+                    </li><li>public boolean <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getExpireResultCache.xhtml">getExpireResultCache</a>()
+                    </li><li>public QueryCacheProfile <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getQueryCacheProfile.xhtml">getQueryCacheProfile</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setFetchMode.xhtml">setFetchMode</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setHydrationMode.xhtml">setHydrationMode</a>()
+                    </li><li>public integer <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getHydrationMode.xhtml">getHydrationMode</a>()
+                    </li><li>public array <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getResult.xhtml">getResult</a>()
+                    </li><li>public array <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getArrayResult.xhtml">getArrayResult</a>()
+                    </li><li>public array <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getScalarResult.xhtml">getScalarResult</a>()
+                    </li><li>public mixed <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getOneOrNullResult.xhtml">getOneOrNullResult</a>()
+                    </li><li>public mixed <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getSingleResult.xhtml">getSingleResult</a>()
+                    </li><li>public mixed <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getSingleScalarResult.xhtml">getSingleScalarResult</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setHint.xhtml">setHint</a>()
+                    </li><li>public mixed <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getHint.xhtml">getHint</a>()
+                    </li><li>public array <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getHints.xhtml">getHints</a>()
+                    </li><li>public IterableResult <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/iterate.xhtml">iterate</a>()
+                    </li><li>public mixed <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/execute.xhtml">execute</a>()
+                    </li><li>protected array <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getHydrationCacheId.xhtml">getHydrationCacheId</a>()
+                    </li><li>public AbstractQuery <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setResultCacheId.xhtml">setResultCacheId</a>()
+                    </li><li>public string <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getResultCacheId.xhtml">getResultCacheId</a>()
+                    </li><li>protected abstract Statement <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/_doExecute.xhtml">_doExecute</a>()
+                    </li><li>public void <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/__clone.xhtml">__clone</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extended by</h4>
+          <ul>
+            <li>
+              <a href="../classes/Doctrine_ORM_Query.xhtml">Doctrine\ORM\Query</a>
+            </li>
+            <li>
+              <a href="../classes/Doctrine_ORM_NativeQuery.xhtml">Doctrine\ORM\NativeQuery</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
-          <li><b>Author: </b>Guilherme Blanco &lt;guilhermeblanco@hotmail.com&gt;</li>
-          <li><b>Author: </b>Jonathan Wage &lt;jonwage@gmail.com&gt;</li>
-          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
-          <li><b>Author: </b>Konsta Vesterinen &lt;kvesteri@cc.hut.fi&gt;</li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="HYDRATE_OBJECT"/>HYDRATE_OBJECT = 1<em> </em><p><li>Hydrates an object graph. This is the default behavior.</li></p><hr/></li>
-          <li><a name="HYDRATE_ARRAY"/>HYDRATE_ARRAY = 2<em> </em><p><li>Hydrates an array graph.</li></p><hr/></li>
-          <li><a name="HYDRATE_SCALAR"/>HYDRATE_SCALAR = 3<em> </em><p><li>Hydrates a flat, rectangular result set with scalar values.</li></p><hr/></li>
-          <li><a name="HYDRATE_SINGLE_SCALAR"/>HYDRATE_SINGLE_SCALAR = 4<em> </em><p><li>Hydrates a single scalar value.</li></p><hr/></li>
-          <li><a name="HYDRATE_SIMPLEOBJECT"/>HYDRATE_SIMPLEOBJECT = 5<em> </em><p><li>Very simple object hydrator (optimized for performance).</li></p><hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="parameters"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $parameters</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="_resultSetMapping"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $_resultSetMapping</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="_em"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $_em</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="_hints"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $_hints</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="_hydrationMode"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $_hydrationMode</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="_queryCacheProfile"/>
-            <h4><span class="label protected">protected</span>
-                $_queryCacheProfile</h4>
-            <ul class="varlist">
-              <li/>
-              <li><code/> - </li>
-            </ul>
-          </li>
-          <li>
-            <a name="_expireResultCache"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $_expireResultCache</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="_hydrationCacheProfile"/>
-            <h4><span class="label protected">protected</span>
-                $_hydrationCacheProfile</h4>
-            <ul class="varlist">
-              <li/>
-              <li><code/> - </li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_EntityManager.xhtml">Doctrine\ORM\EntityManager</a></span><strong> $em</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Initializes a new instance of a class derived from &lt;tt&gt;AbstractQuery&lt;/tt&gt;.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entityManager</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__clone"/>
-            <h4><span class="label public">public</span>__clone<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Cleanup Query resource when clone is called.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="execute"/>
-            <h4><span class="label public">public</span>execute<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\Common\Collections\ArrayCollection|array">ArrayCollection|array</span></span><strong> $parameters</strong>, <span class="param-type">integer</span><strong> $hydrationMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Executes the query.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$parameters</code> - Query parameters.</li>
-                <li><code>$hydrationMode</code> - Processing mode to be used during the hydration process.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="expireResultCache"/>
-            <h4><span class="label public">public</span>expireResultCache<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $expire</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Defines if the result cache is active or not.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$expire</code> - Whether or not to force resultset cache expiration.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This query instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="free"/>
-            <h4><span class="label public">public</span>free<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Frees the resources used by the query object.<pre>Resets Parameters, Parameter Types and Query Hints.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getArrayResult"/>
-            <h4><span class="label public">public</span>getArrayResult<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the array of results for the query.<pre>Alias for execute(null, HYDRATE_ARRAY).</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getEntityManager"/>
-            <h4><span class="label public">public</span>getEntityManager<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieves the associated EntityManager of this Query instance.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getExpireResultCache"/>
-            <h4><span class="label public">public</span>getExpireResultCache<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieves if the resultset cache is active or not.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getHint"/>
-            <h4><span class="label public">public</span>getHint<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the value of a query hint. If the hint name is not recognized, FALSE is returned.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the hint.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The value of the hint or FALSE, if the hint name is not recognized.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getHints"/>
-            <h4><span class="label public">public</span>getHints<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return the key value map of query hints that are currently set.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getHydrationCacheProfile"/>
-            <h4><span class="label public">public</span>getHydrationCacheProfile<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getHydrationMode"/>
-            <h4><span class="label public">public</span>getHydrationMode<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the hydration mode currently used by the query.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getOneOrNullResult"/>
-            <h4><span class="label public">public</span>getOneOrNullResult<span style="font-size:90%;">( <span class="param-type">int</span><strong> $hydrationMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get exactly one result or null.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$hydrationMode</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>NonUniqueResultException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getParameter"/>
-            <h4><span class="label public">public</span>getParameter<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $key</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets a query parameter.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$key</code> - The key (index or name) of the bound parameter.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The value of the bound parameter.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getParameters"/>
-            <h4><span class="label public">public</span>getParameters<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get all defined parameters.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The defined query parameters.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getQueryCacheProfile"/>
-            <h4><span class="label public">public</span>getQueryCacheProfile<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getResult"/>
-            <h4><span class="label public">public</span>getResult<span style="font-size:90%;">( <span class="param-type"/><strong> $hydrationMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the list of results for the query.<pre>Alias for execute(null, $hydrationMode = HYDRATE_OBJECT).</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getResultCacheDriver"/>
-            <h4><span class="label public">public</span>getResultCacheDriver<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the cache driver used for caching result sets.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Cache driver</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getResultCacheId"/>
-            <h4><span class="label public">public</span>getResultCacheId<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the result cache id to use to store the result set cache entry if set.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getResultCacheLifetime"/>
-            <h4><span class="label public">public</span>getResultCacheLifetime<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieves the lifetime of resultset cache.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSQL"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getSQL<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the SQL query that corresponds to this query object.<pre>The returned SQL syntax depends on the connection driver that is used
-by this query object at the time of this method call.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>SQL query</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getScalarResult"/>
-            <h4><span class="label public">public</span>getScalarResult<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the scalar results for the query.<pre>Alias for execute(null, HYDRATE_SCALAR).</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSingleResult"/>
-            <h4><span class="label public">public</span>getSingleResult<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $hydrationMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the single result of the query.<pre>Enforces the presence as well as the uniqueness of the result.
-
-If the result is not unique, a NonUniqueResultException is thrown.
-If there is no result, a NoResultException is thrown.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$hydrationMode</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>NonUniqueResultException If the query result is not unique.</code>
-                </li>
-                <li>
-                  <code>NoResultException If the query returned no result.</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSingleScalarResult"/>
-            <h4><span class="label public">public</span>getSingleScalarResult<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the single scalar result of the query.<pre>Alias for getSingleResult(HYDRATE_SINGLE_SCALAR).</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>QueryException If the query result is not unique.</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="iterate"/>
-            <h4><span class="label public">public</span>iterate<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\Common\Collections\ArrayCollection|array">ArrayCollection|array</span></span><strong> $parameters</strong>, <span class="param-type">integer</span><strong> $hydrationMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Executes the query and returns an IterableResult that can be used to incrementally iterate over the result.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$parameters</code> - The query parameters.</li>
-                <li><code>$hydrationMode</code> - The hydration mode to use.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="processParameterValue"/>
-            <h4><span class="label public">public</span>processParameterValue<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Process an individual parameter value</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setFetchMode"/>
-            <h4><span class="label public">public</span>setFetchMode<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong>, <span class="param-type">string</span><strong> $assocName</strong>, <span class="param-type">int</span><strong> $fetchMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Change the default fetch mode of an association for this query.<pre>$fetchMode can be one of ClassMetadata::FETCH_EAGER or ClassMetadata::FETCH_LAZY</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$class</code> - </li>
-                <li><code>$assocName</code> - </li>
-                <li><code>$fetchMode</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setHint"/>
-            <h4><span class="label public">public</span>setHint<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a query hint. If the hint name is not recognized, it is silently ignored.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The name of the hint.</li>
-                <li><code>$value</code> - The value of the hint.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setHydrationCacheProfile"/>
-            <h4><span class="label public">public</span>setHydrationCacheProfile<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Cache_QueryCacheProfile.xhtml">Doctrine\DBAL\Cache\QueryCacheProfile</a></span><strong> $profile</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set a cache profile for hydration caching.<pre>If no result cache driver is set in the QueryCacheProfile, the default
-result cache driver is used from the configuration.
-
-Important: Hydration caching does NOT register entities in the
-UnitOfWork when retrieved from the cache. Never use result cached
-entities for requests that also flush the EntityManager. If you want
-some form of caching with UnitOfWork registration you should use
-{@see AbstractQuery::setResultCacheProfile()}.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$profile</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setHydrationMode"/>
-            <h4><span class="label public">public</span>setHydrationMode<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $hydrationMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Defines the processing mode to be used during hydration / result set transformation.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$hydrationMode</code> - Doctrine processing mode to be used during hydration process.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This query instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setParameter"/>
-            <h4><span class="label public">public</span>setParameter<span style="font-size:90%;">( <span class="param-type"><span title="string|integer">string|integer</span></span><strong> $key</strong>, <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a query parameter.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$key</code> - The parameter position or name.</li>
-                <li><code>$value</code> - The parameter value.</li>
-                <li><code>$type</code> - The parameter type. If specified, the given value will be run through</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This query instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setParameters"/>
-            <h4><span class="label public">public</span>setParameters<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\Common\Collections\ArrayCollection|array">ArrayCollection|array</span></span><strong> $parameters</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a collection of query parameters.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$parameters</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This query instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setResultCacheDriver"/>
-            <h4><span class="label public">public</span>setResultCacheDriver<span style="font-size:90%;">( <span class="param-type"/><strong> $resultCacheDriver</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Defines a cache driver to be used for caching result sets and implictly enables caching.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$driver</code> - Cache driver</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setResultCacheId"/>
-            <h4><span class="label public">public</span>setResultCacheId<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the result cache id to use to store the result set cache entry.<pre>If this is not explicitly set by the developer then a hash is automatically
-generated for you.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This query instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setResultCacheLifetime"/>
-            <h4><span class="label public">public</span>setResultCacheLifetime<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $lifetime</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Defines how long the result cache will be active before expire.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$lifetime</code> - How long the cache entry is valid.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This query instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setResultCacheProfile"/>
-            <h4><span class="label public">public</span>setResultCacheProfile<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_DBAL_Cache_QueryCacheProfile.xhtml">Doctrine\DBAL\Cache\QueryCacheProfile</a></span><strong> $profile</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set a cache profile for the result cache.<pre>If no result cache driver is set in the QueryCacheProfile, the default
-result cache driver is used from the configuration.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$profile</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setResultSetMapping"/>
-            <h4><span class="label public">public</span>setResultSetMapping<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Query_ResultSetMapping.xhtml">Doctrine\ORM\Query\ResultSetMapping</a></span><strong> $rsm</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the ResultSetMapping that should be used for hydration.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$rsm</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="useResultCache"/>
-            <h4><span class="label public">public</span>useResultCache<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $bool</strong>, <span class="param-type">integer</span><strong> $lifetime</strong>, <span class="param-type">string</span><strong> $resultCacheId</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set whether or not to cache the results of this query and if so, for how long and which ID to use for the cache entry.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$bool</code> - </li>
-                <li><code>$lifetime</code> - </li>
-                <li><code>$resultCacheId</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This query instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_doExecute"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>_doExecute<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Executes the query and returns a the resulting Statement object.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The executed database statement that holds the results.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getHydrationCacheId"/>
-            <h4><span class="label protected">protected</span>getHydrationCacheId<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the result cache id to use to store the result set cache entry.<pre>Will return the configured id if it exists otherwise a hash will be
-automatically generated for you.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>($key, $hash)</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="convertObjectParameterToScalarValue"/>
-            <h4><span class="label private">private</span>convertObjectParameterToScalarValue<span style="font-size:90%;">( <span class="param-type"/><strong> $value</strong> )</span></h4>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="HYDRATE_OBJECT">HYDRATE_OBJECT</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="HYDRATE_ARRAY">HYDRATE_ARRAY</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="HYDRATE_SCALAR">HYDRATE_SCALAR</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="HYDRATE_SINGLE_SCALAR">HYDRATE_SINGLE_SCALAR</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="HYDRATE_SIMPLEOBJECT">HYDRATE_SIMPLEOBJECT</td>
+              <td>5</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="_em"><strong>$_em</strong>
+                —
+                <a href="#">\Doctrine\ORM\EntityManager</a></li>
+            <li id="_expireResultCache"><strong>$_expireResultCache</strong>
+                —
+                boolean</li>
+            <li id="_hints"><strong>$_hints</strong>
+                —
+                array</li>
+            <li id="_hydrationCacheProfile">
+              <strong>$_hydrationCacheProfile</strong>
+            </li>
+            <li id="_hydrationMode"><strong>$_hydrationMode</strong>
+                —
+                integer</li>
+            <li id="_queryCacheProfile">
+              <strong>$_queryCacheProfile</strong>
+            </li>
+            <li id="_resultSetMapping"><strong>$_resultSetMapping</strong>
+                —
+                <a href="#">Doctrine\ORM\ResultSetMapping</a></li>
+            <li id="parameters"><strong>$parameters</strong>
+                —
+                <a href="#">\Doctrine\Common\Collections\ArrayCollection</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="convertObjectParameterToScalarValue">
+              <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/convertObjectParameterToScalarValue.xhtml">convertObjectParameterToScalarValue()</a>
+            </li>
+          </ul>
+          <h4>protected</h4>
+          <ul>
+            <li id="_doExecute"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/_doExecute.xhtml">_doExecute()</a>
+                — Executes the query and returns a the resulting Statement object.</li>
+            <li id="getHydrationCacheId"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getHydrationCacheId.xhtml">getHydrationCacheId()</a>
+                — Get the result cache id to use to store the result set cache entry.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/__construct.xhtml">__construct()</a>
+                — Initializes a new instance of a class derived from &lt;tt&gt;AbstractQuery&lt;/tt&gt;.</li>
+            <li id="__clone"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/__clone.xhtml">__clone()</a>
+                — Cleanup Query resource when clone is called.</li>
+            <li id="execute"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/execute.xhtml">execute()</a>
+                — Executes the query.</li>
+            <li id="expireResultCache"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/expireResultCache.xhtml">expireResultCache()</a>
+                — Defines if the result cache is active or not.</li>
+            <li id="free"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/free.xhtml">free()</a>
+                — Frees the resources used by the query object.</li>
+            <li id="getArrayResult"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getArrayResult.xhtml">getArrayResult()</a>
+                — Gets the array of results for the query.</li>
+            <li id="getEntityManager"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getEntityManager.xhtml">getEntityManager()</a>
+                — Retrieves the associated EntityManager of this Query instance.</li>
+            <li id="getExpireResultCache"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getExpireResultCache.xhtml">getExpireResultCache()</a>
+                — Retrieves if the resultset cache is active or not.</li>
+            <li id="getHint"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getHint.xhtml">getHint()</a>
+                — Gets the value of a query hint. If the hint name is not recognized, FALSE is returned.</li>
+            <li id="getHints"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getHints.xhtml">getHints()</a>
+                — Return the key value map of query hints that are currently set.</li>
+            <li id="getHydrationCacheProfile">
+              <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getHydrationCacheProfile.xhtml">getHydrationCacheProfile()</a>
+            </li>
+            <li id="getHydrationMode"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getHydrationMode.xhtml">getHydrationMode()</a>
+                — Gets the hydration mode currently used by the query.</li>
+            <li id="getOneOrNullResult"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getOneOrNullResult.xhtml">getOneOrNullResult()</a>
+                — Get exactly one result or null.</li>
+            <li id="getParameter"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getParameter.xhtml">getParameter()</a>
+                — Gets a query parameter.</li>
+            <li id="getParameters"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getParameters.xhtml">getParameters()</a>
+                — Get all defined parameters.</li>
+            <li id="getQueryCacheProfile">
+              <a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getQueryCacheProfile.xhtml">getQueryCacheProfile()</a>
+            </li>
+            <li id="getResult"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getResult.xhtml">getResult()</a>
+                — Gets the list of results for the query.</li>
+            <li id="getResultCacheDriver"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getResultCacheDriver.xhtml">getResultCacheDriver()</a>
+                — Returns the cache driver used for caching result sets.</li>
+            <li id="getResultCacheId"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getResultCacheId.xhtml">getResultCacheId()</a>
+                — Get the result cache id to use to store the result set cache entry if set.</li>
+            <li id="getResultCacheLifetime"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getResultCacheLifetime.xhtml">getResultCacheLifetime()</a>
+                — Retrieves the lifetime of resultset cache.</li>
+            <li id="getSQL"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getSQL.xhtml">getSQL()</a>
+                — Gets the SQL query that corresponds to this query object.</li>
+            <li id="getScalarResult"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getScalarResult.xhtml">getScalarResult()</a>
+                — Gets the scalar results for the query.</li>
+            <li id="getSingleResult"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getSingleResult.xhtml">getSingleResult()</a>
+                — Gets the single result of the query.</li>
+            <li id="getSingleScalarResult"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/getSingleScalarResult.xhtml">getSingleScalarResult()</a>
+                — Gets the single scalar result of the query.</li>
+            <li id="iterate"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/iterate.xhtml">iterate()</a>
+                — Executes the query and returns an IterableResult that can be used to incrementally iterate over the result.</li>
+            <li id="processParameterValue"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/processParameterValue.xhtml">processParameterValue()</a>
+                — Process an individual parameter value</li>
+            <li id="setFetchMode"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setFetchMode.xhtml">setFetchMode()</a>
+                — Change the default fetch mode of an association for this query.</li>
+            <li id="setHint"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setHint.xhtml">setHint()</a>
+                — Sets a query hint. If the hint name is not recognized, it is silently ignored.</li>
+            <li id="setHydrationCacheProfile"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setHydrationCacheProfile.xhtml">setHydrationCacheProfile()</a>
+                — Set a cache profile for hydration caching.</li>
+            <li id="setHydrationMode"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setHydrationMode.xhtml">setHydrationMode()</a>
+                — Defines the processing mode to be used during hydration / result set transformation.</li>
+            <li id="setParameter"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setParameter.xhtml">setParameter()</a>
+                — Sets a query parameter.</li>
+            <li id="setParameters"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setParameters.xhtml">setParameters()</a>
+                — Sets a collection of query parameters.</li>
+            <li id="setResultCacheDriver"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setResultCacheDriver.xhtml">setResultCacheDriver()</a>
+                — Defines a cache driver to be used for caching result sets and implictly enables caching.</li>
+            <li id="setResultCacheId"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setResultCacheId.xhtml">setResultCacheId()</a>
+                — Set the result cache id to use to store the result set cache entry.</li>
+            <li id="setResultCacheLifetime"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setResultCacheLifetime.xhtml">setResultCacheLifetime()</a>
+                — Defines how long the result cache will be active before expire.</li>
+            <li id="setResultCacheProfile"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setResultCacheProfile.xhtml">setResultCacheProfile()</a>
+                — Set a cache profile for the result cache.</li>
+            <li id="setResultSetMapping"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/setResultSetMapping.xhtml">setResultSetMapping()</a>
+                — Sets the ResultSetMapping that should be used for hydration.</li>
+            <li id="useResultCache"><a title="Doctrine\ORM\AbstractQuery" href="../classes/Doctrine_ORM_AbstractQuery/useResultCache.xhtml">useResultCache()</a>
+                — Set whether or not to cache the results of this query and if so, for how long and which ID to use for the cache entry.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

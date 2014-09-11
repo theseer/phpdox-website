@@ -1,543 +1,1568 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>PHPUnit - PHPUnit_Util_Configuration - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - PHPUnit_Util_Configuration</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">PHPUnit - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">PHPUnit_Util_Configuration</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#instances">$instances</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#document">$document</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#xpath">$xpath</a>
+            <a href="#violations">Violations</a>
           </li>
           <li>
-            <a href="#filename">$filename</a>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/Util/Configuration.php.xhtml#line181">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>PHPUnit_Util_Configuration</h1>
+        <h4>Wrapper for the PHPUnit XML configuration file.</h4>
+        <p>Example XML configuration file:<br/>&lt;code&gt;<br/>&lt;?xml version="1.0" encoding="utf-8" ?&gt;<br/><br/>&lt;phpunit backupGlobals="true"<br/>backupStaticAttributes="false"<br/>bootstrap="/path/to/bootstrap.php"<br/>cacheTokens="false"<br/>colors="false"<br/>stderr="false"<br/>convertErrorsToExceptions="true"<br/>convertNoticesToExceptions="true"<br/>convertWarningsToExceptions="true"<br/>forceCoversAnnotation="false"<br/>mapTestClassNameToCoveredClassName="false"<br/>printerClass="PHPUnit_TextUI_ResultPrinter"<br/>processIsolation="false"<br/>stopOnError="false"<br/>stopOnFailure="false"<br/>stopOnIncomplete="false"<br/>stopOnRisky="false"<br/>stopOnSkipped="false"<br/>testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"<br/>timeoutForSmallTests="1"<br/>timeoutForMediumTests="10"<br/>timeoutForLargeTests="60"<br/>beStrictAboutTestsThatDoNotTestAnything="false"<br/>beStrictAboutOutputDuringTests="false"<br/>beStrictAboutTestSize="false"<br/>beStrictAboutTodoAnnotatedTests="false"<br/>checkForUnintentionallyCoveredCode="false"<br/>verbose="false"&gt;<br/>&lt;testsuites&gt;<br/>&lt;testsuite name="My Test Suite"&gt;<br/>&lt;directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator="&gt;="&gt;/path/to/files&lt;/directory&gt;<br/>&lt;file phpVersion="5.3.0" phpVersionOperator="&gt;="&gt;/path/to/MyTest.php&lt;/file&gt;<br/>&lt;exclude&gt;/path/to/files/exclude&lt;/exclude&gt;<br/>&lt;/testsuite&gt;<br/>&lt;/testsuites&gt;<br/><br/>&lt;groups&gt;<br/>&lt;include&gt;<br/>&lt;group&gt;name&lt;/group&gt;<br/>&lt;/include&gt;<br/>&lt;exclude&gt;<br/>&lt;group&gt;name&lt;/group&gt;<br/>&lt;/exclude&gt;<br/>&lt;/groups&gt;<br/><br/>&lt;filter&gt;<br/>&lt;blacklist&gt;<br/>&lt;directory suffix=".php"&gt;/path/to/files&lt;/directory&gt;<br/>&lt;file&gt;/path/to/file&lt;/file&gt;<br/>&lt;exclude&gt;<br/>&lt;directory suffix=".php"&gt;/path/to/files&lt;/directory&gt;<br/>&lt;file&gt;/path/to/file&lt;/file&gt;<br/>&lt;/exclude&gt;<br/>&lt;/blacklist&gt;<br/>&lt;whitelist addUncoveredFilesFromWhitelist="true"<br/>processUncoveredFilesFromWhitelist="false"&gt;<br/>&lt;directory suffix=".php"&gt;/path/to/files&lt;/directory&gt;<br/>&lt;file&gt;/path/to/file&lt;/file&gt;<br/>&lt;exclude&gt;<br/>&lt;directory suffix=".php"&gt;/path/to/files&lt;/directory&gt;<br/>&lt;file&gt;/path/to/file&lt;/file&gt;<br/>&lt;/exclude&gt;<br/>&lt;/whitelist&gt;<br/>&lt;/filter&gt;<br/><br/>&lt;listeners&gt;<br/>&lt;listener class="MyListener" file="/optional/path/to/MyListener.php"&gt;<br/>&lt;arguments&gt;<br/>&lt;array&gt;<br/>&lt;element key="0"&gt;<br/>&lt;string&gt;Sebastian&lt;/string&gt;<br/>&lt;/element&gt;<br/>&lt;/array&gt;<br/>&lt;integer&gt;22&lt;/integer&gt;<br/>&lt;string&gt;April&lt;/string&gt;<br/>&lt;double&gt;19.78&lt;/double&gt;<br/>&lt;null/&gt;<br/>&lt;object class="stdClass"/&gt;<br/>&lt;file&gt;MyRelativeFile.php&lt;/file&gt;<br/>&lt;directory&gt;MyRelativeDir&lt;/directory&gt;<br/>&lt;/arguments&gt;<br/>&lt;/listener&gt;<br/>&lt;/listeners&gt;<br/><br/>&lt;logging&gt;<br/>&lt;log type="coverage-html" target="/tmp/report" lowUpperBound="50" highLowerBound="90"/&gt;<br/>&lt;log type="coverage-clover" target="/tmp/clover.xml"/&gt;<br/>&lt;log type="json" target="/tmp/logfile.json"/&gt;<br/>&lt;log type="plain" target="/tmp/logfile.txt"/&gt;<br/>&lt;log type="tap" target="/tmp/logfile.tap"/&gt;<br/>&lt;log type="junit" target="/tmp/logfile.xml" logIncompleteSkipped="false"/&gt;<br/>&lt;log type="testdox-html" target="/tmp/testdox.html"/&gt;<br/>&lt;log type="testdox-text" target="/tmp/testdox.txt"/&gt;<br/>&lt;log type="coverage-crap4j" target="/tmp/crap.xml"/&gt;<br/>&lt;/logging&gt;<br/><br/>&lt;php&gt;<br/>&lt;includePath&gt;.&lt;/includePath&gt;<br/>&lt;ini name="foo" value="bar"/&gt;<br/>&lt;const name="foo" value="bar"/&gt;<br/>&lt;var name="foo" value="bar"/&gt;<br/>&lt;env name="foo" value="bar"/&gt;<br/>&lt;post name="foo" value="bar"/&gt;<br/>&lt;get name="foo" value="bar"/&gt;<br/>&lt;cookie name="foo" value="bar"/&gt;<br/>&lt;server name="foo" value="bar"/&gt;<br/>&lt;files name="foo" value="bar"/&gt;<br/>&lt;request name="foo" value="bar"/&gt;<br/>&lt;/php&gt;<br/><br/>&lt;selenium&gt;<br/>&lt;browser name="Firefox on Linux"<br/>browser="*firefox /usr/lib/firefox/firefox-bin"<br/>host="my.linux.box"<br/>port="4444"<br/>timeout="30000"/&gt;<br/>&lt;/selenium&gt;<br/>&lt;/phpunit&gt;<br/>&lt;/code&gt;</p>
         <ul>
-          <li>
-            <a href="#__clone">__clone</a>
-          </li>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#getBoolean">getBoolean</a>
-          </li>
-          <li>
-            <a href="#getFilename">getFilename</a>
-          </li>
-          <li>
-            <a href="#getFilterConfiguration">getFilterConfiguration</a>
-          </li>
-          <li>
-            <a href="#getGroupConfiguration">getGroupConfiguration</a>
-          </li>
-          <li>
-            <a href="#getInstance">getInstance</a>
-          </li>
-          <li>
-            <a href="#getInteger">getInteger</a>
-          </li>
-          <li>
-            <a href="#getListenerConfiguration">getListenerConfiguration</a>
-          </li>
-          <li>
-            <a href="#getLoggingConfiguration">getLoggingConfiguration</a>
-          </li>
-          <li>
-            <a href="#getPHPConfiguration">getPHPConfiguration</a>
-          </li>
-          <li>
-            <a href="#getPHPUnitConfiguration">getPHPUnitConfiguration</a>
-          </li>
-          <li>
-            <a href="#getSeleniumBrowserConfiguration">getSeleniumBrowserConfiguration</a>
-          </li>
-          <li>
-            <a href="#getTestSuite">getTestSuite</a>
-          </li>
-          <li>
-            <a href="#getTestSuiteConfiguration">getTestSuiteConfiguration</a>
-          </li>
-          <li>
-            <a href="#handlePHPConfiguration">handlePHPConfiguration</a>
-          </li>
-          <li>
-            <a href="#readFilterDirectories">readFilterDirectories</a>
-          </li>
-          <li>
-            <a href="#readFilterFiles">readFilterFiles</a>
-          </li>
-          <li>
-            <a href="#toAbsolutePath">toAbsolutePath</a>
-          </li>
+          <li>Author: Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>Copyright: 2001-2014 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>License: http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">\</span>PHPUnit_Util_Configuration</h2>
-        <div class="file-notice">
-          <p>Wrapper for the PHPUnit XML configuration file.</p>
-          <p>
-            <pre>Example XML configuration file:
-&lt;code&gt;
-&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PHPUnit_Util_Configuration
+            {<br/><ul class="none"><li>// members</li><li>private array <a href="#members">$instances</a>;
+                    </li><li>protected <a href="#members">$document</a>;
+                    </li><li>protected <a href="#members">$xpath</a>;
+                    </li><li>protected <a href="#members">$filename</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>protected void <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/__construct.xhtml">__construct</a>()
+                    </li><li>private final void <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/__clone.xhtml">__clone</a>()
+                    </li><li>public static PHPUnit_Util_Configuration <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getInstance.xhtml">getInstance</a>()
+                    </li><li>public string <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getFilename.xhtml">getFilename</a>()
+                    </li><li>public array <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getFilterConfiguration.xhtml">getFilterConfiguration</a>()
+                    </li><li>public array <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getGroupConfiguration.xhtml">getGroupConfiguration</a>()
+                    </li><li>public array <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getListenerConfiguration.xhtml">getListenerConfiguration</a>()
+                    </li><li>public array <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getLoggingConfiguration.xhtml">getLoggingConfiguration</a>()
+                    </li><li>public array <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getPHPConfiguration.xhtml">getPHPConfiguration</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/handlePHPConfiguration.xhtml">handlePHPConfiguration</a>()
+                    </li><li>public array <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getPHPUnitConfiguration.xhtml">getPHPUnitConfiguration</a>()
+                    </li><li>public array <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getSeleniumBrowserConfiguration.xhtml">getSeleniumBrowserConfiguration</a>()
+                    </li><li>public PHPUnit_Framework_TestSuite <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getTestSuiteConfiguration.xhtml">getTestSuiteConfiguration</a>()
+                    </li><li>protected PHPUnit_Framework_TestSuite <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getTestSuite.xhtml">getTestSuite</a>()
+                    </li><li>protected boolean <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getBoolean.xhtml">getBoolean</a>()
+                    </li><li>protected boolean <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getInteger.xhtml">getInteger</a>()
+                    </li><li>protected array <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/readFilterDirectories.xhtml">readFilterDirectories</a>()
+                    </li><li>protected array <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/readFilterFiles.xhtml">readFilterFiles</a>()
+                    </li><li>protected string <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/toAbsolutePath.xhtml">toAbsolutePath</a>()
+                    </li></ul>
 
-&lt;phpunit backupGlobals="true"
-         backupStaticAttributes="false"
-         bootstrap="/path/to/bootstrap.php"
-         cacheTokens="false"
-         colors="false"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         forceCoversAnnotation="false"
-         mapTestClassNameToCoveredClassName="false"
-         printerClass="PHPUnit_TextUI_ResultPrinter"
-         processIsolation="false"
-         stopOnError="false"
-         stopOnFailure="false"
-         stopOnIncomplete="false"
-         stopOnSkipped="false"
-         testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"
-         timeoutForSmallTests="1"
-         timeoutForMediumTests="10"
-         timeoutForLargeTests="60"
-         strict="false"
-         verbose="false"&gt;
-  &lt;testsuites&gt;
-    &lt;testsuite name="My Test Suite"&gt;
-      &lt;directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator="&gt;="&gt;/path/to/files&lt;/directory&gt;
-      &lt;file phpVersion="5.3.0" phpVersionOperator="&gt;="&gt;/path/to/MyTest.php&lt;/file&gt;
-      &lt;exclude&gt;/path/to/files/exclude&lt;/exclude&gt;
-    &lt;/testsuite&gt;
-  &lt;/testsuites&gt;
-
-  &lt;groups&gt;
-    &lt;include&gt;
-      &lt;group&gt;name&lt;/group&gt;
-    &lt;/include&gt;
-    &lt;exclude&gt;
-      &lt;group&gt;name&lt;/group&gt;
-    &lt;/exclude&gt;
-  &lt;/groups&gt;
-
-  &lt;filter&gt;
-    &lt;blacklist&gt;
-      &lt;directory suffix=".php"&gt;/path/to/files&lt;/directory&gt;
-      &lt;file&gt;/path/to/file&lt;/file&gt;
-      &lt;exclude&gt;
-        &lt;directory suffix=".php"&gt;/path/to/files&lt;/directory&gt;
-        &lt;file&gt;/path/to/file&lt;/file&gt;
-      &lt;/exclude&gt;
-    &lt;/blacklist&gt;
-    &lt;whitelist addUncoveredFilesFromWhitelist="true"
-               processUncoveredFilesFromWhitelist="false"&gt;
-      &lt;directory suffix=".php"&gt;/path/to/files&lt;/directory&gt;
-      &lt;file&gt;/path/to/file&lt;/file&gt;
-      &lt;exclude&gt;
-        &lt;directory suffix=".php"&gt;/path/to/files&lt;/directory&gt;
-        &lt;file&gt;/path/to/file&lt;/file&gt;
-      &lt;/exclude&gt;
-    &lt;/whitelist&gt;
-  &lt;/filter&gt;
-
-  &lt;listeners&gt;
-    &lt;listener class="MyListener" file="/optional/path/to/MyListener.php"&gt;
-      &lt;arguments&gt;
-        &lt;array&gt;
-          &lt;element key="0"&gt;
-            &lt;string&gt;Sebastian&lt;/string&gt;
-          &lt;/element&gt;
-        &lt;/array&gt;
-        &lt;integer&gt;22&lt;/integer&gt;
-        &lt;string&gt;April&lt;/string&gt;
-        &lt;double&gt;19.78&lt;/double&gt;
-        &lt;null/&gt;
-        &lt;object class="stdClass"/&gt;
-        &lt;file&gt;MyRelativeFile.php&lt;/file&gt;
-        &lt;directory&gt;MyRelativeDir&lt;/directory&gt;
-      &lt;/arguments&gt;
-    &lt;/listener&gt;
-  &lt;/listeners&gt;
-
-  &lt;logging&gt;
-    &lt;log type="coverage-html" target="/tmp/report"
-arset="UTF-8" highlight="false"
-         lowUpperBound="35" highLowerBound="70"/&gt;
-    &lt;log type="coverage-clover" target="/tmp/clover.xml"/&gt;
-    &lt;log type="json" target="/tmp/logfile.json"/&gt;
-    &lt;log type="plain" target="/tmp/logfile.txt"/&gt;
-    &lt;log type="tap" target="/tmp/logfile.tap"/&gt;
-    &lt;log type="junit" target="/tmp/logfile.xml" logIncompleteSkipped="false"/&gt;
-    &lt;log type="testdox-html" target="/tmp/testdox.html"/&gt;
-    &lt;log type="testdox-text" target="/tmp/testdox.txt"/&gt;
-    &lt;log type="coverage-crap4j" target="/tmp/crap.xml"/&gt;
-  &lt;/logging&gt;
-
-  &lt;php&gt;
-    &lt;includePath&gt;.&lt;/includePath&gt;
-    &lt;ini name="foo" value="bar"/&gt;
-    &lt;const name="foo" value="bar"/&gt;
-    &lt;var name="foo" value="bar"/&gt;
-    &lt;env name="foo" value="bar"/&gt;
-    &lt;post name="foo" value="bar"/&gt;
-    &lt;get name="foo" value="bar"/&gt;
-    &lt;cookie name="foo" value="bar"/&gt;
-    &lt;server name="foo" value="bar"/&gt;
-    &lt;files name="foo" value="bar"/&gt;
-    &lt;request name="foo" value="bar"/&gt;
-  &lt;/php&gt;
-
-  &lt;selenium&gt;
-    &lt;browser name="Firefox on Linux"
-             browser="*firefox /usr/lib/firefox/firefox-bin"
-             host="my.linux.box"
-             port="4444"
-             timeout="30000"/&gt;
-  &lt;/selenium&gt;
-&lt;/phpunit&gt;
-&lt;/code&gt;</pre>
-          </p>
+            }<br/></div>
+        <h2 id="violations">Violations</h2>
+        <div class="styled">
+          <h3>PHPMessDetector</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Rule</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">351 - 389</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method getListenerConfiguration() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">396 - 444</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method getLoggingConfiguration() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">506 - 562</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method handlePHPConfiguration() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">506 - 562</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#npathcomplexity" target="_blank" title="Code Size Rules">NPathComplexity</a>
+              </td>
+              <td>The method handlePHPConfiguration() has an NPath complexity of 630. The configured NPath complexity threshold is 200.</td>
+            </tr>
+            <tr>
+              <td class="line">570 - 772</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method getPHPUnitConfiguration() has a Cyclomatic Complexity of 32. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">570 - 772</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#npathcomplexity" target="_blank" title="Code Size Rules">NPathComplexity</a>
+              </td>
+              <td>The method getPHPUnitConfiguration() has an NPath complexity of 2147483648. The configured NPath complexity threshold is 200.</td>
+            </tr>
+            <tr>
+              <td class="line">570 - 772</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#excessivemethodlength" target="_blank" title="Code Size Rules">ExcessiveMethodLength</a>
+              </td>
+              <td>The method getPHPUnitConfiguration() has 203 lines of code. Current threshold is set to 100. Avoid really long methods.</td>
+            </tr>
+            <tr>
+              <td class="line">858 - 969</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method getTestSuite() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">858 - 969</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#npathcomplexity" target="_blank" title="Code Size Rules">NPathComplexity</a>
+              </td>
+              <td>The method getTestSuite() has an NPath complexity of 112326. The configured NPath complexity threshold is 200.</td>
+            </tr>
+            <tr>
+              <td class="line">858 - 969</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#excessivemethodlength" target="_blank" title="Code Size Rules">ExcessiveMethodLength</a>
+              </td>
+              <td>The method getTestSuite() has 112 lines of code. Current threshold is set to 100. Avoid really long methods.</td>
+            </tr>
+            <tr>
+              <td class="line">1073 - 1109</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method toAbsolutePath() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+          </table>
+          <h3>Checkstyle</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Column</th>
+                <th>Severity</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">362</td>
+              <td>63</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">577</td>
+              <td>62</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">583</td>
+              <td>57</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">592</td>
+              <td>56</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">598</td>
+              <td>64</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">604</td>
+              <td>73</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">616</td>
+              <td>76</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">622</td>
+              <td>77</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">628</td>
+              <td>78</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">634</td>
+              <td>72</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">647</td>
+              <td>67</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">653</td>
+              <td>62</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">659</td>
+              <td>64</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">665</td>
+              <td>67</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">671</td>
+              <td>62</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">677</td>
+              <td>64</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">707</td>
+              <td>71</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">713</td>
+              <td>72</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">719</td>
+              <td>71</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">725</td>
+              <td>90</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">731</td>
+              <td>85</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">737</td>
+              <td>81</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">743</td>
+              <td>72</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">749</td>
+              <td>82</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">755</td>
+              <td>57</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">767</td>
+              <td>58</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">796</td>
+              <td>61</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+            <tr>
+              <td class="line">804</td>
+              <td>64</td>
+              <td>
+                <span title="PSR2.Methods.FunctionCallSignature.MultipleArguments">error</span>
+              </td>
+              <td>Only one argument is allowed per line in a multi-line function call</td>
+            </tr>
+          </table>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>Copyright: </b>2001-2013 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>License: </b>http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="instances">
+              <strong>$instances</strong>
+            </li>
+          </ul>
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="document">
+              <strong>$document</strong>
+            </li>
+            <li id="filename">
+              <strong>$filename</strong>
+            </li>
+            <li id="xpath">
+              <strong>$xpath</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="__clone">
+              <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/__clone.xhtml">__clone()</a>
+            </li>
+          </ul>
+          <h4>protected</h4>
+          <ul>
+            <li id="__construct"><a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/__construct.xhtml">__construct()</a>
+                — Loads a PHPUnit configuration file.</li>
+            <li id="getBoolean">
+              <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getBoolean.xhtml">getBoolean()</a>
+            </li>
+            <li id="getInteger">
+              <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getInteger.xhtml">getInteger()</a>
+            </li>
+            <li id="getTestSuite">
+              <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getTestSuite.xhtml">getTestSuite()</a>
+            </li>
+            <li id="readFilterDirectories">
+              <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/readFilterDirectories.xhtml">readFilterDirectories()</a>
+            </li>
+            <li id="readFilterFiles">
+              <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/readFilterFiles.xhtml">readFilterFiles()</a>
+            </li>
+            <li id="toAbsolutePath">
+              <a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/toAbsolutePath.xhtml">toAbsolutePath()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getFilename"><a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getFilename.xhtml">getFilename()</a>
+                — Returns the realpath to the configuration file.</li>
+            <li id="getFilterConfiguration"><a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getFilterConfiguration.xhtml">getFilterConfiguration()</a>
+                — Returns the configuration for SUT filtering.</li>
+            <li id="getGroupConfiguration"><a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getGroupConfiguration.xhtml">getGroupConfiguration()</a>
+                — Returns the configuration for groups.</li>
+            <li id="getInstance"><a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getInstance.xhtml">getInstance()</a>
+                — Returns a PHPUnit configuration object.</li>
+            <li id="getListenerConfiguration"><a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getListenerConfiguration.xhtml">getListenerConfiguration()</a>
+                — Returns the configuration for listeners.</li>
+            <li id="getLoggingConfiguration"><a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getLoggingConfiguration.xhtml">getLoggingConfiguration()</a>
+                — Returns the logging configuration.</li>
+            <li id="getPHPConfiguration"><a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getPHPConfiguration.xhtml">getPHPConfiguration()</a>
+                — Returns the PHP configuration.</li>
+            <li id="getPHPUnitConfiguration"><a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getPHPUnitConfiguration.xhtml">getPHPUnitConfiguration()</a>
+                — Returns the PHPUnit configuration.</li>
+            <li id="getSeleniumBrowserConfiguration"><a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getSeleniumBrowserConfiguration.xhtml">getSeleniumBrowserConfiguration()</a>
+                — Returns the SeleniumTestCase browser configuration.</li>
+            <li id="getTestSuiteConfiguration"><a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/getTestSuiteConfiguration.xhtml">getTestSuiteConfiguration()</a>
+                — Returns the test suite configuration.</li>
+            <li id="handlePHPConfiguration"><a title="PHPUnit_Util_Configuration" href="../classes/PHPUnit_Util_Configuration/handlePHPConfiguration.xhtml">handlePHPConfiguration()</a>
+                — Handles the PHP configuration.</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
+          <li>
+            <h3>2014-08-13T16:57:28+02:00 (commit #<span title="fb7caed88f488d0c696c8eeaca9bc14877900f0b">fb7caed</span>)</h3>
+            <div>
+              <p>
+                        Author: Daniel F. Kudwien (sun) (sun@unleashedmind.com) /
+                        Commiter: Daniel F. Kudwien (sun) (sun@unleashedmind.com)
+                    </p>
+              <pre class="wrapped">Fix #1380: Limit strict error handling in XML::load() to configuration.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-08-12T06:43:31+02:00 (commit #<span title="50dfaba6477d3b1a0c650d4f70a0d9f478ff6092">50dfaba</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">phpcbf --standard=PSR2 src tests</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-07-06T08:14:27+02:00 (commit #<span title="53e3c2884c0bb53afec70af8e3a66a4978f7599e">53e3c28</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Fixes #1311.
+
+Don't use empty strings as files.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-24T09:55:55+02:00 (commit #<span title="a8d628ee246265b8dbcd839304c41b8839783581">a8d628e</span>)</h3>
+            <div>
+              <p>
+                        Author: Christopher Davis (cdavis9999@gmail.com) /
+                        Commiter: Sebastian Bergmann (cdavis9999@gmail.com)
+                    </p>
+              <pre class="wrapped">Don't Overwrite Already Existing Environment Vars
+
+Closes #1181
+
+If a variable is already set via `putenv` or if the variable is already
+present in the `$_ENV` array, it will no longer be ovewritten by
+`PHPUnit_Util_Configuration::handlePHPConfiguration`.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-20T10:44:50+02:00 (commit #<span title="a8aa89eeb140839a76059d4186465152babc57cf">a8aa89e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refinement of 560c99abb8b7db7f5d7ca72653126134c97b3ac1</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-03-24T09:24:58+01:00 (commit #<span title="6479694856e8437fdb3177527f6316c3f5daff08">6479694</span>)</h3>
+            <div>
+              <p>
+                        Author: Ilya Bulah (ilya.bulah@gmail.com) /
+                        Commiter: Ilya Bulah (ilya.bulah@gmail.com)
+                    </p>
+              <pre class="wrapped">Issue #657: stderr in xml configuration</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-02-13T13:03:09+01:00 (commit #<span title="9736dfe06b5bf295d2f4a6aa13a4e27a5c122b2e">9736dfe</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Sync with https://github.com/sebastianbergmann/php-code-coverage/commit/14ffa5c938365fe11680616eb17cdb1b8c9a1e7e</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-02-13T11:17:15+01:00 (commit #<span title="d8ab035b01a1a007e09a14e8ec7f949020a51167">d8ab035</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Eliminate superfluous code</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-02-13T11:15:20+01:00 (commit #<span title="76d30512b9e18d26c067f010615f3f81d979dc99">76d3051</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Sync with https://github.com/sebastianbergmann/php-code-coverage/commit/5d6c3b4347b8141b43c7e253c3004f58ae361f5d</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-02-13T11:13:48+01:00 (commit #<span title="e66b7c9b9cb986ada2f2368634c16dec30f10cac">e66b7c9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Sync with https://github.com/sebastianbergmann/php-code-coverage/commit/2990bd9b0093867f263afafaf772f2a3af3495fe</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-22T19:43:07+01:00 (commit #<span title="02b42d7e912186a17d56fa803ae4682d16f1ff79">02b42d7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on formatting code according to PSR-2</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-20T17:21:13+01:00 (commit #<span title="3a5808fbca4ee832c27f13a544fdf8809eec62ec">3a5808f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-09T08:11:47+01:00 (commit #<span title="205e00844d1d9cf4cd4545c4cc45f1121a6b0824">205e008</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-05T12:03:59+01:00 (commit #<span title="9101f51cad93f97bea7b277007127635653eadbf">9101f51</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Closes #914</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-03T10:56:51+01:00 (commit #<span title="5fa672603c1fd992ae606dfeb2fccef28c9dfdcf">5fa6726</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Introduce new test classification: risky test</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-10-12T09:31:52+02:00 (commit #<span title="e60a9a58fa240781ecc957540abadfdc3f8e3c29">e60a9a5</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Formatting.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-10-12T07:56:25+02:00 (commit #<span title="fcf37272fe46ff61932a5e1849a1731b9eed2cba">fcf3727</span>)</h3>
+            <div>
+              <p>
+                        Author: Andrew Udvare (audvare@gmail.com) /
+                        Commiter: Andrew Udvare (audvare@gmail.com)
+                    </p>
+              <pre class="wrapped">Allow forward slash on Windows as this is converted automatically to backslash even if at beginning of path</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-09-24T14:21:37+02:00 (commit #<span title="e6ddb559934c28753c8715ce7f6555af5f2dca12">e6ddb55</span>)</h3>
+            <div>
+              <p>
+                        Author: Andrew Udvare (audvare@gmail.com) /
+                        Commiter: Andrew Udvare (audvare@gmail.com)
+                    </p>
+              <pre class="wrapped">Remove ctype extension dependency (use OS check); issue #946</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-18T09:08:04+02:00 (commit #<span title="5514f28d615f9a173003b0dae2bd50a6a87bfa27">5514f28</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Increase default thresholds for low / medium coverage</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-05-30T04:47:14+02:00 (commit #<span title="9740a586a143be686aeab316168dfc02c5fb4a9c">9740a58</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Fixes #573, Fixes #552, Fixes #582.
+
+[BC BREAK]
+
+All relative paths in a configuration file are now resolved relative to that
+configuration file. When upgrading, you may need to update relative paths for
+the following configurations:</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-05-20T23:08:36+02:00 (commit #<span title="3235ac0fa1be02c2bd0708f0bccd7018d5077a3b">3235ac0</span>)</h3>
+            <div>
+              <p>
+                        Author: Zsolt Takács (zsolt@takacs.cc) /
+                        Commiter: Zsolt Takács (zsolt@takacs.cc)
+                    </p>
+              <pre class="wrapped">Add support for crap4j coverage report</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-05-17T05:32:41+02:00 (commit #<span title="94e57e6da1abc8433e19d689efa1a66f8d58c4d2">94e57e6</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Fixes #277.
+Account for `auto-globals-jit` when setting `$_ENV` and `$_SERVER` variables in
+the xml config.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-02-08T21:40:04+01:00 (commit #<span title="37fd7829dff6361be20dc5ffc78411c7772b3d32">37fd782</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix WS issues</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-01-07T11:37:52+01:00 (commit #<span title="c517984099c588d7cbe04bea9fb756a764769f5f">c517984</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-11-10T16:33:03+01:00 (commit #<span title="51115dd43fadf654836443fcd5bbe190cb1c552f">51115dd</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Added the missing code for #711</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-10-04T19:25:32+02:00 (commit #<span title="881d26ac03f2a889062cd08ddde068ecd9ce121b">881d26a</span>)</h3>
+            <div>
+              <p>
+                        Author: Tobias Schlitt (toby@php.net) /
+                        Commiter: Sebastian Bergmann (toby@php.net)
+                    </p>
+              <pre class="wrapped">Implemented XInclude support for phpunit.xml.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-10-04T19:12:10+02:00 (commit #<span title="b825d330cb79e013e2fdaf9ec529d4350cd89ffc">b825d33</span>)</h3>
+            <div>
+              <p>
+                        Author: Tobias Schlitt (toby@php.net) /
+                        Commiter: Tobias Schlitt (toby@php.net)
+                    </p>
+              <pre class="wrapped">Implemented XInclude support for phpunit.xml.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-10-02T18:54:55+02:00 (commit #<span title="af633372258efb0b5a825d9badb840e6a2c5e295">af63337</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Resurrect addUncoveredFilesFromWhitelist configuration setting.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-10-02T18:29:38+02:00 (commit #<span title="50a5460f2df563f387de92f50fa2913b2fdc908e">50a5460</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Disable token caching (in PHP_TokenStream, used by PHP_CodeCoverage) by default (to reduce memory footprint).</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-24T06:47:44+02:00 (commit #<span title="81ab540c8718a37315962b8242c7f1b4ee031ed4">81ab540</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Do not perform string replacement for @package_version@ anymore.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-18T09:01:35+02:00 (commit #<span title="a3309322e537ff2d0202f1fb8f5392a834ec5a12">a330932</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">PHP_CodeCoverage no longer has a title attribute.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-17T11:36:41+02:00 (commit #<span title="336c3ed85e08bd8d38279d2a0be82d47c8d53b4d">336c3ed</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">PHP_CodeCoverage no longer uses YUI.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-06-22T16:01:38+02:00 (commit #<span title="dd560a3c18ee5072507a6c3a982e53eeba8bd5b5">dd560a3</span>)</h3>
+            <div>
+              <p>
+                        Author: Austin Hyde (austin109@gmail.com) /
+                        Commiter: Austin Hyde (austin109@gmail.com)
+                    </p>
+              <pre class="wrapped">Fixed the way PHPUnit_Util_Configuration parses listener constructor arguments
+
+Previously, getListenerConfiguration assumed the &lt;arguments&gt; element
+would always be the second element (index 1) because nicely formatted
+XML has a DOMText node containing a newline and some space before the
+arguments node. Computer-generated XML places the arguments element
+immediately after the listener element, so the node would be at index 0,</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-04-30T12:02:38+02:00 (commit #<span title="5786e50b3878cba88932b10e6a48c75723950707">5786e50</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">List The BSD 3-Clause License correctly and consistently. Thanks to Christian Aistleitner &lt;christian@quelltextlich.at&gt; for bringing this issue to my attention.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-02-12T16:50:51+01:00 (commit #<span title="34bd4fe85a8e1bdbe16c23d63e9cbcc8f5853146">34bd4fe</span>)</h3>
+            <div>
+              <p>
+                        Author: jpic (jamespic@gmail.com) /
+                        Commiter: jpic (jamespic@gmail.com)
+                    </p>
+              <pre class="wrapped">s/testSuiteName/testSuiteFilter/</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-02-09T18:21:19+01:00 (commit #<span title="47c5f6d127fe6cffc7d82274ba425e745cb7b4bd">47c5f6d</span>)</h3>
+            <div>
+              <p>
+                        Author: jpic (jamespic@gmail.com) /
+                        Commiter: jpic (jamespic@gmail.com)
+                    </p>
+              <pre class="wrapped">Added --testsuite option to filter directory/files based on the name attribute of their parent testsuite node</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-27T11:48:59+01:00 (commit #<span title="2baaf1a63a58e167aa743c64c1cd9535da922e6c">2baaf1a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Better fix for #466.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-23T22:13:44+01:00 (commit #<span title="21051ec5511b1a34a8ff3020cd9956bf5a827713">21051ec</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Revert "PHPunit can fails to find testsuite files pointed by relative paths in configuration XML file. Fixed a difference of path processing between "directory" and "file" tag in Configuration.php."
+
+This reverts commit 401d42f3fb7ee4ee46654882d260708ebf26849b.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-23T22:13:36+01:00 (commit #<span title="93279fb88cc31afe56677e7767c17bb8e314cfac">93279fb</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Revert "Fixed failure with non existing files defined in &lt;file&gt; configuration."
+
+This reverts commit 6009484efa00238f946d692d3d378d783ee4ad4e.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-20T15:49:21+01:00 (commit #<span title="6009484efa00238f946d692d3d378d783ee4ad4e">6009484</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Fixed failure with non existing files defined in &lt;file&gt; configuration.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-12T21:23:19+01:00 (commit #<span title="401d42f3fb7ee4ee46654882d260708ebf26849b">401d42f</span>)</h3>
+            <div>
+              <p>
+                        Author: Fabrice Marsaud (marsaud.fabrice@neuf.fr) /
+                        Commiter: Fabrice Marsaud (marsaud.fabrice@neuf.fr)
+                    </p>
+              <pre class="wrapped">PHPunit can fails to find testsuite files pointed by relative paths in configuration XML file. Fixed a difference of path processing between "directory" and "file" tag in Configuration.php.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-12T19:29:08+01:00 (commit #<span title="c3335e6eafbd9df008079d038304e712ff9d1297">c3335e6</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">addUncoveredFilesFromWhitelist -&gt; processUncoveredFilesFromWhitelist</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-01T11:21:16+01:00 (commit #<span title="aae6c3808b9c4bee416657298fa90865d6898d60">aae6c38</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-11T17:23:44+01:00 (commit #<span title="d04fc279db4dc87c9e004abdee43dab566c634e7">d04fc27</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Use absolute pathes for files included from phpunit.xml &lt;file&gt; configurations to make that consistant with the handling of directories. Closes #264</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-08T10:11:03+01:00 (commit #<span title="e50646af2ca88cc5894ecf158dce6fcab49088d0">e50646a</span>)</h3>
+            <div>
+              <p>
+                        Author: Igor Wiedler (igor@wiedler.ch) /
+                        Commiter: Igor Wiedler (igor@wiedler.ch)
+                    </p>
+              <pre class="wrapped">do a putenv for &lt;env&gt; config (closes #386)</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-08T09:49:26+01:00 (commit #<span title="6852c80cc6444f9b453fe72463e9e36a3f3d381c">6852c80</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Eliminate PHPUnit_Util_Filesystem::fileExistsInIncludePath().</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-26T12:19:28+02:00 (commit #<span title="bfc351cdf4b4bcb00e81235789d188643ebea147">bfc351c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix whitespace issues.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-11T20:28:32+02:00 (commit #<span title="83eb65a1b05f2cf8c905c93c0d5e28462b6296b6">83eb65a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix whitespace.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-08T09:47:00+02:00 (commit #<span title="0df8fa18e43e6c0aba016bd52d19f4de3f85fd31">0df8fa1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Use the new getInteger() method also for integer configuration values for Selenium.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-08T09:43:49+02:00 (commit #<span title="a9aa2b57cf1efa74b1be5b6f053688e43afb1cd6">a9aa2b5</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Make timeouts configurable.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-04T21:12:05+02:00 (commit #<span title="b2efc2a7425847d4b0e3043985c0344415dbd110">b2efc2a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Allow streams as logging targets.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-30T12:00:09+02:00 (commit #<span title="4c9cd2ad91687af8008929fdce1271438de1d9c5">4c9cd2a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial cleanup.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-30T10:50:33+02:00 (commit #<span title="132e932ead1d704823cc638919c43401448ceaf7">132e932</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Fixed parameter passing</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-11T08:11:18+02:00 (commit #<span title="14c3080f5242c509f7b30e1f1adc0993187399c2">14c3080</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix CS/WS issues.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-04T14:42:03+02:00 (commit #<span title="b2e5656f322e2e8a064a6187d7d2157f8cf7a102">b2e5656</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Parameter passing fixes and getting the 'colors' argument to the ResultPrinter</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-04T14:30:16+02:00 (commit #<span title="f7e1d94d596f34d054f92abb7157ef360fa60b12">f7e1d94</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Refactored cli output. It's now possible to write to the cli or to a file</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-09-03T15:03:31+02:00 (commit #<span title="b3d843f141395b9c42526c552061ed7f6d04c687">b3d843f</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">First draft of CLI coverage output. Work in progress. Just to see if it could work out like that</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-07-31T16:22:09+02:00 (commit #<span title="8df97bbbd638ac0a6300cfbfefaf8091247aad78">8df97bb</span>)</h3>
+            <div>
+              <p>
+                        Author: koseki (koseki@gmail.com) /
+                        Commiter: koseki (koseki@gmail.com)
+                    </p>
+              <pre class="wrapped">Accept multiple &lt;includePath&gt; elements.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-05-21T19:21:09+02:00 (commit #<span title="248d03d43242cfe350dbce5d1ea3dc3da4d97c40">248d03d</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Refs GH-232 and GH-231
+
+ * Allow specifying a test listener from the `include_path` in `configuration.xml`</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-05-06T18:52:00+02:00 (commit #<span title="8fd9ba0b709e933b745cced30875ead62d91bd6d">8fd9ba0</span>)</h3>
+            <div>
+              <p>
+                        Author: Laura Beth Lincoln Denker (github@elblinkin.info) /
+                        Commiter: Laura Beth Lincoln Denker (github@elblinkin.info)
+                    </p>
+              <pre class="wrapped">Need grab node value from DOMElement and cast to string.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-05-06T16:27:43+02:00 (commit #<span title="d7aee07009eaed7281512590dbe62c069fe29b19">d7aee07</span>)</h3>
+            <div>
+              <p>
+                        Author: Laura Beth Lincoln Denker (github@elblinkin.info) /
+                        Commiter: Laura Beth Lincoln Denker (github@elblinkin.info)
+                    </p>
+              <pre class="wrapped">Add &lt;exclude&gt; tag to &lt;testsuite&gt; so that you can blacklist paths in a test suite.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-03-03T20:08:45+01:00 (commit #<span title="1832b0337a41371344f8b2074aff355716043236">1832b03</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Update File_Iterator usage.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-02-03T10:58:25+01:00 (commit #<span title="63dcc47f834f4ccb12f4fae439968f25e404d3a4">63dcc47</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Close #145.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-02-03T10:35:45+01:00 (commit #<span title="dbe9633f6c5fd15880146afdbe7cd706b9599364">dbe9633</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix default value.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-22T07:12:40+01:00 (commit #<span title="bc4400c25a2b76ec18bc6ef600ca00e5dcdb0e94">bc4400c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove deprecated configuration attribute.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-22T07:12:20+01:00 (commit #<span title="4b5f8b194c124bb68bbf0af48b397a15ecbe79b9">4b5f8b1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">This reverts commit cf0defd29e6a5eb026c716edf372c97ce6203e79.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-22T07:11:31+01:00 (commit #<span title="cf0defd29e6a5eb026c716edf372c97ce6203e79">cf0defd</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove deprecated configuration attribute.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-20T10:22:08+01:00 (commit #<span title="3e7709f5c8a5dff27fe1df79f77922f7e0a41b86">3e7709f</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Added the current configuration file to the output from `PHPUnit_TextUI_TestRunner::doRun()`.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-19T11:45:41+01:00 (commit #<span title="92547e695a6613331ddc413701d426819b9cbb12">92547e6</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Implement configuration of printer.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-17T10:11:38+01:00 (commit #<span title="c2580fd612016041907066b10b88b867929f6e2f">c2580fd</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Close 42.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-12-31T11:45:34+01:00 (commit #<span title="bee33449535dd656c2c0a94946eb0086d1214e1f">bee3344</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-12-03T09:48:10+01:00 (commit #<span title="35fe6d8fce7baf89900ffde8439ace0d5bac9b2b">35fe6d8</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Use File_Iterator autoloader.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-10-06T21:24:09+02:00 (commit #<span title="b25bc9e426ef021f3fcdda856e002e8a0892757b">b25bc9e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup and simplify.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-10-05T18:16:09+02:00 (commit #<span title="157a73025e15af8294be72c2bbc05a1f569a0879">157a730</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove the deprecated syntax check functionality.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-09-19T12:49:31+02:00 (commit #<span title="45a5f1bb19deb6d300a812406df75205b4081df8">45a5f1b</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove BDD functionality.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-17T15:22:44+02:00 (commit #<span title="6f2b9a9795766f382bc7a9a7f100322649575d5b">6f2b9a9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Eliminate duplicate code.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-17T15:07:51+02:00 (commit #<span title="502ab483de52eb79c14d12b1d97390762301d3bb">502ab48</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Allow superglobals to be set via XML configuration file.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-07T12:42:23+02:00 (commit #<span title="f0d9cdd35d83fd081c218fdec17edaf9e4f868f7">f0d9cdd</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Change email address.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-07T07:18:58+02:00 (commit #<span title="9c695c9945d23defc5ffb2b5f5fb878248e266b2">9c695c9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Allow configuration of strict mode via the XML configuration file.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-06T11:36:21+02:00 (commit #<span title="875096cc89e46c342c019e17076db2b9737d18dd">875096c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix TRAC-1075.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-06T11:31:35+02:00 (commit #<span title="a68030ed4dda78aadfd50844303aae0aad9db864">a68030e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix TRAC-1075.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-03T08:56:47+02:00 (commit #<span title="2104ad1f7af5e568412a291aa2ef4188d693447a">2104ad1</span>)</h3>
+            <div>
+              <p>
+                        Author: Brandon Turner (bturner@bltweb.net) /
+                        Commiter: Brandon Turner (bturner@bltweb.net)
+                    </p>
+              <pre class="wrapped">Support file and directory arguments in XML config
+
+Added support for passing relative file and/or directory arguments when
+configuring listeners via the XML file.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-03T08:56:47+02:00 (commit #<span title="137dd7c1f568b9d69982b306ec036c672c56028f">137dd7c</span>)</h3>
+            <div>
+              <p>
+                        Author: Brandon Turner (bturner@bltweb.net) /
+                        Commiter: Brandon Turner (bturner@bltweb.net)
+                    </p>
+              <pre class="wrapped">Support relative paths when configuring listeners.
+
+When configuring listeners via the XML file, filenames specified in the file
+attribute of the listener element can now be relative to the phpunit.xml
+file.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-15T11:08:25+02:00 (commit #<span title="f152ceabb41aeeda2d8d72422dd7281c6e59121e">f152cea</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix CS.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-12T20:25:54+02:00 (commit #<span title="d19a7378115e5de11b694ac40531ab662d074055">d19a737</span>)</h3>
+            <div>
+              <p>
+                        Author: Mark Story (mark@mark-story.com) /
+                        Commiter: Mark Story (mark@mark-story.com)
+                    </p>
+              <pre class="wrapped">Removing trailing whitespace from files. Refs #1063</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-05-17T15:15:28+02:00 (commit #<span title="62f0c69bd628804cfe04da7e8e40e35a083bdde4">62f0c69</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add forceCoversAnnotation and mapTestClassNameToCoveredClassName configuration options.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-05-17T14:56:19+02:00 (commit #<span title="f42dab442f2d5c097cbb80f3607aed09290ebac1">f42dab4</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix CS/WS.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-05-17T14:54:49+02:00 (commit #<span title="30d59c8acb172af422108931aa7158300964a3b2">30d59c8</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refactor for readability.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-04-08T20:57:53+02:00 (commit #<span title="7802a57baa48a477c9d142e8773f5a7c939e2c30">7802a57</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Implement TRAC-1033.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-04-05T17:41:26+02:00 (commit #<span title="471d69e2573822a6d9dd28159085a480e97dc734">471d69e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add @subpackage annotation.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-03-31T10:07:20+02:00 (commit #<span title="36739f10da817cc43da300d013eb38b357756557">36739f1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-03-29T19:47:27+02:00 (commit #<span title="6cee0a78fb5c7dd10ee333e97509d46e33c5ed5a">6cee0a7</span>)</h3>
+            <div>
+              <p>
+                        Author: Fabien Potencier (fabien.potencier@gmail.com) /
+                        Commiter: Fabien Potencier (fabien.potencier@gmail.com)
+                    </p>
+              <pre class="wrapped">Change the XML configuration paths to be converted to absolute paths based on the directory of the XML file instead of the current working directory.
+
+It makes the configuration paths more predictable.
+
+Before the patch, you were forced to run the phpunit command from the same directory as the XML configuration file.
+For instance, to run the PHPUnit tests, you must use the following:</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-02-02T14:14:29+01:00 (commit #<span title="bc1aaaaacfa98ab64d1eb54ac5b87279023bab59">bc1aaaa</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove closing PHP tags.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-01-19T09:39:03+01:00 (commit #<span title="fb48a69ea606a4740ba1f0e4ddcfe60fcd2a8301">fb48a69</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on autoloading.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-01-07T13:45:23+01:00 (commit #<span title="117cab2f95a35103a53c87d4f1741da6cd86a224">117cab2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Implement &lt;includePath&gt; element for XML configuration file.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:26:09+01:00 (commit #<span title="37f75ffdc651e3359c5683335851f6c5d6576c34">37f75ff</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:25:53+01:00 (commit #<span title="bddcc5f10872f9f53029aa8aeab27e2a95fbe2e5">bddcc5f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:23:37+01:00 (commit #<span title="7a7d0b7a54abfe58cd411a3b199133a8cb46351e">7a7d0b7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-26T17:22:00+01:00 (commit #<span title="7f48073f9407e7f220997eaa63f670d26d12f47a">7f48073</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add support for "verbose" to XML configuration.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-26T17:13:23+01:00 (commit #<span title="6b5dc273c50973e10c32ba3774038db801410b8b">6b5dc27</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add support for "verbose" to XML configuration.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:32:26+01:00 (commit #<span title="60e7125941b239eeb6cfc016a2a2e8c238f3bea4">60e7125</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
         </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="instances"/>
-            <h4><span class="label private">private</span>
-                $instances</h4>
-          </li>
-          <li>
-            <a name="document"/>
-            <h4><span class="label protected">protected</span>
-                $document</h4>
-          </li>
-          <li>
-            <a name="xpath"/>
-            <h4><span class="label protected">protected</span>
-                $xpath</h4>
-          </li>
-          <li>
-            <a name="filename"/>
-            <h4><span class="label protected">protected</span>
-                $filename</h4>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label protected">protected</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $filename</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Loads a PHPUnit configuration file.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$filename</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="getFilename"/>
-            <h4><span class="label public">public</span>getFilename<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the realpath to the configuration file.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFilterConfiguration"/>
-            <h4><span class="label public">public</span>getFilterConfiguration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the configuration for SUT filtering.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getGroupConfiguration"/>
-            <h4><span class="label public">public</span>getGroupConfiguration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the configuration for groups.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getInstance"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getInstance<span style="font-size:90%;">( <span class="param-type">string</span><strong> $filename</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns a PHPUnit configuration object.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$filename</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getListenerConfiguration"/>
-            <h4><span class="label public">public</span>getListenerConfiguration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the configuration for listeners.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getLoggingConfiguration"/>
-            <h4><span class="label public">public</span>getLoggingConfiguration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the logging configuration.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPHPConfiguration"/>
-            <h4><span class="label public">public</span>getPHPConfiguration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the PHP configuration.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPHPUnitConfiguration"/>
-            <h4><span class="label public">public</span>getPHPUnitConfiguration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the PHPUnit configuration.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSeleniumBrowserConfiguration"/>
-            <h4><span class="label public">public</span>getSeleniumBrowserConfiguration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the SeleniumTestCase browser configuration.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTestSuiteConfiguration"/>
-            <h4><span class="label public">public</span>getTestSuiteConfiguration<span style="font-size:90%;">( <span class="param-type"/><strong> $testSuiteFilter</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the test suite configuration.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="handlePHPConfiguration"/>
-            <h4><span class="label public">public</span>handlePHPConfiguration<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Handles the PHP configuration.</li>
-            </p>
-          </li>
-          <li>
-            <a name="getBoolean"/>
-            <h4><span class="label protected">protected</span>getBoolean<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong>, <span class="param-type">boolean</span><strong> $default</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-                <li><code>$default</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getInteger"/>
-            <h4><span class="label protected">protected</span>getInteger<span style="font-size:90%;">( <span class="param-type">string</span><strong> $value</strong>, <span class="param-type">boolean</span><strong> $default</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - </li>
-                <li><code>$default</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTestSuite"/>
-            <h4><span class="label protected">protected</span>getTestSuite<span style="font-size:90%;">( <span class="param-type"><span title="\\DOMElement">DOMElement</span></span><strong> $testSuiteNode</strong>, <span class="param-type"/><strong> $testSuiteFilter</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$testSuiteNode</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="readFilterDirectories"/>
-            <h4><span class="label protected">protected</span>readFilterDirectories<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$query</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="readFilterFiles"/>
-            <h4><span class="label protected">protected</span>readFilterFiles<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$query</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="toAbsolutePath"/>
-            <h4><span class="label protected">protected</span>toAbsolutePath<span style="font-size:90%;">( <span class="param-type">string</span><strong> $path</strong>, <span class="param-type">boolean</span><strong> $useIncludePath</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$path</code> - </li>
-                <li><code>$useIncludePath</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="__clone"/>
-            <h4><span class="label true">true</span><span class="label private">private</span>__clone<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+      </section>
     </div>
+    <footer>
+      <span>Generated using phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
   </body>
 </html>

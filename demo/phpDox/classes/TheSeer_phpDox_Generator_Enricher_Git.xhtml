@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - TheSeer\phpDox\Generator\Enricher\Git</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#TheSeer_phpDox_Generator_Enricher">TheSeer\phpDox\Generator\Enricher</a>
+          </li>
+          <li class="separator">Git</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#coverage">Coverage</a>
+          </li>
+          <li>
+            <a href="#violations">Violations</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/generator/enricher/git/Git.php.xhtml#line12">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>TheSeer\phpDox\Generator\Enricher\</small>Git</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Git
+                extends <a title="TheSeer\phpDox\Generator\Enricher\AbstractEnricher" href="../classes/TheSeer_phpDox_Generator_Enricher_AbstractEnricher.xhtml">AbstractEnricher</a>
+                implements
+                <a title="TheSeer\phpDox\Generator\Enricher\FullEnricherInterface" href="../interfaces/TheSeer_phpDox_Generator_Enricher_FullEnricherInterface.xhtml">FullEnricherInterface</a>
+            {<br/><ul class="none"><li>// constants</li><li>const GITNS = 'http://xml.phpdox.net/gitlog';</li></ul><ul class="none"><li>// Inherited constants from <a title="TheSeer\phpDox\Generator\Enricher\AbstractEnricher" href="../classes/TheSeer_phpDox_Generator_Enricher_AbstractEnricher.xhtml">AbstractEnricher</a></li><li>const <a href="#XMLNS">XMLNS</a> = 'http://xml.phpdox.net/src';</li></ul><ul class="none"><li>// members</li><li>private <span title="TheSeer\phpDox\Generator\Enricher\bool">bool</span> <a href="#members">$noGitAvailable</a>;
+                    </li><li>private array <a href="#members">$tokens</a>;
+                    </li><li>private <span title="TheSeer\phpDox\Generator\Enricher\GitConfig">GitConfig</span> <a href="#members">$config</a>;
+                    </li><li>private <span title="TheSeer\fDOM\fDOMDocument">fDOMDocument</span> <a href="#members">$cacheDom</a>;
+                    </li><li>private <span title="TheSeer\phpDox\Generator\Enricher\bool">bool</span> <a href="#members">$cacheDirty</a>;
+                    </li><li>private string <a href="#members">$commitSha1</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/__construct.xhtml">__construct</a>()
+                    </li><li>public string <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/getName.xhtml">getName</a>()
+                    </li><li>public void <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/enrichStart.xhtml">enrichStart</a>()
+                    </li><li>public void <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/enrichClass.xhtml">enrichClass</a>()
+                    </li><li>public void <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/enrichInterface.xhtml">enrichInterface</a>()
+                    </li><li>public void <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/enrichTrait.xhtml">enrichTrait</a>()
+                    </li><li>public void <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/enrichEnd.xhtml">enrichEnd</a>()
+                    </li><li>private void <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/enrichByFile.xhtml">enrichByFile</a>()
+                    </li><li>private void <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/addCommit.xhtml">addCommit</a>()
+                    </li><li>private void <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/getLogHistory.xhtml">getLogHistory</a>()
+                    </li><li>private void <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/loadFromCache.xhtml">loadFromCache</a>()
+                    </li><li>private void <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/addToCache.xhtml">addToCache</a>()
+                    </li><li>private void <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/getCacheDom.xhtml">getCacheDom</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="TheSeer\phpDox\Generator\Enricher\AbstractEnricher">AbstractEnricher</span></li><li>protected fDOMElement <a title="TheSeer\phpDox\Generator\Enricher\AbstractEnricher" href="../classes/TheSeer_phpDox_Generator_Enricher_AbstractEnricher/getEnrichtmentContainer.xhtml">getEnrichtmentContainer</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/TheSeer_phpDox_Generator_Enricher_AbstractEnricher.xhtml">TheSeer\phpDox\Generator\Enricher\AbstractEnricher</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/TheSeer_phpDox_Generator_Enricher_FullEnricherInterface.xhtml">TheSeer\phpDox\Generator\Enricher\FullEnricherInterface</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="coverage">Coverage</h2>
+        <table class="styled">
+          <tr>
+            <td>Methods</td>
+            <td class="percent">0%</td>
+            <td class="nummeric">0 / 13</td>
+          </tr>
+          <tr>
+            <td>Lines</td>
+            <td class="percent">0%</td>
+            <td class="nummeric">0 / 298</td>
+          </tr>
+        </table>
+        <h2 id="violations">Violations</h2>
+        <div class="styled">
+          <h3>PHPMessDetector</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Rule</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">70</td>
+              <td>
+                <a href="http://phpmd.org/rules/naming.html#shortvariable" target="_blank" title="Naming Rules">ShortVariable</a>
+              </td>
+              <td>Avoid variables with short names like $rc. Configured minimum length is 3.</td>
+            </tr>
+            <tr>
+              <td class="line">70</td>
+              <td>
+                <a href="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" target="_blank" title="Unused Code Rules">UnusedLocalVariable</a>
+              </td>
+              <td>Avoid unused local variables such as '$foo'.</td>
+            </tr>
+            <tr>
+              <td class="line">233</td>
+              <td>
+                <a href="http://phpmd.org/rules/naming.html#shortvariable" target="_blank" title="Naming Rules">ShortVariable</a>
+              </td>
+              <td>Avoid variables with short names like $rc. Configured minimum length is 3.</td>
+            </tr>
+            <tr>
+              <td class="line">287</td>
+              <td>
+                <a href="http://phpmd.org/rules/naming.html#shortvariable" target="_blank" title="Naming Rules">ShortVariable</a>
+              </td>
+              <td>Avoid variables with short names like $rc. Configured minimum length is 3.</td>
+            </tr>
+            <tr>
+              <td class="line">287</td>
+              <td>
+                <a href="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" target="_blank" title="Unused Code Rules">UnusedLocalVariable</a>
+              </td>
+              <td>Avoid unused local variables such as '$rc'.</td>
+            </tr>
+          </table>
+        </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="GITNS">GITNS</td>
+              <td>'http://xml.phpdox.net/gitlog'</td>
+            </tr>
+            <tr>
+              <td id="XMLNS">XMLNS</td>
+              <td>'http://xml.phpdox.net/src'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="cacheDirty"><strong>$cacheDirty</strong>
+                —
+                <a href="#">TheSeer\phpDox\Generator\Enricher\bool</a></li>
+            <li id="cacheDom"><strong>$cacheDom</strong>
+                —
+                <a href="#">TheSeer\fDOM\fDOMDocument</a></li>
+            <li id="commitSha1"><strong>$commitSha1</strong>
+                —
+                string</li>
+            <li id="config"><strong>$config</strong>
+                —
+                <a href="#">TheSeer\phpDox\Generator\Enricher\GitConfig</a></li>
+            <li id="noGitAvailable"><strong>$noGitAvailable</strong>
+                —
+                <a href="#">TheSeer\phpDox\Generator\Enricher\bool</a></li>
+            <li id="tokens"><strong>$tokens</strong>
+                —
+                array<br/><span class="indent">Array of tokens for git log see git log --help for more details</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="addCommit">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/addCommit.xhtml">addCommit()</a>
+            </li>
+            <li id="addToCache">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/addToCache.xhtml">addToCache()</a>
+            </li>
+            <li id="enrichByFile">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/enrichByFile.xhtml">enrichByFile()</a>
+            </li>
+            <li id="getCacheDom">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/getCacheDom.xhtml">getCacheDom()</a>
+            </li>
+            <li id="getLogHistory">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/getLogHistory.xhtml">getLogHistory()</a>
+            </li>
+            <li id="loadFromCache">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/loadFromCache.xhtml">loadFromCache()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="enrichClass">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/enrichClass.xhtml">enrichClass()</a>
+            </li>
+            <li id="enrichEnd">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/enrichEnd.xhtml">enrichEnd()</a>
+            </li>
+            <li id="enrichInterface">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/enrichInterface.xhtml">enrichInterface()</a>
+            </li>
+            <li id="enrichStart">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/enrichStart.xhtml">enrichStart()</a>
+            </li>
+            <li id="enrichTrait">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/enrichTrait.xhtml">enrichTrait()</a>
+            </li>
+            <li id="getName">
+              <a title="TheSeer\phpDox\Generator\Enricher\Git" href="../classes/TheSeer_phpDox_Generator_Enricher_Git/getName.xhtml">getName()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="TheSeer\phpDox\Generator\Enricher\AbstractEnricher" href="../classes/TheSeer_phpDox_Generator_Enricher_AbstractEnricher.xhtml">TheSeer\phpDox\Generator\Enricher\AbstractEnricher</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="getEnrichtmentContainer">
+              <a title="TheSeer\phpDox\Generator\Enricher\AbstractEnricher" href="../classes/TheSeer_phpDox_Generator_Enricher_AbstractEnricher/getEnrichtmentContainer.xhtml">getEnrichtmentContainer()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
+          <li>
+            <h3>2014-09-10T12:30:04+02:00 (commit #<span title="a0678947b0b0458bd8e904cb06071bba9e00a3e7">a067894</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">XMLNS Cleanup: Removed left over # from namespare uris</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-01T01:25:01+02:00 (commit #<span title="3074857fd2110458551a2c33ba3b0e8b3b08831a">3074857</span>)</h3>
+            <div>
+              <p>
+                        Author: Thomas Weinert (thomas@weinert.info) /
+                        Commiter: Arne Blankerts (thomas@weinert.info)
+                    </p>
+              <pre class="wrapped">/dev/null does not exists on windows, use NUL</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-02-04T23:38:07+01:00 (commit #<span title="7b091dd7670febeb7025aa7113c2b4b4f52b1ebd">7b091dd</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Added --no-color to git calls to fix issue #128 (Thanks to @guilu)</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-19T14:56:42+01:00 (commit #<span title="45bf57b8be0771fe487fc70d25f05e8216147eab">45bf57b</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Fix node/attribute importing to actually work</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-19T03:29:48+01:00 (commit #<span title="1ce1476d6d46858672799ca613d7cbce13f87f94">1ce1476</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">- Keep all nodes in gitlog namespace
+- Revert to %B flag for git log output as it maintains the linebreaks</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-13T01:19:49+01:00 (commit #<span title="f8208e4186c62681306e3ad9e09bfd1defe361f7">f8208e4</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Remove unused uses</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-09T22:50:49+01:00 (commit #<span title="ee6bed4cb113dcc7e5d8501d7cbc98ab7b77449a">ee6bed4</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Harmonize namespaces for git enricher cache xml and template</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-01T23:13:35+01:00 (commit #<span title="eade820b3e6107069b789521dbc7e7e5324a9508">eade820</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Added Caching to git log processing to speed up enriching</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-12-30T22:10:12+01:00 (commit #<span title="536bdd836edb13c92484084715c8e85e522a0502">536bdd8</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Use %s%b in favor of %B to support older versions of git</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-12-21T22:29:46+01:00 (commit #<span title="3e765eb95131afe263baef2d3c09d4c547825002">3e765eb</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Fix Formatting, update autoload</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-12-21T16:30:21+01:00 (commit #<span title="f9c8a1e342cc536715814948af2fbfce59b66347">f9c8a1e</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Made Git Enricher configuration aware</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-12-03T12:11:27+01:00 (commit #<span title="87e18cc8e3b495df7a71ee8f28b7b3d53cf3b4dd">87e18cc</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Update doc</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-12-03T12:08:13+01:00 (commit #<span title="fa5af9b301650b0ca27ddda60e30594fd293b56d">fa5af9b</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Check file directory before jumping</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-11-25T00:34:18+01:00 (commit #<span title="725dd7da5d337be1227d0cb20d5d23ec3618f62b">725dd7d</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Add suport for log history per file</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-10-27T01:42:15+02:00 (commit #<span title="e0c9049bdbca8ab45b577ecd47a566647fcaad02">e0c9049</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Reworked Enriching Subsystem
+Added various enrichers</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

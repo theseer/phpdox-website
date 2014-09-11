@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head>
+    <title>phpDox - Test Method</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml#Symfony_Bridge_Twig_Extension">Symfony\Bridge\Twig\Extension</a>
+          </li>
+          <li class="separator">
+            <a title="Symfony\Bridge\Twig\Extension\RoutingExtension" href="../../classes/Symfony_Bridge_Twig_Extension_RoutingExtension.xhtml">RoutingExtension</a>
+          </li>
+          <li class="separator">isUrlGenerationSafe</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#parameter">Parameter</a>
+          </li>
+          <li>
+            <a href="#return">Return</a>
+          </li>
+          <li>
+            <a href="../../source/symfony/symfony/src/Symfony/Bridge/Twig/Extension/RoutingExtension.php.xhtml#line75">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1><small>Symfony\Bridge\Twig\Extension\RoutingExtension::</small>isUrlGenerationSafe</h1>
+        <h4>Determines at compile time whether the generated URL will be safe and thus saving the unneeded automatic escaping for performance reasons.</h4>
+        <p>The URL generation process percent encodes non-alphanumeric characters. So there is no risk
+that malicious/invalid characters are part of the URL. The only character within an URL that
+must be escaped in html is the ampersand ("&amp;") which separates query params. So we cannot mark
+the URL generation as always safe, but only when we are sure there won't be multiple query
+params. This is the case when there are none or only one constant parameter given.
+E.g. we know beforehand this will be safe:
+- path('route')
+- path('route', {'param': 'value'})
+But the following may not:
+- path('route', var)
+- path('route', {'param': ['val1', 'val2'] }) // a sub-array
+- path('route', {'param1': 'value1', 'param2': 'value2'})
+If param1 and param2 reference placeholder in the route, it would still be safe. But we don't know.</p>
+        <ul/>
+        <h2 id="signature">Signature</h2>
+        <div class="styled synopsis">
+          <code>public function isUrlGenerationSafe(<a title="Twig_Node" href="../../classes/Twig_Node.xhtml">Twig_Node</a>
+        $argsNode )
+            </code>
+        </div>
+        <h2 id="parameterlist">Parameters</h2>
+        <dl class="styled">
+          <dt><code>$argsNode</code>
+                —
+                <a href="#">\Twig_Node</a></dt>
+          <dd>The arguments of the path/url function<br/><br/><br/>      </dd>
+        </dl>
+        <h2 id="return">Returns</h2>
+        <dl class="styled">
+          <dt>array</dt>
+          <dd>An array with the contexts the URL is safe</dd>
+        </dl>
+      </section>
+    </div>
+    <footer>
+      <span/>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Zend\Session\Service\ContainerAbstractServiceFactory</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Session_Service">Zend\Session\Service</a>
+          </li>
+          <li class="separator">ContainerAbstractServiceFactory</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Session/Service/ContainerAbstractServiceFactory.php.xhtml#line37">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Session\Service\</small>ContainerAbstractServiceFactory</h1>
+        <h4>Session container abstract service factory.</h4>
+        <p>Allows creating Container instances, using the Zend\Service\ManagerInterface<br/>if present. Containers are named in a "session_containers" array in the<br/>Config service:<br/><br/>&lt;code&gt;<br/>return array(<br/>'session_containers' =&gt; array(<br/>'SessionContainer\sample',<br/>'my_sample_session_container',<br/>'MySessionContainer',<br/>),<br/>);<br/>&lt;/code&gt;<br/><br/>&lt;code&gt;<br/>$container = $services-&gt;get('MySessionContainer');<br/>&lt;/code&gt;</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ContainerAbstractServiceFactory
+                implements
+                <a title="Zend\ServiceManager\AbstractFactoryInterface" href="../interfaces/Zend_ServiceManager_AbstractFactoryInterface.xhtml">AbstractFactoryInterface</a>
+            {<br/><ul class="none"><li>// members</li><li>protected array <a href="#members">$config</a>;
+                    </li><li>protected string <a href="#members">$configKey</a>;
+                    </li><li>protected <span title="\Zend\Session\ManagerInterface">ManagerInterface</span> <a href="#members">$sessionManager</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public bool <a title="Zend\Session\Service\ContainerAbstractServiceFactory" href="../classes/Zend_Session_Service_ContainerAbstractServiceFactory/canCreateServiceWithName.xhtml">canCreateServiceWithName</a>()
+                    </li><li>public Container <a title="Zend\Session\Service\ContainerAbstractServiceFactory" href="../classes/Zend_Session_Service_ContainerAbstractServiceFactory/createServiceWithName.xhtml">createServiceWithName</a>()
+                    </li><li>protected false|array <a title="Zend\Session\Service\ContainerAbstractServiceFactory" href="../classes/Zend_Session_Service_ContainerAbstractServiceFactory/getConfig.xhtml">getConfig</a>()
+                    </li><li>protected ManagerInterface <a title="Zend\Session\Service\ContainerAbstractServiceFactory" href="../classes/Zend_Session_Service_ContainerAbstractServiceFactory/getSessionManager.xhtml">getSessionManager</a>()
+                    </li><li>protected string <a title="Zend\Session\Service\ContainerAbstractServiceFactory" href="../classes/Zend_Session_Service_ContainerAbstractServiceFactory/normalizeContainerName.xhtml">normalizeContainerName</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Zend_ServiceManager_AbstractFactoryInterface.xhtml">Zend\ServiceManager\AbstractFactoryInterface</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="config"><strong>$config</strong>
+                —
+                array<br/><span class="indent">Cached container configuration</span></li>
+            <li id="configKey"><strong>$configKey</strong>
+                —
+                string<br/><span class="indent">Configuration key in which session containers live</span></li>
+            <li id="sessionManager"><strong>$sessionManager</strong>
+                —
+                <a href="#">\Zend\Session\ManagerInterface</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="getConfig"><a title="Zend\Session\Service\ContainerAbstractServiceFactory" href="../classes/Zend_Session_Service_ContainerAbstractServiceFactory/getConfig.xhtml">getConfig()</a>
+                — Retrieve config from service locator, and cache for later</li>
+            <li id="getSessionManager"><a title="Zend\Session\Service\ContainerAbstractServiceFactory" href="../classes/Zend_Session_Service_ContainerAbstractServiceFactory/getSessionManager.xhtml">getSessionManager()</a>
+                — Retrieve the session manager instance, if any</li>
+            <li id="normalizeContainerName"><a title="Zend\Session\Service\ContainerAbstractServiceFactory" href="../classes/Zend_Session_Service_ContainerAbstractServiceFactory/normalizeContainerName.xhtml">normalizeContainerName()</a>
+                — Normalize the container name in order to perform a lookup</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="canCreateServiceWithName">
+              <a title="Zend\Session\Service\ContainerAbstractServiceFactory" href="../classes/Zend_Session_Service_ContainerAbstractServiceFactory/canCreateServiceWithName.xhtml">canCreateServiceWithName()</a>
+            </li>
+            <li id="createServiceWithName">
+              <a title="Zend\Session\Service\ContainerAbstractServiceFactory" href="../classes/Zend_Session_Service_ContainerAbstractServiceFactory/createServiceWithName.xhtml">createServiceWithName()</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span/>
+    </footer>
+  </body>
+</html>

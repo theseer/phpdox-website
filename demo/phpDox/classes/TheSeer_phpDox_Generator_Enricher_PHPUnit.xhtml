@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - TheSeer\phpDox\Generator\Enricher\PHPUnit</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#TheSeer_phpDox_Generator_Enricher">TheSeer\phpDox\Generator\Enricher</a>
+          </li>
+          <li class="separator">PHPUnit</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#coverage">Coverage</a>
+          </li>
+          <li>
+            <a href="#violations">Violations</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/generator/enricher/phpunit/PHPUnit.php.xhtml#line12">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>TheSeer\phpDox\Generator\Enricher\</small>PHPUnit</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PHPUnit
+                extends <a title="TheSeer\phpDox\Generator\Enricher\AbstractEnricher" href="../classes/TheSeer_phpDox_Generator_Enricher_AbstractEnricher.xhtml">AbstractEnricher</a>
+                implements
+                <a title="TheSeer\phpDox\Generator\Enricher\EndEnricherInterface" href="../interfaces/TheSeer_phpDox_Generator_Enricher_EndEnricherInterface.xhtml">EndEnricherInterface</a>,<a title="TheSeer\phpDox\Generator\Enricher\ClassEnricherInterface" href="../interfaces/TheSeer_phpDox_Generator_Enricher_ClassEnricherInterface.xhtml">ClassEnricherInterface</a>,<a title="TheSeer\phpDox\Generator\Enricher\TraitEnricherInterface" href="../interfaces/TheSeer_phpDox_Generator_Enricher_TraitEnricherInterface.xhtml">TraitEnricherInterface</a>
+            {<br/><ul class="none"><li>// constants</li><li>const XMLNS = 'http://schema.phpunit.de/coverage/1.0';</li></ul><ul class="none"><li>// Inherited constants from <a title="TheSeer\phpDox\Generator\Enricher\AbstractEnricher" href="../classes/TheSeer_phpDox_Generator_Enricher_AbstractEnricher.xhtml">AbstractEnricher</a></li><li>const <a href="#XMLNS">XMLNS</a> = 'http://xml.phpdox.net/src';</li></ul><ul class="none"><li>// members</li><li>private <span title="TheSeer\phpDox\Generator\Enricher\PHPUnitConfig">PHPUnitConfig</span> <a href="#members">$config</a>;
+                    </li><li>private <span title="TheSeer\fDOM\fDOMDocument">fDOMDocument</span> <a href="#members">$index</a>;
+                    </li><li>private array <a href="#members">$results</a>;
+                    </li><li>private array <a href="#members">$coverage</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/__construct.xhtml">__construct</a>()
+                    </li><li>public string <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/getName.xhtml">getName</a>()
+                    </li><li>public void <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/enrichEnd.xhtml">enrichEnd</a>()
+                    </li><li>public void <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/enrichClass.xhtml">enrichClass</a>()
+                    </li><li>public void <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/enrichTrait.xhtml">enrichTrait</a>()
+                    </li><li>private void <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/enrichByFile.xhtml">enrichByFile</a>()
+                    </li><li>private void <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/loadXML.xhtml">loadXML</a>()
+                    </li><li>private void <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/processUnit.xhtml">processUnit</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="TheSeer\phpDox\Generator\Enricher\AbstractEnricher">AbstractEnricher</span></li><li>protected fDOMElement <a title="TheSeer\phpDox\Generator\Enricher\AbstractEnricher" href="../classes/TheSeer_phpDox_Generator_Enricher_AbstractEnricher/getEnrichtmentContainer.xhtml">getEnrichtmentContainer</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/TheSeer_phpDox_Generator_Enricher_AbstractEnricher.xhtml">TheSeer\phpDox\Generator\Enricher\AbstractEnricher</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/TheSeer_phpDox_Generator_Enricher_EndEnricherInterface.xhtml">TheSeer\phpDox\Generator\Enricher\EndEnricherInterface</a>
+            </li>
+            <li>
+              <a href="../interfaces/TheSeer_phpDox_Generator_Enricher_ClassEnricherInterface.xhtml">TheSeer\phpDox\Generator\Enricher\ClassEnricherInterface</a>
+            </li>
+            <li>
+              <a href="../interfaces/TheSeer_phpDox_Generator_Enricher_TraitEnricherInterface.xhtml">TheSeer\phpDox\Generator\Enricher\TraitEnricherInterface</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="coverage">Coverage</h2>
+        <table class="styled">
+          <tr>
+            <td>Methods</td>
+            <td class="percent">0%</td>
+            <td class="nummeric">0 / 8</td>
+          </tr>
+          <tr>
+            <td>Lines</td>
+            <td class="percent">0%</td>
+            <td class="nummeric">0 / 195</td>
+          </tr>
+        </table>
+        <h2 id="violations">Violations</h2>
+        <div class="styled">
+          <h3>PHPMessDetector</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Rule</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">150</td>
+              <td>
+                <a href="http://phpmd.org/rules/naming.html#shortvariable" target="_blank" title="Naming Rules">ShortVariable</a>
+              </td>
+              <td>Avoid variables with short names like $xp. Configured minimum length is 3.</td>
+            </tr>
+          </table>
+        </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="XMLNS">XMLNS</td>
+              <td>'http://schema.phpunit.de/coverage/1.0'</td>
+            </tr>
+            <tr>
+              <td id="XMLNS">XMLNS</td>
+              <td>'http://xml.phpdox.net/src'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="config"><strong>$config</strong>
+                —
+                <a href="#">TheSeer\phpDox\Generator\Enricher\PHPUnitConfig</a></li>
+            <li id="coverage">
+              <strong>$coverage</strong>
+            </li>
+            <li id="index"><strong>$index</strong>
+                —
+                <a href="#">TheSeer\fDOM\fDOMDocument</a></li>
+            <li id="results">
+              <strong>$results</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="enrichByFile">
+              <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/enrichByFile.xhtml">enrichByFile()</a>
+            </li>
+            <li id="loadXML">
+              <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/loadXML.xhtml">loadXML()</a>
+            </li>
+            <li id="processUnit">
+              <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/processUnit.xhtml">processUnit()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="enrichClass">
+              <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/enrichClass.xhtml">enrichClass()</a>
+            </li>
+            <li id="enrichEnd">
+              <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/enrichEnd.xhtml">enrichEnd()</a>
+            </li>
+            <li id="enrichTrait">
+              <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/enrichTrait.xhtml">enrichTrait()</a>
+            </li>
+            <li id="getName">
+              <a title="TheSeer\phpDox\Generator\Enricher\PHPUnit" href="../classes/TheSeer_phpDox_Generator_Enricher_PHPUnit/getName.xhtml">getName()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="TheSeer\phpDox\Generator\Enricher\AbstractEnricher" href="../classes/TheSeer_phpDox_Generator_Enricher_AbstractEnricher.xhtml">TheSeer\phpDox\Generator\Enricher\AbstractEnricher</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="getEnrichtmentContainer">
+              <a title="TheSeer\phpDox\Generator\Enricher\AbstractEnricher" href="../classes/TheSeer_phpDox_Generator_Enricher_AbstractEnricher/getEnrichtmentContainer.xhtml">getEnrichtmentContainer()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
+          <li>
+            <h3>2014-05-04T13:59:49+02:00 (commit #<span title="3368880efa7538f1fbe791253e9325cc7d71c0ae">3368880</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Enhanced PHPUnit enricher to not claim empty classes are untested</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-05-04T00:51:08+02:00 (commit #<span title="212d625b6fbcf455842f4f0c5fe6dbfcbe30e797">212d625</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Adjust path handling to be based on absolute srcdir and relative file paths</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-20T19:11:34+02:00 (commit #<span title="aaf8a9134aa00be665ebdec1e7738123076f2819">aaf8a91</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">More Cleanup</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-20T17:48:19+02:00 (commit #<span title="657be50b2d6a58ea11915bd1e26abd6dcd301762">657be50</span>)</h3>
+            <div>
+              <p>
+                        Author: Alister Bulman (abulman@gmail.com) /
+                        Commiter: Alister Bulman (abulman@gmail.com)
+                    </p>
+              <pre class="wrapped">Correct source name in errors, PHPUnit, not PHPloc</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-02-17T01:06:32+01:00 (commit #<span title="d36ee00addb23bb914aea5205398eeecf75c8837">d36ee00</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Extended PHPUnit enricher, updated templates</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-26T12:43:10+01:00 (commit #<span title="3d708a13cd078498ba21a7324c9ae0db8804bd09">3d708a1</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Ignore classes phpunit's coverage xml does not know about (yet)</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-19T03:30:33+01:00 (commit #<span title="ca7f675242a3c59bd7d8d2fcf0e45f9a95ce71dc">ca7f675</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Enhance PHPUnit Coverage enriching</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-13T01:18:15+01:00 (commit #<span title="5b05e2f7d43dab07970954a7472972e718c16d31">5b05e2f</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Added PHPUnit Enricher</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-11-26T11:21:25+01:00 (commit #<span title="22b1853a7611783a8197289b13aa9b5e34cd9b16">22b1853</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix type hint for constructor argument</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-10-27T01:42:15+02:00 (commit #<span title="e0c9049bdbca8ab45b577ecd47a566647fcaad02">e0c9049</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Reworked Enriching Subsystem
+Added various enrichers</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-07T19:42:35+02:00 (commit #<span title="2c6a1b0047467f50a30e1e143494cf1e4916aacd">2c6a1b0</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Added support for nicer display names to enrichers, reformated some log messages</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-08-07T02:45:05+02:00 (commit #<span title="7778e7fbf4367ae88bb4c84ff250b794f259a5c0">7778e7f</span>)</h3>
+            <div>
+              <p>
+                        Author: Arne Blankerts (Arne@Blankerts.de) /
+                        Commiter: Arne Blankerts (Arne@Blankerts.de)
+                    </p>
+              <pre class="wrapped">Added stub for phpunit enriching</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

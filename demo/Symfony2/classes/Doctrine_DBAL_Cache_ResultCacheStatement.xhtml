@@ -1,316 +1,192 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\DBAL\Cache\ResultCacheStatement - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\DBAL\Cache\ResultCacheStatement</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_DBAL_Cache">Doctrine\DBAL\Cache</a>
+          </li>
+          <li class="separator">ResultCacheStatement</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#resultCache">$resultCache</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#cacheKey">$cacheKey</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#realKey">$realKey</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#lifetime">$lifetime</a>
+            <a href="#tasks">Tasks</a>
           </li>
           <li>
-            <a href="#statement">$statement</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#emptied">$emptied</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#data">$data</a>
-          </li>
-          <li>
-            <a href="#defaultFetchMode">$defaultFetchMode</a>
+            <a href="../source/doctrine/dbal/lib/Doctrine/DBAL/Cache/ResultCacheStatement.php.xhtml#line41">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#closeCursor">closeCursor</a>
-          </li>
-          <li>
-            <a href="#columnCount">columnCount</a>
-          </li>
-          <li>
-            <a href="#fetch">fetch</a>
-          </li>
-          <li>
-            <a href="#fetchAll">fetchAll</a>
-          </li>
-          <li>
-            <a href="#fetchColumn">fetchColumn</a>
-          </li>
-          <li>
-            <a href="#getIterator">getIterator</a>
-          </li>
-          <li>
-            <a href="#rowCount">rowCount</a>
-          </li>
-          <li>
-            <a href="#setFetchMode">setFetchMode</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\DBAL\Cache\</span>ResultCacheStatement</h2>
-        <div class="file-notice">
-          <p>Cache statement for SQL results.</p>
-          <p>
-            <pre>A result is saved in multiple cache keys, there is the originally specified
-cache key which is just pointing to result rows by key. The following things
-have to be ensured:
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\DBAL\Cache\</small>ResultCacheStatement</h1>
+        <h4>Cache statement for SQL results.</h4>
+        <p>A result is saved in multiple cache keys, there is the originally specified<br/>cache key which is just pointing to result rows by key. The following things<br/>have to be ensured:<br/><br/>1. lifetime of the original key has to be longer than that of all the individual rows keys<br/>2. if any one row key is missing the query has to be re-executed.<br/><br/>Also you have to realize that the cache will load the whole result into memory at once to ensure 2.<br/>This means that the memory usage for cached results might increase by using this feature.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ResultCacheStatement
+                implements
+                <a title="IteratorAggregate" href="../interfaces/IteratorAggregate.xhtml">IteratorAggregate</a>,<a title="Doctrine\DBAL\Driver\ResultStatement" href="../interfaces/Doctrine_DBAL_Driver_ResultStatement.xhtml">ResultStatement</a>
+            {<br/><ul class="none"><li>// members</li><li>private <span title="\Doctrine\Common\Cache\Cache">Cache</span> <a href="#members">$resultCache</a>;
+                    </li><li>private string <a href="#members">$cacheKey</a>;
+                    </li><li>private string <a href="#members">$realKey</a>;
+                    </li><li>private int <a href="#members">$lifetime</a>;
+                    </li><li>private <span title="Doctrine\DBAL\Cache\Doctrine\DBAL\Driver\Statement">Statement</span> <a href="#members">$statement</a>;
+                    </li><li>private <span title="Doctrine\DBAL\Cache\bool">bool</span> <a href="#members">$emptied</a>;
+                    </li><li>private array <a href="#members">$data</a>;
+                    </li><li>private int <a href="#members">$defaultFetchMode</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/__construct.xhtml">__construct</a>()
+                    </li><li>public boolean <a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/closeCursor.xhtml">closeCursor</a>()
+                    </li><li>public integer <a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/columnCount.xhtml">columnCount</a>()
+                    </li><li>public void <a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/setFetchMode.xhtml">setFetchMode</a>()
+                    </li><li>public void <a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/getIterator.xhtml">getIterator</a>()
+                    </li><li>public mixed <a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/fetch.xhtml">fetch</a>()
+                    </li><li>public array <a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/fetchAll.xhtml">fetchAll</a>()
+                    </li><li>public string <a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/fetchColumn.xhtml">fetchColumn</a>()
+                    </li><li>public integer <a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/rowCount.xhtml">rowCount</a>()
+                    </li></ul>
 
-1. lifetime of the original key has to be longer than that of all the individual rows keys
-2. if any one row key is missing the query has to be re-executed.
-
-Also you have to realize that the cache will load the whole result into memory at once to ensure 2.
-This means that the memory usage for cached results might increase by using this feature.</pre>
-          </p>
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/IteratorAggregate.xhtml">IteratorAggregate</a>
+            </li>
+            <li>
+              <a href="../interfaces/Doctrine_DBAL_Driver_ResultStatement.xhtml">Doctrine\DBAL\Driver\ResultStatement</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <span title="IteratorAggregate">IteratorAggregate</span>
-          </li>
-          <li>
-            <a href="../interfaces/Doctrine_DBAL_Driver_ResultStatement.xhtml">Doctrine\DBAL\Driver\ResultStatement</a>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="resultCache"/>
-            <h4><span class="label private">private</span>object 
-                
-                $resultCache</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="cacheKey"/>
-            <h4><span class="label private">private</span>string 
-                
-                $cacheKey</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="realKey"/>
-            <h4><span class="label private">private</span>string 
-                
-                $realKey</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="lifetime"/>
-            <h4><span class="label private">private</span>int 
-                
-                $lifetime</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="statement"/>
-            <h4><span class="label private">private</span>object 
-                
-                $statement</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="emptied"/>
-            <h4><span class="label private">private</span>object 
-                
-                $emptied</h4>
-            <ul class="varlist">
-              <li>Did we reach the end of the statement?</li>
-            </ul>
-          </li>
-          <li>
-            <a name="data"/>
-            <h4><span class="label private">private</span>array 
-                
-                $data</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="defaultFetchMode"/>
-            <h4><span class="label private">private</span>int 
-                
-                $defaultFetchMode</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_DBAL_Driver_Statement.xhtml">Doctrine\DBAL\Driver\Statement</a></span><strong> $stmt</strong>, <span class="param-type"><a href="../interfaces/Doctrine_Common_Cache_Cache.xhtml">Doctrine\Common\Cache\Cache</a></span><strong> $resultCache</strong>, <span class="param-type">string</span><strong> $cacheKey</strong>, <span class="param-type">string</span><strong> $realKey</strong>, <span class="param-type">int</span><strong> $lifetime</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$stmt</code> - </li>
-                <li><code>$resultCache</code> - </li>
-                <li><code>$cacheKey</code> - </li>
-                <li><code>$realKey</code> - </li>
-                <li><code>$lifetime</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="closeCursor"/>
-            <h4><span class="label public">public</span>closeCursor<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Closes the cursor, enabling the statement to be executed again.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Returns TRUE on success or FALSE on failure.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="columnCount"/>
-            <h4><span class="label public">public</span>columnCount<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>columnCount Returns the number of columns in the result set</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Returns the number of columns in the result set represented</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="fetch"/>
-            <h4><span class="label public">public</span>fetch<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $fetchMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>fetch</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fetchMode</code> - Controls how the next row will be returned to the caller.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="fetchAll"/>
-            <h4><span class="label public">public</span>fetchAll<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $fetchMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns an array containing all of the result set rows</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fetchMode</code> - Controls how the next row will be returned to the caller.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="fetchColumn"/>
-            <h4><span class="label public">public</span>fetchColumn<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $columnIndex</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>fetchColumn Returns a single column from the next row of a result set or FALSE if there are no more rows.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columnIndex</code> - 0-indexed number of the column you wish to retrieve from the row. If no</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>returns a single column in the next row of a result set.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getIterator"/>
-            <h4><span class="label public">public</span>getIterator<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="rowCount"/>
-            <h4><span class="label public">public</span>rowCount<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>rowCount rowCount() returns the number of rows affected by the last DELETE, INSERT, or UPDATE statement executed by the corresponding object.<pre>If the last SQL statement executed by the associated Statement object was a SELECT statement,
-some databases may return the number of rows returned by that statement. However,
-this behaviour is not guaranteed for all databases and should not be
-relied on for portable applications.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>Returns the number of rows.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setFetchMode"/>
-            <h4><span class="label public">public</span>setFetchMode<span style="font-size:90%;">( <span class="param-type"/><strong> $fetchMode</strong>, <span class="param-type"/><strong> $arg2</strong>, <span class="param-type"/><strong> $arg3</strong> )</span></h4>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">217</td>
+            <td>verify this is correct behavior</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="cacheKey"><strong>$cacheKey</strong>
+                —
+                string</li>
+            <li id="data"><strong>$data</strong>
+                —
+                array</li>
+            <li id="defaultFetchMode"><strong>$defaultFetchMode</strong>
+                —
+                int</li>
+            <li id="emptied"><strong>$emptied</strong>
+                —
+                <a href="#">Doctrine\DBAL\Cache\bool</a><br/><span class="indent">Did we reach the end of the statement?</span></li>
+            <li id="lifetime"><strong>$lifetime</strong>
+                —
+                int</li>
+            <li id="realKey"><strong>$realKey</strong>
+                —
+                string</li>
+            <li id="resultCache"><strong>$resultCache</strong>
+                —
+                <a href="#">\Doctrine\Common\Cache\Cache</a></li>
+            <li id="statement"><strong>$statement</strong>
+                —
+                <a href="#">Doctrine\DBAL\Cache\Doctrine\DBAL\Driver\Statement</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="closeCursor"><a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/closeCursor.xhtml">closeCursor()</a>
+                — Closes the cursor, enabling the statement to be executed again.</li>
+            <li id="columnCount"><a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/columnCount.xhtml">columnCount()</a>
+                — columnCount Returns the number of columns in the result set</li>
+            <li id="fetch"><a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/fetch.xhtml">fetch()</a>
+                — fetch</li>
+            <li id="fetchAll"><a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/fetchAll.xhtml">fetchAll()</a>
+                — Returns an array containing all of the result set rows</li>
+            <li id="fetchColumn"><a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/fetchColumn.xhtml">fetchColumn()</a>
+                — fetchColumn Returns a single column from the next row of a result set or FALSE if there are no more rows.</li>
+            <li id="getIterator">
+              <a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/getIterator.xhtml">getIterator()</a>
+            </li>
+            <li id="rowCount"><a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/rowCount.xhtml">rowCount()</a>
+                — rowCount rowCount() returns the number of rows affected by the last DELETE, INSERT, or UPDATE statement executed by the corresponding object.</li>
+            <li id="setFetchMode">
+              <a title="Doctrine\DBAL\Cache\ResultCacheStatement" href="../classes/Doctrine_DBAL_Cache_ResultCacheStatement/setFetchMode.xhtml">setFetchMode()</a>
+            </li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

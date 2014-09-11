@@ -1,336 +1,218 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Symfony\Component\Security\Acl\Permission\MaskBuilder - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Symfony\Component\Security\Acl\Permission\MaskBuilder</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Symfony_Component_Security_Acl_Permission">Symfony\Component\Security\Acl\Permission</a>
+          </li>
+          <li class="separator">MaskBuilder</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#MASK_VIEW">MASK_VIEW</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#MASK_CREATE">MASK_CREATE</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#MASK_EDIT">MASK_EDIT</a>
+            <a href="#constants">Constants</a>
           </li>
           <li>
-            <a href="#MASK_DELETE">MASK_DELETE</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#MASK_UNDELETE">MASK_UNDELETE</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#MASK_OPERATOR">MASK_OPERATOR</a>
-          </li>
-          <li>
-            <a href="#MASK_MASTER">MASK_MASTER</a>
-          </li>
-          <li>
-            <a href="#MASK_OWNER">MASK_OWNER</a>
-          </li>
-          <li>
-            <a href="#MASK_IDDQD">MASK_IDDQD</a>
-          </li>
-          <li>
-            <a href="#CODE_VIEW">CODE_VIEW</a>
-          </li>
-          <li>
-            <a href="#CODE_CREATE">CODE_CREATE</a>
-          </li>
-          <li>
-            <a href="#CODE_EDIT">CODE_EDIT</a>
-          </li>
-          <li>
-            <a href="#CODE_DELETE">CODE_DELETE</a>
-          </li>
-          <li>
-            <a href="#CODE_UNDELETE">CODE_UNDELETE</a>
-          </li>
-          <li>
-            <a href="#CODE_OPERATOR">CODE_OPERATOR</a>
-          </li>
-          <li>
-            <a href="#CODE_MASTER">CODE_MASTER</a>
-          </li>
-          <li>
-            <a href="#CODE_OWNER">CODE_OWNER</a>
-          </li>
-          <li>
-            <a href="#ALL_OFF">ALL_OFF</a>
-          </li>
-          <li>
-            <a href="#OFF">OFF</a>
-          </li>
-          <li>
-            <a href="#ON">ON</a>
+            <a href="../source/symfony/symfony/src/Symfony/Component/Security/Acl/Permission/MaskBuilder.php.xhtml#line45">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Symfony\Component\Security\Acl\Permission\</small>MaskBuilder</h1>
+        <h4>This class allows you to build cumulative permissions easily, or convert masks to a human-readable format.</h4>
+        <p>&lt;code&gt;<br/>$builder = new MaskBuilder();<br/>$builder<br/>-&gt;add('view')<br/>-&gt;add('create')<br/>-&gt;add('edit')<br/>;<br/>var_dump($builder-&gt;get()); // int(7)<br/>var_dump($builder-&gt;getPattern()); // string(32) ".............................ECV"<br/>&lt;/code&gt;<br/><br/>We have defined some commonly used base permissions which you can use:<br/>- VIEW: the SID is allowed to view the domain object / field<br/>- CREATE: the SID is allowed to create new instances of the domain object / fields<br/>- EDIT: the SID is allowed to edit existing instances of the domain object / field<br/>- DELETE: the SID is allowed to delete domain objects<br/>- UNDELETE: the SID is allowed to recover domain objects from trash<br/>- OPERATOR: the SID is allowed to perform any action on the domain object<br/>except for granting others permissions<br/>- MASTER: the SID is allowed to perform any action on the domain object,<br/>and is allowed to grant other SIDs any permission except for<br/>MASTER and OWNER permissions<br/>- OWNER: the SID is owning the domain object in question and can perform any<br/>         action on the domain object as well as grant any permission</p>
         <ul>
-          <li>
-            <a href="#mask">$mask</a>
-          </li>
+          <li>Author: Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#add">add</a>
-          </li>
-          <li>
-            <a href="#get">get</a>
-          </li>
-          <li>
-            <a href="#getCode">getCode</a>
-          </li>
-          <li>
-            <a href="#getPattern">getPattern</a>
-          </li>
-          <li>
-            <a href="#remove">remove</a>
-          </li>
-          <li>
-            <a href="#reset">reset</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Symfony\Component\Security\Acl\Permission\</span>MaskBuilder</h2>
-        <div class="file-notice">
-          <p>This class allows you to build cumulative permissions easily, or convert masks to a human-readable format.</p>
-          <p>
-            <pre>&lt;code&gt;
-      $builder = new MaskBuilder();
-      $builder
-          -&gt;add('view')
-          -&gt;add('create')
-          -&gt;add('edit')
-      ;
-      var_dump($builder-&gt;get());        // int(7)
-      var_dump($builder-&gt;getPattern()); // string(32) ".............................ECV"
-&lt;/code&gt;
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class MaskBuilder
+            {<br/><ul class="none"><li>// constants</li><li>const MASK_VIEW = 1;</li><li>const MASK_CREATE = 2;</li><li>const MASK_EDIT = 4;</li><li>const MASK_DELETE = 8;</li><li>const MASK_UNDELETE = 16;</li><li>const MASK_OPERATOR = 32;</li><li>const MASK_MASTER = 64;</li><li>const MASK_OWNER = 128;</li><li>const MASK_IDDQD = 1073741823;</li><li>const CODE_VIEW = 'V';</li><li>const CODE_CREATE = 'C';</li><li>const CODE_EDIT = 'E';</li><li>const CODE_DELETE = 'D';</li><li>const CODE_UNDELETE = 'U';</li><li>const CODE_OPERATOR = 'O';</li><li>const CODE_MASTER = 'M';</li><li>const CODE_OWNER = 'N';</li><li>const ALL_OFF = '................................';</li><li>const OFF = '.';</li><li>const ON = '*';</li></ul><ul class="none"><li>// members</li><li>private <a href="#members">$mask</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/__construct.xhtml">__construct</a>()
+                    </li><li>public MaskBuilder <a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/add.xhtml">add</a>()
+                    </li><li>public integer <a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/get.xhtml">get</a>()
+                    </li><li>public string <a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/getPattern.xhtml">getPattern</a>()
+                    </li><li>public MaskBuilder <a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/remove.xhtml">remove</a>()
+                    </li><li>public MaskBuilder <a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/reset.xhtml">reset</a>()
+                    </li><li>public static string <a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/getCode.xhtml">getCode</a>()
+                    </li></ul>
 
-We have defined some commonly used base permissions which you can use:
-- VIEW: the SID is allowed to view the domain object / field
-- CREATE: the SID is allowed to create new instances of the domain object / fields
-- EDIT: the SID is allowed to edit existing instances of the domain object / field
-- DELETE: the SID is allowed to delete domain objects
-- UNDELETE: the SID is allowed to recover domain objects from trash
-- OPERATOR: the SID is allowed to perform any action on the domain object
-            except for granting others permissions
-- MASTER: the SID is allowed to perform any action on the domain object,
-          and is allowed to grant other SIDs any permission except for
-          MASTER and OWNER permissions
-- OWNER: the SID is owning the domain object in question and can perform any
-         action on the domain object as well as grant any permission</pre>
-          </p>
+            }<br/></div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="MASK_VIEW">MASK_VIEW</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="MASK_CREATE">MASK_CREATE</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="MASK_EDIT">MASK_EDIT</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="MASK_DELETE">MASK_DELETE</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td id="MASK_UNDELETE">MASK_UNDELETE</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td id="MASK_OPERATOR">MASK_OPERATOR</td>
+              <td>32</td>
+            </tr>
+            <tr>
+              <td id="MASK_MASTER">MASK_MASTER</td>
+              <td>64</td>
+            </tr>
+            <tr>
+              <td id="MASK_OWNER">MASK_OWNER</td>
+              <td>128</td>
+            </tr>
+            <tr>
+              <td id="MASK_IDDQD">MASK_IDDQD</td>
+              <td>1073741823</td>
+            </tr>
+            <tr>
+              <td id="CODE_VIEW">CODE_VIEW</td>
+              <td>'V'</td>
+            </tr>
+            <tr>
+              <td id="CODE_CREATE">CODE_CREATE</td>
+              <td>'C'</td>
+            </tr>
+            <tr>
+              <td id="CODE_EDIT">CODE_EDIT</td>
+              <td>'E'</td>
+            </tr>
+            <tr>
+              <td id="CODE_DELETE">CODE_DELETE</td>
+              <td>'D'</td>
+            </tr>
+            <tr>
+              <td id="CODE_UNDELETE">CODE_UNDELETE</td>
+              <td>'U'</td>
+            </tr>
+            <tr>
+              <td id="CODE_OPERATOR">CODE_OPERATOR</td>
+              <td>'O'</td>
+            </tr>
+            <tr>
+              <td id="CODE_MASTER">CODE_MASTER</td>
+              <td>'M'</td>
+            </tr>
+            <tr>
+              <td id="CODE_OWNER">CODE_OWNER</td>
+              <td>'N'</td>
+            </tr>
+            <tr>
+              <td id="ALL_OFF">ALL_OFF</td>
+              <td>'................................'</td>
+            </tr>
+            <tr>
+              <td id="OFF">OFF</td>
+              <td>'.'</td>
+            </tr>
+            <tr>
+              <td id="ON">ON</td>
+              <td>'*'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="mask">
+              <strong>$mask</strong>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="MASK_VIEW"/>MASK_VIEW = 1<hr/></li>
-          <li><a name="MASK_CREATE"/>MASK_CREATE = 2<hr/></li>
-          <li><a name="MASK_EDIT"/>MASK_EDIT = 4<hr/></li>
-          <li><a name="MASK_DELETE"/>MASK_DELETE = 8<hr/></li>
-          <li><a name="MASK_UNDELETE"/>MASK_UNDELETE = 16<hr/></li>
-          <li><a name="MASK_OPERATOR"/>MASK_OPERATOR = 32<hr/></li>
-          <li><a name="MASK_MASTER"/>MASK_MASTER = 64<hr/></li>
-          <li><a name="MASK_OWNER"/>MASK_OWNER = 128<hr/></li>
-          <li><a name="MASK_IDDQD"/>MASK_IDDQD = 1073741823<hr/></li>
-          <li><a name="CODE_VIEW"/>CODE_VIEW = 'V'<hr/></li>
-          <li><a name="CODE_CREATE"/>CODE_CREATE = 'C'<hr/></li>
-          <li><a name="CODE_EDIT"/>CODE_EDIT = 'E'<hr/></li>
-          <li><a name="CODE_DELETE"/>CODE_DELETE = 'D'<hr/></li>
-          <li><a name="CODE_UNDELETE"/>CODE_UNDELETE = 'U'<hr/></li>
-          <li><a name="CODE_OPERATOR"/>CODE_OPERATOR = 'O'<hr/></li>
-          <li><a name="CODE_MASTER"/>CODE_MASTER = 'M'<hr/></li>
-          <li><a name="CODE_OWNER"/>CODE_OWNER = 'N'<hr/></li>
-          <li><a name="ALL_OFF"/>ALL_OFF = '................................'<hr/></li>
-          <li><a name="OFF"/>OFF = '.'<hr/></li>
-          <li><a name="ON"/>ON = '*'<hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="mask"/>
-            <h4><span class="label private">private</span>
-                $mask</h4>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $mask</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mask</code> - optional; defaults to 0</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="add"/>
-            <h4><span class="label public">public</span>add<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $mask</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a mask to the permission</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mask</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="get"/>
-            <h4><span class="label public">public</span>get<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the mask of this permission</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCode"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getCode<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $mask</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the code for the passed mask</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mask</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\InvalidArgumentException</code>
-                </li>
-                <li>
-                  <code>\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPattern"/>
-            <h4><span class="label public">public</span>getPattern<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns a human-readable representation of the permission</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="remove"/>
-            <h4><span class="label public">public</span>remove<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $mask</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Removes a mask from the permission</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mask</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="reset"/>
-            <h4><span class="label public">public</span>reset<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Resets the PermissionBuilder</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/__construct.xhtml">__construct()</a>
+                — Constructor</li>
+            <li id="add"><a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/add.xhtml">add()</a>
+                — Adds a mask to the permission</li>
+            <li id="get"><a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/get.xhtml">get()</a>
+                — Returns the mask of this permission</li>
+            <li id="getCode"><a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/getCode.xhtml">getCode()</a>
+                — Returns the code for the passed mask</li>
+            <li id="getPattern"><a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/getPattern.xhtml">getPattern()</a>
+                — Returns a human-readable representation of the permission</li>
+            <li id="remove"><a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/remove.xhtml">remove()</a>
+                — Removes a mask from the permission</li>
+            <li id="reset"><a title="Symfony\Component\Security\Acl\Permission\MaskBuilder" href="../classes/Symfony_Component_Security_Acl_Permission_MaskBuilder/reset.xhtml">reset()</a>
+                — Resets the PermissionBuilder</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

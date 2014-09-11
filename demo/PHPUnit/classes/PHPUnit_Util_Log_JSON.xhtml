@@ -1,374 +1,993 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>PHPUnit - PHPUnit_Util_Log_JSON - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - PHPUnit_Util_Log_JSON</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">PHPUnit - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">PHPUnit_Util_Log_JSON</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#currentTestSuiteName">$currentTestSuiteName</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#currentTestName">$currentTestName</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#currentTestPass">$currentTestPass</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#autoFlush">$autoFlush</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#out">$out</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#outTarget">$outTarget</a>
+            <a href="#history">History</a>
           </li>
           <li>
-            <a href="#printsHTML">$printsHTML</a>
+            <a href="../source/Util/Log/JSON.php.xhtml#line61">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>PHPUnit_Util_Log_JSON</h1>
+        <h4>A TestListener that generates JSON messages.</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#addError">addError</a>
-          </li>
-          <li>
-            <a href="#addFailure">addFailure</a>
-          </li>
-          <li>
-            <a href="#addIncompleteTest">addIncompleteTest</a>
-          </li>
-          <li>
-            <a href="#addSkippedTest">addSkippedTest</a>
-          </li>
-          <li>
-            <a href="#endTest">endTest</a>
-          </li>
-          <li>
-            <a href="#endTestSuite">endTestSuite</a>
-          </li>
-          <li>
-            <a href="#flush">flush</a>
-          </li>
-          <li>
-            <a href="#getAutoFlush">getAutoFlush</a>
-          </li>
-          <li>
-            <a href="#incrementalFlush">incrementalFlush</a>
-          </li>
-          <li>
-            <a href="#setAutoFlush">setAutoFlush</a>
-          </li>
-          <li>
-            <a href="#startTest">startTest</a>
-          </li>
-          <li>
-            <a href="#startTestSuite">startTestSuite</a>
-          </li>
-          <li>
-            <a href="#write">write</a>
-          </li>
-          <li>
-            <a href="#write">write</a>
-          </li>
-          <li>
-            <a href="#writeCase">writeCase</a>
-          </li>
+          <li>Author: Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>Copyright: 2001-2014 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>License: http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">\</span>PHPUnit_Util_Log_JSON</h2>
-        <div class="file-notice">
-          <p>A TestListener that generates JSON messages.</p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PHPUnit_Util_Log_JSON
+                extends <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer.xhtml">PHPUnit_Util_Printer</a>
+                implements
+                <a title="PHPUnit_Framework_TestListener" href="../interfaces/PHPUnit_Framework_TestListener.xhtml">PHPUnit_Framework_TestListener</a>
+            {<br/><ul class="none"><li>// members</li><li>protected string <a href="#members">$currentTestSuiteName</a>;
+                    </li><li>protected string <a href="#members">$currentTestName</a>;
+                    </li><li>protected boolean <a href="#members">$currentTestPass</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="PHPUnit_Util_Printer">PHPUnit_Util_Printer</span></li><li>protected boolean <a href="#members">$autoFlush</a>;
+                        </li><li>protected resource <a href="#members">$out</a>;
+                        </li><li>protected string <a href="#members">$outTarget</a>;
+                        </li><li>protected boolean <a href="#members">$printsHTML</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/addError.xhtml">addError</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/addFailure.xhtml">addFailure</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/addIncompleteTest.xhtml">addIncompleteTest</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/addRiskyTest.xhtml">addRiskyTest</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/addSkippedTest.xhtml">addSkippedTest</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/startTestSuite.xhtml">startTestSuite</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/endTestSuite.xhtml">endTestSuite</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/startTest.xhtml">startTest</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/endTest.xhtml">endTest</a>()
+                    </li><li>protected void <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/writeCase.xhtml">writeCase</a>()
+                    </li><li>public void <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/write.xhtml">write</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="PHPUnit_Util_Printer">PHPUnit_Util_Printer</span></li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/__construct.xhtml">__construct</a>()
+                        </li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/flush.xhtml">flush</a>()
+                        </li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/incrementalFlush.xhtml">incrementalFlush</a>()
+                        </li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/write.xhtml">write</a>()
+                        </li><li>public boolean <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/getAutoFlush.xhtml">getAutoFlush</a>()
+                        </li><li>public void <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/setAutoFlush.xhtml">setAutoFlush</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/PHPUnit_Util_Printer.xhtml">PHPUnit_Util_Printer</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/PHPUnit_Framework_TestListener.xhtml">PHPUnit_Framework_TestListener</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>Copyright: </b>2001-2013 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>License: </b>http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
-        </ul>
-        <h3>Implements</h3>
-        <ul class="varlist">
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="autoFlush"><strong>$autoFlush</strong>
+                —
+                boolean<br/><span class="indent">If true, flush output after every write.</span></li>
+            <li id="currentTestName"><strong>$currentTestName</strong>
+                —
+                string</li>
+            <li id="currentTestPass"><strong>$currentTestPass</strong>
+                —
+                boolean</li>
+            <li id="currentTestSuiteName"><strong>$currentTestSuiteName</strong>
+                —
+                string</li>
+            <li id="out"><strong>$out</strong>
+                —
+                resource</li>
+            <li id="outTarget"><strong>$outTarget</strong>
+                —
+                string</li>
+            <li id="printsHTML"><strong>$printsHTML</strong>
+                —
+                boolean</li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="writeCase">
+              <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/writeCase.xhtml">writeCase()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="addError"><a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/addError.xhtml">addError()</a>
+                — An error occurred.</li>
+            <li id="addFailure"><a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/addFailure.xhtml">addFailure()</a>
+                — A failure occurred.</li>
+            <li id="addIncompleteTest"><a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/addIncompleteTest.xhtml">addIncompleteTest()</a>
+                — Incomplete test.</li>
+            <li id="addRiskyTest"><a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/addRiskyTest.xhtml">addRiskyTest()</a>
+                — Risky test.</li>
+            <li id="addSkippedTest"><a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/addSkippedTest.xhtml">addSkippedTest()</a>
+                — Skipped test.</li>
+            <li id="endTest"><a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/endTest.xhtml">endTest()</a>
+                — A test ended.</li>
+            <li id="endTestSuite"><a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/endTestSuite.xhtml">endTestSuite()</a>
+                — A testsuite ended.</li>
+            <li id="startTest"><a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/startTest.xhtml">startTest()</a>
+                — A test started.</li>
+            <li id="startTestSuite"><a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/startTestSuite.xhtml">startTestSuite()</a>
+                — A testsuite started.</li>
+            <li id="write">
+              <a title="PHPUnit_Util_Log_JSON" href="../classes/PHPUnit_Util_Log_JSON/write.xhtml">write()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer.xhtml">PHPUnit_Util_Printer</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="flush"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/flush.xhtml">flush()</a>
+                — Flush buffer, optionally tidy up HTML, and close output if it's not to a php stream</li>
+            <li id="getAutoFlush"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/getAutoFlush.xhtml">getAutoFlush()</a>
+                — Check auto-flush mode.</li>
+            <li id="incrementalFlush"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/incrementalFlush.xhtml">incrementalFlush()</a>
+                — Performs a safe, incremental flush.</li>
+            <li id="setAutoFlush"><a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/setAutoFlush.xhtml">setAutoFlush()</a>
+                — Set auto-flushing mode.</li>
+            <li id="write">
+              <a title="PHPUnit_Util_Printer" href="../classes/PHPUnit_Util_Printer/write.xhtml">write()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
           <li>
-            <a href="../interfaces/PHPUnit_Framework_TestListener.xhtml">PHPUnit_Framework_TestListener</a>
+            <h3>2014-08-12T06:43:31+02:00 (commit #<span title="50dfaba6477d3b1a0c650d4f70a0d9f478ff6092">50dfaba</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">phpcbf --standard=PSR2 src tests</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-04-30T00:06:05+02:00 (commit #<span title="a1b15f07ced24080529ca772a1646e45156c5f61">a1b15f0</span>)</h3>
+            <div>
+              <p>
+                        Author: jeroendedauw (jeroendedauw@gmail.com) /
+                        Commiter: jeroendedauw (jeroendedauw@gmail.com)
+                    </p>
+              <pre class="wrapped">Fix some method signature docs</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-02-14T18:31:32+01:00 (commit #<span title="e5b50bc60abbc96ae53aa0efd4291345fe4128ff">e5b50bc</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Next version will be 4.0</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-30T13:44:12+01:00 (commit #<span title="bd1028b350c41795e449cf910164b49555f5e3b8">bd1028b</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">More work on making PHPUnit 3.8 compatible with PHP 5.3.3</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-22T19:43:07+01:00 (commit #<span title="02b42d7e912186a17d56fa803ae4682d16f1ff79">02b42d7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on formatting code according to PSR-2</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-20T17:21:13+01:00 (commit #<span title="3a5808fbca4ee832c27f13a544fdf8809eec62ec">3a5808f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-09T08:11:47+01:00 (commit #<span title="205e00844d1d9cf4cd4545c4cc45f1121a6b0824">205e008</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-07T14:37:15+01:00 (commit #<span title="991bf009467dfa2c8f2762e25fc4aac51b2ba802">991bf00</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Revert "Next stable release will be PHPUnit 4"
+
+This reverts commit f4ee7815d1bb1664786fe95b226a3def20f24aa9.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-06T09:05:08+01:00 (commit #<span title="f4ee7815d1bb1664786fe95b226a3def20f24aa9">f4ee781</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Next stable release will be PHPUnit 4</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-03T10:56:51+01:00 (commit #<span title="5fa672603c1fd992ae606dfeb2fccef28c9dfdcf">5fa6726</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Introduce new test classification: risky test</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-11-05T09:11:41+01:00 (commit #<span title="1a3f5741a6ef86ca933aab8faa1a8dc17b41c60c">1a3f574</span>)</h3>
+            <div>
+              <p>
+                        Author: andig (cpuidle@gmx.de) /
+                        Commiter: andig (cpuidle@gmx.de)
+                    </p>
+              <pre class="wrapped">Update JSON.php
+
+Fix #1042</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-27T11:55:21+02:00 (commit #<span title="1eb9164784848777ad3cb65859f33271b97b1d34">1eb9164</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Cleanup and changelog for #948.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-06-27T11:34:29+02:00 (commit #<span title="4104f5db75e49862ebce240c767d7905618362ac">4104f5d</span>)</h3>
+            <div>
+              <p>
+                        Author: bobrik (ibobrik@gmail.com) /
+                        Commiter: bobrik (ibobrik@gmail.com)
+                    </p>
+              <pre class="wrapped">Do not die on binary output with json logging</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-01-07T11:37:52+01:00 (commit #<span title="c517984099c588d7cbe04bea9fb756a764769f5f">c517984</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-24T06:47:44+02:00 (commit #<span title="81ab540c8718a37315962b8242c7f1b4ee031ed4">81ab540</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Do not perform string replacement for @package_version@ anymore.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-19T11:52:00+02:00 (commit #<span title="75c8e2c1c560be8c024024f89d38919e6c01988e">75c8e2c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove workarounds for PHP &lt; 5.4.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-05-27T14:12:42+02:00 (commit #<span title="76a561e48f092f51e7457e76294450e3dd980769">76a561e</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Revert "Merge pull request #572 from mgb/excluded_tests_testlistener"
+
+This reverts commit 3b5d59a5d341f9b851ea373a31beb1cdc4b10ccb, reversing
+changes made to 063359e67e2031ba2ab9afdeb1bd6855c90987e4.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-05-20T19:52:08+02:00 (commit #<span title="67876c2392cf2463423b8f57d60caf6145587a2a">67876c2</span>)</h3>
+            <div>
+              <p>
+                        Author: Ryan Murphy (git@minegoboom.com) /
+                        Commiter: Mine GO BOOM (git@minegoboom.com)
+                    </p>
+              <pre class="wrapped">Quick hack to make ResultPrinter.php include excluded tests in its output.
+
+I choose to use an underscore as the output as we would want to have the total percentage complete to end up with 100%. If instead we would call writeProgress(NULL) and not have it output anything nor increment $this-&gt;column, it would cause the total summary to continue to increment. That does have the side effect where if you hit a chunk of excluded tests, your counter may go from 122/1300 to 553/1300 on the following line with no real indication of why.
+
+Another option I thought of was to instead cause the total number of tests counter to decrement, but that also looks weird if you go from 120/1500 (8%) to 160/800 (20%). But in the case when you exclude large chunks, it would prevent lots of useless output.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-04-30T12:02:38+02:00 (commit #<span title="5786e50b3878cba88932b10e6a48c75723950707">5786e50</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">List The BSD 3-Clause License correctly and consistently. Thanks to Christian Aistleitner &lt;christian@quelltextlich.at&gt; for bringing this issue to my attention.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-01T11:21:16+01:00 (commit #<span title="aae6c3808b9c4bee416657298fa90865d6898d60">aae6c38</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-28T21:49:11+01:00 (commit #<span title="02f2b8a3274ed676c48e3fb5625aacba5b9a0419">02f2b8a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add support for JSON_PRETTY_PRINT (added in PHP 5.4).</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-20T17:08:34+01:00 (commit #<span title="ea0f3008ff88830409c472e4a526652e7f475dc5">ea0f300</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Fix phpcs issues</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-20T13:00:57+01:00 (commit #<span title="cb05fe5fb859c76f0926dedbe891f6702638c1cd">cb05fe5</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Fixes #443: JSON Log now properly includes the output after it was removed in 3.6.
+
+I've used this way of implementing it to keep BC issues to a minimum.
+Only the output is now properly json encoded and kept with the test
+instead of being output afterwards inbetween the json strings as this
+could be an issue while parsing.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-10T13:59:25+01:00 (commit #<span title="81ea47f0ae10d5fc247eb977521380850f36b684">81ea47f</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Reverted 66e70c5a12 as this is a feature and 3.6 is closed for features. It will stay be included in 3.7</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-11-10T11:49:31+01:00 (commit #<span title="66e70c5a12227f3af11afa0eb37b2bfb5d200d02">66e70c5</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Show stacktraces and messages in JSON output for skipped and incomplete tests. Closes #377</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-04T11:18:25+02:00 (commit #<span title="bda58e6fa1c6eb1c6471388c6d529274af4f8c47">bda58e6</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix arguments in call to PHPUnit_Util_Filter::getFilteredStacktrace().</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-10-04T11:15:35+02:00 (commit #<span title="9a270a06975713b00d57865fa6278c80bccd531e">9a270a0</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Closes issue #362.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-25T08:24:47+01:00 (commit #<span title="2b7f44f56496ccdc705e29497bfcaf142f4a9794">2b7f44f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Do not use PHP_CodeCoverage blacklist for PHPUnit stacktrace filtering.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-12-31T11:45:34+01:00 (commit #<span title="bee33449535dd656c2c0a94946eb0086d1214e1f">bee3344</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-07T12:42:23+02:00 (commit #<span title="f0d9cdd35d83fd081c218fdec17edaf9e4f868f7">f0d9cdd</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Change email address.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-12T20:25:54+02:00 (commit #<span title="d19a7378115e5de11b694ac40531ab662d074055">d19a737</span>)</h3>
+            <div>
+              <p>
+                        Author: Mark Story (mark@mark-story.com) /
+                        Commiter: Mark Story (mark@mark-story.com)
+                    </p>
+              <pre class="wrapped">Removing trailing whitespace from files. Refs #1063</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-02T18:31:15+02:00 (commit #<span title="91910b97c48ac65c47351b8cecab917c6e754e19">91910b9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Send JSON message for "test start" event.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-02T18:26:32+02:00 (commit #<span title="040e89c938cd7bc04f77e3e333caf36f4b906c96">040e89c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Simplify.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-04-05T17:41:26+02:00 (commit #<span title="471d69e2573822a6d9dd28159085a480e97dc734">471d69e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add @subpackage annotation.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-02-02T14:14:29+01:00 (commit #<span title="bc1aaaaacfa98ab64d1eb54ac5b87279023bab59">bc1aaaa</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove closing PHP tags.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-01-22T10:04:21+01:00 (commit #<span title="3426f50bd9502774958c457d88b8d500e8e682dd">3426f50</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Require PHP 5.2.7.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-01-19T09:39:03+01:00 (commit #<span title="fb48a69ea606a4740ba1f0e4ddcfe60fcd2a8301">fb48a69</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on autoloading.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:26:09+01:00 (commit #<span title="37f75ffdc651e3359c5683335851f6c5d6576c34">37f75ff</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:25:53+01:00 (commit #<span title="bddcc5f10872f9f53029aa8aeab27e2a95fbe2e5">bddcc5f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:23:37+01:00 (commit #<span title="7a7d0b7a54abfe58cd411a3b199133a8cb46351e">7a7d0b7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:32:26+01:00 (commit #<span title="60e7125941b239eeb6cfc016a2a2e8c238f3bea4">60e7125</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:30:57+01:00 (commit #<span title="42294addddde87f7b8064156ded58be18ad7aac4">42294ad</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:26:35+01:00 (commit #<span title="8617133a88b4c149adef21bc581a0bdf896f130e">8617133</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-23T09:39:24+01:00 (commit #<span title="150341273801b55392d0bde99fc7be60f5a5c15d">1503412</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5389].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-23T09:29:23+01:00 (commit #<span title="4c9cf4e6879b29001f9b1d38cee68a8dfb9c01cc">4c9cf4e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on PHP_CodeCoverage migration.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-08-18T17:25:30+02:00 (commit #<span title="5629d77b81905bf1d1e6b148d0eb07516f26978f">5629d77</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Revert [5056].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-08-01T15:36:29+02:00 (commit #<span title="fc96f2197154cc3819eca0aa3db39bd6b7db6136">fc96f21</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Require PHP 5.2.10.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-12-31T10:26:51+01:00 (commit #<span title="a899cb2a6cf988f15e38ad358c9813a82557a2b8">a899cb2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [4402].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-12-31T10:25:57+01:00 (commit #<span title="4b26cea6b551535438e0deee8f1120f29fe931a6">4b26cea</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-11-22T18:21:09+01:00 (commit #<span title="8d5163336867255ebd84ae5fca8664f038e1fcbc">8d51633</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove deprecated functionality: --log-graphviz, --log-metrics, --log-pmd.
+Require PHP 5.3.0 (or later) and remove compatibility workarounds for older
+  versions of PHP.
+Rename PHPUnit_Util_Class::getClassesInFile() and
+  PHPUnit_Util_Class::getFunctionsInFile() to
+  PHPUnit_Util_File::getClassesInFile() and
+  PHPUnit_Util_File::getFunctionsInFile(), respectively.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-06-08T14:22:29+02:00 (commit #<span title="191a5d574eae7b91df10216ce26c4bb7b9580556">191a5d5</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [3160].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2008-06-08T14:03:37+02:00 (commit #<span title="9d9b5e3d982450f03fd7e0619824578bea586bc8">9d9b5e3</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Drop superfluous annotations.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-12-26T19:11:55+01:00 (commit #<span title="1bba1cc3d24ec82a85eb4e9b9015b7ef7bc26328">1bba1cc</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-12-26T19:11:04+01:00 (commit #<span title="58121cf06bddae103474b9f621d88ae722a5a932">58121cf</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-12-13T15:40:43+01:00 (commit #<span title="711e61eabfbb9fc6f4a33f40597f34244af55f6d">711e61e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [1776], close #310.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-11-28T09:30:14+01:00 (commit #<span title="49cadc5d54039d5782bbf83ad0bff8ceabf28133">49cadc5</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Drop userland JSON encoding.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-11-28T09:27:40+01:00 (commit #<span title="92d3bc1f9245e3deeb2705b6bdc44e718720c252">92d3bc1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refactor $filterPHPUnit method argument into a class variable and disable the
+  filtering of PHPUnit's source files when PHPUnit's test suite is running.
+Migrate TestConfiguration.php to XML configuration file.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-09-29T12:56:13+02:00 (commit #<span title="8feea899fe433f90a18d86f1879621e14a556b94">8feea89</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [1361].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-03-15T06:57:46+01:00 (commit #<span title="d2186ad016bf5dbbd0273f09b4233cca80e0253b">d2186ad</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix #107.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-03-15T06:57:46+01:00 (commit #<span title="e28bcf84335bb8c96af1f080b1fc3bcc877fb65a">e28bcf8</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix #107.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-02-24T07:58:18+01:00 (commit #<span title="203ee10ff51aa07f1d4ae6da26ebe42561831a26">203ee10</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fugbix typo.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2007-02-24T07:58:18+01:00 (commit #<span title="ae2a7c250ba74ab403a80cd048168488c800be15">ae2a7c2</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fugbix typo.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-12-24T18:50:40+01:00 (commit #<span title="0189be1537414d2901de0626a8cff464428e288d">0189be1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-11-08T14:24:54+01:00 (commit #<span title="604fb618086970f7d07eafd8b68afaa378d93001">604fb61</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Consistently use lowercase "array".</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-11-07T09:21:25+01:00 (commit #<span title="92b762c68d113ad703cbcb0a5aff626bf9ac18e2">92b762c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-11-06T14:03:12+01:00 (commit #<span title="c52cea15f0b6c237a8ea30f7d3672b66e585ab0f">c52cea1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add time to JSON messages.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-11-06T13:48:58+01:00 (commit #<span title="62ffb2d1eebfae6c259033bbe2a28826b0beef13">62ffb2d</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">More work on time.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-11-06T13:14:17+01:00 (commit #<span title="24d5d8dd1f1565bdc8e0e12a31f4cabc28efb8ba">24d5d8d</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Unify timing code.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-11-05T17:31:34+01:00 (commit #<span title="9615be8c7cc9f7da0e1ea42895ccfd30622ad8ec">9615be8</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">More work on the JSON logger.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-11-05T13:52:10+01:00 (commit #<span title="39ed35a20645bf8063794ef76667018f4e575137">39ed35a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Send a JSON message when a test suite starts executing that contains the number of tests.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-11-05T11:23:53+01:00 (commit #<span title="242d6a863d7b1df7eea6dc60446b07ee01865a08">242d6a8</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Log_Eclipse -&gt; Log_JSON</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-09-11T09:20:41+02:00 (commit #<span title="75e12fb327d4b9427e0f9f33e9763070958b7ed3">75e12fb</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">No longer needed.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-07-06T11:50:42+02:00 (commit #<span title="dacd2f1b95f9f3e22769cfa8243d039e3850f3f0">dacd2f1</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Leftover: PHPUnit2 -&gt; PHPUnit.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-06-30T10:38:41+02:00 (commit #<span title="210b6211303c41da33bc0f894fb0e289892b5685">210b621</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Make it easier to use a checkout of the trunk.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-06-29T20:56:08+02:00 (commit #<span title="6b0d2d5a14b08c86c62c3888777b7f2b0c1aeff8">6b0d2d5</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Post-PEAR cleanup, phase one: PHPUnit2_* -&gt; PHPUnit_*, pear.php.net -&gt; phpunit.de, etc.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2006-06-29T16:58:01+02:00 (commit #<span title="8b8c705ce7dd77b02ba768d39224dddfeb34fb62">8b8c705</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Recreate trunk.</pre>
+            </div>
           </li>
         </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="currentTestSuiteName"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $currentTestSuiteName</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="currentTestName"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $currentTestName</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="currentTestPass"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $currentTestPass</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $out</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$out</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>PHPUnit_Framework_Exception</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="addError"/>
-            <h4><span class="label public">public</span>addError<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type"><span title="\\Exception">Exception</span></span><strong> $e</strong>, <span class="param-type">float</span><strong> $time</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>An error occurred.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-                <li><code>$e</code> - </li>
-                <li><code>$time</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addFailure"/>
-            <h4><span class="label public">public</span>addFailure<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type"><span title="\\PHPUnit_Framework_AssertionFailedError">PHPUnit_Framework_AssertionFailedError</span></span><strong> $e</strong>, <span class="param-type">float</span><strong> $time</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>A failure occurred.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-                <li><code>$e</code> - </li>
-                <li><code>$time</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addIncompleteTest"/>
-            <h4><span class="label public">public</span>addIncompleteTest<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type"><span title="\\Exception">Exception</span></span><strong> $e</strong>, <span class="param-type">float</span><strong> $time</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Incomplete test.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-                <li><code>$e</code> - </li>
-                <li><code>$time</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addSkippedTest"/>
-            <h4><span class="label public">public</span>addSkippedTest<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type"><span title="\\Exception">Exception</span></span><strong> $e</strong>, <span class="param-type">float</span><strong> $time</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Skipped test.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-                <li><code>$e</code> - </li>
-                <li><code>$time</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="endTest"/>
-            <h4><span class="label public">public</span>endTest<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type">float</span><strong> $time</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>A test ended.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-                <li><code>$time</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="endTestSuite"/>
-            <h4><span class="label public">public</span>endTestSuite<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestSuite">PHPUnit_Framework_TestSuite</span></span><strong> $suite</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>A testsuite ended.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$suite</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="flush"/>
-            <h4><span class="label public">public</span>flush<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Flush buffer, optionally tidy up HTML, and close output if it's not to a php stream</li>
-            </p>
-          </li>
-          <li>
-            <a name="getAutoFlush"/>
-            <h4><span class="label public">public</span>getAutoFlush<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check auto-flush mode.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="incrementalFlush"/>
-            <h4><span class="label public">public</span>incrementalFlush<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Performs a safe, incremental flush.<pre>Do not confuse this function with the flush() function of this class,
-since the flush() function may close the file being written to, rendering
-the current object no longer usable.</pre></li>
-            </p>
-          </li>
-          <li>
-            <a name="setAutoFlush"/>
-            <h4><span class="label public">public</span>setAutoFlush<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $autoFlush</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set auto-flushing mode.<pre>If set, *incremental* flushes will be done after each write. This should
-not be confused with the different effects of this class' flush() method.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$autoFlush</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="startTest"/>
-            <h4><span class="label public">public</span>startTest<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>A test started.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="startTestSuite"/>
-            <h4><span class="label public">public</span>startTestSuite<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestSuite">PHPUnit_Framework_TestSuite</span></span><strong> $suite</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>A testsuite started.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$suite</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="write"/>
-            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">string</span><strong> $buffer</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$buffer</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="write"/>
-            <h4><span class="label public">public</span>write<span style="font-size:90%;">( <span class="param-type">string</span><strong> $buffer</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$buffer</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="writeCase"/>
-            <h4><span class="label protected">protected</span>writeCase<span style="font-size:90%;">( <span class="param-type">string</span><strong> $status</strong>, <span class="param-type">float</span><strong> $time</strong>, <span class="param-type">Array</span><strong> $trace</strong>, <span class="param-type">string</span><strong> $message</strong>, <span class="param-type"/><strong> $test</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$status</code> - </li>
-                <li><code>$time</code> - </li>
-                <li><code>$trace</code> - </li>
-                <li><code>$message</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+      </section>
     </div>
+    <footer>
+      <span>Generated using phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
   </body>
 </html>

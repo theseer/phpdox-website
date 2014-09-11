@@ -1,301 +1,195 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Symfony_Component_Security_Http_Firewall">Symfony\Component\Security\Http\Firewall</a>
+          </li>
+          <li class="separator">AbstractAuthenticationListener</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#options">$options</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#logger">$logger</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#authenticationManager">$authenticationManager</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#providerKey">$providerKey</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#httpUtils">$httpUtils</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#securityContext">$securityContext</a>
-          </li>
-          <li>
-            <a href="#sessionStrategy">$sessionStrategy</a>
-          </li>
-          <li>
-            <a href="#dispatcher">$dispatcher</a>
-          </li>
-          <li>
-            <a href="#successHandler">$successHandler</a>
-          </li>
-          <li>
-            <a href="#failureHandler">$failureHandler</a>
-          </li>
-          <li>
-            <a href="#rememberMeServices">$rememberMeServices</a>
+            <a href="../source/symfony/symfony/src/Symfony/Component/Security/Http/Firewall/AbstractAuthenticationListener.php.xhtml#line49">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Symfony\Component\Security\Http\Firewall\</small>AbstractAuthenticationListener</h1>
+        <h4>The AbstractAuthenticationListener is the preferred base class for all browser-/HTTP-based authentication requests.</h4>
+        <p>Subclasses likely have to implement the following:<br/>- an TokenInterface to hold authentication related data<br/>- an AuthenticationProvider to perform the actual authentication of the<br/>token, retrieve the UserInterface implementation from a database, and<br/>perform the specific account checks using the UserChecker<br/><br/>By default, this listener only is active for a specific path, e.g.<br/>/login_check. If you want to change this behavior, you can overwrite the<br/>requiresAuthentication() method.</p>
         <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#attemptAuthentication">attemptAuthentication</a>
-          </li>
-          <li>
-            <a href="#handle">handle</a>
-          </li>
-          <li>
-            <a href="#onFailure">onFailure</a>
-          </li>
-          <li>
-            <a href="#onSuccess">onSuccess</a>
-          </li>
-          <li>
-            <a href="#requiresAuthentication">requiresAuthentication</a>
-          </li>
-          <li>
-            <a href="#setRememberMeServices">setRememberMeServices</a>
-          </li>
+          <li>Author: Fabien Potencier &lt;fabien@symfony.com&gt;</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Symfony\Component\Security\Http\Firewall\</span>AbstractAuthenticationListener</h2>
-        <div class="file-notice">
-          <p>The AbstractAuthenticationListener is the preferred base class for all browser-/HTTP-based authentication requests.</p>
-          <p>
-            <pre>Subclasses likely have to implement the following:
-- an TokenInterface to hold authentication related data
-- an AuthenticationProvider to perform the actual authentication of the
-  token, retrieve the UserInterface implementation from a database, and
-  perform the specific account checks using the UserChecker
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class AbstractAuthenticationListener
+                implements
+                <a title="Symfony\Component\Security\Http\Firewall\ListenerInterface" href="../interfaces/Symfony_Component_Security_Http_Firewall_ListenerInterface.xhtml">ListenerInterface</a>
+            {<br/><ul class="none"><li>// members</li><li>protected <a href="#members">$options</a>;
+                    </li><li>protected <a href="#members">$logger</a>;
+                    </li><li>protected <a href="#members">$authenticationManager</a>;
+                    </li><li>protected <a href="#members">$providerKey</a>;
+                    </li><li>protected <a href="#members">$httpUtils</a>;
+                    </li><li>private <a href="#members">$securityContext</a>;
+                    </li><li>private <a href="#members">$sessionStrategy</a>;
+                    </li><li>private <a href="#members">$dispatcher</a>;
+                    </li><li>private <a href="#members">$successHandler</a>;
+                    </li><li>private <a href="#members">$failureHandler</a>;
+                    </li><li>private <a href="#members">$rememberMeServices</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/setRememberMeServices.xhtml">setRememberMeServices</a>()
+                    </li><li>public final void <a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/handle.xhtml">handle</a>()
+                    </li><li>protected Boolean <a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/requiresAuthentication.xhtml">requiresAuthentication</a>()
+                    </li><li>protected abstract TokenInterface|Response|null <a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/attemptAuthentication.xhtml">attemptAuthentication</a>()
+                    </li><li>private void <a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/onFailure.xhtml">onFailure</a>()
+                    </li><li>private void <a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/onSuccess.xhtml">onSuccess</a>()
+                    </li></ul>
 
-By default, this listener only is active for a specific path, e.g.
-/login_check. If you want to change this behavior, you can overwrite the
-requiresAuthentication() method.</pre>
-          </p>
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extended by</h4>
+          <ul>
+            <li>
+              <a href="../classes/Symfony_Component_Security_Http_Firewall_UsernamePasswordFormAuthenticationListener.xhtml">Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Symfony_Component_Security_Http_Firewall_ListenerInterface.xhtml">Symfony\Component\Security\Http\Firewall\ListenerInterface</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Fabien Potencier &lt;fabien@symfony.com&gt;</li>
-          <li><b>Author: </b>Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;</li>
-        </ul>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Symfony_Component_Security_Http_Firewall_ListenerInterface.xhtml">Symfony\Component\Security\Http\Firewall\ListenerInterface</a>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="options"/>
-            <h4><span class="label protected">protected</span>
-                $options</h4>
-          </li>
-          <li>
-            <a name="logger"/>
-            <h4><span class="label protected">protected</span>
-                $logger</h4>
-          </li>
-          <li>
-            <a name="authenticationManager"/>
-            <h4><span class="label protected">protected</span>
-                $authenticationManager</h4>
-          </li>
-          <li>
-            <a name="providerKey"/>
-            <h4><span class="label protected">protected</span>
-                $providerKey</h4>
-          </li>
-          <li>
-            <a name="httpUtils"/>
-            <h4><span class="label protected">protected</span>
-                $httpUtils</h4>
-          </li>
-          <li>
-            <a name="securityContext"/>
-            <h4><span class="label private">private</span>
-                $securityContext</h4>
-          </li>
-          <li>
-            <a name="sessionStrategy"/>
-            <h4><span class="label private">private</span>
-                $sessionStrategy</h4>
-          </li>
-          <li>
-            <a name="dispatcher"/>
-            <h4><span class="label private">private</span>
-                $dispatcher</h4>
-          </li>
-          <li>
-            <a name="successHandler"/>
-            <h4><span class="label private">private</span>
-                $successHandler</h4>
-          </li>
-          <li>
-            <a name="failureHandler"/>
-            <h4><span class="label private">private</span>
-                $failureHandler</h4>
-          </li>
-          <li>
-            <a name="rememberMeServices"/>
-            <h4><span class="label private">private</span>
-                $rememberMeServices</h4>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Core_SecurityContextInterface.xhtml">Symfony\Component\Security\Core\SecurityContextInterface</a></span><strong> $securityContext</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Core_Authentication_AuthenticationManagerInterface.xhtml">Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface</a></span><strong> $authenticationManager</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Http_Session_SessionAuthenticationStrategyInterface.xhtml">Symfony\Component\Security\Http\Session\SessionAuthenticationStrategyInterface</a></span><strong> $sessionStrategy</strong>, <span class="param-type"><a href="../classes/Symfony_Component_Security_Http_HttpUtils.xhtml">Symfony\Component\Security\Http\HttpUtils</a></span><strong> $httpUtils</strong>, <span class="param-type">string</span><strong> $providerKey</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Http_Authentication_AuthenticationSuccessHandlerInterface.xhtml">Symfony\Component\Security\Http\Authentication\AuthenticationSuccessHandlerInterface</a></span><strong> $successHandler</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Http_Authentication_AuthenticationFailureHandlerInterface.xhtml">Symfony\Component\Security\Http\Authentication\AuthenticationFailureHandlerInterface</a></span><strong> $failureHandler</strong>, <span class="param-type">Array</span><strong> $options</strong>, <span class="param-type"><a href="../interfaces/Psr_Log_LoggerInterface.xhtml">Psr\Log\LoggerInterface</a></span><strong> $logger</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_EventDispatcher_EventDispatcherInterface.xhtml">Symfony\Component\EventDispatcher\EventDispatcherInterface</a></span><strong> $dispatcher</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$securityContext</code> - A SecurityContext instance</li>
-                <li><code>$authenticationManager</code> - An AuthenticationManagerInterface instance</li>
-                <li><code>$sessionStrategy</code> - </li>
-                <li><code>$httpUtils</code> - An HttpUtilsInterface instance</li>
-                <li><code>$providerKey</code> - </li>
-                <li><code>$successHandler</code> - </li>
-                <li><code>$failureHandler</code> - </li>
-                <li><code>$options</code> - An array of options for the processing of a</li>
-                <li><code>$logger</code> - A LoggerInterface instance</li>
-                <li><code>$dispatcher</code> - An EventDispatcherInterface instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="handle"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>handle<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpKernel_Event_GetResponseEvent.xhtml">Symfony\Component\HttpKernel\Event\GetResponseEvent</a></span><strong> $event</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Handles form based authentication.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$event</code> - A GetResponseEvent instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\RuntimeException</code>
-                </li>
-                <li>
-                  <code>SessionUnavailableException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setRememberMeServices"/>
-            <h4><span class="label public">public</span>setRememberMeServices<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Http_RememberMe_RememberMeServicesInterface.xhtml">Symfony\Component\Security\Http\RememberMe\RememberMeServicesInterface</a></span><strong> $rememberMeServices</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the RememberMeServices implementation to use</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$rememberMeServices</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="attemptAuthentication"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>attemptAuthentication<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Performs authentication.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$request</code> - A Request instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The authenticated token, null if full authentication is not possible, or a Response</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>AuthenticationException if the authentication fails</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="requiresAuthentication"/>
-            <h4><span class="label protected">protected</span>requiresAuthentication<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Whether this request requires authentication.<pre>The default implementation only processes requests to a specific path,
-but a subclass could change this to only authenticate requests where a
-certain parameters is present.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$request</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="onFailure"/>
-            <h4><span class="label private">private</span>onFailure<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpKernel_Event_GetResponseEvent.xhtml">Symfony\Component\HttpKernel\Event\GetResponseEvent</a></span><strong> $event</strong>, <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong>, <span class="param-type"><a href="../classes/Symfony_Component_Security_Core_Exception_AuthenticationException.xhtml">Symfony\Component\Security\Core\Exception\AuthenticationException</a></span><strong> $failed</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="onSuccess"/>
-            <h4><span class="label private">private</span>onSuccess<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Symfony_Component_HttpKernel_Event_GetResponseEvent.xhtml">Symfony\Component\HttpKernel\Event\GetResponseEvent</a></span><strong> $event</strong>, <span class="param-type"><a href="../classes/Symfony_Component_HttpFoundation_Request.xhtml">Symfony\Component\HttpFoundation\Request</a></span><strong> $request</strong>, <span class="param-type"><a href="../interfaces/Symfony_Component_Security_Core_Authentication_Token_TokenInterface.xhtml">Symfony\Component\Security\Core\Authentication\Token\TokenInterface</a></span><strong> $token</strong> )</span></h4>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="dispatcher">
+              <strong>$dispatcher</strong>
+            </li>
+            <li id="failureHandler">
+              <strong>$failureHandler</strong>
+            </li>
+            <li id="rememberMeServices">
+              <strong>$rememberMeServices</strong>
+            </li>
+            <li id="securityContext">
+              <strong>$securityContext</strong>
+            </li>
+            <li id="sessionStrategy">
+              <strong>$sessionStrategy</strong>
+            </li>
+            <li id="successHandler">
+              <strong>$successHandler</strong>
+            </li>
+          </ul>
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="authenticationManager">
+              <strong>$authenticationManager</strong>
+            </li>
+            <li id="httpUtils">
+              <strong>$httpUtils</strong>
+            </li>
+            <li id="logger">
+              <strong>$logger</strong>
+            </li>
+            <li id="options">
+              <strong>$options</strong>
+            </li>
+            <li id="providerKey">
+              <strong>$providerKey</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="onFailure">
+              <a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/onFailure.xhtml">onFailure()</a>
+            </li>
+            <li id="onSuccess">
+              <a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/onSuccess.xhtml">onSuccess()</a>
+            </li>
+          </ul>
+          <h4>protected</h4>
+          <ul>
+            <li id="attemptAuthentication"><a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/attemptAuthentication.xhtml">attemptAuthentication()</a>
+                — Performs authentication.</li>
+            <li id="requiresAuthentication"><a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/requiresAuthentication.xhtml">requiresAuthentication()</a>
+                — Whether this request requires authentication.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/__construct.xhtml">__construct()</a>
+                — Constructor.</li>
+            <li id="handle"><a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/handle.xhtml">handle()</a>
+                — Handles form based authentication.</li>
+            <li id="setRememberMeServices"><a title="Symfony\Component\Security\Http\Firewall\AbstractAuthenticationListener" href="../classes/Symfony_Component_Security_Http_Firewall_AbstractAuthenticationListener/setRememberMeServices.xhtml">setRememberMeServices()</a>
+                — Sets the RememberMeServices implementation to use</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

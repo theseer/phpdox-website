@@ -1,964 +1,1457 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>PHPUnit - PHPUnit_Framework_TestSuite - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - PHPUnit_Framework_TestSuite</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">PHPUnit - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">PHPUnit_Framework_TestSuite</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#backupGlobals">$backupGlobals</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#backupStaticAttributes">$backupStaticAttributes</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#runTestInSeparateProcess">$runTestInSeparateProcess</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#name">$name</a>
+            <a href="#violations">Violations</a>
           </li>
           <li>
-            <a href="#groups">$groups</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#tests">$tests</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#numTests">$numTests</a>
+            <a href="#history">History</a>
           </li>
           <li>
-            <a href="#testCase">$testCase</a>
-          </li>
-          <li>
-            <a href="#iteratorFilter">$iteratorFilter</a>
-          </li>
-          <li>
-            <a href="#beforeClassMethods">$beforeClassMethods</a>
-          </li>
-          <li>
-            <a href="#beforeMethods">$beforeMethods</a>
-          </li>
-          <li>
-            <a href="#afterClassMethods">$afterClassMethods</a>
-          </li>
-          <li>
-            <a href="#afterMethods">$afterMethods</a>
+            <a href="../source/Framework/TestSuite.php.xhtml#line82">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>PHPUnit_Framework_TestSuite</h1>
+        <h4>A TestSuite is a composite of Tests. It runs a collection of test cases.</h4>
+        <p>Here is an example using the dynamic test definition.<br/><br/>&lt;code&gt;<br/>&lt;?php<br/>$suite = new PHPUnit_Framework_TestSuite;<br/>$suite-&gt;addTest(new MathTest('testPass'));<br/>?&gt;<br/>&lt;/code&gt;<br/><br/>Alternatively, a TestSuite can extract the tests to be run automatically.<br/>To do so you pass a ReflectionClass instance for your<br/>PHPUnit_Framework_TestCase class to the PHPUnit_Framework_TestSuite<br/>constructor.<br/><br/>&lt;code&gt;<br/>&lt;?php<br/>$suite = new PHPUnit_Framework_TestSuite(<br/>new ReflectionClass('MathTest')<br/>);<br/>?&gt;<br/>&lt;/code&gt;<br/><br/>This constructor creates a suite with all the methods starting with<br/>"test" that take no arguments.</p>
         <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#addAfterClassMethod">addAfterClassMethod</a>
-          </li>
-          <li>
-            <a href="#addAfterMethod">addAfterMethod</a>
-          </li>
-          <li>
-            <a href="#addBeforeClassMethod">addBeforeClassMethod</a>
-          </li>
-          <li>
-            <a href="#addBeforeMethod">addBeforeMethod</a>
-          </li>
-          <li>
-            <a href="#addTest">addTest</a>
-          </li>
-          <li>
-            <a href="#addTestFile">addTestFile</a>
-          </li>
-          <li>
-            <a href="#addTestFiles">addTestFiles</a>
-          </li>
-          <li>
-            <a href="#addTestMethod">addTestMethod</a>
-          </li>
-          <li>
-            <a href="#addTestSuite">addTestSuite</a>
-          </li>
-          <li>
-            <a href="#count">count</a>
-          </li>
-          <li>
-            <a href="#createResult">createResult</a>
-          </li>
-          <li>
-            <a href="#createTest">createTest</a>
-          </li>
-          <li>
-            <a href="#ensureIsStatic">ensureIsStatic</a>
-          </li>
-          <li>
-            <a href="#getGroupDetails">getGroupDetails</a>
-          </li>
-          <li>
-            <a href="#getGroups">getGroups</a>
-          </li>
-          <li>
-            <a href="#getIterator">getIterator</a>
-          </li>
-          <li>
-            <a href="#getName">getName</a>
-          </li>
-          <li>
-            <a href="#injectFilter">injectFilter</a>
-          </li>
-          <li>
-            <a href="#isAfterClassMethod">isAfterClassMethod</a>
-          </li>
-          <li>
-            <a href="#isAfterMethod">isAfterMethod</a>
-          </li>
-          <li>
-            <a href="#isBeforeClassMethod">isBeforeClassMethod</a>
-          </li>
-          <li>
-            <a href="#isBeforeMethod">isBeforeMethod</a>
-          </li>
-          <li>
-            <a href="#isPublicTestMethod">isPublicTestMethod</a>
-          </li>
-          <li>
-            <a href="#isTestMethod">isTestMethod</a>
-          </li>
-          <li>
-            <a href="#markTestSuiteSkipped">markTestSuiteSkipped</a>
-          </li>
-          <li>
-            <a href="#run">run</a>
-          </li>
-          <li>
-            <a href="#runTest">runTest</a>
-          </li>
-          <li>
-            <a href="#setBackupGlobals">setBackupGlobals</a>
-          </li>
-          <li>
-            <a href="#setBackupStaticAttributes">setBackupStaticAttributes</a>
-          </li>
-          <li>
-            <a href="#setName">setName</a>
-          </li>
-          <li>
-            <a href="#setRunTestInSeparateProcess">setRunTestInSeparateProcess</a>
-          </li>
-          <li>
-            <a href="#setUp">setUp</a>
-          </li>
-          <li>
-            <a href="#tearDown">tearDown</a>
-          </li>
-          <li>
-            <a href="#testAt">testAt</a>
-          </li>
-          <li>
-            <a href="#tests">tests</a>
-          </li>
-          <li>
-            <a href="#toString">toString</a>
-          </li>
-          <li>
-            <a href="#warning">warning</a>
-          </li>
+          <li>Author: Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>Copyright: 2001-2014 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
+          <li>License: http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">\</span>PHPUnit_Framework_TestSuite</h2>
-        <div class="file-notice">
-          <p>A TestSuite is a composite of Tests. It runs a collection of test cases.</p>
-          <p>
-            <pre>Here is an example using the dynamic test definition.
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PHPUnit_Framework_TestSuite
+                implements
+                <a title="PHPUnit_Framework_Test" href="../interfaces/PHPUnit_Framework_Test.xhtml">PHPUnit_Framework_Test</a>,<a title="PHPUnit_Framework_SelfDescribing" href="../interfaces/PHPUnit_Framework_SelfDescribing.xhtml">PHPUnit_Framework_SelfDescribing</a>,<a title="IteratorAggregate" href="../interfaces/IteratorAggregate.xhtml">IteratorAggregate</a>
+            {<br/><ul class="none"><li>// members</li><li>protected boolean <a href="#members">$backupGlobals</a>;
+                    </li><li>protected boolean <a href="#members">$backupStaticAttributes</a>;
+                    </li><li>protected boolean <a href="#members">$runTestInSeparateProcess</a>;
+                    </li><li>protected string <a href="#members">$name</a>;
+                    </li><li>protected array <a href="#members">$groups</a>;
+                    </li><li>protected array <a href="#members">$tests</a>;
+                    </li><li>protected integer <a href="#members">$numTests</a>;
+                    </li><li>protected boolean <a href="#members">$testCase</a>;
+                    </li><li>protected array <a href="#members">$foundClasses</a>;
+                    </li><li>private <span title="PHPUnit_Runner_Filter_Factory">PHPUnit_Runner_Filter_Factory</span> <a href="#members">$iteratorFilter</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/__construct.xhtml">__construct</a>()
+                    </li><li>public string <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/toString.xhtml">toString</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/addTest.xhtml">addTest</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/addTestSuite.xhtml">addTestSuite</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/addTestFile.xhtml">addTestFile</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/addTestFiles.xhtml">addTestFiles</a>()
+                    </li><li>public integer <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/count.xhtml">count</a>()
+                    </li><li>public static PHPUnit_Framework_Test <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/createTest.xhtml">createTest</a>()
+                    </li><li>protected PHPUnit_Framework_TestResult <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/createResult.xhtml">createResult</a>()
+                    </li><li>public string <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/getName.xhtml">getName</a>()
+                    </li><li>public array <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/getGroups.xhtml">getGroups</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/getGroupDetails.xhtml">getGroupDetails</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setGroupDetails.xhtml">setGroupDetails</a>()
+                    </li><li>public PHPUnit_Framework_TestResult <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/run.xhtml">run</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setRunTestInSeparateProcess.xhtml">setRunTestInSeparateProcess</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/runTest.xhtml">runTest</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setName.xhtml">setName</a>()
+                    </li><li>public PHPUnit_Framework_Test <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/testAt.xhtml">testAt</a>()
+                    </li><li>public array <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/tests.xhtml">tests</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setTests.xhtml">setTests</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/markTestSuiteSkipped.xhtml">markTestSuiteSkipped</a>()
+                    </li><li>protected void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/addTestMethod.xhtml">addTestMethod</a>()
+                    </li><li>public static boolean <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/isTestMethod.xhtml">isTestMethod</a>()
+                    </li><li>protected static PHPUnit_Framework_Warning <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/warning.xhtml">warning</a>()
+                    </li><li>protected static PHPUnit_Framework_SkippedTestCase <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/skipTest.xhtml">skipTest</a>()
+                    </li><li>protected static PHPUnit_Framework_IncompleteTestCase <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/incompleteTest.xhtml">incompleteTest</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setBackupGlobals.xhtml">setBackupGlobals</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setBackupStaticAttributes.xhtml">setBackupStaticAttributes</a>()
+                    </li><li>public RecursiveIteratorIterator <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/getIterator.xhtml">getIterator</a>()
+                    </li><li>public void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/injectFilter.xhtml">injectFilter</a>()
+                    </li><li>protected void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setUp.xhtml">setUp</a>()
+                    </li><li>protected void <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/tearDown.xhtml">tearDown</a>()
+                    </li></ul>
 
-&lt;code&gt;
-&lt;?php
-$suite = new PHPUnit_Framework_TestSuite;
-$suite-&gt;addTest(new MathTest('testPass'));
-?&gt;
-&lt;/code&gt;
-
-Alternatively, a TestSuite can extract the tests to be run automatically.
-To do so you pass a ReflectionClass instance for your
-PHPUnit_Framework_TestCase class to the PHPUnit_Framework_TestSuite
-constructor.
-
-&lt;code&gt;
-&lt;?php
-$suite = new PHPUnit_Framework_TestSuite(
-  new ReflectionClass('MathTest')
-);
-?&gt;
-&lt;/code&gt;
-
-This constructor creates a suite with all the methods starting with
-"test" that take no arguments.</pre>
-          </p>
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extended by</h4>
+          <ul>
+            <li>
+              <a href="../classes/PHPUnit_Framework_TestSuite_DataProvider.xhtml">PHPUnit_Framework_TestSuite_DataProvider</a>
+            </li>
+            <li>
+              <a href="../classes/PHPUnit_Extensions_PhptTestSuite.xhtml">PHPUnit_Extensions_PhptTestSuite</a>
+            </li>
+            <li>
+              <a href="../classes/PHPUnit_Extensions_GroupTestSuite.xhtml">PHPUnit_Extensions_GroupTestSuite</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/PHPUnit_Framework_Test.xhtml">PHPUnit_Framework_Test</a>
+            </li>
+            <li>
+              <a href="../interfaces/PHPUnit_Framework_SelfDescribing.xhtml">PHPUnit_Framework_SelfDescribing</a>
+            </li>
+            <li>
+              <a href="../interfaces/IteratorAggregate.xhtml">IteratorAggregate</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>Copyright: </b>2001-2013 Sebastian Bergmann &lt;sebastian@phpunit.de&gt;</li>
-          <li><b>License: </b>http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License</li>
-        </ul>
-        <h3>Implements</h3>
-        <ul class="varlist">
+        <h2 id="violations">Violations</h2>
+        <div class="styled">
+          <h3>PHPMessDetector</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Rule</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">167 - 238</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method __construct() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">167 - 238</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#npathcomplexity" target="_blank" title="Code Size Rules">NPathComplexity</a>
+              </td>
+              <td>The method __construct() has an NPath complexity of 768. The configured NPath complexity threshold is 200.</td>
+            </tr>
+            <tr>
+              <td class="line">289 - 329</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method addTestSuite() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">347 - 415</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method addTestFile() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">347 - 415</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#npathcomplexity" target="_blank" title="Code Size Rules">NPathComplexity</a>
+              </td>
+              <td>The method addTestFile() has an NPath complexity of 288. The configured NPath complexity threshold is 200.</td>
+            </tr>
+            <tr>
+              <td class="line">461 - 628</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method createTest() has a Cyclomatic Complexity of 28. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">461 - 628</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#npathcomplexity" target="_blank" title="Code Size Rules">NPathComplexity</a>
+              </td>
+              <td>The method createTest() has an NPath complexity of 15548. The configured NPath complexity threshold is 200.</td>
+            </tr>
+            <tr>
+              <td class="line">461 - 628</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#excessivemethodlength" target="_blank" title="Code Size Rules">ExcessiveMethodLength</a>
+              </td>
+              <td>The method createTest() has 168 lines of code. Current threshold is set to 100. Avoid really long methods.</td>
+            </tr>
+            <tr>
+              <td class="line">683 - 765</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" target="_blank" title="Code Size Rules">CyclomaticComplexity</a>
+              </td>
+              <td>The method run() has a Cyclomatic Complexity of 20. The configured cyclomatic complexity threshold is 10.</td>
+            </tr>
+            <tr>
+              <td class="line">683 - 765</td>
+              <td>
+                <a href="http://phpmd.org/rules/codesize.html#npathcomplexity" target="_blank" title="Code Size Rules">NPathComplexity</a>
+              </td>
+              <td>The method run() has an NPath complexity of 1400. The configured NPath complexity threshold is 200.</td>
+            </tr>
+          </table>
+          <h3>Checkstyle</h3>
+          <table class="styled">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Column</th>
+                <th>Severity</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="line">495</td>
+              <td>13</td>
+              <td>
+                <span title="Squiz.ControlStructures.ControlSignature">error</span>
+              </td>
+              <td>Expected "} else {\n"; found "} // TestCase($name, $data)\n            else {\n"</td>
+            </tr>
+            <tr>
+              <td class="line">502</td>
+              <td>134</td>
+              <td>
+                <span title="Generic.Files.LineLength.TooLong">warning</span>
+              </td>
+              <td>Line exceeds 120 characters; contains 133 characters</td>
+            </tr>
+            <tr>
+              <td class="line">704</td>
+              <td>125</td>
+              <td>
+                <span title="Generic.Files.LineLength.TooLong">warning</span>
+              </td>
+              <td>Line exceeds 120 characters; contains 124 characters</td>
+            </tr>
+            <tr>
+              <td class="line">755</td>
+              <td>129</td>
+              <td>
+                <span title="Generic.Files.LineLength.TooLong">warning</span>
+              </td>
+              <td>Line exceeds 120 characters; contains 128 characters</td>
+            </tr>
+          </table>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="iteratorFilter"><strong>$iteratorFilter</strong>
+                —
+                <a href="#">PHPUnit_Runner_Filter_Factory</a></li>
+          </ul>
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="backupGlobals"><strong>$backupGlobals</strong>
+                —
+                boolean<br/><span class="indent">Enable or disable the backup and restoration of the $GLOBALS array.</span></li>
+            <li id="backupStaticAttributes"><strong>$backupStaticAttributes</strong>
+                —
+                boolean<br/><span class="indent">Enable or disable the backup and restoration of static attributes.</span></li>
+            <li id="foundClasses"><strong>$foundClasses</strong>
+                —
+                array</li>
+            <li id="groups"><strong>$groups</strong>
+                —
+                array<br/><span class="indent">The test groups of the test suite.</span></li>
+            <li id="name"><strong>$name</strong>
+                —
+                string<br/><span class="indent">The name of the test suite.</span></li>
+            <li id="numTests"><strong>$numTests</strong>
+                —
+                integer<br/><span class="indent">The number of tests in the test suite.</span></li>
+            <li id="runTestInSeparateProcess"><strong>$runTestInSeparateProcess</strong>
+                —
+                boolean</li>
+            <li id="testCase"><strong>$testCase</strong>
+                —
+                boolean</li>
+            <li id="tests"><strong>$tests</strong>
+                —
+                array<br/><span class="indent">The tests in the test suite.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="addTestMethod">
+              <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/addTestMethod.xhtml">addTestMethod()</a>
+            </li>
+            <li id="createResult"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/createResult.xhtml">createResult()</a>
+                — Creates a default TestResult object.</li>
+            <li id="incompleteTest">
+              <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/incompleteTest.xhtml">incompleteTest()</a>
+            </li>
+            <li id="setUp"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setUp.xhtml">setUp()</a>
+                — Template Method that is called before the tests of this test suite are run.</li>
+            <li id="skipTest">
+              <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/skipTest.xhtml">skipTest()</a>
+            </li>
+            <li id="tearDown"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/tearDown.xhtml">tearDown()</a>
+                — Template Method that is called after the tests of this test suite have finished running.</li>
+            <li id="warning">
+              <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/warning.xhtml">warning()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/__construct.xhtml">__construct()</a>
+                — Constructs a new TestSuite:</li>
+            <li id="addTest"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/addTest.xhtml">addTest()</a>
+                — Adds a test to the suite.</li>
+            <li id="addTestFile"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/addTestFile.xhtml">addTestFile()</a>
+                — Wraps both &lt;code&gt;addTest()&lt;/code&gt; and &lt;code&gt;addTestSuite&lt;/code&gt; as well as the separate import statements for the user's convenience.</li>
+            <li id="addTestFiles"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/addTestFiles.xhtml">addTestFiles()</a>
+                — Wrapper for addTestFile() that adds multiple test files.</li>
+            <li id="addTestSuite"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/addTestSuite.xhtml">addTestSuite()</a>
+                — Adds the tests from the given class to the suite.</li>
+            <li id="count"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/count.xhtml">count()</a>
+                — Counts the number of test cases that will be run by this test.</li>
+            <li id="createTest">
+              <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/createTest.xhtml">createTest()</a>
+            </li>
+            <li id="getGroupDetails">
+              <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/getGroupDetails.xhtml">getGroupDetails()</a>
+            </li>
+            <li id="getGroups"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/getGroups.xhtml">getGroups()</a>
+                — Returns the test groups of the suite.</li>
+            <li id="getIterator"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/getIterator.xhtml">getIterator()</a>
+                — Returns an iterator for this test suite.</li>
+            <li id="getName"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/getName.xhtml">getName()</a>
+                — Returns the name of the suite.</li>
+            <li id="injectFilter">
+              <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/injectFilter.xhtml">injectFilter()</a>
+            </li>
+            <li id="isTestMethod">
+              <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/isTestMethod.xhtml">isTestMethod()</a>
+            </li>
+            <li id="markTestSuiteSkipped"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/markTestSuiteSkipped.xhtml">markTestSuiteSkipped()</a>
+                — Mark the test suite as skipped.</li>
+            <li id="run"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/run.xhtml">run()</a>
+                — Runs the tests and collects their result in a TestResult.</li>
+            <li id="runTest"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/runTest.xhtml">runTest()</a>
+                — Runs a test.</li>
+            <li id="setBackupGlobals">
+              <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setBackupGlobals.xhtml">setBackupGlobals()</a>
+            </li>
+            <li id="setBackupStaticAttributes">
+              <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setBackupStaticAttributes.xhtml">setBackupStaticAttributes()</a>
+            </li>
+            <li id="setGroupDetails"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setGroupDetails.xhtml">setGroupDetails()</a>
+                — Set tests groups of the test case</li>
+            <li id="setName"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setName.xhtml">setName()</a>
+                — Sets the name of the suite.</li>
+            <li id="setRunTestInSeparateProcess">
+              <a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setRunTestInSeparateProcess.xhtml">setRunTestInSeparateProcess()</a>
+            </li>
+            <li id="setTests"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/setTests.xhtml">setTests()</a>
+                — Set tests of the test suite</li>
+            <li id="testAt"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/testAt.xhtml">testAt()</a>
+                — Returns the test at the given index.</li>
+            <li id="tests"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/tests.xhtml">tests()</a>
+                — Returns the tests as an enumeration.</li>
+            <li id="toString"><a title="PHPUnit_Framework_TestSuite" href="../classes/PHPUnit_Framework_TestSuite/toString.xhtml">toString()</a>
+                — Returns a string representation of the test suite.</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
           <li>
-            <a href="../interfaces/PHPUnit_Framework_Test.xhtml">PHPUnit_Framework_Test</a>
+            <h3>2014-08-17T10:18:07+02:00 (commit #<span title="fd5ef8a8bd4a7a50a10d18b8f247ebc50226e61f">fd5ef8a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">phpcbf --standard=PSR2 src tests</pre>
+            </div>
           </li>
           <li>
-            <a href="../interfaces/PHPUnit_Framework_SelfDescribing.xhtml">PHPUnit_Framework_SelfDescribing</a>
+            <h3>2014-08-17T09:59:50+02:00 (commit #<span title="f40b29067f21d94dd629cd0c8b9fd587f17f9d2b">f40b290</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix @since annotations</pre>
+            </div>
           </li>
           <li>
-            <span title="IteratorAggregate">IteratorAggregate</span>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="backupGlobals"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $backupGlobals</h4>
-            <ul class="varlist">
-              <li>Enable or disable the backup and restoration of the $GLOBALS array.</li>
-            </ul>
+            <h3>2014-08-12T07:25:32+02:00 (commit #<span title="55caa21ba071a9766715b63534ff9428a217d811">55caa21</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix CS/WS issues</pre>
+            </div>
           </li>
           <li>
-            <a name="backupStaticAttributes"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $backupStaticAttributes</h4>
-            <ul class="varlist">
-              <li>Enable or disable the backup and restoration of static attributes.</li>
-            </ul>
+            <h3>2014-08-12T06:43:31+02:00 (commit #<span title="50dfaba6477d3b1a0c650d4f70a0d9f478ff6092">50dfaba</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">phpcbf --standard=PSR2 src tests</pre>
+            </div>
           </li>
           <li>
-            <a name="runTestInSeparateProcess"/>
-            <h4><span class="label protected">protected</span>
-                $runTestInSeparateProcess</h4>
+            <h3>2014-08-06T00:32:16+02:00 (commit #<span title="a965789586fcb4dc4eec1778f8dcf2804a97eb5a">a965789</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">CS fix (via @webmozart).</pre>
+            </div>
           </li>
           <li>
-            <a name="name"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $name</h4>
-            <ul class="varlist">
-              <li>The name of the test suite.</li>
-            </ul>
+            <h3>2014-08-02T13:28:02+02:00 (commit #<span title="dfe2cf15c350027ec4f6e32fdd138899b4f063e4">dfe2cf1</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Make sure skipped and errored test suites still setup and teardown properly.</pre>
+            </div>
           </li>
           <li>
-            <a name="groups"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $groups</h4>
-            <ul class="varlist">
-              <li>The test groups of the test suite.</li>
-            </ul>
+            <h3>2014-07-31T14:46:19+02:00 (commit #<span title="5f797c7a0bbb83bd5a29ca99e07f9fe7ff4facd0">5f797c7</span>)</h3>
+            <div>
+              <p>
+                        Author: sun (sun@unleashedmind.com) /
+                        Commiter: sun (sun@unleashedmind.com)
+                    </p>
+              <pre class="wrapped">Fix #1369: False-positive matches in reverse-mapping of filename to classname.</pre>
+            </div>
           </li>
           <li>
-            <a name="tests"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $tests</h4>
-            <ul class="varlist">
-              <li>The tests in the test suite.</li>
-            </ul>
+            <h3>2014-07-31T02:33:34+02:00 (commit #<span title="7bc72a66dd3434e83bbe711082d3e3e7ef08430a">7bc72a6</span>)</h3>
+            <div>
+              <p>
+                        Author: sun (sun@unleashedmind.com) /
+                        Commiter: sun (sun@unleashedmind.com)
+                    </p>
+              <pre class="wrapped">Fix #1369: TestSuite::addTestFile() performance + docs.</pre>
+            </div>
           </li>
           <li>
-            <a name="numTests"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $numTests</h4>
-            <ul class="varlist">
-              <li>The number of tests in the test suite.</li>
-            </ul>
+            <h3>2014-07-29T12:57:27+02:00 (commit #<span title="070672db471a7d2d1d084a4a01542af8dab6d8be">070672d</span>)</h3>
+            <div>
+              <p>
+                        Author: dracony (draconyster@gmail.com) /
+                        Commiter: Roman Tsiupa (draconyster@gmail.com)
+                    </p>
+              <pre class="wrapped">Fix running tests for autoloaded classes(cherry picked from commit 689f91f6bc50bb3c1be4631fb4214690d0b598de)</pre>
+            </div>
           </li>
           <li>
-            <a name="testCase"/>
-            <h4><span class="label protected">protected</span>boolean 
-                
-                $testCase</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
+            <h3>2014-07-22T00:48:47+02:00 (commit #<span title="dcfd677eaab418a2e96590d4e6a4ac4e2283d1b5">dcfd677</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Cleanup 185b7ae.</pre>
+            </div>
           </li>
           <li>
-            <a name="iteratorFilter"/>
-            <h4><span class="label private">private</span>object 
-                
-                $iteratorFilter</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="beforeClassMethods"/>
-            <h4><span class="label private">private</span>array 
-                
-                $beforeClassMethods</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="beforeMethods"/>
-            <h4><span class="label private">private</span>array 
-                
-                $beforeMethods</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="afterClassMethods"/>
-            <h4><span class="label private">private</span>array 
-                
-                $afterClassMethods</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="afterMethods"/>
-            <h4><span class="label private">private</span>array 
-                
-                $afterMethods</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $theClass</strong>, <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructs a new TestSuite:<pre>- PHPUnit_Framework_TestSuite() constructs an empty TestSuite.
+            <h3>2014-07-22T00:31:57+02:00 (commit #<span title="185b7aeab4c0eeb7f0467193baa3080c9f6360f8">185b7ae</span>)</h3>
+            <div>
+              <p>
+                        Author: Davey Shafik (me@daveyshafik.com) /
+                        Commiter: Davey Shafik (me@daveyshafik.com)
+                    </p>
+              <pre class="wrapped">Allow markTestSkipped/Incomplete() in dataProvider
 
-  - PHPUnit_Framework_TestSuite(ReflectionClass) constructs a
-    TestSuite from the given class.
+- If you call `$this-&gt;markTestSkipped()` or
+  `$this-&gt;markTestIncomplete()` in a dataProvider, it will
+now skip/incomplete the test, counting it as one test</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-06-15T18:41:38+02:00 (commit #<span title="168ac2bbb84832203e9644b18555c46053c56338">168ac2b</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Formatting.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-06-12T16:52:35+02:00 (commit #<span title="ee1da983168be1d9ea6dc2a1e86a6e3f1c729cf9">ee1da98</span>)</h3>
+            <div>
+              <p>
+                        Author: Eugene Leonovich (gen.work@gmail.com) /
+                        Commiter: Eugene Leonovich (gen.work@gmail.com)
+                    </p>
+              <pre class="wrapped">Check requirements before "beforeClass" calls in a TestSuite</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-03-18T15:34:02+01:00 (commit #<span title="f12e10fddc3ccbddb652a04d9036aeb5a6d54bff">f12e10f</span>)</h3>
+            <div>
+              <p>
+                        Author: Hans-Peter Buniat (hpbuniat@gmail.com) /
+                        Commiter: Hans-Peter Buniat (hpbuniat@gmail.com)
+                    </p>
+              <pre class="wrapped">fixed autoloader-issue with not-existing-files, regression in cad11af82d1856ccf8c6bfd7d4d49efd04ccea81</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-03-17T15:55:33+01:00 (commit #<span title="cad11af82d1856ccf8c6bfd7d4d49efd04ccea81">cad11af</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refactor PHPUnit_Util_Test::getHookMethods() to perform the class_exists() check</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-03-17T14:18:28+01:00 (commit #<span title="844240c9fdaf1d234af041882685911d952d56f5">844240c</span>)</h3>
+            <div>
+              <p>
+                        Author: Hans-Peter Buniat (hpbuniat@gmail.com) /
+                        Commiter: Hans-Peter Buniat (hpbuniat@gmail.com)
+                    </p>
+              <pre class="wrapped">get hook-methods only if a testcase will run</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-03-15T11:32:48+01:00 (commit #<span title="32a57955811d8e407811813012fe668e5c85ac63">32a5795</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refactor the handling of the @beforeClass, @before, @after, @afterClass annotations to close #1186 and probably solve other issues (in process isolation, for instance)</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-03-15T10:05:28+01:00 (commit #<span title="3c61e706dff5782e8bbe93c4cc911c1dc2fdcbcf">3c61e70</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix whitespace</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-03-15T10:04:53+01:00 (commit #<span title="3cfc883fe89243bbe576e82f9b23de90f8073c9d">3cfc883</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add missing annotation</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-03-15T10:03:37+01:00 (commit #<span title="40c6b27ca7a81ee126482c03e6fa723b7543c347">40c6b27</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix whitespace</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-03-15T09:19:16+01:00 (commit #<span title="e2d2d80632b8194c900c59cee33ae999b01c67f6">e2d2d80</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Refactor how methods annotated with @beforeClass or @afterClass are invoked</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-03-15T09:02:54+01:00 (commit #<span title="45693dc2a9ead40eea1b796fbb52a3f084fd7970">45693dc</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Eliminate unused arguments</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-03-15T08:57:00+01:00 (commit #<span title="fd1593b88bd6fe70defe890381139e03360fe828">fd1593b</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix docblocks</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-02-14T18:31:32+01:00 (commit #<span title="e5b50bc60abbc96ae53aa0efd4291345fe4128ff">e5b50bc</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Next version will be 4.0</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-28T19:02:23+01:00 (commit #<span title="13f77b7d78f5ec358a02e4627bceb72b506a868e">13f77b7</span>)</h3>
+            <div>
+              <p>
+                        Author: Lars Strojny (lars@strojny.net) /
+                        Commiter: Jeff Welch (lars@strojny.net)
+                    </p>
+              <pre class="wrapped">Adding a few mutators</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-22T19:43:07+01:00 (commit #<span title="02b42d7e912186a17d56fa803ae4682d16f1ff79">02b42d7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on formatting code according to PSR-2</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-20T17:21:13+01:00 (commit #<span title="3a5808fbca4ee832c27f13a544fdf8809eec62ec">3a5808f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-12T01:26:16+01:00 (commit #<span title="af5610d2aa0a3a223dc2fa3ef9ae4071ebb1fac4">af5610d</span>)</h3>
+            <div>
+              <p>
+                        Author: Lars Strojny (lars@strojny.net) /
+                        Commiter: Lars Strojny (lars@strojny.net)
+                    </p>
+              <pre class="wrapped">Adding a few mutators</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-09T08:11:47+01:00 (commit #<span title="205e00844d1d9cf4cd4545c4cc45f1121a6b0824">205e008</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2014-01-03T17:36:23+01:00 (commit #<span title="aeab2e4368cade29c7342eb73d052a198a6ba3ad">aeab2e4</span>)</h3>
+            <div>
+              <p>
+                        Author: Laurent Laffont (laurent.laffont@gmail.com) /
+                        Commiter: Laurent Laffont (laurent.laffont@gmail.com)
+                    </p>
+              <pre class="wrapped">Performance improvement when using --filter option with large test code base: PHPUnit_Framework_TestSuite::isTestMethod is the bottleneck.
+  * Now 2 times less calls from PHPUnit_Framework_TestSuite::addTestMethod
+  * Only 1 call to ReflectionFunctionAbstract::getDocComment
 
-  - PHPUnit_Framework_TestSuite(ReflectionClass, String)
-    constructs a TestSuite from the given class with the given
-    name.
+Conflicts:
+	PHPUnit/Framework/TestSuite.php</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-09-23T13:37:30+02:00 (commit #<span title="af470defe96b1b68cd9d8d2927eccb6739a57571">af470de</span>)</h3>
+            <div>
+              <p>
+                        Author: Michiel de Wit (michiel.dewit@procurios.nl) /
+                        Commiter: Michiel de Wit (michiel.dewit@procurios.nl)
+                    </p>
+              <pre class="wrapped">Added two calls to PHPUnit_Framework_TestResult::endTestSuite() from PHPUnit_Framework_TestSuite::run() to make sure test suites are ended properly when an exception (e.g. PHPUnit_Framework_SkippedTestError) in a test's setUpBeforeClass() method</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-05-04T09:44:40+02:00 (commit #<span title="a1ff95b22c949d39ef909eecf75dfd00711b4dc4">a1ff95b</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Fix CS.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-05-01T09:50:07+02:00 (commit #<span title="9b51067480242b985a282f67f8c714d3b8d3a673">9b51067</span>)</h3>
+            <div>
+              <p>
+                        Author: Giorgio Sironi (info@giorgiosironi.com) /
+                        Commiter: Giorgio Sironi (info@giorgiosironi.com)
+                    </p>
+              <pre class="wrapped">Introducing ensureIsStatic()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-04-25T11:17:36+02:00 (commit #<span title="8676c42eb1161d2aa00c9018c7b3d33a2a6466e2">8676c42</span>)</h3>
+            <div>
+              <p>
+                        Author: Giorgio Sironi (info@giorgiosironi.com) /
+                        Commiter: Giorgio Sironi (info@giorgiosironi.com)
+                    </p>
+              <pre class="wrapped">Improved regular expressions</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-04-25T11:13:18+02:00 (commit #<span title="8a7c496ce2cc3818ed4616244a699b7bda7e7db4">8a7c496</span>)</h3>
+            <div>
+              <p>
+                        Author: Giorgio Sironi (info@giorgiosironi.com) /
+                        Commiter: Giorgio Sironi (info@giorgiosironi.com)
+                    </p>
+              <pre class="wrapped">Added support for @before and @after</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-04-25T10:18:33+02:00 (commit #<span title="6e0cde793ecd43def3cf57046dc05b26bbee2b0b">6e0cde7</span>)</h3>
+            <div>
+              <p>
+                        Author: Giorgio Sironi (info@giorgiosironi.com) /
+                        Commiter: Giorgio Sironi (info@giorgiosironi.com)
+                    </p>
+              <pre class="wrapped">Added functional test for @beforeClass and @afterClass</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-04-18T08:48:38+02:00 (commit #<span title="b22103aa9d22f4d0ee40f1f3093a06850d57c611">b22103a</span>)</h3>
+            <div>
+              <p>
+                        Author: Timofey Dmitriev (dmtimofey@gmail.com) /
+                        Commiter: Timofey Dmitriev (dmtimofey@gmail.com)
+                    </p>
+              <pre class="wrapped">#813 @before and @after annotations</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-02-05T09:42:36+01:00 (commit #<span title="837cb861178a033bfe91d1dffb53afeb43421c11">837cb86</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Eliminate unused variables</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-01-26T13:21:21+01:00 (commit #<span title="0eccd6a1b959897858564b4e1feca210062c5d75">0eccd6a</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-01-14T20:06:42+01:00 (commit #<span title="92a8006cab9825bd428aa9401386b73be97975a5">92a8006</span>)</h3>
+            <div>
+              <p>
+                        Author: Alexei Kornienko (alexei.kornienko@gmail.com) /
+                        Commiter: Alexei Kornienko (alexei.kornienko@gmail.com)
+                    </p>
+              <pre class="wrapped">Refactor how tests are run
 
-  - PHPUnit_Framework_TestSuite(String) either constructs a
-    TestSuite from the given class (if the passed string is the
-    name of an existing class) or constructs an empty TestSuite
-    with the given name.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$theClass</code> - </li>
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>PHPUnit_Framework_Exception</code>
-                </li>
-              </ul>
-            </ul>
+-added Filters injection in TestRunner
+-refactor TestSuite::run</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-01-07T11:37:52+01:00 (commit #<span title="c517984099c588d7cbe04bea9fb756a764769f5f">c517984</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2013-01-07T07:19:22+01:00 (commit #<span title="4005051099d04f4d76d75edbee74d846909f6baf">4005051</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Fixes GH-498
+
+ * Fixed a bug where tests won't run if a dataProvider throws an Exception and a group is specified.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-11-14T18:23:25+01:00 (commit #<span title="c5ebbe7c608971cf239be4c282ee5419b4c680a6">c5ebbe7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Eliminate PHPUnit_Util_Class.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-24T06:47:44+02:00 (commit #<span title="81ab540c8718a37315962b8242c7f1b4ee031ed4">81ab540</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Do not perform string replacement for @package_version@ anymore.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-07T15:58:26+02:00 (commit #<span title="26d57b495617e954e2d94ca42063026a67df4b1c">26d57b4</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Explainatory comment for the fix for #631 and ChangeLog entry.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-09-05T01:33:38+02:00 (commit #<span title="1084280cfc77b9698b5bf4e30e4c2b821198fed6">1084280</span>)</h3>
+            <div>
+              <p>
+                        Author: Anton Andersen (anton.a.andersen@gmail.com) /
+                        Commiter: Anton Andersen (anton.a.andersen@gmail.com)
+                    </p>
+              <pre class="wrapped">Prevent initiation of user's class autoloader on selenium tests
+
+Fix for issue #631
+https://github.com/sebastianbergmann/phpunit/issues/631</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-05-27T14:12:42+02:00 (commit #<span title="76a561e48f092f51e7457e76294450e3dd980769">76a561e</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Revert "Merge pull request #572 from mgb/excluded_tests_testlistener"
+
+This reverts commit 3b5d59a5d341f9b851ea373a31beb1cdc4b10ccb, reversing
+changes made to 063359e67e2031ba2ab9afdeb1bd6855c90987e4.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-05-20T19:52:08+02:00 (commit #<span title="67876c2392cf2463423b8f57d60caf6145587a2a">67876c2</span>)</h3>
+            <div>
+              <p>
+                        Author: Ryan Murphy (git@minegoboom.com) /
+                        Commiter: Mine GO BOOM (git@minegoboom.com)
+                    </p>
+              <pre class="wrapped">Quick hack to make ResultPrinter.php include excluded tests in its output.
+
+I choose to use an underscore as the output as we would want to have the total percentage complete to end up with 100%. If instead we would call writeProgress(NULL) and not have it output anything nor increment $this-&gt;column, it would cause the total summary to continue to increment. That does have the side effect where if you hit a chunk of excluded tests, your counter may go from 122/1300 to 553/1300 on the following line with no real indication of why.
+
+Another option I thought of was to instead cause the total number of tests counter to decrement, but that also looks weird if you go from 120/1500 (8%) to 160/800 (20%). But in the case when you exclude large chunks, it would prevent lots of useless output.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-04-30T12:02:38+02:00 (commit #<span title="5786e50b3878cba88932b10e6a48c75723950707">5786e50</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">List The BSD 3-Clause License correctly and consistently. Thanks to Christian Aistleitner &lt;christian@quelltextlich.at&gt; for bringing this issue to my attention.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-04-01T13:53:53+02:00 (commit #<span title="107f36c49e204be01798b8341f4b3a10e58d87ae">107f36c</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Closes #376: Removed, nowadays, superfluous check that lead to hard to debug edge cases as described in the gh-issue</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-03-24T12:55:45+01:00 (commit #<span title="eda3189bae0bdb5a6747289b6ef6b814c43b067a">eda3189</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Closes #526: Docfix</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2012-01-01T11:21:16+01:00 (commit #<span title="aae6c3808b9c4bee416657298fa90865d6898d60">aae6c38</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-27T10:21:52+01:00 (commit #<span title="37cacc915e512f640fefa9c6422d503f3c59455e">37cacc9</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">PHPUnit no longer throws exceptions that do not extend PHPUnit_Framework_Exception.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-20T11:54:00+01:00 (commit #<span title="635b47b1974a7b6d6a454dbad2d270cd1c3844ce">635b47b</span>)</h3>
+            <div>
+              <p>
+                        Author: Volker Dusch (github@wallbash.com) /
+                        Commiter: Volker Dusch (github@wallbash.com)
+                    </p>
+              <pre class="wrapped">Tidy up #444</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-12-19T16:35:02+01:00 (commit #<span title="59548a4e0c4fe38ab651f4291046595386340de6">59548a4</span>)</h3>
+            <div>
+              <p>
+                        Author: flyingmana (flyingmana@googlemail.com) /
+                        Commiter: flyingmana (flyingmana@googlemail.com)
+                    </p>
+              <pre class="wrapped">make InvalidArgumentException of PHPUnit_Framework_TestSuite more informativ</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-06-14T21:48:23+02:00 (commit #<span title="c13a41cee1f883a97fb80084f1869f985848093b">c13a41c</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix issues found by PHP_CodeSniffer.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-06-14T17:04:40+02:00 (commit #<span title="7b37221b785dd5aeda8794e8ffdcbfd8cf3aad7b">7b37221</span>)</h3>
+            <div>
+              <p>
+                        Author: Bernhard Schussek (bschussek@2bepublished.at) /
+                        Commiter: Bernhard Schussek (bschussek@2bepublished.at)
+                    </p>
+              <pre class="wrapped">Modified constraint subframework to use the new comparator classes</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-06-14T17:04:40+02:00 (commit #<span title="d38ea8fbc8792391771efd8e03e8c39b9266cfbb">d38ea8f</span>)</h3>
+            <div>
+              <p>
+                        Author: Bernhard Schussek (bschussek@2bepublished.at) /
+                        Commiter: Bernhard Schussek (bschussek@2bepublished.at)
+                    </p>
+              <pre class="wrapped">Replaced PHPUnit_Framework_Constraint_IsEqual::recursiveComparison() with a comparator sub-component
+
+This sub-component has three final goals:
+
+ * Allow end-users to override the comparison mechanism for specific
+   data types. This is especially interesting when classes have internal,
+   random property values (for example generated tokens or IDs) that</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-03-12T00:21:11+01:00 (commit #<span title="5ce42106c9596e731f7dd2f776494862eaf539fe">5ce4210</span>)</h3>
+            <div>
+              <p>
+                        Author: Oleg Pudeyev (oleg@bsdpower.com) /
+                        Commiter: Oleg Pudeyev (oleg@bsdpower.com)
+                    </p>
+              <pre class="wrapped">Catch unhandled exceptions thrown out of setUpBeforeClass functions</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-02-12T21:29:36+01:00 (commit #<span title="6dced111774f591bb3b3d4aa9a8bce8d78c2bee7">6dced11</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-02-10T00:11:00+01:00 (commit #<span title="df05f996d8c15c38d7e19844db637b21d218772a">df05f99</span>)</h3>
+            <div>
+              <p>
+                        Author: Oleg Pudeyev (oleg@bsdpower.com) /
+                        Commiter: Oleg Pudeyev (oleg@bsdpower.com)
+                    </p>
+              <pre class="wrapped">Print class name when warning about non-public test methods.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-02-02T03:38:50+01:00 (commit #<span title="f58f39b232914afd054a5aa439d3089c60514d75">f58f39b</span>)</h3>
+            <div>
+              <p>
+                        Author: Oleg Pudeyev (oleg@bsdpower.com) /
+                        Commiter: Oleg Pudeyev (oleg@bsdpower.com)
+                    </p>
+              <pre class="wrapped">Skip setUpBeforeClass if all test methods are going to be skipped</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-25T08:24:47+01:00 (commit #<span title="2b7f44f56496ccdc705e29497bfcaf142f4a9794">2b7f44f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Do not use PHP_CodeCoverage blacklist for PHPUnit stacktrace filtering.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-19T07:58:33+01:00 (commit #<span title="c285b9f80fa03b8a4a8034fe449863a4e99ccf08">c285b9f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix whitespace.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-18T10:37:22+01:00 (commit #<span title="a9bc884b55da94475518f3b434bcd8070f3f9bb8">a9bc884</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Fixes #71.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2011-01-16T13:43:58+01:00 (commit #<span title="983eaa87f222e64063c00e329691c1c353683994">983eaa8</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Jeff Welch (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">`PHPUnit_Util_Fileloader::checkAndLoad()` now uses the `include_path`
+`PHPUnit_Util_Fileloader::checkAndLoad()` errors show the original filename instead of a name prepended with ./
+The bootstrap is no longer loaded in two places.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-12-31T11:45:34+01:00 (commit #<span title="bee33449535dd656c2c0a94946eb0086d1214e1f">bee3344</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-12-03T09:43:26+01:00 (commit #<span title="ebadd0fe0288bc266d69a61ce9247644f4f6fe19">ebadd0f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Use PHP_CodeCoverage autoloader.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-10-24T08:54:30+02:00 (commit #<span title="cf239fd7c880e0211f6e11fea8a6dcf74da414da">cf239fd</span>)</h3>
+            <div>
+              <p>
+                        Author: Jeff Welch (whatthejeff@gmail.com) /
+                        Commiter: Sebastian Bergmann (whatthejeff@gmail.com)
+                    </p>
+              <pre class="wrapped">Made `PHPUnit_Framework_TestSuite_DataProvider` report warnings in a way that is more consistent with `PHPUnit_Framework_TestSuite`.  This refs issue_13.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-10-05T18:16:09+02:00 (commit #<span title="157a73025e15af8294be72c2bbc05a1f569a0879">157a730</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove the deprecated syntax check functionality.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-07-07T12:42:23+02:00 (commit #<span title="f0d9cdd35d83fd081c218fdec17edaf9e4f868f7">f0d9cdd</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Change email address.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-22T09:58:05+02:00 (commit #<span title="aa08bbf8eec6d7fa672e5954b41065c5c5c87dc2">aa08bbf</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Check whether the test class extends PHPUnit_Framework_TestCase.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-22T09:41:12+02:00 (commit #<span title="6bae49d0f7ea3eb24d8c47842f45fd80660c93e3">6bae49d</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix CS.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-22T09:40:14+02:00 (commit #<span title="11374024a0f11695c998a0322f55e666b3607e67">1137402</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-22T09:14:00+02:00 (commit #<span title="c2bf6a3e77304fc1e66f0225a233308f12d7bca8">c2bf6a3</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Throw an exception when createTest() is called with an invalid test.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-12T20:25:54+02:00 (commit #<span title="d19a7378115e5de11b694ac40531ab662d074055">d19a737</span>)</h3>
+            <div>
+              <p>
+                        Author: Mark Story (mark@mark-story.com) /
+                        Commiter: Mark Story (mark@mark-story.com)
+                    </p>
+              <pre class="wrapped">Removing trailing whitespace from files. Refs #1063</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-12T11:15:32+02:00 (commit #<span title="7a94f25e42255a6458d4a9c1fdccdc3b3020d165">7a94f25</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove unused local variable.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-12T10:57:17+02:00 (commit #<span title="22f22a7ffd5d1a2a983b89abb4e74b318fa94ae2">22f22a7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove unused local variables.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-06-12T10:55:44+02:00 (commit #<span title="0793007ee483894947374c7536e9c63c69d1dae0">0793007</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove unused argument.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-05-25T09:04:46+02:00 (commit #<span title="c54fb5b89b656bcf33fd0b5fc73244e9a30a340a">c54fb5b</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix TRAC-1056.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-05-05T18:33:34+02:00 (commit #<span title="7d797e87e1ed327f03013a5d0ae3a75039cc2a1b">7d797e8</span>)</h3>
+            <div>
+              <p>
+                        Author: scoates (sean@seancoates.com) /
+                        Commiter: Sebastian Bergmann (sean@seancoates.com)
+                    </p>
+              <pre class="wrapped">fix ticket #1047 -- tearDownAfterClass() never called</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-04-05T17:41:26+02:00 (commit #<span title="471d69e2573822a6d9dd28159085a480e97dc734">471d69e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Add @subpackage annotation.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-02-11T08:44:52+01:00 (commit #<span title="683aa1559f33b9d36b16a43b8da4f75327c37623">683aa15</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix TRAC-952.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-02-03T03:42:35+01:00 (commit #<span title="50e751da4f15e271340f21bcbb72a0690f774e11">50e751d</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove shared fixture functionality.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-02-02T14:14:29+01:00 (commit #<span title="bc1aaaaacfa98ab64d1eb54ac5b87279023bab59">bc1aaaa</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove closing PHP tags.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-02-02T00:56:28+01:00 (commit #<span title="200ad36363b7984eaab968b34b49cdb907d88f7a">200ad36</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Handle invalid data provider specifications gracefully.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2010-01-19T09:39:03+01:00 (commit #<span title="fb48a69ea606a4740ba1f0e4ddcfe60fcd2a8301">fb48a69</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on autoloading.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:26:09+01:00 (commit #<span title="37f75ffdc651e3359c5683335851f6c5d6576c34">37f75ff</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:25:53+01:00 (commit #<span title="bddcc5f10872f9f53029aa8aeab27e2a95fbe2e5">bddcc5f</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-31T09:23:37+01:00 (commit #<span title="7a7d0b7a54abfe58cd411a3b199133a8cb46351e">7a7d0b7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Bump copyright year.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:32:26+01:00 (commit #<span title="60e7125941b239eeb6cfc016a2a2e8c238f3bea4">60e7125</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:30:57+01:00 (commit #<span title="42294addddde87f7b8064156ded58be18ad7aac4">42294ad</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-12-25T10:26:35+01:00 (commit #<span title="8617133a88b4c149adef21bc581a0bdf896f130e">8617133</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Remove Subversion keywords.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-23T09:39:24+01:00 (commit #<span title="150341273801b55392d0bde99fc7be60f5a5c15d">1503412</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5389].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-23T09:29:23+01:00 (commit #<span title="4c9cf4e6879b29001f9b1d38cee68a8dfb9c01cc">4c9cf4e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Initial work on PHP_CodeCoverage migration.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-12T19:40:09+01:00 (commit #<span title="48eaa12864153ed85ec3202f972c8d8ccefcbac1">48eaa12</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5312:5314].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-11-12T19:36:12+01:00 (commit #<span title="a2de7f769777d1d9ef9d7fec9f04ef70b95c9535">a2de7f7</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Make sure tearDownAfterClass() is called only once.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-09-29T14:41:31+02:00 (commit #<span title="ecf13377691f21c1c9d420485cefef5da0dd3e6b">ecf1337</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5259].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-09-29T14:34:55+02:00 (commit #<span title="1b0ff408412725ea388a7fbeaad65b7164273620">1b0ff40</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Cleanup.</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-09-28T13:07:46+02:00 (commit #<span title="3dbb8916a3c8a7a20b55dbacc3834535d256edbc">3dbb891</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Merge [5253].</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2009-09-28T13:05:56+02:00 (commit #<span title="2ab679e14f1686a991298e9c48764fdf00baaf88">2ab679e</span>)</h3>
+            <div>
+              <p>
+                        Author: Sebastian Bergmann (sb@sebastian-bergmann.de) /
+                        Commiter: Sebastian Bergmann (sb@sebastian-bergmann.de)
+                    </p>
+              <pre class="wrapped">Fix #875.</pre>
+            </div>
           </li>
         </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="addTest"/>
-            <h4><span class="label public">public</span>addTest<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type">Array</span><strong> $groups</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a test to the suite.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-                <li><code>$groups</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addTestFile"/>
-            <h4><span class="label public">public</span>addTestFile<span style="font-size:90%;">( <span class="param-type">string</span><strong> $filename</strong>, <span class="param-type">Array</span><strong> $phptOptions</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Wraps both &lt;code&gt;addTest()&lt;/code&gt; and &lt;code&gt;addTestSuite&lt;/code&gt; as well as the separate import statements for the user's convenience.<pre>If the named file cannot be read or there are no new tests that can be
-added, a &lt;code&gt;PHPUnit_Framework_Warning&lt;/code&gt; will be created instead,
-leaving the current test run untouched.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$filename</code> - </li>
-                <li><code>$phptOptions</code> - Array with ini settings for the php instance</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>PHPUnit_Framework_Exception</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addTestFiles"/>
-            <h4><span class="label public">public</span>addTestFiles<span style="font-size:90%;">( <span class="param-type"><span title="array|Iterator">array|Iterator</span></span><strong> $filenames</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Wrapper for addTestFile() that adds multiple test files.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$filenames</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>PHPUnit_Framework_Exception</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addTestSuite"/>
-            <h4><span class="label public">public</span>addTestSuite<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $testClass</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds the tests from the given class to the suite.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$testClass</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>PHPUnit_Framework_Exception</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="count"/>
-            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Counts the number of test cases that will be run by this test.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="createTest"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>createTest<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionClass">ReflectionClass</span></span><strong> $theClass</strong>, <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$theClass</code> - </li>
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>PHPUnit_Framework_Exception</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getGroupDetails"/>
-            <h4><span class="label public">public</span>getGroupDetails<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="getGroups"/>
-            <h4><span class="label public">public</span>getGroups<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the test groups of the suite.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getIterator"/>
-            <h4><span class="label public">public</span>getIterator<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns an iterator for this test suite.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getName"/>
-            <h4><span class="label public">public</span>getName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the name of the suite.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="injectFilter"/>
-            <h4><span class="label public">public</span>injectFilter<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Runner_Filter_Factory">PHPUnit_Runner_Filter_Factory</span></span><strong> $filter</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="isAfterClassMethod"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>isAfterClassMethod<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$method</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isAfterMethod"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>isAfterMethod<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$method</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isBeforeClassMethod"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>isBeforeClassMethod<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$method</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isBeforeMethod"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>isBeforeMethod<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$method</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isPublicTestMethod"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>isPublicTestMethod<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$method</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isTestMethod"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>isTestMethod<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$method</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="markTestSuiteSkipped"/>
-            <h4><span class="label public">public</span>markTestSuiteSkipped<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Mark the test suite as skipped.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>PHPUnit_Framework_SkippedTestSuiteError</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="run"/>
-            <h4><span class="label public">public</span>run<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_TestResult">PHPUnit_Framework_TestResult</span></span><strong> $result</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Runs the tests and collects their result in a TestResult.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$result</code> - </li>
-                <li><code>$filter</code> - </li>
-                <li><code>$groups</code> - </li>
-                <li><code>$excludeGroups</code> - </li>
-                <li><code>$processIsolation</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>PHPUnit_Framework_Exception</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="runTest"/>
-            <h4><span class="label public">public</span>runTest<span style="font-size:90%;">( <span class="param-type"><span title="\\PHPUnit_Framework_Test">PHPUnit_Framework_Test</span></span><strong> $test</strong>, <span class="param-type"><span title="\\PHPUnit_Framework_TestResult">PHPUnit_Framework_TestResult</span></span><strong> $result</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Runs a test.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$test</code> - </li>
-                <li><code>$result</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setBackupGlobals"/>
-            <h4><span class="label public">public</span>setBackupGlobals<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $backupGlobals</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$backupGlobals</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setBackupStaticAttributes"/>
-            <h4><span class="label public">public</span>setBackupStaticAttributes<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $backupStaticAttributes</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$backupStaticAttributes</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setName"/>
-            <h4><span class="label public">public</span>setName<span style="font-size:90%;">( <span class="param-type"/><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the name of the suite.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code/> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setRunTestInSeparateProcess"/>
-            <h4><span class="label public">public</span>setRunTestInSeparateProcess<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $runTestInSeparateProcess</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$runTestInSeparateProcess</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="testAt"/>
-            <h4><span class="label public">public</span>testAt<span style="font-size:90%;">( <span class="param-type"/><strong> $index</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the test at the given index.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code/> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="tests"/>
-            <h4><span class="label public">public</span>tests<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the tests as an enumeration.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="toString"/>
-            <h4><span class="label public">public</span>toString<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns a string representation of the test suite.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addAfterClassMethod"/>
-            <h4><span class="label protected">protected</span>addAfterClassMethod<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionClass">ReflectionClass</span></span><strong> $class</strong>, <span class="param-type"><span title="\\ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$class</code> - </li>
-                <li><code>$method</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addAfterMethod"/>
-            <h4><span class="label protected">protected</span>addAfterMethod<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionClass">ReflectionClass</span></span><strong> $class</strong>, <span class="param-type"><span title="\\ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$class</code> - </li>
-                <li><code>$method</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addBeforeClassMethod"/>
-            <h4><span class="label protected">protected</span>addBeforeClassMethod<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionClass">ReflectionClass</span></span><strong> $class</strong>, <span class="param-type"><span title="\\ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$class</code> - </li>
-                <li><code>$method</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addBeforeMethod"/>
-            <h4><span class="label protected">protected</span>addBeforeMethod<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionClass">ReflectionClass</span></span><strong> $class</strong>, <span class="param-type"><span title="\\ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$class</code> - </li>
-                <li><code>$method</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addTestMethod"/>
-            <h4><span class="label protected">protected</span>addTestMethod<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionClass">ReflectionClass</span></span><strong> $class</strong>, <span class="param-type"><span title="\\ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$class</code> - </li>
-                <li><code>$method</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="createResult"/>
-            <h4><span class="label protected">protected</span>createResult<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Creates a default TestResult object.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setUp"/>
-            <h4><span class="label protected">protected</span>setUp<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Template Method that is called before the tests of this test suite are run.</li>
-            </p>
-          </li>
-          <li>
-            <a name="tearDown"/>
-            <h4><span class="label protected">protected</span>tearDown<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Template Method that is called after the tests of this test suite have finished running.</li>
-            </p>
-          </li>
-          <li>
-            <a name="warning"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>warning<span style="font-size:90%;">( <span class="param-type">string</span><strong> $message</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$message</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="ensureIsStatic"/>
-            <h4><span class="label private">private</span>ensureIsStatic<span style="font-size:90%;">( <span class="param-type"><span title="\\ReflectionMethod">ReflectionMethod</span></span><strong> $method</strong> )</span></h4>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+      </section>
     </div>
+    <footer>
+      <span>Generated using phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
   </body>
 </html>

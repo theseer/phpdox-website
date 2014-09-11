@@ -1,179 +1,137 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\DBAL\SQLParserUtils - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\DBAL\SQLParserUtils</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_DBAL">Doctrine\DBAL</a>
+          </li>
+          <li class="separator">SQLParserUtils</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#POSITIONAL_TOKEN">POSITIONAL_TOKEN</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#NAMED_TOKEN">NAMED_TOKEN</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#ESCAPED_SINGLE_QUOTED_TEXT">ESCAPED_SINGLE_QUOTED_TEXT</a>
+            <a href="#constants">Constants</a>
           </li>
           <li>
-            <a href="#ESCAPED_DOUBLE_QUOTED_TEXT">ESCAPED_DOUBLE_QUOTED_TEXT</a>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/doctrine/dbal/lib/Doctrine/DBAL/SQLParserUtils.php.xhtml#line33">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\DBAL\</small>SQLParserUtils</h1>
+        <h4>Utility class that parses sql statements with regard to types and parameters.</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#expandListParameters">expandListParameters</a>
-          </li>
-          <li>
-            <a href="#extractParam">extractParam</a>
-          </li>
-          <li>
-            <a href="#getPlaceholderPositions">getPlaceholderPositions</a>
-          </li>
-          <li>
-            <a href="#getUnquotedStatementFragments">getUnquotedStatementFragments</a>
-          </li>
+          <li>Author: Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
+          <li>License: http://www.opensource.org/licenses/lgpl-license.php LGPL</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\DBAL\</span>SQLParserUtils</h2>
-        <div class="file-notice">
-          <p>Utility class that parses sql statements with regard to types and parameters.</p>
-        </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
-          <li><b>License: </b>http://www.opensource.org/licenses/lgpl-license.php LGPL</li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="POSITIONAL_TOKEN"/>POSITIONAL_TOKEN = '\?'<hr/></li>
-          <li><a name="NAMED_TOKEN"/>NAMED_TOKEN = '(?&lt;!:):[a-zA-Z_][a-zA-Z0-9_]*'<hr/></li>
-          <li><a name="ESCAPED_SINGLE_QUOTED_TEXT"/>ESCAPED_SINGLE_QUOTED_TEXT = "'(?:[^'\\\\]|\\\\'|\\\\\\\\)*'"<hr/></li>
-          <li><a name="ESCAPED_DOUBLE_QUOTED_TEXT"/>ESCAPED_DOUBLE_QUOTED_TEXT = '"(?:[^"\\\\]|\\\\"|\\\\\\\\)*"'<hr/></li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="expandListParameters"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>expandListParameters<span style="font-size:90%;">( <span class="param-type">string</span><strong> $query</strong>, <span class="param-type">array</span><strong> $params</strong>, <span class="param-type">array</span><strong> $types</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>For a positional query this method can rewrite the sql statement with regard to array parameters.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$query</code> - The SQL query to execute.</li>
-                <li><code>$params</code> - The parameters to bind to the query.</li>
-                <li><code>$types</code> - The types the previous parameters are in.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>SQLParserUtilsException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPlaceholderPositions"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getPlaceholderPositions<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $isPositional</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get an array of the placeholders in an sql statements as keys and their positions in the query string.<pre>Returns an integer =&gt; integer pair (indexed from zero) for a positional statement
-and a string =&gt; int[] pair for a named statement.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$statement</code> - </li>
-                <li><code>$isPositional</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="extractParam"/>
-            <h4><span class="label true">true</span><span class="label private">private</span>extractParam<span style="font-size:90%;">( <span class="param-type">string</span><strong> $paramName</strong>, <span class="param-type">array</span><strong> $paramsOrTypes</strong>, <span class="param-type"><span title="bool">bool</span></span><strong> $isParam</strong>, <span class="param-type">mixed</span><strong> $defaultValue</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$paramName</code> - The name of the parameter (without a colon in front)</li>
-                <li><code>$paramsOrTypes</code> - A hash of parameters or types</li>
-                <li><code>$isParam</code> - </li>
-                <li><code>$defaultValue</code> - An optional default value. If omitted, an exception is thrown</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>SQLParserUtilsException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getUnquotedStatementFragments"/>
-            <h4><span class="label true">true</span><span class="label private">private</span>getUnquotedStatementFragments<span style="font-size:90%;">( <span class="param-type">string</span><strong> $statement</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Slice the SQL statement around pairs of quotes and return string fragments of SQL outside of quoted literals.<pre>Each fragment is captured as a 2-element array:
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class SQLParserUtils
+            {<br/><ul class="none"><li>// constants</li><li>const POSITIONAL_TOKEN = '\?';</li><li>const NAMED_TOKEN = '(?&lt;!:):[a-zA-Z_][a-zA-Z0-9_]*';</li><li>const ESCAPED_SINGLE_QUOTED_TEXT = "'(?:[^'\\\\]|\\\\'|\\\\\\\\)*'";</li><li>const ESCAPED_DOUBLE_QUOTED_TEXT = '"(?:[^"\\\\]|\\\\"|\\\\\\\\)*"';</li></ul><ul class="none"><li>// methods</li><li>public static array <a title="Doctrine\DBAL\SQLParserUtils" href="../classes/Doctrine_DBAL_SQLParserUtils/getPlaceholderPositions.xhtml">getPlaceholderPositions</a>()
+                    </li><li>public static array <a title="Doctrine\DBAL\SQLParserUtils" href="../classes/Doctrine_DBAL_SQLParserUtils/expandListParameters.xhtml">expandListParameters</a>()
+                    </li><li>private static array <a title="Doctrine\DBAL\SQLParserUtils" href="../classes/Doctrine_DBAL_SQLParserUtils/getUnquotedStatementFragments.xhtml">getUnquotedStatementFragments</a>()
+                    </li><li>private static mixed <a title="Doctrine\DBAL\SQLParserUtils" href="../classes/Doctrine_DBAL_SQLParserUtils/extractParam.xhtml">extractParam</a>()
+                    </li></ul>
 
-0 =&gt; matched fragment string,
-1 =&gt; offset of fragment in $statement</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$statement</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+            }<br/></div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="POSITIONAL_TOKEN">POSITIONAL_TOKEN</td>
+              <td>'\?'</td>
+            </tr>
+            <tr>
+              <td id="NAMED_TOKEN">NAMED_TOKEN</td>
+              <td>'(?&lt;!:):[a-zA-Z_][a-zA-Z0-9_]*'</td>
+            </tr>
+            <tr>
+              <td id="ESCAPED_SINGLE_QUOTED_TEXT">ESCAPED_SINGLE_QUOTED_TEXT</td>
+              <td>"'(?:[^'\\\\]|\\\\'|\\\\\\\\)*'"</td>
+            </tr>
+            <tr>
+              <td id="ESCAPED_DOUBLE_QUOTED_TEXT">ESCAPED_DOUBLE_QUOTED_TEXT</td>
+              <td>'"(?:[^"\\\\]|\\\\"|\\\\\\\\)*"'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="extractParam">
+              <a title="Doctrine\DBAL\SQLParserUtils" href="../classes/Doctrine_DBAL_SQLParserUtils/extractParam.xhtml">extractParam()</a>
+            </li>
+            <li id="getUnquotedStatementFragments"><a title="Doctrine\DBAL\SQLParserUtils" href="../classes/Doctrine_DBAL_SQLParserUtils/getUnquotedStatementFragments.xhtml">getUnquotedStatementFragments()</a>
+                — Slice the SQL statement around pairs of quotes and return string fragments of SQL outside of quoted literals.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="expandListParameters"><a title="Doctrine\DBAL\SQLParserUtils" href="../classes/Doctrine_DBAL_SQLParserUtils/expandListParameters.xhtml">expandListParameters()</a>
+                — For a positional query this method can rewrite the sql statement with regard to array parameters.</li>
+            <li id="getPlaceholderPositions"><a title="Doctrine\DBAL\SQLParserUtils" href="../classes/Doctrine_DBAL_SQLParserUtils/getPlaceholderPositions.xhtml">getPlaceholderPositions()</a>
+                — Get an array of the placeholders in an sql statements as keys and their positions in the query string.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

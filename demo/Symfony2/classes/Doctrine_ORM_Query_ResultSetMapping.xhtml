@@ -1,753 +1,294 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\ORM\Query\ResultSetMapping - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\ORM\Query\ResultSetMapping</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_ORM_Query">Doctrine\ORM\Query</a>
+          </li>
+          <li class="separator">ResultSetMapping</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#isMixed">$isMixed</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#aliasMap">$aliasMap</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#relationMap">$relationMap</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#parentAliasMap">$parentAliasMap</a>
+            <a href="#tasks">Tasks</a>
           </li>
           <li>
-            <a href="#fieldMappings">$fieldMappings</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#scalarMappings">$scalarMappings</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#typeMappings">$typeMappings</a>
-          </li>
-          <li>
-            <a href="#entityMappings">$entityMappings</a>
-          </li>
-          <li>
-            <a href="#metaMappings">$metaMappings</a>
-          </li>
-          <li>
-            <a href="#columnOwnerMap">$columnOwnerMap</a>
-          </li>
-          <li>
-            <a href="#discriminatorColumns">$discriminatorColumns</a>
-          </li>
-          <li>
-            <a href="#indexByMap">$indexByMap</a>
-          </li>
-          <li>
-            <a href="#declaringClasses">$declaringClasses</a>
-          </li>
-          <li>
-            <a href="#isIdentifierColumn">$isIdentifierColumn</a>
+            <a href="../source/doctrine/orm/lib/Doctrine/ORM/Query/ResultSetMapping.php.xhtml#line36">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\ORM\Query\</small>ResultSetMapping</h1>
+        <h4>A ResultSetMapping describes how a result set of an SQL query maps to a Doctrine result.</h4>
+        <p>IMPORTANT NOTE:<br/>The properties of this class are only public for fast internal READ access and to (drastically)<br/>reduce the size of serialized instances for more effective caching due to better (un-)serialization<br/>performance.<br/><br/>&lt;b&gt;Users should use the public methods.&lt;/b&gt;</p>
         <ul>
-          <li>
-            <a href="#addEntityResult">addEntityResult</a>
-          </li>
-          <li>
-            <a href="#addFieldResult">addFieldResult</a>
-          </li>
-          <li>
-            <a href="#addIndexBy">addIndexBy</a>
-          </li>
-          <li>
-            <a href="#addIndexByColumn">addIndexByColumn</a>
-          </li>
-          <li>
-            <a href="#addIndexByScalar">addIndexByScalar</a>
-          </li>
-          <li>
-            <a href="#addJoinedEntityResult">addJoinedEntityResult</a>
-          </li>
-          <li>
-            <a href="#addMetaResult">addMetaResult</a>
-          </li>
-          <li>
-            <a href="#addScalarResult">addScalarResult</a>
-          </li>
-          <li>
-            <a href="#getAliasMap">getAliasMap</a>
-          </li>
-          <li>
-            <a href="#getClassName">getClassName</a>
-          </li>
-          <li>
-            <a href="#getDeclaringClass">getDeclaringClass</a>
-          </li>
-          <li>
-            <a href="#getEntityAlias">getEntityAlias</a>
-          </li>
-          <li>
-            <a href="#getEntityResultCount">getEntityResultCount</a>
-          </li>
-          <li>
-            <a href="#getFieldName">getFieldName</a>
-          </li>
-          <li>
-            <a href="#getParentAlias">getParentAlias</a>
-          </li>
-          <li>
-            <a href="#getRelation">getRelation</a>
-          </li>
-          <li>
-            <a href="#getScalarAlias">getScalarAlias</a>
-          </li>
-          <li>
-            <a href="#hasIndexBy">hasIndexBy</a>
-          </li>
-          <li>
-            <a href="#hasParentAlias">hasParentAlias</a>
-          </li>
-          <li>
-            <a href="#isFieldResult">isFieldResult</a>
-          </li>
-          <li>
-            <a href="#isMixedResult">isMixedResult</a>
-          </li>
-          <li>
-            <a href="#isRelation">isRelation</a>
-          </li>
-          <li>
-            <a href="#isScalarResult">isScalarResult</a>
-          </li>
-          <li>
-            <a href="#setDiscriminatorColumn">setDiscriminatorColumn</a>
-          </li>
+          <li>Author: Roman Borschel &lt;roman@code-factory.org&gt;</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\ORM\Query\</span>ResultSetMapping</h2>
-        <div class="file-notice">
-          <p>A ResultSetMapping describes how a result set of an SQL query maps to a Doctrine result.</p>
-          <p>
-            <pre>IMPORTANT NOTE:
-The properties of this class are only public for fast internal READ access and to (drastically)
-reduce the size of serialized instances for more effective caching due to better (un-)serialization
-performance.
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ResultSetMapping
+            {<br/><ul class="none"><li>// members</li><li>public boolean <a href="#members">$isMixed</a>;
+                    </li><li>public array <a href="#members">$aliasMap</a>;
+                    </li><li>public array <a href="#members">$relationMap</a>;
+                    </li><li>public array <a href="#members">$parentAliasMap</a>;
+                    </li><li>public array <a href="#members">$fieldMappings</a>;
+                    </li><li>public array <a href="#members">$scalarMappings</a>;
+                    </li><li>public array <a href="#members">$typeMappings</a>;
+                    </li><li>public array <a href="#members">$entityMappings</a>;
+                    </li><li>public array <a href="#members">$metaMappings</a>;
+                    </li><li>public array <a href="#members">$columnOwnerMap</a>;
+                    </li><li>public array <a href="#members">$discriminatorColumns</a>;
+                    </li><li>public array <a href="#members">$indexByMap</a>;
+                    </li><li>public array <a href="#members">$declaringClasses</a>;
+                    </li><li>public array <a href="#members">$isIdentifierColumn</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public ResultSetMapping <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addEntityResult.xhtml">addEntityResult</a>()
+                    </li><li>public ResultSetMapping <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/setDiscriminatorColumn.xhtml">setDiscriminatorColumn</a>()
+                    </li><li>public ResultSetMapping <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addIndexBy.xhtml">addIndexBy</a>()
+                    </li><li>public ResultSetMapping <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addIndexByScalar.xhtml">addIndexByScalar</a>()
+                    </li><li>public ResultSetMapping <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addIndexByColumn.xhtml">addIndexByColumn</a>()
+                    </li><li>public boolean <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/hasIndexBy.xhtml">hasIndexBy</a>()
+                    </li><li>public boolean <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/isFieldResult.xhtml">isFieldResult</a>()
+                    </li><li>public ResultSetMapping <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addFieldResult.xhtml">addFieldResult</a>()
+                    </li><li>public ResultSetMapping <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addJoinedEntityResult.xhtml">addJoinedEntityResult</a>()
+                    </li><li>public ResultSetMapping <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addScalarResult.xhtml">addScalarResult</a>()
+                    </li><li>public boolean <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/isScalarResult.xhtml">isScalarResult</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getClassName.xhtml">getClassName</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getScalarAlias.xhtml">getScalarAlias</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getDeclaringClass.xhtml">getDeclaringClass</a>()
+                    </li><li>public AssociationMapping <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getRelation.xhtml">getRelation</a>()
+                    </li><li>public boolean <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/isRelation.xhtml">isRelation</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getEntityAlias.xhtml">getEntityAlias</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getParentAlias.xhtml">getParentAlias</a>()
+                    </li><li>public boolean <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/hasParentAlias.xhtml">hasParentAlias</a>()
+                    </li><li>public string <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getFieldName.xhtml">getFieldName</a>()
+                    </li><li>public array <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getAliasMap.xhtml">getAliasMap</a>()
+                    </li><li>public integer <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getEntityResultCount.xhtml">getEntityResultCount</a>()
+                    </li><li>public boolean <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/isMixedResult.xhtml">isMixedResult</a>()
+                    </li><li>public ResultSetMapping <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addMetaResult.xhtml">addMetaResult</a>()
+                    </li></ul>
 
-&lt;b&gt;Users should use the public methods.&lt;/b&gt;</pre>
-          </p>
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extended by</h4>
+          <ul>
+            <li>
+              <a href="../classes/Doctrine_ORM_Query_ResultSetMappingBuilder.xhtml">Doctrine\ORM\Query\ResultSetMappingBuilder</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="isMixed"/>
-            <h4><span class="label public">public</span>boolean 
-                
-                $isMixed</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="aliasMap"/>
-            <h4><span class="label public">public</span>array 
-                
-                $aliasMap</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="relationMap"/>
-            <h4><span class="label public">public</span>array 
-                
-                $relationMap</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="parentAliasMap"/>
-            <h4><span class="label public">public</span>array 
-                
-                $parentAliasMap</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="fieldMappings"/>
-            <h4><span class="label public">public</span>array 
-                
-                $fieldMappings</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="scalarMappings"/>
-            <h4><span class="label public">public</span>array 
-                
-                $scalarMappings</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="typeMappings"/>
-            <h4><span class="label public">public</span>array 
-                
-                $typeMappings</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="entityMappings"/>
-            <h4><span class="label public">public</span>array 
-                
-                $entityMappings</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="metaMappings"/>
-            <h4><span class="label public">public</span>array 
-                
-                $metaMappings</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="columnOwnerMap"/>
-            <h4><span class="label public">public</span>array 
-                
-                $columnOwnerMap</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="discriminatorColumns"/>
-            <h4><span class="label public">public</span>array 
-                
-                $discriminatorColumns</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="indexByMap"/>
-            <h4><span class="label public">public</span>array 
-                
-                $indexByMap</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="declaringClasses"/>
-            <h4><span class="label public">public</span>array 
-                
-                $declaringClasses</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="isIdentifierColumn"/>
-            <h4><span class="label public">public</span>array 
-                
-                $isIdentifierColumn</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="addEntityResult"/>
-            <h4><span class="label public">public</span>addEntityResult<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong>, <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $resultAlias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds an entity result to this ResultSetMapping.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$class</code> - The class name of the entity.</li>
-                <li><code>$alias</code> - The alias for the class. The alias must be unique among all entity</li>
-                <li><code>$resultAlias</code> - The result alias with which the entity result should be</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This ResultSetMapping instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addFieldResult"/>
-            <h4><span class="label public">public</span>addFieldResult<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $columnName</strong>, <span class="param-type">string</span><strong> $fieldName</strong>, <span class="param-type">string</span><strong> $declaringClass</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a field to the result that belongs to an entity or joined entity.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - The alias of the root entity or joined entity to which the field belongs.</li>
-                <li><code>$columnName</code> - The name of the column in the SQL result set.</li>
-                <li><code>$fieldName</code> - The name of the field on the declaring class.</li>
-                <li><code>$declaringClass</code> - The name of the class that declares/owns the specified field.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This ResultSetMapping instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addIndexBy"/>
-            <h4><span class="label public">public</span>addIndexBy<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a field to use for indexing an entity result or joined entity result.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - The alias of an entity result or joined entity result.</li>
-                <li><code>$fieldName</code> - The name of the field to use for indexing.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This ResultSetMapping instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addIndexByColumn"/>
-            <h4><span class="label public">public</span>addIndexByColumn<span style="font-size:90%;">( <span class="param-type"/><strong> $alias</strong>, <span class="param-type"/><strong> $resultColumnName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a column to use for indexing an entity or joined entity result by the given alias name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - </li>
-                <li><code>$resultColumnName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This ResultSetMapping instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addIndexByScalar"/>
-            <h4><span class="label public">public</span>addIndexByScalar<span style="font-size:90%;">( <span class="param-type"/><strong> $resultColumnName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set to index by a scalar result column name</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$resultColumnName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This ResultSetMapping instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addJoinedEntityResult"/>
-            <h4><span class="label public">public</span>addJoinedEntityResult<span style="font-size:90%;">( <span class="param-type">string</span><strong> $class</strong>, <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $parentAlias</strong>, <span class="param-type">invalid method call</span><strong> $relation</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a joined entity result.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$class</code> - The class name of the joined entity.</li>
-                <li><code>$alias</code> - The unique alias to use for the joined entity.</li>
-                <li><code>$parentAlias</code> - The alias of the entity result that is the parent of this joined result.</li>
-                <li><code>$relation</code> - The association field that connects the parent entity result with the joined entity result.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This ResultSetMapping instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addMetaResult"/>
-            <h4><span class="label public">public</span>addMetaResult<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $columnName</strong>, <span class="param-type">string</span><strong> $fieldName</strong>, <span class="param-type"/><strong> $isIdentifierColumn</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a meta column (foreign key or discriminator column) to the result set.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - </li>
-                <li><code>$columnName</code> - </li>
-                <li><code>$fieldName</code> - </li>
-                <li><code/> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This ResultSetMapping instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addScalarResult"/>
-            <h4><span class="label public">public</span>addScalarResult<span style="font-size:90%;">( <span class="param-type">string</span><strong> $columnName</strong>, <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $type</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a scalar result mapping.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columnName</code> - The name of the column in the SQL result set.</li>
-                <li><code>$alias</code> - The result alias with which the scalar result should be placed in the result structure.</li>
-                <li><code>$type</code> - The column type</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This ResultSetMapping instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAliasMap"/>
-            <h4><span class="label public">public</span>getAliasMap<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getClassName"/>
-            <h4><span class="label public">public</span>getClassName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the name of the class of an entity result or joined entity result, identified by the given unique alias.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getDeclaringClass"/>
-            <h4><span class="label public">public</span>getDeclaringClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $columnName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the name of the class that owns a field mapping for the specified column.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columnName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getEntityAlias"/>
-            <h4><span class="label public">public</span>getEntityAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $columnName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the alias of the class that owns a field mapping for the specified column.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columnName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getEntityResultCount"/>
-            <h4><span class="label public">public</span>getEntityResultCount<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the number of different entities that appear in the mapped result.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFieldName"/>
-            <h4><span class="label public">public</span>getFieldName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $columnName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the field name for a column name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columnName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getParentAlias"/>
-            <h4><span class="label public">public</span>getParentAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the parent alias of the given alias.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getRelation"/>
-            <h4><span class="label public">public</span>getRelation<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getScalarAlias"/>
-            <h4><span class="label public">public</span>getScalarAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $columnName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the field alias for a column that is mapped as a scalar value.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columnName</code> - The name of the column in the SQL result set.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasIndexBy"/>
-            <h4><span class="label public">public</span>hasIndexBy<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether an entity result or joined entity result with a given alias has a field set for indexing.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasParentAlias"/>
-            <h4><span class="label public">public</span>hasParentAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the given alias has a parent alias.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isFieldResult"/>
-            <h4><span class="label public">public</span>isFieldResult<span style="font-size:90%;">( <span class="param-type">string</span><strong> $columnName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the column with the given name is mapped as a field result as part of an entity result or joined entity result.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columnName</code> - The name of the column in the SQL result set.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isMixedResult"/>
-            <h4><span class="label public">public</span>isMixedResult<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether this ResultSetMapping defines a mixed result.<pre>Mixed results can only occur in object and array (graph) hydration. In such a
-case a mixed result means that scalar values are mixed with objects/array in
-the result.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isRelation"/>
-            <h4><span class="label public">public</span>isRelation<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isScalarResult"/>
-            <h4><span class="label public">public</span>isScalarResult<span style="font-size:90%;">( <span class="param-type"/><strong> $columnName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether a column with a given name is mapped as a scalar result.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columName</code> - The name of the column in the SQL result set.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setDiscriminatorColumn"/>
-            <h4><span class="label public">public</span>setDiscriminatorColumn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $alias</strong>, <span class="param-type">string</span><strong> $discrColumn</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a discriminator column for an entity result or joined entity result.<pre>The discriminator column will be used to determine the concrete class name to
-instantiate.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$alias</code> - The alias of the entity result or joined entity result the discriminator</li>
-                <li><code>$discrColumn</code> - The name of the discriminator column in the SQL result set.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>This ResultSetMapping instance.</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">36+</td>
+            <td>Think about whether the number of lookup maps can be reduced.</td>
+          </tr>
+          <tr>
+            <td class="nummeric">132+</td>
+            <td>Rename: addRootEntity</td>
+          </tr>
+          <tr>
+            <td class="nummeric">155+</td>
+            <td>Rename: addDiscriminatorColumn</td>
+          </tr>
+          <tr>
+            <td class="nummeric">183</td>
+            <td>check if this exception can be put back, for now it's gone because of assumptions made by some ORM internals</td>
+          </tr>
+          <tr>
+            <td class="nummeric">233+</td>
+            <td>Rename: isIndexed($alias)</td>
+          </tr>
+          <tr>
+            <td class="nummeric">246+</td>
+            <td>Rename: isField</td>
+          </tr>
+          <tr>
+            <td class="nummeric">265+</td>
+            <td>Rename: addField</td>
+          </tr>
+          <tr>
+            <td class="nummeric">291+</td>
+            <td>Rename: addJoinedEntity</td>
+          </tr>
+          <tr>
+            <td class="nummeric">311+</td>
+            <td>Rename: addScalar</td>
+          </tr>
+          <tr>
+            <td class="nummeric">330+</td>
+            <td>Rename: isScalar</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="aliasMap"><strong>$aliasMap</strong>
+                —
+                array</li>
+            <li id="columnOwnerMap"><strong>$columnOwnerMap</strong>
+                —
+                array</li>
+            <li id="declaringClasses"><strong>$declaringClasses</strong>
+                —
+                array</li>
+            <li id="discriminatorColumns"><strong>$discriminatorColumns</strong>
+                —
+                array</li>
+            <li id="entityMappings"><strong>$entityMappings</strong>
+                —
+                array</li>
+            <li id="fieldMappings"><strong>$fieldMappings</strong>
+                —
+                array</li>
+            <li id="indexByMap"><strong>$indexByMap</strong>
+                —
+                array</li>
+            <li id="isIdentifierColumn"><strong>$isIdentifierColumn</strong>
+                —
+                array</li>
+            <li id="isMixed"><strong>$isMixed</strong>
+                —
+                boolean</li>
+            <li id="metaMappings"><strong>$metaMappings</strong>
+                —
+                array</li>
+            <li id="parentAliasMap"><strong>$parentAliasMap</strong>
+                —
+                array</li>
+            <li id="relationMap"><strong>$relationMap</strong>
+                —
+                array</li>
+            <li id="scalarMappings"><strong>$scalarMappings</strong>
+                —
+                array</li>
+            <li id="typeMappings"><strong>$typeMappings</strong>
+                —
+                array</li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="addEntityResult"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addEntityResult.xhtml">addEntityResult()</a>
+                — Adds an entity result to this ResultSetMapping.</li>
+            <li id="addFieldResult"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addFieldResult.xhtml">addFieldResult()</a>
+                — Adds a field to the result that belongs to an entity or joined entity.</li>
+            <li id="addIndexBy"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addIndexBy.xhtml">addIndexBy()</a>
+                — Sets a field to use for indexing an entity result or joined entity result.</li>
+            <li id="addIndexByColumn"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addIndexByColumn.xhtml">addIndexByColumn()</a>
+                — Sets a column to use for indexing an entity or joined entity result by the given alias name.</li>
+            <li id="addIndexByScalar"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addIndexByScalar.xhtml">addIndexByScalar()</a>
+                — Set to index by a scalar result column name</li>
+            <li id="addJoinedEntityResult"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addJoinedEntityResult.xhtml">addJoinedEntityResult()</a>
+                — Adds a joined entity result.</li>
+            <li id="addMetaResult"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addMetaResult.xhtml">addMetaResult()</a>
+                — Adds a meta column (foreign key or discriminator column) to the result set.</li>
+            <li id="addScalarResult"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/addScalarResult.xhtml">addScalarResult()</a>
+                — Adds a scalar result mapping.</li>
+            <li id="getAliasMap">
+              <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getAliasMap.xhtml">getAliasMap()</a>
+            </li>
+            <li id="getClassName"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getClassName.xhtml">getClassName()</a>
+                — Gets the name of the class of an entity result or joined entity result, identified by the given unique alias.</li>
+            <li id="getDeclaringClass"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getDeclaringClass.xhtml">getDeclaringClass()</a>
+                — Gets the name of the class that owns a field mapping for the specified column.</li>
+            <li id="getEntityAlias"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getEntityAlias.xhtml">getEntityAlias()</a>
+                — Gets the alias of the class that owns a field mapping for the specified column.</li>
+            <li id="getEntityResultCount"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getEntityResultCount.xhtml">getEntityResultCount()</a>
+                — Gets the number of different entities that appear in the mapped result.</li>
+            <li id="getFieldName"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getFieldName.xhtml">getFieldName()</a>
+                — Gets the field name for a column name.</li>
+            <li id="getParentAlias"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getParentAlias.xhtml">getParentAlias()</a>
+                — Gets the parent alias of the given alias.</li>
+            <li id="getRelation">
+              <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getRelation.xhtml">getRelation()</a>
+            </li>
+            <li id="getScalarAlias"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/getScalarAlias.xhtml">getScalarAlias()</a>
+                — Gets the field alias for a column that is mapped as a scalar value.</li>
+            <li id="hasIndexBy"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/hasIndexBy.xhtml">hasIndexBy()</a>
+                — Checks whether an entity result or joined entity result with a given alias has a field set for indexing.</li>
+            <li id="hasParentAlias"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/hasParentAlias.xhtml">hasParentAlias()</a>
+                — Checks whether the given alias has a parent alias.</li>
+            <li id="isFieldResult"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/isFieldResult.xhtml">isFieldResult()</a>
+                — Checks whether the column with the given name is mapped as a field result as part of an entity result or joined entity result.</li>
+            <li id="isMixedResult"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/isMixedResult.xhtml">isMixedResult()</a>
+                — Checks whether this ResultSetMapping defines a mixed result.</li>
+            <li id="isRelation">
+              <a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/isRelation.xhtml">isRelation()</a>
+            </li>
+            <li id="isScalarResult"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/isScalarResult.xhtml">isScalarResult()</a>
+                — Checks whether a column with a given name is mapped as a scalar result.</li>
+            <li id="setDiscriminatorColumn"><a title="Doctrine\ORM\Query\ResultSetMapping" href="../classes/Doctrine_ORM_Query_ResultSetMapping/setDiscriminatorColumn.xhtml">setDiscriminatorColumn()</a>
+                — Sets a discriminator column for an entity result or joined entity result.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

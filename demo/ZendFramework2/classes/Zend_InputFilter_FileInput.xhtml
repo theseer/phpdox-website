@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Zend\InputFilter\FileInput</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_InputFilter">Zend\InputFilter</a>
+          </li>
+          <li class="separator">FileInput</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/InputFilter/FileInput.php.xhtml#line28">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\InputFilter\</small>FileInput</h1>
+        <h4>FileInput is a special Input type for handling uploaded files.</h4>
+        <p>It differs from Input in a few ways:<br/><br/>1. It expects the raw value to be in the $_FILES array format.<br/><br/>2. The validators are run **before** the filters (the opposite behavior of Input).<br/>This is so is_uploaded_file() validation can be run prior to any filters that<br/>may rename/move/modify the file.<br/><br/>3. Instead of adding a NotEmpty validator, it will (by default) automatically add<br/>   a Zend\Validator\File\Upload validator.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class FileInput
+                extends <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input.xhtml">Input</a>
+            {<br/><ul class="none"><li>// members</li><li>protected <span title="Zend\InputFilter\bool">bool</span> <a href="#members">$isValid</a>;
+                    </li><li>protected <span title="Zend\InputFilter\bool">bool</span> <a href="#members">$autoPrependUploadValidator</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Zend\InputFilter\Input">Input</span></li><li>protected <span title="Zend\InputFilter\bool">bool</span> <a href="#members">$allowEmpty</a>;
+                        </li><li>protected <span title="Zend\InputFilter\bool">bool</span> <a href="#members">$continueIfEmpty</a>;
+                        </li><li>protected <span title="Zend\InputFilter\bool">bool</span> <a href="#members">$breakOnFailure</a>;
+                        </li><li>protected <span title="Zend\InputFilter\string|null">string|null</span> <a href="#members">$errorMessage</a>;
+                        </li><li>protected <span title="Zend\Filter\FilterChain">FilterChain</span> <a href="#members">$filterChain</a>;
+                        </li><li>protected string <a href="#members">$name</a>;
+                        </li><li>protected <span title="Zend\InputFilter\bool">bool</span> <a href="#members">$notEmptyValidator</a>;
+                        </li><li>protected <span title="Zend\InputFilter\bool">bool</span> <a href="#members">$required</a>;
+                        </li><li>protected <span title="Zend\Validator\ValidatorChain">ValidatorChain</span> <a href="#members">$validatorChain</a>;
+                        </li><li>protected mixed <a href="#members">$value</a>;
+                        </li><li>protected mixed <a href="#members">$fallbackValue</a>;
+                        </li><li>protected <span title="Zend\InputFilter\bool">bool</span> <a href="#members">$hasFallback</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public FileInput <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/setAutoPrependUploadValidator.xhtml">setAutoPrependUploadValidator</a>()
+                    </li><li>public bool <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/getAutoPrependUploadValidator.xhtml">getAutoPrependUploadValidator</a>()
+                    </li><li>public mixed <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/getValue.xhtml">getValue</a>()
+                    </li><li>public bool <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/isValid.xhtml">isValid</a>()
+                    </li><li>protected void <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/injectUploadValidator.xhtml">injectUploadValidator</a>()
+                    </li><li>protected void <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/injectNotEmptyValidator.xhtml">injectNotEmptyValidator</a>()
+                    </li><li>public FileInput <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/merge.xhtml">merge</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Zend\InputFilter\Input">Input</span></li><li>public void <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/__construct.xhtml">__construct</a>()
+                        </li><li>public Input <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setAllowEmpty.xhtml">setAllowEmpty</a>()
+                        </li><li>public Input <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setBreakOnFailure.xhtml">setBreakOnFailure</a>()
+                        </li><li>public Input <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setContinueIfEmpty.xhtml">setContinueIfEmpty</a>()
+                        </li><li>public Input <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setErrorMessage.xhtml">setErrorMessage</a>()
+                        </li><li>public Input <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setFilterChain.xhtml">setFilterChain</a>()
+                        </li><li>public Input <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setName.xhtml">setName</a>()
+                        </li><li>public Input <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setRequired.xhtml">setRequired</a>()
+                        </li><li>public Input <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setValidatorChain.xhtml">setValidatorChain</a>()
+                        </li><li>public Input <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setValue.xhtml">setValue</a>()
+                        </li><li>public Input <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setFallbackValue.xhtml">setFallbackValue</a>()
+                        </li><li>public bool <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/allowEmpty.xhtml">allowEmpty</a>()
+                        </li><li>public bool <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/breakOnFailure.xhtml">breakOnFailure</a>()
+                        </li><li>public bool <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/continueIfEmpty.xhtml">continueIfEmpty</a>()
+                        </li><li>public string|null <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getErrorMessage.xhtml">getErrorMessage</a>()
+                        </li><li>public FilterChain <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getFilterChain.xhtml">getFilterChain</a>()
+                        </li><li>public string <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getName.xhtml">getName</a>()
+                        </li><li>public mixed <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getRawValue.xhtml">getRawValue</a>()
+                        </li><li>public bool <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/isRequired.xhtml">isRequired</a>()
+                        </li><li>public ValidatorChain <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getValidatorChain.xhtml">getValidatorChain</a>()
+                        </li><li>public mixed <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getValue.xhtml">getValue</a>()
+                        </li><li>public mixed <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getFallbackValue.xhtml">getFallbackValue</a>()
+                        </li><li>public bool <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/hasFallback.xhtml">hasFallback</a>()
+                        </li><li>public void <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/clearFallbackValue.xhtml">clearFallbackValue</a>()
+                        </li><li>public Input <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/merge.xhtml">merge</a>()
+                        </li><li>public bool <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/isValid.xhtml">isValid</a>()
+                        </li><li>public array <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getMessages.xhtml">getMessages</a>()
+                        </li><li>protected void <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/injectNotEmptyValidator.xhtml">injectNotEmptyValidator</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Zend_InputFilter_Input.xhtml">Zend\InputFilter\Input</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="allowEmpty"><strong>$allowEmpty</strong>
+                —
+                <a href="#">Zend\InputFilter\bool</a></li>
+            <li id="autoPrependUploadValidator"><strong>$autoPrependUploadValidator</strong>
+                —
+                <a href="#">Zend\InputFilter\bool</a></li>
+            <li id="breakOnFailure"><strong>$breakOnFailure</strong>
+                —
+                <a href="#">Zend\InputFilter\bool</a></li>
+            <li id="continueIfEmpty"><strong>$continueIfEmpty</strong>
+                —
+                <a href="#">Zend\InputFilter\bool</a></li>
+            <li id="errorMessage"><strong>$errorMessage</strong>
+                —
+                <a href="#">Zend\InputFilter\string|null</a></li>
+            <li id="fallbackValue"><strong>$fallbackValue</strong>
+                —
+                mixed</li>
+            <li id="filterChain"><strong>$filterChain</strong>
+                —
+                <a href="#">Zend\Filter\FilterChain</a></li>
+            <li id="hasFallback"><strong>$hasFallback</strong>
+                —
+                <a href="#">Zend\InputFilter\bool</a></li>
+            <li id="isValid"><strong>$isValid</strong>
+                —
+                <a href="#">Zend\InputFilter\bool</a></li>
+            <li id="name"><strong>$name</strong>
+                —
+                string</li>
+            <li id="notEmptyValidator"><strong>$notEmptyValidator</strong>
+                —
+                <a href="#">Zend\InputFilter\bool</a></li>
+            <li id="required"><strong>$required</strong>
+                —
+                <a href="#">Zend\InputFilter\bool</a></li>
+            <li id="validatorChain"><strong>$validatorChain</strong>
+                —
+                <a href="#">Zend\Validator\ValidatorChain</a></li>
+            <li id="value"><strong>$value</strong>
+                —
+                mixed</li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="injectNotEmptyValidator"><a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/injectNotEmptyValidator.xhtml">injectNotEmptyValidator()</a>
+                — No-op, NotEmpty validator does not apply for FileInputs.</li>
+            <li id="injectUploadValidator">
+              <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/injectUploadValidator.xhtml">injectUploadValidator()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getAutoPrependUploadValidator">
+              <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/getAutoPrependUploadValidator.xhtml">getAutoPrependUploadValidator()</a>
+            </li>
+            <li id="getValue">
+              <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/getValue.xhtml">getValue()</a>
+            </li>
+            <li id="isValid">
+              <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/isValid.xhtml">isValid()</a>
+            </li>
+            <li id="merge">
+              <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/merge.xhtml">merge()</a>
+            </li>
+            <li id="setAutoPrependUploadValidator">
+              <a title="Zend\InputFilter\FileInput" href="../classes/Zend_InputFilter_FileInput/setAutoPrependUploadValidator.xhtml">setAutoPrependUploadValidator()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input.xhtml">Zend\InputFilter\Input</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="injectNotEmptyValidator">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/injectNotEmptyValidator.xhtml">injectNotEmptyValidator()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="allowEmpty">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/allowEmpty.xhtml">allowEmpty()</a>
+            </li>
+            <li id="breakOnFailure">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/breakOnFailure.xhtml">breakOnFailure()</a>
+            </li>
+            <li id="clearFallbackValue">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/clearFallbackValue.xhtml">clearFallbackValue()</a>
+            </li>
+            <li id="continueIfEmpty">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/continueIfEmpty.xhtml">continueIfEmpty()</a>
+            </li>
+            <li id="getErrorMessage">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getErrorMessage.xhtml">getErrorMessage()</a>
+            </li>
+            <li id="getFallbackValue">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getFallbackValue.xhtml">getFallbackValue()</a>
+            </li>
+            <li id="getFilterChain">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getFilterChain.xhtml">getFilterChain()</a>
+            </li>
+            <li id="getMessages">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getMessages.xhtml">getMessages()</a>
+            </li>
+            <li id="getName">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getName.xhtml">getName()</a>
+            </li>
+            <li id="getRawValue">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getRawValue.xhtml">getRawValue()</a>
+            </li>
+            <li id="getValidatorChain">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getValidatorChain.xhtml">getValidatorChain()</a>
+            </li>
+            <li id="getValue">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/getValue.xhtml">getValue()</a>
+            </li>
+            <li id="hasFallback">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/hasFallback.xhtml">hasFallback()</a>
+            </li>
+            <li id="isRequired">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/isRequired.xhtml">isRequired()</a>
+            </li>
+            <li id="isValid">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/isValid.xhtml">isValid()</a>
+            </li>
+            <li id="merge">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/merge.xhtml">merge()</a>
+            </li>
+            <li id="setAllowEmpty">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setAllowEmpty.xhtml">setAllowEmpty()</a>
+            </li>
+            <li id="setBreakOnFailure">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setBreakOnFailure.xhtml">setBreakOnFailure()</a>
+            </li>
+            <li id="setContinueIfEmpty">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setContinueIfEmpty.xhtml">setContinueIfEmpty()</a>
+            </li>
+            <li id="setErrorMessage">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setErrorMessage.xhtml">setErrorMessage()</a>
+            </li>
+            <li id="setFallbackValue">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setFallbackValue.xhtml">setFallbackValue()</a>
+            </li>
+            <li id="setFilterChain">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setFilterChain.xhtml">setFilterChain()</a>
+            </li>
+            <li id="setName">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setName.xhtml">setName()</a>
+            </li>
+            <li id="setRequired">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setRequired.xhtml">setRequired()</a>
+            </li>
+            <li id="setValidatorChain">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setValidatorChain.xhtml">setValidatorChain()</a>
+            </li>
+            <li id="setValue">
+              <a title="Zend\InputFilter\Input" href="../classes/Zend_InputFilter_Input/setValue.xhtml">setValue()</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span/>
+    </footer>
+  </body>
+</html>

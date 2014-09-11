@@ -1,990 +1,352 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\ORM\Persisters\AbstractEntityInheritancePersister - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\ORM\Persisters\AbstractEntityInheritancePersister</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_ORM_Persisters">Doctrine\ORM\Persisters</a>
+          </li>
+          <li class="separator">AbstractEntityInheritancePersister</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Methods</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#__construct">__construct</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#_getDiscriminatorColumnTableName">_getDiscriminatorColumnTableName</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#_getInsertColumnList">_getInsertColumnList</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#_getInsertSQL">_getInsertSQL</a>
+            <a href="#tasks">Tasks</a>
           </li>
           <li>
-            <a href="#_getOrderBySQL">_getOrderBySQL</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#_getSQLTableAlias">_getSQLTableAlias</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#_getSelectColumnAssociationSQL">_getSelectColumnAssociationSQL</a>
-          </li>
-          <li>
-            <a href="#_getSelectColumnListSQL">_getSelectColumnListSQL</a>
-          </li>
-          <li>
-            <a href="#_getSelectColumnSQL">_getSelectColumnSQL</a>
-          </li>
-          <li>
-            <a href="#_getSelectColumnSQL">_getSelectColumnSQL</a>
-          </li>
-          <li>
-            <a href="#_getSelectConditionCriteriaSQL">_getSelectConditionCriteriaSQL</a>
-          </li>
-          <li>
-            <a href="#_getSelectConditionSQL">_getSelectConditionSQL</a>
-          </li>
-          <li>
-            <a href="#_getSelectEntitiesSQL">_getSelectEntitiesSQL</a>
-          </li>
-          <li>
-            <a href="#_getSelectManyToManyJoinSQL">_getSelectManyToManyJoinSQL</a>
-          </li>
-          <li>
-            <a href="#_prepareInsertData">_prepareInsertData</a>
-          </li>
-          <li>
-            <a href="#_prepareInsertData">_prepareInsertData</a>
-          </li>
-          <li>
-            <a href="#_prepareUpdateData">_prepareUpdateData</a>
-          </li>
-          <li>
-            <a href="#_updateTable">_updateTable</a>
-          </li>
-          <li>
-            <a href="#addInsert">addInsert</a>
-          </li>
-          <li>
-            <a href="#assignDefaultVersionValue">assignDefaultVersionValue</a>
-          </li>
-          <li>
-            <a href="#delete">delete</a>
-          </li>
-          <li>
-            <a href="#deleteJoinTableRecords">deleteJoinTableRecords</a>
-          </li>
-          <li>
-            <a href="#executeInserts">executeInserts</a>
-          </li>
-          <li>
-            <a href="#exists">exists</a>
-          </li>
-          <li>
-            <a href="#fetchVersionValue">fetchVersionValue</a>
-          </li>
-          <li>
-            <a href="#generateFilterConditionSQL">generateFilterConditionSQL</a>
-          </li>
-          <li>
-            <a href="#getClassMetadata">getClassMetadata</a>
-          </li>
-          <li>
-            <a href="#getJoinSQLForJoinColumns">getJoinSQLForJoinColumns</a>
-          </li>
-          <li>
-            <a href="#getLockTablesSql">getLockTablesSql</a>
-          </li>
-          <li>
-            <a href="#getManyToManyCollection">getManyToManyCollection</a>
-          </li>
-          <li>
-            <a href="#getOneToManyCollection">getOneToManyCollection</a>
-          </li>
-          <li>
-            <a href="#getOwningTable">getOwningTable</a>
-          </li>
-          <li>
-            <a href="#getSQLColumnAlias">getSQLColumnAlias</a>
-          </li>
-          <li>
-            <a href="#getSelectConditionStatementColumnSQL">getSelectConditionStatementColumnSQL</a>
-          </li>
-          <li>
-            <a href="#getSelectConditionStatementSQL">getSelectConditionStatementSQL</a>
-          </li>
-          <li>
-            <a href="#getSelectJoinColumnSQL">getSelectJoinColumnSQL</a>
-          </li>
-          <li>
-            <a href="#load">load</a>
-          </li>
-          <li>
-            <a href="#loadAll">loadAll</a>
-          </li>
-          <li>
-            <a href="#loadCriteria">loadCriteria</a>
-          </li>
-          <li>
-            <a href="#loadManyToManyCollection">loadManyToManyCollection</a>
-          </li>
-          <li>
-            <a href="#loadOneToManyCollection">loadOneToManyCollection</a>
-          </li>
-          <li>
-            <a href="#loadOneToOneEntity">loadOneToOneEntity</a>
-          </li>
-          <li>
-            <a href="#lock">lock</a>
-          </li>
-          <li>
-            <a href="#refresh">refresh</a>
-          </li>
-          <li>
-            <a href="#update">update</a>
+            <a href="../source/doctrine/orm/lib/Doctrine/ORM/Persisters/AbstractEntityInheritancePersister.php.xhtml#line34">Source</a>
           </li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\ORM\Persisters\</span>AbstractEntityInheritancePersister</h2>
-        <div class="file-notice">
-          <p>Base class for entity persisters that implement a certain inheritance mapping strategy.</p>
-          <p>
-            <pre>All these persisters are assumed to use a discriminator column to discriminate entity
-types in the hierarchy.</pre>
-          </p>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\ORM\Persisters\</small>AbstractEntityInheritancePersister</h1>
+        <h4>Base class for entity persisters that implement a certain inheritance mapping strategy.</h4>
+        <p>All these persisters are assumed to use a discriminator column to discriminate entity<br/>types in the hierarchy.</p>
+        <ul>
+          <li>Author: Roman Borschel &lt;roman@code-factory.org&gt;</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class AbstractEntityInheritancePersister
+                extends <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister.xhtml">BasicEntityPersister</a>
+            {<br/><ul class="none"><li>// Inherited members from <span title="Doctrine\ORM\Persisters\BasicEntityPersister">BasicEntityPersister</span></li><li>protected <span title="\Doctrine\ORM\Mapping\ClassMetadata">ClassMetadata</span> <a href="#members">$_class</a>;
+                        </li><li>protected <span title="\Doctrine\DBAL\Connection">Connection</span> <a href="#members">$_conn</a>;
+                        </li><li>protected <span title="\Doctrine\DBAL\Platforms\AbstractPlatform">AbstractPlatform</span> <a href="#members">$_platform</a>;
+                        </li><li>protected <span title="\Doctrine\ORM\EntityManager">EntityManager</span> <a href="#members">$_em</a>;
+                        </li><li>protected array <a href="#members">$_queuedInserts</a>;
+                        </li><li>protected <span title="Doctrine\ORM\Persisters\Query\ResultSetMapping">ResultSetMapping</span> <a href="#members">$_rsm</a>;
+                        </li><li>protected array <a href="#members">$_columnTypes</a>;
+                        </li><li>protected array <a href="#members">$quotedColumns</a>;
+                        </li><li>protected string <a href="#members">$_selectColumnListSql</a>;
+                        </li><li>protected string <a href="#members">$_selectJoinSql</a>;
+                        </li><li>protected integer <a href="#members">$_sqlAliasCounter</a>;
+                        </li><li>protected array <a href="#members">$_sqlTableAliases</a>;
+                        </li><li>protected <span title="\Doctrine\ORM\Mapping\QuoteStrategy">QuoteStrategy</span> <a href="#members">$quoteStrategy</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>protected void <a title="Doctrine\ORM\Persisters\AbstractEntityInheritancePersister" href="../classes/Doctrine_ORM_Persisters_AbstractEntityInheritancePersister/_prepareInsertData.xhtml">_prepareInsertData</a>()
+                    </li><li>protected abstract string <a title="Doctrine\ORM\Persisters\AbstractEntityInheritancePersister" href="../classes/Doctrine_ORM_Persisters_AbstractEntityInheritancePersister/_getDiscriminatorColumnTableName.xhtml">_getDiscriminatorColumnTableName</a>()
+                    </li><li>protected void <a title="Doctrine\ORM\Persisters\AbstractEntityInheritancePersister" href="../classes/Doctrine_ORM_Persisters_AbstractEntityInheritancePersister/_getSelectColumnSQL.xhtml">_getSelectColumnSQL</a>()
+                    </li><li>protected void <a title="Doctrine\ORM\Persisters\AbstractEntityInheritancePersister" href="../classes/Doctrine_ORM_Persisters_AbstractEntityInheritancePersister/getSelectJoinColumnSQL.xhtml">getSelectJoinColumnSQL</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Doctrine\ORM\Persisters\BasicEntityPersister">BasicEntityPersister</span></li><li>public void <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/__construct.xhtml">__construct</a>()
+                        </li><li>public ClassMetadata <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getClassMetadata.xhtml">getClassMetadata</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/addInsert.xhtml">addInsert</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/executeInserts.xhtml">executeInserts</a>()
+                        </li><li>protected void <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/assignDefaultVersionValue.xhtml">assignDefaultVersionValue</a>()
+                        </li><li>protected mixed <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/fetchVersionValue.xhtml">fetchVersionValue</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/update.xhtml">update</a>()
+                        </li><li>protected final void <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_updateTable.xhtml">_updateTable</a>()
+                        </li><li>protected void <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/deleteJoinTableRecords.xhtml">deleteJoinTableRecords</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/delete.xhtml">delete</a>()
+                        </li><li>protected array <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_prepareUpdateData.xhtml">_prepareUpdateData</a>()
+                        </li><li>protected array <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_prepareInsertData.xhtml">_prepareInsertData</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getOwningTable.xhtml">getOwningTable</a>()
+                        </li><li>public  <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/load.xhtml">load</a>()
+                        </li><li>public  <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/loadOneToOneEntity.xhtml">loadOneToOneEntity</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/refresh.xhtml">refresh</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/loadCriteria.xhtml">loadCriteria</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/loadAll.xhtml">loadAll</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getManyToManyCollection.xhtml">getManyToManyCollection</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/loadManyToManyCollection.xhtml">loadManyToManyCollection</a>()
+                        </li><li>protected string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectEntitiesSQL.xhtml">_getSelectEntitiesSQL</a>()
+                        </li><li>protected final string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getOrderBySQL.xhtml">_getOrderBySQL</a>()
+                        </li><li>protected string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectColumnListSQL.xhtml">_getSelectColumnListSQL</a>()
+                        </li><li>protected string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectColumnAssociationSQL.xhtml">_getSelectColumnAssociationSQL</a>()
+                        </li><li>protected string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectManyToManyJoinSQL.xhtml">_getSelectManyToManyJoinSQL</a>()
+                        </li><li>protected string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getInsertSQL.xhtml">_getInsertSQL</a>()
+                        </li><li>protected array <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getInsertColumnList.xhtml">_getInsertColumnList</a>()
+                        </li><li>protected void <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectColumnSQL.xhtml">_getSelectColumnSQL</a>()
+                        </li><li>protected string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSQLTableAlias.xhtml">_getSQLTableAlias</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/lock.xhtml">lock</a>()
+                        </li><li>protected string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getLockTablesSql.xhtml">getLockTablesSql</a>()
+                        </li><li>protected string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectConditionCriteriaSQL.xhtml">_getSelectConditionCriteriaSQL</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getSelectConditionStatementSQL.xhtml">getSelectConditionStatementSQL</a>()
+                        </li><li>protected string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getSelectConditionStatementColumnSQL.xhtml">getSelectConditionStatementColumnSQL</a>()
+                        </li><li>protected string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectConditionSQL.xhtml">_getSelectConditionSQL</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getOneToManyCollection.xhtml">getOneToManyCollection</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/loadOneToManyCollection.xhtml">loadOneToManyCollection</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/exists.xhtml">exists</a>()
+                        </li><li>protected string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getJoinSQLForJoinColumns.xhtml">getJoinSQLForJoinColumns</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getSQLColumnAlias.xhtml">getSQLColumnAlias</a>()
+                        </li><li>protected string <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/generateFilterConditionSQL.xhtml">generateFilterConditionSQL</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister.xhtml">Doctrine\ORM\Persisters\BasicEntityPersister</a>
+            </li>
+          </ul>
+          <h4>Extended by</h4>
+          <ul>
+            <li>
+              <a href="../classes/Doctrine_ORM_Persisters_JoinedSubclassPersister.xhtml">Doctrine\ORM\Persisters\JoinedSubclassPersister</a>
+            </li>
+            <li>
+              <a href="../classes/Doctrine_ORM_Persisters_SingleTablePersister.xhtml">Doctrine\ORM\Persisters\SingleTablePersister</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
-          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist"/>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_EntityManager.xhtml">Doctrine\ORM\EntityManager</a></span><strong> $em</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $class</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Initializes a new &lt;tt&gt;BasicEntityPersister&lt;/tt&gt; that uses the given EntityManager and persists instances of the class described by the given ClassMetadata descriptor.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$em</code> - </li>
-                <li><code>$class</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="addInsert"/>
-            <h4><span class="label public">public</span>addInsert<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds an entity to the queued insertions.<pre>The entity remains queued until  is invoked.
-</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - The entity to queue for insertion.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="delete"/>
-            <h4><span class="label public">public</span>delete<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Deletes a managed entity.<pre>The entity to delete must be managed and have a persistent identifier.
-The deletion happens instantaneously.
-
-Subclasses may override this method to customize the semantics of entity deletion.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - The entity to delete.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="executeInserts"/>
-            <h4><span class="label public">public</span>executeInserts<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Executes all queued entity insertions and returns any generated post-insert identifiers that were created as a result of the insertions.<pre>If no inserts are queued, invoking this method is a NOOP.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of any generated post-insert IDs. This will be an empty array</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="exists"/>
-            <h4><span class="label public">public</span>exists<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> $extraConditions</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the given managed entity exists in the database.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the entity exists in the database, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getClassMetadata"/>
-            <h4><span class="label public">public</span>getClassMetadata<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getManyToManyCollection"/>
-            <h4><span class="label public">public</span>getManyToManyCollection<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $assoc</strong>, <span class="param-type">invalid method call</span><strong> $sourceEntity</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $offset</strong>, <span class="param-type"><span title="int|null">int|null</span></span><strong> $limit</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get (sliced or full) elements of the given collection.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$assoc</code> - </li>
-                <li><code>$sourceEntity</code> - </li>
-                <li><code>$offset</code> - </li>
-                <li><code>$limit</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getOneToManyCollection"/>
-            <h4><span class="label public">public</span>getOneToManyCollection<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $assoc</strong>, <span class="param-type">invalid method call</span><strong> $sourceEntity</strong>, <span class="param-type">int</span><strong> $offset</strong>, <span class="param-type">int</span><strong> $limit</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return an array with (sliced or full list) of elements in the specified collection.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$assoc</code> - </li>
-                <li><code>$sourceEntity</code> - </li>
-                <li><code>$offset</code> - </li>
-                <li><code>$limit</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getOwningTable"/>
-            <h4><span class="label public">public</span>getOwningTable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the name of the table that owns the column the given field is mapped to.<pre>The default implementation in BasicEntityPersister always returns the name
-of the table the entity type of this persister is mapped to, since an entity
-is always persisted to a single table with a BasicEntityPersister.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - The field name.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The table name.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSQLColumnAlias"/>
-            <h4><span class="label public">public</span>getSQLColumnAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $columnName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets an SQL column alias for a column name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columnName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSelectConditionStatementSQL"/>
-            <h4><span class="label public">public</span>getSelectConditionStatementSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $field</strong>, <span class="param-type">mixed</span><strong> $value</strong>, <span class="param-type"><span title="array|null">array|null</span></span><strong> $assoc</strong>, <span class="param-type">string</span><strong> $comparison</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the SQL WHERE condition for matching a field with a given value.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$field</code> - </li>
-                <li><code>$value</code> - </li>
-                <li><code>$assoc</code> - </li>
-                <li><code>$comparison</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="load"/>
-            <h4><span class="label public">public</span>load<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $criteria</strong>, <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type"><span title="The">The</span></span><strong> $assoc</strong>, <span class="param-type">Array</span><strong> $hints</strong>, <span class="param-type">integer</span><strong> $lockMode</strong>, <span class="param-type">int</span><strong> $limit</strong>, <span class="param-type">Array</span><strong> $orderBy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Loads an entity by a list of field criteria.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$criteria</code> - The criteria by which to load the entity.</li>
-                <li><code>$entity</code> - The entity to load the data into. If not specified,</li>
-                <li><code>$assoc</code> - association that connects the entity to load to another entity, if any.</li>
-                <li><code>$hints</code> - Hints for entity creation.</li>
-                <li><code>$lockMode</code> - </li>
-                <li><code>$limit</code> - Limit number of results</li>
-                <li><code>$orderBy</code> - Criteria to order by</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The loaded and managed entity instance or NULL if the entity can not be found.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadAll"/>
-            <h4><span class="label public">public</span>loadAll<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $criteria</strong>, <span class="param-type">Array</span><strong> $orderBy</strong>, <span class="param-type">int</span><strong> $limit</strong>, <span class="param-type">int</span><strong> $offset</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Loads a list of entities by a list of field criteria.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$criteria</code> - </li>
-                <li><code>$orderBy</code> - </li>
-                <li><code>$limit</code> - </li>
-                <li><code>$offset</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadCriteria"/>
-            <h4><span class="label public">public</span>loadCriteria<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_Common_Collections_Criteria.xhtml">Doctrine\Common\Collections\Criteria</a></span><strong> $criteria</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Load Entities matching the given Criteria object</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$criteria</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadManyToManyCollection"/>
-            <h4><span class="label public">public</span>loadManyToManyCollection<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $assoc</strong>, <span class="param-type">invalid method call</span><strong> $sourceEntity</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_PersistentCollection.xhtml">Doctrine\ORM\PersistentCollection</a></span><strong> $coll</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Loads a collection of entities of a many-to-many association.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$assoc</code> - The association mapping of the association being loaded.</li>
-                <li><code>$sourceEntity</code> - The entity that owns the collection.</li>
-                <li><code>$coll</code> - The collection to fill.</li>
-                <li><code>$offset</code> - </li>
-                <li><code>$limit</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadOneToManyCollection"/>
-            <h4><span class="label public">public</span>loadOneToManyCollection<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $assoc</strong>, <span class="param-type">invalid method call</span><strong> $sourceEntity</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_PersistentCollection.xhtml">Doctrine\ORM\PersistentCollection</a></span><strong> $coll</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Loads a collection of entities in a one-to-many association.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$assoc</code> - </li>
-                <li><code>$sourceEntity</code> - </li>
-                <li><code>$coll</code> - The collection to load/fill.</li>
-                <li><code>$offset</code> - </li>
-                <li><code>$limit</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="loadOneToOneEntity"/>
-            <h4><span class="label public">public</span>loadOneToOneEntity<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $assoc</strong>, <span class="param-type">invalid method call</span><strong> $sourceEntity</strong>, <span class="param-type">Array</span><strong> $identifier</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Loads an entity of this persister's mapped class as part of a single-valued association from another entity.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$assoc</code> - The association to load.</li>
-                <li><code>$sourceEntity</code> - The entity that owns the association (not necessarily the "owning side").</li>
-                <li><code>$identifier</code> - The identifier of the entity to load. Must be provided if</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The loaded and managed entity instance or NULL if the entity can not be found.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="lock"/>
-            <h4><span class="label public">public</span>lock<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $criteria</strong>, <span class="param-type">int</span><strong> $lockMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Lock all rows of this entity matching the given criteria with the specified pessimistic lock mode</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$criteria</code> - </li>
-                <li><code>$lockMode</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="refresh"/>
-            <h4><span class="label public">public</span>refresh<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $id</strong>, <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">integer</span><strong> $lockMode</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Refreshes a managed entity.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - The identifier of the entity as an associative array from</li>
-                <li><code>$entity</code> - The entity to refresh.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="update"/>
-            <h4><span class="label public">public</span>update<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Updates a managed entity. The entity is updated according to its current changeset in the running UnitOfWork. If there is no changeset, nothing is updated.<pre>The data to update is retrieved through .
-Subclasses that override this method are supposed to obtain the update data
-in the same way, through .
-Subclasses are also supposed to take care of versioning when overriding this method,
-if necessary. The  method can be used to apply the data retrieved
-from  on the target tables, thereby optionally applying versioning.
-</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - The entity to update.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getDiscriminatorColumnTableName"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>_getDiscriminatorColumnTableName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the name of the table that contains the discriminator column.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The table name.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getInsertColumnList"/>
-            <h4><span class="label protected">protected</span>_getInsertColumnList<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the list of columns to put in the INSERT SQL statement.<pre>Subclasses should override this method to alter or change the list of
-columns placed in the INSERT statements used by the persister.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The list of columns.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getInsertSQL"/>
-            <h4><span class="label protected">protected</span>_getInsertSQL<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the INSERT SQL used by the persister to persist a new entity.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getOrderBySQL"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>_getOrderBySQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $orderBy</strong>, <span class="param-type">string</span><strong> $baseTableAlias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the ORDER BY SQL snippet for ordered collections.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$orderBy</code> - </li>
-                <li><code>$baseTableAlias</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getSQLTableAlias"/>
-            <h4><span class="label protected">protected</span>_getSQLTableAlias<span style="font-size:90%;">( <span class="param-type">string</span><strong> $className</strong>, <span class="param-type">string</span><strong> $assocName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the SQL table alias for the given class name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$className</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The SQL table alias.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getSelectColumnAssociationSQL"/>
-            <h4><span class="label protected">protected</span>_getSelectColumnAssociationSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $field</strong>, <span class="param-type">array</span><strong> $assoc</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $class</strong>, <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the SQL join fragment used when selecting entities from an association.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$field</code> - </li>
-                <li><code>$assoc</code> - </li>
-                <li><code>$class</code> - </li>
-                <li><code>$alias</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getSelectColumnListSQL"/>
-            <h4><span class="label protected">protected</span>_getSelectColumnListSQL<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the SQL fragment with the list of columns to select when querying for an entity in this persister.<pre>Subclasses should override this method to alter or change the select column
-list SQL fragment. Note that in the implementation of BasicEntityPersister
-the resulting SQL fragment is generated only once and cached in .
-Subclasses may or may not do the same.
-</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The SQL fragment.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getSelectColumnSQL"/>
-            <h4><span class="label protected">protected</span>_getSelectColumnSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $field</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $class</strong>, <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="_getSelectColumnSQL"/>
-            <h4><span class="label protected">protected</span>_getSelectColumnSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $field</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $class</strong>, <span class="param-type">string</span><strong> $alias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the SQL snippet of a qualified column name for the given field name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$field</code> - The field name.</li>
-                <li><code>$class</code> - The class that declares this field. The table this class is</li>
-                <li><code>$alias</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getSelectConditionCriteriaSQL"/>
-            <h4><span class="label protected">protected</span>_getSelectConditionCriteriaSQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_Common_Collections_Criteria.xhtml">Doctrine\Common\Collections\Criteria</a></span><strong> $criteria</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the Select Where Condition from a Criteria object.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$criteria</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getSelectConditionSQL"/>
-            <h4><span class="label protected">protected</span>_getSelectConditionSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $criteria</strong>, <span class="param-type"><span title="AssociationMapping">AssociationMapping</span></span><strong> $assoc</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the conditional SQL fragment used in the WHERE clause when selecting entities in this persister.<pre>Subclasses are supposed to override this method if they intend to change
-or alter the criteria by which entities are selected.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$criteria</code> - </li>
-                <li><code>$assoc</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getSelectEntitiesSQL"/>
-            <h4><span class="label protected">protected</span>_getSelectEntitiesSQL<span style="font-size:90%;">( <span class="param-type"><span title="array|\Doctrine\Common\Collections\Criteria">Criteria</span></span><strong> $criteria</strong>, <span class="param-type"><span title="AssociationMapping">AssociationMapping</span></span><strong> $assoc</strong>, <span class="param-type">integer</span><strong> $lockMode</strong>, <span class="param-type">int</span><strong> $limit</strong>, <span class="param-type">int</span><strong> $offset</strong>, <span class="param-type">Array</span><strong> $orderBy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the SELECT SQL to select one or more entities by a set of field criteria.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$criteria</code> - </li>
-                <li><code>$assoc</code> - </li>
-                <li><code>$orderBy</code> - </li>
-                <li><code>$lockMode</code> - </li>
-                <li><code>$limit</code> - </li>
-                <li><code>$offset</code> - </li>
-                <li><code>$orderBy</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getSelectManyToManyJoinSQL"/>
-            <h4><span class="label protected">protected</span>_getSelectManyToManyJoinSQL<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $manyToMany</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the SQL join fragment used when selecting entities from a many-to-many association.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$manyToMany</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_prepareInsertData"/>
-            <h4><span class="label protected">protected</span>_prepareInsertData<span style="font-size:90%;">( <span class="param-type"/><strong> $entity</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="_prepareInsertData"/>
-            <h4><span class="label protected">protected</span>_prepareInsertData<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Prepares the data changeset of a managed entity for database insertion (initial INSERT).<pre>The changeset of the entity is obtained from the currently running UnitOfWork.
-
-The default insert data preparation is the same as for updates.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - The entity for which to prepare the data.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The prepared data for the tables to update.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_prepareUpdateData"/>
-            <h4><span class="label protected">protected</span>_prepareUpdateData<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Prepares the changeset of an entity for database insertion (UPDATE).<pre>The changeset is obtained from the currently running UnitOfWork.
-
-During this preparation the array that is passed as the second parameter is filled with
-&lt;columnName&gt; =&gt; &lt;value&gt; pairs, grouped by table name.
-
-Example:
-&lt;code&gt;
-array(
-   'foo_table' =&gt; array('column1' =&gt; 'value1', 'column2' =&gt; 'value2', ...),
-   'bar_table' =&gt; array('columnX' =&gt; 'valueX', 'columnY' =&gt; 'valueY', ...),
-   ...
-)
-&lt;/code&gt;</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - The entity for which to prepare the data.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The prepared data.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_updateTable"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>_updateTable<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">string</span><strong> $quotedTableName</strong>, <span class="param-type">Array</span><strong> $updateData</strong>, <span class="param-type">boolean</span><strong> $versioned</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Performs an UPDATE statement for an entity on a specific table.<pre>The UPDATE can optionally be versioned, which requires the entity to have a version field.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - The entity object being updated.</li>
-                <li><code>$quotedTableName</code> - The quoted name of the table to apply the UPDATE on.</li>
-                <li><code>$updateData</code> - The map of columns to update (column =&gt; value).</li>
-                <li><code>$versioned</code> - Whether the UPDATE should be versioned.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="assignDefaultVersionValue"/>
-            <h4><span class="label protected">protected</span>assignDefaultVersionValue<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">mixed</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieves the default version value which was created by the preceding INSERT statement and assigns it back in to the entities version field.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - </li>
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="deleteJoinTableRecords"/>
-            <h4><span class="label protected">protected</span>deleteJoinTableRecords<span style="font-size:90%;">( <span class="param-type">array</span><strong> $identifier</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$identifier</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="fetchVersionValue"/>
-            <h4><span class="label protected">protected</span>fetchVersionValue<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\ORM\Mapping\ClassMetadata">ClassMetadata</span></span><strong> $versionedClass</strong>, <span class="param-type">mixed</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Fetch the current version value of a versioned entity.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$versionedClass</code> - </li>
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="generateFilterConditionSQL"/>
-            <h4><span class="label protected">protected</span>generateFilterConditionSQL<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $targetEntity</strong>, <span class="param-type">string</span><strong> $targetTableAlias</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Generates the filter SQL for a given entity and table alias.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$targetEntity</code> - Metadata of the target entity.</li>
-                <li><code>$targetTableAlias</code> - The table alias of the joined/selected table.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The SQL query part to add to a query.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getJoinSQLForJoinColumns"/>
-            <h4><span class="label protected">protected</span>getJoinSQLForJoinColumns<span style="font-size:90%;">( <span class="param-type">array</span><strong> $joinColumns</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Generates the appropriate join SQL for the given join column.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$joinColumns</code> - The join columns definition of an association.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>LEFT JOIN if one of the columns is nullable, INNER JOIN otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getLockTablesSql"/>
-            <h4><span class="label protected">protected</span>getLockTablesSql<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the FROM and optionally JOIN conditions to lock the entity managed by this persister.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSelectConditionStatementColumnSQL"/>
-            <h4><span class="label protected">protected</span>getSelectConditionStatementColumnSQL<span style="font-size:90%;">( <span class="param-type">string</span><strong> $field</strong>, <span class="param-type">array</span><strong> $assoc</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Build the left-hand-side of a where condition statement.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$field</code> - </li>
-                <li><code>$assoc</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSelectJoinColumnSQL"/>
-            <h4><span class="label protected">protected</span>getSelectJoinColumnSQL<span style="font-size:90%;">( <span class="param-type"/><strong> $tableAlias</strong>, <span class="param-type"/><strong> $joinColumnName</strong>, <span class="param-type"/><strong> $className</strong> )</span></h4>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">459+</td>
+            <td>Add check for platform if it supports foreign keys/cascading.</td>
+          </tr>
+          <tr>
+            <td class="nummeric">463</td>
+            <td>this only covers scenarios with no inheritance or of the same level. Is there something</td>
+          </tr>
+          <tr>
+            <td class="nummeric">666+</td>
+            <td>Check identity map? loadById method? Try to guess whether $criteria is the id?</td>
+          </tr>
+          <tr>
+            <td class="nummeric">1013+</td>
+            <td>Refactor: _getSelectSQL(...)</td>
+          </tr>
+          <tr>
+            <td class="nummeric">1096+</td>
+            <td>Rename: _getSelectColumnsSQL()</td>
+          </tr>
+          <tr>
+            <td class="nummeric">1367+</td>
+            <td>Reconsider. Binding table aliases to class names is not such a good idea.</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="_class"><strong>$_class</strong>
+                —
+                <a href="#">\Doctrine\ORM\Mapping\ClassMetadata</a><br/><span class="indent">Metadata object that describes the mapping of the mapped entity class.</span></li>
+            <li id="_columnTypes"><strong>$_columnTypes</strong>
+                —
+                array<br/><span class="indent">The map of column names to DBAL mapping types of all prepared columns used when INSERTing or UPDATEing an entity.</span></li>
+            <li id="_conn"><strong>$_conn</strong>
+                —
+                <a href="#">\Doctrine\DBAL\Connection</a><br/><span class="indent">The underlying DBAL Connection of the used EntityManager.</span></li>
+            <li id="_em"><strong>$_em</strong>
+                —
+                <a href="#">\Doctrine\ORM\EntityManager</a><br/><span class="indent">The EntityManager instance.</span></li>
+            <li id="_platform"><strong>$_platform</strong>
+                —
+                <a href="#">\Doctrine\DBAL\Platforms\AbstractPlatform</a><br/><span class="indent">The database platform.</span></li>
+            <li id="_queuedInserts"><strong>$_queuedInserts</strong>
+                —
+                array<br/><span class="indent">Queued inserts.</span></li>
+            <li id="_rsm"><strong>$_rsm</strong>
+                —
+                <a href="#">Doctrine\ORM\Persisters\Query\ResultSetMapping</a><br/><span class="indent">ResultSetMapping that is used for all queries. Is generated lazily once per request.</span></li>
+            <li id="_selectColumnListSql"><strong>$_selectColumnListSql</strong>
+                —
+                string<br/><span class="indent">The SELECT column list SQL fragment used for querying entities by this persister.</span></li>
+            <li id="_selectJoinSql"><strong>$_selectJoinSql</strong>
+                —
+                string<br/><span class="indent">The JOIN SQL fragement used to eagerly load all many-to-one and one-to-one associations configured as FETCH_EAGER, aswell as all inverse one-to-one associations.</span></li>
+            <li id="_sqlAliasCounter"><strong>$_sqlAliasCounter</strong>
+                —
+                integer<br/><span class="indent">Counter for creating unique SQL table and column aliases.</span></li>
+            <li id="_sqlTableAliases"><strong>$_sqlTableAliases</strong>
+                —
+                array<br/><span class="indent">Map from class names (FQCN) to the corresponding generated SQL table aliases.</span></li>
+            <li id="quoteStrategy"><strong>$quoteStrategy</strong>
+                —
+                <a href="#">\Doctrine\ORM\Mapping\QuoteStrategy</a><br/><span class="indent">The quote strategy.</span></li>
+            <li id="quotedColumns"><strong>$quotedColumns</strong>
+                —
+                array<br/><span class="indent">The map of quoted column names.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_getDiscriminatorColumnTableName"><a title="Doctrine\ORM\Persisters\AbstractEntityInheritancePersister" href="../classes/Doctrine_ORM_Persisters_AbstractEntityInheritancePersister/_getDiscriminatorColumnTableName.xhtml">_getDiscriminatorColumnTableName()</a>
+                — Gets the name of the table that contains the discriminator column.</li>
+            <li id="_getSelectColumnSQL"><a title="Doctrine\ORM\Persisters\AbstractEntityInheritancePersister" href="../classes/Doctrine_ORM_Persisters_AbstractEntityInheritancePersister/_getSelectColumnSQL.xhtml">_getSelectColumnSQL()</a>
+                — {@inheritdoc}</li>
+            <li id="_prepareInsertData"><a title="Doctrine\ORM\Persisters\AbstractEntityInheritancePersister" href="../classes/Doctrine_ORM_Persisters_AbstractEntityInheritancePersister/_prepareInsertData.xhtml">_prepareInsertData()</a>
+                — {@inheritdoc}</li>
+            <li id="getSelectJoinColumnSQL">
+              <a title="Doctrine\ORM\Persisters\AbstractEntityInheritancePersister" href="../classes/Doctrine_ORM_Persisters_AbstractEntityInheritancePersister/getSelectJoinColumnSQL.xhtml">getSelectJoinColumnSQL()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister.xhtml">Doctrine\ORM\Persisters\BasicEntityPersister</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="_getInsertColumnList"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getInsertColumnList.xhtml">_getInsertColumnList()</a>
+                — Gets the list of columns to put in the INSERT SQL statement.</li>
+            <li id="_getInsertSQL"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getInsertSQL.xhtml">_getInsertSQL()</a>
+                — Gets the INSERT SQL used by the persister to persist a new entity.</li>
+            <li id="_getOrderBySQL"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getOrderBySQL.xhtml">_getOrderBySQL()</a>
+                — Gets the ORDER BY SQL snippet for ordered collections.</li>
+            <li id="_getSQLTableAlias"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSQLTableAlias.xhtml">_getSQLTableAlias()</a>
+                — Gets the SQL table alias for the given class name.</li>
+            <li id="_getSelectColumnAssociationSQL"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectColumnAssociationSQL.xhtml">_getSelectColumnAssociationSQL()</a>
+                — Gets the SQL join fragment used when selecting entities from an association.</li>
+            <li id="_getSelectColumnListSQL"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectColumnListSQL.xhtml">_getSelectColumnListSQL()</a>
+                — Gets the SQL fragment with the list of columns to select when querying for an entity in this persister.</li>
+            <li id="_getSelectColumnSQL"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectColumnSQL.xhtml">_getSelectColumnSQL()</a>
+                — Gets the SQL snippet of a qualified column name for the given field name.</li>
+            <li id="_getSelectConditionCriteriaSQL"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectConditionCriteriaSQL.xhtml">_getSelectConditionCriteriaSQL()</a>
+                — Get the Select Where Condition from a Criteria object.</li>
+            <li id="_getSelectConditionSQL"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectConditionSQL.xhtml">_getSelectConditionSQL()</a>
+                — Gets the conditional SQL fragment used in the WHERE clause when selecting entities in this persister.</li>
+            <li id="_getSelectEntitiesSQL"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectEntitiesSQL.xhtml">_getSelectEntitiesSQL()</a>
+                — Gets the SELECT SQL to select one or more entities by a set of field criteria.</li>
+            <li id="_getSelectManyToManyJoinSQL"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_getSelectManyToManyJoinSQL.xhtml">_getSelectManyToManyJoinSQL()</a>
+                — Gets the SQL join fragment used when selecting entities from a many-to-many association.</li>
+            <li id="_prepareInsertData"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_prepareInsertData.xhtml">_prepareInsertData()</a>
+                — Prepares the data changeset of a managed entity for database insertion (initial INSERT).</li>
+            <li id="_prepareUpdateData"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_prepareUpdateData.xhtml">_prepareUpdateData()</a>
+                — Prepares the changeset of an entity for database insertion (UPDATE).</li>
+            <li id="_updateTable"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/_updateTable.xhtml">_updateTable()</a>
+                — Performs an UPDATE statement for an entity on a specific table.</li>
+            <li id="assignDefaultVersionValue"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/assignDefaultVersionValue.xhtml">assignDefaultVersionValue()</a>
+                — Retrieves the default version value which was created by the preceding INSERT statement and assigns it back in to the entities version field.</li>
+            <li id="deleteJoinTableRecords">
+              <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/deleteJoinTableRecords.xhtml">deleteJoinTableRecords()</a>
+            </li>
+            <li id="fetchVersionValue"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/fetchVersionValue.xhtml">fetchVersionValue()</a>
+                — Fetch the current version value of a versioned entity.</li>
+            <li id="generateFilterConditionSQL"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/generateFilterConditionSQL.xhtml">generateFilterConditionSQL()</a>
+                — Generates the filter SQL for a given entity and table alias.</li>
+            <li id="getJoinSQLForJoinColumns"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getJoinSQLForJoinColumns.xhtml">getJoinSQLForJoinColumns()</a>
+                — Generates the appropriate join SQL for the given join column.</li>
+            <li id="getLockTablesSql"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getLockTablesSql.xhtml">getLockTablesSql()</a>
+                — Get the FROM and optionally JOIN conditions to lock the entity managed by this persister.</li>
+            <li id="getSelectConditionStatementColumnSQL"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getSelectConditionStatementColumnSQL.xhtml">getSelectConditionStatementColumnSQL()</a>
+                — Build the left-hand-side of a where condition statement.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="addInsert"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/addInsert.xhtml">addInsert()</a>
+                — Adds an entity to the queued insertions.</li>
+            <li id="delete"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/delete.xhtml">delete()</a>
+                — Deletes a managed entity.</li>
+            <li id="executeInserts"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/executeInserts.xhtml">executeInserts()</a>
+                — Executes all queued entity insertions and returns any generated post-insert identifiers that were created as a result of the insertions.</li>
+            <li id="exists"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/exists.xhtml">exists()</a>
+                — Checks whether the given managed entity exists in the database.</li>
+            <li id="getClassMetadata">
+              <a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getClassMetadata.xhtml">getClassMetadata()</a>
+            </li>
+            <li id="getManyToManyCollection"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getManyToManyCollection.xhtml">getManyToManyCollection()</a>
+                — Get (sliced or full) elements of the given collection.</li>
+            <li id="getOneToManyCollection"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getOneToManyCollection.xhtml">getOneToManyCollection()</a>
+                — Return an array with (sliced or full list) of elements in the specified collection.</li>
+            <li id="getOwningTable"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getOwningTable.xhtml">getOwningTable()</a>
+                — Gets the name of the table that owns the column the given field is mapped to.</li>
+            <li id="getSQLColumnAlias"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getSQLColumnAlias.xhtml">getSQLColumnAlias()</a>
+                — Gets an SQL column alias for a column name.</li>
+            <li id="getSelectConditionStatementSQL"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/getSelectConditionStatementSQL.xhtml">getSelectConditionStatementSQL()</a>
+                — Get the SQL WHERE condition for matching a field with a given value.</li>
+            <li id="load"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/load.xhtml">load()</a>
+                — Loads an entity by a list of field criteria.</li>
+            <li id="loadAll"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/loadAll.xhtml">loadAll()</a>
+                — Loads a list of entities by a list of field criteria.</li>
+            <li id="loadCriteria"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/loadCriteria.xhtml">loadCriteria()</a>
+                — Load Entities matching the given Criteria object</li>
+            <li id="loadManyToManyCollection"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/loadManyToManyCollection.xhtml">loadManyToManyCollection()</a>
+                — Loads a collection of entities of a many-to-many association.</li>
+            <li id="loadOneToManyCollection"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/loadOneToManyCollection.xhtml">loadOneToManyCollection()</a>
+                — Loads a collection of entities in a one-to-many association.</li>
+            <li id="loadOneToOneEntity"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/loadOneToOneEntity.xhtml">loadOneToOneEntity()</a>
+                — Loads an entity of this persister's mapped class as part of a single-valued association from another entity.</li>
+            <li id="lock"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/lock.xhtml">lock()</a>
+                — Lock all rows of this entity matching the given criteria with the specified pessimistic lock mode</li>
+            <li id="refresh"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/refresh.xhtml">refresh()</a>
+                — Refreshes a managed entity.</li>
+            <li id="update"><a title="Doctrine\ORM\Persisters\BasicEntityPersister" href="../classes/Doctrine_ORM_Persisters_BasicEntityPersister/update.xhtml">update()</a>
+                — Updates a managed entity. The entity is updated according to its current changeset in the running UnitOfWork. If there is no changeset, nothing is updated.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

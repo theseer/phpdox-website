@@ -1,1141 +1,338 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Paginator\Paginator - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Paginator\Paginator</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Paginator">Zend\Paginator</a>
+          </li>
+          <li class="separator">Paginator</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#CACHE_TAG_PREFIX">CACHE_TAG_PREFIX</a>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Paginator/Paginator.php.xhtml#line26">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
-        <ul>
-          <li>
-            <a href="#adapters">$adapters</a>
-          </li>
-          <li>
-            <a href="#config">$config</a>
-          </li>
-          <li>
-            <a href="#defaultScrollingStyle">$defaultScrollingStyle</a>
-          </li>
-          <li>
-            <a href="#defaultItemCountPerPage">$defaultItemCountPerPage</a>
-          </li>
-          <li>
-            <a href="#scrollingStyles">$scrollingStyles</a>
-          </li>
-          <li>
-            <a href="#cache">$cache</a>
-          </li>
-          <li>
-            <a href="#cacheEnabled">$cacheEnabled</a>
-          </li>
-          <li>
-            <a href="#adapter">$adapter</a>
-          </li>
-          <li>
-            <a href="#currentItemCount">$currentItemCount</a>
-          </li>
-          <li>
-            <a href="#currentItems">$currentItems</a>
-          </li>
-          <li>
-            <a href="#currentPageNumber">$currentPageNumber</a>
-          </li>
-          <li>
-            <a href="#filter">$filter</a>
-          </li>
-          <li>
-            <a href="#itemCountPerPage">$itemCountPerPage</a>
-          </li>
-          <li>
-            <a href="#pageCount">$pageCount</a>
-          </li>
-          <li>
-            <a href="#pageRange">$pageRange</a>
-          </li>
-          <li>
-            <a href="#pages">$pages</a>
-          </li>
-          <li>
-            <a href="#view">$view</a>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#__toString">__toString</a>
-          </li>
-          <li>
-            <a href="#_calculatePageCount">_calculatePageCount</a>
-          </li>
-          <li>
-            <a href="#_createPages">_createPages</a>
-          </li>
-          <li>
-            <a href="#_getCacheId">_getCacheId</a>
-          </li>
-          <li>
-            <a href="#_getCacheInternalId">_getCacheInternalId</a>
-          </li>
-          <li>
-            <a href="#_loadScrollingStyle">_loadScrollingStyle</a>
-          </li>
-          <li>
-            <a href="#cacheEnabled">cacheEnabled</a>
-          </li>
-          <li>
-            <a href="#clearPageItemCache">clearPageItemCache</a>
-          </li>
-          <li>
-            <a href="#count">count</a>
-          </li>
-          <li>
-            <a href="#getAbsoluteItemNumber">getAbsoluteItemNumber</a>
-          </li>
-          <li>
-            <a href="#getAdapter">getAdapter</a>
-          </li>
-          <li>
-            <a href="#getCurrentItemCount">getCurrentItemCount</a>
-          </li>
-          <li>
-            <a href="#getCurrentItems">getCurrentItems</a>
-          </li>
-          <li>
-            <a href="#getCurrentPageNumber">getCurrentPageNumber</a>
-          </li>
-          <li>
-            <a href="#getDefaultItemCountPerPage">getDefaultItemCountPerPage</a>
-          </li>
-          <li>
-            <a href="#getDefaultScrollingStyle">getDefaultScrollingStyle</a>
-          </li>
-          <li>
-            <a href="#getFilter">getFilter</a>
-          </li>
-          <li>
-            <a href="#getItem">getItem</a>
-          </li>
-          <li>
-            <a href="#getItemCount">getItemCount</a>
-          </li>
-          <li>
-            <a href="#getItemCountPerPage">getItemCountPerPage</a>
-          </li>
-          <li>
-            <a href="#getItemsByPage">getItemsByPage</a>
-          </li>
-          <li>
-            <a href="#getIterator">getIterator</a>
-          </li>
-          <li>
-            <a href="#getPageItemCache">getPageItemCache</a>
-          </li>
-          <li>
-            <a href="#getPageRange">getPageRange</a>
-          </li>
-          <li>
-            <a href="#getPages">getPages</a>
-          </li>
-          <li>
-            <a href="#getPagesInRange">getPagesInRange</a>
-          </li>
-          <li>
-            <a href="#getScrollingStylePluginManager">getScrollingStylePluginManager</a>
-          </li>
-          <li>
-            <a href="#getTotalItemCount">getTotalItemCount</a>
-          </li>
-          <li>
-            <a href="#getView">getView</a>
-          </li>
-          <li>
-            <a href="#normalizeItemNumber">normalizeItemNumber</a>
-          </li>
-          <li>
-            <a href="#normalizePageNumber">normalizePageNumber</a>
-          </li>
-          <li>
-            <a href="#render">render</a>
-          </li>
-          <li>
-            <a href="#setCache">setCache</a>
-          </li>
-          <li>
-            <a href="#setCacheEnabled">setCacheEnabled</a>
-          </li>
-          <li>
-            <a href="#setCurrentPageNumber">setCurrentPageNumber</a>
-          </li>
-          <li>
-            <a href="#setDefaultItemCountPerPage">setDefaultItemCountPerPage</a>
-          </li>
-          <li>
-            <a href="#setDefaultScrollingStyle">setDefaultScrollingStyle</a>
-          </li>
-          <li>
-            <a href="#setFilter">setFilter</a>
-          </li>
-          <li>
-            <a href="#setGlobalConfig">setGlobalConfig</a>
-          </li>
-          <li>
-            <a href="#setItemCountPerPage">setItemCountPerPage</a>
-          </li>
-          <li>
-            <a href="#setPageRange">setPageRange</a>
-          </li>
-          <li>
-            <a href="#setScrollingStylePluginManager">setScrollingStylePluginManager</a>
-          </li>
-          <li>
-            <a href="#setView">setView</a>
-          </li>
-          <li>
-            <a href="#toJson">toJson</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Paginator\</span>Paginator</h2>
-        <div class="file-notice">
-          <p/>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Paginator\</small>Paginator</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Paginator
+                implements
+                <a title="Countable" href="../interfaces/Countable.xhtml">Countable</a>,<a title="IteratorAggregate" href="../interfaces/IteratorAggregate.xhtml">IteratorAggregate</a>
+            {<br/><ul class="none"><li>// constants</li><li>const CACHE_TAG_PREFIX = 'Zend_Paginator_';</li></ul><ul class="none"><li>// members</li><li>protected <span title="Zend\Paginator\AdapterPluginManager">AdapterPluginManager</span> <a href="#members">$adapters</a>;
+                    </li><li>protected <span title="Zend\Paginator\array|null">array|null</span> <a href="#members">$config</a>;
+                    </li><li>protected string <a href="#members">$defaultScrollingStyle</a>;
+                    </li><li>protected integer <a href="#members">$defaultItemCountPerPage</a>;
+                    </li><li>protected <span title="Zend\Paginator\ScrollingStylePluginManager">ScrollingStylePluginManager</span> <a href="#members">$scrollingStyles</a>;
+                    </li><li>protected <span title="Zend\Cache\Storage\StorageInterface">StorageInterface</span> <a href="#members">$cache</a>;
+                    </li><li>protected <span title="Zend\Paginator\bool">bool</span> <a href="#members">$cacheEnabled</a>;
+                    </li><li>protected <span title="Zend\Paginator\Adapter\AdapterInterface">AdapterInterface</span> <a href="#members">$adapter</a>;
+                    </li><li>protected int <a href="#members">$currentItemCount</a>;
+                    </li><li>protected <span title="Traversable">Traversable</span> <a href="#members">$currentItems</a>;
+                    </li><li>protected integer <a href="#members">$currentPageNumber</a>;
+                    </li><li>protected <span title="Zend\Filter\FilterInterface">FilterInterface</span> <a href="#members">$filter</a>;
+                    </li><li>protected int <a href="#members">$itemCountPerPage</a>;
+                    </li><li>protected int <a href="#members">$pageCount</a>;
+                    </li><li>protected integer <a href="#members">$pageRange</a>;
+                    </li><li>protected array <a href="#members">$pages</a>;
+                    </li><li>protected <span title="\Zend\View\Renderer\RendererInterface">RendererInterface</span> <a href="#members">$view</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public static void <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setGlobalConfig.xhtml">setGlobalConfig</a>()
+                    </li><li>public static string <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getDefaultScrollingStyle.xhtml">getDefaultScrollingStyle</a>()
+                    </li><li>public static int <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getDefaultItemCountPerPage.xhtml">getDefaultItemCountPerPage</a>()
+                    </li><li>public static void <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setDefaultItemCountPerPage.xhtml">setDefaultItemCountPerPage</a>()
+                    </li><li>public static void <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setCache.xhtml">setCache</a>()
+                    </li><li>public static void <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setDefaultScrollingStyle.xhtml">setDefaultScrollingStyle</a>()
+                    </li><li>public static void <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setScrollingStylePluginManager.xhtml">setScrollingStylePluginManager</a>()
+                    </li><li>public static ScrollingStylePluginManager <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getScrollingStylePluginManager.xhtml">getScrollingStylePluginManager</a>()
+                    </li><li>public void <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/__construct.xhtml">__construct</a>()
+                    </li><li>public string <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/__toString.xhtml">__toString</a>()
+                    </li><li>public Paginator <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setCacheEnabled.xhtml">setCacheEnabled</a>()
+                    </li><li>public int <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/count.xhtml">count</a>()
+                    </li><li>public int <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getTotalItemCount.xhtml">getTotalItemCount</a>()
+                    </li><li>public Paginator <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/clearPageItemCache.xhtml">clearPageItemCache</a>()
+                    </li><li>public int <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getAbsoluteItemNumber.xhtml">getAbsoluteItemNumber</a>()
+                    </li><li>public AdapterInterface <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getAdapter.xhtml">getAdapter</a>()
+                    </li><li>public int <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getCurrentItemCount.xhtml">getCurrentItemCount</a>()
+                    </li><li>public Traversable <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getCurrentItems.xhtml">getCurrentItems</a>()
+                    </li><li>public int <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getCurrentPageNumber.xhtml">getCurrentPageNumber</a>()
+                    </li><li>public Paginator <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setCurrentPageNumber.xhtml">setCurrentPageNumber</a>()
+                    </li><li>public FilterInterface <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getFilter.xhtml">getFilter</a>()
+                    </li><li>public Paginator <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setFilter.xhtml">setFilter</a>()
+                    </li><li>public mixed <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getItem.xhtml">getItem</a>()
+                    </li><li>public int <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getItemCountPerPage.xhtml">getItemCountPerPage</a>()
+                    </li><li>public Paginator <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setItemCountPerPage.xhtml">setItemCountPerPage</a>()
+                    </li><li>public int <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getItemCount.xhtml">getItemCount</a>()
+                    </li><li>public mixed <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getItemsByPage.xhtml">getItemsByPage</a>()
+                    </li><li>public Traversable <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getIterator.xhtml">getIterator</a>()
+                    </li><li>public int <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getPageRange.xhtml">getPageRange</a>()
+                    </li><li>public Paginator <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setPageRange.xhtml">setPageRange</a>()
+                    </li><li>public array <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getPages.xhtml">getPages</a>()
+                    </li><li>public array <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getPagesInRange.xhtml">getPagesInRange</a>()
+                    </li><li>public array <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getPageItemCache.xhtml">getPageItemCache</a>()
+                    </li><li>public RendererInterface|null <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getView.xhtml">getView</a>()
+                    </li><li>public Paginator <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setView.xhtml">setView</a>()
+                    </li><li>public int <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/normalizeItemNumber.xhtml">normalizeItemNumber</a>()
+                    </li><li>public int <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/normalizePageNumber.xhtml">normalizePageNumber</a>()
+                    </li><li>public string <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/render.xhtml">render</a>()
+                    </li><li>public string <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/toJson.xhtml">toJson</a>()
+                    </li><li>protected bool <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/cacheEnabled.xhtml">cacheEnabled</a>()
+                    </li><li>protected string <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/_getCacheId.xhtml">_getCacheId</a>()
+                    </li><li>protected string <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/_getCacheInternalId.xhtml">_getCacheInternalId</a>()
+                    </li><li>protected int <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/_calculatePageCount.xhtml">_calculatePageCount</a>()
+                    </li><li>protected stdClass <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/_createPages.xhtml">_createPages</a>()
+                    </li><li>protected ScrollingStyleInterface <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/_loadScrollingStyle.xhtml">_loadScrollingStyle</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Countable.xhtml">Countable</a>
+            </li>
+            <li>
+              <a href="../interfaces/IteratorAggregate.xhtml">IteratorAggregate</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Countable.xhtml">Countable</a>
-          </li>
-          <li>
-            <a href="../interfaces/IteratorAggregate.xhtml">IteratorAggregate</a>
-          </li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="CACHE_TAG_PREFIX"/>CACHE_TAG_PREFIX = 'Zend_Paginator_'<em> </em><p><li>The cache tag prefix used to namespace Paginator results in the cache</li></p><hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="adapters"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $adapters</h4>
-            <ul class="varlist">
-              <li>Adapter plugin manager</li>
-            </ul>
-          </li>
-          <li>
-            <a name="config"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $config</h4>
-            <ul class="varlist">
-              <li>Configuration file</li>
-            </ul>
-          </li>
-          <li>
-            <a name="defaultScrollingStyle"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $defaultScrollingStyle</h4>
-            <ul class="varlist">
-              <li>Default scrolling style</li>
-            </ul>
-          </li>
-          <li>
-            <a name="defaultItemCountPerPage"/>
-            <h4><span class="label protected">protected</span>int 
-                
-                $defaultItemCountPerPage</h4>
-            <ul class="varlist">
-              <li>Default item count per page</li>
-            </ul>
-          </li>
-          <li>
-            <a name="scrollingStyles"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $scrollingStyles</h4>
-            <ul class="varlist">
-              <li>Scrolling style plugin manager</li>
-            </ul>
-          </li>
-          <li>
-            <a name="cache"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $cache</h4>
-            <ul class="varlist">
-              <li>Cache object</li>
-            </ul>
-          </li>
-          <li>
-            <a name="cacheEnabled"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $cacheEnabled</h4>
-            <ul class="varlist">
-              <li>Enable or disable the cache by Zend\Paginator\Paginator instance</li>
-            </ul>
-          </li>
-          <li>
-            <a name="adapter"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $adapter</h4>
-            <ul class="varlist">
-              <li>Adapter</li>
-            </ul>
-          </li>
-          <li>
-            <a name="currentItemCount"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $currentItemCount</h4>
-            <ul class="varlist">
-              <li>Number of items in the current page</li>
-            </ul>
-          </li>
-          <li>
-            <a name="currentItems"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $currentItems</h4>
-            <ul class="varlist">
-              <li>Current page items</li>
-            </ul>
-          </li>
-          <li>
-            <a name="currentPageNumber"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $currentPageNumber</h4>
-            <ul class="varlist">
-              <li>Current page number (starting from 1)</li>
-            </ul>
-          </li>
-          <li>
-            <a name="filter"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $filter</h4>
-            <ul class="varlist">
-              <li>Result filter</li>
-            </ul>
-          </li>
-          <li>
-            <a name="itemCountPerPage"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $itemCountPerPage</h4>
-            <ul class="varlist">
-              <li>Number of items per page</li>
-            </ul>
-          </li>
-          <li>
-            <a name="pageCount"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $pageCount</h4>
-            <ul class="varlist">
-              <li>Number of pages</li>
-            </ul>
-          </li>
-          <li>
-            <a name="pageRange"/>
-            <h4><span class="label protected">protected</span>integer 
-                
-                $pageRange</h4>
-            <ul class="varlist">
-              <li>Number of local pages (i.e., the number of discrete page numbers that will be displayed, including the current page number)</li>
-            </ul>
-          </li>
-          <li>
-            <a name="pages"/>
-            <h4><span class="label protected">protected</span>array 
-                
-                $pages</h4>
-            <ul class="varlist">
-              <li>Pages</li>
-            </ul>
-          </li>
-          <li>
-            <a name="view"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $view</h4>
-            <ul class="varlist">
-              <li>View instance used for self rendering</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><span title="AdapterInterface|AdapterAggregateInterface">AdapterInterface|AdapterAggregateInterface</span></span><strong> $adapter</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Constructor.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$adapter</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__toString"/>
-            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Serializes the object as a string.  Proxies to {@link render()}.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="clearPageItemCache"/>
-            <h4><span class="label public">public</span>clearPageItemCache<span style="font-size:90%;">( <span class="param-type">int</span><strong> $pageNumber</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Clear the page item cache.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$pageNumber</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="count"/>
-            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the number of pages.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAbsoluteItemNumber"/>
-            <h4><span class="label public">public</span>getAbsoluteItemNumber<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $relativeItemNumber</strong>, <span class="param-type">integer</span><strong> $pageNumber</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the absolute item number for the specified item.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$relativeItemNumber</code> - Relative item number</li>
-                <li><code>$pageNumber</code> - Page number</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAdapter"/>
-            <h4><span class="label public">public</span>getAdapter<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the adapter.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCurrentItemCount"/>
-            <h4><span class="label public">public</span>getCurrentItemCount<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the number of items for the current page.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCurrentItems"/>
-            <h4><span class="label public">public</span>getCurrentItems<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the items for the current page.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCurrentPageNumber"/>
-            <h4><span class="label public">public</span>getCurrentPageNumber<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the current page number.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getDefaultItemCountPerPage"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getDefaultItemCountPerPage<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the default item count per page</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getDefaultScrollingStyle"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getDefaultScrollingStyle<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the default scrolling style.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFilter"/>
-            <h4><span class="label public">public</span>getFilter<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the filter</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getItem"/>
-            <h4><span class="label public">public</span>getItem<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $itemNumber</strong>, <span class="param-type">integer</span><strong> $pageNumber</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns an item from a page.  The current page is used if there's no page specified.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$itemNumber</code> - Item number (1 to itemCountPerPage)</li>
-                <li><code>$pageNumber</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getItemCount"/>
-            <h4><span class="label public">public</span>getItemCount<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $items</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the number of items in a collection.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$items</code> - Items</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getItemCountPerPage"/>
-            <h4><span class="label public">public</span>getItemCountPerPage<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the number of items per page.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getItemsByPage"/>
-            <h4><span class="label public">public</span>getItemsByPage<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $pageNumber</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the items for a given page.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$pageNumber</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getIterator"/>
-            <h4><span class="label public">public</span>getIterator<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns a foreach-compatible iterator.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPageItemCache"/>
-            <h4><span class="label public">public</span>getPageItemCache<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the page item cache.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPageRange"/>
-            <h4><span class="label public">public</span>getPageRange<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the page range (see property declaration above).</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPages"/>
-            <h4><span class="label public">public</span>getPages<span style="font-size:90%;">( <span class="param-type">string</span><strong> $scrollingStyle</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the page collection.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$scrollingStyle</code> - Scrolling style</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPagesInRange"/>
-            <h4><span class="label public">public</span>getPagesInRange<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $lowerBound</strong>, <span class="param-type">integer</span><strong> $upperBound</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns a subset of pages within a given range.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$lowerBound</code> - Lower bound of the range</li>
-                <li><code>$upperBound</code> - Upper bound of the range</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getScrollingStylePluginManager"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getScrollingStylePluginManager<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the scrolling style manager.  If it doesn't exist it's created.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTotalItemCount"/>
-            <h4><span class="label public">public</span>getTotalItemCount<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the total number of items available.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getView"/>
-            <h4><span class="label public">public</span>getView<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieves the view instance.<pre>If none registered, instantiates a PhpRenderer instance.</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="normalizeItemNumber"/>
-            <h4><span class="label public">public</span>normalizeItemNumber<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $itemNumber</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Brings the item number in range of the page.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$itemNumber</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="normalizePageNumber"/>
-            <h4><span class="label public">public</span>normalizePageNumber<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $pageNumber</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Brings the page number in range of the paginator.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$pageNumber</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="render"/>
-            <h4><span class="label public">public</span>render<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Paginator\View\Renderer\RendererInterface">RendererInterface</span></span><strong> $view</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Renders the paginator.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$view</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setCache"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>setCache<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Cache_Storage_StorageInterface.xhtml">Zend\Cache\Storage\StorageInterface</a></span><strong> $cache</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a cache object</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$cache</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setCacheEnabled"/>
-            <h4><span class="label public">public</span>setCacheEnabled<span style="font-size:90%;">( <span class="param-type"><span title="bool">bool</span></span><strong> $enable</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Enables/Disables the cache for this instance</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$enable</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setCurrentPageNumber"/>
-            <h4><span class="label public">public</span>setCurrentPageNumber<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $pageNumber</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the current page number.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$pageNumber</code> - Page number</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>$this</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setDefaultItemCountPerPage"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>setDefaultItemCountPerPage<span style="font-size:90%;">( <span class="param-type">int</span><strong> $count</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the default item count per page</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$count</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setDefaultScrollingStyle"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>setDefaultScrollingStyle<span style="font-size:90%;">( <span class="param-type">string</span><strong> $scrollingStyle</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the default scrolling style.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$scrollingStyle</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setFilter"/>
-            <h4><span class="label public">public</span>setFilter<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Zend_Filter_FilterInterface.xhtml">Zend\Filter\FilterInterface</a></span><strong> $filter</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set a filter chain</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$filter</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setGlobalConfig"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>setGlobalConfig<span style="font-size:90%;">( <span class="param-type"><span title="array|\Traversable">Traversable</span></span><strong> $config</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set a global config</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$config</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setItemCountPerPage"/>
-            <h4><span class="label public">public</span>setItemCountPerPage<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $itemCountPerPage</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the number of items per page.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$itemCountPerPage</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>$this</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setPageRange"/>
-            <h4><span class="label public">public</span>setPageRange<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $pageRange</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the page range (see property declaration above).</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$pageRange</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>$this</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setScrollingStylePluginManager"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>setScrollingStylePluginManager<span style="font-size:90%;">( <span class="param-type"/><strong> $scrollingAdapters</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="setView"/>
-            <h4><span class="label public">public</span>setView<span style="font-size:90%;">( <span class="param-type"><span title="Zend\Paginator\View\Renderer\RendererInterface">RendererInterface</span></span><strong> $view</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the view object.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$view</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="toJson"/>
-            <h4><span class="label public">public</span>toJson<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the items of the current page as JSON.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_calculatePageCount"/>
-            <h4><span class="label protected">protected</span>_calculatePageCount<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Calculates the page count.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_createPages"/>
-            <h4><span class="label protected">protected</span>_createPages<span style="font-size:90%;">( <span class="param-type">string</span><strong> $scrollingStyle</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Creates the page collection.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$scrollingStyle</code> - Scrolling style</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getCacheId"/>
-            <h4><span class="label protected">protected</span>_getCacheId<span style="font-size:90%;">( <span class="param-type">int</span><strong> $page</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Makes an Id for the cache Depends on the adapter object and the page number<pre>Used to store item in cache from that Paginator instance
- and that current page</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$page</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getCacheInternalId"/>
-            <h4><span class="label protected">protected</span>_getCacheInternalId<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the internal cache id Depends on the adapter and the item count per page<pre>Used to tag that unique Paginator instance in cache</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_loadScrollingStyle"/>
-            <h4><span class="label protected">protected</span>_loadScrollingStyle<span style="font-size:90%;">( <span class="param-type">string</span><strong> $scrollingStyle</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Loads a scrolling style.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$scrollingStyle</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="cacheEnabled"/>
-            <h4><span class="label protected">protected</span>cacheEnabled<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Tells if there is an active cache object and if the cache has not been disabled</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="CACHE_TAG_PREFIX">CACHE_TAG_PREFIX</td>
+              <td>'Zend_Paginator_'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="adapter"><strong>$adapter</strong>
+                —
+                <a href="#">Zend\Paginator\Adapter\AdapterInterface</a><br/><span class="indent">Adapter</span></li>
+            <li id="adapters"><strong>$adapters</strong>
+                —
+                <a href="#">Zend\Paginator\AdapterPluginManager</a><br/><span class="indent">Adapter plugin manager</span></li>
+            <li id="cache"><strong>$cache</strong>
+                —
+                <a href="#">Zend\Cache\Storage\StorageInterface</a><br/><span class="indent">Cache object</span></li>
+            <li id="cacheEnabled"><strong>$cacheEnabled</strong>
+                —
+                <a href="#">Zend\Paginator\bool</a><br/><span class="indent">Enable or disable the cache by Zend\Paginator\Paginator instance</span></li>
+            <li id="config"><strong>$config</strong>
+                —
+                <a href="#">Zend\Paginator\array|null</a><br/><span class="indent">Configuration file</span></li>
+            <li id="currentItemCount"><strong>$currentItemCount</strong>
+                —
+                int<br/><span class="indent">Number of items in the current page</span></li>
+            <li id="currentItems"><strong>$currentItems</strong>
+                —
+                <a href="#">Traversable</a><br/><span class="indent">Current page items</span></li>
+            <li id="currentPageNumber"><strong>$currentPageNumber</strong>
+                —
+                int<br/><span class="indent">Current page number (starting from 1)</span></li>
+            <li id="defaultItemCountPerPage"><strong>$defaultItemCountPerPage</strong>
+                —
+                int<br/><span class="indent">Default item count per page</span></li>
+            <li id="defaultScrollingStyle"><strong>$defaultScrollingStyle</strong>
+                —
+                string<br/><span class="indent">Default scrolling style</span></li>
+            <li id="filter"><strong>$filter</strong>
+                —
+                <a href="#">Zend\Filter\FilterInterface</a><br/><span class="indent">Result filter</span></li>
+            <li id="itemCountPerPage"><strong>$itemCountPerPage</strong>
+                —
+                int<br/><span class="indent">Number of items per page</span></li>
+            <li id="pageCount"><strong>$pageCount</strong>
+                —
+                int<br/><span class="indent">Number of pages</span></li>
+            <li id="pageRange"><strong>$pageRange</strong>
+                —
+                int<br/><span class="indent">Number of local pages (i.e., the number of discrete page numbers that will be displayed, including the current page number)</span></li>
+            <li id="pages"><strong>$pages</strong>
+                —
+                array<br/><span class="indent">Pages</span></li>
+            <li id="scrollingStyles"><strong>$scrollingStyles</strong>
+                —
+                <a href="#">Zend\Paginator\ScrollingStylePluginManager</a><br/><span class="indent">Scrolling style plugin manager</span></li>
+            <li id="view"><strong>$view</strong>
+                —
+                <a href="#">\Zend\View\Renderer\RendererInterface</a><br/><span class="indent">View instance used for self rendering</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_calculatePageCount"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/_calculatePageCount.xhtml">_calculatePageCount()</a>
+                — Calculates the page count.</li>
+            <li id="_createPages"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/_createPages.xhtml">_createPages()</a>
+                — Creates the page collection.</li>
+            <li id="_getCacheId"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/_getCacheId.xhtml">_getCacheId()</a>
+                — Makes an Id for the cache Depends on the adapter object and the page number</li>
+            <li id="_getCacheInternalId"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/_getCacheInternalId.xhtml">_getCacheInternalId()</a>
+                — Get the internal cache id Depends on the adapter and the item count per page</li>
+            <li id="_loadScrollingStyle"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/_loadScrollingStyle.xhtml">_loadScrollingStyle()</a>
+                — Loads a scrolling style.</li>
+            <li id="cacheEnabled"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/cacheEnabled.xhtml">cacheEnabled()</a>
+                — Tells if there is an active cache object and if the cache has not been disabled</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/__construct.xhtml">__construct()</a>
+                — Constructor.</li>
+            <li id="__toString"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/__toString.xhtml">__toString()</a>
+                — Serializes the object as a string.  Proxies to {@link render()}.</li>
+            <li id="clearPageItemCache"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/clearPageItemCache.xhtml">clearPageItemCache()</a>
+                — Clear the page item cache.</li>
+            <li id="count"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/count.xhtml">count()</a>
+                — Returns the number of pages.</li>
+            <li id="getAbsoluteItemNumber"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getAbsoluteItemNumber.xhtml">getAbsoluteItemNumber()</a>
+                — Returns the absolute item number for the specified item.</li>
+            <li id="getAdapter"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getAdapter.xhtml">getAdapter()</a>
+                — Returns the adapter.</li>
+            <li id="getCurrentItemCount"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getCurrentItemCount.xhtml">getCurrentItemCount()</a>
+                — Returns the number of items for the current page.</li>
+            <li id="getCurrentItems"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getCurrentItems.xhtml">getCurrentItems()</a>
+                — Returns the items for the current page.</li>
+            <li id="getCurrentPageNumber"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getCurrentPageNumber.xhtml">getCurrentPageNumber()</a>
+                — Returns the current page number.</li>
+            <li id="getDefaultItemCountPerPage"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getDefaultItemCountPerPage.xhtml">getDefaultItemCountPerPage()</a>
+                — Get the default item count per page</li>
+            <li id="getDefaultScrollingStyle"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getDefaultScrollingStyle.xhtml">getDefaultScrollingStyle()</a>
+                — Returns the default scrolling style.</li>
+            <li id="getFilter"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getFilter.xhtml">getFilter()</a>
+                — Get the filter</li>
+            <li id="getItem"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getItem.xhtml">getItem()</a>
+                — Returns an item from a page.  The current page is used if there's no page specified.</li>
+            <li id="getItemCount"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getItemCount.xhtml">getItemCount()</a>
+                — Returns the number of items in a collection.</li>
+            <li id="getItemCountPerPage"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getItemCountPerPage.xhtml">getItemCountPerPage()</a>
+                — Returns the number of items per page.</li>
+            <li id="getItemsByPage"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getItemsByPage.xhtml">getItemsByPage()</a>
+                — Returns the items for a given page.</li>
+            <li id="getIterator"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getIterator.xhtml">getIterator()</a>
+                — Returns a foreach-compatible iterator.</li>
+            <li id="getPageItemCache"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getPageItemCache.xhtml">getPageItemCache()</a>
+                — Returns the page item cache.</li>
+            <li id="getPageRange"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getPageRange.xhtml">getPageRange()</a>
+                — Returns the page range (see property declaration above).</li>
+            <li id="getPages"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getPages.xhtml">getPages()</a>
+                — Returns the page collection.</li>
+            <li id="getPagesInRange"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getPagesInRange.xhtml">getPagesInRange()</a>
+                — Returns a subset of pages within a given range.</li>
+            <li id="getScrollingStylePluginManager"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getScrollingStylePluginManager.xhtml">getScrollingStylePluginManager()</a>
+                — Returns the scrolling style manager.  If it doesn't exist it's created.</li>
+            <li id="getTotalItemCount"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getTotalItemCount.xhtml">getTotalItemCount()</a>
+                — Returns the total number of items available.</li>
+            <li id="getView"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/getView.xhtml">getView()</a>
+                — Retrieves the view instance.</li>
+            <li id="normalizeItemNumber"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/normalizeItemNumber.xhtml">normalizeItemNumber()</a>
+                — Brings the item number in range of the page.</li>
+            <li id="normalizePageNumber"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/normalizePageNumber.xhtml">normalizePageNumber()</a>
+                — Brings the page number in range of the paginator.</li>
+            <li id="render"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/render.xhtml">render()</a>
+                — Renders the paginator.</li>
+            <li id="setCache"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setCache.xhtml">setCache()</a>
+                — Sets a cache object</li>
+            <li id="setCacheEnabled"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setCacheEnabled.xhtml">setCacheEnabled()</a>
+                — Enables/Disables the cache for this instance</li>
+            <li id="setCurrentPageNumber"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setCurrentPageNumber.xhtml">setCurrentPageNumber()</a>
+                — Sets the current page number.</li>
+            <li id="setDefaultItemCountPerPage"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setDefaultItemCountPerPage.xhtml">setDefaultItemCountPerPage()</a>
+                — Set the default item count per page</li>
+            <li id="setDefaultScrollingStyle"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setDefaultScrollingStyle.xhtml">setDefaultScrollingStyle()</a>
+                — Sets the default scrolling style.</li>
+            <li id="setFilter"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setFilter.xhtml">setFilter()</a>
+                — Set a filter chain</li>
+            <li id="setGlobalConfig"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setGlobalConfig.xhtml">setGlobalConfig()</a>
+                — Set a global config</li>
+            <li id="setItemCountPerPage"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setItemCountPerPage.xhtml">setItemCountPerPage()</a>
+                — Sets the number of items per page.</li>
+            <li id="setPageRange"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setPageRange.xhtml">setPageRange()</a>
+                — Sets the page range (see property declaration above).</li>
+            <li id="setScrollingStylePluginManager">
+              <a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setScrollingStylePluginManager.xhtml">setScrollingStylePluginManager()</a>
+            </li>
+            <li id="setView"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/setView.xhtml">setView()</a>
+                — Sets the view object.</li>
+            <li id="toJson"><a title="Zend\Paginator\Paginator" href="../classes/Zend_Paginator_Paginator/toJson.xhtml">toJson()</a>
+                — Returns the items of the current page as JSON.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

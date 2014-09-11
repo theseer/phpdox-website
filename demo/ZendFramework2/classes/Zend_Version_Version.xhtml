@@ -1,142 +1,148 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Version\Version - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Version\Version</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Version">Zend\Version</a>
+          </li>
+          <li class="separator">Version</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#VERSION">VERSION</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#VERSION_SERVICE_GITHUB">VERSION_SERVICE_GITHUB</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#VERSION_SERVICE_ZEND">VERSION_SERVICE_ZEND</a>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul>
-          <li>
-            <a href="#latestVersion">$latestVersion</a>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#compareVersion">compareVersion</a>
+            <a href="#constants">Constants</a>
           </li>
           <li>
-            <a href="#getLatest">getLatest</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#isLatest">isLatest</a>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Version/Version.php.xhtml#line18">Source</a>
           </li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Version\</span>Version</h2>
-        <div class="file-notice">
-          <p>Class to store and retrieve the version of Zend Framework.</p>
-        </div>
-        <ul class="fileinfos"/>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="VERSION"/>VERSION = '2.0.2'<em> </em><p><li>Zend Framework version identification - see compareVersion()</li></p><hr/></li>
-          <li><a name="VERSION_SERVICE_GITHUB"/>VERSION_SERVICE_GITHUB = 'GITHUB'<em> </em><p><li>Github Service Identifier for version information is retreived from</li></p><hr/></li>
-          <li><a name="VERSION_SERVICE_ZEND"/>VERSION_SERVICE_ZEND = 'ZEND'<em> </em><p><li>Github Service Identifier for version information is retreived from</li></p><hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="latestVersion"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $latestVersion</h4>
-            <ul class="varlist">
-              <li>The latest stable version Zend Framework available</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="compareVersion"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>compareVersion<span style="font-size:90%;">( <span class="param-type">string</span><strong> $version</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Compare the specified Zend Framework version string $version with the current Zend_Version::VERSION of Zend Framework.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$version</code> - A version string (e.g. "0.7.1").</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>-1 if the $version is older,</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getLatest"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getLatest<span style="font-size:90%;">( <span class="param-type">string</span><strong> $service</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Fetches the version of the latest stable release.<pre>By Default, this uses the GitHub API (v3) and only returns refs that begin with
-'tags/release-'. Because GitHub returns the refs in alphabetical order,
-we need to reduce the array to a single value, comparing the version
-numbers with version_compare().
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Version\</small>Version</h1>
+        <h4>Class to store and retrieve the version of Zend Framework.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Version
+            {<br/><ul class="none"><li>// constants</li><li>const VERSION = '2.3.0';</li><li>const VERSION_SERVICE_GITHUB = 'GITHUB';</li><li>const VERSION_SERVICE_ZEND = 'ZEND';</li></ul><ul class="none"><li>// members</li><li>protected string <a href="#members">$latestVersion</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public static int <a title="Zend\Version\Version" href="../classes/Zend_Version_Version/compareVersion.xhtml">compareVersion</a>()
+                    </li><li>public static string <a title="Zend\Version\Version" href="../classes/Zend_Version_Version/getLatest.xhtml">getLatest</a>()
+                    </li><li>public static bool <a title="Zend\Version\Version" href="../classes/Zend_Version_Version/isLatest.xhtml">isLatest</a>()
+                    </li><li>protected static string|false <a title="Zend\Version\Version" href="../classes/Zend_Version_Version/getApiResponse.xhtml">getApiResponse</a>()
+                    </li><li>protected static string|null <a title="Zend\Version\Version" href="../classes/Zend_Version_Version/getLatestFromGithub.xhtml">getLatestFromGithub</a>()
+                    </li><li>protected static string|null <a title="Zend\Version\Version" href="../classes/Zend_Version_Version/getLatestFromZend.xhtml">getLatestFromZend</a>()
+                    </li></ul>
 
-If $service is set to VERSION_SERVICE_ZEND this will fall back to calling the
-classic style of version retreival.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$service</code> - Version Service with which to retrieve the version</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isLatest"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>isLatest<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns true if the running version of Zend Framework is the latest (or newer??) than the latest tag on GitHub, which is returned by static::getLatest().</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+            }<br/></div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="VERSION">VERSION</td>
+              <td>'2.3.0'</td>
+            </tr>
+            <tr>
+              <td id="VERSION_SERVICE_GITHUB">VERSION_SERVICE_GITHUB</td>
+              <td>'GITHUB'</td>
+            </tr>
+            <tr>
+              <td id="VERSION_SERVICE_ZEND">VERSION_SERVICE_ZEND</td>
+              <td>'ZEND'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="latestVersion"><strong>$latestVersion</strong>
+                —
+                string<br/><span class="indent">The latest stable version Zend Framework available</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="getApiResponse"><a title="Zend\Version\Version" href="../classes/Zend_Version_Version/getApiResponse.xhtml">getApiResponse()</a>
+                — Get the API response to a call from a configured HTTP client</li>
+            <li id="getLatestFromGithub"><a title="Zend\Version\Version" href="../classes/Zend_Version_Version/getLatestFromGithub.xhtml">getLatestFromGithub()</a>
+                — Get the latest version from Github</li>
+            <li id="getLatestFromZend"><a title="Zend\Version\Version" href="../classes/Zend_Version_Version/getLatestFromZend.xhtml">getLatestFromZend()</a>
+                — Get the latest version from framework.zend.com</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="compareVersion"><a title="Zend\Version\Version" href="../classes/Zend_Version_Version/compareVersion.xhtml">compareVersion()</a>
+                — Compare the specified Zend Framework version string $version with the current Zend\Version\Version::VERSION of Zend Framework.</li>
+            <li id="getLatest"><a title="Zend\Version\Version" href="../classes/Zend_Version_Version/getLatest.xhtml">getLatest()</a>
+                — Fetches the version of the latest stable release.</li>
+            <li id="isLatest"><a title="Zend\Version\Version" href="../classes/Zend_Version_Version/isLatest.xhtml">isLatest()</a>
+                — Returns true if the running version of Zend Framework is the latest (or newer??) than the latest tag on GitHub, which is returned by self::getLatest().</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

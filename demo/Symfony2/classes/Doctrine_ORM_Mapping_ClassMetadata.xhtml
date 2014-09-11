@@ -1,2468 +1,781 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\ORM\Mapping\ClassMetadata - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\ORM\Mapping\ClassMetadata</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_ORM_Mapping">Doctrine\ORM\Mapping</a>
+          </li>
+          <li class="separator">ClassMetadata</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Methods</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#__construct">__construct</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#__sleep">__sleep</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#__toString">__toString</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#_storeAssociationMapping">_storeAssociationMapping</a>
+            <a href="#tasks">Tasks</a>
           </li>
           <li>
-            <a href="#_validateAndCompleteAssociationMapping">_validateAndCompleteAssociationMapping</a>
+            <a href="#constants">Constants</a>
           </li>
           <li>
-            <a href="#_validateAndCompleteFieldMapping">_validateAndCompleteFieldMapping</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#_validateAndCompleteManyToManyMapping">_validateAndCompleteManyToManyMapping</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#_validateAndCompleteOneToManyMapping">_validateAndCompleteOneToManyMapping</a>
-          </li>
-          <li>
-            <a href="#_validateAndCompleteOneToOneMapping">_validateAndCompleteOneToOneMapping</a>
-          </li>
-          <li>
-            <a href="#addDiscriminatorMapClass">addDiscriminatorMapClass</a>
-          </li>
-          <li>
-            <a href="#addInheritedAssociationMapping">addInheritedAssociationMapping</a>
-          </li>
-          <li>
-            <a href="#addInheritedFieldMapping">addInheritedFieldMapping</a>
-          </li>
-          <li>
-            <a href="#addLifecycleCallback">addLifecycleCallback</a>
-          </li>
-          <li>
-            <a href="#addNamedNativeQuery">addNamedNativeQuery</a>
-          </li>
-          <li>
-            <a href="#addNamedQuery">addNamedQuery</a>
-          </li>
-          <li>
-            <a href="#addSqlResultSetMapping">addSqlResultSetMapping</a>
-          </li>
-          <li>
-            <a href="#getAssociationMappedByTargetField">getAssociationMappedByTargetField</a>
-          </li>
-          <li>
-            <a href="#getAssociationMapping">getAssociationMapping</a>
-          </li>
-          <li>
-            <a href="#getAssociationMappings">getAssociationMappings</a>
-          </li>
-          <li>
-            <a href="#getAssociationNames">getAssociationNames</a>
-          </li>
-          <li>
-            <a href="#getAssociationTargetClass">getAssociationTargetClass</a>
-          </li>
-          <li>
-            <a href="#getAssociationsByTargetClass">getAssociationsByTargetClass</a>
-          </li>
-          <li>
-            <a href="#getColumnName">getColumnName</a>
-          </li>
-          <li>
-            <a href="#getColumnNames">getColumnNames</a>
-          </li>
-          <li>
-            <a href="#getFieldForColumn">getFieldForColumn</a>
-          </li>
-          <li>
-            <a href="#getFieldMapping">getFieldMapping</a>
-          </li>
-          <li>
-            <a href="#getFieldName">getFieldName</a>
-          </li>
-          <li>
-            <a href="#getFieldNames">getFieldNames</a>
-          </li>
-          <li>
-            <a href="#getFieldValue">getFieldValue</a>
-          </li>
-          <li>
-            <a href="#getIdentifier">getIdentifier</a>
-          </li>
-          <li>
-            <a href="#getIdentifierColumnNames">getIdentifierColumnNames</a>
-          </li>
-          <li>
-            <a href="#getIdentifierFieldNames">getIdentifierFieldNames</a>
-          </li>
-          <li>
-            <a href="#getIdentifierValues">getIdentifierValues</a>
-          </li>
-          <li>
-            <a href="#getLifecycleCallbacks">getLifecycleCallbacks</a>
-          </li>
-          <li>
-            <a href="#getName">getName</a>
-          </li>
-          <li>
-            <a href="#getNamedNativeQueries">getNamedNativeQueries</a>
-          </li>
-          <li>
-            <a href="#getNamedNativeQuery">getNamedNativeQuery</a>
-          </li>
-          <li>
-            <a href="#getNamedQueries">getNamedQueries</a>
-          </li>
-          <li>
-            <a href="#getNamedQuery">getNamedQuery</a>
-          </li>
-          <li>
-            <a href="#getQuotedColumnName">getQuotedColumnName</a>
-          </li>
-          <li>
-            <a href="#getQuotedIdentifierColumnNames">getQuotedIdentifierColumnNames</a>
-          </li>
-          <li>
-            <a href="#getQuotedJoinTableName">getQuotedJoinTableName</a>
-          </li>
-          <li>
-            <a href="#getQuotedTableName">getQuotedTableName</a>
-          </li>
-          <li>
-            <a href="#getReflectionClass">getReflectionClass</a>
-          </li>
-          <li>
-            <a href="#getReflectionProperties">getReflectionProperties</a>
-          </li>
-          <li>
-            <a href="#getReflectionProperty">getReflectionProperty</a>
-          </li>
-          <li>
-            <a href="#getSingleAssociationJoinColumnName">getSingleAssociationJoinColumnName</a>
-          </li>
-          <li>
-            <a href="#getSingleAssociationReferencedJoinColumnName">getSingleAssociationReferencedJoinColumnName</a>
-          </li>
-          <li>
-            <a href="#getSingleIdReflectionProperty">getSingleIdReflectionProperty</a>
-          </li>
-          <li>
-            <a href="#getSingleIdentifierColumnName">getSingleIdentifierColumnName</a>
-          </li>
-          <li>
-            <a href="#getSingleIdentifierFieldName">getSingleIdentifierFieldName</a>
-          </li>
-          <li>
-            <a href="#getSqlResultSetMapping">getSqlResultSetMapping</a>
-          </li>
-          <li>
-            <a href="#getSqlResultSetMappings">getSqlResultSetMappings</a>
-          </li>
-          <li>
-            <a href="#getTableName">getTableName</a>
-          </li>
-          <li>
-            <a href="#getTemporaryIdTableName">getTemporaryIdTableName</a>
-          </li>
-          <li>
-            <a href="#getTypeOfColumn">getTypeOfColumn</a>
-          </li>
-          <li>
-            <a href="#getTypeOfField">getTypeOfField</a>
-          </li>
-          <li>
-            <a href="#hasAssociation">hasAssociation</a>
-          </li>
-          <li>
-            <a href="#hasField">hasField</a>
-          </li>
-          <li>
-            <a href="#hasLifecycleCallbacks">hasLifecycleCallbacks</a>
-          </li>
-          <li>
-            <a href="#hasNamedNativeQuery">hasNamedNativeQuery</a>
-          </li>
-          <li>
-            <a href="#hasNamedQuery">hasNamedQuery</a>
-          </li>
-          <li>
-            <a href="#hasSqlResultSetMapping">hasSqlResultSetMapping</a>
-          </li>
-          <li>
-            <a href="#initializeReflection">initializeReflection</a>
-          </li>
-          <li>
-            <a href="#invokeLifecycleCallbacks">invokeLifecycleCallbacks</a>
-          </li>
-          <li>
-            <a href="#isAssociationInverseSide">isAssociationInverseSide</a>
-          </li>
-          <li>
-            <a href="#isAssociationWithSingleJoinColumn">isAssociationWithSingleJoinColumn</a>
-          </li>
-          <li>
-            <a href="#isChangeTrackingDeferredExplicit">isChangeTrackingDeferredExplicit</a>
-          </li>
-          <li>
-            <a href="#isChangeTrackingDeferredImplicit">isChangeTrackingDeferredImplicit</a>
-          </li>
-          <li>
-            <a href="#isChangeTrackingNotify">isChangeTrackingNotify</a>
-          </li>
-          <li>
-            <a href="#isCollectionValuedAssociation">isCollectionValuedAssociation</a>
-          </li>
-          <li>
-            <a href="#isIdGeneratorIdentity">isIdGeneratorIdentity</a>
-          </li>
-          <li>
-            <a href="#isIdGeneratorSequence">isIdGeneratorSequence</a>
-          </li>
-          <li>
-            <a href="#isIdGeneratorTable">isIdGeneratorTable</a>
-          </li>
-          <li>
-            <a href="#isIdentifier">isIdentifier</a>
-          </li>
-          <li>
-            <a href="#isIdentifierNatural">isIdentifierNatural</a>
-          </li>
-          <li>
-            <a href="#isIdentifierUuid">isIdentifierUuid</a>
-          </li>
-          <li>
-            <a href="#isInheritanceTypeJoined">isInheritanceTypeJoined</a>
-          </li>
-          <li>
-            <a href="#isInheritanceTypeNone">isInheritanceTypeNone</a>
-          </li>
-          <li>
-            <a href="#isInheritanceTypeSingleTable">isInheritanceTypeSingleTable</a>
-          </li>
-          <li>
-            <a href="#isInheritanceTypeTablePerClass">isInheritanceTypeTablePerClass</a>
-          </li>
-          <li>
-            <a href="#isInheritedAssociation">isInheritedAssociation</a>
-          </li>
-          <li>
-            <a href="#isInheritedField">isInheritedField</a>
-          </li>
-          <li>
-            <a href="#isNullable">isNullable</a>
-          </li>
-          <li>
-            <a href="#isRootEntity">isRootEntity</a>
-          </li>
-          <li>
-            <a href="#isSingleValuedAssociation">isSingleValuedAssociation</a>
-          </li>
-          <li>
-            <a href="#isUniqueField">isUniqueField</a>
-          </li>
-          <li>
-            <a href="#mapField">mapField</a>
-          </li>
-          <li>
-            <a href="#mapManyToMany">mapManyToMany</a>
-          </li>
-          <li>
-            <a href="#mapManyToOne">mapManyToOne</a>
-          </li>
-          <li>
-            <a href="#mapOneToMany">mapOneToMany</a>
-          </li>
-          <li>
-            <a href="#mapOneToOne">mapOneToOne</a>
-          </li>
-          <li>
-            <a href="#markReadOnly">markReadOnly</a>
-          </li>
-          <li>
-            <a href="#newInstance">newInstance</a>
-          </li>
-          <li>
-            <a href="#setAssociationOverride">setAssociationOverride</a>
-          </li>
-          <li>
-            <a href="#setAttributeOverride">setAttributeOverride</a>
-          </li>
-          <li>
-            <a href="#setChangeTrackingPolicy">setChangeTrackingPolicy</a>
-          </li>
-          <li>
-            <a href="#setCustomGeneratorDefinition">setCustomGeneratorDefinition</a>
-          </li>
-          <li>
-            <a href="#setCustomRepositoryClass">setCustomRepositoryClass</a>
-          </li>
-          <li>
-            <a href="#setDiscriminatorColumn">setDiscriminatorColumn</a>
-          </li>
-          <li>
-            <a href="#setDiscriminatorMap">setDiscriminatorMap</a>
-          </li>
-          <li>
-            <a href="#setFieldValue">setFieldValue</a>
-          </li>
-          <li>
-            <a href="#setIdGenerator">setIdGenerator</a>
-          </li>
-          <li>
-            <a href="#setIdGeneratorType">setIdGeneratorType</a>
-          </li>
-          <li>
-            <a href="#setIdentifier">setIdentifier</a>
-          </li>
-          <li>
-            <a href="#setIdentifierValues">setIdentifierValues</a>
-          </li>
-          <li>
-            <a href="#setInheritanceType">setInheritanceType</a>
-          </li>
-          <li>
-            <a href="#setLifecycleCallbacks">setLifecycleCallbacks</a>
-          </li>
-          <li>
-            <a href="#setParentClasses">setParentClasses</a>
-          </li>
-          <li>
-            <a href="#setPrimaryTable">setPrimaryTable</a>
-          </li>
-          <li>
-            <a href="#setSequenceGeneratorDefinition">setSequenceGeneratorDefinition</a>
-          </li>
-          <li>
-            <a href="#setSubclasses">setSubclasses</a>
-          </li>
-          <li>
-            <a href="#setTableName">setTableName</a>
-          </li>
-          <li>
-            <a href="#setVersionField">setVersionField</a>
-          </li>
-          <li>
-            <a href="#setVersionMapping">setVersionMapping</a>
-          </li>
-          <li>
-            <a href="#setVersioned">setVersioned</a>
-          </li>
-          <li>
-            <a href="#usesIdGenerator">usesIdGenerator</a>
-          </li>
-          <li>
-            <a href="#validateAssocations">validateAssocations</a>
-          </li>
-          <li>
-            <a href="#validateIdentifier">validateIdentifier</a>
-          </li>
-          <li>
-            <a href="#validateLifecycleCallbacks">validateLifecycleCallbacks</a>
-          </li>
-          <li>
-            <a href="#wakeupReflection">wakeupReflection</a>
+            <a href="../source/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadata.php.xhtml#line27">Source</a>
           </li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\ORM\Mapping\</span>ClassMetadata</h2>
-        <div class="file-notice">
-          <p>{@inheritDoc}</p>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\ORM\Mapping\</small>ClassMetadata</h1>
+        <h4>{@inheritDoc}</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ClassMetadata
+                extends <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">ClassMetadataInfo</a>
+            {<br/><ul class="none"><li>// Inherited constants from <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">ClassMetadataInfo</a></li><li>const <a href="#INHERITANCE_TYPE_NONE">INHERITANCE_TYPE_NONE</a> = 1;</li><li>const <a href="#INHERITANCE_TYPE_JOINED">INHERITANCE_TYPE_JOINED</a> = 2;</li><li>const <a href="#INHERITANCE_TYPE_SINGLE_TABLE">INHERITANCE_TYPE_SINGLE_TABLE</a> = 3;</li><li>const <a href="#INHERITANCE_TYPE_TABLE_PER_CLASS">INHERITANCE_TYPE_TABLE_PER_CLASS</a> = 4;</li><li>const <a href="#GENERATOR_TYPE_AUTO">GENERATOR_TYPE_AUTO</a> = 1;</li><li>const <a href="#GENERATOR_TYPE_SEQUENCE">GENERATOR_TYPE_SEQUENCE</a> = 2;</li><li>const <a href="#GENERATOR_TYPE_TABLE">GENERATOR_TYPE_TABLE</a> = 3;</li><li>const <a href="#GENERATOR_TYPE_IDENTITY">GENERATOR_TYPE_IDENTITY</a> = 4;</li><li>const <a href="#GENERATOR_TYPE_NONE">GENERATOR_TYPE_NONE</a> = 5;</li><li>const <a href="#GENERATOR_TYPE_UUID">GENERATOR_TYPE_UUID</a> = 6;</li><li>const <a href="#GENERATOR_TYPE_CUSTOM">GENERATOR_TYPE_CUSTOM</a> = 7;</li><li>const <a href="#CHANGETRACKING_DEFERRED_IMPLICIT">CHANGETRACKING_DEFERRED_IMPLICIT</a> = 1;</li><li>const <a href="#CHANGETRACKING_DEFERRED_EXPLICIT">CHANGETRACKING_DEFERRED_EXPLICIT</a> = 2;</li><li>const <a href="#CHANGETRACKING_NOTIFY">CHANGETRACKING_NOTIFY</a> = 3;</li><li>const <a href="#FETCH_LAZY">FETCH_LAZY</a> = 2;</li><li>const <a href="#FETCH_EAGER">FETCH_EAGER</a> = 3;</li><li>const <a href="#FETCH_EXTRA_LAZY">FETCH_EXTRA_LAZY</a> = 4;</li><li>const <a href="#ONE_TO_ONE">ONE_TO_ONE</a> = 1;</li><li>const <a href="#MANY_TO_ONE">MANY_TO_ONE</a> = 2;</li><li>const <a href="#ONE_TO_MANY">ONE_TO_MANY</a> = 4;</li><li>const <a href="#MANY_TO_MANY">MANY_TO_MANY</a> = 8;</li><li>const <a href="#TO_ONE">TO_ONE</a> = 3;</li><li>const <a href="#TO_MANY">TO_MANY</a> = 12;</li></ul><ul class="none"><li>// Inherited members from <span title="Doctrine\ORM\Mapping\ClassMetadataInfo">ClassMetadataInfo</span></li><li>public <a href="#members">$name</a>;
+                        </li><li>public string <a href="#members">$namespace</a>;
+                        </li><li>public string <a href="#members">$rootEntityName</a>;
+                        </li><li>public array <a href="#members">$customGeneratorDefinition</a>;
+                        </li><li>public string <a href="#members">$customRepositoryClassName</a>;
+                        </li><li>public boolean <a href="#members">$isMappedSuperclass</a>;
+                        </li><li>public array <a href="#members">$parentClasses</a>;
+                        </li><li>public array <a href="#members">$subClasses</a>;
+                        </li><li>public array <a href="#members">$namedQueries</a>;
+                        </li><li>public array <a href="#members">$namedNativeQueries</a>;
+                        </li><li>public array <a href="#members">$sqlResultSetMappings</a>;
+                        </li><li>public array <a href="#members">$identifier</a>;
+                        </li><li>public integer <a href="#members">$inheritanceType</a>;
+                        </li><li>public string <a href="#members">$generatorType</a>;
+                        </li><li>public array <a href="#members">$fieldMappings</a>;
+                        </li><li>public array <a href="#members">$fieldNames</a>;
+                        </li><li>public array <a href="#members">$columnNames</a>;
+                        </li><li>public mixed <a href="#members">$discriminatorValue</a>;
+                        </li><li>public array <a href="#members">$discriminatorMap</a>;
+                        </li><li>public array <a href="#members">$discriminatorColumn</a>;
+                        </li><li>public array <a href="#members">$table</a>;
+                        </li><li>public array <a href="#members">$lifecycleCallbacks</a>;
+                        </li><li>public array <a href="#members">$associationMappings</a>;
+                        </li><li>public boolean <a href="#members">$isIdentifierComposite</a>;
+                        </li><li>public boolean <a href="#members">$containsForeignIdentifier</a>;
+                        </li><li>public <span title="\Doctrine\ORM\Id\AbstractIdGenerator">AbstractIdGenerator</span> <a href="#members">$idGenerator</a>;
+                        </li><li>public array <a href="#members">$sequenceGeneratorDefinition</a>;
+                        </li><li>public array <a href="#members">$tableGeneratorDefinition</a>;
+                        </li><li>public integer <a href="#members">$changeTrackingPolicy</a>;
+                        </li><li>public boolean <a href="#members">$isVersioned</a>;
+                        </li><li>public mixed <a href="#members">$versionField</a>;
+                        </li><li>public <span title="ReflectionClass">ReflectionClass</span> <a href="#members">$reflClass</a>;
+                        </li><li>public <span title="Doctrine\ORM\Mapping\bool">bool</span> <a href="#members">$isReadOnly</a>;
+                        </li><li>protected <span title="\Doctrine\ORM\Mapping\NamingStrategy">NamingStrategy</span> <a href="#members">$namingStrategy</a>;
+                        </li><li>public array <a href="#members">$reflFields</a>;
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Doctrine\ORM\Mapping\ClassMetadataInfo">ClassMetadataInfo</span></li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/__construct.xhtml">__construct</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getReflectionProperties.xhtml">getReflectionProperties</a>()
+                        </li><li>public ReflectionProperty <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getReflectionProperty.xhtml">getReflectionProperty</a>()
+                        </li><li>public ReflectionProperty <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSingleIdReflectionProperty.xhtml">getSingleIdReflectionProperty</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getIdentifierValues.xhtml">getIdentifierValues</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setIdentifierValues.xhtml">setIdentifierValues</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setFieldValue.xhtml">setFieldValue</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getFieldValue.xhtml">getFieldValue</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/__toString.xhtml">__toString</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/__sleep.xhtml">__sleep</a>()
+                        </li><li>public  <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/newInstance.xhtml">newInstance</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/wakeupReflection.xhtml">wakeupReflection</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/initializeReflection.xhtml">initializeReflection</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/validateIdentifier.xhtml">validateIdentifier</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/validateAssocations.xhtml">validateAssocations</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/validateLifecycleCallbacks.xhtml">validateLifecycleCallbacks</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getReflectionClass.xhtml">getReflectionClass</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setChangeTrackingPolicy.xhtml">setChangeTrackingPolicy</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isChangeTrackingDeferredExplicit.xhtml">isChangeTrackingDeferredExplicit</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isChangeTrackingDeferredImplicit.xhtml">isChangeTrackingDeferredImplicit</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isChangeTrackingNotify.xhtml">isChangeTrackingNotify</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isIdentifier.xhtml">isIdentifier</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isUniqueField.xhtml">isUniqueField</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isNullable.xhtml">isNullable</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getColumnName.xhtml">getColumnName</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getFieldMapping.xhtml">getFieldMapping</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getAssociationMapping.xhtml">getAssociationMapping</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getAssociationMappings.xhtml">getAssociationMappings</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getFieldName.xhtml">getFieldName</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getNamedQuery.xhtml">getNamedQuery</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getNamedQueries.xhtml">getNamedQueries</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getNamedNativeQuery.xhtml">getNamedNativeQuery</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getNamedNativeQueries.xhtml">getNamedNativeQueries</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSqlResultSetMapping.xhtml">getSqlResultSetMapping</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSqlResultSetMappings.xhtml">getSqlResultSetMappings</a>()
+                        </li><li>protected array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/_validateAndCompleteFieldMapping.xhtml">_validateAndCompleteFieldMapping</a>()
+                        </li><li>protected array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/_validateAndCompleteAssociationMapping.xhtml">_validateAndCompleteAssociationMapping</a>()
+                        </li><li>protected array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/_validateAndCompleteOneToOneMapping.xhtml">_validateAndCompleteOneToOneMapping</a>()
+                        </li><li>protected array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/_validateAndCompleteOneToManyMapping.xhtml">_validateAndCompleteOneToManyMapping</a>()
+                        </li><li>protected void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/_validateAndCompleteManyToManyMapping.xhtml">_validateAndCompleteManyToManyMapping</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getIdentifierFieldNames.xhtml">getIdentifierFieldNames</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSingleIdentifierFieldName.xhtml">getSingleIdentifierFieldName</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSingleIdentifierColumnName.xhtml">getSingleIdentifierColumnName</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setIdentifier.xhtml">setIdentifier</a>()
+                        </li><li>public array|string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getIdentifier.xhtml">getIdentifier</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/hasField.xhtml">hasField</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getColumnNames.xhtml">getColumnNames</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getIdentifierColumnNames.xhtml">getIdentifierColumnNames</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setIdGeneratorType.xhtml">setIdGeneratorType</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/usesIdGenerator.xhtml">usesIdGenerator</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isInheritanceTypeNone.xhtml">isInheritanceTypeNone</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isInheritanceTypeJoined.xhtml">isInheritanceTypeJoined</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isInheritanceTypeSingleTable.xhtml">isInheritanceTypeSingleTable</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isInheritanceTypeTablePerClass.xhtml">isInheritanceTypeTablePerClass</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isIdGeneratorIdentity.xhtml">isIdGeneratorIdentity</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isIdGeneratorSequence.xhtml">isIdGeneratorSequence</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isIdGeneratorTable.xhtml">isIdGeneratorTable</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isIdentifierNatural.xhtml">isIdentifierNatural</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isIdentifierUuid.xhtml">isIdentifierUuid</a>()
+                        </li><li>public Type|string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getTypeOfField.xhtml">getTypeOfField</a>()
+                        </li><li>public Type <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getTypeOfColumn.xhtml">getTypeOfColumn</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getTableName.xhtml">getTableName</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getTemporaryIdTableName.xhtml">getTemporaryIdTableName</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setSubclasses.xhtml">setSubclasses</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setParentClasses.xhtml">setParentClasses</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setInheritanceType.xhtml">setInheritanceType</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setAssociationOverride.xhtml">setAssociationOverride</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setAttributeOverride.xhtml">setAttributeOverride</a>()
+                        </li><li>public bool <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isInheritedField.xhtml">isInheritedField</a>()
+                        </li><li>public bool <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isRootEntity.xhtml">isRootEntity</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isInheritedAssociation.xhtml">isInheritedAssociation</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setTableName.xhtml">setTableName</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setPrimaryTable.xhtml">setPrimaryTable</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/mapField.xhtml">mapField</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addInheritedAssociationMapping.xhtml">addInheritedAssociationMapping</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addInheritedFieldMapping.xhtml">addInheritedFieldMapping</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addNamedQuery.xhtml">addNamedQuery</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addNamedNativeQuery.xhtml">addNamedNativeQuery</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addSqlResultSetMapping.xhtml">addSqlResultSetMapping</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/mapOneToOne.xhtml">mapOneToOne</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/mapOneToMany.xhtml">mapOneToMany</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/mapManyToOne.xhtml">mapManyToOne</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/mapManyToMany.xhtml">mapManyToMany</a>()
+                        </li><li>protected void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/_storeAssociationMapping.xhtml">_storeAssociationMapping</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setCustomRepositoryClass.xhtml">setCustomRepositoryClass</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/invokeLifecycleCallbacks.xhtml">invokeLifecycleCallbacks</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/hasLifecycleCallbacks.xhtml">hasLifecycleCallbacks</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getLifecycleCallbacks.xhtml">getLifecycleCallbacks</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addLifecycleCallback.xhtml">addLifecycleCallback</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setLifecycleCallbacks.xhtml">setLifecycleCallbacks</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setDiscriminatorColumn.xhtml">setDiscriminatorColumn</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setDiscriminatorMap.xhtml">setDiscriminatorMap</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addDiscriminatorMapClass.xhtml">addDiscriminatorMapClass</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/hasNamedQuery.xhtml">hasNamedQuery</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/hasNamedNativeQuery.xhtml">hasNamedNativeQuery</a>()
+                        </li><li>public boolean <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/hasSqlResultSetMapping.xhtml">hasSqlResultSetMapping</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/hasAssociation.xhtml">hasAssociation</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isSingleValuedAssociation.xhtml">isSingleValuedAssociation</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isCollectionValuedAssociation.xhtml">isCollectionValuedAssociation</a>()
+                        </li><li>public bool <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isAssociationWithSingleJoinColumn.xhtml">isAssociationWithSingleJoinColumn</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSingleAssociationJoinColumnName.xhtml">getSingleAssociationJoinColumnName</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSingleAssociationReferencedJoinColumnName.xhtml">getSingleAssociationReferencedJoinColumnName</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getFieldForColumn.xhtml">getFieldForColumn</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setIdGenerator.xhtml">setIdGenerator</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setCustomGeneratorDefinition.xhtml">setCustomGeneratorDefinition</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setSequenceGeneratorDefinition.xhtml">setSequenceGeneratorDefinition</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setVersionMapping.xhtml">setVersionMapping</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setVersioned.xhtml">setVersioned</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setVersionField.xhtml">setVersionField</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/markReadOnly.xhtml">markReadOnly</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getFieldNames.xhtml">getFieldNames</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getAssociationNames.xhtml">getAssociationNames</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getAssociationTargetClass.xhtml">getAssociationTargetClass</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getName.xhtml">getName</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getQuotedIdentifierColumnNames.xhtml">getQuotedIdentifierColumnNames</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getQuotedColumnName.xhtml">getQuotedColumnName</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getQuotedTableName.xhtml">getQuotedTableName</a>()
+                        </li><li>public string <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getQuotedJoinTableName.xhtml">getQuotedJoinTableName</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isAssociationInverseSide.xhtml">isAssociationInverseSide</a>()
+                        </li><li>public void <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getAssociationMappedByTargetField.xhtml">getAssociationMappedByTargetField</a>()
+                        </li><li>public array <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getAssociationsByTargetClass.xhtml">getAssociationsByTargetClass</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Constants</h3>
-        <ul class="varlist"/>
-        <h3>Members</h3>
-        <ul class="varlist"/>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">string</span><strong> $entityName</strong>, <span class="param-type"><a href="../interfaces/Doctrine_ORM_Mapping_NamingStrategy.xhtml">Doctrine\ORM\Mapping\NamingStrategy</a></span><strong> $namingStrategy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Initializes a new ClassMetadata instance that will hold the object-relational mapping metadata of the class with the given name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entityName</code> - The name of the entity class the new instance is used for.</li>
-                <li><code>$namingStrategy</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__sleep"/>
-            <h4><span class="label public">public</span>__sleep<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Determines which fields get serialized.<pre>It is only serialized what is necessary for best unserialization performance.
-That means any metadata properties that are not set or empty or simply have
-their default value are NOT serialized.
-
-Parts that are also NOT serialized because they can not be properly unserialized:
-     - reflClass (ReflectionClass)
-     - reflFields (ReflectionProperty array)</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The names of all the fields that should be serialized.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="__toString"/>
-            <h4><span class="label public">public</span>__toString<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Creates a string representation of this instance.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The string representation of this instance.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addDiscriminatorMapClass"/>
-            <h4><span class="label public">public</span>addDiscriminatorMapClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong>, <span class="param-type">string</span><strong> $className</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add one entry of the discriminator map with a new class and corresponding name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-                <li><code>$className</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addInheritedAssociationMapping"/>
-            <h4><span class="label public">public</span>addInheritedAssociationMapping<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Adds an association mapping without completing/validating it.<pre>This is mainly used to add inherited association mappings to derived classes.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mapping</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addInheritedFieldMapping"/>
-            <h4><span class="label public">public</span>addInheritedFieldMapping<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldMapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Adds a field mapping without completing/validating it.<pre>This is mainly used to add inherited field mappings to derived classes.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldMapping</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addLifecycleCallback"/>
-            <h4><span class="label public">public</span>addLifecycleCallback<span style="font-size:90%;">( <span class="param-type">string</span><strong> $callback</strong>, <span class="param-type">string</span><strong> $event</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a lifecycle callback for entities of this class.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$callback</code> - </li>
-                <li><code>$event</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addNamedNativeQuery"/>
-            <h4><span class="label public">public</span>addNamedNativeQuery<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $queryMapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Adds a named native query to this class.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$queryMapping</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addNamedQuery"/>
-            <h4><span class="label public">public</span>addNamedQuery<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $queryMapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Adds a named query to this class.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$queryMapping</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="addSqlResultSetMapping"/>
-            <h4><span class="label public">public</span>addSqlResultSetMapping<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $resultMapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Adds a sql result set mapping to this class.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$resultMapping</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAssociationMappedByTargetField"/>
-            <h4><span class="label public">public</span>getAssociationMappedByTargetField<span style="font-size:90%;">( <span class="param-type"/><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getAssociationMapping"/>
-            <h4><span class="label public">public</span>getAssociationMapping<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the mapping of an association.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - The field name that represents the association in</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The mapping.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAssociationMappings"/>
-            <h4><span class="label public">public</span>getAssociationMappings<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets all association mappings of the class.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAssociationNames"/>
-            <h4><span class="label public">public</span>getAssociationNames<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getAssociationTargetClass"/>
-            <h4><span class="label public">public</span>getAssociationTargetClass<span style="font-size:90%;">( <span class="param-type"/><strong> $assocName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getAssociationsByTargetClass"/>
-            <h4><span class="label public">public</span>getAssociationsByTargetClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $targetClass</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$targetClass</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getColumnName"/>
-            <h4><span class="label public">public</span>getColumnName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets a column name for a field name.<pre>If the column name for the field cannot be found, the given field name
-is returned.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - The field name.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The column name.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getColumnNames"/>
-            <h4><span class="label public">public</span>getColumnNames<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $fieldNames</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets an array containing all the column names.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldNames</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFieldForColumn"/>
-            <h4><span class="label public">public</span>getFieldForColumn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $columnName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Used to retrieve a fieldname for either field or association from a given column,<pre>This method is used in foreign-key as primary-key contexts.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columnName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFieldMapping"/>
-            <h4><span class="label public">public</span>getFieldMapping<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the mapping of a (regular) field that holds some data but not a reference to another object.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - The field name.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The field mapping.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFieldName"/>
-            <h4><span class="label public">public</span>getFieldName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $columnName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the field name for a column name.<pre>If no field name can be found the column name is returned.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columnName</code> - column name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>column alias</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFieldNames"/>
-            <h4><span class="label public">public</span>getFieldNames<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getFieldValue"/>
-            <h4><span class="label public">public</span>getFieldValue<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">string</span><strong> $field</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the specified field's value off the given entity.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - </li>
-                <li><code>$field</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getIdentifier"/>
-            <h4><span class="label public">public</span>getIdentifier<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the mapped identifier field of this class.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>$identifier</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getIdentifierColumnNames"/>
-            <h4><span class="label public">public</span>getIdentifierColumnNames<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns an array with all the identifier column names.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getIdentifierFieldNames"/>
-            <h4><span class="label public">public</span>getIdentifierFieldNames<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getIdentifierValues"/>
-            <h4><span class="label public">public</span>getIdentifierValues<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Extracts the identifier values of an entity of this class.<pre>For composite identifiers, the identifier values are returned as an array
-with the same order as the field order in .
-</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getLifecycleCallbacks"/>
-            <h4><span class="label public">public</span>getLifecycleCallbacks<span style="font-size:90%;">( <span class="param-type">string</span><strong> $event</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the registered lifecycle callbacks for an event.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$event</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getName"/>
-            <h4><span class="label public">public</span>getName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getNamedNativeQueries"/>
-            <h4><span class="label public">public</span>getNamedNativeQueries<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets all named native queries of the class.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getNamedNativeQuery"/>
-            <h4><span class="label public">public</span>getNamedNativeQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $queryName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the named native query.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$queryName</code> - The query name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getNamedQueries"/>
-            <h4><span class="label public">public</span>getNamedQueries<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets all named queries of the class.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getNamedQuery"/>
-            <h4><span class="label public">public</span>getNamedQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $queryName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the named query.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$queryName</code> - The query name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getQuotedColumnName"/>
-            <h4><span class="label public">public</span>getQuotedColumnName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $field</strong>, <span class="param-type"><span title="\Doctrine\DBAL\Platforms\AbstractPlatform">AbstractPlatform</span></span><strong> $platform</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the (possibly quoted) column name of a mapped field for safe use  in an SQL statement.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$field</code> - </li>
-                <li><code>$platform</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getQuotedIdentifierColumnNames"/>
-            <h4><span class="label public">public</span>getQuotedIdentifierColumnNames<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\DBAL\Platforms\AbstractPlatform">AbstractPlatform</span></span><strong> $platform</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the (possibly quoted) identifier column names for safe use in an SQL statement.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$platform</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getQuotedJoinTableName"/>
-            <h4><span class="label public">public</span>getQuotedJoinTableName<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $assoc</strong>, <span class="param-type"><span title="\Doctrine\DBAL\Platforms\AbstractPlatform">AbstractPlatform</span></span><strong> $platform</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the (possibly quoted) name of the join table.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$assoc</code> - </li>
-                <li><code>$platform</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getQuotedTableName"/>
-            <h4><span class="label public">public</span>getQuotedTableName<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\DBAL\Platforms\AbstractPlatform">AbstractPlatform</span></span><strong> $platform</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the (possibly quoted) primary table name of this class for safe use in an SQL statement.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$platform</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getReflectionClass"/>
-            <h4><span class="label public">public</span>getReflectionClass<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getReflectionProperties"/>
-            <h4><span class="label public">public</span>getReflectionProperties<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the ReflectionPropertys of the mapped class.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of ReflectionProperty instances.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getReflectionProperty"/>
-            <h4><span class="label public">public</span>getReflectionProperty<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets a ReflectionProperty for a specific field of the mapped class.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSingleAssociationJoinColumnName"/>
-            <h4><span class="label public">public</span>getSingleAssociationJoinColumnName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return the single association join column (if any).</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSingleAssociationReferencedJoinColumnName"/>
-            <h4><span class="label public">public</span>getSingleAssociationReferencedJoinColumnName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return the single association referenced join column name (if any).</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSingleIdReflectionProperty"/>
-            <h4><span class="label public">public</span>getSingleIdReflectionProperty<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the ReflectionProperty for the single identifier field.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>BadMethodCallException If the class has a composite identifier.</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSingleIdentifierColumnName"/>
-            <h4><span class="label public">public</span>getSingleIdentifierColumnName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the column name of the single id column. Note that this only works on entity classes that have a single-field pk.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException If the class has a composite primary key.</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSingleIdentifierFieldName"/>
-            <h4><span class="label public">public</span>getSingleIdentifierFieldName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the name of the single id field. Note that this only works on entity classes that have a single-field pk.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException If the class has a composite primary key.</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSqlResultSetMapping"/>
-            <h4><span class="label public">public</span>getSqlResultSetMapping<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the result set mapping.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - The result set mapping name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSqlResultSetMappings"/>
-            <h4><span class="label public">public</span>getSqlResultSetMappings<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets all sql result set mappings of the class.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTableName"/>
-            <h4><span class="label public">public</span>getTableName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the name of the primary table.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTemporaryIdTableName"/>
-            <h4><span class="label public">public</span>getTemporaryIdTableName<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the table name to use for temporary identifier tables of this class.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTypeOfColumn"/>
-            <h4><span class="label public">public</span>getTypeOfColumn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $columnName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the type of a column.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columnName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTypeOfField"/>
-            <h4><span class="label public">public</span>getTypeOfField<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the type of a field.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasAssociation"/>
-            <h4><span class="label public">public</span>hasAssociation<span style="font-size:90%;">( <span class="param-type"/><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="hasField"/>
-            <h4><span class="label public">public</span>hasField<span style="font-size:90%;">( <span class="param-type"/><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="hasLifecycleCallbacks"/>
-            <h4><span class="label public">public</span>hasLifecycleCallbacks<span style="font-size:90%;">( <span class="param-type">string</span><strong> $lifecycleEvent</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Whether the class has any attached lifecycle listeners or callbacks for a lifecycle event.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$lifecycleEvent</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasNamedNativeQuery"/>
-            <h4><span class="label public">public</span>hasNamedNativeQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $queryName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the class has a named native query with the given query name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$queryName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasNamedQuery"/>
-            <h4><span class="label public">public</span>hasNamedQuery<span style="font-size:90%;">( <span class="param-type">string</span><strong> $queryName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the class has a named query with the given query name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$queryName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hasSqlResultSetMapping"/>
-            <h4><span class="label public">public</span>hasSqlResultSetMapping<span style="font-size:90%;">( <span class="param-type">string</span><strong> $name</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the class has a named native query with the given query name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$name</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="initializeReflection"/>
-            <h4><span class="label public">public</span>initializeReflection<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\Common\Persistence\Mapping\ReflectionService">ReflectionService</span></span><strong> $reflService</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Initializes a new ClassMetadata instance that will hold the object-relational mapping metadata of the class with the given name.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$reflService</code> - The reflection service.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="invokeLifecycleCallbacks"/>
-            <h4><span class="label public">public</span>invokeLifecycleCallbacks<span style="font-size:90%;">( <span class="param-type">string</span><strong> $lifecycleEvent</strong>, <span class="param-type"><span title="\Object">Object</span></span><strong> $entity</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Dispatches the lifecycle event of the given entity to the registered lifecycle callbacks and lifecycle listeners.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$lifecycleEvent</code> - The lifecycle event.</li>
-                <li><code>$entity</code> - The Entity on which the event occured.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isAssociationInverseSide"/>
-            <h4><span class="label public">public</span>isAssociationInverseSide<span style="font-size:90%;">( <span class="param-type"/><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="isAssociationWithSingleJoinColumn"/>
-            <h4><span class="label public">public</span>isAssociationWithSingleJoinColumn<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Is this an association that only has a single join column?</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isChangeTrackingDeferredExplicit"/>
-            <h4><span class="label public">public</span>isChangeTrackingDeferredExplicit<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Whether the change tracking policy of this class is "deferred explicit".</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isChangeTrackingDeferredImplicit"/>
-            <h4><span class="label public">public</span>isChangeTrackingDeferredImplicit<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Whether the change tracking policy of this class is "deferred implicit".</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isChangeTrackingNotify"/>
-            <h4><span class="label public">public</span>isChangeTrackingNotify<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Whether the change tracking policy of this class is "notify".</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isCollectionValuedAssociation"/>
-            <h4><span class="label public">public</span>isCollectionValuedAssociation<span style="font-size:90%;">( <span class="param-type"/><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="isIdGeneratorIdentity"/>
-            <h4><span class="label public">public</span>isIdGeneratorIdentity<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the class uses an identity column for the Id generation.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the class uses the IDENTITY generator, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isIdGeneratorSequence"/>
-            <h4><span class="label public">public</span>isIdGeneratorSequence<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the class uses a sequence for id generation.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the class uses the SEQUENCE generator, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isIdGeneratorTable"/>
-            <h4><span class="label public">public</span>isIdGeneratorTable<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the class uses a table for id generation.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the class uses the TABLE generator, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isIdentifier"/>
-            <h4><span class="label public">public</span>isIdentifier<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether a field is part of the identifier/primary key field(s).</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - The field name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the field is part of the table identifier/primary key field(s),</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isIdentifierNatural"/>
-            <h4><span class="label public">public</span>isIdentifierNatural<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the class has a natural identifier/pk (which means it does not use any Id generator.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isIdentifierUuid"/>
-            <h4><span class="label public">public</span>isIdentifierUuid<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the class use a UUID for id generation</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isInheritanceTypeJoined"/>
-            <h4><span class="label public">public</span>isInheritanceTypeJoined<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the mapped class uses the JOINED inheritance mapping strategy.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the class participates in a JOINED inheritance mapping,</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isInheritanceTypeNone"/>
-            <h4><span class="label public">public</span>isInheritanceTypeNone<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isInheritanceTypeSingleTable"/>
-            <h4><span class="label public">public</span>isInheritanceTypeSingleTable<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the mapped class uses the SINGLE_TABLE inheritance mapping strategy.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the class participates in a SINGLE_TABLE inheritance mapping,</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isInheritanceTypeTablePerClass"/>
-            <h4><span class="label public">public</span>isInheritanceTypeTablePerClass<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the mapped class uses the TABLE_PER_CLASS inheritance mapping strategy.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the class participates in a TABLE_PER_CLASS inheritance mapping,</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isInheritedAssociation"/>
-            <h4><span class="label public">public</span>isInheritedAssociation<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether a mapped association field is inherited from a superclass.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the field is inherited, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isInheritedField"/>
-            <h4><span class="label public">public</span>isInheritedField<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether a mapped field is inherited from an entity superclass.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the field is inherited, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isNullable"/>
-            <h4><span class="label public">public</span>isNullable<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check if the field is not null.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - The field name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the field is not null, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isRootEntity"/>
-            <h4><span class="label public">public</span>isRootEntity<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check if this entity is the root in any entity-inheritance-hierachy.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isSingleValuedAssociation"/>
-            <h4><span class="label public">public</span>isSingleValuedAssociation<span style="font-size:90%;">( <span class="param-type"/><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritDoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="isUniqueField"/>
-            <h4><span class="label public">public</span>isUniqueField<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Check if the field is unique.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - The field name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the field is unique, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="mapField"/>
-            <h4><span class="label public">public</span>mapField<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a mapped field to the class.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mapping</code> - The field mapping.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="mapManyToMany"/>
-            <h4><span class="label public">public</span>mapManyToMany<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a many-to-many mapping.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mapping</code> - The mapping.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="mapManyToOne"/>
-            <h4><span class="label public">public</span>mapManyToOne<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a many-to-one mapping.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mapping</code> - The mapping.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="mapOneToMany"/>
-            <h4><span class="label public">public</span>mapOneToMany<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a one-to-many mapping.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mapping</code> - The mapping.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="mapOneToOne"/>
-            <h4><span class="label public">public</span>mapOneToOne<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Adds a one-to-one mapping.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mapping</code> - The mapping.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="markReadOnly"/>
-            <h4><span class="label public">public</span>markReadOnly<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Mark this class as read only, no change tracking is applied to it.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="newInstance"/>
-            <h4><span class="label public">public</span>newInstance<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Creates a new instance of the mapped class, without invoking the constructor.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setAssociationOverride"/>
-            <h4><span class="label public">public</span>setAssociationOverride<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong>, <span class="param-type">Array</span><strong> $overrideMapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the association to override association mapping of property for an entity relationship.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - </li>
-                <li><code>$overrideMapping</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setAttributeOverride"/>
-            <h4><span class="label public">public</span>setAttributeOverride<span style="font-size:90%;">( <span class="param-type">string</span><strong> $fieldName</strong>, <span class="param-type">Array</span><strong> $overrideMapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the override for a mapped field.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$fieldName</code> - </li>
-                <li><code>$overrideMapping</code> - </li>
-                <li><code>$overrideMapping</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setChangeTrackingPolicy"/>
-            <h4><span class="label public">public</span>setChangeTrackingPolicy<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $policy</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the change tracking policy used by this class.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$policy</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setCustomGeneratorDefinition"/>
-            <h4><span class="label public">public</span>setCustomGeneratorDefinition<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $definition</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets definition</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$definition</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setCustomRepositoryClass"/>
-            <h4><span class="label public">public</span>setCustomRepositoryClass<span style="font-size:90%;">( <span class="param-type">string</span><strong> $repositoryClassName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Registers a custom repository class for the entity class.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$repositoryClassName</code> - The class name of the custom mapper.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setDiscriminatorColumn"/>
-            <h4><span class="label public">public</span>setDiscriminatorColumn<span style="font-size:90%;">( <span class="param-type">array</span><strong> $columnDef</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the discriminator column definition.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$columnDef</code> - </li>
-                <li><code>$columnDef</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setDiscriminatorMap"/>
-            <h4><span class="label public">public</span>setDiscriminatorMap<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $map</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the discriminator values used by this class.<pre>Used for JOINED and SINGLE_TABLE inheritance mapping strategies.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$map</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setFieldValue"/>
-            <h4><span class="label public">public</span>setFieldValue<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">string</span><strong> $field</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the specified field to the specified value on the given entity.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - </li>
-                <li><code>$field</code> - </li>
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setIdGenerator"/>
-            <h4><span class="label public">public</span>setIdGenerator<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\ORM\Id\AbstractIdGenerator">AbstractIdGenerator</span></span><strong> $generator</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the ID generator used to generate IDs for instances of this class.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$generator</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setIdGeneratorType"/>
-            <h4><span class="label public">public</span>setIdGeneratorType<span style="font-size:90%;">( <span class="param-type"/><strong> $generatorType</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the type of Id generator to use for the mapped class.</li>
-            </p>
-          </li>
-          <li>
-            <a name="setIdentifier"/>
-            <h4><span class="label public">public</span>setIdentifier<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $identifier</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Sets the mapped identifier/primary key fields of this class.<pre>Mainly used by the ClassMetadataFactory to assign inherited identifiers.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$identifier</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setIdentifierValues"/>
-            <h4><span class="label public">public</span>setIdentifierValues<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Populates the entity identifier of an entity.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - </li>
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setInheritanceType"/>
-            <h4><span class="label public">public</span>setInheritanceType<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $type</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the inheritance type used by the class and it's subclasses.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$type</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setLifecycleCallbacks"/>
-            <h4><span class="label public">public</span>setLifecycleCallbacks<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $callbacks</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the lifecycle callbacks for entities of this class.<pre>Any previously registered callbacks are overwritten.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$callbacks</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setParentClasses"/>
-            <h4><span class="label public">public</span>setParentClasses<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $classNames</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the parent class names.<pre>Assumes that the class names in the passed array are in the order:
-directParent -&gt; directParentParent -&gt; directParentParentParent ... -&gt; root.</pre></li>
-            </p>
-          </li>
-          <li>
-            <a name="setPrimaryTable"/>
-            <h4><span class="label public">public</span>setPrimaryTable<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $table</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the primary table definition. The provided array supports the following structure:<pre>name =&gt; &lt;tableName&gt; (optional, defaults to class name)
-indexes =&gt; array of indexes (optional)
-uniqueConstraints =&gt; array of constraints (optional)
-
-If a key is omitted, the current value is kept.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$table</code> - The table description.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setSequenceGeneratorDefinition"/>
-            <h4><span class="label public">public</span>setSequenceGeneratorDefinition<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $definition</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the definition of the sequence ID generator for this class.<pre>The definition must have the following structure:
-&lt;code&gt;
-array(
-    'sequenceName'   =&gt; 'name',
-    'allocationSize' =&gt; 20,
-    'initialValue'   =&gt; 1
-    'quoted'         =&gt; 1
-)
-&lt;/code&gt;</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$definition</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setSubclasses"/>
-            <h4><span class="label public">public</span>setSubclasses<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $subclasses</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the mapped subclasses of this class.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$subclasses</code> - The names of all mapped subclasses.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setTableName"/>
-            <h4><span class="label public">public</span>setTableName<span style="font-size:90%;">( <span class="param-type">string</span><strong> $tableName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the name of the primary table the class is mapped to.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$tableName</code> - The table name.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setVersionField"/>
-            <h4><span class="label public">public</span>setVersionField<span style="font-size:90%;">( <span class="param-type">string</span><strong> $versionField</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the name of the field that is to be used for versioning if this class is versioned for optimistic locking.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$versionField</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setVersionMapping"/>
-            <h4><span class="label public">public</span>setVersionMapping<span style="font-size:90%;">( <span class="param-type">Array</span><strong> &amp;$mapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the version field mapping used for versioning. Sets the default value to use depending on the column type.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mapping</code> - The version field mapping array</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setVersioned"/>
-            <h4><span class="label public">public</span>setVersioned<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $bool</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets whether this class is to be versioned for optimistic locking.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$bool</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="usesIdGenerator"/>
-            <h4><span class="label public">public</span>usesIdGenerator<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether the mapped class uses an Id generator.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the mapped class uses an Id generator, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="validateAssocations"/>
-            <h4><span class="label public">public</span>validateAssocations<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validate association targets actually exist.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="validateIdentifier"/>
-            <h4><span class="label public">public</span>validateIdentifier<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validate Identifier</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="validateLifecycleCallbacks"/>
-            <h4><span class="label public">public</span>validateLifecycleCallbacks<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\Common\Persistence\Mapping\ReflectionService">ReflectionService</span></span><strong> $reflService</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validate lifecycle callbacks</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$reflService</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="wakeupReflection"/>
-            <h4><span class="label public">public</span>wakeupReflection<span style="font-size:90%;">( <span class="param-type"><span title="\Doctrine\Common\Persistence\Mapping\ReflectionService">ReflectionService</span></span><strong> $reflService</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Restores some state that can not be serialized/unserialized.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$reflService</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_storeAssociationMapping"/>
-            <h4><span class="label protected">protected</span>_storeAssociationMapping<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $assocMapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Stores the association mapping.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$assocMapping</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_validateAndCompleteAssociationMapping"/>
-            <h4><span class="label protected">protected</span>_validateAndCompleteAssociationMapping<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validates &amp; completes the basic mapping information that is common to all association mappings (one-to-one, many-ot-one, one-to-many, many-to-many).</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mapping</code> - The mapping.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The updated mapping.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException If something is wrong with the mapping.</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_validateAndCompleteFieldMapping"/>
-            <h4><span class="label protected">protected</span>_validateAndCompleteFieldMapping<span style="font-size:90%;">( <span class="param-type">Array</span><strong> &amp;$mapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validates &amp; completes the given field mapping.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mapping</code> - The field mapping to validated &amp; complete.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The validated and completed field mapping.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_validateAndCompleteManyToManyMapping"/>
-            <h4><span class="label protected">protected</span>_validateAndCompleteManyToManyMapping<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mapping</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="_validateAndCompleteOneToManyMapping"/>
-            <h4><span class="label protected">protected</span>_validateAndCompleteOneToManyMapping<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validates and completes the mapping.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mapping</code> - The mapping to validate and complete.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The validated and completed mapping.@override</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>MappingException</code>
-                </li>
-                <li>
-                  <code>InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_validateAndCompleteOneToOneMapping"/>
-            <h4><span class="label protected">protected</span>_validateAndCompleteOneToOneMapping<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $mapping</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Validates &amp; completes a one-to-one association mapping.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$mapping</code> - The mapping to validate &amp; complete.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The validated &amp; completed mapping.@override</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>RuntimeException</code>
-                </li>
-                <li>
-                  <code>MappingException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">27+</td>
+            <td>remove or rename ClassMetadataInfo to ClassMetadata</td>
+          </tr>
+          <tr>
+            <td class="nummeric">+</td>
+            <td>Not really needed. Usage could be localized.</td>
+          </tr>
+          <tr>
+            <td class="nummeric">+</td>
+            <td>Merge with tableGeneratorDefinition into generic generatorDefinition</td>
+          </tr>
+          <tr>
+            <td class="nummeric">+</td>
+            <td>We could get rid of this array by just using $fieldMappings[$fieldName]['columnName'].</td>
+          </tr>
+          <tr>
+            <td class="nummeric">+</td>
+            <td>Remove!</td>
+          </tr>
+          <tr>
+            <td class="nummeric">+</td>
+            <td>Merge with tableGeneratorDefinition into generic generatorDefinition</td>
+          </tr>
+          <tr>
+            <td class="nummeric">+</td>
+            <td>Merge with tableGeneratorDefinition into generic generatorDefinition</td>
+          </tr>
+          <tr>
+            <td class="nummeric">686+</td>
+            <td>Rename to assignIdentifier()</td>
+          </tr>
+          <tr>
+            <td class="nummeric">722+</td>
+            <td>Construct meaningful string representation.</td>
+          </tr>
+        </table>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="INHERITANCE_TYPE_NONE">INHERITANCE_TYPE_NONE</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="INHERITANCE_TYPE_JOINED">INHERITANCE_TYPE_JOINED</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="INHERITANCE_TYPE_SINGLE_TABLE">INHERITANCE_TYPE_SINGLE_TABLE</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="INHERITANCE_TYPE_TABLE_PER_CLASS">INHERITANCE_TYPE_TABLE_PER_CLASS</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="GENERATOR_TYPE_AUTO">GENERATOR_TYPE_AUTO</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="GENERATOR_TYPE_SEQUENCE">GENERATOR_TYPE_SEQUENCE</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="GENERATOR_TYPE_TABLE">GENERATOR_TYPE_TABLE</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="GENERATOR_TYPE_IDENTITY">GENERATOR_TYPE_IDENTITY</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="GENERATOR_TYPE_NONE">GENERATOR_TYPE_NONE</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td id="GENERATOR_TYPE_UUID">GENERATOR_TYPE_UUID</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td id="GENERATOR_TYPE_CUSTOM">GENERATOR_TYPE_CUSTOM</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td id="CHANGETRACKING_DEFERRED_IMPLICIT">CHANGETRACKING_DEFERRED_IMPLICIT</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="CHANGETRACKING_DEFERRED_EXPLICIT">CHANGETRACKING_DEFERRED_EXPLICIT</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="CHANGETRACKING_NOTIFY">CHANGETRACKING_NOTIFY</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="FETCH_LAZY">FETCH_LAZY</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="FETCH_EAGER">FETCH_EAGER</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="FETCH_EXTRA_LAZY">FETCH_EXTRA_LAZY</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="ONE_TO_ONE">ONE_TO_ONE</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="MANY_TO_ONE">MANY_TO_ONE</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="ONE_TO_MANY">ONE_TO_MANY</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="MANY_TO_MANY">MANY_TO_MANY</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td id="TO_ONE">TO_ONE</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="TO_MANY">TO_MANY</td>
+              <td>12</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="namingStrategy"><strong>$namingStrategy</strong>
+                —
+                <a href="#">\Doctrine\ORM\Mapping\NamingStrategy</a><br/><span class="indent">NamingStrategy determining the default column and table names</span></li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="associationMappings"><strong>$associationMappings</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: The association mappings of this class.</span></li>
+            <li id="changeTrackingPolicy"><strong>$changeTrackingPolicy</strong>
+                —
+                integer<br/><span class="indent">READ-ONLY: The policy used for change-tracking on entities of this class.</span></li>
+            <li id="columnNames"><strong>$columnNames</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: A map of field names to column names. Keys are field names and values column names.</span></li>
+            <li id="containsForeignIdentifier"><strong>$containsForeignIdentifier</strong>
+                —
+                boolean<br/><span class="indent">READ-ONLY: Flag indicating wheather the identifier/primary key contains at least one foreign key association.</span></li>
+            <li id="customGeneratorDefinition"><strong>$customGeneratorDefinition</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: The definition of custom generator. Only used for CUSTOM generator type</span></li>
+            <li id="customRepositoryClassName"><strong>$customRepositoryClassName</strong>
+                —
+                string<br/><span class="indent">The name of the custom repository class used for the entity class.</span></li>
+            <li id="discriminatorColumn"><strong>$discriminatorColumn</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: The definition of the discriminator column used in JOINED and SINGLE_TABLE inheritance mappings.</span></li>
+            <li id="discriminatorMap"><strong>$discriminatorMap</strong>
+                —
+                mixed<br/><span class="indent">READ-ONLY: The discriminator map of all mapped classes in the hierarchy.</span></li>
+            <li id="discriminatorValue"><strong>$discriminatorValue</strong>
+                —
+                mixed<br/><span class="indent">READ-ONLY: The discriminator value of this class.</span></li>
+            <li id="fieldMappings"><strong>$fieldMappings</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: The field mappings of the class.</span></li>
+            <li id="fieldNames"><strong>$fieldNames</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: An array of field names. Used to look up field names from column names.</span></li>
+            <li id="generatorType"><strong>$generatorType</strong>
+                —
+                string<br/><span class="indent">READ-ONLY: The Id generator type used by the class.</span></li>
+            <li id="idGenerator"><strong>$idGenerator</strong>
+                —
+                <a href="#">\Doctrine\ORM\Id\AbstractIdGenerator</a><br/><span class="indent">READ-ONLY: The ID generator used for generating IDs for this class.</span></li>
+            <li id="identifier"><strong>$identifier</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: The field names of all fields that are part of the identifier/primary key of the mapped entity class.</span></li>
+            <li id="inheritanceType"><strong>$inheritanceType</strong>
+                —
+                integer<br/><span class="indent">READ-ONLY: The inheritance mapping type used by the class.</span></li>
+            <li id="isIdentifierComposite"><strong>$isIdentifierComposite</strong>
+                —
+                boolean<br/><span class="indent">READ-ONLY: Flag indicating whether the identifier/primary key of the class is composite.</span></li>
+            <li id="isMappedSuperclass"><strong>$isMappedSuperclass</strong>
+                —
+                boolean<br/><span class="indent">READ-ONLY: Whether this class describes the mapping of a mapped superclass.</span></li>
+            <li id="isReadOnly"><strong>$isReadOnly</strong>
+                —
+                <a href="#">Doctrine\ORM\Mapping\bool</a><br/><span class="indent">Is this entity marked as "read-only"?</span></li>
+            <li id="isVersioned"><strong>$isVersioned</strong>
+                —
+                boolean<br/><span class="indent">READ-ONLY: A flag for whether or not instances of this class are to be versioned with optimistic locking.</span></li>
+            <li id="lifecycleCallbacks"><strong>$lifecycleCallbacks</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: The registered lifecycle callbacks for entities of this class.</span></li>
+            <li id="name">
+              <strong>$name</strong>
+              <br/>
+              <span class="indent">READ-ONLY: The name of the entity class.</span>
+            </li>
+            <li id="namedNativeQueries">
+              <strong>$namedNativeQueries</strong>
+              <br/>
+              <span class="indent">READ-ONLY: The named native queries allowed to be called directly from Repository.</span>
+            </li>
+            <li id="namedQueries"><strong>$namedQueries</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: The named queries allowed to be called directly from Repository.</span></li>
+            <li id="namespace"><strong>$namespace</strong>
+                —
+                string<br/><span class="indent">READ-ONLY: The namespace the entity class is contained in.</span></li>
+            <li id="parentClasses"><strong>$parentClasses</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: The names of the parent classes (ancestors).</span></li>
+            <li id="reflClass"><strong>$reflClass</strong>
+                —
+                <a href="#">ReflectionClass</a><br/><span class="indent">The ReflectionClass instance of the mapped class.</span></li>
+            <li id="reflFields"><strong>$reflFields</strong>
+                —
+                array<br/><span class="indent">The ReflectionProperty instances of the mapped class.</span></li>
+            <li id="rootEntityName"><strong>$rootEntityName</strong>
+                —
+                string<br/><span class="indent">READ-ONLY: The name of the entity class that is at the root of the mapped entity inheritance hierarchy. If the entity is not part of a mapped inheritance hierarchy this is the same as {@link $entityName}.</span></li>
+            <li id="sequenceGeneratorDefinition"><strong>$sequenceGeneratorDefinition</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: The definition of the sequence generator of this class. Only used for the SEQUENCE generation strategy.</span></li>
+            <li id="sqlResultSetMappings">
+              <strong>$sqlResultSetMappings</strong>
+              <br/>
+              <span class="indent">READ-ONLY: The mappings of the results of native SQL queries.</span>
+            </li>
+            <li id="subClasses"><strong>$subClasses</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: The names of all subclasses (descendants).</span></li>
+            <li id="table"><strong>$table</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: The primary table definition. The definition is an array with the following entries:</span></li>
+            <li id="tableGeneratorDefinition"><strong>$tableGeneratorDefinition</strong>
+                —
+                array<br/><span class="indent">READ-ONLY: The definition of the table generator of this class. Only used for the TABLE generation strategy.</span></li>
+            <li id="versionField"><strong>$versionField</strong>
+                —
+                mixed<br/><span class="indent">READ-ONLY: The name of the field which is used for versioning in optimistic locking (if any).</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h3>Inherited from <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo.xhtml">Doctrine\ORM\Mapping\ClassMetadataInfo</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="_storeAssociationMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/_storeAssociationMapping.xhtml">_storeAssociationMapping()</a>
+                — Stores the association mapping.</li>
+            <li id="_validateAndCompleteAssociationMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/_validateAndCompleteAssociationMapping.xhtml">_validateAndCompleteAssociationMapping()</a>
+                — Validates &amp; completes the basic mapping information that is common to all association mappings (one-to-one, many-ot-one, one-to-many, many-to-many).</li>
+            <li id="_validateAndCompleteFieldMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/_validateAndCompleteFieldMapping.xhtml">_validateAndCompleteFieldMapping()</a>
+                — Validates &amp; completes the given field mapping.</li>
+            <li id="_validateAndCompleteManyToManyMapping">
+              <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/_validateAndCompleteManyToManyMapping.xhtml">_validateAndCompleteManyToManyMapping()</a>
+            </li>
+            <li id="_validateAndCompleteOneToManyMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/_validateAndCompleteOneToManyMapping.xhtml">_validateAndCompleteOneToManyMapping()</a>
+                — Validates and completes the mapping.</li>
+            <li id="_validateAndCompleteOneToOneMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/_validateAndCompleteOneToOneMapping.xhtml">_validateAndCompleteOneToOneMapping()</a>
+                — Validates &amp; completes a one-to-one association mapping.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__sleep"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/__sleep.xhtml">__sleep()</a>
+                — Determines which fields get serialized.</li>
+            <li id="__toString"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/__toString.xhtml">__toString()</a>
+                — Creates a string representation of this instance.</li>
+            <li id="addDiscriminatorMapClass"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addDiscriminatorMapClass.xhtml">addDiscriminatorMapClass()</a>
+                — Add one entry of the discriminator map with a new class and corresponding name.</li>
+            <li id="addInheritedAssociationMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addInheritedAssociationMapping.xhtml">addInheritedAssociationMapping()</a>
+                — INTERNAL: Adds an association mapping without completing/validating it.</li>
+            <li id="addInheritedFieldMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addInheritedFieldMapping.xhtml">addInheritedFieldMapping()</a>
+                — INTERNAL: Adds a field mapping without completing/validating it.</li>
+            <li id="addLifecycleCallback"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addLifecycleCallback.xhtml">addLifecycleCallback()</a>
+                — Adds a lifecycle callback for entities of this class.</li>
+            <li id="addNamedNativeQuery"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addNamedNativeQuery.xhtml">addNamedNativeQuery()</a>
+                — INTERNAL: Adds a named native query to this class.</li>
+            <li id="addNamedQuery"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addNamedQuery.xhtml">addNamedQuery()</a>
+                — INTERNAL: Adds a named query to this class.</li>
+            <li id="addSqlResultSetMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/addSqlResultSetMapping.xhtml">addSqlResultSetMapping()</a>
+                — INTERNAL: Adds a sql result set mapping to this class.</li>
+            <li id="getAssociationMappedByTargetField"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getAssociationMappedByTargetField.xhtml">getAssociationMappedByTargetField()</a>
+                — {@inheritDoc}</li>
+            <li id="getAssociationMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getAssociationMapping.xhtml">getAssociationMapping()</a>
+                — Gets the mapping of an association.</li>
+            <li id="getAssociationMappings"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getAssociationMappings.xhtml">getAssociationMappings()</a>
+                — Gets all association mappings of the class.</li>
+            <li id="getAssociationNames"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getAssociationNames.xhtml">getAssociationNames()</a>
+                — {@inheritDoc}</li>
+            <li id="getAssociationTargetClass"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getAssociationTargetClass.xhtml">getAssociationTargetClass()</a>
+                — {@inheritDoc}</li>
+            <li id="getAssociationsByTargetClass">
+              <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getAssociationsByTargetClass.xhtml">getAssociationsByTargetClass()</a>
+            </li>
+            <li id="getColumnName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getColumnName.xhtml">getColumnName()</a>
+                — Gets a column name for a field name.</li>
+            <li id="getColumnNames"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getColumnNames.xhtml">getColumnNames()</a>
+                — Gets an array containing all the column names.</li>
+            <li id="getFieldForColumn"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getFieldForColumn.xhtml">getFieldForColumn()</a>
+                — Used to retrieve a fieldname for either field or association from a given column,</li>
+            <li id="getFieldMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getFieldMapping.xhtml">getFieldMapping()</a>
+                — Gets the mapping of a (regular) field that holds some data but not a reference to another object.</li>
+            <li id="getFieldName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getFieldName.xhtml">getFieldName()</a>
+                — Gets the field name for a column name.</li>
+            <li id="getFieldNames"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getFieldNames.xhtml">getFieldNames()</a>
+                — {@inheritDoc}</li>
+            <li id="getFieldValue"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getFieldValue.xhtml">getFieldValue()</a>
+                — Gets the specified field's value off the given entity.</li>
+            <li id="getIdentifier"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getIdentifier.xhtml">getIdentifier()</a>
+                — Gets the mapped identifier field of this class.</li>
+            <li id="getIdentifierColumnNames"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getIdentifierColumnNames.xhtml">getIdentifierColumnNames()</a>
+                — Returns an array with all the identifier column names.</li>
+            <li id="getIdentifierFieldNames"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getIdentifierFieldNames.xhtml">getIdentifierFieldNames()</a>
+                — {@inheritDoc}</li>
+            <li id="getIdentifierValues"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getIdentifierValues.xhtml">getIdentifierValues()</a>
+                — Extracts the identifier values of an entity of this class.</li>
+            <li id="getLifecycleCallbacks"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getLifecycleCallbacks.xhtml">getLifecycleCallbacks()</a>
+                — Gets the registered lifecycle callbacks for an event.</li>
+            <li id="getName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getName.xhtml">getName()</a>
+                — {@inheritDoc}</li>
+            <li id="getNamedNativeQueries"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getNamedNativeQueries.xhtml">getNamedNativeQueries()</a>
+                — Gets all named native queries of the class.</li>
+            <li id="getNamedNativeQuery"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getNamedNativeQuery.xhtml">getNamedNativeQuery()</a>
+                — Gets the named native query.</li>
+            <li id="getNamedQueries"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getNamedQueries.xhtml">getNamedQueries()</a>
+                — Gets all named queries of the class.</li>
+            <li id="getNamedQuery"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getNamedQuery.xhtml">getNamedQuery()</a>
+                — Gets the named query.</li>
+            <li id="getQuotedColumnName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getQuotedColumnName.xhtml">getQuotedColumnName()</a>
+                — Gets the (possibly quoted) column name of a mapped field for safe use  in an SQL statement.</li>
+            <li id="getQuotedIdentifierColumnNames"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getQuotedIdentifierColumnNames.xhtml">getQuotedIdentifierColumnNames()</a>
+                — Gets the (possibly quoted) identifier column names for safe use in an SQL statement.</li>
+            <li id="getQuotedJoinTableName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getQuotedJoinTableName.xhtml">getQuotedJoinTableName()</a>
+                — Gets the (possibly quoted) name of the join table.</li>
+            <li id="getQuotedTableName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getQuotedTableName.xhtml">getQuotedTableName()</a>
+                — Gets the (possibly quoted) primary table name of this class for safe use in an SQL statement.</li>
+            <li id="getReflectionClass"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getReflectionClass.xhtml">getReflectionClass()</a>
+                — {@inheritDoc}</li>
+            <li id="getReflectionProperties"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getReflectionProperties.xhtml">getReflectionProperties()</a>
+                — Gets the ReflectionPropertys of the mapped class.</li>
+            <li id="getReflectionProperty"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getReflectionProperty.xhtml">getReflectionProperty()</a>
+                — Gets a ReflectionProperty for a specific field of the mapped class.</li>
+            <li id="getSingleAssociationJoinColumnName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSingleAssociationJoinColumnName.xhtml">getSingleAssociationJoinColumnName()</a>
+                — Return the single association join column (if any).</li>
+            <li id="getSingleAssociationReferencedJoinColumnName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSingleAssociationReferencedJoinColumnName.xhtml">getSingleAssociationReferencedJoinColumnName()</a>
+                — Return the single association referenced join column name (if any).</li>
+            <li id="getSingleIdReflectionProperty"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSingleIdReflectionProperty.xhtml">getSingleIdReflectionProperty()</a>
+                — Gets the ReflectionProperty for the single identifier field.</li>
+            <li id="getSingleIdentifierColumnName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSingleIdentifierColumnName.xhtml">getSingleIdentifierColumnName()</a>
+                — Gets the column name of the single id column. Note that this only works on entity classes that have a single-field pk.</li>
+            <li id="getSingleIdentifierFieldName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSingleIdentifierFieldName.xhtml">getSingleIdentifierFieldName()</a>
+                — Gets the name of the single id field. Note that this only works on entity classes that have a single-field pk.</li>
+            <li id="getSqlResultSetMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSqlResultSetMapping.xhtml">getSqlResultSetMapping()</a>
+                — Gets the result set mapping.</li>
+            <li id="getSqlResultSetMappings"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getSqlResultSetMappings.xhtml">getSqlResultSetMappings()</a>
+                — Gets all sql result set mappings of the class.</li>
+            <li id="getTableName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getTableName.xhtml">getTableName()</a>
+                — Gets the name of the primary table.</li>
+            <li id="getTemporaryIdTableName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getTemporaryIdTableName.xhtml">getTemporaryIdTableName()</a>
+                — Gets the table name to use for temporary identifier tables of this class.</li>
+            <li id="getTypeOfColumn"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getTypeOfColumn.xhtml">getTypeOfColumn()</a>
+                — Gets the type of a column.</li>
+            <li id="getTypeOfField"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/getTypeOfField.xhtml">getTypeOfField()</a>
+                — Gets the type of a field.</li>
+            <li id="hasAssociation"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/hasAssociation.xhtml">hasAssociation()</a>
+                — {@inheritDoc}</li>
+            <li id="hasField"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/hasField.xhtml">hasField()</a>
+                — {@inheritDoc}</li>
+            <li id="hasLifecycleCallbacks"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/hasLifecycleCallbacks.xhtml">hasLifecycleCallbacks()</a>
+                — Whether the class has any attached lifecycle listeners or callbacks for a lifecycle event.</li>
+            <li id="hasNamedNativeQuery"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/hasNamedNativeQuery.xhtml">hasNamedNativeQuery()</a>
+                — Checks whether the class has a named native query with the given query name.</li>
+            <li id="hasNamedQuery"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/hasNamedQuery.xhtml">hasNamedQuery()</a>
+                — Checks whether the class has a named query with the given query name.</li>
+            <li id="hasSqlResultSetMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/hasSqlResultSetMapping.xhtml">hasSqlResultSetMapping()</a>
+                — Checks whether the class has a named native query with the given query name.</li>
+            <li id="initializeReflection"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/initializeReflection.xhtml">initializeReflection()</a>
+                — Initializes a new ClassMetadata instance that will hold the object-relational mapping metadata of the class with the given name.</li>
+            <li id="invokeLifecycleCallbacks"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/invokeLifecycleCallbacks.xhtml">invokeLifecycleCallbacks()</a>
+                — Dispatches the lifecycle event of the given entity to the registered lifecycle callbacks and lifecycle listeners.</li>
+            <li id="isAssociationInverseSide"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isAssociationInverseSide.xhtml">isAssociationInverseSide()</a>
+                — {@inheritDoc}</li>
+            <li id="isAssociationWithSingleJoinColumn"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isAssociationWithSingleJoinColumn.xhtml">isAssociationWithSingleJoinColumn()</a>
+                — Is this an association that only has a single join column?</li>
+            <li id="isChangeTrackingDeferredExplicit"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isChangeTrackingDeferredExplicit.xhtml">isChangeTrackingDeferredExplicit()</a>
+                — Whether the change tracking policy of this class is "deferred explicit".</li>
+            <li id="isChangeTrackingDeferredImplicit"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isChangeTrackingDeferredImplicit.xhtml">isChangeTrackingDeferredImplicit()</a>
+                — Whether the change tracking policy of this class is "deferred implicit".</li>
+            <li id="isChangeTrackingNotify"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isChangeTrackingNotify.xhtml">isChangeTrackingNotify()</a>
+                — Whether the change tracking policy of this class is "notify".</li>
+            <li id="isCollectionValuedAssociation"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isCollectionValuedAssociation.xhtml">isCollectionValuedAssociation()</a>
+                — {@inheritDoc}</li>
+            <li id="isIdGeneratorIdentity"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isIdGeneratorIdentity.xhtml">isIdGeneratorIdentity()</a>
+                — Checks whether the class uses an identity column for the Id generation.</li>
+            <li id="isIdGeneratorSequence"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isIdGeneratorSequence.xhtml">isIdGeneratorSequence()</a>
+                — Checks whether the class uses a sequence for id generation.</li>
+            <li id="isIdGeneratorTable"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isIdGeneratorTable.xhtml">isIdGeneratorTable()</a>
+                — Checks whether the class uses a table for id generation.</li>
+            <li id="isIdentifier"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isIdentifier.xhtml">isIdentifier()</a>
+                — Checks whether a field is part of the identifier/primary key field(s).</li>
+            <li id="isIdentifierNatural"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isIdentifierNatural.xhtml">isIdentifierNatural()</a>
+                — Checks whether the class has a natural identifier/pk (which means it does not use any Id generator.</li>
+            <li id="isIdentifierUuid"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isIdentifierUuid.xhtml">isIdentifierUuid()</a>
+                — Checks whether the class use a UUID for id generation</li>
+            <li id="isInheritanceTypeJoined"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isInheritanceTypeJoined.xhtml">isInheritanceTypeJoined()</a>
+                — Checks whether the mapped class uses the JOINED inheritance mapping strategy.</li>
+            <li id="isInheritanceTypeNone">
+              <a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isInheritanceTypeNone.xhtml">isInheritanceTypeNone()</a>
+            </li>
+            <li id="isInheritanceTypeSingleTable"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isInheritanceTypeSingleTable.xhtml">isInheritanceTypeSingleTable()</a>
+                — Checks whether the mapped class uses the SINGLE_TABLE inheritance mapping strategy.</li>
+            <li id="isInheritanceTypeTablePerClass"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isInheritanceTypeTablePerClass.xhtml">isInheritanceTypeTablePerClass()</a>
+                — Checks whether the mapped class uses the TABLE_PER_CLASS inheritance mapping strategy.</li>
+            <li id="isInheritedAssociation"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isInheritedAssociation.xhtml">isInheritedAssociation()</a>
+                — Checks whether a mapped association field is inherited from a superclass.</li>
+            <li id="isInheritedField"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isInheritedField.xhtml">isInheritedField()</a>
+                — Checks whether a mapped field is inherited from an entity superclass.</li>
+            <li id="isNullable"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isNullable.xhtml">isNullable()</a>
+                — Check if the field is not null.</li>
+            <li id="isRootEntity"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isRootEntity.xhtml">isRootEntity()</a>
+                — Check if this entity is the root in any entity-inheritance-hierachy.</li>
+            <li id="isSingleValuedAssociation"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isSingleValuedAssociation.xhtml">isSingleValuedAssociation()</a>
+                — {@inheritDoc}</li>
+            <li id="isUniqueField"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/isUniqueField.xhtml">isUniqueField()</a>
+                — Check if the field is unique.</li>
+            <li id="mapField"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/mapField.xhtml">mapField()</a>
+                — Adds a mapped field to the class.</li>
+            <li id="mapManyToMany"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/mapManyToMany.xhtml">mapManyToMany()</a>
+                — Adds a many-to-many mapping.</li>
+            <li id="mapManyToOne"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/mapManyToOne.xhtml">mapManyToOne()</a>
+                — Adds a many-to-one mapping.</li>
+            <li id="mapOneToMany"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/mapOneToMany.xhtml">mapOneToMany()</a>
+                — Adds a one-to-many mapping.</li>
+            <li id="mapOneToOne"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/mapOneToOne.xhtml">mapOneToOne()</a>
+                — Adds a one-to-one mapping.</li>
+            <li id="markReadOnly"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/markReadOnly.xhtml">markReadOnly()</a>
+                — Mark this class as read only, no change tracking is applied to it.</li>
+            <li id="newInstance"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/newInstance.xhtml">newInstance()</a>
+                — Creates a new instance of the mapped class, without invoking the constructor.</li>
+            <li id="setAssociationOverride"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setAssociationOverride.xhtml">setAssociationOverride()</a>
+                — Sets the association to override association mapping of property for an entity relationship.</li>
+            <li id="setAttributeOverride"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setAttributeOverride.xhtml">setAttributeOverride()</a>
+                — Sets the override for a mapped field.</li>
+            <li id="setChangeTrackingPolicy"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setChangeTrackingPolicy.xhtml">setChangeTrackingPolicy()</a>
+                — Sets the change tracking policy used by this class.</li>
+            <li id="setCustomGeneratorDefinition"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setCustomGeneratorDefinition.xhtml">setCustomGeneratorDefinition()</a>
+                — Sets definition</li>
+            <li id="setCustomRepositoryClass"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setCustomRepositoryClass.xhtml">setCustomRepositoryClass()</a>
+                — Registers a custom repository class for the entity class.</li>
+            <li id="setDiscriminatorColumn"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setDiscriminatorColumn.xhtml">setDiscriminatorColumn()</a>
+                — Sets the discriminator column definition.</li>
+            <li id="setDiscriminatorMap"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setDiscriminatorMap.xhtml">setDiscriminatorMap()</a>
+                — Sets the discriminator values used by this class.</li>
+            <li id="setFieldValue"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setFieldValue.xhtml">setFieldValue()</a>
+                — Sets the specified field to the specified value on the given entity.</li>
+            <li id="setIdGenerator"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setIdGenerator.xhtml">setIdGenerator()</a>
+                — Sets the ID generator used to generate IDs for instances of this class.</li>
+            <li id="setIdGeneratorType"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setIdGeneratorType.xhtml">setIdGeneratorType()</a>
+                — Sets the type of Id generator to use for the mapped class.</li>
+            <li id="setIdentifier"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setIdentifier.xhtml">setIdentifier()</a>
+                — INTERNAL: Sets the mapped identifier/primary key fields of this class.</li>
+            <li id="setIdentifierValues"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setIdentifierValues.xhtml">setIdentifierValues()</a>
+                — Populates the entity identifier of an entity.</li>
+            <li id="setInheritanceType"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setInheritanceType.xhtml">setInheritanceType()</a>
+                — Sets the inheritance type used by the class and it's subclasses.</li>
+            <li id="setLifecycleCallbacks"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setLifecycleCallbacks.xhtml">setLifecycleCallbacks()</a>
+                — Sets the lifecycle callbacks for entities of this class.</li>
+            <li id="setParentClasses"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setParentClasses.xhtml">setParentClasses()</a>
+                — Sets the parent class names.</li>
+            <li id="setPrimaryTable"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setPrimaryTable.xhtml">setPrimaryTable()</a>
+                — Sets the primary table definition. The provided array supports the following structure:</li>
+            <li id="setSequenceGeneratorDefinition"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setSequenceGeneratorDefinition.xhtml">setSequenceGeneratorDefinition()</a>
+                — Sets the definition of the sequence ID generator for this class.</li>
+            <li id="setSubclasses"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setSubclasses.xhtml">setSubclasses()</a>
+                — Sets the mapped subclasses of this class.</li>
+            <li id="setTableName"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setTableName.xhtml">setTableName()</a>
+                — Sets the name of the primary table the class is mapped to.</li>
+            <li id="setVersionField"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setVersionField.xhtml">setVersionField()</a>
+                — Sets the name of the field that is to be used for versioning if this class is versioned for optimistic locking.</li>
+            <li id="setVersionMapping"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setVersionMapping.xhtml">setVersionMapping()</a>
+                — Sets the version field mapping used for versioning. Sets the default value to use depending on the column type.</li>
+            <li id="setVersioned"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/setVersioned.xhtml">setVersioned()</a>
+                — Sets whether this class is to be versioned for optimistic locking.</li>
+            <li id="usesIdGenerator"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/usesIdGenerator.xhtml">usesIdGenerator()</a>
+                — Checks whether the mapped class uses an Id generator.</li>
+            <li id="validateAssocations"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/validateAssocations.xhtml">validateAssocations()</a>
+                — Validate association targets actually exist.</li>
+            <li id="validateIdentifier"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/validateIdentifier.xhtml">validateIdentifier()</a>
+                — Validate Identifier</li>
+            <li id="validateLifecycleCallbacks"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/validateLifecycleCallbacks.xhtml">validateLifecycleCallbacks()</a>
+                — Validate lifecycle callbacks</li>
+            <li id="wakeupReflection"><a title="Doctrine\ORM\Mapping\ClassMetadataInfo" href="../classes/Doctrine_ORM_Mapping_ClassMetadataInfo/wakeupReflection.xhtml">wakeupReflection()</a>
+                — Restores some state that can not be serialized/unserialized.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

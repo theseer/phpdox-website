@@ -1,812 +1,373 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - SqlFormatter - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - SqlFormatter</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">SqlFormatter</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#TOKEN_TYPE_WHITESPACE">TOKEN_TYPE_WHITESPACE</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#TOKEN_TYPE_WORD">TOKEN_TYPE_WORD</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#TOKEN_TYPE_QUOTE">TOKEN_TYPE_QUOTE</a>
+            <a href="#constants">Constants</a>
           </li>
           <li>
-            <a href="#TOKEN_TYPE_BACKTICK_QUOTE">TOKEN_TYPE_BACKTICK_QUOTE</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#TOKEN_TYPE_RESERVED">TOKEN_TYPE_RESERVED</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#TOKEN_TYPE_RESERVED_TOPLEVEL">TOKEN_TYPE_RESERVED_TOPLEVEL</a>
-          </li>
-          <li>
-            <a href="#TOKEN_TYPE_RESERVED_NEWLINE">TOKEN_TYPE_RESERVED_NEWLINE</a>
-          </li>
-          <li>
-            <a href="#TOKEN_TYPE_BOUNDARY">TOKEN_TYPE_BOUNDARY</a>
-          </li>
-          <li>
-            <a href="#TOKEN_TYPE_COMMENT">TOKEN_TYPE_COMMENT</a>
-          </li>
-          <li>
-            <a href="#TOKEN_TYPE_BLOCK_COMMENT">TOKEN_TYPE_BLOCK_COMMENT</a>
-          </li>
-          <li>
-            <a href="#TOKEN_TYPE_NUMBER">TOKEN_TYPE_NUMBER</a>
-          </li>
-          <li>
-            <a href="#TOKEN_TYPE_ERROR">TOKEN_TYPE_ERROR</a>
-          </li>
-          <li>
-            <a href="#TOKEN_TYPE">TOKEN_TYPE</a>
-          </li>
-          <li>
-            <a href="#TOKEN_VALUE">TOKEN_VALUE</a>
+            <a href="../source/jdorn/sql-formatter/lib/SqlFormatter.php.xhtml#line14">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>SqlFormatter</h1>
+        <h4>SQL Formatter is a collection of utilities for debugging SQL queries.</h4>
+        <p>It includes methods for formatting, syntax highlighting, removing comments, etc.</p>
         <ul>
-          <li>
-            <a href="#reserved">$reserved</a>
-          </li>
-          <li>
-            <a href="#reserved_toplevel">$reserved_toplevel</a>
-          </li>
-          <li>
-            <a href="#reserved_newline">$reserved_newline</a>
-          </li>
-          <li>
-            <a href="#boundaries">$boundaries</a>
-          </li>
-          <li>
-            <a href="#quote_attributes">$quote_attributes</a>
-          </li>
-          <li>
-            <a href="#backtick_quote_attributes">$backtick_quote_attributes</a>
-          </li>
-          <li>
-            <a href="#reserved_attributes">$reserved_attributes</a>
-          </li>
-          <li>
-            <a href="#boundary_attributes">$boundary_attributes</a>
-          </li>
-          <li>
-            <a href="#number_attributes">$number_attributes</a>
-          </li>
-          <li>
-            <a href="#word_attributes">$word_attributes</a>
-          </li>
-          <li>
-            <a href="#error_attributes">$error_attributes</a>
-          </li>
-          <li>
-            <a href="#comment_attributes">$comment_attributes</a>
-          </li>
-          <li>
-            <a href="#pre_attributes">$pre_attributes</a>
-          </li>
-          <li>
-            <a href="#cli">$cli</a>
-          </li>
-          <li>
-            <a href="#cli_quote">$cli_quote</a>
-          </li>
-          <li>
-            <a href="#cli_backtick_quote">$cli_backtick_quote</a>
-          </li>
-          <li>
-            <a href="#cli_reserved">$cli_reserved</a>
-          </li>
-          <li>
-            <a href="#cli_boundary">$cli_boundary</a>
-          </li>
-          <li>
-            <a href="#cli_number">$cli_number</a>
-          </li>
-          <li>
-            <a href="#cli_word">$cli_word</a>
-          </li>
-          <li>
-            <a href="#cli_error">$cli_error</a>
-          </li>
-          <li>
-            <a href="#cli_comment">$cli_comment</a>
-          </li>
-          <li>
-            <a href="#tab">$tab</a>
-          </li>
-          <li>
-            <a href="#use_pre">$use_pre</a>
-          </li>
-          <li>
-            <a href="#init">$init</a>
-          </li>
-          <li>
-            <a href="#regex_boundaries">$regex_boundaries</a>
-          </li>
-          <li>
-            <a href="#regex_reserved">$regex_reserved</a>
-          </li>
-          <li>
-            <a href="#regex_reserved_newline">$regex_reserved_newline</a>
-          </li>
-          <li>
-            <a href="#regex_reserved_toplevel">$regex_reserved_toplevel</a>
-          </li>
-          <li>
-            <a href="#max_cachekey_size">$max_cachekey_size</a>
-          </li>
-          <li>
-            <a href="#token_cache">$token_cache</a>
-          </li>
-          <li>
-            <a href="#cache_hits">$cache_hits</a>
-          </li>
-          <li>
-            <a href="#cache_misses">$cache_misses</a>
-          </li>
+          <li>Author: Jeremy Dorn &lt;jeremy@jeremydorn.com&gt;</li>
+          <li>Copyright: 2013 Jeremy Dorn</li>
+          <li>License: http://opensource.org/licenses/MIT</li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#format">format</a>
-          </li>
-          <li>
-            <a href="#getCacheStats">getCacheStats</a>
-          </li>
-          <li>
-            <a href="#getNextToken">getNextToken</a>
-          </li>
-          <li>
-            <a href="#highlight">highlight</a>
-          </li>
-          <li>
-            <a href="#highlightBacktickQuote">highlightBacktickQuote</a>
-          </li>
-          <li>
-            <a href="#highlightBoundary">highlightBoundary</a>
-          </li>
-          <li>
-            <a href="#highlightComment">highlightComment</a>
-          </li>
-          <li>
-            <a href="#highlightError">highlightError</a>
-          </li>
-          <li>
-            <a href="#highlightNumber">highlightNumber</a>
-          </li>
-          <li>
-            <a href="#highlightQuote">highlightQuote</a>
-          </li>
-          <li>
-            <a href="#highlightReservedWord">highlightReservedWord</a>
-          </li>
-          <li>
-            <a href="#highlightToken">highlightToken</a>
-          </li>
-          <li>
-            <a href="#highlightWord">highlightWord</a>
-          </li>
-          <li>
-            <a href="#init">init</a>
-          </li>
-          <li>
-            <a href="#is_cli">is_cli</a>
-          </li>
-          <li>
-            <a href="#output">output</a>
-          </li>
-          <li>
-            <a href="#quote_regex">quote_regex</a>
-          </li>
-          <li>
-            <a href="#removeComments">removeComments</a>
-          </li>
-          <li>
-            <a href="#sortLength">sortLength</a>
-          </li>
-          <li>
-            <a href="#splitQuery">splitQuery</a>
-          </li>
-          <li>
-            <a href="#tokenize">tokenize</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">\</span>SqlFormatter</h2>
-        <div class="file-notice">
-          <p>SQL Formatter is a collection of utilities for debugging SQL queries.</p>
-          <p>
-            <pre>It includes methods for formatting, syntax highlighting, removing comments, etc.</pre>
-          </p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class SqlFormatter
+            {<br/><ul class="none"><li>// constants</li><li>const TOKEN_TYPE_WHITESPACE = 0;</li><li>const TOKEN_TYPE_WORD = 1;</li><li>const TOKEN_TYPE_QUOTE = 2;</li><li>const TOKEN_TYPE_BACKTICK_QUOTE = 3;</li><li>const TOKEN_TYPE_RESERVED = 4;</li><li>const TOKEN_TYPE_RESERVED_TOPLEVEL = 5;</li><li>const TOKEN_TYPE_RESERVED_NEWLINE = 6;</li><li>const TOKEN_TYPE_BOUNDARY = 7;</li><li>const TOKEN_TYPE_COMMENT = 8;</li><li>const TOKEN_TYPE_BLOCK_COMMENT = 9;</li><li>const TOKEN_TYPE_NUMBER = 10;</li><li>const TOKEN_TYPE_ERROR = 11;</li><li>const TOKEN_TYPE = 0;</li><li>const TOKEN_VALUE = 1;</li></ul><ul class="none"><li>// members</li><li>protected array <a href="#members">$reserved</a>;
+                    </li><li>protected array <a href="#members">$reserved_toplevel</a>;
+                    </li><li>protected array <a href="#members">$reserved_newline</a>;
+                    </li><li>protected array <a href="#members">$boundaries</a>;
+                    </li><li>public string <a href="#members">$quote_attributes</a>;
+                    </li><li>public string <a href="#members">$backtick_quote_attributes</a>;
+                    </li><li>public string <a href="#members">$reserved_attributes</a>;
+                    </li><li>public string <a href="#members">$boundary_attributes</a>;
+                    </li><li>public string <a href="#members">$number_attributes</a>;
+                    </li><li>public string <a href="#members">$word_attributes</a>;
+                    </li><li>public string <a href="#members">$error_attributes</a>;
+                    </li><li>public string <a href="#members">$comment_attributes</a>;
+                    </li><li>public string <a href="#members">$pre_attributes</a>;
+                    </li><li>public <a href="#members">$cli</a>;
+                    </li><li>public string <a href="#members">$cli_quote</a>;
+                    </li><li>public string <a href="#members">$cli_backtick_quote</a>;
+                    </li><li>public string <a href="#members">$cli_reserved</a>;
+                    </li><li>public string <a href="#members">$cli_boundary</a>;
+                    </li><li>public string <a href="#members">$cli_number</a>;
+                    </li><li>public string <a href="#members">$cli_word</a>;
+                    </li><li>public string <a href="#members">$cli_error</a>;
+                    </li><li>public string <a href="#members">$cli_comment</a>;
+                    </li><li>public string <a href="#members">$tab</a>;
+                    </li><li>public <a href="#members">$use_pre</a>;
+                    </li><li>protected <a href="#members">$init</a>;
+                    </li><li>protected <a href="#members">$regex_boundaries</a>;
+                    </li><li>protected <a href="#members">$regex_reserved</a>;
+                    </li><li>protected <a href="#members">$regex_reserved_newline</a>;
+                    </li><li>protected <a href="#members">$regex_reserved_toplevel</a>;
+                    </li><li>public integer <a href="#members">$max_cachekey_size</a>;
+                    </li><li>protected array <a href="#members">$token_cache</a>;
+                    </li><li>protected integer <a href="#members">$cache_hits</a>;
+                    </li><li>protected integer <a href="#members">$cache_misses</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public static Array <a title="SqlFormatter" href="../classes/SqlFormatter/getCacheStats.xhtml">getCacheStats</a>()
+                    </li><li>protected static void <a title="SqlFormatter" href="../classes/SqlFormatter/init.xhtml">init</a>()
+                    </li><li>protected static Array <a title="SqlFormatter" href="../classes/SqlFormatter/getNextToken.xhtml">getNextToken</a>()
+                    </li><li>protected static Array <a title="SqlFormatter" href="../classes/SqlFormatter/tokenize.xhtml">tokenize</a>()
+                    </li><li>public static String <a title="SqlFormatter" href="../classes/SqlFormatter/format.xhtml">format</a>()
+                    </li><li>public static String <a title="SqlFormatter" href="../classes/SqlFormatter/highlight.xhtml">highlight</a>()
+                    </li><li>public static Array <a title="SqlFormatter" href="../classes/SqlFormatter/splitQuery.xhtml">splitQuery</a>()
+                    </li><li>public static String <a title="SqlFormatter" href="../classes/SqlFormatter/removeComments.xhtml">removeComments</a>()
+                    </li><li>protected static String <a title="SqlFormatter" href="../classes/SqlFormatter/highlightToken.xhtml">highlightToken</a>()
+                    </li><li>protected static String <a title="SqlFormatter" href="../classes/SqlFormatter/highlightQuote.xhtml">highlightQuote</a>()
+                    </li><li>protected static String <a title="SqlFormatter" href="../classes/SqlFormatter/highlightBacktickQuote.xhtml">highlightBacktickQuote</a>()
+                    </li><li>protected static String <a title="SqlFormatter" href="../classes/SqlFormatter/highlightReservedWord.xhtml">highlightReservedWord</a>()
+                    </li><li>protected static String <a title="SqlFormatter" href="../classes/SqlFormatter/highlightBoundary.xhtml">highlightBoundary</a>()
+                    </li><li>protected static String <a title="SqlFormatter" href="../classes/SqlFormatter/highlightNumber.xhtml">highlightNumber</a>()
+                    </li><li>protected static String <a title="SqlFormatter" href="../classes/SqlFormatter/highlightError.xhtml">highlightError</a>()
+                    </li><li>protected static String <a title="SqlFormatter" href="../classes/SqlFormatter/highlightComment.xhtml">highlightComment</a>()
+                    </li><li>protected static String <a title="SqlFormatter" href="../classes/SqlFormatter/highlightWord.xhtml">highlightWord</a>()
+                    </li><li>private static int <a title="SqlFormatter" href="../classes/SqlFormatter/sortLength.xhtml">sortLength</a>()
+                    </li><li>private static String <a title="SqlFormatter" href="../classes/SqlFormatter/quote_regex.xhtml">quote_regex</a>()
+                    </li><li>private static String <a title="SqlFormatter" href="../classes/SqlFormatter/output.xhtml">output</a>()
+                    </li><li>private static void <a title="SqlFormatter" href="../classes/SqlFormatter/is_cli.xhtml">is_cli</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="TOKEN_TYPE_WHITESPACE">TOKEN_TYPE_WHITESPACE</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_TYPE_WORD">TOKEN_TYPE_WORD</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_TYPE_QUOTE">TOKEN_TYPE_QUOTE</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_TYPE_BACKTICK_QUOTE">TOKEN_TYPE_BACKTICK_QUOTE</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_TYPE_RESERVED">TOKEN_TYPE_RESERVED</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_TYPE_RESERVED_TOPLEVEL">TOKEN_TYPE_RESERVED_TOPLEVEL</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_TYPE_RESERVED_NEWLINE">TOKEN_TYPE_RESERVED_NEWLINE</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_TYPE_BOUNDARY">TOKEN_TYPE_BOUNDARY</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_TYPE_COMMENT">TOKEN_TYPE_COMMENT</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_TYPE_BLOCK_COMMENT">TOKEN_TYPE_BLOCK_COMMENT</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_TYPE_NUMBER">TOKEN_TYPE_NUMBER</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_TYPE_ERROR">TOKEN_TYPE_ERROR</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_TYPE">TOKEN_TYPE</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="TOKEN_VALUE">TOKEN_VALUE</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="boundaries">
+              <strong>$boundaries</strong>
+            </li>
+            <li id="cache_hits">
+              <strong>$cache_hits</strong>
+            </li>
+            <li id="cache_misses">
+              <strong>$cache_misses</strong>
+            </li>
+            <li id="init">
+              <strong>$init</strong>
+            </li>
+            <li id="regex_boundaries">
+              <strong>$regex_boundaries</strong>
+            </li>
+            <li id="regex_reserved">
+              <strong>$regex_reserved</strong>
+            </li>
+            <li id="regex_reserved_newline">
+              <strong>$regex_reserved_newline</strong>
+            </li>
+            <li id="regex_reserved_toplevel">
+              <strong>$regex_reserved_toplevel</strong>
+            </li>
+            <li id="reserved">
+              <strong>$reserved</strong>
+            </li>
+            <li id="reserved_newline">
+              <strong>$reserved_newline</strong>
+            </li>
+            <li id="reserved_toplevel">
+              <strong>$reserved_toplevel</strong>
+            </li>
+            <li id="token_cache">
+              <strong>$token_cache</strong>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="backtick_quote_attributes">
+              <strong>$backtick_quote_attributes</strong>
+            </li>
+            <li id="boundary_attributes">
+              <strong>$boundary_attributes</strong>
+            </li>
+            <li id="cli">
+              <strong>$cli</strong>
+            </li>
+            <li id="cli_backtick_quote">
+              <strong>$cli_backtick_quote</strong>
+            </li>
+            <li id="cli_boundary">
+              <strong>$cli_boundary</strong>
+            </li>
+            <li id="cli_comment">
+              <strong>$cli_comment</strong>
+            </li>
+            <li id="cli_error">
+              <strong>$cli_error</strong>
+            </li>
+            <li id="cli_number">
+              <strong>$cli_number</strong>
+            </li>
+            <li id="cli_quote">
+              <strong>$cli_quote</strong>
+            </li>
+            <li id="cli_reserved">
+              <strong>$cli_reserved</strong>
+            </li>
+            <li id="cli_word">
+              <strong>$cli_word</strong>
+            </li>
+            <li id="comment_attributes">
+              <strong>$comment_attributes</strong>
+            </li>
+            <li id="error_attributes">
+              <strong>$error_attributes</strong>
+            </li>
+            <li id="max_cachekey_size">
+              <strong>$max_cachekey_size</strong>
+            </li>
+            <li id="number_attributes">
+              <strong>$number_attributes</strong>
+            </li>
+            <li id="pre_attributes">
+              <strong>$pre_attributes</strong>
+            </li>
+            <li id="quote_attributes">
+              <strong>$quote_attributes</strong>
+            </li>
+            <li id="reserved_attributes">
+              <strong>$reserved_attributes</strong>
+            </li>
+            <li id="tab">
+              <strong>$tab</strong>
+            </li>
+            <li id="use_pre">
+              <strong>$use_pre</strong>
+            </li>
+            <li id="word_attributes">
+              <strong>$word_attributes</strong>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Jeremy Dorn &lt;jeremy@jeremydorn.com&gt;</li>
-          <li><b>Author: </b>Florin Patan &lt;florinpatan@gmail.com&gt;</li>
-          <li><b>Copyright: </b>2013 Jeremy Dorn</li>
-          <li><b>License: </b>http://opensource.org/licenses/MIT</li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="TOKEN_TYPE_WHITESPACE"/>TOKEN_TYPE_WHITESPACE = 0<hr/></li>
-          <li><a name="TOKEN_TYPE_WORD"/>TOKEN_TYPE_WORD = 1<hr/></li>
-          <li><a name="TOKEN_TYPE_QUOTE"/>TOKEN_TYPE_QUOTE = 2<hr/></li>
-          <li><a name="TOKEN_TYPE_BACKTICK_QUOTE"/>TOKEN_TYPE_BACKTICK_QUOTE = 3<hr/></li>
-          <li><a name="TOKEN_TYPE_RESERVED"/>TOKEN_TYPE_RESERVED = 4<hr/></li>
-          <li><a name="TOKEN_TYPE_RESERVED_TOPLEVEL"/>TOKEN_TYPE_RESERVED_TOPLEVEL = 5<hr/></li>
-          <li><a name="TOKEN_TYPE_RESERVED_NEWLINE"/>TOKEN_TYPE_RESERVED_NEWLINE = 6<hr/></li>
-          <li><a name="TOKEN_TYPE_BOUNDARY"/>TOKEN_TYPE_BOUNDARY = 7<hr/></li>
-          <li><a name="TOKEN_TYPE_COMMENT"/>TOKEN_TYPE_COMMENT = 8<hr/></li>
-          <li><a name="TOKEN_TYPE_BLOCK_COMMENT"/>TOKEN_TYPE_BLOCK_COMMENT = 9<hr/></li>
-          <li><a name="TOKEN_TYPE_NUMBER"/>TOKEN_TYPE_NUMBER = 10<hr/></li>
-          <li><a name="TOKEN_TYPE_ERROR"/>TOKEN_TYPE_ERROR = 11<hr/></li>
-          <li><a name="TOKEN_TYPE"/>TOKEN_TYPE = 0<hr/></li>
-          <li><a name="TOKEN_VALUE"/>TOKEN_VALUE = 1<hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="reserved"/>
-            <h4><span class="label protected">protected</span>
-                $reserved</h4>
-          </li>
-          <li>
-            <a name="reserved_toplevel"/>
-            <h4><span class="label protected">protected</span>
-                $reserved_toplevel</h4>
-          </li>
-          <li>
-            <a name="reserved_newline"/>
-            <h4><span class="label protected">protected</span>
-                $reserved_newline</h4>
-          </li>
-          <li>
-            <a name="boundaries"/>
-            <h4><span class="label protected">protected</span>
-                $boundaries</h4>
-          </li>
-          <li>
-            <a name="quote_attributes"/>
-            <h4><span class="label public">public</span>
-                $quote_attributes</h4>
-          </li>
-          <li>
-            <a name="backtick_quote_attributes"/>
-            <h4><span class="label public">public</span>
-                $backtick_quote_attributes</h4>
-          </li>
-          <li>
-            <a name="reserved_attributes"/>
-            <h4><span class="label public">public</span>
-                $reserved_attributes</h4>
-          </li>
-          <li>
-            <a name="boundary_attributes"/>
-            <h4><span class="label public">public</span>
-                $boundary_attributes</h4>
-          </li>
-          <li>
-            <a name="number_attributes"/>
-            <h4><span class="label public">public</span>
-                $number_attributes</h4>
-          </li>
-          <li>
-            <a name="word_attributes"/>
-            <h4><span class="label public">public</span>
-                $word_attributes</h4>
-          </li>
-          <li>
-            <a name="error_attributes"/>
-            <h4><span class="label public">public</span>
-                $error_attributes</h4>
-          </li>
-          <li>
-            <a name="comment_attributes"/>
-            <h4><span class="label public">public</span>
-                $comment_attributes</h4>
-          </li>
-          <li>
-            <a name="pre_attributes"/>
-            <h4><span class="label public">public</span>
-                $pre_attributes</h4>
-          </li>
-          <li>
-            <a name="cli"/>
-            <h4><span class="label public">public</span>
-                $cli</h4>
-          </li>
-          <li>
-            <a name="cli_quote"/>
-            <h4><span class="label public">public</span>
-                $cli_quote</h4>
-          </li>
-          <li>
-            <a name="cli_backtick_quote"/>
-            <h4><span class="label public">public</span>
-                $cli_backtick_quote</h4>
-          </li>
-          <li>
-            <a name="cli_reserved"/>
-            <h4><span class="label public">public</span>
-                $cli_reserved</h4>
-          </li>
-          <li>
-            <a name="cli_boundary"/>
-            <h4><span class="label public">public</span>
-                $cli_boundary</h4>
-          </li>
-          <li>
-            <a name="cli_number"/>
-            <h4><span class="label public">public</span>
-                $cli_number</h4>
-          </li>
-          <li>
-            <a name="cli_word"/>
-            <h4><span class="label public">public</span>
-                $cli_word</h4>
-          </li>
-          <li>
-            <a name="cli_error"/>
-            <h4><span class="label public">public</span>
-                $cli_error</h4>
-          </li>
-          <li>
-            <a name="cli_comment"/>
-            <h4><span class="label public">public</span>
-                $cli_comment</h4>
-          </li>
-          <li>
-            <a name="tab"/>
-            <h4><span class="label public">public</span>
-                $tab</h4>
-          </li>
-          <li>
-            <a name="use_pre"/>
-            <h4><span class="label public">public</span>
-                $use_pre</h4>
-          </li>
-          <li>
-            <a name="init"/>
-            <h4><span class="label protected">protected</span>
-                $init</h4>
-          </li>
-          <li>
-            <a name="regex_boundaries"/>
-            <h4><span class="label protected">protected</span>
-                $regex_boundaries</h4>
-          </li>
-          <li>
-            <a name="regex_reserved"/>
-            <h4><span class="label protected">protected</span>
-                $regex_reserved</h4>
-          </li>
-          <li>
-            <a name="regex_reserved_newline"/>
-            <h4><span class="label protected">protected</span>
-                $regex_reserved_newline</h4>
-          </li>
-          <li>
-            <a name="regex_reserved_toplevel"/>
-            <h4><span class="label protected">protected</span>
-                $regex_reserved_toplevel</h4>
-          </li>
-          <li>
-            <a name="max_cachekey_size"/>
-            <h4><span class="label public">public</span>
-                $max_cachekey_size</h4>
-          </li>
-          <li>
-            <a name="token_cache"/>
-            <h4><span class="label protected">protected</span>
-                $token_cache</h4>
-          </li>
-          <li>
-            <a name="cache_hits"/>
-            <h4><span class="label protected">protected</span>
-                $cache_hits</h4>
-          </li>
-          <li>
-            <a name="cache_misses"/>
-            <h4><span class="label protected">protected</span>
-                $cache_misses</h4>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="format"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>format<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $string</strong>, <span class="param-type">boolean</span><strong> $highlight</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Format the whitespace in a SQL string to make it easier to read.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$string</code> - The SQL string</li>
-                <li><code>$highlight</code> - If true, syntax highlighting will also be performed</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The SQL string with HTML styles and formatting wrapped in a &lt;pre&gt; tag</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCacheStats"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getCacheStats<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get stats about the token cache</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array containing the keys 'hits', 'misses', 'entries', and 'size' in bytes</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="highlight"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>highlight<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $string</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add syntax highlighting to a SQL string</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$string</code> - The SQL string</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The SQL string with HTML styles applied</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="removeComments"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>removeComments<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $string</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Remove all comments from a SQL string</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$string</code> - The SQL string</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The SQL string without comments</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="splitQuery"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>splitQuery<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $string</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Split a SQL string into multiple queries.<pre>Uses ";" as a query delimiter.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$string</code> - The SQL string</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of individual query strings without trailing semicolons</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getNextToken"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>getNextToken<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $string</strong>, <span class="param-type">array</span><strong> $previous</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return the next token and token type in a SQL string.<pre>Quoted strings, comments, reserved words, whitespace, and punctuation are all their own tokens.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$string</code> - The SQL string</li>
-                <li><code>$previous</code> - The result of the previous getNextToken() call</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An associative array containing the type and value of the token.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="highlightBacktickQuote"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>highlightBacktickQuote<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Highlights a backtick quoted string</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - The token's value</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>HTML code of the highlighted token.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="highlightBoundary"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>highlightBoundary<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Highlights a boundary token</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - The token's value</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>HTML code of the highlighted token.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="highlightComment"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>highlightComment<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Highlights a comment</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - The token's value</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>HTML code of the highlighted token.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="highlightError"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>highlightError<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Highlights an error</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - The token's value</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>HTML code of the highlighted token.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="highlightNumber"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>highlightNumber<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Highlights a number</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - The token's value</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>HTML code of the highlighted token.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="highlightQuote"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>highlightQuote<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Highlights a quoted string</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - The token's value</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>HTML code of the highlighted token.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="highlightReservedWord"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>highlightReservedWord<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Highlights a reserved word</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - The token's value</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>HTML code of the highlighted token.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="highlightToken"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>highlightToken<span style="font-size:90%;">( <span class="param-type"><span title="Array">Array</span></span><strong> $token</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Highlights a token depending on its type.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$token</code> - An associative array containing type and value.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>HTML code of the highlighted token.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="highlightWord"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>highlightWord<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Highlights a word token</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$value</code> - The token's value</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>HTML code of the highlighted token.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="init"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>init<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Stuff that only needs to be done once.  Builds regular expressions and sorts the reserved words.</li>
-            </p>
-          </li>
-          <li>
-            <a name="tokenize"/>
-            <h4><span class="label true">true</span><span class="label protected">protected</span>tokenize<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $string</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Takes a SQL string and breaks it into tokens.<pre>Each token is an associative array with type and value.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$string</code> - The SQL string</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>An array of tokens.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="is_cli"/>
-            <h4><span class="label true">true</span><span class="label private">private</span>is_cli<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="output"/>
-            <h4><span class="label true">true</span><span class="label private">private</span>output<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $string</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Helper function for building string output</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$string</code> - The string to be quoted</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The quoted string</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="quote_regex"/>
-            <h4><span class="label true">true</span><span class="label private">private</span>quote_regex<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $a</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Helper function for building regular expressions for reserved words and boundary characters</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$a</code> - The string to be quoted</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The quoted string</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="sortLength"/>
-            <h4><span class="label true">true</span><span class="label private">private</span>sortLength<span style="font-size:90%;">( <span class="param-type"><span title="String">String</span></span><strong> $a</strong>, <span class="param-type"><span title="String">String</span></span><strong> $b</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Helper function for sorting the list of reserved words by length</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$a</code> - The first string</li>
-                <li><code>$b</code> - The second string</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The comparison of the string lengths</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="is_cli">
+              <a title="SqlFormatter" href="../classes/SqlFormatter/is_cli.xhtml">is_cli()</a>
+            </li>
+            <li id="output"><a title="SqlFormatter" href="../classes/SqlFormatter/output.xhtml">output()</a>
+                — Helper function for building string output</li>
+            <li id="quote_regex"><a title="SqlFormatter" href="../classes/SqlFormatter/quote_regex.xhtml">quote_regex()</a>
+                — Helper function for building regular expressions for reserved words and boundary characters</li>
+            <li id="sortLength"><a title="SqlFormatter" href="../classes/SqlFormatter/sortLength.xhtml">sortLength()</a>
+                — Helper function for sorting the list of reserved words by length</li>
+          </ul>
+          <h4>protected</h4>
+          <ul>
+            <li id="getNextToken"><a title="SqlFormatter" href="../classes/SqlFormatter/getNextToken.xhtml">getNextToken()</a>
+                — Return the next token and token type in a SQL string.</li>
+            <li id="highlightBacktickQuote"><a title="SqlFormatter" href="../classes/SqlFormatter/highlightBacktickQuote.xhtml">highlightBacktickQuote()</a>
+                — Highlights a backtick quoted string</li>
+            <li id="highlightBoundary"><a title="SqlFormatter" href="../classes/SqlFormatter/highlightBoundary.xhtml">highlightBoundary()</a>
+                — Highlights a boundary token</li>
+            <li id="highlightComment"><a title="SqlFormatter" href="../classes/SqlFormatter/highlightComment.xhtml">highlightComment()</a>
+                — Highlights a comment</li>
+            <li id="highlightError"><a title="SqlFormatter" href="../classes/SqlFormatter/highlightError.xhtml">highlightError()</a>
+                — Highlights an error</li>
+            <li id="highlightNumber"><a title="SqlFormatter" href="../classes/SqlFormatter/highlightNumber.xhtml">highlightNumber()</a>
+                — Highlights a number</li>
+            <li id="highlightQuote"><a title="SqlFormatter" href="../classes/SqlFormatter/highlightQuote.xhtml">highlightQuote()</a>
+                — Highlights a quoted string</li>
+            <li id="highlightReservedWord"><a title="SqlFormatter" href="../classes/SqlFormatter/highlightReservedWord.xhtml">highlightReservedWord()</a>
+                — Highlights a reserved word</li>
+            <li id="highlightToken"><a title="SqlFormatter" href="../classes/SqlFormatter/highlightToken.xhtml">highlightToken()</a>
+                — Highlights a token depending on its type.</li>
+            <li id="highlightWord"><a title="SqlFormatter" href="../classes/SqlFormatter/highlightWord.xhtml">highlightWord()</a>
+                — Highlights a word token</li>
+            <li id="init"><a title="SqlFormatter" href="../classes/SqlFormatter/init.xhtml">init()</a>
+                — Stuff that only needs to be done once.  Builds regular expressions and sorts the reserved words.</li>
+            <li id="tokenize"><a title="SqlFormatter" href="../classes/SqlFormatter/tokenize.xhtml">tokenize()</a>
+                — Takes a SQL string and breaks it into tokens.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="format"><a title="SqlFormatter" href="../classes/SqlFormatter/format.xhtml">format()</a>
+                — Format the whitespace in a SQL string to make it easier to read.</li>
+            <li id="getCacheStats"><a title="SqlFormatter" href="../classes/SqlFormatter/getCacheStats.xhtml">getCacheStats()</a>
+                — Get stats about the token cache</li>
+            <li id="highlight"><a title="SqlFormatter" href="../classes/SqlFormatter/highlight.xhtml">highlight()</a>
+                — Add syntax highlighting to a SQL string</li>
+            <li id="removeComments"><a title="SqlFormatter" href="../classes/SqlFormatter/removeComments.xhtml">removeComments()</a>
+                — Remove all comments from a SQL string</li>
+            <li id="splitQuery"><a title="SqlFormatter" href="../classes/SqlFormatter/splitQuery.xhtml">splitQuery()</a>
+                — Split a SQL string into multiple queries.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

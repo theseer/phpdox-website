@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head>
+    <title>phpDox - Test Method</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml#Symfony_Component_Form">Symfony\Component\Form</a>
+          </li>
+          <li class="separator">
+            <a title="Symfony\Component\Form\FormRendererEngineInterface" href="../../interfaces/Symfony_Component_Form_FormRendererEngineInterface.xhtml">FormRendererEngineInterface</a>
+          </li>
+          <li class="separator">getResourceForBlockNameHierarchy</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#parameter">Parameter</a>
+          </li>
+          <li>
+            <a href="#return">Return</a>
+          </li>
+          <li>
+            <a href="../../source/symfony/symfony/src/Symfony/Component/Form/FormRendererEngineInterface.php.xhtml#line89">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1><small>Symfony\Component\Form\FormRendererEngineInterface::</small>getResourceForBlockNameHierarchy</h1>
+        <h4>Returns the resource for a block hierarchy.</h4>
+        <p>A block hierarchy is an array which starts with the root of the hierarchy
+and continues with the child of that root, the child of that child etc.
+The following is an example for a block hierarchy:
+&lt;code&gt;
+form_widget
+text_widget
+url_widget
+&lt;/code&gt;
+In this example, "url_widget" is the most specific block, while the other
+blocks are its ancestors in the hierarchy.
+The second parameter $hierarchyLevel determines the level of the hierarchy
+that should be rendered. For example, if $hierarchyLevel is 2 for the
+above hierarchy, the engine will first look for the block "url_widget",
+then, if that does not exist, for the block "text_widget" etc.
+The type of the resource is decided by the implementation. The resource
+is later passed to  by the rendering algorithm.
+</p>
+        <ul/>
+        <h2 id="signature">Signature</h2>
+        <div class="styled synopsis">
+          <code>public function getResourceForBlockNameHierarchy(<a title="Symfony\Component\Form\FormView" href="../../interfaces/Symfony_Component_Form_FormView.xhtml">FormView</a>
+        $view,
+            array
+        $blockNameHierarchy,
+            integer
+        $hierarchyLevel )
+            </code>
+        </div>
+        <h2 id="parameterlist">Parameters</h2>
+        <dl class="styled">
+          <dt><code>$view</code>
+                —
+                <a href="#">Symfony\Component\Form\FormView</a></dt>
+          <dd>The view for determining the<br/>used themes. First the themes<br/>attached directly to the view<br/>with are<br/>considered, then the ones of<br/>its parent etc.<br/></dd>
+          <dt><code>$blockNameHierarchy</code>
+                —
+                array</dt>
+          <dd>The block name hierarchy, with<br/>the root block at the beginning.</dd>
+          <dt><code>$hierarchyLevel</code>
+                —
+                integer</dt>
+          <dd>The level in the hierarchy at<br/>which to start looking. Level 0<br/>indicates the root block, i.e.<br/>the first element of<br/>                                             $blockNameHierarchy.</dd>
+        </dl>
+        <h2 id="return">Returns</h2>
+        <dl class="styled">
+          <dt>mixed</dt>
+          <dd>The renderer resource or false, if none was found.</dd>
+        </dl>
+      </section>
+    </div>
+    <footer>
+      <span/>
+    </footer>
+  </body>
+</html>

@@ -1,995 +1,336 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>zf - Zend\Mail\Storage\Folder\Maildir - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Zend\Mail\Storage\Folder\Maildir</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">zf - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Zend_Mail_Storage_Folder">Zend\Mail\Storage\Folder</a>
+          </li>
+          <li class="separator">Maildir</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#rootFolder">$rootFolder</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#rootdir">$rootdir</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#currentFolder">$currentFolder</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#delim">$delim</a>
+            <a href="#tasks">Tasks</a>
           </li>
           <li>
-            <a href="#messageClass">$messageClass</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#files">$files</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#knownFlags">$knownFlags</a>
-          </li>
-          <li>
-            <a href="#has">$has</a>
-          </li>
-          <li>
-            <a href="#iterationPos">$iterationPos</a>
-          </li>
-          <li>
-            <a href="#iterationMax">$iterationMax</a>
-          </li>
-          <li>
-            <a href="#messageClass">$messageClass</a>
+            <a href="../source/Mail/Storage/Folder/Maildir.php.xhtml#line16">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#__get">__get</a>
-          </li>
-          <li>
-            <a href="#_buildFolderTree">_buildFolderTree</a>
-          </li>
-          <li>
-            <a href="#_getFileData">_getFileData</a>
-          </li>
-          <li>
-            <a href="#_getMaildirFiles">_getMaildirFiles</a>
-          </li>
-          <li>
-            <a href="#_isMaildir">_isMaildir</a>
-          </li>
-          <li>
-            <a href="#_openMaildir">_openMaildir</a>
-          </li>
-          <li>
-            <a href="#close">close</a>
-          </li>
-          <li>
-            <a href="#close">close</a>
-          </li>
-          <li>
-            <a href="#count">count</a>
-          </li>
-          <li>
-            <a href="#countMessages">countMessages</a>
-          </li>
-          <li>
-            <a href="#countMessages">countMessages</a>
-          </li>
-          <li>
-            <a href="#current">current</a>
-          </li>
-          <li>
-            <a href="#getCapabilities">getCapabilities</a>
-          </li>
-          <li>
-            <a href="#getCurrentFolder">getCurrentFolder</a>
-          </li>
-          <li>
-            <a href="#getFolders">getFolders</a>
-          </li>
-          <li>
-            <a href="#getMessage">getMessage</a>
-          </li>
-          <li>
-            <a href="#getMessage">getMessage</a>
-          </li>
-          <li>
-            <a href="#getNumberByUniqueId">getNumberByUniqueId</a>
-          </li>
-          <li>
-            <a href="#getNumberByUniqueId">getNumberByUniqueId</a>
-          </li>
-          <li>
-            <a href="#getRawContent">getRawContent</a>
-          </li>
-          <li>
-            <a href="#getRawContent">getRawContent</a>
-          </li>
-          <li>
-            <a href="#getRawHeader">getRawHeader</a>
-          </li>
-          <li>
-            <a href="#getRawHeader">getRawHeader</a>
-          </li>
-          <li>
-            <a href="#getSize">getSize</a>
-          </li>
-          <li>
-            <a href="#getSize">getSize</a>
-          </li>
-          <li>
-            <a href="#getUniqueId">getUniqueId</a>
-          </li>
-          <li>
-            <a href="#getUniqueId">getUniqueId</a>
-          </li>
-          <li>
-            <a href="#key">key</a>
-          </li>
-          <li>
-            <a href="#next">next</a>
-          </li>
-          <li>
-            <a href="#noop">noop</a>
-          </li>
-          <li>
-            <a href="#noop">noop</a>
-          </li>
-          <li>
-            <a href="#offsetExists">offsetExists</a>
-          </li>
-          <li>
-            <a href="#offsetGet">offsetGet</a>
-          </li>
-          <li>
-            <a href="#offsetSet">offsetSet</a>
-          </li>
-          <li>
-            <a href="#offsetUnset">offsetUnset</a>
-          </li>
-          <li>
-            <a href="#removeMessage">removeMessage</a>
-          </li>
-          <li>
-            <a href="#removeMessage">removeMessage</a>
-          </li>
-          <li>
-            <a href="#rewind">rewind</a>
-          </li>
-          <li>
-            <a href="#seek">seek</a>
-          </li>
-          <li>
-            <a href="#selectFolder">selectFolder</a>
-          </li>
-          <li>
-            <a href="#valid">valid</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Zend\Mail\Storage\Folder\</span>Maildir</h2>
-        <div class="file-notice">
-          <p/>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Zend\Mail\Storage\Folder\</small>Maildir</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Maildir
+                extends <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir.xhtml">Maildir</a>
+                implements
+                <a title="Zend\Mail\Storage\Folder\FolderInterface" href="../interfaces/Zend_Mail_Storage_Folder_FolderInterface.xhtml">FolderInterface</a>
+            {<br/><ul class="none"><li>// members</li><li>protected <span title="\Zend\Mail\Storage\Folder">Folder</span> <a href="#members">$rootFolder</a>;
+                    </li><li>protected string <a href="#members">$rootdir</a>;
+                    </li><li>protected string <a href="#members">$currentFolder</a>;
+                    </li><li>protected string <a href="#members">$delim</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Zend\Mail\Storage\Maildir">Maildir</span></li><li>protected string <a href="#members">$messageClass</a>;
+                        </li><li>protected array <a href="#members">$files</a>;
+                        </li><li>protected array <a href="#members">$knownFlags</a>;
+                        </li></ul><ul class="none"><li>// Inherited members from <span title="Zend\Mail\Storage\AbstractStorage">AbstractStorage</span></li><li>protected array <a href="#members">$has</a>;
+                        </li><li>protected integer <a href="#members">$iterationPos</a>;
+                        </li><li>protected <span title="Zend\Mail\Storage\null|int">null|int</span> <a href="#members">$iterationMax</a>;
+                        </li><li>protected string <a href="#members">$messageClass</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Zend\Mail\Storage\Folder\Maildir" href="../classes/Zend_Mail_Storage_Folder_Maildir/__construct.xhtml">__construct</a>()
+                    </li><li>protected void <a title="Zend\Mail\Storage\Folder\Maildir" href="../classes/Zend_Mail_Storage_Folder_Maildir/_buildFolderTree.xhtml">_buildFolderTree</a>()
+                    </li><li>public Folder <a title="Zend\Mail\Storage\Folder\Maildir" href="../classes/Zend_Mail_Storage_Folder_Maildir/getFolders.xhtml">getFolders</a>()
+                    </li><li>public void <a title="Zend\Mail\Storage\Folder\Maildir" href="../classes/Zend_Mail_Storage_Folder_Maildir/selectFolder.xhtml">selectFolder</a>()
+                    </li><li>public Folder <a title="Zend\Mail\Storage\Folder\Maildir" href="../classes/Zend_Mail_Storage_Folder_Maildir/getCurrentFolder.xhtml">getCurrentFolder</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Zend\Mail\Storage\Maildir">Maildir</span></li><li>public int <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/countMessages.xhtml">countMessages</a>()
+                        </li><li>protected string|array <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/_getFileData.xhtml">_getFileData</a>()
+                        </li><li>public int|array <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/getSize.xhtml">getSize</a>()
+                        </li><li>public File <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/getMessage.xhtml">getMessage</a>()
+                        </li><li>public void <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/getRawHeader.xhtml">getRawHeader</a>()
+                        </li><li>public void <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/getRawContent.xhtml">getRawContent</a>()
+                        </li><li>public void <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/__construct.xhtml">__construct</a>()
+                        </li><li>protected bool <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/_isMaildir.xhtml">_isMaildir</a>()
+                        </li><li>protected void <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/_openMaildir.xhtml">_openMaildir</a>()
+                        </li><li>protected void <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/_getMaildirFiles.xhtml">_getMaildirFiles</a>()
+                        </li><li>public void <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/close.xhtml">close</a>()
+                        </li><li>public bool <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/noop.xhtml">noop</a>()
+                        </li><li>public void <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/removeMessage.xhtml">removeMessage</a>()
+                        </li><li>public array|string <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/getUniqueId.xhtml">getUniqueId</a>()
+                        </li><li>public int <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/getNumberByUniqueId.xhtml">getNumberByUniqueId</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Zend\Mail\Storage\AbstractStorage">AbstractStorage</span></li><li>public bool <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/__get.xhtml">__get</a>()
+                        </li><li>public array <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getCapabilities.xhtml">getCapabilities</a>()
+                        </li><li>public abstract int <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/countMessages.xhtml">countMessages</a>()
+                        </li><li>public abstract int|array <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getSize.xhtml">getSize</a>()
+                        </li><li>public abstract Message <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getMessage.xhtml">getMessage</a>()
+                        </li><li>public abstract string <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getRawHeader.xhtml">getRawHeader</a>()
+                        </li><li>public abstract string <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getRawContent.xhtml">getRawContent</a>()
+                        </li><li>public abstract void <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/__construct.xhtml">__construct</a>()
+                        </li><li>public void <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/__destruct.xhtml">__destruct</a>()
+                        </li><li>public abstract void <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/close.xhtml">close</a>()
+                        </li><li>public abstract void <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/noop.xhtml">noop</a>()
+                        </li><li>public abstract void <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/removeMessage.xhtml">removeMessage</a>()
+                        </li><li>public abstract array|string <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getUniqueId.xhtml">getUniqueId</a>()
+                        </li><li>public abstract int <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getNumberByUniqueId.xhtml">getNumberByUniqueId</a>()
+                        </li><li>public int <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/count.xhtml">count</a>()
+                        </li><li>public bool <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/offsetExists.xhtml">offsetExists</a>()
+                        </li><li>public Message <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/offsetGet.xhtml">offsetGet</a>()
+                        </li><li>public void <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/offsetSet.xhtml">offsetSet</a>()
+                        </li><li>public bool <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/offsetUnset.xhtml">offsetUnset</a>()
+                        </li><li>public void <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/rewind.xhtml">rewind</a>()
+                        </li><li>public Message <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/current.xhtml">current</a>()
+                        </li><li>public int <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/key.xhtml">key</a>()
+                        </li><li>public void <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/next.xhtml">next</a>()
+                        </li><li>public bool <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/valid.xhtml">valid</a>()
+                        </li><li>public void <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/seek.xhtml">seek</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a href="../classes/Zend_Mail_Storage_Maildir.xhtml">Zend\Mail\Storage\Maildir</a>
+            </li>
+          </ul>
+          <h4>Extended by</h4>
+          <ul>
+            <li>
+              <a href="../classes/Zend_Mail_Storage_Writable_Maildir.xhtml">Zend\Mail\Storage\Writable\Maildir</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Zend_Mail_Storage_Folder_FolderInterface.xhtml">Zend\Mail\Storage\Folder\FolderInterface</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"/>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Zend_Mail_Storage_Folder_FolderInterface.xhtml">Zend\Mail\Storage\Folder\FolderInterface</a>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="rootFolder"/>
-            <h4><span class="label protected">protected</span>object 
-                
-                $rootFolder</h4>
-            <ul class="varlist">
-              <li>root folder for folder structure</li>
-            </ul>
-          </li>
-          <li>
-            <a name="rootdir"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $rootdir</h4>
-            <ul class="varlist">
-              <li>rootdir of folder structure</li>
-            </ul>
-          </li>
-          <li>
-            <a name="currentFolder"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $currentFolder</h4>
-            <ul class="varlist">
-              <li>name of current folder</li>
-            </ul>
-          </li>
-          <li>
-            <a name="delim"/>
-            <h4><span class="label protected">protected</span>string 
-                
-                $delim</h4>
-            <ul class="varlist">
-              <li>delim char for subfolders</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type">array</span><strong> $params</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Create instance with parameters Supported parameters are:   - dirname rootdir of maildir structure   - delim   delim char for folder structure, default is '.'   - folder initial selected folder, default is 'INBOX'</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$params</code> - mail reader specific parameters</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Storage\Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Destructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__destruct"/>
-            <h4><span class="label public">public</span>__destruct<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Destructor calls close() and therefore closes the resource.</li>
-            </p>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__get"/>
-            <h4><span class="label public">public</span>__get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $var</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Getter for has-properties. The standard has properties are: hasFolder, hasUniqueid, hasDelete, hasCreate, hasTop<pre>The valid values for the has-properties are:
-  - true if a feature is supported
-  - false if a feature is not supported
-  - null is it's not yet known or it can't be know if a feature is supported</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$var</code> - property name</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>supported or not</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="close"/>
-            <h4><span class="label public">public</span>close<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Close resource for mail lib. If you need to control, when the resource is closed. Otherwise the destructor would call this.</li>
-            </p>
-          </li>
-          <li>
-            <a name="close"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>close<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Close resource for mail lib. If you need to control, when the resource is closed. Otherwise the destructor would call this.</li>
-            </p>
-          </li>
-          <li>
-            <a name="count"/>
-            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Countable::count()</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="countMessages"/>
-            <h4><span class="label public">public</span>countMessages<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $flags</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Count messages all messages in current box</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$flags</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>number of messages</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="countMessages"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>countMessages<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Count messages messages in current box/folder</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>number of messages</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="current"/>
-            <h4><span class="label public">public</span>current<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Iterator::current()</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>current message</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCapabilities"/>
-            <h4><span class="label public">public</span>getCapabilities<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get a full list of features supported by the specific mail lib and the server</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>list of features as array(feature_name =&gt; true|false[|null])</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getCurrentFolder"/>
-            <h4><span class="label public">public</span>getCurrentFolder<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>get \Zend\Mail\Storage\Folder instance for current folder</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>instance of current folder</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFolders"/>
-            <h4><span class="label public">public</span>getFolders<span style="font-size:90%;">( <span class="param-type">string</span><strong> $rootFolder</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>get root folder or given folder</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$rootFolder</code> - get folder structure for given folder, else root</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>root or wanted folder</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Storage\Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMessage"/>
-            <h4><span class="label public">public</span>getMessage<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Fetch a message</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - number of message</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Storage\Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMessage"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getMessage<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get a message with headers and body</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - number of message</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getNumberByUniqueId"/>
-            <h4><span class="label public">public</span>getNumberByUniqueId<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>get a message number from a unique id<pre>I.e. if you have a webmailer that supports deleting messages you should use unique ids
-as parameter and use this method to translate it to message number right before calling removeMessage()</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - unique id</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>message number</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getNumberByUniqueId"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getNumberByUniqueId<span style="font-size:90%;">( <span class="param-type">string</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>get a message number from a unique id<pre>I.e. if you have a webmailer that supports deleting messages you should use unique ids
-as parameter and use this method to translate it to message number right before calling removeMessage()</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - unique id</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>message number</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getRawContent"/>
-            <h4><span class="label public">public</span>getRawContent<span style="font-size:90%;">( <span class="param-type"/><strong> $id</strong>, <span class="param-type"/><strong> $part</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="getRawContent"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getRawContent<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong>, <span class="param-type"><span title="null|array|string">null|array|string</span></span><strong> $part</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get raw content of message or part</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - number of message</li>
-                <li><code>$part</code> - path to part or null for message content</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>raw content</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getRawHeader"/>
-            <h4><span class="label public">public</span>getRawHeader<span style="font-size:90%;">( <span class="param-type"/><strong> $id</strong>, <span class="param-type"/><strong> $part</strong>, <span class="param-type">integer</span><strong> $topLines</strong> )</span></h4>
-          </li>
-          <li>
-            <a name="getRawHeader"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getRawHeader<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong>, <span class="param-type"><span title="null|array|string">null|array|string</span></span><strong> $part</strong>, <span class="param-type">integer</span><strong> $topLines</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get raw header of message or part</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - number of message</li>
-                <li><code>$part</code> - path to part or null for message header</li>
-                <li><code>$topLines</code> - include this many lines with header (after an empty line)</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>raw header</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSize"/>
-            <h4><span class="label public">public</span>getSize<span style="font-size:90%;">( <span class="param-type"><span title="int|null">int|null</span></span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get a list of messages with number and size</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - number of message or null for all messages</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>size of given message of list with all messages as array(num =&gt; size)</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSize"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getSize<span style="font-size:90%;">( <span class="param-type">integer</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get a list of messages with number and size</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - number of message</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>size of given message of list with all messages as array(num =&gt; size)</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getUniqueId"/>
-            <h4><span class="label public">public</span>getUniqueId<span style="font-size:90%;">( <span class="param-type"><span title="int|null">int|null</span></span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>get unique id for one or all messages<pre>if storage does not support unique ids it's the same as the message number</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - message number</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>message number for given message or all messages as array</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getUniqueId"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getUniqueId<span style="font-size:90%;">( <span class="param-type"><span title="int|null">int|null</span></span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>get unique id for one or all messages<pre>if storage does not support unique ids it's the same as the message number</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - message number</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>message number for given message or all messages as array</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\ExceptionInterface</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="key"/>
-            <h4><span class="label public">public</span>key<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Iterator::key()</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>id of current position</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="next"/>
-            <h4><span class="label public">public</span>next<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Iterator::next()</li>
-            </p>
-          </li>
-          <li>
-            <a name="noop"/>
-            <h4><span class="label public">public</span>noop<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Waste some CPU cycles doing nothing.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>always return true</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="noop"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>noop<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Keep the resource alive.</li>
-            </p>
-          </li>
-          <li>
-            <a name="offsetExists"/>
-            <h4><span class="label public">public</span>offsetExists<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ArrayAccess::offsetExists()</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="offsetGet"/>
-            <h4><span class="label public">public</span>offsetGet<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ArrayAccess::offsetGet()</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>message object</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="offsetSet"/>
-            <h4><span class="label public">public</span>offsetSet<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $id</strong>, <span class="param-type">mixed</span><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ArrayAccess::offsetSet()</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - </li>
-                <li><code>$value</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="offsetUnset"/>
-            <h4><span class="label public">public</span>offsetUnset<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>ArrayAccess::offsetUnset()</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>success</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="removeMessage"/>
-            <h4><span class="label public">public</span>removeMessage<span style="font-size:90%;">( <span class="param-type"/><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>stub for not supported message deletion</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="removeMessage"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>removeMessage<span style="font-size:90%;">( <span class="param-type"/><strong> $id</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>delete a message from current box/folder</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="rewind"/>
-            <h4><span class="label public">public</span>rewind<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Iterator::rewind()<pre>Rewind always gets the new count from the storage. Thus if you use
-the interfaces and your scripts take long you should use reset()
-from time to time.</pre></li>
-            </p>
-          </li>
-          <li>
-            <a name="seek"/>
-            <h4><span class="label public">public</span>seek<span style="font-size:90%;">( <span class="param-type">int</span><strong> $pos</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>SeekableIterator::seek()</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$pos</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\OutOfBoundsException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="selectFolder"/>
-            <h4><span class="label public">public</span>selectFolder<span style="font-size:90%;">( <span class="param-type"><span title="\Zend\Mail\Storage\Folder|string">Folder|string</span></span><strong> $globalName</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>select given folder<pre>folder must be selectable!</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$globalName</code> - global name of folder or instance for subfolder</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Storage\Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="valid"/>
-            <h4><span class="label public">public</span>valid<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Iterator::valid()</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_buildFolderTree"/>
-            <h4><span class="label protected">protected</span>_buildFolderTree<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>find all subfolders and mbox files for folder structure<pre>Result is save in \Zend\Mail\Storage\Folder instances with the root in $this-&gt;rootFolder.
-$parentFolder and $parentGlobalName are only used internally for recursion.</pre></li>
-            </p>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\Zend\Mail\Storage\Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getFileData"/>
-            <h4><span class="label protected">protected</span>_getFileData<span style="font-size:90%;">( <span class="param-type">int</span><strong> $id</strong>, <span class="param-type"><span title="string|null">string|null</span></span><strong> $field</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get one or all fields from file structure. Also checks if message is valid</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$id</code> - message number</li>
-                <li><code>$field</code> - wanted field</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>wanted field or all fields as array</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_getMaildirFiles"/>
-            <h4><span class="label protected">protected</span>_getMaildirFiles<span style="font-size:90%;">( <span class="param-type">resource</span><strong> $dh</strong>, <span class="param-type">string</span><strong> $dirname</strong>, <span class="param-type">Array</span><strong> $default_flags</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>find all files in opened dir handle and add to maildir files</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$dh</code> - dir handle used for search</li>
-                <li><code>$dirname</code> - dirname of dir in $dh</li>
-                <li><code>$default_flags</code> - default flags for given dir</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_isMaildir"/>
-            <h4><span class="label protected">protected</span>_isMaildir<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dirname</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>check if a given dir is a valid maildir</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$dirname</code> - name of dir</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>dir is valid maildir</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="_openMaildir"/>
-            <h4><span class="label protected">protected</span>_openMaildir<span style="font-size:90%;">( <span class="param-type">string</span><strong> $dirname</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>open given dir as current maildir</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$dirname</code> - name of maildir</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>Exception\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-38-gec79141-dirty - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">136</td>
+            <td>that's ugly, would be better to let the message class decide</td>
+          </tr>
+          <tr>
+            <td class="nummeric">159</td>
+            <td>implement</td>
+          </tr>
+          <tr>
+            <td class="nummeric">189</td>
+            <td>implement</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="currentFolder"><strong>$currentFolder</strong>
+                —
+                string<br/><span class="indent">name of current folder</span></li>
+            <li id="delim"><strong>$delim</strong>
+                —
+                string<br/><span class="indent">delim char for subfolders</span></li>
+            <li id="files"><strong>$files</strong>
+                —
+                array<br/><span class="indent">data of found message files in maildir dir</span></li>
+            <li id="has"><strong>$has</strong>
+                —
+                array<br/><span class="indent">class capabilities with default values</span></li>
+            <li id="iterationMax"><strong>$iterationMax</strong>
+                —
+                <a href="#">Zend\Mail\Storage\null|int</a><br/><span class="indent">maximum iteration position (= message count)</span></li>
+            <li id="iterationPos"><strong>$iterationPos</strong>
+                —
+                int<br/><span class="indent">current iteration position</span></li>
+            <li id="knownFlags"><strong>$knownFlags</strong>
+                —
+                array<br/><span class="indent">known flag chars in filenames</span></li>
+            <li id="messageClass"><strong>$messageClass</strong>
+                —
+                string<br/><span class="indent">used message class, change it in an extended class to extend the returned message class</span></li>
+            <li id="messageClass"><strong>$messageClass</strong>
+                —
+                string<br/><span class="indent">used message class, change it in an extended class to extend the returned message class</span></li>
+            <li id="rootFolder"><strong>$rootFolder</strong>
+                —
+                <a href="#">\Zend\Mail\Storage\Folder</a><br/><span class="indent">root folder for folder structure</span></li>
+            <li id="rootdir"><strong>$rootdir</strong>
+                —
+                string<br/><span class="indent">rootdir of folder structure</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="_buildFolderTree"><a title="Zend\Mail\Storage\Folder\Maildir" href="../classes/Zend_Mail_Storage_Folder_Maildir/_buildFolderTree.xhtml">_buildFolderTree()</a>
+                — find all subfolders and mbox files for folder structure</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Zend\Mail\Storage\Folder\Maildir" href="../classes/Zend_Mail_Storage_Folder_Maildir/__construct.xhtml">__construct()</a>
+                — Create instance with parameters Supported parameters are:   - dirname rootdir of maildir structure   - delim   delim char for folder structure, default is '.'   - folder initial selected folder, default is 'INBOX'</li>
+            <li id="getCurrentFolder"><a title="Zend\Mail\Storage\Folder\Maildir" href="../classes/Zend_Mail_Storage_Folder_Maildir/getCurrentFolder.xhtml">getCurrentFolder()</a>
+                — get \Zend\Mail\Storage\Folder instance for current folder</li>
+            <li id="getFolders"><a title="Zend\Mail\Storage\Folder\Maildir" href="../classes/Zend_Mail_Storage_Folder_Maildir/getFolders.xhtml">getFolders()</a>
+                — get root folder or given folder</li>
+            <li id="selectFolder"><a title="Zend\Mail\Storage\Folder\Maildir" href="../classes/Zend_Mail_Storage_Folder_Maildir/selectFolder.xhtml">selectFolder()</a>
+                — select given folder</li>
+          </ul>
+          <h3>Inherited from <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir.xhtml">Zend\Mail\Storage\Maildir</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="_getFileData"><a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/_getFileData.xhtml">_getFileData()</a>
+                — Get one or all fields from file structure. Also checks if message is valid</li>
+            <li id="_getMaildirFiles"><a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/_getMaildirFiles.xhtml">_getMaildirFiles()</a>
+                — find all files in opened dir handle and add to maildir files</li>
+            <li id="_isMaildir"><a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/_isMaildir.xhtml">_isMaildir()</a>
+                — check if a given dir is a valid maildir</li>
+            <li id="_openMaildir"><a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/_openMaildir.xhtml">_openMaildir()</a>
+                — open given dir as current maildir</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="close"><a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/close.xhtml">close()</a>
+                — Close resource for mail lib. If you need to control, when the resource is closed. Otherwise the destructor would call this.</li>
+            <li id="countMessages"><a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/countMessages.xhtml">countMessages()</a>
+                — Count messages all messages in current box</li>
+            <li id="getMessage"><a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/getMessage.xhtml">getMessage()</a>
+                — Fetch a message</li>
+            <li id="getNumberByUniqueId"><a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/getNumberByUniqueId.xhtml">getNumberByUniqueId()</a>
+                — get a message number from a unique id</li>
+            <li id="getRawContent">
+              <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/getRawContent.xhtml">getRawContent()</a>
+            </li>
+            <li id="getRawHeader">
+              <a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/getRawHeader.xhtml">getRawHeader()</a>
+            </li>
+            <li id="getSize"><a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/getSize.xhtml">getSize()</a>
+                — Get a list of messages with number and size</li>
+            <li id="getUniqueId"><a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/getUniqueId.xhtml">getUniqueId()</a>
+                — get unique id for one or all messages</li>
+            <li id="noop"><a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/noop.xhtml">noop()</a>
+                — Waste some CPU cycles doing nothing.</li>
+            <li id="removeMessage"><a title="Zend\Mail\Storage\Maildir" href="../classes/Zend_Mail_Storage_Maildir/removeMessage.xhtml">removeMessage()</a>
+                — stub for not supported message deletion</li>
+          </ul>
+          <h3>Inherited from <a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage.xhtml">Zend\Mail\Storage\AbstractStorage</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="__get"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/__get.xhtml">__get()</a>
+                — Getter for has-properties. The standard has properties are: hasFolder, hasUniqueid, hasDelete, hasCreate, hasTop</li>
+            <li id="close"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/close.xhtml">close()</a>
+                — Close resource for mail lib. If you need to control, when the resource is closed. Otherwise the destructor would call this.</li>
+            <li id="count"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/count.xhtml">count()</a>
+                — Countable::count()</li>
+            <li id="countMessages"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/countMessages.xhtml">countMessages()</a>
+                — Count messages messages in current box/folder</li>
+            <li id="current"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/current.xhtml">current()</a>
+                — Iterator::current()</li>
+            <li id="getCapabilities"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getCapabilities.xhtml">getCapabilities()</a>
+                — Get a full list of features supported by the specific mail lib and the server</li>
+            <li id="getMessage"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getMessage.xhtml">getMessage()</a>
+                — Get a message with headers and body</li>
+            <li id="getNumberByUniqueId"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getNumberByUniqueId.xhtml">getNumberByUniqueId()</a>
+                — get a message number from a unique id</li>
+            <li id="getRawContent"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getRawContent.xhtml">getRawContent()</a>
+                — Get raw content of message or part</li>
+            <li id="getRawHeader"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getRawHeader.xhtml">getRawHeader()</a>
+                — Get raw header of message or part</li>
+            <li id="getSize"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getSize.xhtml">getSize()</a>
+                — Get a list of messages with number and size</li>
+            <li id="getUniqueId"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/getUniqueId.xhtml">getUniqueId()</a>
+                — get unique id for one or all messages</li>
+            <li id="key"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/key.xhtml">key()</a>
+                — Iterator::key()</li>
+            <li id="next"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/next.xhtml">next()</a>
+                — Iterator::next()</li>
+            <li id="noop"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/noop.xhtml">noop()</a>
+                — Keep the resource alive.</li>
+            <li id="offsetExists"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/offsetExists.xhtml">offsetExists()</a>
+                — ArrayAccess::offsetExists()</li>
+            <li id="offsetGet"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/offsetGet.xhtml">offsetGet()</a>
+                — ArrayAccess::offsetGet()</li>
+            <li id="offsetSet"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/offsetSet.xhtml">offsetSet()</a>
+                — ArrayAccess::offsetSet()</li>
+            <li id="offsetUnset"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/offsetUnset.xhtml">offsetUnset()</a>
+                — ArrayAccess::offsetUnset()</li>
+            <li id="removeMessage"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/removeMessage.xhtml">removeMessage()</a>
+                — delete a message from current box/folder</li>
+            <li id="rewind"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/rewind.xhtml">rewind()</a>
+                — Iterator::rewind()</li>
+            <li id="seek"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/seek.xhtml">seek()</a>
+                — SeekableIterator::seek()</li>
+            <li id="valid"><a title="Zend\Mail\Storage\AbstractStorage" href="../classes/Zend_Mail_Storage_AbstractStorage/valid.xhtml">valid()</a>
+                — Iterator::valid()</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

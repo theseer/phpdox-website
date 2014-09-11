@@ -43,18 +43,23 @@
 ➜ mv phpdox.phar /usr/local/bin/phpdox
 
 ➜ phpdox --version</strong>
-phpDox 0.5.0 - Copyright (C) 2010 - 2013 by Arne Blankerts</pre>
+phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</pre>
      <p>You can also immediately use the PHAR after you have downloaded it, of course:</p>
      <pre><strong>➜ wget http://phpdox.de/releases/phpdox.phar
 
 ➜ php phpdox.phar --version</strong>
-phpDox 0.5.0 - Copyright (C) 2010 - 2013 by Arne Blankerts</pre>
-     <p>Alternatively, you may use Composer or the PEAR Installer to download and install phpDox as well as its dependencies. Please refer to the <a href="documentation.html">documentation</a> for details on how to do this.</p>
+phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</pre>
+     <p>Alternatively, you may use Composer or the PEAR Installer to download and install phpDox as well as its dependencies.</p>
      <h2>Configure</h2>
      <p>You need to write an XML configuration file (commonly named <code>phpdox.xml</code>) for your project in order to use phpDox. The <code>phpdox --skel</code> command helps with this task by generating a skeleton configuration file.</p>
      <p>For the purpose of this tutorial we use the following minimal example:</p>
+<<<<<<< HEAD
      <pre><code>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
 &lt;phpdox xmlns="http://phpdox.net/config"&gt;
+=======
+     <pre class="prettyprint">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;phpdox xmlns="http://xml.phpdox.net/config"&gt;
+>>>>>>> 10bda96
   &lt;project name="Example" source="${basedir}/src" workdir="${basedir}/build/api/xml"&gt;
     &lt;collector backend="parser" /&gt;
     &lt;generator output="${basedir}/build/api"&gt;
@@ -74,72 +79,53 @@ phpDox 0.5.0 - Copyright (C) 2010 - 2013 by Arne Blankerts</pre>
      <h2>Run</h2>
      <p>When you invoke phpDox in a directory that has a file named <code>phpdox.xml</code> it will automatically be used:</p>
      <pre><strong>➜ phpdox</strong>
-phpDox 0.5.0 - Copyright (C) 2010 - 2013 by Arne Blankerts
+phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts
 
-[16.07.2013 - 10:35:07] Using config file '/usr/local/src/example/phpdox.xml.dist'
-[16.07.2013 - 10:35:07] Registered collector backend 'parser'
-[16.07.2013 - 10:35:07] Registered output engine 'html'
-[16.07.2013 - 10:35:07] Registered output engine 'graph'
-[16.07.2013 - 10:35:07] Registered output engine 'todo'
-[16.07.2013 - 10:35:07] Starting to process project 'Example'
-[16.07.2013 - 10:35:07] Starting collector
-[16.07.2013 - 10:35:07] Scanning directory '/usr/local/src/example/src' for files to process
+[11.09.2014 - 10:34:02] Using config file './phpdox.xml.dist'
+[11.09.2014 - 10:34:02] Registered collector backend 'parser'
+[11.09.2014 - 10:34:02] Registered enricher 'build'
+[11.09.2014 - 10:34:02] Registered enricher 'git'
+[11.09.2014 - 10:34:02] Registered enricher 'checkstyle'
+[11.09.2014 - 10:34:02] Registered enricher 'phpcs'
+[11.09.2014 - 10:34:02] Registered enricher 'pmd'
+[11.09.2014 - 10:34:02] Registered enricher 'phpunit'
+[11.09.2014 - 10:34:02] Registered enricher 'phploc'
+[11.09.2014 - 10:34:02] Registered output engine 'xml'
+[11.09.2014 - 10:34:02] Registered output engine 'html'
+[11.09.2014 - 10:34:02] Starting to process project 'phpDox'
+[11.09.2014 - 10:34:02] Starting collector
+[11.09.2014 - 10:34:02] Scanning directory '/usr/local/src/example/src' for files to process
 
-....                                              	[4]
+{....}
 
+[11.09.2014 - 10:34:03] Saving results to directory '/usr/local/src/example/build/api/xml'
+[11.09.2014 - 10:34:04] Resolving inheritance
 
-[16.07.2013 - 10:35:07] Saving results to directory '/usr/local/src/example/build/api/xml'
-[16.07.2013 - 10:35:07] Resolving inheritance
+{....}
 
-...                                               	[3]
+[11.09.2014 - 10:34:04] The following unit(s) had missing dependencies during inheritance resolution:
+[11.09.2014 - 10:34:04] Collector process completed
 
+[11.09.2014 - 10:34:04] Starting generator
+[11.09.2014 - 10:34:04] Loading enrichers
+[11.09.2014 - 10:34:04] Enricher Build Information initialized successfully
+[11.09.2014 - 10:34:04] Enricher GIT information initialized successfully
+[11.09.2014 - 10:34:04] Enricher CheckStyle XML initialized successfully
+[11.09.2014 - 10:34:04] Enricher PHPMessDetector XML initialized successfully
+[11.09.2014 - 10:34:04] Enricher PHPLoc xml initialized successfully
+[11.09.2014 - 10:34:04] Enricher PHPUnit Coverage XML initialized successfully
+[11.09.2014 - 10:34:04] Starting event loop.
 
-[16.07.2013 - 10:35:07] Collector process completed
-[16.07.2013 - 10:35:07] Starting generator
+{....}
 
-..................................................	[50]
-.......................                           	[73]
-
-
-[16.07.2013 - 10:35:07] Triggering raw engines
-
-[16.07.2013 - 10:35:07] Generator process completed
-[16.07.2013 - 10:35:07] Processing project 'Example' completed.
-
-
-Time: 0 seconds, Memory: 8.50Mb</pre>
-     <p>Notice how the output changes on subsequent thanks to the cached information:</p>
-     <pre><strong>➜ phpdox</strong>
-phpDox 0.5.0 - Copyright (C) 2010 - 2013 by Arne Blankerts
-
-[16.07.2013 - 10:37:38] Using config file '/usr/local/src/money/phpdox.xml.dist'
-[16.07.2013 - 10:37:38] Registered collector backend 'parser'
-[16.07.2013 - 10:37:38] Registered output engine 'html'
-[16.07.2013 - 10:37:38] Registered output engine 'graph'
-[16.07.2013 - 10:37:38] Registered output engine 'todo'
-[16.07.2013 - 10:37:38] Starting to process project 'Example'
-[16.07.2013 - 10:37:38] Starting collector
-[16.07.2013 - 10:37:38] Scanning directory '/usr/local/src/money/src' for files to process
-
-cccc                                              	[4]
+[11.09.2014 - 10:34:12] Generator process completed
+[11.09.2014 - 10:34:12] Processing project 'phpDox' completed.
 
 
-[16.07.2013 - 10:37:38] Saving results to directory '/usr/local/src/money/build/api/xml'
-[16.07.2013 - 10:37:38] Collector process completed
-[16.07.2013 - 10:37:38] Starting generator
+Time: 10.8 seconds, Memory: 11.25Mb
 
-..................................................	[50]
-.......................                           	[73]
-
-
-[16.07.2013 - 10:37:38] Triggering raw engines
-
-[16.07.2013 - 10:37:38] Generator process completed
-[16.07.2013 - 10:37:38] Processing project 'Example' completed.
-
-
-Time: 0 seconds, Memory: 2.75Mb</pre>
-     <p>You have learned how to download, configure, and run phpDox. For more details please have a look at the <a href="documentation.html">documentation</a>.</p>
+</pre>
+     <p>You have learned how to download, configure, and run phpDox.</p>
     </div>
    </div>
    <hr>

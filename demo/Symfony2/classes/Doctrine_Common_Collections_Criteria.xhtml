@@ -1,372 +1,180 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\Common\Collections\Criteria - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\Common\Collections\Criteria</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_Common_Collections">Doctrine\Common\Collections</a>
+          </li>
+          <li class="separator">Criteria</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Constants</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#ASC">ASC</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#DESC">DESC</a>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/doctrine/common/lib/Doctrine/Common/Collections/Criteria.php.xhtml#line31">Source</a>
           </li>
         </ul>
-        <h3>Members</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\Common\Collections\</small>Criteria</h1>
+        <h4>Criteria for filtering Selectable collections.</h4>
+        <p/>
         <ul>
-          <li>
-            <a href="#expressionBuilder">$expressionBuilder</a>
-          </li>
-          <li>
-            <a href="#expression">$expression</a>
-          </li>
-          <li>
-            <a href="#orderings">$orderings</a>
-          </li>
-          <li>
-            <a href="#firstResult">$firstResult</a>
-          </li>
-          <li>
-            <a href="#maxResults">$maxResults</a>
-          </li>
+          <li>Author: Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
         </ul>
-        <h3>Methods</h3>
-        <ul>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#andWhere">andWhere</a>
-          </li>
-          <li>
-            <a href="#create">create</a>
-          </li>
-          <li>
-            <a href="#expr">expr</a>
-          </li>
-          <li>
-            <a href="#getFirstResult">getFirstResult</a>
-          </li>
-          <li>
-            <a href="#getMaxResults">getMaxResults</a>
-          </li>
-          <li>
-            <a href="#getOrderings">getOrderings</a>
-          </li>
-          <li>
-            <a href="#getWhereExpression">getWhereExpression</a>
-          </li>
-          <li>
-            <a href="#orWhere">orWhere</a>
-          </li>
-          <li>
-            <a href="#orderBy">orderBy</a>
-          </li>
-          <li>
-            <a href="#setFirstResult">setFirstResult</a>
-          </li>
-          <li>
-            <a href="#setMaxResults">setMaxResults</a>
-          </li>
-          <li>
-            <a href="#where">where</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\Common\Collections\</span>Criteria</h2>
-        <div class="file-notice">
-          <p>Criteria for filtering Selectable collections.</p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Criteria
+            {<br/><ul class="none"><li>// constants</li><li>const ASC = 'ASC';</li><li>const DESC = 'DESC';</li></ul><ul class="none"><li>// members</li><li>private <span title="\Doctrine\Common\Collections\ExpressionBuilder">ExpressionBuilder</span> <a href="#members">$expressionBuilder</a>;
+                    </li><li>private <span title="\Doctrine\Common\Collections\Expr\Expression">Expression</span> <a href="#members">$expression</a>;
+                    </li><li>private <span title="Doctrine\Common\Collections\array|null">array|null</span> <a href="#members">$orderings</a>;
+                    </li><li>private int <a href="#members">$firstResult</a>;
+                    </li><li>private int <a href="#members">$maxResults</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public static Criteria <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/create.xhtml">create</a>()
+                    </li><li>public static ExpressionBuilder <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/expr.xhtml">expr</a>()
+                    </li><li>public void <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/__construct.xhtml">__construct</a>()
+                    </li><li>public Criteria <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/where.xhtml">where</a>()
+                    </li><li>public Criteria <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/andWhere.xhtml">andWhere</a>()
+                    </li><li>public Criteria <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/orWhere.xhtml">orWhere</a>()
+                    </li><li>public Expression|null <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/getWhereExpression.xhtml">getWhereExpression</a>()
+                    </li><li>public array <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/getOrderings.xhtml">getOrderings</a>()
+                    </li><li>public Criteria <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/orderBy.xhtml">orderBy</a>()
+                    </li><li>public firstResult. <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/getFirstResult.xhtml">getFirstResult</a>()
+                    </li><li>public Criteria <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/setFirstResult.xhtml">setFirstResult</a>()
+                    </li><li>public maxResults. <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/getMaxResults.xhtml">getMaxResults</a>()
+                    </li><li>public Criteria <a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/setMaxResults.xhtml">setMaxResults</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="ASC">ASC</td>
+              <td>'ASC'</td>
+            </tr>
+            <tr>
+              <td id="DESC">DESC</td>
+              <td>'DESC'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="expression"><strong>$expression</strong>
+                —
+                <a href="#">\Doctrine\Common\Collections\Expr\Expression</a></li>
+            <li id="expressionBuilder"><strong>$expressionBuilder</strong>
+                —
+                <a href="#">\Doctrine\Common\Collections\ExpressionBuilder</a></li>
+            <li id="firstResult"><strong>$firstResult</strong>
+                —
+                int</li>
+            <li id="maxResults"><strong>$maxResults</strong>
+                —
+                int</li>
+            <li id="orderings"><strong>$orderings</strong>
+                —
+                <a href="#">Doctrine\Common\Collections\array|null</a></li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
-        </ul>
-        <h3>Constants</h3>
-        <ul class="varlist">
-          <li><a name="ASC"/>ASC = 'ASC'<em> string</em><p><li/></p><hr/></li>
-          <li><a name="DESC"/>DESC = 'DESC'<em> string</em><p><li/></p><hr/></li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="expressionBuilder"/>
-            <h4><span class="label private">private</span>object 
-                
-                $expressionBuilder</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="expression"/>
-            <h4><span class="label private">private</span>object 
-                
-                $expression</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="orderings"/>
-            <h4><span class="label private">private</span>object 
-                
-                $orderings</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="firstResult"/>
-            <h4><span class="label private">private</span>int 
-                
-                $firstResult</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="maxResults"/>
-            <h4><span class="label private">private</span>int 
-                
-                $maxResults</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Collections_Expr_Expression.xhtml">Doctrine\Common\Collections\Expr\Expression</a></span><strong> $expression</strong>, <span class="param-type">Array</span><strong> $orderings</strong>, <span class="param-type">int</span><strong> $firstResult</strong>, <span class="param-type">int</span><strong> $maxResults</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Construct new criteria</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$expression</code> - </li>
-                <li><code>$orderings</code> - </li>
-                <li><code>$firstResult</code> - </li>
-                <li><code>$maxResults</code> - </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="andWhere"/>
-            <h4><span class="label public">public</span>andWhere<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Collections_Expr_Expression.xhtml">Doctrine\Common\Collections\Expr\Expression</a></span><strong> $expression</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Append the where expression to evaluate when this criteria is searched for using an AND with previous expression.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code/> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="create"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>create<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Creates an instance of the class.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="expr"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>expr<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Return the expression builder.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getFirstResult"/>
-            <h4><span class="label public">public</span>getFirstResult<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get current first result option of the critera.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMaxResults"/>
-            <h4><span class="label public">public</span>getMaxResults<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get maxResults.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getOrderings"/>
-            <h4><span class="label public">public</span>getOrderings<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get current orderings of this Criteria</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getWhereExpression"/>
-            <h4><span class="label public">public</span>getWhereExpression<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get the expression attached to this criteria.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="orWhere"/>
-            <h4><span class="label public">public</span>orWhere<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Collections_Expr_Expression.xhtml">Doctrine\Common\Collections\Expr\Expression</a></span><strong> $expression</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Append the where expression to evaluate when this criteria is searched for using an OR with previous expression.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code/> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="orderBy"/>
-            <h4><span class="label public">public</span>orderBy<span style="font-size:90%;">( <span class="param-type">Array</span><strong> $orderings</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the ordering of the result of this criteria.<pre>Keys are field and values are the order, being either ASC or DESC.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code/> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setFirstResult"/>
-            <h4><span class="label public">public</span>setFirstResult<span style="font-size:90%;">( <span class="param-type"/><strong> $firstResult</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set number of first result that this criteria should return.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>the</code> - value to set.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setMaxResults"/>
-            <h4><span class="label public">public</span>setMaxResults<span style="font-size:90%;">( <span class="param-type"/><strong> $maxResults</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set maxResults.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>the</code> - value to set.</li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="where"/>
-            <h4><span class="label public">public</span>where<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Collections_Expr_Expression.xhtml">Doctrine\Common\Collections\Expr\Expression</a></span><strong> $expression</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the where expression to evaluate when this criteria is searched for.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code/> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/__construct.xhtml">__construct()</a>
+                — Construct new criteria</li>
+            <li id="andWhere"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/andWhere.xhtml">andWhere()</a>
+                — Append the where expression to evaluate when this criteria is searched for using an AND with previous expression.</li>
+            <li id="create"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/create.xhtml">create()</a>
+                — Creates an instance of the class.</li>
+            <li id="expr"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/expr.xhtml">expr()</a>
+                — Return the expression builder.</li>
+            <li id="getFirstResult"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/getFirstResult.xhtml">getFirstResult()</a>
+                — Get current first result option of the critera.</li>
+            <li id="getMaxResults"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/getMaxResults.xhtml">getMaxResults()</a>
+                — Get maxResults.</li>
+            <li id="getOrderings"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/getOrderings.xhtml">getOrderings()</a>
+                — Get current orderings of this Criteria</li>
+            <li id="getWhereExpression"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/getWhereExpression.xhtml">getWhereExpression()</a>
+                — Get the expression attached to this criteria.</li>
+            <li id="orWhere"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/orWhere.xhtml">orWhere()</a>
+                — Append the where expression to evaluate when this criteria is searched for using an OR with previous expression.</li>
+            <li id="orderBy"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/orderBy.xhtml">orderBy()</a>
+                — Set the ordering of the result of this criteria.</li>
+            <li id="setFirstResult"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/setFirstResult.xhtml">setFirstResult()</a>
+                — Set number of first result that this criteria should return.</li>
+            <li id="setMaxResults"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/setMaxResults.xhtml">setMaxResults()</a>
+                — Set maxResults.</li>
+            <li id="where"><a title="Doctrine\Common\Collections\Criteria" href="../classes/Doctrine_Common_Collections_Criteria/where.xhtml">where()</a>
+                — Set the where expression to evaluate when this criteria is searched for.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

@@ -1,321 +1,152 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\Common\Persistence\PersistentObject - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\Common\Persistence\PersistentObject</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_Common_Persistence">Doctrine\Common\Persistence</a>
+          </li>
+          <li class="separator">PersistentObject</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#objectManager">$objectManager</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#cm">$cm</a>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/doctrine/common/lib/Doctrine/Common/Persistence/PersistentObject.php.xhtml#line58">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\Common\Persistence\</small>PersistentObject</h1>
+        <h4>PersistentObject base class that implements getter/setter methods for all mapped fields and associations by overriding __call.</h4>
+        <p>This class is a forward compatible implementation of the PersistentObject trait.<br/><br/><br/>Limitations:<br/><br/>1. All persistent objects have to be associated with a single ObjectManager, multiple<br/>ObjectManagers are not supported. You can set the ObjectManager with `PersistentObject#setObjectManager()`.<br/>2. Setters and getters only work if a ClassMetadata instance was injected into the PersistentObject.<br/>This is either done on `postLoad` of an object or by accessing the global object manager.<br/>3. There are no hooks for setters/getters. Just implement the method yourself instead of relying on __call().<br/>4. Slower than handcoded implementations: An average of 7 method calls per access to a field and 11 for an association.<br/>5. Only the inverse side associations get autoset on the owning side aswell. Setting objects on the owning side<br/>   will not set the inverse side associations.</p>
         <ul>
-          <li>
-            <a href="#__call">__call</a>
-          </li>
-          <li>
-            <a href="#add">add</a>
-          </li>
-          <li>
-            <a href="#completeOwningSide">completeOwningSide</a>
-          </li>
-          <li>
-            <a href="#get">get</a>
-          </li>
-          <li>
-            <a href="#getObjectManager">getObjectManager</a>
-          </li>
-          <li>
-            <a href="#initializeDoctrine">initializeDoctrine</a>
-          </li>
-          <li>
-            <a href="#injectObjectManager">injectObjectManager</a>
-          </li>
-          <li>
-            <a href="#set">set</a>
-          </li>
-          <li>
-            <a href="#setObjectManager">setObjectManager</a>
-          </li>
+          <li>Author: Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\Common\Persistence\</span>PersistentObject</h2>
-        <div class="file-notice">
-          <p>PersistentObject base class that implements getter/setter methods for all mapped fields and associations by overriding __call.</p>
-          <p>
-            <pre>This class is a forward compatible implementation of the PersistentObject trait.
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PersistentObject
+                implements
+                <a title="Doctrine\Common\Persistence\ObjectManagerAware" href="../interfaces/Doctrine_Common_Persistence_ObjectManagerAware.xhtml">ObjectManagerAware</a>
+            {<br/><ul class="none"><li>// members</li><li>private <span title="Doctrine\Common\Persistence\ObjectManager">ObjectManager</span> <a href="#members">$objectManager</a>;
+                    </li><li>private <span title="Doctrine\Common\Persistence\Mapping\ClassMetadata">ClassMetadata</span> <a href="#members">$cm</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public static void <a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/setObjectManager.xhtml">setObjectManager</a>()
+                    </li><li>public static ObjectManager <a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/getObjectManager.xhtml">getObjectManager</a>()
+                    </li><li>public void <a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/injectObjectManager.xhtml">injectObjectManager</a>()
+                    </li><li>private void <a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/set.xhtml">set</a>()
+                    </li><li>private mixed <a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/get.xhtml">get</a>()
+                    </li><li>private void <a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/completeOwningSide.xhtml">completeOwningSide</a>()
+                    </li><li>private void <a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/add.xhtml">add</a>()
+                    </li><li>private void <a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/initializeDoctrine.xhtml">initializeDoctrine</a>()
+                    </li><li>public mixed <a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/__call.xhtml">__call</a>()
+                    </li></ul>
 
-
-Limitations:
-
-1. All persistent objects have to be associated with a single ObjectManager, multiple
-   ObjectManagers are not supported. You can set the ObjectManager with `PersistentObject#setObjectManager()`.
-2. Setters and getters only work if a ClassMetadata instance was injected into the PersistentObject.
-   This is either done on `postLoad` of an object or by accessing the global object manager.
-3. There are no hooks for setters/getters. Just implement the method yourself instead of relying on __call().
-4. Slower than handcoded implementations: An average of 7 method calls per access to a field and 11 for an association.
-5. Only the inverse side associations get autoset on the owning side aswell. Setting objects on the owning side
-   will not set the inverse side associations.</pre>
-          </p>
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Doctrine_Common_Persistence_ObjectManagerAware.xhtml">Doctrine\Common\Persistence\ObjectManagerAware</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos"><li><b>Author: </b>Benjamin Eberlei &lt;kontakt@beberlei.de&gt;</li>PersistentObject::setObjectManager($em);
-
- class Foo extends PersistentObject
- {
-     private $id;
- }
-
- $foo = new Foo();
- $foo-&gt;getId(); // method exists through __call</ul>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Doctrine_Common_Persistence_ObjectManagerAware.xhtml">Doctrine\Common\Persistence\ObjectManagerAware</a>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="objectManager"/>
-            <h4><span class="label private">private</span>object 
-                
-                $objectManager</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-          <li>
-            <a name="cm"/>
-            <h4><span class="label private">private</span>object 
-                
-                $cm</h4>
-            <ul class="varlist">
-              <li/>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__call"/>
-            <h4><span class="label public">public</span>__call<span style="font-size:90%;">( <span class="param-type">string</span><strong> $method</strong>, <span class="param-type">array</span><strong> $args</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Magic method that implements</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$method</code> - </li>
-                <li><code>$args</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\BadMethodCallException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getObjectManager"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>getObjectManager<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="injectObjectManager"/>
-            <h4><span class="label public">public</span>injectObjectManager<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Persistence_ObjectManager.xhtml">Doctrine\Common\Persistence\ObjectManager</a></span><strong> $objectManager</strong>, <span class="param-type"><a href="../interfaces/Doctrine_Common_Persistence_Mapping_ClassMetadata.xhtml">Doctrine\Common\Persistence\Mapping\ClassMetadata</a></span><strong> $classMetadata</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Inject Doctrine Object Manager</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$objectManager</code> - </li>
-                <li><code>$classMetadata</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setObjectManager"/>
-            <h4><span class="label true">true</span><span class="label public">public</span>setObjectManager<span style="font-size:90%;">( <span class="param-type"><a href="../interfaces/Doctrine_Common_Persistence_ObjectManager.xhtml">Doctrine\Common\Persistence\ObjectManager</a></span><strong> $objectManager</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Set the object manager responsible for all persistent object base classes.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$objectManager</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="add"/>
-            <h4><span class="label private">private</span>add<span style="font-size:90%;">( <span class="param-type">string</span><strong> $field</strong>, <span class="param-type">array</span><strong> $args</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Add an object to a collection</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$field</code> - </li>
-                <li><code>$args</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\BadMethodCallException</code>
-                </li>
-                <li>
-                  <code>\InvalidArgumentException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="completeOwningSide"/>
-            <h4><span class="label private">private</span>completeOwningSide<span style="font-size:90%;">( <span class="param-type">string</span><strong> $field</strong>, <span class="param-type"><a href="../interfaces/Doctrine_Common_Persistence_Mapping_ClassMetadata.xhtml">Doctrine\Common\Persistence\Mapping\ClassMetadata</a></span><strong> $targetClass</strong>, <span class="param-type">invalid method call</span><strong> $targetObject</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>If this is an inverse side association complete the owning side.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$field</code> - </li>
-                <li><code>$targetClass</code> - </li>
-                <li><code>$targetObject</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="get"/>
-            <h4><span class="label private">private</span>get<span style="font-size:90%;">( <span class="param-type">string</span><strong> $field</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Get persistent field value.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$field</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\BadMethodCallException - When no persistent field exists by that name.</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="initializeDoctrine"/>
-            <h4><span class="label private">private</span>initializeDoctrine<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Initialize Doctrine Metadata for this class.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\RuntimeException</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="set"/>
-            <h4><span class="label private">private</span>set<span style="font-size:90%;">( <span class="param-type">string</span><strong> $field</strong>, <span class="param-type">array</span><strong> $args</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a persistent fields value.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$field</code> - </li>
-                <li><code>$args</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="throws">Throws:</h4>
-              <ul class="throws">
-                <li>
-                  <code>\BadMethodCallException - When no persistent field exists by that name.</code>
-                </li>
-                <li>
-                  <code>\InvalidArgumentException - When the wrong target object type is passed to an association</code>
-                </li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="cm"><strong>$cm</strong>
+                —
+                <a href="#">Doctrine\Common\Persistence\Mapping\ClassMetadata</a></li>
+            <li id="objectManager"><strong>$objectManager</strong>
+                —
+                <a href="#">Doctrine\Common\Persistence\ObjectManager</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="add"><a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/add.xhtml">add()</a>
+                — Add an object to a collection</li>
+            <li id="completeOwningSide"><a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/completeOwningSide.xhtml">completeOwningSide()</a>
+                — If this is an inverse side association complete the owning side.</li>
+            <li id="get"><a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/get.xhtml">get()</a>
+                — Get persistent field value.</li>
+            <li id="initializeDoctrine"><a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/initializeDoctrine.xhtml">initializeDoctrine()</a>
+                — Initialize Doctrine Metadata for this class.</li>
+            <li id="set"><a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/set.xhtml">set()</a>
+                — Sets a persistent fields value.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__call"><a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/__call.xhtml">__call()</a>
+                — Magic method that implements</li>
+            <li id="getObjectManager">
+              <a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/getObjectManager.xhtml">getObjectManager()</a>
+            </li>
+            <li id="injectObjectManager"><a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/injectObjectManager.xhtml">injectObjectManager()</a>
+                — Inject Doctrine Object Manager</li>
+            <li id="setObjectManager"><a title="Doctrine\Common\Persistence\PersistentObject" href="../classes/Doctrine_Common_Persistence_PersistentObject/setObjectManager.xhtml">setObjectManager()</a>
+                — Set the object manager responsible for all persistent object base classes.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

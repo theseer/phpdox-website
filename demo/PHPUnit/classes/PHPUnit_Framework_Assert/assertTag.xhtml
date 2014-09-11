@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pu="http://schema.phpunit.de/coverage/1.0" lang="en">
+  <head>
+    <title>phpDox - Test Method</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml#"/>
+          </li>
+          <li class="separator">
+            <a title="PHPUnit_Framework_Assert" href="../../classes/PHPUnit_Framework_Assert.xhtml">PHPUnit_Framework_Assert</a>
+          </li>
+          <li class="separator">assertTag</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#parameter">Parameter</a>
+          </li>
+          <li>
+            <a href="../../source/Framework/Assert.php.xhtml#line2197">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1><small>PHPUnit_Framework_Assert::</small>assertTag</h1>
+        <h4>Evaluate an HTML or XML string and assert its structure and/or contents.</h4>
+        <p>The first argument ($matcher) is an associative array that specifies the
+match criteria for the assertion:
+
+ - `id`           : the node with the given id attribute must match the
+                    corresponding value.
+ - `tag`          : the node type must match the corresponding value.
+ - `attributes`   : a hash. The node's attributes must match the
+                    corresponding values in the hash.
+ - `content`      : The text content must match the given value.
+ - `parent`       : a hash. The node's parent must match the
+                    corresponding hash.
+ - `child`        : a hash. At least one of the node's immediate children
+                    must meet the criteria described by the hash.
+ - `ancestor`     : a hash. At least one of the node's ancestors must
+                    meet the criteria described by the hash.
+ - `descendant`   : a hash. At least one of the node's descendants must
+                    meet the criteria described by the hash.
+ - `children`     : a hash, for counting children of a node.
+                    Accepts the keys:
+   - `count`        : a number which must equal the number of children
+                      that match
+   - `less_than`    : the number of matching children must be greater
+                      than this number
+   - `greater_than` : the number of matching children must be less than
+                      this number
+   - `only`         : another hash consisting of the keys to use to match
+                      on the children, and only matching children will be
+                      counted
+
+&lt;code&gt;
+// Matcher that asserts that there is an element with an id="my_id".
+$matcher = array('id' =&gt; 'my_id');
+
+// Matcher that asserts that there is a "span" tag.
+$matcher = array('tag' =&gt; 'span');
+
+// Matcher that asserts that there is a "span" tag with the content
+// "Hello World".
+$matcher = array('tag' =&gt; 'span', 'content' =&gt; 'Hello World');
+
+// Matcher that asserts that there is a "span" tag with content matching
+// the regular expression pattern.
+$matcher = array('tag' =&gt; 'span', 'content' =&gt; 'regexp:/Try P(HP|ython)/');
+
+// Matcher that asserts that there is a "span" with an "list" class
+// attribute.
+$matcher = array(
+  'tag'        =&gt; 'span',
+  'attributes' =&gt; array('class' =&gt; 'list')
+);
+
+// Matcher that asserts that there is a "span" inside of a "div".
+$matcher = array(
+  'tag'    =&gt; 'span',
+  'parent' =&gt; array('tag' =&gt; 'div')
+);
+
+// Matcher that asserts that there is a "span" somewhere inside a
+// "table".
+$matcher = array(
+  'tag'      =&gt; 'span',
+  'ancestor' =&gt; array('tag' =&gt; 'table')
+);
+
+// Matcher that asserts that there is a "span" with at least one "em"
+// child.
+$matcher = array(
+  'tag'   =&gt; 'span',
+  'child' =&gt; array('tag' =&gt; 'em')
+);
+
+// Matcher that asserts that there is a "span" containing a (possibly
+// nested) "strong" tag.
+$matcher = array(
+  'tag'        =&gt; 'span',
+  'descendant' =&gt; array('tag' =&gt; 'strong')
+);
+
+// Matcher that asserts that there is a "span" containing 5-10 "em" tags
+// as immediate children.
+$matcher = array(
+  'tag'      =&gt; 'span',
+  'children' =&gt; array(
+    'less_than'    =&gt; 11,
+    'greater_than' =&gt; 4,
+    'only'         =&gt; array('tag' =&gt; 'em')
+  )
+);
+
+// Matcher that asserts that there is a "div", with an "ul" ancestor and
+// a "li" parent (with class="enum"), and containing a "span" descendant
+// that contains an element with id="my_test" and the text "Hello World".
+$matcher = array(
+  'tag'        =&gt; 'div',
+  'ancestor'   =&gt; array('tag' =&gt; 'ul'),
+  'parent'     =&gt; array(
+    'tag'        =&gt; 'li',
+    'attributes' =&gt; array('class' =&gt; 'enum')
+  ),
+  'descendant' =&gt; array(
+    'tag'   =&gt; 'span',
+    'child' =&gt; array(
+      'id'      =&gt; 'my_test',
+      'content' =&gt; 'Hello World'
+    )
+  )
+);
+
+// Use assertTag() to apply a $matcher to a piece of $html.
+$this-&gt;assertTag($matcher, $html);
+
+// Use assertTag() to apply a $matcher to a piece of $xml.
+$this-&gt;assertTag($matcher, $xml, '', false);
+&lt;/code&gt;
+
+The second argument ($actual) is a string containing either HTML or
+XML text to be tested.
+
+The third argument ($message) is an optional message that will be
+used if the assertion fails.
+
+The fourth argument ($html) is an optional flag specifying whether
+to load the $actual string into a DOMDocument using the HTML or
+XML load strategy.  It is true by default, which assumes the HTML
+load strategy.  In many cases, this will be acceptable for XML as well.</p>
+        <ul>
+          <li>Author: Mike Naberezny &lt;mike@maintainable.com&gt;</li>
+        </ul>
+        <h2 id="signature">Signature</h2>
+        <div class="styled synopsis">
+          <code>public function assertTag(array
+        $matcher,
+            [string
+        $actual = '',
+            [string
+        $message = '',
+            [boolean
+        $isHtml = true]]] )
+            </code>
+        </div>
+        <h2 id="parameterlist">Parameters</h2>
+        <dl class="styled">
+          <dt><code>$matcher</code>
+                —
+                array</dt>
+          <dd/>
+          <dt><code>$actual</code>
+                —
+                string</dt>
+          <dd/>
+          <dt><code>$message</code>
+                —
+                string</dt>
+          <dd/>
+          <dt><code>$isHtml</code>
+                —
+                boolean</dt>
+          <dd/>
+        </dl>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.7.0 - Copyright (C) 2010 - 2014 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

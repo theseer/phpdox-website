@@ -1,200 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Symfony\Component\Validator\ConstraintViolationInterface - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Symfony\Component\Validator\ConstraintViolationInterface</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../interfaces.xhtml">Interfaces</a>
+          </li>
+          <li class="separator">
+            <a href="../interfaces.xhtml#Symfony_Component_Validator">Symfony\Component\Validator</a>
+          </li>
+          <li class="separator">ConstraintViolationInterface</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Methods</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#getCode">getCode</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#getInvalidValue">getInvalidValue</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#getMessage">getMessage</a>
+            <a href="#violations">Violations</a>
           </li>
           <li>
-            <a href="#getMessageParameters">getMessageParameters</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#getMessagePluralization">getMessagePluralization</a>
-          </li>
-          <li>
-            <a href="#getMessageTemplate">getMessageTemplate</a>
-          </li>
-          <li>
-            <a href="#getPropertyPath">getPropertyPath</a>
-          </li>
-          <li>
-            <a href="#getRoot">getRoot</a>
+            <a href="../source/symfony/symfony/src/Symfony/Component/Validator/ConstraintViolationInterface.php.xhtml#line38">Source</a>
           </li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Symfony\Component\Validator\</span>ConstraintViolationInterface</h2>
-        <div class="file-notice">
-          <p>A violation of a constraint that happened during validation.</p>
-          <p>
-            <pre>For each constraint that fails during validation one or more violations are
-created. The violations store the violation message, the path to the failing
-element in the validation graph and the root element that was originally
-passed to the validator. For example, take the following graph:
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Symfony\Component\Validator\</small>ConstraintViolationInterface</h1>
+        <h4>A violation of a constraint that happened during validation.</h4>
+        <p>For each constraint that fails during validation one or more violations are<br/>created. The violations store the violation message, the path to the failing<br/>element in the validation graph and the root element that was originally<br/>passed to the validator. For example, take the following graph:<br/><br/>&lt;pre&gt;<br/>(Person)---(firstName: string)<br/>\<br/>(address: Address)---(street: string)<br/>&lt;/pre&gt;<br/><br/>If the &lt;tt&gt;Person&lt;/tt&gt; object is validated and validation fails for the<br/>"firstName" property, the generated violation has the &lt;tt&gt;Person&lt;/tt&gt;<br/>instance as root and the property path "firstName". If validation fails<br/>for the "street" property of the related &lt;tt&gt;Address&lt;/tt&gt; instance, the root<br/>element is still the person, but the property path is "address.street".</p>
+        <ul>
+          <li>Author: Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">interface ConstraintViolationInterface
+            {<br/><ul class="none"><li>// methods</li><li>public string <a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getMessage.xhtml">getMessage</a>()
+                    </li><li>public string <a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getMessageTemplate.xhtml">getMessageTemplate</a>()
+                    </li><li>public array <a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getMessageParameters.xhtml">getMessageParameters</a>()
+                    </li><li>public integer|null <a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getMessagePluralization.xhtml">getMessagePluralization</a>()
+                    </li><li>public mixed <a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getRoot.xhtml">getRoot</a>()
+                    </li><li>public string <a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getPropertyPath.xhtml">getPropertyPath</a>()
+                    </li><li>public mixed <a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getInvalidValue.xhtml">getInvalidValue</a>()
+                    </li><li>public mixed <a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getCode.xhtml">getCode</a>()
+                    </li></ul>
 
-&lt;pre&gt;
-(Person)---(firstName: string)
-     \
-  (address: Address)---(street: string)
-&lt;/pre&gt;
-
-If the &lt;tt&gt;Person&lt;/tt&gt; object is validated and validation fails for the
-"firstName" property, the generated violation has the &lt;tt&gt;Person&lt;/tt&gt;
-instance as root and the property path "firstName". If validation fails
-for the "street" property of the related &lt;tt&gt;Address&lt;/tt&gt; instance, the root
-element is still the person, but the property path is "address.street".</pre>
-          </p>
+            }<br/></div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="getCode"><a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getCode.xhtml">getCode()</a>
+                — Returns a machine-digestible error code for the violation.</li>
+            <li id="getInvalidValue"><a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getInvalidValue.xhtml">getInvalidValue()</a>
+                — Returns the value that caused the violation.</li>
+            <li id="getMessage"><a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getMessage.xhtml">getMessage()</a>
+                — Returns the violation message.</li>
+            <li id="getMessageParameters"><a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getMessageParameters.xhtml">getMessageParameters()</a>
+                — Returns the parameters to be inserted into the raw violation message.</li>
+            <li id="getMessagePluralization"><a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getMessagePluralization.xhtml">getMessagePluralization()</a>
+                — Returns a number for pluralizing the violation message.</li>
+            <li id="getMessageTemplate"><a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getMessageTemplate.xhtml">getMessageTemplate()</a>
+                — Returns the raw violation message.</li>
+            <li id="getPropertyPath"><a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getPropertyPath.xhtml">getPropertyPath()</a>
+                — Returns the property path from the root element to the violation.</li>
+            <li id="getRoot"><a title="Symfony\Component\Validator\ConstraintViolationInterface" href="../interfaces/Symfony_Component_Validator_ConstraintViolationInterface/getRoot.xhtml">getRoot()</a>
+                — Returns the root element of the validation.</li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Bernhard Schussek &lt;bschussek@gmail.com&gt;</li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="getCode"/>
-            <h4><span class="label public">public</span>getCode<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns a machine-digestible error code for the violation.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The error code.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getInvalidValue"/>
-            <h4><span class="label public">public</span>getInvalidValue<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the value that caused the violation.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The invalid value that caused the validated constraint to</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMessage"/>
-            <h4><span class="label public">public</span>getMessage<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the violation message.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The violation message.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMessageParameters"/>
-            <h4><span class="label public">public</span>getMessageParameters<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the parameters to be inserted into the raw violation message.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>A possibly empty list of parameters indexed by the names</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMessagePluralization"/>
-            <h4><span class="label public">public</span>getMessagePluralization<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns a number for pluralizing the violation message.<pre>For example, the message template could have different translation based
-on a parameter "choices":
-
-&lt;ul&gt;
-&lt;li&gt;Please select exactly one entry. (choices=1)&lt;/li&gt;
-&lt;li&gt;Please select two entries. (choices=2)&lt;/li&gt;
-&lt;/ul&gt;
-
-This method returns the value of the parameter for choosing the right
-pluralization form (in this case "choices").</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The number to use to pluralize of the message.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getMessageTemplate"/>
-            <h4><span class="label public">public</span>getMessageTemplate<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the raw violation message.<pre>The raw violation message contains placeholders for the parameters
-returned by . Typically you'll pass the
-message template and parameters to a translation engine.
-</pre></li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The raw violation message.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getPropertyPath"/>
-            <h4><span class="label public">public</span>getPropertyPath<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the property path from the root element to the violation.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The property path indicates how the validator reached</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getRoot"/>
-            <h4><span class="label public">public</span>getRoot<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Returns the root element of the validation.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The value that was passed originally to the validator when</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>

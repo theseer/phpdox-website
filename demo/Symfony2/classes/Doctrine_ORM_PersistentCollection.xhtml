@@ -1,801 +1,336 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "html" "">
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Symfony2 - Doctrine\ORM\PersistentCollection - API Documentation</title>
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>phpDox - Doctrine\ORM\PersistentCollection</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="topbar clearfix">
-        <h1>
-          <a class="brand" href="../index.xhtml">Symfony2 - API Documentation</a>
-        </h1>
-        <ul class="nav">
-          <li class="active">
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
             <a href="../index.xhtml">Overview</a>
           </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Doctrine_ORM">Doctrine\ORM</a>
+          </li>
+          <li class="separator">PersistentCollection</li>
         </ul>
       </div>
-      <div class="navigation">
-        <h3>Members</h3>
+      <nav class="box">
         <ul>
           <li>
-            <a href="#snapshot">$snapshot</a>
+            <a href="#introduction">Introduction</a>
           </li>
           <li>
-            <a href="#owner">$owner</a>
+            <a href="#synopsis">Synopsis</a>
           </li>
           <li>
-            <a href="#association">$association</a>
+            <a href="#hierarchy">Hierarchy</a>
           </li>
           <li>
-            <a href="#em">$em</a>
+            <a href="#tasks">Tasks</a>
           </li>
           <li>
-            <a href="#backRefFieldName">$backRefFieldName</a>
+            <a href="#members">Members</a>
           </li>
           <li>
-            <a href="#typeClass">$typeClass</a>
+            <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="#isDirty">$isDirty</a>
-          </li>
-          <li>
-            <a href="#initialized">$initialized</a>
-          </li>
-          <li>
-            <a href="#coll">$coll</a>
+            <a href="../source/doctrine/orm/lib/Doctrine/ORM/PersistentCollection.php.xhtml#line48">Source</a>
           </li>
         </ul>
-        <h3>Methods</h3>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Doctrine\ORM\</small>PersistentCollection</h1>
+        <h4>A PersistentCollection represents a collection of elements that have persistent state.</h4>
+        <p>Collections of entities represent only the associations (links) to those entities.<br/>That means, if the collection is part of a many-many mapping and you remove<br/>entities from the collection, only the links in the relation table are removed (on flush).<br/>Similarly, if you remove entities from a collection that is part of a one-many<br/>mapping this will only result in the nulling out of the foreign keys on flush.</p>
         <ul>
-          <li>
-            <a href="#__clone">__clone</a>
-          </li>
-          <li>
-            <a href="#__construct">__construct</a>
-          </li>
-          <li>
-            <a href="#__sleep">__sleep</a>
-          </li>
-          <li>
-            <a href="#add">add</a>
-          </li>
-          <li>
-            <a href="#changed">changed</a>
-          </li>
-          <li>
-            <a href="#clear">clear</a>
-          </li>
-          <li>
-            <a href="#contains">contains</a>
-          </li>
-          <li>
-            <a href="#containsKey">containsKey</a>
-          </li>
-          <li>
-            <a href="#count">count</a>
-          </li>
-          <li>
-            <a href="#current">current</a>
-          </li>
-          <li>
-            <a href="#exists">exists</a>
-          </li>
-          <li>
-            <a href="#filter">filter</a>
-          </li>
-          <li>
-            <a href="#first">first</a>
-          </li>
-          <li>
-            <a href="#forAll">forAll</a>
-          </li>
-          <li>
-            <a href="#get">get</a>
-          </li>
-          <li>
-            <a href="#getDeleteDiff">getDeleteDiff</a>
-          </li>
-          <li>
-            <a href="#getInsertDiff">getInsertDiff</a>
-          </li>
-          <li>
-            <a href="#getIterator">getIterator</a>
-          </li>
-          <li>
-            <a href="#getKeys">getKeys</a>
-          </li>
-          <li>
-            <a href="#getMapping">getMapping</a>
-          </li>
-          <li>
-            <a href="#getOwner">getOwner</a>
-          </li>
-          <li>
-            <a href="#getSnapshot">getSnapshot</a>
-          </li>
-          <li>
-            <a href="#getTypeClass">getTypeClass</a>
-          </li>
-          <li>
-            <a href="#getValues">getValues</a>
-          </li>
-          <li>
-            <a href="#hydrateAdd">hydrateAdd</a>
-          </li>
-          <li>
-            <a href="#hydrateSet">hydrateSet</a>
-          </li>
-          <li>
-            <a href="#indexOf">indexOf</a>
-          </li>
-          <li>
-            <a href="#initialize">initialize</a>
-          </li>
-          <li>
-            <a href="#isDirty">isDirty</a>
-          </li>
-          <li>
-            <a href="#isEmpty">isEmpty</a>
-          </li>
-          <li>
-            <a href="#isInitialized">isInitialized</a>
-          </li>
-          <li>
-            <a href="#key">key</a>
-          </li>
-          <li>
-            <a href="#last">last</a>
-          </li>
-          <li>
-            <a href="#map">map</a>
-          </li>
-          <li>
-            <a href="#matching">matching</a>
-          </li>
-          <li>
-            <a href="#next">next</a>
-          </li>
-          <li>
-            <a href="#offsetExists">offsetExists</a>
-          </li>
-          <li>
-            <a href="#offsetGet">offsetGet</a>
-          </li>
-          <li>
-            <a href="#offsetSet">offsetSet</a>
-          </li>
-          <li>
-            <a href="#offsetUnset">offsetUnset</a>
-          </li>
-          <li>
-            <a href="#partition">partition</a>
-          </li>
-          <li>
-            <a href="#remove">remove</a>
-          </li>
-          <li>
-            <a href="#removeElement">removeElement</a>
-          </li>
-          <li>
-            <a href="#set">set</a>
-          </li>
-          <li>
-            <a href="#setDirty">setDirty</a>
-          </li>
-          <li>
-            <a href="#setInitialized">setInitialized</a>
-          </li>
-          <li>
-            <a href="#setOwner">setOwner</a>
-          </li>
-          <li>
-            <a href="#slice">slice</a>
-          </li>
-          <li>
-            <a href="#takeSnapshot">takeSnapshot</a>
-          </li>
-          <li>
-            <a href="#toArray">toArray</a>
-          </li>
-          <li>
-            <a href="#unwrap">unwrap</a>
-          </li>
+          <li>Author: Konsta Vesterinen &lt;kvesteri@cc.hut.fi&gt;</li>
         </ul>
-      </div>
-      <div class="content">
-        <h2><span style="font-size:60%">Doctrine\ORM\</span>PersistentCollection</h2>
-        <div class="file-notice">
-          <p>A PersistentCollection represents a collection of elements that have persistent state.</p>
-          <p>
-            <pre>Collections of entities represent only the associations (links) to those entities.
-That means, if the collection is part of a many-many mapping and you remove
-entities from the collection, only the links in the relation table are removed (on flush).
-Similarly, if you remove entities from a collection that is part of a one-many
-mapping this will only result in the nulling out of the foreign keys on flush.</pre>
-          </p>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PersistentCollection
+                implements
+                <a title="Doctrine\Common\Collections\Collection" href="../interfaces/Doctrine_Common_Collections_Collection.xhtml">Collection</a>,<a title="Doctrine\Common\Collections\Selectable" href="../interfaces/Doctrine_Common_Collections_Selectable.xhtml">Selectable</a>
+            {<br/><ul class="none"><li>// members</li><li>private array <a href="#members">$snapshot</a>;
+                    </li><li>private <span title=""/> <a href="#members">$owner</a>;
+                    </li><li>private array <a href="#members">$association</a>;
+                    </li><li>private <span title="\Doctrine\ORM\EntityManager">EntityManager</span> <a href="#members">$em</a>;
+                    </li><li>private string <a href="#members">$backRefFieldName</a>;
+                    </li><li>private <a href="#members">$typeClass</a>;
+                    </li><li>private boolean <a href="#members">$isDirty</a>;
+                    </li><li>private boolean <a href="#members">$initialized</a>;
+                    </li><li>private <span title="Doctrine\Common\Collections\Collection">Collection</span> <a href="#members">$coll</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/setOwner.xhtml">setOwner</a>()
+                    </li><li>public  <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getOwner.xhtml">getOwner</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getTypeClass.xhtml">getTypeClass</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/hydrateAdd.xhtml">hydrateAdd</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/hydrateSet.xhtml">hydrateSet</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/initialize.xhtml">initialize</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/takeSnapshot.xhtml">takeSnapshot</a>()
+                    </li><li>public array <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getSnapshot.xhtml">getSnapshot</a>()
+                    </li><li>public array <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getDeleteDiff.xhtml">getDeleteDiff</a>()
+                    </li><li>public array <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getInsertDiff.xhtml">getInsertDiff</a>()
+                    </li><li>public array <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getMapping.xhtml">getMapping</a>()
+                    </li><li>private void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/changed.xhtml">changed</a>()
+                    </li><li>public boolean <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/isDirty.xhtml">isDirty</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/setDirty.xhtml">setDirty</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/setInitialized.xhtml">setInitialized</a>()
+                    </li><li>public boolean <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/isInitialized.xhtml">isInitialized</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/first.xhtml">first</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/last.xhtml">last</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/remove.xhtml">remove</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/removeElement.xhtml">removeElement</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/containsKey.xhtml">containsKey</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/contains.xhtml">contains</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/exists.xhtml">exists</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/indexOf.xhtml">indexOf</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/get.xhtml">get</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getKeys.xhtml">getKeys</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getValues.xhtml">getValues</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/count.xhtml">count</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/set.xhtml">set</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/add.xhtml">add</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/isEmpty.xhtml">isEmpty</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getIterator.xhtml">getIterator</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/map.xhtml">map</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/filter.xhtml">filter</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/forAll.xhtml">forAll</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/partition.xhtml">partition</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/toArray.xhtml">toArray</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/clear.xhtml">clear</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/__sleep.xhtml">__sleep</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/offsetExists.xhtml">offsetExists</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/offsetGet.xhtml">offsetGet</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/offsetSet.xhtml">offsetSet</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/offsetUnset.xhtml">offsetUnset</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/key.xhtml">key</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/current.xhtml">current</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/next.xhtml">next</a>()
+                    </li><li>public Collection <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/unwrap.xhtml">unwrap</a>()
+                    </li><li>public array <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/slice.xhtml">slice</a>()
+                    </li><li>public void <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/__clone.xhtml">__clone</a>()
+                    </li><li>public Collection <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/matching.xhtml">matching</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a href="../interfaces/Doctrine_Common_Collections_Collection.xhtml">Doctrine\Common\Collections\Collection</a>
+            </li>
+            <li>
+              <a href="../interfaces/Doctrine_Common_Collections_Selectable.xhtml">Doctrine\Common\Collections\Selectable</a>
+            </li>
+          </ul>
         </div>
-        <ul class="fileinfos">
-          <li><b>Author: </b>Konsta Vesterinen &lt;kvesteri@cc.hut.fi&gt;</li>
-          <li><b>Author: </b>Roman Borschel &lt;roman@code-factory.org&gt;</li>
-          <li><b>Author: </b>Giorgio Sironi &lt;piccoloprincipeazzurro@gmail.com&gt;</li>
-          <li><b>Author: </b>Stefano Rodriguez &lt;stefano.rodriguez@fubles.com&gt;</li>
-        </ul>
-        <h3>Implements</h3>
-        <ul class="varlist">
-          <li>
-            <a href="../interfaces/Doctrine_Common_Collections_Collection.xhtml">Doctrine\Common\Collections\Collection</a>
-          </li>
-          <li>
-            <a href="../interfaces/Doctrine_Common_Collections_Selectable.xhtml">Doctrine\Common\Collections\Selectable</a>
-          </li>
-        </ul>
-        <h3>Members</h3>
-        <ul class="varlist">
-          <li>
-            <a name="snapshot"/>
-            <h4><span class="label private">private</span>array 
-                
-                $snapshot</h4>
-            <ul class="varlist">
-              <li>A snapshot of the collection at the moment it was fetched from the database.<pre>This is used to create a diff of the collection at commit time.</pre></li>
-            </ul>
-          </li>
-          <li>
-            <a name="owner"/>
-            <h4><span class="label private">private</span>object 
-                
-                $owner</h4>
-            <ul class="varlist">
-              <li>The entity that owns this collection.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="association"/>
-            <h4><span class="label private">private</span>array 
-                
-                $association</h4>
-            <ul class="varlist">
-              <li>The association mapping the collection belongs to.<pre>This is currently either a OneToManyMapping or a ManyToManyMapping.</pre></li>
-            </ul>
-          </li>
-          <li>
-            <a name="em"/>
-            <h4><span class="label private">private</span>object 
-                
-                $em</h4>
-            <ul class="varlist">
-              <li>The EntityManager that manages the persistence of the collection.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="backRefFieldName"/>
-            <h4><span class="label private">private</span>string 
-                
-                $backRefFieldName</h4>
-            <ul class="varlist">
-              <li>The name of the field on the target entities that points to the owner of the collection. This is only set if the association is bi-directional.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="typeClass"/>
-            <h4><span class="label private">private</span>
-                $typeClass</h4>
-            <ul class="varlist">
-              <li>The class descriptor of the collection's entity type.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="isDirty"/>
-            <h4><span class="label private">private</span>boolean 
-                
-                $isDirty</h4>
-            <ul class="varlist">
-              <li>Whether the collection is dirty and needs to be synchronized with the database when the UnitOfWork that manages its persistent state commits.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="initialized"/>
-            <h4><span class="label private">private</span>boolean 
-                
-                $initialized</h4>
-            <ul class="varlist">
-              <li>Whether the collection has already been initialized.</li>
-            </ul>
-          </li>
-          <li>
-            <a name="coll"/>
-            <h4><span class="label private">private</span>object 
-                
-                $coll</h4>
-            <ul class="varlist">
-              <li>The wrapped Collection instance.</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Constructor</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__construct"/>
-            <h4><span class="label public">public</span>__construct<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_ORM_EntityManager.xhtml">Doctrine\ORM\EntityManager</a></span><strong> $em</strong>, <span class="param-type"><a href="../classes/Doctrine_ORM_Mapping_ClassMetadata.xhtml">Doctrine\ORM\Mapping\ClassMetadata</a></span><strong> $class</strong>, <span class="param-type"/><strong> $coll</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Creates a new persistent collection.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$em</code> - The EntityManager the collection will be associated with.</li>
-                <li><code>$class</code> - The class descriptor of the entity type of this collection.</li>
-                <li><code>The</code> - collection elements.</li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-        <h3>Methods</h3>
-        <ul class="varlist">
-          <li>
-            <a name="__clone"/>
-            <h4><span class="label public">public</span>__clone<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Cleanup internal state of cloned persistent collection.<pre>The following problems have to be prevented:
-1. Added entities are added to old PC
-2. New collection is not dirty, if reused on other entity nothing
-changes.
-3. Snapshot leads to invalid diffs being generated.
-4. Lazy loading grabs entities from old owner object.
-5. New collection is connected to old owner and leads to duplicate keys.</pre></li>
-            </p>
-          </li>
-          <li>
-            <a name="__sleep"/>
-            <h4><span class="label public">public</span>__sleep<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Called by PHP when this collection is serialized. Ensures that only the elements are properly serialized.</li>
-            </p>
-          </li>
-          <li>
-            <a name="add"/>
-            <h4><span class="label public">public</span>add<span style="font-size:90%;">( <span class="param-type"/><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="clear"/>
-            <h4><span class="label public">public</span>clear<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="contains"/>
-            <h4><span class="label public">public</span>contains<span style="font-size:90%;">( <span class="param-type"/><strong> $element</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="containsKey"/>
-            <h4><span class="label public">public</span>containsKey<span style="font-size:90%;">( <span class="param-type"/><strong> $key</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="count"/>
-            <h4><span class="label public">public</span>count<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="current"/>
-            <h4><span class="label public">public</span>current<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets the element of the collection at the current iterator position.</li>
-            </p>
-          </li>
-          <li>
-            <a name="exists"/>
-            <h4><span class="label public">public</span>exists<span style="font-size:90%;">( <span class="param-type"><span title="Closure">Closure</span></span><strong> $p</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="filter"/>
-            <h4><span class="label public">public</span>filter<span style="font-size:90%;">( <span class="param-type"><span title="Closure">Closure</span></span><strong> $p</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="first"/>
-            <h4><span class="label public">public</span>first<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="forAll"/>
-            <h4><span class="label public">public</span>forAll<span style="font-size:90%;">( <span class="param-type"><span title="Closure">Closure</span></span><strong> $p</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="get"/>
-            <h4><span class="label public">public</span>get<span style="font-size:90%;">( <span class="param-type"/><strong> $key</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getDeleteDiff"/>
-            <h4><span class="label public">public</span>getDeleteDiff<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: getDeleteDiff</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getInsertDiff"/>
-            <h4><span class="label public">public</span>getInsertDiff<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: getInsertDiff</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getIterator"/>
-            <h4><span class="label public">public</span>getIterator<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getKeys"/>
-            <h4><span class="label public">public</span>getKeys<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="getMapping"/>
-            <h4><span class="label public">public</span>getMapping<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Gets the association mapping of the collection.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getOwner"/>
-            <h4><span class="label public">public</span>getOwner<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Gets the collection owner.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getSnapshot"/>
-            <h4><span class="label public">public</span>getSnapshot<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Returns the last snapshot of the elements in the collection.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>The last snapshot of the elements.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="getTypeClass"/>
-            <h4><span class="label public">public</span>getTypeClass<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="getValues"/>
-            <h4><span class="label public">public</span>getValues<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="hydrateAdd"/>
-            <h4><span class="label public">public</span>hydrateAdd<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $element</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Adds an element to a collection during hydration. This will automatically complete bidirectional associations in the case of a one-to-many association.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$element</code> - The element to add.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="hydrateSet"/>
-            <h4><span class="label public">public</span>hydrateSet<span style="font-size:90%;">( <span class="param-type">mixed</span><strong> $key</strong>, <span class="param-type"/><strong> $element</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Sets a keyed element in the collection during hydration.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$key</code> - The key to set.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="indexOf"/>
-            <h4><span class="label public">public</span>indexOf<span style="font-size:90%;">( <span class="param-type"/><strong> $element</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="initialize"/>
-            <h4><span class="label public">public</span>initialize<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Initializes the collection by loading its contents from the database if the collection is not yet initialized.</li>
-            </p>
-          </li>
-          <li>
-            <a name="isDirty"/>
-            <h4><span class="label public">public</span>isDirty<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Gets a boolean flag indicating whether this collection is dirty which means its state needs to be synchronized with the database.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li>TRUE if the collection is dirty, FALSE otherwise.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="isEmpty"/>
-            <h4><span class="label public">public</span>isEmpty<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="isInitialized"/>
-            <h4><span class="label public">public</span>isInitialized<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Checks whether this collection has been initialized.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="key"/>
-            <h4><span class="label public">public</span>key<span style="font-size:90%;">(  )</span></h4>
-          </li>
-          <li>
-            <a name="last"/>
-            <h4><span class="label public">public</span>last<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="map"/>
-            <h4><span class="label public">public</span>map<span style="font-size:90%;">( <span class="param-type"><span title="Closure">Closure</span></span><strong> $func</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="matching"/>
-            <h4><span class="label public">public</span>matching<span style="font-size:90%;">( <span class="param-type"><a href="../classes/Doctrine_Common_Collections_Criteria.xhtml">Doctrine\Common\Collections\Criteria</a></span><strong> $criteria</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Select all elements from a selectable that match the expression and return a new collection containing these elements.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$criteria</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="next"/>
-            <h4><span class="label public">public</span>next<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Moves the internal iterator position to the next element.</li>
-            </p>
-          </li>
-          <li>
-            <a name="offsetExists"/>
-            <h4><span class="label public">public</span>offsetExists<span style="font-size:90%;">( <span class="param-type"/><strong> $offset</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-          </li>
-          <li>
-            <a name="offsetGet"/>
-            <h4><span class="label public">public</span>offsetGet<span style="font-size:90%;">( <span class="param-type"/><strong> $offset</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-          </li>
-          <li>
-            <a name="offsetSet"/>
-            <h4><span class="label public">public</span>offsetSet<span style="font-size:90%;">( <span class="param-type"/><strong> $offset</strong>, <span class="param-type"/><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-          </li>
-          <li>
-            <a name="offsetUnset"/>
-            <h4><span class="label public">public</span>offsetUnset<span style="font-size:90%;">( <span class="param-type"/><strong> $offset</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li/>
-            </p>
-          </li>
-          <li>
-            <a name="partition"/>
-            <h4><span class="label public">public</span>partition<span style="font-size:90%;">( <span class="param-type"><span title="Closure">Closure</span></span><strong> $p</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="remove"/>
-            <h4><span class="label public">public</span>remove<span style="font-size:90%;">( <span class="param-type"/><strong> $key</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="removeElement"/>
-            <h4><span class="label public">public</span>removeElement<span style="font-size:90%;">( <span class="param-type"/><strong> $element</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="set"/>
-            <h4><span class="label public">public</span>set<span style="font-size:90%;">( <span class="param-type"/><strong> $key</strong>, <span class="param-type"/><strong> $value</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="setDirty"/>
-            <h4><span class="label public">public</span>setDirty<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $dirty</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets a boolean flag, indicating whether this collection is dirty.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$dirty</code> - Whether the collection should be marked dirty or not.</li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setInitialized"/>
-            <h4><span class="label public">public</span>setInitialized<span style="font-size:90%;">( <span class="param-type">boolean</span><strong> $bool</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Sets the initialized flag of the collection, forcing it into that state.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$bool</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="setOwner"/>
-            <h4><span class="label public">public</span>setOwner<span style="font-size:90%;">( <span class="param-type">invalid method call</span><strong> $entity</strong>, <span class="param-type">Array</span><strong> $assoc</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Sets the collection's owning entity together with the AssociationMapping that describes the association between the owner and the elements of the collection.</li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$entity</code> - </li>
-                <li><code>$assoc</code> - </li>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="slice"/>
-            <h4><span class="label public">public</span>slice<span style="font-size:90%;">( <span class="param-type">int</span><strong> $offset</strong>, <span class="param-type">int</span><strong> $length</strong> )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Extract a slice of $length elements starting at position $offset from the Collection.<pre>If $length is null it returns all elements from $offset to the end of the Collection.
-Keys have to be preserved by this method. Calling this method will only return the
-selected slice and NOT change the elements contained in the collection slice is called on.</pre></li>
-            </p>
-            <ul>
-              <h4 class="param">Parameters:</h4>
-              <ul class="param">
-                <li><code>$offset</code> - </li>
-                <li><code>$length</code> - </li>
-              </ul>
-            </ul>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="takeSnapshot"/>
-            <h4><span class="label public">public</span>takeSnapshot<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>INTERNAL: Tells this collection to take a snapshot of its current state.</li>
-            </p>
-          </li>
-          <li>
-            <a name="toArray"/>
-            <h4><span class="label public">public</span>toArray<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>{@inheritdoc}</li>
-            </p>
-          </li>
-          <li>
-            <a name="unwrap"/>
-            <h4><span class="label public">public</span>unwrap<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Retrieves the wrapped Collection instance.</li>
-            </p>
-            <ul>
-              <h4 class="return">Returns:</h4>
-              <ul class="return">
-                <li/>
-              </ul>
-            </ul>
-          </li>
-          <li>
-            <a name="changed"/>
-            <h4><span class="label private">private</span>changed<span style="font-size:90%;">(  )</span></h4>
-            <p style="font-size:110%; padding-top:5px;">
-              <li>Marks this collection as changed/dirty.</li>
-            </p>
-          </li>
-        </ul>
-        <div class="footer">Generated using phpDox 0.5-40-g758636e - Copyright (C) 2010 - 2013 by Arne Blankerts</div>
-      </div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">48+</td>
+            <td>Design for inheritance to allow custom implementations?</td>
+          </tr>
+          <tr>
+            <td class="nummeric">382</td>
+            <td>If the keys are persistent as well (not yet implemented)</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="association"><strong>$association</strong>
+                —
+                array<br/><span class="indent">The association mapping the collection belongs to.</span></li>
+            <li id="backRefFieldName"><strong>$backRefFieldName</strong>
+                —
+                string<br/><span class="indent">The name of the field on the target entities that points to the owner of the collection. This is only set if the association is bi-directional.</span></li>
+            <li id="coll"><strong>$coll</strong>
+                —
+                <a href="#">Doctrine\Common\Collections\Collection</a><br/><span class="indent">The wrapped Collection instance.</span></li>
+            <li id="em"><strong>$em</strong>
+                —
+                <a href="#">\Doctrine\ORM\EntityManager</a><br/><span class="indent">The EntityManager that manages the persistence of the collection.</span></li>
+            <li id="initialized"><strong>$initialized</strong>
+                —
+                boolean<br/><span class="indent">Whether the collection has already been initialized.</span></li>
+            <li id="isDirty"><strong>$isDirty</strong>
+                —
+                boolean<br/><span class="indent">Whether the collection is dirty and needs to be synchronized with the database when the UnitOfWork that manages its persistent state commits.</span></li>
+            <li id="owner"><strong>$owner</strong>
+                —
+                <a href="#"/><br/><span class="indent">The entity that owns this collection.</span></li>
+            <li id="snapshot"><strong>$snapshot</strong>
+                —
+                array<br/><span class="indent">A snapshot of the collection at the moment it was fetched from the database.</span></li>
+            <li id="typeClass">
+              <strong>$typeClass</strong>
+              <br/>
+              <span class="indent">The class descriptor of the collection's entity type.</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="changed"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/changed.xhtml">changed()</a>
+                — Marks this collection as changed/dirty.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/__construct.xhtml">__construct()</a>
+                — Creates a new persistent collection.</li>
+            <li id="__clone"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/__clone.xhtml">__clone()</a>
+                — Cleanup internal state of cloned persistent collection.</li>
+            <li id="__sleep"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/__sleep.xhtml">__sleep()</a>
+                — Called by PHP when this collection is serialized. Ensures that only the elements are properly serialized.</li>
+            <li id="add"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/add.xhtml">add()</a>
+                — {@inheritdoc}</li>
+            <li id="clear"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/clear.xhtml">clear()</a>
+                — {@inheritdoc}</li>
+            <li id="contains"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/contains.xhtml">contains()</a>
+                — {@inheritdoc}</li>
+            <li id="containsKey"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/containsKey.xhtml">containsKey()</a>
+                — {@inheritdoc}</li>
+            <li id="count"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/count.xhtml">count()</a>
+                — {@inheritdoc}</li>
+            <li id="current"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/current.xhtml">current()</a>
+                — Gets the element of the collection at the current iterator position.</li>
+            <li id="exists"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/exists.xhtml">exists()</a>
+                — {@inheritdoc}</li>
+            <li id="filter"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/filter.xhtml">filter()</a>
+                — {@inheritdoc}</li>
+            <li id="first"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/first.xhtml">first()</a>
+                — {@inheritdoc}</li>
+            <li id="forAll"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/forAll.xhtml">forAll()</a>
+                — {@inheritdoc}</li>
+            <li id="get"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/get.xhtml">get()</a>
+                — {@inheritdoc}</li>
+            <li id="getDeleteDiff"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getDeleteDiff.xhtml">getDeleteDiff()</a>
+                — INTERNAL: getDeleteDiff</li>
+            <li id="getInsertDiff"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getInsertDiff.xhtml">getInsertDiff()</a>
+                — INTERNAL: getInsertDiff</li>
+            <li id="getIterator"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getIterator.xhtml">getIterator()</a>
+                — {@inheritdoc}</li>
+            <li id="getKeys"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getKeys.xhtml">getKeys()</a>
+                — {@inheritdoc}</li>
+            <li id="getMapping"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getMapping.xhtml">getMapping()</a>
+                — INTERNAL: Gets the association mapping of the collection.</li>
+            <li id="getOwner"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getOwner.xhtml">getOwner()</a>
+                — INTERNAL: Gets the collection owner.</li>
+            <li id="getSnapshot"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getSnapshot.xhtml">getSnapshot()</a>
+                — INTERNAL: Returns the last snapshot of the elements in the collection.</li>
+            <li id="getTypeClass">
+              <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getTypeClass.xhtml">getTypeClass()</a>
+            </li>
+            <li id="getValues"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/getValues.xhtml">getValues()</a>
+                — {@inheritdoc}</li>
+            <li id="hydrateAdd"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/hydrateAdd.xhtml">hydrateAdd()</a>
+                — INTERNAL: Adds an element to a collection during hydration. This will automatically complete bidirectional associations in the case of a one-to-many association.</li>
+            <li id="hydrateSet"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/hydrateSet.xhtml">hydrateSet()</a>
+                — INTERNAL: Sets a keyed element in the collection during hydration.</li>
+            <li id="indexOf"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/indexOf.xhtml">indexOf()</a>
+                — {@inheritdoc}</li>
+            <li id="initialize"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/initialize.xhtml">initialize()</a>
+                — Initializes the collection by loading its contents from the database if the collection is not yet initialized.</li>
+            <li id="isDirty"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/isDirty.xhtml">isDirty()</a>
+                — Gets a boolean flag indicating whether this collection is dirty which means its state needs to be synchronized with the database.</li>
+            <li id="isEmpty"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/isEmpty.xhtml">isEmpty()</a>
+                — {@inheritdoc}</li>
+            <li id="isInitialized"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/isInitialized.xhtml">isInitialized()</a>
+                — Checks whether this collection has been initialized.</li>
+            <li id="key">
+              <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/key.xhtml">key()</a>
+            </li>
+            <li id="last"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/last.xhtml">last()</a>
+                — {@inheritdoc}</li>
+            <li id="map"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/map.xhtml">map()</a>
+                — {@inheritdoc}</li>
+            <li id="matching"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/matching.xhtml">matching()</a>
+                — Select all elements from a selectable that match the expression and return a new collection containing these elements.</li>
+            <li id="next"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/next.xhtml">next()</a>
+                — Moves the internal iterator position to the next element.</li>
+            <li id="offsetExists">
+              <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/offsetExists.xhtml">offsetExists()</a>
+            </li>
+            <li id="offsetGet">
+              <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/offsetGet.xhtml">offsetGet()</a>
+            </li>
+            <li id="offsetSet">
+              <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/offsetSet.xhtml">offsetSet()</a>
+            </li>
+            <li id="offsetUnset">
+              <a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/offsetUnset.xhtml">offsetUnset()</a>
+            </li>
+            <li id="partition"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/partition.xhtml">partition()</a>
+                — {@inheritdoc}</li>
+            <li id="remove"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/remove.xhtml">remove()</a>
+                — {@inheritdoc}</li>
+            <li id="removeElement"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/removeElement.xhtml">removeElement()</a>
+                — {@inheritdoc}</li>
+            <li id="set"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/set.xhtml">set()</a>
+                — {@inheritdoc}</li>
+            <li id="setDirty"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/setDirty.xhtml">setDirty()</a>
+                — Sets a boolean flag, indicating whether this collection is dirty.</li>
+            <li id="setInitialized"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/setInitialized.xhtml">setInitialized()</a>
+                — Sets the initialized flag of the collection, forcing it into that state.</li>
+            <li id="setOwner"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/setOwner.xhtml">setOwner()</a>
+                — INTERNAL: Sets the collection's owning entity together with the AssociationMapping that describes the association between the owner and the elements of the collection.</li>
+            <li id="slice"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/slice.xhtml">slice()</a>
+                — Extract a slice of $length elements starting at position $offset from the Collection.</li>
+            <li id="takeSnapshot"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/takeSnapshot.xhtml">takeSnapshot()</a>
+                — INTERNAL: Tells this collection to take a snapshot of its current state.</li>
+            <li id="toArray"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/toArray.xhtml">toArray()</a>
+                — {@inheritdoc}</li>
+            <li id="unwrap"><a title="Doctrine\ORM\PersistentCollection" href="../classes/Doctrine_ORM_PersistentCollection/unwrap.xhtml">unwrap()</a>
+                — Retrieves the wrapped Collection instance.</li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <footer>
+      <span/>
+    </footer>
   </body>
 </html>
