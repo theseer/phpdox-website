@@ -31,19 +31,87 @@
    <div class="row-fluid">
     <div class="span3">
      <div class="well sidebar-nav">
-    <!--
       <ul class="nav nav-list">
-       <li><a href="#">Chapter 1</a></li>
-       <li><a href="#">Chapter 2</a></li>
-       <li><a href="#">Chapter 3</a></li>
+       <li><a href="#installation-usage">Installation and Usage</a></li>
+       <li><a href="#supported-annotations">Supported annotations</a></li>
+       <li><a href="#enrichers">Enrichers</a></li>
+       <li><a href="#engines">Engines</a></li>
       </ul>
-      -->
      </div>
     </div>
     <div class="span9">
      <h1>Documentation</h1>
-     <p>Please refer to the <a href="https://github.com/theseer/phpdox/blob/master/README.markdown">README.markdown page on github</a> for now.</p>
+     <section>
+      <h2 id="installation-usage">Installation and Usage</h2>
+      <p>Please refer to the <a href="https://github.com/theseer/phpdox/blob/master/README.markdown">README.markdown page on github</a> for now.</p>
+     </section>
 
+     <section>
+      <h2 id="supported-annotations">Supported annotations</h2>
+      <p>Striclty speaking, phpDox doesn't have a list of supported/unsupported annotations. All annotations are parsed by phpDox.</p>
+      <p>However, only a couple of them are display with the default HTML templates. Here the list of annotations that are visible in the HTML rendering:</p>
+      <ul>
+       <li>Global</li>
+       <ul>
+        <li><code>@todo</code></li>
+        <li><code>@fixme</code></li>
+        <li><code>@author</code></li>
+        <li><code>@copyright</code></li>
+        <li><code>@license</code></li>
+       </ul>
+       <li>On classes / interfaces / traits</li>
+       <ul>
+        <li><em>No special annotations</em></li>
+       </ul>
+       <li>On properties (members) / constants</li>
+       <ul>
+         <li><code>@var</code></li>
+       </ul>
+       <li>On methods / functions</li>
+       <ul>
+        <li><code>@return</code></li>
+        <li><code>@throws</code></li>
+        <li><code>@param</code></li>
+       </ul>
+      </ul> 
+     </section>
+     <section>
+      <h2 id="enrichers">Enrichers</h2>
+      <p>Enricher is used to add additional information in your documentations.</p>
+      <p>phpDox is shipped with 7 enrichers:</p>
+      <dl>
+       <dt>Build</dt>
+       <dd>Default and always active enricher. Generate data about the documentation generation (platform info, phpDox information)</dd>
+       
+       <dt>Git</dt>
+       <dd>Display the branch from which the documentation was build, also display git history on classes/interfaces/traits</dd>
+       
+       <dt>Checkstyle</dt>
+       <dd>On each class/interface/trait and on methods, display the list of violation from <code>phpcs</code> (from the report)</dd>
+       
+       <dt>PHPCS</dt>
+       <dd>Same as the <strong>Checkstyle</strong> enricher</dd>
+       
+       <dt>PHPMessDetector</dt>
+       <dd>On each class/interface/trait and on methods, display the list of violation from <code>phpmd</code> (from the report)</dd>
+       
+       <dt>PHPUnit</dt>
+       <dd>On each class it will summarize the methods and lines coverage percentage, on method it will summarize the number of tests and the number of passed tests, and finally on source code it will indicate if a line is cover by unit test and the list of test that execute the code (from the report)</dd>
+       
+       <dt>PHPLoc</dt>
+       <dd>On the overview page, display statistics generated from PHPLoc (from the report)</dd>
+      </dl>
+     </section>
+     
+     <section>
+      <h2 id="engines">Engines</h2>
+      <p>Engine is used to transform the parsed code into an usable documentation</p>
+      <p>phpDox have 2 engines :</p>
+      <ul>
+       <li>HTML</li>
+       <li>XML</li>
+      </ul>
+     </section>
     </div>
    </div>
    <hr>
